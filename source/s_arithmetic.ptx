@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_arithmetic" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Complex arithmetic</title>
+
+<subsection xml:id="ss_complex-numbers">
+    <title>Complex numbers</title>
+    <definition xml:id="d_complex_numbers">
+<title>Complex numbers, real and imaginary parts</title>
+<statement>
+<p>
+The <term>complex numbers</term> is the set of all formal expressions of the form <m>a+bi</m>, where <m>a,b\in \R</m>: <ie/>, 
+<me>
+    \C=\{a+bi\colon a,b\in \R\}
+</me>.
+Given a complex number <m>z=a+bi</m>, we call <m>a</m> its <term>real component</term>, denoted <m>\Re z</m>, and we call <m>b</m> its <term>imaginary part</term>, denoted <m>\Im z</m>: <ie/>, we have 
+<md>
+    <mrow>\Re z \amp = a \amp \Im z\amp = b</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+<convention>
+    <title>Real and complex variable names</title>
+    <p>
+        An ongoing theme in complex analysis will be the relationship between the real numbers and the complex numbers. To help distinguish between these sets, we establish the following naming convention for constants: 
+        <ul>
+            <li>
+                <p>
+                    The letters <m>a,b,c,d,e,f</m> will be reserved for denoting real constants.     
+                </p>
+            </li>
+            <li>
+                <p>
+                    The letters <m>z</m> and <m>w</m> will be reserved for denoting complex numbers.
+                </p>
+            </li>
+        </ul>
+        This convention allows us to introduce a complex number <m>z=a+bi</m> without explicitly specifying that <m>a</m> and <m>b</m> are real numbers. Note that as stated the convention only applies to the symbols above. We will likely have occasion to make use of other constant names (<eg/>, r, s, t, u, v), and when we do we will make explicit whether they denote a real or complex number. 
+    </p>
+</convention>
+<p>
+    You are justified in wondering what exactly is meant by a <q>formal expression</q>. A more correct formulation would be that a complex number is really just a pair <m>(a,b)\in \R^2</m> of real numbers that for various reasons we denote as <m>a+bi</m>. Since it is somewhat awkward to write a complex number as <m>z=(a,b)</m>, we will live with the ambiguity of <xref ref="d_complex_numbers"/>, and <em>identify</em> complex numbers <m>z=a+bi</m> as pairs of real numbers via the map 
+    <md>
+        <mrow>\C \amp \longleftrightarrow \R^2</mrow>
+        <mrow>a+bi \amp \longmapsto (a,b)</mrow>
+    </md>.
+    To ensure that this is a well-defined bijection between <m>\C</m> and <m>\R^2</m>, we make official when two of our <q>formal expressions</q> are defined to be equal.     
+</p>
+<definition xml:id="d_complex_equality">
+<title>Complex equality</title>
+<statement>
+<p>
+Complex numbers <m>z=a+bi</m> and <m>w=c+di</m> are <term>equal</term>, denoted <m>z=w</m>, if <md>
+    <mrow>a=c \text{ and } b=d</mrow>
+</md>.
+In other words, we have 
+<md>
+    <mrow>z=w \amp \iff \Re z=\Re w \text{ and } \Im z=\Im w</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+<p>
+    For reasons that will be made more clear below, it is natural to identify the set of real numbers <m>\R</m> with the set of complex numbers of the form <m>a+0i</m>. This is the motivation behind the next definition. 
+</p>
+<definition xml:id="d_real_imaginary">
+<title>Real and imaginary numbers</title>
+<statement>
+<p>
+Let <m>z=a+bi</m> be a complex number. We say that <m>z</m> is <term>real</term> if <m>b=\Im z=0</m>, and <term>(purely) imaginary</term> if <m>a=\Re z=0</m>. Henceforth we identify the real numbers <m>\R</m> with the real complex numbers: <ie/>, we declare that 
+<me>
+    \R=\{z\in \C\colon \Im z=0\}=\{a+0i\colon a\in \R\}
+</me>.
+Furthermore we will use the following abbreviations for various real and purely imaginary complex numbers: 
+<md>
+    <mrow>a+0i \amp =a \amp  0+bi\amp =bi</mrow>
+    <mrow>a+(-b)i \amp =a-bi \amp a+(\pm 1)\,i \amp = a\pm i</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+
+
+
+</subsection>
+<subsection xml:id="ss_complex-plane">
+    <title>Complex plane</title>
+    <p>
+    <xref ref="d_complex_equality"/> ensures that the map 
+    <me>
+        a+bi\mapsto (a,b)
+    </me>
+    defines a bijection between <m>\C</m> and <m>\R</m>, allowing us to identify complex numbers as pairs of real numbers. This identification in turn gives rise to a visual representation of complex numbers as points in the Cartesian plane <m>\R^2</m>, called the <term>complex plane</term> in this context. To make clear that we are using <m>\R^2</m> to visualize <m>\C</m>, we label the horizontal and vertical axes as <m>\Re</m> and <m>\Im</m>. 
+</p>
+<figure xml:id="fig_complex_plane">
+    <caption>Complex plane</caption>
+    <image width="75%">
+        <shortdescription>Complex plane: points</shortdescription>
+        <sageplot>
+P=point((1,2),color="blue", size=50,axes_labels=["$\\operatorname{Re}$","$\\operatorname{Im}$"],ticks=[list(range(-1,2)),list(range(-2,3))],tick_formatter=[["-1","0","$\\operatorname{Re} z=1$"],[-2,-1,0,1,"$\\operatorname{Im} z=2$"]],aspect_ratio=.5)
+Q=point((0,-2),color="blue", size=50)
+R=point((-1,0),color="blue", size=50)
+t1=text("$z=1+2i$",(1.2,2.2),color="black",fontsize=16)
+t2=text("$w=-2i$",(0.4,-2),color="black",fontsize=16)
+t3=text("$a=-1$",(-1,0.2),color="black",fontsize=16)
+l1=line([(0,2),(1,2)],color="red",linestyle="dotted")
+l2=line([(1,0),(1,2)],color="red",linestyle="dotted")
+P+Q+R+t1+t2+t3+l1+l2
+        </sageplot>
+    </image>
+</figure>
+<p>
+Using our identification 
+<me>
+    \R=\{z\in \C\colon \Im z=0\}
+</me>,
+we see that the real numbers are represented geometrically as the <m>x</m>-axis of the complex plane. Similarly, the purely imaginary complex numbers are represented geometrically as the the <m>y</m>-axis of the complex plane. As you will see, we will get a lot of mileage out of this geometric representation of complex numbers. 
+</p>
+</subsection>
+<subsection xml:id="ss_arithmetic">
+    <title>Arithmetic operations</title>
+    <p>
+        Having defined the complex numbers as a set and given this set some geometric content, we now define some essential operations on <m>\C</m>. 
+    </p>
+    <definition xml:id="d_sum_product">
+        <title>Addition, subtraction, multiplication</title>
+        <statement>
+            <p>
+                Let <m>z=a+bi</m> and <m>w=c+di</m> be complex numbers. 
+                <ul>
+                    <li>
+                        <title>Complex addition</title>
+                        <p>
+                            We define the <term>sum</term>  of <m>z</m> and <m>w</m>, denoted <m>z+w</m>, as 
+                            <mdn >
+                                <mrow xml:id="eq_sum">z+w \amp =(a+b)+(c+d)i</mrow>
+                            </mdn>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Complex subtraction</title>
+                        <p>
+                            We define the <term>additive inverse</term>  of <m>w</m>, denoted <m>-w</m>,  as <m>-w=-c-di</m>, and the <term>difference</term>  of <m>z</m> and <m>w</m>, denoted <m>z-w</m>, as 
+                            <mdn >
+                                <mrow xml:id="eq_difference">z-w \amp =z+\, -w=(a-c)+(b-d)i</mrow>
+                            </mdn>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Complex multiplication</title>
+                        <p>
+                           We define the <term>product</term>  of <m>z</m> and <m>w</m>, denoted <m>z\, w</m> (or sometimes <m>z\cdot w</m>) as
+                            <mdn >
+                                <mrow xml:id="eq_product">z\, w \amp= (ac-bd)+(ad+bc)i </mrow>
+                            </mdn>.
+                        </p>
+                    </li>
+                </ul>
+            </p>
+        </statement>
+    </definition>
+    <example xml:id="eg_arithmetic">
+    <title>Complex arithmetic</title>
+    <statement>
+    <p>
+    Let <m>z=-2+3i</m>, <m>w=4+i</m>. Compute the following complex numbers. Your answer must be expressed in the form <m>a+bi</m>, where <m>a,b\in \R</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>z+w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z-w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z\, w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>a\cdot z</m> (where <m>a=a+0i</m> is real)
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>bi\cdot z</m> (where <m>bi=0+bi</m> is purely imaginary)
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z+w \amp =(-2+4)+(3+1)i</mrow>
+                    <mrow> \amp = 2+4i</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z-w \amp = (-2-4)+(3-1)i </mrow>
+                    <mrow> \amp = -6+2i</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>z\, w \amp = (-2\cdot 4-3\cdot 1)+(-2\cdot 1+3\cdot 4)i</mrow>
+                    <mrow> \amp = -11+10i</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>a\, z \amp = (a+0i)(-2+3i)</mrow>
+                    <mrow> \amp = (-2a-0\cdot 3)+(3a+0\cdot (-2))i</mrow>
+                    <mrow> \amp = -2a+3a\, i</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have 
+                <md>
+                    <mrow>bi\cdot w \amp = (0+bi)(4+i)</mrow>
+                    <mrow> \amp = -b+4b\, i</mrow>
+                </md>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </solution>
+    </example>
+    <remark>
+        <title>Real arithmetic</title>
+        <p>
+            As the last example illustrates, the arithmetic interaction of the real numbers with other complex numbers is particularly simple. For example, for any real number <m>a=a+0i</m> and complex number <m>z=c+di</m>, we have 
+            <md>
+                <mrow>a+z \amp = (a+c)+d i</mrow>
+                <mrow>az \amp =ac+di</mrow>
+            </md>.
+            In particular, given two real numbers <m>a+0i</m> and <m>b+0i</m>, we have 
+            <md>
+                <mrow>(a+0i)+(b+0i) \amp =(a+b)+0i=a+b</mrow>
+                <mrow>(a+0i)(b+0i) \amp =ab+0i=ab </mrow>
+            </md>.
+            In other words, the complex arithmetic of the real numbers, considered now as a subset of the complex numbers, behaves exactly as it does considering the real numbers on their own. We summarize this by saying that the operations of complex addition and complex multiplication are <em>extensions</em> of real addition and real multiplication. In this sense we can think of the complex <em>number system</em> as an extension of the real number system. (Using fancier language from abstract algebra, we say that <m>\C</m> is a <em>ring extension</em> of <m>\R</m>.)
+        </p>
+    </remark>
+    <p>
+        The next theorem tells us that complex addition and multiplication are just as well-behaved as their real counterparts. More specifically, using some fancy abstract algebra jargon, the theorem asserts that <m>\C</m>, together with its addition and multiplication operations, constitutes a <em>ring</em>.  
+    </p>
+    <theorem xml:id="th_ring_ops">
+        <title>Ring axioms</title>
+        <statement>
+            <p>
+                Let <m>z,w,u</m> be complex numbers. 
+                <ol cols="2">
+                    <li>
+                        <title>Addition is associative</title>
+                        <p>
+                            <m>z+(w+u)=(z+w)+z</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Addition is commutative</title>
+                        <p>
+                            <m>z+w=w+z</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Additive identity</title>
+                        <p>
+                            <m>0+z=z</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Additive inverse</title>
+                        <p>
+                            <m>-z+z=0</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Multiplication is associative</title>
+                        <p>
+                            <m>z(w\, u)=(z\, w)u</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Multiplication is commutative</title>
+                        <p>
+                            <m>z\, w=w\, z</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Multiplicative identity</title>
+                        <p>
+                            <m>1\cdot z=z</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Distributivity</title>
+                        <p>
+                            <m>z(w+u)=zw+zu</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Each property above follows in a straightforward manner from the definitions of these complex operations in combination with familiar properties of real number arithmetic. We prove (6) below, leaving the rest of the proofs as an exercise. 
+                </p>
+                <p>Let <m>z=a+bi</m> and <m>w=c+di</m>. We have 
+                <md>
+                    <mrow>z\, w \amp =(ac-bd)+(ad+bc)i \amp (\text{def.})</mrow>
+                    <mrow> \amp = (ca-db)+(da+bc)i \amp (\text{comm. of real mult.})</mrow>
+                    <mrow> \amp = w\, z \amp (\text{def})</mrow>
+                </md>,
+                as desired. 
+            </p>
+        </proof>
+    </theorem>
+    <example xml:id="eg_square_roots">
+    <title>Real square roots</title>
+    <statement>
+    <p>
+    Show that every real number <m>a=a+0i</m> has a square-root in <m>\C</m>: <ie/>, show that there is a <m>z\in \C</m> satisfying <m>z^2=a</m>. (By definition, <m>z^2=z\, z</m>. See <xref ref="d_integer_powers"/>.) 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    We seek <m>c,d\in \R</m> such that the complex number <m>z=c+di</m> satisfies <m>z^2=a+0i</m>. Since 
+    <me>
+        z^2=(c^2-d^2)+2cd i
+    </me>,
+    we see, using <xref ref="d_complex_equality"/>, that <m>z^2=a</m> if and only if 
+    <md>
+        <mrow>c^2-d^2 \amp = a </mrow>
+        <mrow>2cd \amp = 0</mrow>
+    </md>.
+    We now endeavor to solve the (quadratic) system of equations above. We proceed in cases with respect to whether <m>a</m> is zero, positive or negative. Note first that in all cases, the second equation is true if and only if <m>c=0</m> or <m>d=0</m>.  
+    </p>
+    <p>
+        Case: <m>a=0</m>. In this case, it is clear that the only solution to the system above is <m>c=d=0</m>. Thus <m>z=0=0+0i</m> is the only complex square-root of <m>0</m>.
+    </p>
+    <p>
+        Case: <m>a&gt; 0</m>. If <m>c=0</m> (to satisfy the second equation), then <m>z^2=a</m> if and only if <m>-d^2=a</m>, which is impossible since <m>a&gt; 0</m> and <m>-d^2\leq 0</m>. Thus we must have <m>d=0</m>, in which case <m>c^2=a</m> implies <m>c=\pm \sqrt{a}</m>. (Note that <m>\sqrt{a}</m>, the positive square-root of <m>a</m>, exists, since <m>a</m> is positive.) It follows that <m>a</m> has exactly two square-roots in this case: <m>\sqrt{a}=\sqrt{a}+0i</m> and <m>-\sqrt{a}=-\sqrt{a}+0i</m>.
+    </p>
+    <p>
+        Case: <m>a&lt; 0</m>. In this case we cannot have <m>d=0</m>, since the first equation would imply <m>c^2=a</m>, which is impossible since <m>a</m> is negative. Setting <m>c=0</m>, we then see that <m>-d^2=a</m> or <m>d=\pm\sqrt{-a}</m>. (Again, note that <m>\sqrt{-a}</m> is a well-defined real number since <m>-a</m> is positive.) We conclude in this case that <m>a</m> has exactly two square-roots: <m>\sqrt{-a}i</m> and <m>-\sqrt{-a}i</m>. 
+    </p>
+    <p>
+        We can summarize our analysis above as follows: any <m>a\in \R</m> has a complex square-root <m>z</m>, and in fact we have 
+        <me>
+            z=\begin{cases}
+            \pm \sqrt{\abs{a}} \amp \text{if } a\geq 0 \\
+            \pm \sqrt{\abs{a}}i \amp  \text{if } a&lt; 0
+            \end{cases}
+        </me>.
+        Here we have used the fact that 
+        <me>
+            \abs{a}=\begin{cases}
+            a \amp a\geq 0\\
+            -a \amp a&lt; 0
+            \end{cases}
+        </me>.
+    </p>
+    </solution>
+    </example>
+    
+    <p>
+       Our last result tells us that, as in real number arithmetic, all nonzero complex numbers have a <em>multiplicative inverse</em>. Reaching again for some fancy language from abstract algebra, this fact, in conjunction with <xref ref="th_ring_ops"/>, means that <m>\C</m>, like <m>\R</m>, is a <em>field</em>.  
+    </p>
+    <theorem xml:id="th_mult_inv">
+        <title>Multiplicative inverses</title>
+        <statement>
+            <p>
+                Let <m>z=a+bi\ne 0</m> be a nonzero complex number: <ie/>, <m>a\ne 0</m> or <m>b\ne 0</m> (or both). The complex number 
+                <me>
+                    w=\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}\, i
+                </me>
+                satisfies <m>z\, w=1</m>.
+            </p>
+        </statement>
+    </theorem>
+   
+    <definition xml:id="d_mult_inv">
+    <title>Multiplicative inverses and quotients</title>
+        <statement>
+            <p>
+                Let <m>z=a+bi\ne 0</m> be a nonzero complex number: <ie/>, <m>a\ne 0</m> or <m>b\ne 0</m>. The <term>(multiplicative) inverse</term> of <m>z</m>, denoted <m>z^{-1}</m> or <m>1/z</m>, is defined as 
+                <me>
+                    z^{-1}=\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}\, i
+                </me>.
+                Given complex numbers <m>w, u</m> with <m>u\ne 0</m>, the <term>quotient</term> of <m>w</m> by <m>u</m>, denoted <m>w/u</m>, is defined as 
+                <me>
+                    \frac{w}{u}=\frac{1}{u}\cdot w= w\, u^{-1}
+                </me>.
+            </p>
+        </statement>
+    </definition>
+    <example xml:id="eg_inverses">
+    <title>Inverses and quotients</title>
+    <statement>
+    <p>
+    Compute the following complex numbers. Your answer must be expressed in the form <m>a+bi</m>, where <m>a,b\in \R</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>z^{-1}</m>, where <m>z=-2-3i</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>(1+i)/(-2-3i)</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>1/i</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z/a</m>, where <m>z=c+di</m> and <m>a=a+0i\in \R</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z/(bi)</m>, where <m>z=c+di</m> and <m>b\in \R</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
+    <definition xml:id="d_integer_powers">
+    <title>Integer powers</title>
+    <statement>
+    <p>
+     Let <m>n\in \Z</m> be an integer. 
+    <ul>
+        <li>
+            <title>Case: <m>n=0</m></title>
+            <p>
+                Given <m>z\in \C</m>, we define 
+                <me>
+                    z^0=1
+                </me>.
+            </p>
+        </li>
+        <li>
+           <title>Case: <m>n&gt; 0</m></title>
+           
+            <p>
+               Given <m>n&gt; 0</m> and <m>z\in \C</m>, we define 
+               <me>
+                z^n=\underset{n \text{ times}}{\underbrace{z\, z\, \cdots z}}
+               </me>.
+            </p>
+        </li>
+        <li>
+            <title>Case: <m>n&lt; 0</m></title>
+            <p>
+                Given <m>n&lt; 0</m> and nonzero <m>z\ne 0 \in \C</m>, we set <m>n=-m</m> where <m>m=-n</m> is positive, and define 
+                <me>
+                    z^n=z^{-m}=\left(z^{-1}\right)^m
+                </me>.
+            </p>
+        </li>
+    </ul>
+    </p>
+    </statement>
+    </definition>
+    
+    
+</subsection>
+
+
+</section>
