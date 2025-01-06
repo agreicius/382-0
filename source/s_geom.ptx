@@ -2,10 +2,29 @@
 
 <section xml:id="s_polar" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Geometry of complex numbers</title>
-
     <p>
-        
-Hello world.
+    In this section we will explore further the geometric nature of complex numbers that arises from our identification of <m>\C</m> with <m>\R^2</m>.
     </p>
+    <subsection xml:id="ss_conjugation_modulus">
+        <title>Modulus and conjugation</title>
+        <p>
+            First recall that we have two distinct ways of visualizing a vector <m>(a,b)\in \R^2</m>: either as a point <m>P=(a,b)</m>, or as an arrow (or directed line segment) <m>\overrightarrow{QR}</m> starting at some initial point <m>Q=(c,d)</m> of your choosing and ending at the terminal point <m>R=(c+a,d+a)</m>. This same multitude of representations then carries over to our visualization of complex numbers <m>z=a+bi</m>. Below you see three different complex plane representations of the complex number <m>z=(1,2)</m></m>: as the point <m>P=(1,2)</m>, as the arrow <m>\overrightarrow{OP}</m> from <m>O=(0,0)</m> to <m>P</m>, and as the arrow <m>\overrightarrow{QR}</m> from <m>Q=(-2,0)</m> to <m>R=(-2+1,0+2)=(-1,2)</m>. 
+            <figure xml:id="fig_pairs_as_arrows">
+                <caption>Different visualizations of <m>z=1+2i</m></caption>
+                <image>
+                    <shortdescription>Different visualizations of <m>z=1+2i</m></shortdescription>
+                    <sageplot>
+P=point((1,2),color="blue", size=50,axes_labels=["$\\operatorname{Re}$","$\\operatorname{Im}$"],ticks=[list(range(-3,2)),list(range(-1,4))],aspect_ratio=.5)
+Q=point((-2,0),color="blue", size=50)
+R=point((-1,2),color="blue", size=50)
+t1=text("$z$",(1.2,2.2),color="black",fontsize=16)
+t2=text("$z$",(-.4,1.1),color="black",fontsize=16)
+t3=text("$z$",(.4,1.1),color="black",fontsize=16)
+P+Q+R+t1+t2+t3
+                    </sageplot>
+                </image>
+            </figure> 
+        </p>
+    </subsection>
 
 </section>

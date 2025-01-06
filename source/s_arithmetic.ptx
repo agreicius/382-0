@@ -20,6 +20,7 @@ Given a complex number <m>z=a+bi</m>, we call <m>a</m> its <term>real component<
 </p>
 </statement>
 </definition>
+
 <convention>
     <title>Real and complex variable names</title>
     <p>
@@ -263,6 +264,7 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
             In other words, the complex arithmetic of the real numbers, considered now as a subset of the complex numbers, behaves exactly as it does considering the real numbers on their own. We summarize this by saying that the operations of complex addition and complex multiplication are <em>extensions</em> of real addition and real multiplication. In this sense we can think of the complex <em>number system</em> as an extension of the real number system. (Using fancier language from abstract algebra, we say that <m>\C</m> is a <em>ring extension</em> of <m>\R</m>.)
         </p>
     </remark>
+    
     <p>
         The next theorem tells us that complex addition and multiplication are just as well-behaved as their real counterparts. More specifically, using some fancy abstract algebra jargon, the theorem asserts that <m>\C</m>, together with its addition and multiplication operations, constitutes a <em>ring</em>.  
     </p>
@@ -337,6 +339,15 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
             </p>
         </proof>
     </theorem>
+    <remark>
+        <title><m>\C</m> as real vector space</title>
+        <p>
+            It follows from <xref ref="th_ring_ops"/> that <m>\C</m> is a real vector space (or vector space over the reals), where we define vector addition to be complex addition, and scalar multiplication by a real number <m>r</m> to be complex multiplication by <m>r</m>. Furthermore, it is easy to see that the set <m>B=\{1, i\}</m> is a basis of <m>\C</m> as a real vector space: indeed, by definition, every element of <m>z\in \C</m> can be written as a real linear combination <m>z=a+b i</m> of <m>1</m> and <m>i</m> in a unique way. Since <m>\abs{B}=2</m>, we see that <m>\C</m> is a 2-dimensional vector space over <m>\R</m>, consistent with our identification above of <m>\C</m> and <m>\R^2</m>.   
+        </p>
+        <p>
+            Continuing in this vein, note that <m>\R=\Span\{1\}\subseteq \C</m>, a one-dimensional subspace of <m>\C</m>. It follows that <m>\C</m> can be understood as the smallest subspace containing <m>\R</m> and the element <m>i</m>. This is sometimes expressed as <m>\C</m> being <em>generated</em> over <m>\R</m> by <m>i</m>. 
+        </p>
+    </remark>
     <example xml:id="eg_square_roots">
     <title>Real square roots</title>
     <statement>
@@ -385,9 +396,9 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
     </solution>
     </example>
     <remark>
-        <title><m>i</m> as square-root of <m>-1</m></title>
+        <title>Adding square-root of <m>-1</m> to <m>\R</m></title>
         <p>
-            It follows from our work in <xref ref="eg_square_roots"/> that <m>i^2=-1</m>: <ie/>, <m>i</m> is a square-root of <m>-1</m>. This observation gives rise to a more motivated understanding of the complex number system <m>\C</m>. Roughly speaking, we can think of <m>\C</m> as the smallest number system containing <m>R</m> and a square-root of <m>-1</m> that we call <m>i</m>. (I say <sq>roughly</sq> here as I haven't really told you what I mean by a number system, or by the smallest number system.) Furthermore, we can think of the definition of complex multiplication given by <xref ref="eq_product"/> as forced upon us, assuming that <m>i</m> satisfies <m>i^2=-1</m> and multiplication is associative and commutative. 
+            It follows from our work in <xref ref="eg_square_roots"/> that <m>i^2=-1</m>: <ie/>, <m>i</m> is a square-root of <m>-1</m>. This observation gives rise to a more motivated understanding of the complex number system <m>\C</m>. Roughly speaking, we can think of <m>\C</m> as the smallest number system containing <m>\R</m> and a square-root of <m>-1</m> that we call <m>i</m>. (I say <sq>roughly</sq> here as I haven't really told you what I mean by a number system, or by the smallest number system.) Furthermore, we can think of the definition of complex multiplication given by <xref ref="eq_product"/> as forced upon us: that is, it is the unique multiplication operation on <m>\C</m> that is associative, commutative, and satisfies <m>i^2=-1</m>. 
         </p>
     </remark>
     <p>
