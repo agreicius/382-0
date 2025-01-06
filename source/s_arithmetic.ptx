@@ -364,14 +364,14 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
         Case: <m>a&gt; 0</m>. If <m>c=0</m> (to satisfy the second equation), then <m>z^2=a</m> if and only if <m>-d^2=a</m>, which is impossible since <m>a&gt; 0</m> and <m>-d^2\leq 0</m>. Thus we must have <m>d=0</m>, in which case <m>c^2=a</m> implies <m>c=\pm \sqrt{a}</m>. (Note that <m>\sqrt{a}</m>, the positive square-root of <m>a</m>, exists, since <m>a</m> is positive.) It follows that <m>a</m> has exactly two square-roots in this case: <m>\sqrt{a}=\sqrt{a}+0i</m> and <m>-\sqrt{a}=-\sqrt{a}+0i</m>.
     </p>
     <p>
-        Case: <m>a&lt; 0</m>. In this case we cannot have <m>d=0</m>, since the first equation would imply <m>c^2=a</m>, which is impossible since <m>a</m> is negative. Setting <m>c=0</m>, we then see that <m>-d^2=a</m> or <m>d=\pm\sqrt{-a}</m>. (Again, note that <m>\sqrt{-a}</m> is a well-defined real number since <m>-a</m> is positive.) We conclude in this case that <m>a</m> has exactly two square-roots: <m>\sqrt{-a}i</m> and <m>-\sqrt{-a}i</m>. 
+        Case: <m>a&lt; 0</m>. In this case we cannot have <m>d=0</m>, since the first equation would imply <m>c^2=a</m>, which is impossible since <m>a</m> is negative. Setting <m>c=0</m>, we then see that <m>-d^2=a</m> or <m>d=\pm\sqrt{-a}</m>. (Again, note that <m>\sqrt{-a}</m> is a well-defined real number since <m>-a</m> is positive.) We conclude in this case that <m>a</m> has exactly two square-roots: <m>\sqrt{-a}\, i</m> and <m>-\sqrt{-a}\, i</m>. 
     </p>
     <p>
         We can summarize our analysis above as follows: any <m>a\in \R</m> has a complex square-root <m>z</m>, and in fact we have 
         <me>
             z=\begin{cases}
             \pm \sqrt{\abs{a}} \amp \text{if } a\geq 0 \\
-            \pm \sqrt{\abs{a}}i \amp  \text{if } a&lt; 0
+            \pm \sqrt{\abs{a}}\, i \amp  \text{if } a&lt; 0
             \end{cases}
         </me>.
         Here we have used the fact that 
@@ -384,7 +384,12 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
     </p>
     </solution>
     </example>
-    
+    <remark>
+        <title><m>i</m> as square-root of <m>-1</m></title>
+        <p>
+            It follows from our work in <xref ref="eg_square_roots"/> that <m>i^2=-1</m>: <ie/>, <m>i</m> is a square-root of <m>-1</m>. This observation gives rise to a more motivated understanding of the complex number system <m>\C</m>. Roughly speaking, we can think of <m>\C</m> as the smallest number system containing <m>R</m> and a square-root of <m>-1</m> that we call <m>i</m>. (I say <sq>roughly</sq> here as I haven't really told you what I mean by a number system, or by the smallest number system.) Furthermore, we can think of the definition of complex multiplication given by <xref ref="eq_product"/> as forced upon us, assuming that <m>i</m> satisfies <m>i^2=-1</m> and multiplication is associative and commutative. 
+        </p>
+    </remark>
     <p>
        Our last result tells us that, as in real number arithmetic, all nonzero complex numbers have a <em>multiplicative inverse</em>. Reaching again for some fancy language from abstract algebra, this fact, in conjunction with <xref ref="th_ring_ops"/>, means that <m>\C</m>, like <m>\R</m>, is a <em>field</em>.  
     </p>
