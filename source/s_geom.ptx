@@ -2,29 +2,67 @@
 
 <section xml:id="s_polar" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Geometry of complex numbers</title>
-    <p>
+    <introduction>
+        <p>
     In this section we will explore further the geometric nature of complex numbers that arises from our identification of <m>\C</m> with <m>\R^2</m>.
     </p>
+    </introduction>
     <subsection xml:id="ss_conjugation_modulus">
         <title>Modulus and conjugation</title>
         <p>
-            First recall that we have two distinct ways of visualizing a vector <m>(a,b)\in \R^2</m>: either as a point <m>P=(a,b)</m>, or as an arrow (or directed line segment) <m>\overrightarrow{QR}</m> starting at some initial point <m>Q=(c,d)</m> of your choosing and ending at the terminal point <m>R=(c+a,d+a)</m>. This same multitude of representations then carries over to our visualization of complex numbers <m>z=a+bi</m>. Below you see three different complex plane representations of the complex number <m>z=(1,2)</m></m>: as the point <m>P=(1,2)</m>, as the arrow <m>\overrightarrow{OP}</m> from <m>O=(0,0)</m> to <m>P</m>, and as the arrow <m>\overrightarrow{QR}</m> from <m>Q=(-2,0)</m> to <m>R=(-2+1,0+2)=(-1,2)</m>. 
+            First recall that we have two distinct ways of visualizing a pair <m>(a,b)\in \R^2</m>: either as a point <m>P=(a,b)</m>, or as an arrow (or directed line segment) <m>\overrightarrow{QR}</m> starting at some initial point <m>Q=(c,d)</m> of your choosing and ending at the terminal point <m>R=(c+a,d+a)</m>. This multitude of representations carries over to our visualization of complex numbers <m>z=a+bi</m>. Below you see three different complex plane representations of the complex number <m>z=(1,2)</m>: as the point <m>P=(1,2)</m>, as the arrow <m>\overrightarrow{OP}</m> from <m>O=(0,0)</m> to <m>P</m>, and as the arrow <m>\overrightarrow{QR}</m> from <m>Q=(-2,0)</m> to <m>R=(-2+1,0+2)=(-1,2)</m>. Observe how the placement of our label <m>z=a+bi</m> varies depending on whether we consider <m>z</m> as a point or an arrow. 
+        </p>
             <figure xml:id="fig_pairs_as_arrows">
                 <caption>Different visualizations of <m>z=1+2i</m></caption>
-                <image>
+                <image width="75%">
                     <shortdescription>Different visualizations of <m>z=1+2i</m></shortdescription>
                     <sageplot>
-P=point((1,2),color="blue", size=50,axes_labels=["$\\operatorname{Re}$","$\\operatorname{Im}$"],ticks=[list(range(-3,2)),list(range(-1,4))],aspect_ratio=.5)
+P=point((1,2),color="blue", size=50,axes_labels=["$\\operatorname{Re}$","$\\operatorname{Im}$"],ticks=[list(range(-3,2)),list(range(-1,4))],aspect_ratio=.8)
 Q=point((-2,0),color="blue", size=50)
 R=point((-1,2),color="blue", size=50)
-t1=text("$z$",(1.2,2.2),color="black",fontsize=16)
-t2=text("$z$",(-.4,1.1),color="black",fontsize=16)
-t3=text("$z$",(.4,1.1),color="black",fontsize=16)
-P+Q+R+t1+t2+t3
+A1=arrow((0,0),(1,2), color="red")
+A2=arrow((-2,0),(-1,2), color="red")
+t1=text("$z=1+2i$",(1.2,2.2),color="black",fontsize=16)
+t2=text("$z=1+2i$",(-1.65,1.3),color="black",fontsize=16)
+t3=text("$z=1+2i$",(.35,1.3),color="black",fontsize=16)
+P+Q+R+t1+t2+t3+A1+A2
                     </sageplot>
                 </image>
             </figure> 
-        </p>
-    </subsection>
+<p>
+    The definition of the <em>modulus</em> of a complex number <m>z=a+bi</m>, has a clear connection with our various visualizations of <m>z</m>: it is the length of any arrow representation of <m>z</m>, or equivalently, the distance between <m>O=(0,0)</m> and <m>P=(a,b)</m>.  
+</p>
+<definition xml:id="d_modulus">
+<title>Complex modulus</title>
+<statement>
+<p>
+The <term>modulus</term> (or <term>absolute value</term>) of a complex number <m>z=a+bi</m>, denoted <m>\abs{z}</m>, is defined as 
+<me>
+    \abs{z}=\sqrt{a^2+b^2}
+</me>.
+</p>
+</statement>
+</definition>
+<p>
+    For <m>z=1+2i</m>, we have <m>\abs{z}=\sqrt{1^2+2^2}=\sqrt{5}</m>, which is precisely the length of the various arrow representations of <m>z</m>. 
+</p>
+<figure xml:id="fig_modulus">
+                <caption>Visualizing the modulus of <m>z=1+2i</m></caption>
+                <image width="75%">
+                    <shortdescription>Visualizing the modulus of <m>z=1+2i</m></shortdescription>
+                    <sageplot>
+P=point((1,2),color="blue", size=50,axes_labels=["$\\operatorname{Re}$","$\\operatorname{Im}$"],ticks=[list(range(-3,2)),list(range(-1,4))],aspect_ratio=.8)
+Q=point((-2,0),color="blue", size=50)
+R=point((-1,2),color="blue", size=50)
+A1=arrow((0,0),(1,2), color="red")
+A2=arrow((-2,0),(-1,2), color="red")
+t1=text("$z=1+2i$",(1.2,2.2),color="black",fontsize=16)
+t2=text("$\\vert z\\vert=\\sqrt{5}$",(-1.65,1.3),color="black",fontsize=16)
+t3=text("$\\vert z\\vert=\\sqrt{5}$",(.35,1.3),color="black",fontsize=16)
+P+Q+R+t1+t2+t3+A1+A2
+                    </sageplot>
+                </image>
+            </figure> 
+</subsection>
 
 </section>
