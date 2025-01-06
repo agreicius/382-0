@@ -595,6 +595,15 @@ var ptx_lunr_docs = [
   "body": " Integer powers   Let be an integer.   Case:  Given , we define .    Case:  Given and , we define .    Case:  Given and nonzero , we set where is positive, and define .      "
 },
 {
+  "id": "s_polar",
+  "level": "1",
+  "url": "s_polar.html",
+  "type": "Section",
+  "number": "1.2",
+  "title": "Geometry of complex numbers",
+  "body": " Geometry of complex numbers  Hello world.  "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
