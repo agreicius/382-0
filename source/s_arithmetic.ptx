@@ -408,13 +408,25 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
         <title>Multiplicative inverses</title>
         <statement>
             <p>
-                Let <m>z=a+bi\ne 0</m> be a nonzero complex number: <ie/>, <m>a\ne 0</m> or <m>b\ne 0</m> (or both). The complex number 
+                Let <m>z=a+bi\ne 0</m> be a nonzero complex number: <ie/>, <m>a\ne 0</m> or <m>b\ne 0</m> (or both). There is a unique complex number <m>w</m> satisfying 
+                <m>zw=1</m>: namely,   
                 <me>
                     w=\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}\, i
-                </me>
-                satisfies <m>z\, w=1</m>.
+                </me>.
             </p>
         </statement>
+        <proof>
+            <p>
+                The fact that <m>zw=1</m> is easily verified using the definition of multiplication given by <xref ref="eq_product
+                "/>. As for uniqueness, given any other complex number <m>u</m>, we have 
+                <md>
+                    <mrow>zu=1 \amp \implies wzu=w</mrow>
+                    <mrow> \amp \implies zwu=w \amp (\text{comm., assoc.})</mrow>
+                    <mrow> \amp\implies u=w \amp (zw=1) </mrow>
+                </md>,
+                showing that <m>w</m> is the only complex number satisfying this property. 
+            </p>
+        </proof>
     </theorem>
    
     <definition xml:id="d_mult_inv">
