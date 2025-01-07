@@ -12,17 +12,25 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Multiplicative inverses.</span>
+<span class="type">Theorem</span><span xmlns:pf="https://prefigure.org" class="space"> </span><span class="codenumber">1.1.13</span><span xmlns:pf="https://prefigure.org" class="period">.</span><span xmlns:pf="https://prefigure.org" class="space"> </span><span class="title">Multiplicative inverses.</span>
 </h4>
-<div class="para logical">
-<div class="para">Let <span class="process-math">\(z=a+bi\ne 0\)</span> be a nonzero complex number: i.e., <span class="process-math">\(a\ne 0\)</span> or <span class="process-math">\(b\ne 0\)</span> (or both). The complex number</div>
+<div xmlns:pf="https://prefigure.org" class="para logical">
+<div class="para">Let <span class="process-math">\(z=a+bi\ne 0\)</span> be a nonzero complex number: i.e., <span class="process-math">\(a\ne 0\)</span> or <span class="process-math">\(b\ne 0\)</span> (or both). There is a unique complex number <span class="process-math">\(w\)</span> satisfying <span class="process-math">\(zw=1\text{:}\)</span> namely,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-w=\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}\, i
+w=\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}\, i\text{.}
 \end{equation*}
 </div>
-<div class="para">satisfies <span class="process-math">\(z\, w=1\text{.}\)</span>
+</div></article><details xmlns:pf="https://prefigure.org" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">The fact that <span class="process-math">\(zw=1\)</span> is easily verified using the definition of multiplication given by <a href="s_arithmetic.html#d_sum_product-2-1-3-3-2-6" class="xref" data-knowl="./knowl/xref/eq_product.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.3">(1.3)</a>. As for uniqueness, given any other complex number <span class="process-math">\(u\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_product.html">
+\begin{align*}
+zu=1 \amp \implies wzu=w\\
+\amp \implies zwu=w \amp (\text{comm., assoc.})\\
+\amp\implies u=w \amp (zw=1) \text{,}
+\end{align*}
 </div>
-</div></article><span class="incontext"><a class="internal" href="s_arithmetic.html#th_mult_inv">in-context</a></span>
+<div class="para">showing that <span class="process-math">\(w\)</span> is the only complex number satisfying this property.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_arithmetic.html#th_mult_inv">in-context</a></span>
 </body>
 </html>
