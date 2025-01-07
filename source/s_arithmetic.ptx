@@ -487,7 +487,40 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
                 <me>
                     z^{-1}=\frac{-2}{4+9}+\frac{3}{4+9}\, i=-\frac{2}{13}+\frac{3}{13}\, i
                 </me>.
-                
+            </p>
+        </li>
+        <li>
+            <p>
+                By definition, we have 
+                <md>
+                    <mrow>\frac{1+i}{-2-3i} \amp=(1+i)(-2-3i)^{-1} </mrow>
+                    <mrow> \amp =(1+i)(-2/13+(3/13)\, i) \amp (\text{by above})</mrow>
+                    <mrow> \amp = \frac{-5}{13}+\frac{1}{13}\, i</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Using formula <xref ref="eq_mult_inv"/>, we see easily that <m>1/i=i^{-1}=-i</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                It is easy to see that for a real number <m>a=a+0i</m>, we have <m>a^{-1}=1/a</m>, and hence 
+                <me>
+                    z/a=\frac{1}{a}(c+di)=\frac{c}{a}+\frac{d}{a}\, i
+                </me>.
+            </p>
+        </li>
+        <li>
+            <p>
+                It is easy to see, in general that <m>(uw)^{-1}=u^{-1}w^{-1}</m> for any complex numbers <m>u,w</m>. Thus we have 
+                <md>
+                    <mrow>z/(bi) \amp =z(bi)^{-1}</mrow>
+                    <mrow> \amp = z\cdot \frac{1}{b}(-i) \amp \text{(by above)}</mrow>
+                    <mrow> \amp = \frac{1}{b}(-i z)</mrow>
+                    <mrow> \amp = \frac{d}{b}-\frac{c}{b}\, i</mrow>
+                </md>.
             </p>
         </li>
     </ol>
