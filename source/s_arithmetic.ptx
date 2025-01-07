@@ -410,9 +410,9 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
             <p>
                 Let <m>z=a+bi\ne 0</m> be a nonzero complex number: <ie/>, <m>a\ne 0</m> or <m>b\ne 0</m> (or both). There is a unique complex number <m>w</m> satisfying 
                 <m>zw=1</m>: namely,   
-                <me>
+                <men xml:id="eq_mult_inv">
                     w=\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}\, i
-                </me>.
+                </men>.
             </p>
         </statement>
         <proof>
@@ -480,7 +480,17 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
     </statement>
     <solution>
     <p>
-    
+    <ol>
+        <li>
+            <p>
+                Using the formula <xref ref="eq_mult_inv"/>, we have 
+                <me>
+                    z^{-1}=\frac{-2}{4+9}+\frac{3}{4+9}\, i=-\frac{2}{13}+\frac{3}{13}\, i
+                </me>.
+                
+            </p>
+        </li>
+    </ol>
     </p>
     </solution>
     </example>
