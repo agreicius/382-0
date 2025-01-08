@@ -91,7 +91,7 @@ P+Q+R+t1+t2+t3+A1+A2
         </me>.
     </p>
 </remark>
-<remark>
+<remark xml:id="rm_mod_diff">
     <title>Modulus of difference</title>
     <p>
         How do we interpret <m>\abs{z-w}</m> for complex numbers <m>z=a+ib</m> and <m>w=c+id</m>? Let's unpack things: we can visualize <m>z-w</m> as the arrow <m>\overrightarrow{QP}</m> from <m>Q=(c,d)</m> to <m>P=(a,b)</m>, and thus <m>\abs{z-w}</m> is just the length of this arrow. Equivalently, <m>\abs{z-w}</m> is the distance between <m>P</m> and <m>Q</m>.  
@@ -106,7 +106,10 @@ Define <m>C=\{z\in\C \colon \abs{z-(i+1)}=2\}</m> and <m>D=\{z\in \C\colon \abs{
 </statement>
 <solution>
 <p>
-
+Using the observation from <xref ref="rm_mod_diff"/>, we see that <m>C</m> is the set of points whose distance to <m>(1,1)</m> is <m>2</m>, while <m>D</m> is the set of points whose distance to <m>(1,1)</m> is at most 2. Geometrically, <m>C</m> is the circle of radius <m>2</m> centered at <m>(1,1)</m> and <m>D</m> is the <em>closed disk</em> of radius 2 centered at <m>2</m>: <ie/>, 
+<md>
+    <mrow>C \amp\colon  (x-1)^2+(y-1)^2=4 \amp D\amp\colon (x-1)^2+(y-1)^2\leq 4 </mrow>
+</md>.
 </p>
 </solution>
 </example>
