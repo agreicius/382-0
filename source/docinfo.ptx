@@ -58,6 +58,12 @@
     \DeclareMathOperator{\rank}{rank}
     \DeclareMathOperator{\nullity}{nullity}
     \DeclareMathOperator{\sign}{sign}
+    \DeclareMathOperator{\Arg}{Arg}
+    \DeclareMathOperator{\Log}{Log}
+    \DeclareMathOperator{\Arcsin}{Arcsin}
+    \DeclareMathOperator{\Arccos}{Arccos}
+    \DeclareMathOperator{\Arctan}{Arctan}
+    \DeclareMathOperator{\Res}{Res}
     \DeclareMathOperator{\Fix}{Fix}
     \DeclareMathOperator{\Aff}{Aff}
     \DeclareMathOperator{\Frac}{Frac}
@@ -116,7 +122,7 @@
     \usetikzlibrary{through,intersections,decorations,shadows,fadings}
   </latex-image-preamble> 
   <!-- Renamings --> 
-  <rename element="convention">Notation</rename> 
+  <!-- <rename element="convention">Notation</rename>  -->
   <rename element="algorithm">Procedure</rename> 
   <rename element="principle">Mantra</rename> 
   <rename element="assumption">Fiat</rename> 

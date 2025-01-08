@@ -7,10 +7,14 @@
     In this section we will explore further the geometric nature of complex numbers that arises from our identification of <m>\C</m> with <m>\R^2</m>.
     </p>
     </introduction>
-    <subsection xml:id="ss_conjugation_modulus">
-        <title>Modulus and conjugation</title>
+    <subsection xml:id="ss_geom_add">
+        <title>Geometry of complex addition</title>
         <p>
-            First recall that we have two distinct ways of visualizing a pair <m>(a,b)\in \R^2</m>: either as a point <m>P=(a,b)</m>, or as an arrow (or directed line segment) <m>\overrightarrow{QR}</m> starting at some initial point <m>Q=(c,d)</m> of your choosing and ending at the terminal point <m>R=(c+a,d+a)</m>. This multitude of representations carries over to our visualization of complex numbers <m>z=a+bi</m>. Below you see three different complex plane representations of the complex number <m>z=(1,2)</m>: as the point <m>P=(1,2)</m>, as the arrow <m>\overrightarrow{OP}</m> from <m>O=(0,0)</m> to <m>P</m>, and as the arrow <m>\overrightarrow{QR}</m> from <m>Q=(-2,0)</m> to <m>R=(-2+1,0+2)=(-1,2)</m>. Observe how the placement of our label <m>z=a+bi</m> varies depending on whether we consider <m>z</m> as a point or an arrow. 
+            Under our identification of <m>\C</m> with <m>\R^2</m>, complex addition corresponds with vector addition:
+            <md>
+                <mrow>(a+ib)+(c+id)=(a+c)+i(b+d) \amp\longleftrightarrow (a,b)+(c,d)=(a+c,b+d) </mrow>
+            </md>.
+            Before interpreting this operation geometrically, we first recall that there are two distinct ways of visualizing a pair <m>(a,b)\in \R^2</m>: either as a point <m>P=(a,b)</m>, or as an arrow (or directed line segment) <m>\overrightarrow{QR}</m> starting at some initial point <m>Q=(c,d)</m> of your choosing and ending at the terminal point <m>R=(c+a,d+a)</m>. This multitude of representations carries over to our visualization of complex numbers <m>z=a+bi</m>. Below you see three different complex plane representations of the complex number <m>z=(1,2)</m>: as the point <m>P=(1,2)</m>, as the arrow <m>\overrightarrow{OP}</m> from <m>O=(0,0)</m> to <m>P</m>, and as the arrow <m>\overrightarrow{QR}</m> from <m>Q=(-2,0)</m> to <m>R=(-2+1,0+2)=(-1,2)</m>. Observe how the placement of our label <m>z=a+bi</m> varies depending on whether we consider <m>z</m> as a point or an arrow. 
         </p>
             <figure xml:id="fig_pairs_as_arrows">
                 <caption>Different visualizations of <m>z=1+2i</m></caption>
@@ -28,9 +32,23 @@ t3=text("$z=1+2i$",(.35,1.3),color="black",fontsize=16)
 P+Q+R+t1+t2+t3+A1+A2
                     </sageplot>
                 </image>
-            </figure> 
+            </figure>  
+    <p>
+        The geometric interpretation of vector addition in <m>\R^2</m> (and hence complex addition) makes use of this arrow representation of pairs. In more detail, given pairs <m>(a,b)</m> and <m>(c,d)</m>, we pick any initial point <m>P=(x_0,y_0)</m>, then write <m>(a,b)=\overrightarrow{PQ}</m> and <m>(c,d)=\overrightarrow{QR}</m>, where 
+        <md>
+            <mrow>Q\amp =(x_0+a,y_0+b) \amp R=(x_0+a+c,y_0+b+d) </mrow>
+        </md> 
+        and use the <q>tip-to-tail</q> method to produce 
+        <me>
+            (a,b)+(c,d)=\overrightarrow{PQ}+\overrightarrow{QR}=\overrightarrow{PR}
+        </me>.
+        
+    </p>
+    </subsection>
+    <subsection xml:id="ss_conjugation_modulus">
+        <title>Modulus</title> 
 <p>
-    The definition of the <em>modulus</em> of a complex number <m>z=a+bi</m>, has a clear connection with our various visualizations of <m>z</m>: it is the length of any arrow representation of <m>z</m>, or equivalently, the distance between <m>O=(0,0)</m> and <m>P=(a,b)</m>.  
+    The definition of the <em>modulus</em> of a complex number <m>z=a+bi</m>, has a clear connection with our various visualizations of <m>z</m>: it is the length of any arrow representation of <m>z</m>; or equivalently, the distance between <m>O=(0,0)</m> and <m>P=(a,b)</m>; or equivalently, the norm <m>\norm{\boldv}</m> of <m>\boldv=(a,b)</m>, thinking of <m>(a,b)</m> as a vector.  
 </p>
 <definition xml:id="d_modulus">
 <title>Complex modulus</title>
@@ -40,6 +58,7 @@ The <term>modulus</term> (or <term>absolute value</term>) of a complex number <m
 <me>
     \abs{z}=\sqrt{a^2+b^2}
 </me>.
+If <m>\abs{z}=1</m>, we say that <m>z</m> has <term>unit length</term>. 
 </p>
 </statement>
 </definition>
@@ -63,6 +82,414 @@ P+Q+R+t1+t2+t3+A1+A2
                     </sageplot>
                 </image>
             </figure> 
-</subsection>
+<remark>
+    <title>Complex numbers of unit length</title>
+    <p>
+        Observe that <m>z=a+bi</m> is a complex number of unit length if and only if the point <m>(a,b)</m> lies on the unit circle <m>S^1: x^2+y^2=1</m>. Thus we obtain the following nifty complex description of the unit circle: 
+        <me>
+            S^1=\{z\in \C \colon \abs{z}=1\}
+        </me>.
+    </p>
+</remark>
+<p>
+    Since <m>\abs{z}</m> is the same thing as <m>\norm{(a,b)}</m> for a complex number <m>z=a+bi</m>, we obtain lots of useful properties of the complex modulus essentially for free from elementary linear algebra facts about the norms of vectors. This is the case for all of the statements in the following theorem, save the last one.  
+</p>
 
+<theorem xml:id="th_modulus">
+    <title>Modulus properties</title>
+    <statement>
+        <p>
+            Let <m>z</m> and <m>w</m> be complex numbers. 
+            <ol>
+                <li xml:id="mod_pos">
+                    <title>Positivity</title>
+                    <p>
+                        <m>\abs{z}\geq 0</m>, and <m>\abs{z}=0</m> if and only if <m>z=0</m>. 
+                    </p>
+                </li>
+                <li xml:id="mod_tri">
+                    <title>Triangle inequality</title>        
+                    <p>
+                        <m>
+                            \abs{z+w}\leq \abs{z}+\abs{w}
+                        </m>.
+                        
+                    </p>
+                </li>
+                <li xml:id="mod_tri_2">
+                    <title>Triangle inequality variation</title>        
+                    <p>
+                       <m>
+                        \abs{z-w}\geq \abs{\abs{z}-\abs{w}}
+                       </m>.
+                    </p>
+                </li>
+                <li xml:id="mod_comps">
+                    <title>Components modulus</title>
+                    <p>
+                        <m>\abs{\Re z}\leq \abs{z}</m> and <m>\abs{\Im z}\leq \abs{z}</m>.
+                    </p>
+                </li>
+                <li xml:id="mod_mult">
+                    <title>Multiplicative property</title>
+                    <p>
+                        <m>\abs{zw}=\abs{z}\abs{w}</m>.
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            As mentioned above, all but the last statement follow directly from elementary linear algebra facts. We give a proof of statement (5). Letting <m>z=a+bi</m> and <m>w=c+di</m>, we have  
+            <md>
+                <mrow>\abs{zw} \amp =\abs{(ac-bd)+(ad+bc)i}</mrow>
+                <mrow> \amp = \sqrt{(ac-bd)^2+(ad+bc)^2}</mrow>
+                <mrow> \amp = \sqrt{a^2c^2+b^2d^2+a^2d^2+b^2c^2}</mrow>
+                <mrow> \amp = \sqrt{(a^2+b^2)(c^2+d^2)}</mrow>
+                <mrow> \amp = \sqrt{a^2+b^2}\sqrt{c^2+d^2}</mrow>
+                <mrow> \amp =\abs{z}\abs{w}</mrow>
+            </md>. 
+        </p>
+    </proof>
+</theorem>
+<convention>
+    <title>Inequality statements</title>
+    <p>
+        One important difference between <m>\R</m> and <m>\C</m> is that the former is equipped with the <m>\leq</m> relation, and that this relation does not extend to <m>\C</m> in a useful way. Since we now think of <m>\R\subseteq \C</m> as a subset of <m>\C</m>, however, we will still have occasion to make assertions about real complex numbers that involve <m>\leq</m>. As such, whenever we state something of the form <m>x \leq y</m>, both <m>x</m> and <m>y</m> are understood to be real complex numbers. 
+    </p>
+</convention>
+<remark>
+    <title>Sums of squares</title>
+    <p>
+        The multiplicative property of the modulus gives rise to an elegant proof of the following fact about integers: if <m>p</m> and <m>q</m> are integers that can be expressed as the sum of two square integers, then <m>pq</m> can be written as the sum of two square integers. For example, we have <m>5=1^2+2^2</m>, <m>13=2^2+3^2</m>, and 
+        <me>
+            5\cdot 13=65=1^2+8^2
+        </me>.
+        This fact, known variously as the Brahmagupta identity, Fibonacci identity, and Brahmagupta-Fibonacci identity, was known to mathematicians since Diophantus. A proof using the complex modulus was given by Euler in the 18th century. Try and prove it yourself in this manner. 
+    </p>
+</remark>
+
+</subsection>
+<subsection xml:id="ss_conj">
+    <title>Complex conjugation</title>
+    <p>
+        We now introduce complex conjugation, which like the modulus operation has a strong connection to the geometry of the complex plane. 
+    </p>
+    <definition xml:id="d_conj">
+    <title>Complex conjugation</title>
+    <statement>
+    <p>
+        Given the complex number <m>z=a+bi</m>, its <term>(complex) conjugate</term> <m>\overline{z}</m> is defined as 
+        <me>
+            \overline{z}=a-bi
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    <p>
+        What is the geometric relationship between <m>z=a+bi</m> and <m>\overline{z}=a-bi</m>? Identifying <m>z</m> with the point <m>(a,b)</m> and <m>\overline{z}</m> with the point <m>(a,-b)</m>, we see that <m>\overline{z}</m> can be thought of as the <em>reflection</em> of <m>z</m> through the <m>x</m>-axis. In other words, the operation of complex conjugation corresponds to reflection through the <m>x</m>-axis. 
+    </p>
+    <figure xml:id="fig_conj">
+        <caption>Conjugation as reflection</caption>
+        <image width="75%">
+            <shortdescription>Conjugation as reflection</shortdescription>
+            <sageplot>
+            P=point((1,1),color="blue", size=50, ticks=[[-1,1],[-1,1]], tick_formatter=[["$-c$","$a$"],["$-b$","$b$"]], axes_labels=["$\\operatorname{Re}$","$\\operatorname{Im}$"])
+            Q=point((1,-1),color="blue", size=50)
+            R=point((-1,0),color="blue", size=50)
+            S=point((0,1),color="blue", size=50)
+            T=point((0,-1),color="blue",size=50)
+            A1=arrow((0,0),(1,1),color="red")
+            A2=arrow((0,0),(1,-1),color="green")
+            A3=arrow((0,0),(-1,0),color="red")
+            A4=arrow((0,0),(0,1),color="red")
+            A5=arrow((0,0),(0,-1),color="green")
+            t1=text("$z$",(1/2, 5/8),color="black",fontsize=16)
+            t2=text("$\\overline{z}$",(1/2, -5/8),color="black",fontsize=16)
+            t3=text("$u=\\overline{u}$",(-1/2, 1/8),color="black",fontsize=16)
+            t4=text("$w$",(-1/8, 5/8),color="black",fontsize=16)
+            t5=text("$\\overline{w}=-w$",(-3/16, -5/8),color="black",fontsize=16)
+            A1+A2+A3+A4+A5+P+Q+R+S+T+t1+t2+t3+t4+t5
+            </sageplot>
+        </image>
+    </figure>
+    <p>
+        You are likely wondering why reflection through the <m>x</m>-axis would prove to be useful when considered as an operation on complex numbers. The next theorem is a form of answer to this question, as it illustrates how reflection (<ie/>, conjugation) respects the other complex operations, including our new friend the modulus. 
+    </p>
+    <theorem xml:id="th_conj">
+        <title>Conjugation properties</title>
+        <statement>
+            <p>
+               Let <m>z</m> and <m>w</m> be complex numbers. 
+               <ol cols="2">
+                <li>
+                    <p>
+                        <m>\overline{z+w}=\overline{z}+\overline{w}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\overline{z\, w}=\overline{z}\, \overline{w}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\overline{\overline{z}}=z</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\abs{\overline{z}}=\abs{z}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\Re z=\frac{z+\overline{z}}{2}</m> and <m>\Im z=\frac{z-\overline{z}}{2i}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>z\in \R</m> if and only if <m>\overline{z}=z</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>z\, \overline{z}=\abs{z}^2</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>z\ne 0</m>, then 
+                        <m>
+                            \displaystyle z^{-1}=\frac{\overline{z}}{\abs{z}^2}=\frac{\overline{z}}{z\overline{z}}
+                        </m>.
+                    </p>
+                </li>
+               </ol> 
+            </p>
+        </statement>
+    </theorem>
+    
+</subsection>
+<subsection xml:id="ss_polar">
+    <title>Polar form</title>
+    <p>
+        Recall that for any pair <m>(a,b)\in \R^2</m> we can write
+        <me>
+            (a,b)=(r\cos\theta, r\sin\theta)
+        </me>
+        for some <m>r,\theta\in \R</m>, and we call <m>r</m> and <m>\theta</m> <em>polar coordinates</em> of the point <m>(a,b)</m> in this case. These polar coordinates are not unique, but we do have the following fact: if <m>(a,b)</m> is nonzero, and we have 
+        <me>
+            (a,b)=(r\cos\theta,r\sin\theta)=(s\cos\psi,s\sin\psi)
+        </me>
+        with <m>r\geq 0</m> and <m>s\geq 0</m>, then <m>r=s=\sqrt{a^+b^2}</m> and <m>\psi=\theta+2\pi k</m> for some integer <m>k\in \Z</m>. 
+        This leads directly to the following result about complex numbers. 
+    </p>
+    <theorem xml:id="th_polar_form">
+        <title>Polar form</title>
+        <statement>
+            <p>
+              Let <m>z=a+bi</m> be a complex number.
+              <ol>
+                <li>
+                    <p>
+                        We have 
+                        <men>
+                            z=r\cos\theta+ri\sin\theta=r(\cos\theta+i\sin\theta)
+                        </men>
+                        for some nonnegative <m>r\geq 0</m> and <m>\theta\in \R</m>. The choice of <m>r</m> here is unique; in fact, we have 
+                        <me>
+                            r=\sqrt{a^2+b^2}=\abs{z}
+                        </me>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>z\ne 0</m> and we have 
+                        <me>
+                            z=r(\cos\theta+i\sin\theta)=r(\cos\psi+i\sin\psi)
+                        </me>
+                        for <m>r&gt; 0</m>, then <m>\psi=\theta+2\pi k</m> for some integer <m>k</m>.
+                    </p>
+                </li>
+              </ol>   
+            </p>
+        </statement>
+    </theorem>
+    
+    <definition xml:id="d_polar">
+    <title>Polar form</title>
+    <statement>
+    <p>
+    Let <m>z</m> be a complex number, and suppose <m>r\geq 0</m> and <m>\theta\in \R</m> satisfy 
+    <men xml:id="eq_polar">z=r(\cos\theta+i\sin\theta)</men>. 
+    We call the expression <m>r(\cos\theta+i\sin\theta)</m> a <term>polar form</term> of <m>z</m> and we call <m>\theta</m> an <term>argument</term> of <m>z</m>.
+    </p>
+    <p>
+        If <m>z\ne 0</m>, we define <m>\Arg z</m> to be the unique <m>\theta\in (-\pi, \pi]</m> satisfying <xref ref="eq_polar"/>, and we define <m>\arg z</m> to be the set of all arguments of <m>z</m>. Equivalently, 
+        <me>
+            \arg z=\{\Arg(z)+2\pi k\colon k\in \Z\}
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    <example xml:id="eg_polar">
+    <title>Polar form</title>
+    <statement>
+    <p>
+    Find a polar form for the given <m>z</m>, and compute <m>\Arg z</m> and <m>\arg z</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>z=-\sqrt{3}-i</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z=3-4i</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
+    <theorem xml:id="th_polar_mult">
+        <title>Polar form properties</title>
+        <statement>
+            <p>
+                Let <m>z=r(\cos\theta+i\sin\theta)</m> and <m>w=s(\cos\psi+i\sin\psi)</m> where <m>r,s\geq 0</m>. 
+                <ol>
+                    <li>
+                        <p>
+                            <men xml:id="eq_polar_mod">\abs{z}=r</men>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <men xml:id="eq_polar_conj">\overline{z}=r(\cos(-\theta)+i\sin(-\theta))</men>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <men xml:id="eq_polar_mult">zw=rs(\cos(\theta+\psi)+i\sin(\theta+\psi))</men>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>z\ne 0</m>, then 
+                            <men xml:id="eq_polar_inv">
+                                z^{-1}=\frac{1}{r}\left(\cos(-\theta)+i\sin(-\theta)\right)
+                            </men>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </theorem>
+    <remark>
+        <title>Geometric interpretation of complex operations</title>
+        <p>
+            Each of the identities of <xref ref="th_polar_mult"/> can be understood as providing a geometric interpretation of one of our complex operations. 
+            </p>
+            <p>
+                In particular, statement (3) provides us with a more satisfying description of complex multiplication than the algebraic formula given by <xref ref="eq_product"/>. Roughly speaking, the identity <xref ref="eq_polar_mult"/> tells us that to multiply two complex numbers, we (a) add their arguments and (b) multiply their moduli.
+            </p>
+            <p>
+                Alternatively, <xref ref="eq_polar_mult"/> tells us that to multiply <m>w=s(\cos\psi+i\sin\psi)</m> by <m>z=r(\cos\theta+i\sin\theta)</m>, we (a) rotate <m>w</m> (considered as a point) by an angle <m>\theta</m> about the origin, and (b) scale its distance from the origin by <m>r</m>.
+        </p>
+        <p>
+            Similarly, <xref ref="eq_polar_inv"/> tells us that the inverse of a complex number is obtained by taking the reciprocal of its modulus (the <m>1/r</m> in the formula), and <q>flipping</q> its argument (the <m>-\theta</m> in the formula). 
+        </p>
+    </remark>
+    <example xml:id="eg_polar_form_">
+    <title>Polar form arithmetic</title>
+    <statement>
+    <p>
+    Let <m>z=-1+\sqrt{3}i</m> and <m>w=1-i</m>. Compute the following complex numbers. Your answer should be expressed in polar form. 
+    <ol>
+        <li>
+            <p>
+                <m>zw</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z/w</m>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <remark>
+        <title>Multiplication by elements of <m>S^1</m></title>
+        <p>
+            Recall that we can identify the unit circle <m>S^1</m> as the set of all complex numbers of unit length: <ie/>, 
+            <me>
+                S^1=\{z\in \C \colon \abs{z}=1\}
+            </me>.
+            Fix <m>z\in S^1</m>. Since <m>\abs{z}=1</m>, <m>z</m> has a polar expression of the form 
+            <me>
+                z=\cos\theta+i\sin\theta
+            </me>
+            for some <m>\theta\in \arg z</m>. It follows from our geometric description of complex multiplication that multiplication by <m>z</m> is the same thing as rotation by <m>\theta</m> about the origin. This is a surprising (and useful) connection between a geometric operation on <m>\R^2</m> (rotation by <m>\theta</m>), and an algebraic operation on <m>\C</m> (multiplication by <m>z</m>).  
+        </p>
+        <p>
+            In more detail, we have the following complex-algebraic description of rotation by the angle <m>\theta</m>: 
+            <ul>
+                <li>
+                    <p>
+                        set <m>z_\theta=\cos\theta+i\sin\theta</m>;
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        given point <m>(a,b)\in \R^2</m>, let <m>w=a+bi</m>;
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        compute 
+                        <me>
+                            z_\theta\, w=(a\cos\theta-b\sin\theta)+(b\cos\theta+a\sin\theta) i
+                        </me>;
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        the result of rotating <m>(c,d)</m> by <m>\theta</m> is then
+                        <me>
+                            (a\cos\theta-b\sin\theta, b\cos\theta+a\sin\theta)
+                        </me>.
+                    </p>
+                </li>
+            </ul>
+            Verify for yourself that we get the same result by multiplying <m>(a,b)</m> (considered as a column vector) by the <em>rotation matrix</em> 
+            <me>
+                r_\theta=\begin{bmatrix}
+                \cos\theta\amp -\sin \theta\\
+                \sin\theta\amp \cos\theta
+                \end{bmatrix}
+            </me>.
+            
+        </p>
+        
+        
+    </remark>
+    
+    
+    
+</subsection>
 </section>
