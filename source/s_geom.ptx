@@ -14,7 +14,7 @@
             <md>
                 <mrow>(a+ib)+(c+id)=(a+c)+i(b+d) \amp\longleftrightarrow (a,b)+(c,d)=(a+c,b+d) </mrow>
             </md>.
-            Before interpreting this operation geometrically, we first recall that there are two distinct ways of visualizing a pair <m>(a,b)\in \R^2</m>: either as a point <m>P=(a,b)</m>, or as an arrow (or directed line segment) <m>\overrightarrow{QR}</m> starting at some initial point <m>Q=(c,d)</m> of your choosing and ending at the terminal point <m>R=(c+a,d+a)</m>. This multitude of representations carries over to our visualization of complex numbers <m>z=a+bi</m>. Below you see three different complex plane representations of the complex number <m>z=(1,2)</m>: as the point <m>P=(1,2)</m>, as the arrow <m>\overrightarrow{OP}</m> from <m>O=(0,0)</m> to <m>P</m>, and as the arrow <m>\overrightarrow{QR}</m> from <m>Q=(-2,0)</m> to <m>R=(-2+1,0+2)=(-1,2)</m>. Observe how the placement of our label <m>z=a+bi</m> varies depending on whether we consider <m>z</m> as a point or an arrow. 
+            Before interpreting this operation geometrically, we first recall that there are two distinct ways of visualizing a pair <m>(a,b)\in \R^2</m>: either as a point <m>P=(a,b)</m>, or as an arrow (or directed line segment) <m>\overrightarrow{QR}</m> starting at some initial point <m>Q=(c,d)</m> of your choosing and ending at the terminal point <m>R=(c+a,d+a)</m>. This multitude of representations carries over to our visualization of complex numbers <m>z=a+ib</m>. Below you see three different complex plane representations of the complex number <m>z=(1,2)</m>: as the point <m>P=(1,2)</m>, as the arrow <m>\overrightarrow{OP}</m> from <m>O=(0,0)</m> to <m>P</m>, and as the arrow <m>\overrightarrow{QR}</m> from <m>Q=(-2,0)</m> to <m>R=(-2+1,0+2)=(-1,2)</m>. Observe how the placement of our label <m>z=a+ib</m> varies depending on whether we consider <m>z</m> as a point or an arrow. 
         </p>
             <figure xml:id="fig_pairs_as_arrows">
                 <caption>Different visualizations of <m>z=1+2i</m></caption>
@@ -48,13 +48,13 @@ P+Q+R+t1+t2+t3+A1+A2
     <subsection xml:id="ss_conjugation_modulus">
         <title>Modulus</title> 
 <p>
-    The definition of the <em>modulus</em> of a complex number <m>z=a+bi</m>, has a clear connection with our various visualizations of <m>z</m>: it is the length of any arrow representation of <m>z</m>; or equivalently, the distance between <m>O=(0,0)</m> and <m>P=(a,b)</m>; or equivalently, the norm <m>\norm{\boldv}</m> of <m>\boldv=(a,b)</m>, thinking of <m>(a,b)</m> as a vector.  
+    The definition of the <em>modulus</em> of a complex number <m>z=a+ib</m>, has a clear connection with our various visualizations of <m>z</m>: it is the length of any arrow representation of <m>z</m>; or equivalently, the distance between <m>O=(0,0)</m> and <m>P=(a,b)</m>; or equivalently, the norm <m>\norm{\boldv}</m> of <m>\boldv=(a,b)</m>, thinking of <m>(a,b)</m> as a vector.  
 </p>
 <definition xml:id="d_modulus">
 <title>Complex modulus</title>
 <statement>
 <p>
-The <term>modulus</term> (or <term>absolute value</term>) of a complex number <m>z=a+bi</m>, denoted <m>\abs{z}</m>, is defined as 
+The <term>modulus</term> (or <term>absolute value</term>) of a complex number <m>z=a+ib</m>, denoted <m>\abs{z}</m>, is defined as 
 <me>
     \abs{z}=\sqrt{a^2+b^2}
 </me>.
@@ -85,14 +85,33 @@ P+Q+R+t1+t2+t3+A1+A2
 <remark>
     <title>Complex numbers of unit length</title>
     <p>
-        Observe that <m>z=a+bi</m> is a complex number of unit length if and only if the point <m>(a,b)</m> lies on the unit circle <m>S^1: x^2+y^2=1</m>. Thus we obtain the following nifty complex description of the unit circle: 
+        Observe that <m>z=a+ib</m> is a complex number of unit length if and only if the point <m>(a,b)</m> lies on the unit circle <m>S^1: x^2+y^2=1</m>. Thus we obtain the following nifty complex description of the unit circle: 
         <me>
             S^1=\{z\in \C \colon \abs{z}=1\}
         </me>.
     </p>
 </remark>
+<remark>
+    <title>Modulus of difference</title>
+    <p>
+        How do we interpret <m>\abs{z-w}</m> for complex numbers <m>z=a+ib</m> and <m>w=c+id</m>? Let's unpack things: we can visualize <m>z-w</m> as the arrow <m>\overrightarrow{QP}</m> from <m>Q=(c,d)</m> to <m>P=(a,b)</m>, and thus <m>\abs{z-w}</m> is just the length of this arrow. Equivalently, <m>\abs{z-w}</m> is the distance between <m>P</m> and <m>Q</m>.  
+    </p>
+</remark>
+<example xml:id="eg_circle">
+<title>Circles and discs</title>
+<statement>
 <p>
-    Since <m>\abs{z}</m> is the same thing as <m>\norm{(a,b)}</m> for a complex number <m>z=a+bi</m>, we obtain lots of useful properties of the complex modulus essentially for free from elementary linear algebra facts about the norms of vectors. This is the case for all of the statements in the following theorem, save the last one.  
+Define <m>C=\{z\in\C \colon \abs{z-(i+1)}=2\}</m> and <m>D=\{z\in \C\colon \abs{z-(1+i)}\leq 2\}</m>. Sketch the sets <m>C</m> and <m>D</m> in the complex plane, and give identify them as familiar geometric objects. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<p>
+    Since <m>\abs{z}</m> is the same thing as <m>\norm{(a,b)}</m> for a complex number <m>z=a+ib</m>, we obtain lots of useful properties of the complex modulus essentially for free from elementary linear algebra facts about the norms of vectors. This is the case for all of the statements in the following theorem, save the last one.  
 </p>
 
 <theorem xml:id="th_modulus">
@@ -141,7 +160,7 @@ P+Q+R+t1+t2+t3+A1+A2
     </statement>
     <proof>
         <p>
-            As mentioned above, all but the last statement follow directly from elementary linear algebra facts. We give a proof of statement (5). Letting <m>z=a+bi</m> and <m>w=c+di</m>, we have  
+            As mentioned above, all but the last statement follow directly from elementary linear algebra facts. We give a proof of statement (5). Letting <m>z=a+ib</m> and <m>w=c+di</m>, we have  
             <md>
                 <mrow>\abs{zw} \amp =\abs{(ac-bd)+(ad+bc)i}</mrow>
                 <mrow> \amp = \sqrt{(ac-bd)^2+(ad+bc)^2}</mrow>
@@ -180,15 +199,15 @@ P+Q+R+t1+t2+t3+A1+A2
     <title>Complex conjugation</title>
     <statement>
     <p>
-        Given the complex number <m>z=a+bi</m>, its <term>(complex) conjugate</term> <m>\overline{z}</m> is defined as 
+        Given the complex number <m>z=a+ib</m>, its <term>(complex) conjugate</term> <m>\overline{z}</m> is defined as 
         <me>
-            \overline{z}=a-bi
+            \overline{z}=a-ib
         </me>.
     </p>
     </statement>
     </definition>
     <p>
-        What is the geometric relationship between <m>z=a+bi</m> and <m>\overline{z}=a-bi</m>? Identifying <m>z</m> with the point <m>(a,b)</m> and <m>\overline{z}</m> with the point <m>(a,-b)</m>, we see that <m>\overline{z}</m> can be thought of as the <em>reflection</em> of <m>z</m> through the <m>x</m>-axis. In other words, the operation of complex conjugation corresponds to reflection through the <m>x</m>-axis. 
+        What is the geometric relationship between <m>z=a+ib</m> and <m>\overline{z}=a-ib</m>? Identifying <m>z</m> with the point <m>(a,b)</m> and <m>\overline{z}</m> with the point <m>(a,-b)</m>, we see that <m>\overline{z}</m> can be thought of as the <em>reflection</em> of <m>z</m> through the <m>x</m>-axis. In other words, the operation of complex conjugation corresponds to reflection through the <m>x</m>-axis. 
     </p>
     <figure xml:id="fig_conj">
         <caption>Conjugation as reflection</caption>
@@ -290,7 +309,7 @@ P+Q+R+t1+t2+t3+A1+A2
         <title>Polar form</title>
         <statement>
             <p>
-              Let <m>z=a+bi</m> be a complex number.
+              Let <m>z=a+ib</m> be a complex number.
               <ol>
                 <li>
                     <p>
@@ -456,14 +475,14 @@ P+Q+R+t1+t2+t3+A1+A2
                 </li>
                 <li>
                     <p>
-                        given point <m>(a,b)\in \R^2</m>, let <m>w=a+bi</m>;
+                        given point <m>(a,b)\in \R^2</m>, let <m>w=a+ib</m>;
                     </p>
                 </li>
                 <li>
                     <p>
                         compute 
                         <me>
-                            z_\theta\, w=(a\cos\theta-b\sin\theta)+(b\cos\theta+a\sin\theta) i
+                            z_\theta\, w=(a\cos\theta-b\sin\theta)+i(b\cos\theta+a\sin\theta)
                         </me>;
                     </p>
                 </li>
