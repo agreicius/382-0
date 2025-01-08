@@ -127,6 +127,24 @@ eBookConfig.enable_chatcodes =  false;
 #eg_inverses-3-1-1 { counter-set: eg_inverses-3-1-1 0; }
 #eg_inverses-3-1-1 > li::marker { content: ""counter(eg_inverses-3-1-1,decimal)"."; }
 #eg_inverses-3-1-1 > li { counter-increment: eg_inverses-3-1-1; }
+#th_modulus-2-1-3 { counter-set: th_modulus-2-1-3 0; }
+#th_modulus-2-1-3 > li::marker { content: ""counter(th_modulus-2-1-3,decimal)"."; }
+#th_modulus-2-1-3 > li { counter-increment: th_modulus-2-1-3; }
+#th_conj-2-1-3 { counter-set: th_conj-2-1-3 0; }
+#th_conj-2-1-3 > li::marker { content: ""counter(th_conj-2-1-3,decimal)"."; }
+#th_conj-2-1-3 > li { counter-increment: th_conj-2-1-3; }
+#th_polar_form-2-1-2 { counter-set: th_polar_form-2-1-2 0; }
+#th_polar_form-2-1-2 > li::marker { content: ""counter(th_polar_form-2-1-2,decimal)"."; }
+#th_polar_form-2-1-2 > li { counter-increment: th_polar_form-2-1-2; }
+#eg_polar-2-1-4 { counter-set: eg_polar-2-1-4 0; }
+#eg_polar-2-1-4 > li::marker { content: ""counter(eg_polar-2-1-4,decimal)"."; }
+#eg_polar-2-1-4 > li { counter-increment: eg_polar-2-1-4; }
+#th_polar_mult-2-1-4 { counter-set: th_polar_mult-2-1-4 0; }
+#th_polar_mult-2-1-4 > li::marker { content: ""counter(th_polar_mult-2-1-4,decimal)"."; }
+#th_polar_mult-2-1-4 > li { counter-increment: th_polar_mult-2-1-4; }
+#eg_polar_form_-2-1-3 { counter-set: eg_polar_form_-2-1-3 0; }
+#eg_polar_form_-2-1-3 > li::marker { content: ""counter(eg_polar_form_-2-1-3,decimal)"."; }
+#eg_polar_form_-2-1-3 > li { counter-increment: eg_polar_form_-2-1-3; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -205,6 +223,12 @@ eBookConfig.enable_chatcodes =  false;
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\nullity}{nullity}
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Res}{Res}
 \DeclareMathOperator{\Fix}{Fix}
 \DeclareMathOperator{\Aff}{Aff}
 \DeclareMathOperator{\Frac}{Frac}
@@ -323,7 +347,12 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_polar.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Geometry of complex numbers</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_conjugation_modulus" class="internal"><span class="title">Modulus and conjugation</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_geom_add" class="internal"><span class="title">Geometry of complex addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_conjugation_modulus" class="internal"><span class="title">Modulus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_conj" class="internal"><span class="title">Complex conjugation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_polar" class="internal"><span class="title">Polar form</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
