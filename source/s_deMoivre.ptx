@@ -297,6 +297,32 @@ l1+l2+l3+S+P+Q+R+t1+t2+t3
         </p>
     </statement>
 </theorem>
+<example xml:id="eg_factor_sextic">
+<title>Factoring <m>f(x)=x^6-1</m> </title>
+<statement>
+<p>
+Give two distinct factorizations of <m>f(x)=x^6-1</m>:
+<ol>
+    <li>
+        <p>
+            as a product of irreducible real polynomials;
+        </p>
+    </li>
+    <li>
+        <p>
+            as a product of linear terms with complex coefficients.
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
 <p>
     Take a moment to survey these results: thanks to complex numbers, we now know how to completely factor the following polynomials:
     <md>
