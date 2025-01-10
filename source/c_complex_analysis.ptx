@@ -2,5 +2,5 @@
     <title>Complex Analysis</title>
     <xi:include href="s_arithmetic.ptx"/>
     <xi:include href="s_geom.ptx"/>
-    <!-- <xi:include href="s_topology.ptx"/> -->
+    <xi:include href="s_deMoivre.ptx" />
 </chapter>

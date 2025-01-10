@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_deMoivre" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>De Moivre's formula</title>
+<introduction>
+    <p>
+        The polar form description of complex multiplication given in <xref ref="th_polar_form"/> leads naturally to a similar description of integer powers of complex numbers, called <em>de Moivre's formula</em>. 
+    </p>
+</introduction>
+<subsection xml:id="ss_deMoivre">
+    <title>De Moivre's formula</title>
+    
+<theorem xml:id="th_deMoivre">
+    <title>De Moivre's formula</title>
+    <statement>
+        <p>
+            Let <m>z=r(\cos\theta+i\sin\theta)</m>, where <m>r\geq 0</m> and <m>\theta\in \R</m>. 
+            <ol>
+                <li>
+                    <title>Nonnegative integer powers</title>
+                    <p>
+                       For all nonnegative integers <m>n</m>, we have 
+                <men xml:id="eq_deMoivres">
+                z^n=r^n(\cos(n\theta)+i\sin(n\theta))
+                </men>. 
+                    </p>
+                </li>
+                <li>
+                    <title>Negative integer powers</title>
+                    <p>
+                        Assume <m>z\ne 0</m>. For all positive integers <m>n</m> we have 
+            <men xml:id="eq_deMoivres_neg">
+                z^{-n}=r^{-n}(\cos(-n\theta)+i\sin(-n\theta))
+            </men>.
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            First observe that statement (2) follows from (1) since for <m>z\ne 0</m> and positive integer <m>n</m> we have 
+            <md>
+                <mrow>z^{-n} \amp= (z^{-1})^n </mrow>
+                <mrow> \amp = (r^{-1}(\cos(-\theta)+i\sin(-\theta))^n \amp (<xref ref="th_polar_mult" text="global"/>)</mrow>
+                <mrow> \amp = (r^{-1})^n(\cos(-n\theta)+i\sin(-n\theta))</mrow>
+                <mrow> \amp = r^{-n}(\cos(-n\theta)+i\sin(-n\theta)) \amp \text{(by (1))}</mrow>
+            </md>.
+        </p>
+        <p>
+            The proof of (1) is by induction on <m>n\geq 0</m>. (See <xref ref="ss_mathematical_induction" text="title"/>.)
+        </p>
+        <p>
+            Base case: <m>n=0</m>. We have 
+            <md>
+                <mrow>r^0(\cos (0\theta)+i\sin(0\theta)) \amp = 1(\cos 0+i\sin 0) </mrow>
+                <mrow> \amp = 1</mrow>
+                <mrow> \amp = z^0 \amp (<xref ref="d_integer_powers" text="global"/>)</mrow>
+            </md>,
+            as desired.
+        </p>
+        <p>
+            Induction step: we assume the statement is true for <m>n</m>, and show it is true for <m>n+1</m>. Thus we assume that 
+            <me>
+                z^n=r^n(\cos(n\theta)+i\sin(n\theta))
+            </me>.
+            It follows that 
+            <md>
+                <mrow>z^{n+1} \amp = z\, z^n</mrow>
+                <mrow> \amp = z\cdot r^n(\cos(n\theta)+i\sin(n\theta)) \amp (\text{ind. hyp.})</mrow>
+                <mrow> \amp = r(\cos \theta+i\sin\theta)\cdot r^n(\cos(n\theta)+i\sin(n\theta)) </mrow>
+                <mrow> \amp = r\, r^{n+1}(\cos(\theta+n\theta)+i\sin(\theta+n\theta)) \amp \text{(polar mult.)}</mrow>
+                <mrow> \amp =r^{n+1}(\cos((n+1)\theta)+i\sin((n+1)\theta))</mrow>
+            </md>,
+            as desired.
+        </p>
+    </proof>
+</theorem>
+<example xml:id="eg_deMoivre">
+<title>De Moivre's formula</title>
+<statement>
+<p>
+Compute <m>(1+i)^{14}</m>. Express you answer in both polar form and in the form <m>a+ib</m>.   
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<example xml:id="eg_deMoivre_trig">
+<title>Double-angle formulas</title>
+<statement>
+<p>
+Use de Moivre's formula to prove the double-angle formulas:
+<md>
+    <mrow>\cos 2\theta \amp =\cos^2\theta-\sin^2\theta</mrow>
+    <mrow>\sin 2\theta \amp = 2\sin\theta\cos\theta</mrow>
+</md>.
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<example xml:id="eg_deMoivre_triple">
+<title>Triple-angle formula</title>
+<statement>
+<p>
+Use de Moivre's formula to derive triple-angle formulas for <m>\cos\theta</m> and <m>\sin\theta</m>. In more detail, find polynomials <m>f(x,y)</m> and <m>g(x,y)</m> such that 
+<md>
+    <mrow>\cos 3\theta \amp = f(\cos\theta,\sin\theta)</mrow>
+    <mrow>\sin 3\theta \amp = g(\cos\theta,\sin\theta)</mrow>
+</md>.
+You may use the fact that the binomial theorem holds for complex numbers: <ie/>, given any <m>z,w\in \C</m> and positive integer <m>n</m>, we have 
+<me>
+    (z+w)^n=\sum_{k=0}^n {n \choose k} z^{n-k}w^k=z^n+{n\choose 1} z^{n-1}w+\cdots +{n \choose n-1}zw^{n-1}+w^n
+</me>,
+where 
+<me>
+    {n\choose k}=\frac{n!}{k!\, (n-k)!}
+</me>.
+
+
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
+</subsection>
+<subsection xml:id="ss_nth_roots">
+    <title><m>n</m>-th roots</title>
+<p>
+    One powerful application of de Moivre's formula is that it allows us to compute all <m>n</m>-th roots of a given complex number <m>w</m>. 
+</p>
+<definition xml:id="d_nth_root">
+<title><m>n</m>-th roots</title>
+<statement>
+<p>
+Let <m>n</m> be a positive integer and let <m>w\in \C</m>. An <term><m>n</m>-th root</term> of <m>w</m> is a complex number <m>z\in \C</m> satisfying <m>z^n=w</m>. Equivalently, an <m>n</m>-th root of <m>w</m> is a complex root (or zero) of the polynomial 
+<me>
+    f(z)=z^n - w
+</me>.
+An <term><m>n</m>-th root of unity</term> is an <m>n</m>-th root of <m>1</m>. 
+</p>
+</statement>
+</definition>
+<example xml:id="eg_3d_root">
+<title>Cube-roots of <m>8i</m></title>
+<statement>
+<p>
+Find all cube-roots of <m>8i</m> and sketch these as points in the complex plane. You may express your answer in polar form. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+<figure xml:id="fig_cuberoots_8i">
+    <caption>Cube-roots of <m>8i</m></caption>
+    <image width="100%">
+        <shortdescription>Cube-roots of <m>8i</m></shortdescription>
+        <sageplot>
+S=circle((0,0),2,color="blue", ticks=[list(range(-2,3)),list(range(-2,3))],ymin=-2)
+p=vector((2*cos(pi/6),2*sin(pi/6)))
+q=vector((2*cos(5*pi/6),2*sin(5*pi/6)))
+r=vector((0,-2))
+P=point(p,color="red", size=70)
+Q=point(q,color="red", size=70)
+R=point(r,color="red", size=70)
+l1=line(((0,0),p),color="red",linestyle="dashed")
+l2=line(((0,0),q),color="red",linestyle="dashed")
+l3=line(((0,0),r),color="red",linestyle="dashed", thickness=2)
+t1=text("$z_0=2(\\cos(\\pi/6)+i\\sin(\\pi/6))$", 1.1*p, color="black", fontsize=16, horizontal_alignment="left")
+t2=text("$z_1=2(\\cos(5\\pi/6)+i\\sin(5\\pi/6))$", 1.1*q, color="black", fontsize=16, horizontal_alignment="right")
+t3=text("$z_2=-2i$", 1.2*r, color="black", fontsize=16, horizontal_alignment="center")
+l1+l2+l3+S+P+Q+R+t1+t2+t3
+        </sageplot>
+    </image>
+</figure>
+</solution>
+</example>
+<theorem xml:id="th_nth_roots">
+    <statement>
+        <p>
+            Let <m>n</m> be a positive integer. A nonzero complex number <m>w</m> has <m>n</m> distinct <m>n</m>-th roots. In more detail, writing <m>w</m> in polar form as <m>w=r(\cos\theta+i\sin\theta)</m>, the <m>n</m>-th roots of <m>w</m> are <m>z_0,z_1,\dots, z_{n-1}</m>, where for all <m>0\leq k\leq n-1</m>, we have 
+            <men xml:id="eq_nth_roots">
+                z_k=\sqrt[n]{r}(\cos(\theta/n+2\pi k)+i\sin(\theta/n+2\pi k))
+            </men>.
+        </p>
+    </statement>
+</theorem>
+</subsection>
+<subsection xml:id="ss_polynomials">
+    <title>Polynomials</title>
+   <p>
+    We can view formula <xref ref="eq_nth_roots"/> as providing explicit roots to the polynomial <m>f(z)=z^n-w</m>, which in turn allows us to factor <m>f</m> into linear terms. To make proper sense of this, we  introduce some terminology and elementary facts around complex polynomials.
+   </p> 
+   <definition xml:id="d_polynomials">
+   <title>Polynomials</title>
+     <statement>
+    <p>
+      A <term>(complex) polynomial</term> is a function <m>f\colon \C\rightarrow \C</m> of the form 
+      <men xml:id="eq_poly">
+      f(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots +a_1z+a_0
+      </men>,
+      where <m>n</m> is a nonnegative integer and <m>a_k\in \C</m> for all <m>0\leq k\leq n</m>. 
+      </p>
+      <p>
+        We call <m>a_kx^k</m> the <m>k</m>-th <term>term</term> of <m>f</m>, and <m>a_k</m> the <m>k</m>-th <term>coefficient</term>; <m>a_0</m> is called the <term>constant term</term> of <m>f</m>. 
+    </p>
+    <p>If <m>a_n\ne 0</m>, then <m>a_nx^{n}</m> is called the <term>leading term</term> of <m>f</m>, <m>a_{n}</m>
+      its <term>leading coefficient</term>, and <m>n</m> the <term>degree</term>, denoted <m>\deg f=n</m>. 
+      </p>
+      <p>
+        Lastly, a <term>root</term> (or <term>zero</term>) of <m>f</m> is a a complex number <m>w</m> satsifying  <m>f(w)=0</m>. 
+      </p>
+  </statement>
+</definition>
+<theorem xml:id="th_poly_elem">
+  <title>Elementary properties of polynomials</title>
+  <statement>
+      <p>
+        <ol>
+        <li>
+        <p>
+          If <m>f</m> and <m>g</m> are polynomials, then so are <m>f+g</m>, <m>fg</m>, and <m>cf</m> for any <m>c\in \C</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>f</m> is a polynomial  and <m>w_0\in \C</m> is a root of <m>f</m>, then there is a polynomial <m>g</m> such that
+          <men xml:id="eq_poly_factor">
+            f(z)=(z-w_0)g(z)
+          </men>.
+        </p>
+      </li>
+      <li xml:id="th_at_most_n_roots">
+        <p>
+          If <m>f</m> is a polynomial of degree <m>n</m>, then <m>f</m> has at most <m>n</m> distinct roots.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+</theorem>
+<p>
+    Given a nonzero <m>w\in \C</m> and positive integer <m>n</m>, let <m>z_0,z_1,\dots, z_{n-1}</m> be the <m>n</m> distinct <m>n</m>-th roots of <m>w</m>. Since <m>z_k</m> is a root of <m>f(z)=z^n-w</m> for all <m>0\leq k\leq n-1</m>, it follows that we can factor <m>f</m> into linear factors as 
+    <me>
+       f(z)=z^n-w =(z-w_0)(z-w_1)\cdots (z-w_{n-1})
+    </me>.
+    In particular, we now know how to completely factor any <em>real</em> polynomial of the form <m>f(z)=z^n-a</m>, where <m>a\in \R</m>. The next theorem delves into factorization details of the polynomial <m>f(z)=z^n-1</m>.  
+</p>
+<theorem xml:id="th_roots_unity">
+    <title>Roots of unity</title>
+    <statement>
+        <p>
+            Fix a positive integer <m>n</m> and let <m>f(z)=z^n-1</m>.
+        <ol>
+            <li>
+                <p>
+                    The <m>n</m> distinct roots of <m>f</m> are 
+                    <me>
+                        \zeta_k=\cos(2\pi k/n)+i\sin(2\pi k/n)
+                    </me>,
+                    where <m>0\leq k\leq n-1</m>. Note that <m>\zeta_0=1</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>f(z)</m> factors as 
+                    <mdn>
+                        <mrow xml:id="eq_cyclo_split">z^n-1\amp=\prod_{k=0}^{n-1}(z-\zeta_k) </mrow>
+                        <mrow> \amp =(z-1)\prod_{k=1}^{n-1}(z-\zeta_k)</mrow>
+                    </mdn>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    We have 
+                    <men xml:id="eq_cyclo_factor">z^n-1=(z-1)(z^{n-1}+z^{n-2}+\cdots +z+1)
+                    </men>
+                    and thus, letting <m>g(z)=z^{n-1}+z^{n-2}+\cdots +z+1</m>, 
+                    <me>
+                        g(z)=\prod_{k=1}^{n-1}(z-\zeta_k)
+                    </me>.
+                </p>
+            </li>
+        </ol>
+        </p>
+    </statement>
+</theorem>
+<p>
+    Take a moment to survey these results: thanks to complex numbers, we now know how to completely factor the following polynomials:
+    <md>
+        <mrow>f(z) \amp = z^n-w \amp </mrow>
+        <mrow> f(z)\amp =z^n-1  </mrow>
+        <mrow>f(z)\amp =z^{n-1}+z^{n-2}+\cdots +z+1 </mrow>
+    </md>.
+    Pretty impressive! As it turns out, every complex polynomial can be factored in this manner. This is the content of the <em>fundamental theorem of algebra</em>, a full proof of which we will be able to provide by the end of this course. 
+</p>
+<theorem xml:id="th_fund_alg">
+    <title>Fundamental theorem of algebra</title>
+    <statement>
+        <p>
+            Let <m>f(z)</m> be a nonconstant polynomial: <ie/>, <m>\deg f\geq 1</m>.
+            <ol>
+                <li>
+                    <p>
+                        Any polynomial <m>f</m> of degree <m>n\geq 1</m> has a complex root: <ie/>, there is a <m>w\in \C</m> such that <m>f(w)=0</m>.  
+                    </p>
+                </li>
+                <li>
+                    <p>
+                         As a consequence, any polynomial <m>f</m> of degree <m>n\geq 1</m> factors completely over <m>\C</m> as 
+            <me>
+                f(z)=c\prod_{k=0}^{n-1}(z-w_k)
+            </me>
+            for some complex numbers <m>c,w_k\in \C</m>, <m>0\leq k\leq n-1</m>. 
+                    </p>
+                </li>
+            </ol>  
+        </p>
+    </statement>
+</theorem>
+
+</subsection>
+
+
+
+    
+
+</section>
