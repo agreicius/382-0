@@ -145,6 +145,18 @@ eBookConfig.enable_chatcodes =  false;
 #eg_polar_form_-2-1-3 { counter-set: eg_polar_form_-2-1-3 0; }
 #eg_polar_form_-2-1-3 > li::marker { content: ""counter(eg_polar_form_-2-1-3,decimal)"."; }
 #eg_polar_form_-2-1-3 > li { counter-increment: eg_polar_form_-2-1-3; }
+#th_deMoivre-2-1-4 { counter-set: th_deMoivre-2-1-4 0; }
+#th_deMoivre-2-1-4 > li::marker { content: ""counter(th_deMoivre-2-1-4,decimal)"."; }
+#th_deMoivre-2-1-4 > li { counter-increment: th_deMoivre-2-1-4; }
+#th_poly_elem-2-1-1 { counter-set: th_poly_elem-2-1-1 0; }
+#th_poly_elem-2-1-1 > li::marker { content: ""counter(th_poly_elem-2-1-1,decimal)"."; }
+#th_poly_elem-2-1-1 > li { counter-increment: th_poly_elem-2-1-1; }
+#th_roots_unity-2-1-3 { counter-set: th_roots_unity-2-1-3 0; }
+#th_roots_unity-2-1-3 > li::marker { content: ""counter(th_roots_unity-2-1-3,decimal)"."; }
+#th_roots_unity-2-1-3 > li { counter-increment: th_roots_unity-2-1-3; }
+#th_fund_alg-2-1-4 { counter-set: th_fund_alg-2-1-4 0; }
+#th_fund_alg-2-1-4 > li::marker { content: ""counter(th_fund_alg-2-1-4,decimal)"."; }
+#th_fund_alg-2-1-4 > li { counter-increment: th_fund_alg-2-1-4; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -165,7 +177,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_arithmetic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_arithmetic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_deMoivre.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -351,6 +363,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_polar" class="internal"><span class="title">Polar form</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_deMoivre.html" class="internal"><span class="codenumber">1.3</span> <span class="title">De Moivre’s formula</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_deMoivre" class="internal"><span class="title">De Moivre’s formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_nth_roots" class="internal"><span class="title"><span class="process-math">\(n\)</span>-th roots</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_polynomials" class="internal"><span class="title">Polynomials</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -423,15 +443,22 @@ Q\amp =(x_0+a,y_0+b) \amp R=(x_0+a+c,y_0+b+d)
 S^1=\{z\in \C \colon \abs{z}=1\}\text{.}
 \end{equation*}
 </div>
-</div></article><article class="remark remark-like" id="ss_conjugation_modulus-7"><h4 class="heading">
+</div></article><article class="remark remark-like" id="rm_mod_diff"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Modulus of difference.</span>
 </h4>
-<div class="para" id="ss_conjugation_modulus-7-2">How do we interpret <span class="process-math">\(\abs{z-w}\)</span> for complex numbers <span class="process-math">\(z=a+ib\)</span> and <span class="process-math">\(w=c+id\text{?}\)</span> Let’s unpack things: we can visualize <span class="process-math">\(z-w\)</span> as the arrow <span class="process-math">\(\overrightarrow{QP}\)</span> from <span class="process-math">\(Q=(c,d)\)</span> to <span class="process-math">\(P=(a,b)\text{,}\)</span> and thus <span class="process-math">\(\abs{z-w}\)</span> is just the length of this arrow. Equivalently, <span class="process-math">\(\abs{z-w}\)</span> is the distance between <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{.}\)</span>
+<div class="para" id="rm_mod_diff-2">How do we interpret <span class="process-math">\(\abs{z-w}\)</span> for complex numbers <span class="process-math">\(z=a+ib\)</span> and <span class="process-math">\(w=c+id\text{?}\)</span> Let’s unpack things: we can visualize <span class="process-math">\(z-w\)</span> as the arrow <span class="process-math">\(\overrightarrow{QP}\)</span> from <span class="process-math">\(Q=(c,d)\)</span> to <span class="process-math">\(P=(a,b)\text{,}\)</span> and thus <span class="process-math">\(\abs{z-w}\)</span> is just the length of this arrow. Equivalently, <span class="process-math">\(\abs{z-w}\)</span> is the distance between <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{.}\)</span>
 </div></article><article class="example example-like" id="eg_circle"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Circles and discs.</span>
 </h4>
 <div class="para" id="eg_circle-2-1">Define <span class="process-math">\(C=\{z\in\C \colon \abs{z-(i+1)}=2\}\)</span> and <span class="process-math">\(D=\{z\in \C\colon \abs{z-(1+i)}\leq 2\}\text{.}\)</span> Sketch the sets <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> in the complex plane, and give identify them as familiar geometric objects.</div>
-<div class="solutions"><details id="eg_circle-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_circle-3-1"></div></div></details></div></article><div class="para" id="ss_conjugation_modulus-9">Since <span class="process-math">\(\abs{z}\)</span> is the same thing as <span class="process-math">\(\norm{(a,b)}\)</span> for a complex number <span class="process-math">\(z=a+ib\text{,}\)</span> we obtain lots of useful properties of the complex modulus essentially for free from elementary linear algebra facts about the norms of vectors. This is the case for all of the statements in the following theorem, save the last one.</div>
+<div class="solutions"><details id="eg_circle-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_circle-3-1">
+<div class="para">Using the observation from <a href="s_polar.html#rm_mod_diff" class="xref" data-knowl="./knowl/xref/rm_mod_diff.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.2.5: Modulus of difference">Remark 1.2.5</a>, we see that <span class="process-math">\(C\)</span> is the set of points whose distance to <span class="process-math">\((1,1)\)</span> is <span class="process-math">\(2\text{,}\)</span> while <span class="process-math">\(D\)</span> is the set of points whose distance to <span class="process-math">\((1,1)\)</span> is at most 2. Geometrically, <span class="process-math">\(C\)</span> is the circle of radius <span class="process-math">\(2\)</span> centered at <span class="process-math">\((1,1)\)</span> and <span class="process-math">\(D\)</span> is the <em class="emphasis">closed disk</em> of radius 2 centered at <span class="process-math">\(2\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rm_mod_diff.html" id="eg_circle-3-1-14">
+\begin{align*}
+C \amp\colon  (x-1)^2+(y-1)^2=4 \amp D\amp\colon (x-1)^2+(y-1)^2\leq 4 \text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><div class="para" id="ss_conjugation_modulus-9">Since <span class="process-math">\(\abs{z}\)</span> is the same thing as <span class="process-math">\(\norm{(a,b)}\)</span> for a complex number <span class="process-math">\(z=a+ib\text{,}\)</span> we obtain lots of useful properties of the complex modulus essentially for free from elementary linear algebra facts about the norms of vectors. This is the case for all of the statements in the following theorem, save the last one.</div>
 <article class="theorem theorem-like" id="th_modulus"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Modulus properties.</span>
 </h4>
@@ -706,7 +733,7 @@ r_\theta=\begin{bmatrix}
 </div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_arithmetic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_arithmetic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_deMoivre.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

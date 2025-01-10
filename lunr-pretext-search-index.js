@@ -628,7 +628,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Geometry of complex numbers",
-  "body": " Geometry of complex numbers   In this section we will explore further the geometric nature of complex numbers that arises from our identification of with .    Geometry of complex addition  Under our identification of with , complex addition corresponds with vector addition: . Before interpreting this operation geometrically, we first recall that there are two distinct ways of visualizing a pair : either as a point , or as an arrow (or directed line segment) starting at some initial point of your choosing and ending at the terminal point . This multitude of representations carries over to our visualization of complex numbers . Below you see three different complex plane representations of the complex number : as the point , as the arrow from to , and as the arrow from to . Observe how the placement of our label varies depending on whether we consider as a point or an arrow.   Different visualizations of   Different visualizations of     The geometric interpretation of vector addition in (and hence complex addition) makes use of this arrow representation of pairs. In more detail, given pairs and , we pick any initial point , then write and , where and use the tip-to-tail method to produce .    Modulus  The definition of the modulus of a complex number , has a clear connection with our various visualizations of : it is the length of any arrow representation of ; or equivalently, the distance between and ; or equivalently, the norm of , thinking of as a vector.   Complex modulus   The modulus (or absolute value ) of a complex number , denoted , is defined as . If , we say that has unit length .    For , we have , which is precisely the length of the various arrow representations of .   Visualizing the modulus of   Visualizing the modulus of      Complex numbers of unit length  Observe that is a complex number of unit length if and only if the point lies on the unit circle . Thus we obtain the following nifty complex description of the unit circle: .    Modulus of difference  How do we interpret for complex numbers and ? Let's unpack things: we can visualize as the arrow from to , and thus is just the length of this arrow. Equivalently, is the distance between and .    Circles and discs   Define and . Sketch the sets and in the complex plane, and give identify them as familiar geometric objects.        Since is the same thing as for a complex number , we obtain lots of useful properties of the complex modulus essentially for free from elementary linear algebra facts about the norms of vectors. This is the case for all of the statements in the following theorem, save the last one.   Modulus properties   Let and be complex numbers.   Positivity   , and if and only if .    Triangle inequality   .    Triangle inequality variation   .    Components modulus   and .    Multiplicative property   .       As mentioned above, all but the last statement follow directly from elementary linear algebra facts. We give a proof of statement (5). Letting and , we have .     Inequality statements  One important difference between and is that the former is equipped with the relation, and that this relation does not extend to in a useful way. Since we now think of as a subset of , however, we will still have occasion to make assertions about real complex numbers that involve . As such, whenever we state something of the form , both and are understood to be real complex numbers.    Sums of squares  The multiplicative property of the modulus gives rise to an elegant proof of the following fact about integers: if and are integers that can be expressed as the sum of two square integers, then can be written as the sum of two square integers. For example, we have , , and . This fact, known variously as the Brahmagupta identity, Fibonacci identity, and Brahmagupta-Fibonacci identity, was known to mathematicians since Diophantus. A proof using the complex modulus was given by Euler in the 18th century. Try and prove it yourself in this manner.     Complex conjugation  We now introduce complex conjugation, which like the modulus operation has a strong connection to the geometry of the complex plane.   Complex conjugation   Given the complex number , its (complex) conjugate  is defined as .    What is the geometric relationship between and ? Identifying with the point and with the point , we see that can be thought of as the reflection of through the -axis. In other words, the operation of complex conjugation corresponds to reflection through the -axis.   Conjugation as reflection   Conjugation as reflection     You are likely wondering why reflection through the -axis would prove to be useful when considered as an operation on complex numbers. The next theorem is a form of answer to this question, as it illustrates how reflection ( , conjugation) respects the other complex operations, including our new friend the modulus.   Conjugation properties   Let and be complex numbers.    .     .     .     .     and .     if and only if .         If , then .         Polar form  Recall that for any pair we can write for some , and we call and  polar coordinates of the point in this case. These polar coordinates are not unique, but we do have the following fact: if is nonzero, and we have with and , then and for some integer . This leads directly to the following result about complex numbers.   Polar form   Let be a complex number.   We have for some nonnegative and . The choice of here is unique; in fact, we have .    If and we have for , then for some integer .        Polar form   Let be a complex number, and suppose and satisfy . We call the expression a polar form of and we call an argument of .  If , we define to be the unique satisfying , and we define to be the set of all arguments of . Equivalently, .     Polar form   Find a polar form for the given , and compute and .                     Polar form properties   Let and where .         .     .    If , then .        Geometric interpretation of complex operations  Each of the identities of can be understood as providing a geometric interpretation of one of our complex operations.  In particular, statement (3) provides us with a more satisfying description of complex multiplication than the algebraic formula given by . Roughly speaking, the identity tells us that to multiply two complex numbers, we (a) add their arguments and (b) multiply their moduli.  Alternatively, tells us that to multiply by , we (a) rotate (considered as a point) by an angle about the origin, and (b) scale its distance from the origin by .  Similarly, tells us that the inverse of a complex number is obtained by taking the reciprocal of its modulus (the in the formula), and flipping its argument (the in the formula).    Polar form arithmetic   Let and . Compute the following complex numbers. Your answer should be expressed in polar form.    .     .            Multiplication by elements of  Recall that we can identify the unit circle as the set of all complex numbers of unit length: , . Fix . Since , has a polar expression of the form for some . It follows from our geometric description of complex multiplication that multiplication by is the same thing as rotation by about the origin. This is a surprising (and useful) connection between a geometric operation on (rotation by ), and an algebraic operation on (multiplication by ).  In more detail, we have the following complex-algebraic description of rotation by the angle :   set ;    given point , let ;    compute ;    the result of rotating by is then .   Verify for yourself that we get the same result by multiplying (considered as a column vector) by the rotation matrix  .    "
+  "body": " Geometry of complex numbers   In this section we will explore further the geometric nature of complex numbers that arises from our identification of with .    Geometry of complex addition  Under our identification of with , complex addition corresponds with vector addition: . Before interpreting this operation geometrically, we first recall that there are two distinct ways of visualizing a pair : either as a point , or as an arrow (or directed line segment) starting at some initial point of your choosing and ending at the terminal point . This multitude of representations carries over to our visualization of complex numbers . Below you see three different complex plane representations of the complex number : as the point , as the arrow from to , and as the arrow from to . Observe how the placement of our label varies depending on whether we consider as a point or an arrow.   Different visualizations of   Different visualizations of     The geometric interpretation of vector addition in (and hence complex addition) makes use of this arrow representation of pairs. In more detail, given pairs and , we pick any initial point , then write and , where and use the tip-to-tail method to produce .    Modulus  The definition of the modulus of a complex number , has a clear connection with our various visualizations of : it is the length of any arrow representation of ; or equivalently, the distance between and ; or equivalently, the norm of , thinking of as a vector.   Complex modulus   The modulus (or absolute value ) of a complex number , denoted , is defined as . If , we say that has unit length .    For , we have , which is precisely the length of the various arrow representations of .   Visualizing the modulus of   Visualizing the modulus of      Complex numbers of unit length  Observe that is a complex number of unit length if and only if the point lies on the unit circle . Thus we obtain the following nifty complex description of the unit circle: .    Modulus of difference  How do we interpret for complex numbers and ? Let's unpack things: we can visualize as the arrow from to , and thus is just the length of this arrow. Equivalently, is the distance between and .    Circles and discs   Define and . Sketch the sets and in the complex plane, and give identify them as familiar geometric objects.    Using the observation from , we see that is the set of points whose distance to is , while is the set of points whose distance to is at most 2. Geometrically, is the circle of radius centered at and is the closed disk of radius 2 centered at : , .    Since is the same thing as for a complex number , we obtain lots of useful properties of the complex modulus essentially for free from elementary linear algebra facts about the norms of vectors. This is the case for all of the statements in the following theorem, save the last one.   Modulus properties   Let and be complex numbers.   Positivity   , and if and only if .    Triangle inequality   .    Triangle inequality variation   .    Components modulus   and .    Multiplicative property   .       As mentioned above, all but the last statement follow directly from elementary linear algebra facts. We give a proof of statement (5). Letting and , we have .     Inequality statements  One important difference between and is that the former is equipped with the relation, and that this relation does not extend to in a useful way. Since we now think of as a subset of , however, we will still have occasion to make assertions about real complex numbers that involve . As such, whenever we state something of the form , both and are understood to be real complex numbers.    Sums of squares  The multiplicative property of the modulus gives rise to an elegant proof of the following fact about integers: if and are integers that can be expressed as the sum of two square integers, then can be written as the sum of two square integers. For example, we have , , and . This fact, known variously as the Brahmagupta identity, Fibonacci identity, and Brahmagupta-Fibonacci identity, was known to mathematicians since Diophantus. A proof using the complex modulus was given by Euler in the 18th century. Try and prove it yourself in this manner.     Complex conjugation  We now introduce complex conjugation, which like the modulus operation has a strong connection to the geometry of the complex plane.   Complex conjugation   Given the complex number , its (complex) conjugate  is defined as .    What is the geometric relationship between and ? Identifying with the point and with the point , we see that can be thought of as the reflection of through the -axis. In other words, the operation of complex conjugation corresponds to reflection through the -axis.   Conjugation as reflection   Conjugation as reflection     You are likely wondering why reflection through the -axis would prove to be useful when considered as an operation on complex numbers. The next theorem is a form of answer to this question, as it illustrates how reflection ( , conjugation) respects the other complex operations, including our new friend the modulus.   Conjugation properties   Let and be complex numbers.    .     .     .     .     and .     if and only if .         If , then .         Polar form  Recall that for any pair we can write for some , and we call and  polar coordinates of the point in this case. These polar coordinates are not unique, but we do have the following fact: if is nonzero, and we have with and , then and for some integer . This leads directly to the following result about complex numbers.   Polar form   Let be a complex number.   We have for some nonnegative and . The choice of here is unique; in fact, we have .    If and we have for , then for some integer .        Polar form   Let be a complex number, and suppose and satisfy . We call the expression a polar form of and we call an argument of .  If , we define to be the unique satisfying , and we define to be the set of all arguments of . Equivalently, .     Polar form   Find a polar form for the given , and compute and .                     Polar form properties   Let and where .         .     .    If , then .        Geometric interpretation of complex operations  Each of the identities of can be understood as providing a geometric interpretation of one of our complex operations.  In particular, statement (3) provides us with a more satisfying description of complex multiplication than the algebraic formula given by . Roughly speaking, the identity tells us that to multiply two complex numbers, we (a) add their arguments and (b) multiply their moduli.  Alternatively, tells us that to multiply by , we (a) rotate (considered as a point) by an angle about the origin, and (b) scale its distance from the origin by .  Similarly, tells us that the inverse of a complex number is obtained by taking the reciprocal of its modulus (the in the formula), and flipping its argument (the in the formula).    Polar form arithmetic   Let and . Compute the following complex numbers. Your answer should be expressed in polar form.    .     .            Multiplication by elements of  Recall that we can identify the unit circle as the set of all complex numbers of unit length: , . Fix . Since , has a polar expression of the form for some . It follows from our geometric description of complex multiplication that multiplication by is the same thing as rotation by about the origin. This is a surprising (and useful) connection between a geometric operation on (rotation by ), and an algebraic operation on (multiplication by ).  In more detail, we have the following complex-algebraic description of rotation by the angle :   set ;    given point , let ;    compute ;    the result of rotating by is then .   Verify for yourself that we get the same result by multiplying (considered as a column vector) by the rotation matrix  .    "
 },
 {
   "id": "fig_pairs_as_arrows",
@@ -667,9 +667,9 @@ var ptx_lunr_docs = [
   "body": " Complex numbers of unit length  Observe that is a complex number of unit length if and only if the point lies on the unit circle . Thus we obtain the following nifty complex description of the unit circle: .  "
 },
 {
-  "id": "ss_conjugation_modulus-7",
+  "id": "rm_mod_diff",
   "level": "2",
-  "url": "s_polar.html#ss_conjugation_modulus-7",
+  "url": "s_polar.html#rm_mod_diff",
   "type": "Remark",
   "number": "1.2.5",
   "title": "Modulus of difference.",
@@ -682,7 +682,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.2.6",
   "title": "Circles and discs.",
-  "body": " Circles and discs   Define and . Sketch the sets and in the complex plane, and give identify them as familiar geometric objects.       "
+  "body": " Circles and discs   Define and . Sketch the sets and in the complex plane, and give identify them as familiar geometric objects.    Using the observation from , we see that is the set of points whose distance to is , while is the set of points whose distance to is at most 2. Geometrically, is the circle of radius centered at and is the closed disk of radius 2 centered at : , .   "
 },
 {
   "id": "th_modulus",
@@ -800,6 +800,114 @@ var ptx_lunr_docs = [
   "number": "1.2.19",
   "title": "Multiplication by elements of <span class=\"process-math\">\\(S^1\\)<\/span>.",
   "body": " Multiplication by elements of  Recall that we can identify the unit circle as the set of all complex numbers of unit length: , . Fix . Since , has a polar expression of the form for some . It follows from our geometric description of complex multiplication that multiplication by is the same thing as rotation by about the origin. This is a surprising (and useful) connection between a geometric operation on (rotation by ), and an algebraic operation on (multiplication by ).  In more detail, we have the following complex-algebraic description of rotation by the angle :   set ;    given point , let ;    compute ;    the result of rotating by is then .   Verify for yourself that we get the same result by multiplying (considered as a column vector) by the rotation matrix  .  "
+},
+{
+  "id": "s_deMoivre",
+  "level": "1",
+  "url": "s_deMoivre.html",
+  "type": "Section",
+  "number": "1.3",
+  "title": "De Moivre’s formula",
+  "body": " De Moivre's formula   The polar form description of complex multiplication given in leads naturally to a similar description of integer powers of complex numbers, called de Moivre's formula .    De Moivre's formula   De Moivre's formula   Let , where and .   Nonnegative integer powers  For all nonnegative integers , we have .    Negative integer powers  Assume . For all positive integers we have .       First observe that statement (2) follows from (1) since for and positive integer we have .  The proof of (1) is by induction on . (See .)  Base case: . We have , as desired.  Induction step: we assume the statement is true for , and show it is true for . Thus we assume that . It follows that , as desired.     De Moivre's formula   Compute . Express you answer in both polar form and in the form .         Double-angle formulas   Use de Moivre's formula to prove the double-angle formulas: .         Triple-angle formula   Use de Moivre's formula to derive triple-angle formulas for and . In more detail, find polynomials and such that . You may use the fact that the binomial theorem holds for complex numbers: , given any and positive integer , we have , where .          -th roots  One powerful application of de Moivre's formula is that it allows us to compute all -th roots of a given complex number .   -th roots   Let be a positive integer and let . An -th root of is a complex number satisfying . Equivalently, an -th root of is a complex root (or zero) of the polynomial . An -th root of unity is an -th root of .     Cube-roots of   Find all cube-roots of and sketch these as points in the complex plane. You may express your answer in polar form.       Cube-roots of   Cube-roots of         Let be a positive integer. A nonzero complex number has distinct -th roots. In more detail, writing in polar form as , the -th roots of are , where for all , we have .      Polynomials  We can view formula as providing explicit roots to the polynomial , which in turn allows us to factor into linear terms. To make proper sense of this, we introduce some terminology and elementary facts around complex polynomials.   Polynomials   A (complex) polynomial is a function of the form , where is a nonnegative integer and for all .  We call the -th term of , and the -th coefficient ; is called the constant term of .  If , then is called the leading term of , its leading coefficient , and the degree , denoted .  Lastly, a root (or zero ) of is a a complex number satsifying .     Elementary properties of polynomials      If and are polynomials, then so are , , and for any .    If is a polynomial and is a root of , then there is a polynomial such that .    If is a polynomial of degree , then has at most distinct roots.       Given a nonzero and positive integer , let be the distinct -th roots of . Since is a root of for all , it follows that we can factor into linear factors as . In particular, we now know how to completely factor any real polynomial of the form , where . The next theorem delves into factorization details of the polynomial .   Roots of unity   Fix a positive integer and let .   The distinct roots of are , where . Note that .     factors as .    We have and thus, letting , .       Take a moment to survey these results: thanks to complex numbers, we now know how to completely factor the following polynomials: . Pretty impressive! As it turns out, every complex polynomial can be factored in this manner. This is the content of the fundamental theorem of algebra , a full proof of which we will be able to provide by the end of this course.   Fundamental theorem of algebra   Let be a nonconstant polynomial: , .   Any polynomial of degree has a complex root: , there is a such that .    As a consequence, any polynomial of degree factors completely over as for some complex numbers , .        "
+},
+{
+  "id": "th_deMoivre",
+  "level": "2",
+  "url": "s_deMoivre.html#th_deMoivre",
+  "type": "Theorem",
+  "number": "1.3.1",
+  "title": "De Moivre’s formula.",
+  "body": " De Moivre's formula   Let , where and .   Nonnegative integer powers  For all nonnegative integers , we have .    Negative integer powers  Assume . For all positive integers we have .       First observe that statement (2) follows from (1) since for and positive integer we have .  The proof of (1) is by induction on . (See .)  Base case: . We have , as desired.  Induction step: we assume the statement is true for , and show it is true for . Thus we assume that . It follows that , as desired.   "
+},
+{
+  "id": "eg_deMoivre",
+  "level": "2",
+  "url": "s_deMoivre.html#eg_deMoivre",
+  "type": "Example",
+  "number": "1.3.2",
+  "title": "De Moivre’s formula.",
+  "body": " De Moivre's formula   Compute . Express you answer in both polar form and in the form .       "
+},
+{
+  "id": "eg_deMoivre_trig",
+  "level": "2",
+  "url": "s_deMoivre.html#eg_deMoivre_trig",
+  "type": "Example",
+  "number": "1.3.3",
+  "title": "Double-angle formulas.",
+  "body": " Double-angle formulas   Use de Moivre's formula to prove the double-angle formulas: .       "
+},
+{
+  "id": "eg_deMoivre_triple",
+  "level": "2",
+  "url": "s_deMoivre.html#eg_deMoivre_triple",
+  "type": "Example",
+  "number": "1.3.4",
+  "title": "Triple-angle formula.",
+  "body": " Triple-angle formula   Use de Moivre's formula to derive triple-angle formulas for and . In more detail, find polynomials and such that . You may use the fact that the binomial theorem holds for complex numbers: , given any and positive integer , we have , where .       "
+},
+{
+  "id": "d_nth_root",
+  "level": "2",
+  "url": "s_deMoivre.html#d_nth_root",
+  "type": "Definition",
+  "number": "1.3.5",
+  "title": "<span class=\"process-math\">\\(n\\)<\/span>-th roots.",
+  "body": " -th roots   Let be a positive integer and let . An -th root of is a complex number satisfying . Equivalently, an -th root of is a complex root (or zero) of the polynomial . An -th root of unity is an -th root of .   "
+},
+{
+  "id": "eg_3d_root",
+  "level": "2",
+  "url": "s_deMoivre.html#eg_3d_root",
+  "type": "Example",
+  "number": "1.3.6",
+  "title": "Cube-roots of <span class=\"process-math\">\\(8i\\)<\/span>.",
+  "body": " Cube-roots of   Find all cube-roots of and sketch these as points in the complex plane. You may express your answer in polar form.       Cube-roots of   Cube-roots of      "
+},
+{
+  "id": "th_nth_roots",
+  "level": "2",
+  "url": "s_deMoivre.html#th_nth_roots",
+  "type": "Theorem",
+  "number": "1.3.8",
+  "title": "",
+  "body": "  Let be a positive integer. A nonzero complex number has distinct -th roots. In more detail, writing in polar form as , the -th roots of are , where for all , we have .   "
+},
+{
+  "id": "d_polynomials",
+  "level": "2",
+  "url": "s_deMoivre.html#d_polynomials",
+  "type": "Definition",
+  "number": "1.3.9",
+  "title": "Polynomials.",
+  "body": " Polynomials   A (complex) polynomial is a function of the form , where is a nonnegative integer and for all .  We call the -th term of , and the -th coefficient ; is called the constant term of .  If , then is called the leading term of , its leading coefficient , and the degree , denoted .  Lastly, a root (or zero ) of is a a complex number satsifying .   "
+},
+{
+  "id": "th_poly_elem",
+  "level": "2",
+  "url": "s_deMoivre.html#th_poly_elem",
+  "type": "Theorem",
+  "number": "1.3.10",
+  "title": "Elementary properties of polynomials.",
+  "body": " Elementary properties of polynomials      If and are polynomials, then so are , , and for any .    If is a polynomial and is a root of , then there is a polynomial such that .    If is a polynomial of degree , then has at most distinct roots.      "
+},
+{
+  "id": "th_roots_unity",
+  "level": "2",
+  "url": "s_deMoivre.html#th_roots_unity",
+  "type": "Theorem",
+  "number": "1.3.11",
+  "title": "Roots of unity.",
+  "body": " Roots of unity   Fix a positive integer and let .   The distinct roots of are , where . Note that .     factors as .    We have and thus, letting , .      "
+},
+{
+  "id": "th_fund_alg",
+  "level": "2",
+  "url": "s_deMoivre.html#th_fund_alg",
+  "type": "Theorem",
+  "number": "1.3.12",
+  "title": "Fundamental theorem of algebra.",
+  "body": " Fundamental theorem of algebra   Let be a nonconstant polynomial: , .   Any polynomial of degree has a complex root: , there is a such that .    As a consequence, any polynomial of degree factors completely over as for some complex numbers , .      "
 },
 {
   "id": "appendix-notation",

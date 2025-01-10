@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">De Moivre’s formula.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(z=r(\cos\theta+i\sin\theta)\text{,}\)</span> where <span class="process-math">\(r\geq 0\)</span> and <span class="process-math">\(\theta\in \R\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_deMoivre-2-1-4">
+<li>
+<span class="heading"><span class="title">Nonnegative integer powers.</span></span><div class="para logical">
+<div class="para">For all nonnegative integers <span class="process-math">\(n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+z^n=r^n(\cos(n\theta)+i\sin(n\theta))\text{.}\tag{1.11}
+\end{equation}
+</div>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Negative integer powers.</span></span><div class="para logical">
+<div class="para">Assume <span class="process-math">\(z\ne 0\text{.}\)</span> For all positive integers <span class="process-math">\(n\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+z^{-n}=r^{-n}(\cos(-n\theta)+i\sin(-n\theta))\text{.}\tag{1.12}
+\end{equation}
+</div>
+</div>
+</li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">First observe that statement (2) follows from (1) since for <span class="process-math">\(z\ne 0\)</span> and positive integer <span class="process-math">\(n\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_polar_mult.html">
+\begin{align*}
+z^{-n} \amp= (z^{-1})^n \\
+\amp = (r^{-1}(\cos(-\theta)+i\sin(-\theta))^n \amp (\knowl{./knowl/xref/th_polar_mult.html}{\text{1.2.16}})\\
+\amp = (r^{-1})^n(\cos(-n\theta)+i\sin(-n\theta))\\
+\amp = r^{-n}(\cos(-n\theta)+i\sin(-n\theta)) \amp \text{(by (1))}\text{.}
+\end{align*}
+</div>
+</div>
+<div class="para">The proof of (1) is by induction on <span class="process-math">\(n\geq 0\text{.}\)</span> (See <a href="s_proof_technique.html#ss_mathematical_induction" class="internal" title="Subsection: Mathematical induction">Mathematical induction</a>.)</div>
+<div class="para logical">
+<div class="para">Base case: <span class="process-math">\(n=0\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_integer_powers.html">
+\begin{align*}
+r^0(\cos (0\theta)+i\sin(0\theta)) \amp = 1(\cos 0+i\sin 0) \\
+\amp = 1\\
+\amp = z^0 \amp (\knowl{./knowl/xref/d_integer_powers.html}{\text{1.1.17}})\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para logical">
+<div class="para">Induction step: we assume the statement is true for <span class="process-math">\(n\text{,}\)</span> and show it is true for <span class="process-math">\(n+1\text{.}\)</span> Thus we assume that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z^n=r^n(\cos(n\theta)+i\sin(n\theta))\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math">
+\begin{align*}
+z^{n+1} \amp = z\, z^n\\
+\amp = z\cdot r^n(\cos(n\theta)+i\sin(n\theta)) \amp (\text{ind. hyp.})\\
+\amp = r(\cos \theta+i\sin\theta)\cdot r^n(\cos(n\theta)+i\sin(n\theta)) \\
+\amp = r\, r^{n+1}(\cos(\theta+n\theta)+i\sin(\theta+n\theta)) \amp \text{(polar mult.)}\\
+\amp =r^{n+1}(\cos((n+1)\theta)+i\sin((n+1)\theta))\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_deMoivre.html#th_deMoivre">in-context</a></span>
+</body>
+</html>
