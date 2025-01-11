@@ -808,7 +808,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "De Moivre’s formula",
-  "body": " De Moivre's formula   The polar form description of complex multiplication given in leads naturally to a similar description of integer powers of complex numbers, called de Moivre's formula .    De Moivre's formula   De Moivre's formula   Let , where and .   Nonnegative integer powers  For all nonnegative integers , we have .    Negative integer powers  Assume . For all positive integers we have .       First observe that statement (2) follows from (1) since for and positive integer we have .  The proof of (1) is by induction on . (See .)  Base case: . We have , as desired.  Induction step: we assume the statement is true for , and show it is true for . Thus we assume that . It follows that , as desired.     De Moivre's formula   Compute . Express you answer in both polar form and in the form .         Double-angle formulas   Use de Moivre's formula to prove the double-angle formulas: .         Triple-angle formula   Use de Moivre's formula to derive triple-angle formulas for and . In more detail, find polynomials and such that . You may use the fact that the binomial theorem holds for complex numbers: , given any and positive integer , we have , where .          -th roots  One powerful application of de Moivre's formula is that it allows us to compute all -th roots of a given complex number .   -th roots   Let be a positive integer and let . An -th root of is a complex number satisfying . Equivalently, an -th root of is a complex root (or zero) of the polynomial . An -th root of unity is an -th root of .     Cube-roots of   Find all cube-roots of and sketch these as points in the complex plane. You may express your answer in polar form.       Cube-roots of   Cube-roots of        -th roots   Let be a positive integer. A nonzero complex number has distinct -th roots. In more detail, writing in polar form as , the -th roots of are , where for all , we have .      Polynomials  We can view formula as providing explicit roots to the polynomial , which in turn allows us to factor into linear terms. To make proper sense of this, we introduce some terminology and elementary facts around complex polynomials.   Polynomials   A (complex) polynomial is a function of the form , where is a nonnegative integer and for all .  We call the -th term of , and the -th coefficient ; is called the constant term of .  If , then is called the leading term of , its leading coefficient , and the degree , denoted .  Lastly, a root (or zero ) of is a a complex number satsifying .     Elementary properties of polynomials      If and are polynomials, then so are , , and for any .    If is a polynomial and is a root of , then there is a polynomial such that .    If is a polynomial of degree , then has at most distinct roots.       Given a nonzero and positive integer , let be the distinct -th roots of . Since is a root of for all , it follows that we can factor into linear factors as . In particular, we now know how to completely factor any real polynomial of the form , where . The next theorem delves into factorization details of the polynomial .   Roots of unity   Fix a positive integer and let .   The distinct roots of are , where . Note that .     factors as .    We have and thus, letting , .        Factoring    Give two distinct factorizations of :   as a product of irreducible real polynomials;    as a product of linear terms with complex coefficients.           Take a moment to survey these results: thanks to complex numbers, we now know how to completely factor the following polynomials: . Pretty impressive! As it turns out, every complex polynomial can be factored in this manner. This is the content of the fundamental theorem of algebra , a full proof of which we will be able to provide by the end of this course.   Fundamental theorem of algebra   Let be a nonconstant polynomial: , .   Any polynomial of degree has a complex root: , there is a such that .    As a consequence, any polynomial of degree factors completely over as for some complex numbers , .        "
+  "body": " De Moivre's formula   The polar form description of complex multiplication given in leads naturally to a similar description of integer powers of complex numbers, called de Moivre's formula .    De Moivre's formula   De Moivre's formula   Let , where and .   Nonnegative integer powers  For all nonnegative integers , we have .    Negative integer powers  Assume . For all positive integers we have .       First observe that statement (2) follows from (1) since for and positive integer we have .  The proof of (1) is by induction on . (See .)  Base case: . We have , as desired.  Induction step: we assume the statement is true for , and show it is true for . Thus we assume that . It follows that , as desired.     De Moivre's formula   Compute . Express you answer in both polar form and in the form .    First write in polar form as . Using de Moivre's formula, we have      Double-angle formulas   Use de Moivre's formula to prove the double-angle formulas: .    Let . We may compute using the algebraic definition of complex multiplication, or by using de Moivre's formula. Equating the two resulting expressions yields . From the definition of complex number equality, it follows that , as desired.     Triple-angle formula   Use de Moivre's formula to derive triple-angle formulas for and . In more detail, find polynomials and such that . You may use the fact that the binomial theorem holds for complex numbers: , given any and positive integer , we have , where .    Let as an exercise.      -th roots  One powerful application of de Moivre's formula is that it allows us to compute all -th roots of a given complex number .   -th roots   Let be a positive integer and let . An -th root of is a complex number satisfying . Equivalently, an -th root of is a complex root (or zero) of the polynomial . An -th root of unity is an -th root of .     Cube-roots of   Find all cube-roots of and sketch these as points in the complex plane. You may express your answer in polar form.    First write in polar form as . If satisfies , then using de Moivre's theorem we would have . Using we conclude that we must have , or equivalently, . Taking , we see that are cube-roots of . We claim further that these are all of the cube-roots of . This follows from the fact that any angle of the form is obtained from one of the three angles by adding a multiple of .   Cube-roots of   Cube-roots of       The reasoning in can easily be generalized to produce a procedure for computing -th roots of an arbitrary complex number.   -th roots   Let be a positive integer. A nonzero complex number has distinct -th roots. In more detail, writing in polar form as , the -th roots of are , where for all , we have .    We seek ( , ) satisfying . By de Moivre's formula, this is equivalent to . By , this is true if and only if . Solving for and we conclude that . It follows that the complex numbers are -th roots of . That they are distinct follows again from and the fact that for all . Lastly, since the polynomial has at most  distinct roots (see ), the roots are the only -th roots of .     Visualizing -th roots  Let be the distinct -th roots of the nonzero complex number , as described in . We make some geometric observations about the :   Each has modulus , and thus lives on the circle of radius centered at the origin.    Looking at the arguments of the , we see that for each , is obtained from by a rotation of about the origin. It follows that starting with , we can obtain the other roots by successive rotation by .    From the previous observations, it follows that the distinct -th roots of are the vertices of a regular -gon inscribed in the circle of radius centered at the origin. (See .)        Polynomials  We can view formula as providing explicit roots to the polynomial , which in turn allows us to factor into linear terms. To make proper sense of this, we introduce some terminology and elementary facts around complex polynomials.   Polynomials   A (complex) polynomial is a function of the form , where is a nonnegative integer and for all .  We call the -th term of , and the -th coefficient ; is called the constant term of .  If , then is called the leading term of , its leading coefficient , and the degree , denoted .  Lastly, a root (or zero ) of is a a complex number satisfying .     Elementary properties of polynomials      If and are polynomials, then so are , , and for any .    If is a polynomial and is a root of , then there is a polynomial such that .    If is a polynomial of degree , then has at most distinct roots.       Given a nonzero and positive integer , let be the distinct -th roots of . Since is a root of for all , it follows that we can factor into linear factors as . In particular, we now know how to completely factor any real polynomial of the form , where . The next theorem delves into factorization details of the polynomial .   Roots of unity   Fix a positive integer and let .   The distinct roots of are , where . Note that .     factors as .    We have and thus, letting , .        Factoring    Give two distinct factorizations of :   as a product of irreducible real polynomials;    as a product of linear terms with complex coefficients.          Using the difference of squares factoring identity, we have . Next, since is a root of , and is a root of , we can use polynomial division to factor . It is now easy to see, using the quadratic formula, that and are irreducible over , since they have no real roots. Thus is a factorization of into irreducible real polynomials.    Using , we have , where .       Take a moment to survey these results: thanks to complex numbers, we now know how to completely factor the following polynomials: . Pretty impressive! As it turns out, every complex polynomial can be factored in this manner. This is the content of the fundamental theorem of algebra , a full proof of which we will be able to provide by the end of this course.   Fundamental theorem of algebra   Let be a nonconstant polynomial: , .   Any polynomial of degree has a complex root: , there is a such that .    As a consequence, any polynomial of degree factors completely over as for some complex numbers , .        "
 },
 {
   "id": "th_deMoivre",
@@ -826,7 +826,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.3.2",
   "title": "De Moivre’s formula.",
-  "body": " De Moivre's formula   Compute . Express you answer in both polar form and in the form .       "
+  "body": " De Moivre's formula   Compute . Express you answer in both polar form and in the form .    First write in polar form as . Using de Moivre's formula, we have    "
 },
 {
   "id": "eg_deMoivre_trig",
@@ -835,7 +835,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.3.3",
   "title": "Double-angle formulas.",
-  "body": " Double-angle formulas   Use de Moivre's formula to prove the double-angle formulas: .       "
+  "body": " Double-angle formulas   Use de Moivre's formula to prove the double-angle formulas: .    Let . We may compute using the algebraic definition of complex multiplication, or by using de Moivre's formula. Equating the two resulting expressions yields . From the definition of complex number equality, it follows that , as desired.   "
 },
 {
   "id": "eg_deMoivre_triple",
@@ -844,7 +844,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.3.4",
   "title": "Triple-angle formula.",
-  "body": " Triple-angle formula   Use de Moivre's formula to derive triple-angle formulas for and . In more detail, find polynomials and such that . You may use the fact that the binomial theorem holds for complex numbers: , given any and positive integer , we have , where .       "
+  "body": " Triple-angle formula   Use de Moivre's formula to derive triple-angle formulas for and . In more detail, find polynomials and such that . You may use the fact that the binomial theorem holds for complex numbers: , given any and positive integer , we have , where .    Let as an exercise.   "
 },
 {
   "id": "d_nth_root",
@@ -862,7 +862,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.3.6",
   "title": "Cube-roots of <span class=\"process-math\">\\(8i\\)<\/span>.",
-  "body": " Cube-roots of   Find all cube-roots of and sketch these as points in the complex plane. You may express your answer in polar form.       Cube-roots of   Cube-roots of      "
+  "body": " Cube-roots of   Find all cube-roots of and sketch these as points in the complex plane. You may express your answer in polar form.    First write in polar form as . If satisfies , then using de Moivre's theorem we would have . Using we conclude that we must have , or equivalently, . Taking , we see that are cube-roots of . We claim further that these are all of the cube-roots of . This follows from the fact that any angle of the form is obtained from one of the three angles by adding a multiple of .   Cube-roots of   Cube-roots of      "
 },
 {
   "id": "th_nth_roots",
@@ -871,23 +871,32 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.3.8",
   "title": "<span class=\"process-math\">\\(n\\)<\/span>-th roots.",
-  "body": " -th roots   Let be a positive integer. A nonzero complex number has distinct -th roots. In more detail, writing in polar form as , the -th roots of are , where for all , we have .   "
+  "body": " -th roots   Let be a positive integer. A nonzero complex number has distinct -th roots. In more detail, writing in polar form as , the -th roots of are , where for all , we have .    We seek ( , ) satisfying . By de Moivre's formula, this is equivalent to . By , this is true if and only if . Solving for and we conclude that . It follows that the complex numbers are -th roots of . That they are distinct follows again from and the fact that for all . Lastly, since the polynomial has at most  distinct roots (see ), the roots are the only -th roots of .   "
+},
+{
+  "id": "ss_nth_roots-7",
+  "level": "2",
+  "url": "s_deMoivre.html#ss_nth_roots-7",
+  "type": "Remark",
+  "number": "1.3.9",
+  "title": "Visualizing <span class=\"process-math\">\\(n\\)<\/span>-th roots.",
+  "body": " Visualizing -th roots  Let be the distinct -th roots of the nonzero complex number , as described in . We make some geometric observations about the :   Each has modulus , and thus lives on the circle of radius centered at the origin.    Looking at the arguments of the , we see that for each , is obtained from by a rotation of about the origin. It follows that starting with , we can obtain the other roots by successive rotation by .    From the previous observations, it follows that the distinct -th roots of are the vertices of a regular -gon inscribed in the circle of radius centered at the origin. (See .)     "
 },
 {
   "id": "d_polynomials",
   "level": "2",
   "url": "s_deMoivre.html#d_polynomials",
   "type": "Definition",
-  "number": "1.3.9",
+  "number": "1.3.10",
   "title": "Polynomials.",
-  "body": " Polynomials   A (complex) polynomial is a function of the form , where is a nonnegative integer and for all .  We call the -th term of , and the -th coefficient ; is called the constant term of .  If , then is called the leading term of , its leading coefficient , and the degree , denoted .  Lastly, a root (or zero ) of is a a complex number satsifying .   "
+  "body": " Polynomials   A (complex) polynomial is a function of the form , where is a nonnegative integer and for all .  We call the -th term of , and the -th coefficient ; is called the constant term of .  If , then is called the leading term of , its leading coefficient , and the degree , denoted .  Lastly, a root (or zero ) of is a a complex number satisfying .   "
 },
 {
   "id": "th_poly_elem",
   "level": "2",
   "url": "s_deMoivre.html#th_poly_elem",
   "type": "Theorem",
-  "number": "1.3.10",
+  "number": "1.3.11",
   "title": "Elementary properties of polynomials.",
   "body": " Elementary properties of polynomials      If and are polynomials, then so are , , and for any .    If is a polynomial and is a root of , then there is a polynomial such that .    If is a polynomial of degree , then has at most distinct roots.      "
 },
@@ -896,7 +905,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_deMoivre.html#th_roots_unity",
   "type": "Theorem",
-  "number": "1.3.11",
+  "number": "1.3.12",
   "title": "Roots of unity.",
   "body": " Roots of unity   Fix a positive integer and let .   The distinct roots of are , where . Note that .     factors as .    We have and thus, letting , .      "
 },
@@ -905,16 +914,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_deMoivre.html#eg_factor_sextic",
   "type": "Example",
-  "number": "1.3.12",
+  "number": "1.3.13",
   "title": "Factoring <span class=\"process-math\">\\(f(x)=x^6-1\\)<\/span>.",
-  "body": " Factoring    Give two distinct factorizations of :   as a product of irreducible real polynomials;    as a product of linear terms with complex coefficients.          "
+  "body": " Factoring    Give two distinct factorizations of :   as a product of irreducible real polynomials;    as a product of linear terms with complex coefficients.          Using the difference of squares factoring identity, we have . Next, since is a root of , and is a root of , we can use polynomial division to factor . It is now easy to see, using the quadratic formula, that and are irreducible over , since they have no real roots. Thus is a factorization of into irreducible real polynomials.    Using , we have , where .      "
 },
 {
   "id": "th_fund_alg",
   "level": "2",
   "url": "s_deMoivre.html#th_fund_alg",
   "type": "Theorem",
-  "number": "1.3.13",
+  "number": "1.3.14",
   "title": "Fundamental theorem of algebra.",
   "body": " Fundamental theorem of algebra   Let be a nonconstant polynomial: , .   Any polynomial of degree has a complex root: , there is a such that .    As a consequence, any polynomial of degree factors completely over as for some complex numbers , .      "
 },

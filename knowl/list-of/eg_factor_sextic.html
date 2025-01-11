@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">Factoring <span class="process-math">\(f(x)=x^6-1\)</span>.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">Factoring <span class="process-math">\(f(x)=x^6-1\)</span>.</span>
 </h4>
 <div class="para logical">
 <div class="para">Give two distinct factorizations of <span class="process-math">\(f(x)=x^6-1\text{:}\)</span>
@@ -22,6 +22,42 @@
 <li><div class="para">as a product of linear terms with complex coefficients.</div></li>
 </ol>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_deMoivre.html#eg_factor_sextic">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal" id="eg_factor_sextic-3-1-1">
+<li><div class="para logical">
+<div class="para">Using the difference of squares factoring identity, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^6-1=(x^3-1)(x^3+1)\text{.}
+\end{equation*}
+</div>
+<div class="para">Next, since <span class="process-math">\(1\)</span> is a root of <span class="process-math">\(x^3-1\text{,}\)</span> and <span class="process-math">\(-1\)</span> is a root of <span class="process-math">\(x^3+1\text{,}\)</span> we can use polynomial division to factor</div>
+<div class="displaymath process-math">
+\begin{align*}
+x^3-1 \amp = (x-1)(x^2+x+1) \amp (x^3+1)\amp=(x+1)(x^2-x+1)\text{.}
+\end{align*}
+</div>
+<div class="para">It is now easy to see, using the quadratic formula, that <span class="process-math">\(x^2+x+1\)</span> and <span class="process-math">\(x^2-x+1\)</span> are irreducible over <span class="process-math">\(\R\text{,}\)</span> since they have no real roots. Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x^6-1=(x-1)(x+1)(x^2+x+1)(x^2-x-1)
+\end{equation*}
+</div>
+<div class="para">is a factorization of <span class="process-math">\(x^6-1\)</span> into irreducible real polynomials.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Using <a href="s_deMoivre.html#th_roots_unity" class="xref" data-knowl="./knowl/xref/th_roots_unity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.12: Roots of unity">Theorem 1.3.12</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_roots_unity.html">
+\begin{align*}
+x^6-1 \amp =\prod_{k=0}^{5}(x-\zeta_k)\text{,}
+\end{align*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_roots_unity.html">
+\begin{equation*}
+\zeta_k=\cos(2\pi k/6+i\sin 2\pi k /6)=\cos(\pi k/3)+i\sin(\pi k/3)\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_deMoivre.html#eg_factor_sextic">in-context</a></span>
 </body>
 </html>
