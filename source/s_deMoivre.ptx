@@ -196,33 +196,6 @@ l1+l2+l3+S+P+Q+R+t1+t2+t3
             </men>.
         </p>
     </statement>
-    <proof>
-        <p>
-            We seek <m>z=s(\cos\psi+i\sin\psi)</m> (<m>s\geq 0</m>, <m>\psi\in \R</m>) satisfying <m>z^n=w</m>. By de Moivre's formula, this is equivalent to 
-            <me>
-                s^n(\cos(n\psi)+i\sin(n\psi))=r(\cos\theta+i\sin\theta)
-            </me>.
-            By <xref ref="th_polar_form"/>, this is true if and only if 
-            <md>
-                <mrow>s^n \amp = r</mrow>
-                <mrow>n\psi \amp = \theta+2\pi k \text{ for some } k\in \Z</mrow>
-            </md>.
-            Solving for <m>s</m> and <m>\psi</m> we conclude that 
-            <md>
-                <mrow>s \amp = \sqrt[n]{r}</mrow>
-                <mrow>\psi \amp = \theta/n +2\pi k/n \text{ for some } k\in \Z</mrow>
-            </md>.
-            It follows that the complex numbers 
-            <me>
-                z_k=\sqrt[n]{r}(\cos(\theta/n+2\pi k/n)+i\sin(\theta/n+2\pi k/n)), 0\leq k\leq n-1
-            </me>
-            are <m>n</m>-th roots of <m>w</m>. That they are <em>distinct</em> follows again from <xref ref="th_polar_form"/> and the fact that  
-            <me>
-               (\theta/n+2\pi k/n)-(\theta/n+2\pi j/n) = 2\pi(k-j)/n &lt; 2\pi
-            </me>
-            for all <m>0\leq j&lt; k\leq n-1</m>.  Lastly, since the polynomial <m>f(z)=z^n-w</m> has <em>at most</em> <m>n</m> distinct roots (see <xref ref="th_poly_elem"/>), the <m>n</m> roots <m>z_k</m> are the only <m>n</m>-th roots of <m>w</m>.   
-        </p>
-    </proof>
 </theorem>
 </subsection>
 <subsection xml:id="ss_polynomials">
