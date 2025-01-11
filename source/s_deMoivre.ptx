@@ -85,7 +85,13 @@ Compute <m>(1+i)^{14}</m>. Express you answer in both polar form and in the form
 </statement>
 <solution>
 <p>
-
+First write <m>1+i</m> in polar form as <m>1+i=\sqrt{2}(\cos \pi/4+i\sin\pi/4)</m>. Using de Moivre's formula, we have 
+<md>
+    <mrow>(1+i)^{14} \amp = (\sqrt{2})^{14}(\cos (14\pi/4)+i\sin(14\pi/ 4)</mrow>
+    <mrow> \amp = 2^{14/2}(\cos 7\pi/2+i\sin 7\pi/2) \amp (\sqrt{2}=2^{1/2}</mrow>
+    <mrow> \amp 128(0-i) \amp (7\pi/2=3\pi/2+2\pi)</mrow>
+    <mrow> \amp =-128i</mrow>.
+</md>
 </p>
 </solution>
 </example>
@@ -102,7 +108,16 @@ Use de Moivre's formula to prove the double-angle formulas:
 </statement>
 <solution>
 <p>
-
+Let <m>z=\cos\theta+i\sin\theta</m>. We may compute <m>z^2=z\, z</m> using the algebraic definition of complex multiplication, or by using de Moivre's formula. Equating the two resulting expressions yields 
+<me>
+    \cos 2\theta+i\sin 2\theta =\cos^2\theta-\sin^2\theta+ 2\sin\theta\cos\theta i
+</me>.
+From the definition of complex number equality, it follows that 
+<md>
+    <mrow>\cos 2\theta \amp =\cos^2\theta-\sin^2\theta</mrow>
+    <mrow>\sin 2\theta \amp = 2\sin\theta\cos\theta</mrow>
+</md>,
+as desired.
 </p>
 </solution>
 </example>
@@ -123,13 +138,11 @@ where
 <me>
     {n\choose k}=\frac{n!}{k!\, (n-k)!}
 </me>.
-
-
 </p>
 </statement>
 <solution>
 <p>
-
+Let as an exercise. 
 </p>
 </solution>
 </example>
@@ -161,7 +174,27 @@ Find all cube-roots of <m>8i</m> and sketch these as points in the complex plane
 </statement>
 <solution>
 <p>
-
+First write <m>8i</m> in polar form as <m>8i=8(\cos \pi/2+i\sin \pi/2)</m>. If <m>z=r(\cos\theta+i\sin\theta)</m> satisfies <m>z^3=8i</m>, then using de Moivre's theorem we would have 
+<me>
+    r^3(\cos 3\theta+i\sin 3\theta)=8(\cos \pi/2+i\sin \pi/2)
+</me>.
+Using <xref ref="th_polar_form"/> we conclude that we must have 
+<md>
+    <mrow>r^3 \amp =8</mrow>
+    <mrow>3\theta \amp =\pi/2+2\pi k \text{ for some } k\in \Z</mrow>
+</md>,
+or equivalently, 
+<md>
+    <mrow>r \amp =2</mrow>
+    <mrow>\theta \amp = \pi/6+2\pi k/3 \text{ for some } k\in \Z </mrow>
+</md>.
+Taking <m>k=0,1,2</m>, we see that 
+<md>
+    <mrow>z_0 \amp = 2(\cos(\pi/6)+i\sin(\pi/6))=\sqrt{3}+i</mrow>
+    <mrow>z_1 \amp = 2(\cos(5\pi/6)+i\sin(5\pi/6))=-\sqrt{3}+i</mrow>
+    <mrow>z_2 \amp = 2(\cos(3\pi/2)+i\sin(3\pi/2))=-2i</mrow>
+</md>
+are cube-roots of <m>8i</m>. We claim further that these are all of the cube-roots of <m>8i</m>. This follows from the fact that any angle of the form <m>\pi/6+2\pi k/n</m> is obtained from one of the three angles <m>pi/6, 5\pi/6, 3\pi/2</m> by adding a multiple of <m>2\pi</m>. 
 </p>
 <figure xml:id="fig_cuberoots_8i">
     <caption>Cube-roots of <m>8i</m></caption>
@@ -187,6 +220,9 @@ l1+l2+l3+S+P+Q+R+t1+t2+t3
 </figure>
 </solution>
 </example>
+<p>
+    The reasoning in <xref ref="eg_3d_root"/> can easily be generalized to produce a procedure for computing <m>n</m>-th roots of an arbitrary complex number. 
+</p>
 <theorem xml:id="th_nth_roots">
     <title><m>n</m>-th roots</title>
     <statement>
@@ -225,6 +261,30 @@ l1+l2+l3+S+P+Q+R+t1+t2+t3
         </p>
     </proof>
 </theorem>
+<remark>
+<title>Visualizing <m>n</m>-th roots</title>
+<p>
+Let <m>z_0, z_1, \dots, z_{n-1}</m> be the distinct <m>n</m>-th roots of the nonzero complex number <m>w</m>, as described in <xref ref="eq_nth_roots"/>. We make some geometric observations about the <m>z_k</m>: 
+<ul>
+    <li>
+        <p>
+            Each <m>z_k</m> has modulus <m>\sqrt[n]{r}</m>, and thus lives on the circle of radius <m>\sqrt[n]{r}</m> centered at the origin. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Looking at the arguments of the <m>z_k</m>, we see that for each <m>k\geq 1</m>, <m>z_k</m> is obtained from <m>z_{k-1}</m> by a rotation of <m>2\pi/n</m> about the origin. It follows that starting with <m>z_0</m>, we can obtain the other roots by successive rotation by <m>2\pi/n</m>.  
+        </p>
+    </li>
+    <li>
+        <p>
+            From the previous observations, it follows that the <m>n</m> distinct <m>n</m>-th roots of <m>w</m> are the vertices of a regular <m>n</m>-gon inscribed in the circle of radius <m>\sqrt[n]{r}</m> centered at the origin. (See <xref ref="fig_cuberoots_8i"/>.)
+        </p>
+    </li>
+</ul>
+</p>
+</remark>
+
 </subsection>
 <subsection xml:id="ss_polynomials">
     <title>Polynomials</title>
@@ -248,7 +308,7 @@ l1+l2+l3+S+P+Q+R+t1+t2+t3
       its <term>leading coefficient</term>, and <m>n</m> the <term>degree</term>, denoted <m>\deg f=n</m>. 
       </p>
       <p>
-        Lastly, a <term>root</term> (or <term>zero</term>) of <m>f</m> is a a complex number <m>w</m> satsifying  <m>f(w)=0</m>. 
+        Lastly, a <term>root</term> (or <term>zero</term>) of <m>f</m> is a a complex number <m>w</m> satisfying  <m>f(w)=0</m>. 
       </p>
   </statement>
 </definition>
@@ -346,7 +406,37 @@ Give two distinct factorizations of <m>f(x)=x^6-1</m>:
 </statement>
 <solution>
 <p>
-
+<ol>
+    <li>
+        <p>
+            Using the difference of squares factoring identity, we have 
+            <me>
+                x^6-1=(x^3-1)(x^3+1)
+            </me>.
+            Next, since <m>1</m> is a root of <m>x^3-1</m>, and <m>-1</m> is a root of <m>x^3+1</m>, we can use polynomial division to factor 
+            <md>
+                <mrow>x^3-1 \amp = (x-1)(x^2+x+1) \amp (x^3+1)\amp=(x+1)(x^2-x+1)</mrow>
+            </md>.
+            It is now easy to see, using the quadratic formula, that <m>x^2+x+1</m> and <m>x^2-x+1</m> are irreducible over <m>\R</m>, since they have no real roots. Thus 
+            <me>
+                x^6-1=(x-1)(x+1)(x^2+x+1)(x^2-x-1)
+            </me>
+            is a factorization of <m>x^6-1</m> into irreducible real polynomials. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Using <xref ref="th_roots_unity"/>, we have 
+            <md>
+                <mrow>x^6-1 \amp =\prod_{k=0}^{5}(x-\zeta_k)</mrow>
+            </md>,
+            where 
+            <me>
+                \zeta_k=\cos(2\pi k/6+i\sin 2\pi k /6)=\cos(\pi k/3)+i\sin(\pi k/3)
+            </me>.
+        </p>
+    </li>
+</ol>
 </p>
 </solution>
 </example>
