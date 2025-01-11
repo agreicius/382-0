@@ -188,6 +188,7 @@ l1+l2+l3+S+P+Q+R+t1+t2+t3
 </solution>
 </example>
 <theorem xml:id="th_nth_roots">
+    <title><m>n</m>-th roots</title>
     <statement>
         <p>
             Let <m>n</m> be a positive integer. A nonzero complex number <m>w</m> has <m>n</m> distinct <m>n</m>-th roots. In more detail, writing <m>w</m> in polar form as <m>w=r(\cos\theta+i\sin\theta)</m>, the <m>n</m>-th roots of <m>w</m> are <m>z_0,z_1,\dots, z_{n-1}</m>, where for all <m>0\leq k\leq n-1</m>, we have 
