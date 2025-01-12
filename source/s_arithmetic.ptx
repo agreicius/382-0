@@ -135,7 +135,7 @@ we see that the real numbers are represented geometrically as the <m>x</m>-axis 
                         <p>
                             We define the <term>sum</term>  of <m>z</m> and <m>w</m>, denoted <m>z+w</m>, as 
                             <mdn >
-                                <mrow xml:id="eq_sum">z+w \amp =(a+b)+i(c+d)</mrow>
+                                <mrow xml:id="eq_sum">z+w \amp =(a+c)+i(b+d)</mrow>
                             </mdn>.
                         </p>
                     </li>
