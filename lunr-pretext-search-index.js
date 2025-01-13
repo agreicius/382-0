@@ -928,6 +928,168 @@ var ptx_lunr_docs = [
   "body": " Fundamental theorem of algebra   Let be a nonconstant polynomial: , .   Any polynomial of degree has a complex root: , there is a such that .    As a consequence, any polynomial of degree factors completely over as for some complex numbers , .      "
 },
 {
+  "id": "s_topo",
+  "level": "1",
+  "url": "s_topo.html",
+  "type": "Section",
+  "number": "1.4",
+  "title": "Topology of <span class=\"process-math\">\\(\\C\\)<\/span>",
+  "body": " Topology of   Recall that the modulus of the difference of two complex numbers and is precisely the distance between and , considered as points in . As a result of , this distance function satisfies the following important properties:   Positivity   for all , and if and only if ;    Triangle inequality   for all .   A set together with a binary function satisfying properties (i)-(ii) is called a metric space . We can use the distance function of a metric space to define what turns out to be a useful and natural family of subsets, called the open sets . We illustrate this definition below in the special case of and . More generally, a topological space is a set together with a set of subsets of that satisfy certain axioms. It is easy to show that the collection of sets we define for below satisfies these axioms, making together with     Open and closed sets   Open and closed discs   Given , the distance between and , denoted , is defined as .  Given and the open disc of radius centered at , denoted , is defined as . Similarly, the closed disc of radius centered at , denoted , is defined as .     Open and closed discs    Open disc   Open disc      Closed disc   Closed disc        Open sets of   A set is open if for all there is an such that . In plain English, a set is open if whenever it contains an element , it contains an entire open disc centered at .     Open sets   Show that the following sets are open in .    where and .                    Suppose , and let . By definition we have and hence . We claim that , and hence that is open. Indeed, given any , we have . We conclude that and hence that , as desired.    Take and write . We have by definition, and it is easy to see that .    Given , let , and let . It is easy to see that .       The set in is an example of an open annulus. These types of sets are important enough to warrant their own definition.   Annulus   Given and positive integers , the set is called an open annulus centered at .       An open annulus     The following theorem indicates that the property of openness is preserved by various natural set operations.   Open sets      The empty set is open, as is the set itself.    Finite intersection  Finite intersections of open sets are open.    Arbitrary union  Arbitrary unions of open sets are open.       Complementary to the notion of open sets is that of closed sets, which we now define.   Closed sets   A set is closed if its complement is open.     Open, closed, neither   Decide whether the given set is (a) open and (b) closed.         , where and .     , where and .               We know from that is open. Since is open, we conclude that is also closed.    The set is not open: if you take any on the circle of radius centered at , it is easy to see that any open disc around will contain an element whose distance to is greater than .  The set is closed. We have , and it is not difficult to show that this set is open. Indeed, given , you can show that , where .    The set is neither open nor closed. It is easy to see that is an element of , but not open disc centered at is contained in . Furthermore, the complement of , is not open. Indeed, we have , but every open disc around contains some element of .       Since closed sets are defined as complement of open sets, a little bit of set theory yields the following complementary result to .       The empty set is closed, as is the set itself.    Finite union  Finite unions of closed sets are closed.    Arbitrary intersection  Arbitrary intersections of closed sets are closed.       You may have noticed in that we paid special attention to what we call the boundaries of the given sets. We will now give a rigorous definition of this notion, and then reformulate open and closed in terms of it.   Boundary   Let be a subset of . An element is a boundary point of if every open disc contains at least one element from and one element from the complement . The boundary of , denoted , is the set of all boundary points of .     Boundary   Compute the boundary of the given set.              , where and .     , where and .                 Open and closed via boundaries   Let be a nonempty subset of .    is open if and only if it does not contain any of its boundary points.     is closed if and only if it contains all of its boundary points.         Connected sets  The topological notion of a connected set will also play an important role in our theory. Below we give two separate notions of connected sets, connected and polygonally connected , that turn out to be equivalent for open sets. Both notions have their advantages, depending on the context. Although polygonally connectedness is admittedly more intuitive than connectedness, you can rest assured that there are many situations where the more abstract connectedness definition comes to our aid. This is why we provide both here.   Connected set   A set is connected if whenever we have open sets and satisfying and , then either or .     Polygonally connected   A nonempty set is polygonally connected if, given any points there is a polygonal path lying within that begins at and ends at .     A polygonally connected set   A polygonally connected set      Connected sets   Let be a nonempty set.   If is polygonally connected, then it is connected.    If is open, then is polygonally connected if and only if is connected.        "
+},
+{
+  "id": "d_discs",
+  "level": "2",
+  "url": "s_topo.html#d_discs",
+  "type": "Definition",
+  "number": "1.4.1",
+  "title": "Open and closed discs.",
+  "body": " Open and closed discs   Given , the distance between and , denoted , is defined as .  Given and the open disc of radius centered at , denoted , is defined as . Similarly, the closed disc of radius centered at , denoted , is defined as .   "
+},
+{
+  "id": "fig_disc",
+  "level": "2",
+  "url": "s_topo.html#fig_disc",
+  "type": "Figure",
+  "number": "1.4.2",
+  "title": "",
+  "body": " Open and closed discs    Open disc   Open disc      Closed disc   Closed disc      "
+},
+{
+  "id": "d_open",
+  "level": "2",
+  "url": "s_topo.html#d_open",
+  "type": "Definition",
+  "number": "1.4.3",
+  "title": "Open sets of <span class=\"process-math\">\\(\\C\\)<\/span>.",
+  "body": " Open sets of   A set is open if for all there is an such that . In plain English, a set is open if whenever it contains an element , it contains an entire open disc centered at .   "
+},
+{
+  "id": "eg_open",
+  "level": "2",
+  "url": "s_topo.html#eg_open",
+  "type": "Example",
+  "number": "1.4.4",
+  "title": "Open sets.",
+  "body": " Open sets   Show that the following sets are open in .    where and .                    Suppose , and let . By definition we have and hence . We claim that , and hence that is open. Indeed, given any , we have . We conclude that and hence that , as desired.    Take and write . We have by definition, and it is easy to see that .    Given , let , and let . It is easy to see that .      "
+},
+{
+  "id": "d_annulus",
+  "level": "2",
+  "url": "s_topo.html#d_annulus",
+  "type": "Definition",
+  "number": "1.4.5",
+  "title": "Annulus.",
+  "body": " Annulus   Given and positive integers , the set is called an open annulus centered at .   "
+},
+{
+  "id": "fig_annulus",
+  "level": "2",
+  "url": "s_topo.html#fig_annulus",
+  "type": "Figure",
+  "number": "1.4.6",
+  "title": "",
+  "body": "   An open annulus    "
+},
+{
+  "id": "th_open",
+  "level": "2",
+  "url": "s_topo.html#th_open",
+  "type": "Theorem",
+  "number": "1.4.7",
+  "title": "Open sets.",
+  "body": " Open sets      The empty set is open, as is the set itself.    Finite intersection  Finite intersections of open sets are open.    Arbitrary union  Arbitrary unions of open sets are open.      "
+},
+{
+  "id": "d_closed",
+  "level": "2",
+  "url": "s_topo.html#d_closed",
+  "type": "Definition",
+  "number": "1.4.8",
+  "title": "Closed sets.",
+  "body": " Closed sets   A set is closed if its complement is open.   "
+},
+{
+  "id": "eg_open_closed_neither",
+  "level": "2",
+  "url": "s_topo.html#eg_open_closed_neither",
+  "type": "Example",
+  "number": "1.4.9",
+  "title": "Open, closed, neither.",
+  "body": " Open, closed, neither   Decide whether the given set is (a) open and (b) closed.         , where and .     , where and .               We know from that is open. Since is open, we conclude that is also closed.    The set is not open: if you take any on the circle of radius centered at , it is easy to see that any open disc around will contain an element whose distance to is greater than .  The set is closed. We have , and it is not difficult to show that this set is open. Indeed, given , you can show that , where .    The set is neither open nor closed. It is easy to see that is an element of , but not open disc centered at is contained in . Furthermore, the complement of , is not open. Indeed, we have , but every open disc around contains some element of .      "
+},
+{
+  "id": "th_closed",
+  "level": "2",
+  "url": "s_topo.html#th_closed",
+  "type": "Theorem",
+  "number": "1.4.10",
+  "title": "",
+  "body": "     The empty set is closed, as is the set itself.    Finite union  Finite unions of closed sets are closed.    Arbitrary intersection  Arbitrary intersections of closed sets are closed.      "
+},
+{
+  "id": "d_boundary",
+  "level": "2",
+  "url": "s_topo.html#d_boundary",
+  "type": "Definition",
+  "number": "1.4.11",
+  "title": "Boundary.",
+  "body": " Boundary   Let be a subset of . An element is a boundary point of if every open disc contains at least one element from and one element from the complement . The boundary of , denoted , is the set of all boundary points of .   "
+},
+{
+  "id": "eg_boundary",
+  "level": "2",
+  "url": "s_topo.html#eg_boundary",
+  "type": "Example",
+  "number": "1.4.12",
+  "title": "Boundary.",
+  "body": " Boundary   Compute the boundary of the given set.              , where and .     , where and .               "
+},
+{
+  "id": "th_boundary",
+  "level": "2",
+  "url": "s_topo.html#th_boundary",
+  "type": "Theorem",
+  "number": "1.4.13",
+  "title": "Open and closed via boundaries.",
+  "body": " Open and closed via boundaries   Let be a nonempty subset of .    is open if and only if it does not contain any of its boundary points.     is closed if and only if it contains all of its boundary points.      "
+},
+{
+  "id": "d_connected",
+  "level": "2",
+  "url": "s_topo.html#d_connected",
+  "type": "Definition",
+  "number": "1.4.14",
+  "title": "Connected set.",
+  "body": " Connected set   A set is connected if whenever we have open sets and satisfying and , then either or .   "
+},
+{
+  "id": "d_polygon_connected",
+  "level": "2",
+  "url": "s_topo.html#d_polygon_connected",
+  "type": "Definition",
+  "number": "1.4.15",
+  "title": "Polygonally connected.",
+  "body": " Polygonally connected   A nonempty set is polygonally connected if, given any points there is a polygonal path lying within that begins at and ends at .   "
+},
+{
+  "id": "fig_polygon_connected",
+  "level": "2",
+  "url": "s_topo.html#fig_polygon_connected",
+  "type": "Figure",
+  "number": "1.4.16",
+  "title": "",
+  "body": " A polygonally connected set   A polygonally connected set    "
+},
+{
+  "id": "th_connected",
+  "level": "2",
+  "url": "s_topo.html#th_connected",
+  "type": "Theorem",
+  "number": "1.4.17",
+  "title": "Connected sets.",
+  "body": " Connected sets   Let be a nonempty set.   If is polygonally connected, then it is connected.    If is open, then is polygonally connected if and only if is connected.      "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
