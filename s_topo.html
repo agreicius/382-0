@@ -412,6 +412,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_open_closed" class="internal"><span class="title">Open and closed sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_connected" class="internal"><span class="title">Connected sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_point_infty" class="internal"><span class="title">Point at infinity</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -638,6 +639,39 @@ U=\C-\overline{B}_r(z_0)=\{z\in \C\colon d(z,z_0)&gt; r_0\}\text{,}
 <li id="th_connected-2-1-2-1"><div class="para" id="th_connected-2-1-2-1-1">If <span class="process-math">\(Y\)</span> is polygonally connected, then it is connected.</div></li>
 <li id="th_connected-2-1-2-2"><div class="para" id="th_connected-2-1-2-2-1">If <span class="process-math">\(Y\)</span> is open, then <span class="process-math">\(Y\)</span> is polygonally connected if and only if <span class="process-math">\(Y\)</span> is connected.</div></li>
 </ol>
+</div></article></section><section class="subsection" id="ss_point_infty"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Point at infinity</span>
+</h3>
+<div class="para" id="ss_point_infty-2">In calculus we introduce formal notation involving <span class="process-math">\(\infty\)</span> to give us succinct ways of describe values of variables or functions that get arbitrarily large: <span class="process-math">\(x\to \infty\)</span> of <span class="process-math">\(f(x)\to -\infty\text{.}\)</span> We will do the same with complex analysis, and even go one step further: namely, by officially adding a formal element <span class="process-math">\(\infty\)</span> to create the <em class="emphasis">extended complex plane</em>, and extending our notion of open sets to this extended set <span class="process-math">\(\C^*\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="d_extended_complex_plane"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.18</span><span class="period">.</span><span class="space"> </span><span class="title">Extended complex plane.</span>
+</h4>
+<div class="para" id="d_extended_complex_plane-2-1">The <dfn class="terminology">extended complex plane</dfn> is the set <span class="process-math">\(\C^*=\C\cup \{\infty\}\text{,}\)</span> where <span class="process-math">\(\infty\)</span> is treated as a formal element.</div> <div class="para logical" id="d_extended_complex_plane-2-2">
+<div class="para">Given <span class="process-math">\(R&gt; 0\text{,}\)</span> the set <span class="process-math">\(B_R(\infty)\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B_R(\infty)=\{\infty\}\cup \{z\in \C\colon \abs{z}&gt; R\}
+\end{equation*}
+</div>
+<div class="para">is called an <dfn class="terminology">open disc</dfn> centered at <span class="process-math">\(\infty\text{.}\)</span> We extend our notion of open sets on <span class="process-math">\(\C\)</span> to <span class="process-math">\(\C^*\)</span> by declaring that a set <span class="process-math">\(U^*\)</span> containing <span class="process-math">\(\infty\)</span> is open if and only if <span class="process-math">\(U=U^*\cap \C\)</span> is open in <span class="process-math">\(\C\)</span> and <span class="process-math">\(U^*\)</span> contains <span class="process-math">\(B_R(\infty)\)</span> for some <span class="process-math">\(R&gt; 0\text{.}\)</span>
+</div>
+</div></article><div class="para" id="ss_point_infty-4">We can make sense of our new topological space <span class="process-math">\(\C^*\)</span> using the <em class="emphasis">stereographic projection</em>.</div>
+<article class="definition definition-like" id="d_stereo_proj"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.19</span><span class="period">.</span><span class="space"> </span><span class="title">Stereographic projection.</span>
+</h4>
+<div class="para logical" id="d_stereo_proj-2-1">
+<div class="para">Let <span class="process-math">\(S^2=\{P\in \R^3\colon \norm{P}=1\}\text{,}\)</span> and let <span class="process-math">\(N=(0,0,1)\in S^2\text{.}\)</span> Identify <span class="process-math">\(\C\)</span> as the <span class="process-math">\(xy\)</span>-plane lying in <span class="process-math">\(\R^3\text{.}\)</span> The <dfn class="terminology">stereographic projection</dfn> is the map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi\colon S^2\rightarrow \C^*
+\end{equation*}
+</div>
+<div class="para">defined as follows:</div>
+<ul class="disc" id="d_stereo_proj-2-1-8">
+<li id="d_stereo_proj-2-1-8-1"><div class="para" id="d_stereo_proj-2-1-8-1-1"><span class="process-math">\(\phi(N)=\infty\text{;}\)</span></div></li>
+<li id="d_stereo_proj-2-1-8-2"><div class="para" id="d_stereo_proj-2-1-8-2-1">given <span class="process-math">\(P\in S^2-\{N\}\text{,}\)</span> <span class="process-math">\(\phi(P)=a+bi\text{,}\)</span> where <span class="process-math">\(Q=(a,b,0)\)</span> is the intersection of the unique line passing through <span class="process-math">\(N\)</span> and <span class="process-math">\(P\)</span> with the <span class="process-math">\(xy\)</span>-plane.</div></li>
+</ul>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_deMoivre.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
