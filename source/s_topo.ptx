@@ -447,6 +447,59 @@ P+R1+R2+R3+P+Q+p+t1+t2
 </theorem>
 
 </subsection>
+<subsection xml:id="ss_point_infty">
+    <title>Point at infinity</title>
+    <p>
+        In calculus we introduce formal notation involving <m>\infty</m> to give us succinct ways of describe values of variables or functions that get arbitrarily large: <m>x\to \infty</m> of <m>f(x)\to -\infty</m>. We will do the same with complex analysis, and even go one step further: namely, by officially adding a formal element <m>\infty</m> to create the <em>extended complex plane</em>, and extending our notion of open sets to this extended set <m>\C^*</m>. 
+    </p>
+    <definition xml:id="d_extended_complex_plane">
+    <title>Extended complex plane</title>
+    <statement>
+    <p>
+    The <term>extended complex plane</term> is the set <m>\C^*=\C\cup \{\infty\}</m>, where <m>\infty</m> is treated as a formal element. 
+    </p>
+    <p>
+        Given <m>R&gt; 0</m>, the set <m>B_R(\infty)</m> defined as 
+        <me>
+            B_R(\infty)=\{\infty\}\cup \{z\in \C\colon \abs{z}&gt; R\}
+        </me>
+        is called an <term>open disc</term> centered at <m>\infty</m>. We extend our notion of open sets on <m>\C</m> to <m>\C^*</m> by declaring that a set <m>U^*</m> containing <m>\infty</m> is open 
+        if and only if <m>U=U^*\cap \C</m> is open in <m>\C</m> and <m>U^*</m> contains <m>B_R(\infty)</m> for some <m>R&gt; 0</m>.  
+    </p>
+    </statement>
+    </definition>
+    <p>
+        We can make sense of our new topological space <m>\C^*</m> using the <em>stereographic projection</em>. 
+    </p>
+    <definition xml:id="d_stereo_proj">
+    <title>Stereographic projection</title>
+    <statement>
+    <p>
+    Let <m>S^2=\{P\in \R^3\colon \norm{P}=1\}</m>, and let <m>N=(0,0,1)\in S^2</m>. Identify <m>\C</m> as the <m>xy</m>-plane lying in <m>\R^3</m>. The <term>stereographic projection</term> is the map 
+    <me>
+        \phi\colon S^2\rightarrow \C^*
+    </me>
+    defined as follows: 
+    <ul>
+        <li>
+            <p>
+                <m>\phi(N)=\infty</m>;
+            </p>
+        </li>
+        <li>
+            <p>
+                given <m>P\in S^2-\{N\}</m>, <m>\phi(P)=a+bi</m>, where <m>Q=(a,b,0)</m> is the intersection of the unique line passing through <m>N</m> and <m>P</m> with the <m>xy</m>-plane. 
+            </p>
+        </li>
+    </ul>
+    
+
+    </p>
+    </statement>
+    </definition>
+    
+    
+</subsection>
     
 
 </section>
