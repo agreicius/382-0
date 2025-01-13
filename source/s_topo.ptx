@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_topo" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Topology of <m>\C</m></title>
+<introduction>
+
+<p>
+    Recall that the modulus <m>\abs{z-w}</m> of the difference of two complex numbers <m>z</m> and <m>w</m> is precisely the distance <m>d(z,w)</m> between <m>z</m> and <m>w</m>, considered as points in <m>\R^2</m>. As a result of <xref ref="th_modulus"/>, this distance function 
+    <m>
+        d(z,w)=\abs{z-w}
+    </m> satisfies the following important properties: 
+    <ol marker="(i)">
+        <li>
+            <title>Positivity</title>
+            
+            
+            <p>
+                <m>d(z,w)\geq 0</m> for all <m>z,w\in \C</m>, and <m>d(z,w)=0</m> if and only if <m>z=w</m>;
+            </p>
+        </li>
+        <li>
+            <title>Triangle inequality</title> 
+            <p>
+                <m>d(z,w)+d(w,u)\leq d(z,u)</m> for all <m>z,w,u\in \C</m>. 
+            </p>
+        </li>
+    </ol>
+    A set together with a binary function <m>d</m> satisfying properties (i)-(ii) is called a <em>metric space</em>. We can use the distance function of a metric space to define what turns out to be a useful and natural family <m>\mathcal{U}</m> of subsets, called the <em>open sets</em>. We illustrate this definition below in the special case of <m>\C</m> and <m>d(z,w)=\abs{z-w}</m>. More generally, a <em>topological space</em> is a set <m>X</m> together with a set <m>\mathcal{U}</m> of subsets of <m>X</m> that satisfy certain axioms. It is easy to show that the collection of sets <m>\mathcal{U}</m> we define for <m>\C</m> below satisfies these axioms, making <m>\C</m> together with <m>d</m>   
+</p>
+</introduction>
+<subsection xml:id="ss_open_closed">
+    <title>Open and closed sets</title>
+    
+
+<definition xml:id="d_discs">
+<title>Open and closed discs</title>
+<statement>
+<p>
+Given <m>z,w\in \C</m>,  the <term>distance</term> between <m>z</m> and <m>w</m>, denoted <m>d(z,w)</m>, is defined as <m>d(z,w)=\abs{z-w}</m>.
+</p>
+<p>
+    Given <m>z_0\in \C</m> and <m>r\leq 0</m> the <term>open disc</term> of radius <m>r</m> centered at <m>z_0</m>, denoted <m>B_r(z_0)</m>, is defined as 
+    <me>
+        B_r(z_0)=\{z\in \C\colon d(z,z_0)&lt; r\}=\{z\in \C\colon \abs{z-z_0}&lt; r\}
+    </me>.
+    Similarly, the <term>closed disc</term> of radius <m>r</m> centered at <m>z_0</m>, denoted <m>\overline{B}_r(z_0)</m>, is defined as 
+    <me>
+        \overline{B}_r(z_0)=\{z\in \C\colon d(z,z_0)\leq r\}=\{z\in \C\colon \abs{z-z_0}\leq r\}
+    </me>.
+</p>
+</statement>
+</definition>
+<figure xml:id="fig_disc">
+    <caption>Open and closed discs</caption>
+    <sidebyside>
+        <figure xml:id="fig_open_disc">
+            <caption>Open disc <m>B_r(z_0)</m></caption>
+            <image>
+                <shortdescription>Open disc</shortdescription>
+                <sageplot>
+x,y=var('x y')
+R=region_plot((x-2)^2+(y-2)^2&lt; 9,(-2,5),(-2,5),incol="lightblue", bordercol="red", borderstyle="dashed",alpha=.7,ticks=[[],[]])
+P=point((2,2),color="blue", size=50)
+<!-- l1=line([[2,2],[1,2]],color="black") -->
+l2=line([[2,2],[2+3/sqrt(2), 2+3/sqrt(2)]],color="black")
+<!-- t1=text("$r$", (1.5,2.25), color="black", fontsize=14) -->
+t2=text("$r$", (2+1.5/sqrt(2)-.2,2+1.5/sqrt(2)+.2), color="black", fontsize=14)
+t3=text("$B_{r}(z_0)$", (1,4),color="black", fontsize=14)
+t4=text("$z_0$", (2,2.4),color="black", fontsize=14)
+R+P+l2+t2+t3+t4
+</sageplot>
+            </image>
+        </figure>
+<figure xml:id="fig_closed_disc">
+            <caption>Closed disc <m>\overline{B}_r(z_0)</m></caption>
+            <image>
+                <shortdescription>Closed disc</shortdescription>
+                <sageplot>
+x,y=var('x y')
+R=region_plot((x-2)^2+(y-2)^2&lt; 9,(-2,5),(-2,5),incol="lightblue", bordercol="blue",alpha=.7,ticks=[[],[]])
+P=point((2,2),color="blue", size=50)
+<!-- l1=line([[2,2],[1,2]],color="black") -->
+l2=line([[2,2],[2+3/sqrt(2), 2+3/sqrt(2)]],color="black")
+<!-- t1=text("$r$", (1.5,2.25), color="black", fontsize=14) -->
+t2=text("$r$", (2+1.5/sqrt(2)-.2,2+1.5/sqrt(2)+.2), color="black", fontsize=14)
+t3=text("$\\overline{B}_{r}(z_0)$", (1,4),color="black", fontsize=14)
+t4=text("$z_0$", (2,2.4),color="black", fontsize=14)
+R+P+l2+t2+t3+t4
+</sageplot>
+            </image>
+        </figure>
+    </sidebyside>
+</figure>
+<definition xml:id="d_open">
+<title>Open sets of <m>\C</m></title>
+<statement>
+<p>
+    A set <m>U\subseteq \C</m> is <term>open</term> if for all <m>z\in U</m> there is an <m>r &gt; 0</m> such that <m>B_{r}(z)\subseteq U</m>. In plain English, a set is open if whenever it contains an element <m>z</m>, it contains an entire open disc centered at <m>z</m>.
+</p>
+</statement>
+</definition>
+<example xml:id="eg_open">
+<title>Open sets</title>
+<statement>
+<p>
+Show that the following sets are open in <m>\C</m>. 
+<ol>
+    <li>
+        <p>
+            <m>B_r(z_0)</m> where <m>z_0\in \C</m> and <m>r&gt; 0</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\HH=\{z\in \C\colon \Re z &gt; 0\}</m>
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>A=\{z\in \C\colon 1&lt; \abs{z-(1+i)} &lt; 2\}</m>
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol>
+    <li>
+        <p>
+            Suppose <m>w\in B_r(z)</m>, and let <m>s=d(w,z)=\abs{w-z}</m>. By definition we have <m>s&lt; r</m> and hence <m>r'=r-s &gt; 0</m>. We claim that <m>B_{r'}(w)\subseteq B_r(z)</m>, and hence that <m>B_r(w)</m> is open. Indeed, given any <m>u\in B_{r'}(w)</m>, we have 
+            <md>
+                <mrow>d(u,z) \amp \leq d(u,w)+d(w,z) \amp (\text{tri. ineq.})</mrow>
+                <mrow> \amp &lt; r'+s \amp (u\in B_{r'}(w), d(w,z)=s)</mrow>
+                <mrow> \amp = r-s+s</mrow>
+                <mrow> \amp = r</mrow>
+            </md>.
+            We conclude that <m>d(u,z)&lt; r</m> and hence that <m>u\in B_r(z)</m>, as desired. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Take <m>z\in U</m> and write <m>z=a+bi</m>. We have <m>b&gt; 0</m> by definition, and it is easy to see that <m>B_b(z)\subseteq \HH</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+         Given  <m>z\in A</m>, let <m>s=d(z,1+i)=\abs{z-(1+i)}</m>, and let <m>r=\min\{s-1, 2-s\}</m>. It is easy to see that <m>B_{r}(z)\subseteq A</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</solution>
+</example>
+<p>
+    The set <m>A</m> in <xref ref="eg_open"/> is an example of an open annulus. These types of sets are important enough to warrant their own definition.  
+</p>
+<definition xml:id="d_annulus">
+<title>Annulus</title>
+<statement>
+<p>
+Given <m>z_0\in \C</m> and positive integers <m>0&lt; r &lt; s</m>, the set 
+<me>
+    \{z\in \C\colon r&lt; d(z,z_0) &lt; s\}
+</me>
+is called an <term>open annulus</term> centered at <m>z_0</m>. 
+
+</p>
+</statement>
+</definition>
+<figure xml:id="fig_annulus">
+    <caption><m>A=\{z\in \C\colon r&lt; d(z,z_0) &lt; s\}</m></caption>
+    <image width="50%">
+        <shortdescription>An open annulus</shortdescription>
+<sageplot>
+x,y=var('x y')
+R=region_plot([1&lt; (x-2)^2+(y-2)^2, (x-2)^2+(y-2)^2&lt; 9],(-2,5),(-2,5),incol="lightblue", bordercol="red", borderstyle="dashed",alpha=.7,ticks=[[],[]])
+P=point((2,2),color="blue", size=50)
+l1=line([[2,2],[1,2]],color="black")
+l2=line([[2,2],[2+3/sqrt(2), 2+3/sqrt(2)]],color="black")
+t1=text("$r$", (1.5,2.25), color="black", fontsize=14)
+t2=text("$s$", (2+1.5/sqrt(2)-.2,2+1.5/sqrt(2)+.2), color="black", fontsize=14)
+t3=text("$A$", (1,4),color="black", fontsize=14)
+t4=text("$z_0$", (2,2.4),color="black", fontsize=14)
+R+P+l1+l2+t1+t2+t3+t4
+</sageplot>
+    </image>
+</figure>
+<p>
+    The following theorem indicates that the property of openness is preserved by various natural set operations. 
+</p>
+<theorem xml:id="th_open">
+    <title>Open sets</title>
+    <statement>
+        <p>
+          <ol>
+            <li>
+                <p>
+                    The empty set <m>\emptyset=\{\}</m> is open, as is the set <m>\C</m> itself. 
+                </p>
+            </li>
+            <li>
+                <title>Finite intersection</title>
+                <p>
+                    Finite intersections of open sets are open. 
+                </p>
+            </li>
+            <li>
+                <title>Arbitrary union</title>
+                <p>
+                    Arbitrary unions of open sets are open. 
+                </p>
+            </li>
+          </ol>  
+        </p>
+    </statement>
+</theorem>
+<p>
+    Complementary to the notion of open sets is that of closed sets, which we now define. 
+</p>
+<definition xml:id="d_closed">
+<title>Closed sets</title>
+<statement>
+<p>
+A set <m>C\subseteq \C</m> is <term>closed</term> if its complement <m>U=\C-C</m> is open. 
+</p>
+</statement>
+</definition>
+<example xml:id="eg_open_closed_neither">
+<title>Open, closed, neither</title>
+<statement>
+<p>
+Decide whether the given set is (a) open and (b) closed. 
+<ol>
+    <li>
+        <p>
+            <m>\emptyset</m>
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\overline{B}_r(z_0)</m>, where <m>z_0\in \C</m> and <m>r&gt; 0</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>C_r(z_0)=\{z\in \C\colon \abs{z-z_0}=r\}</m>, where <m>z_0\in \C</m> and <m>r&gt; 0</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>A=\{z\in \C\colon 3 \leq \abs{z-i} &lt; 5\}</m>
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol>
+    <li>
+        <p>
+            We know from <xref ref="th_open"/> that <m>\emptyset</m> is open. Since <m>\C-\emptyset=\C</m> is open, we conclude that <m>\emptyset</m> is also closed. 
+        </p>
+    </li>
+    <li>
+        <p>
+            The set is not open: if you take any <m>w</m> on the circle <m>C_{r}(z_0)</m> of radius <m>r</m> centered at <m>z_0</m>, it is easy to see that any open disc around <m>w</m> will contain an element whose distance to <m>z_0</m> is greater than <m>r</m>.
+        </p>
+        <p> The set is closed. We have 
+            <me>
+                U=\C-\overline{B}_r(z_0)=\{z\in \C\colon d(z,z_0)&gt; r_0\}
+            </me>,
+            and it is not difficult to show that this set is open. Indeed, given <m>w\in U</m>, you can show that <m>B_{s}(w)\subseteq U</m>, where <m>s=d(w,z_0)-r</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            The set is neither open nor closed. It is easy to see that <m>4i</m> is an element of <m>A</m>, but not open disc centered at <m>4i</m> is contained in <m>A</m>. Furthermore, the complement of <m>A</m>, <m>\C-A</m> is not open. Indeed, we have <m>6i\in \C-A</m>, but every open disc around <m>6i</m> contains some element of <m>A</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</solution>
+</example>
+<p>
+    Since closed sets are defined as complement of open sets, a little bit of set theory yields the following complementary result to <xref ref="th_open"/>. 
+</p>
+<theorem xml:id="th_closed">
+     <statement>
+        <p>
+          <ol>
+            <li>
+                <p>
+                    The empty set <m>\emptyset=\{\}</m> is closed, as is the set <m>\C</m> itself. 
+                </p>
+            </li>
+            <li>
+                <title>Finite union</title>
+                <p>
+                    Finite unions of closed sets are closed. 
+                </p>
+            </li>
+            <li>
+                <title>Arbitrary intersection</title>
+                <p>
+                    Arbitrary intersections of closed sets are closed. 
+                </p>
+            </li>
+          </ol>  
+        </p>
+    </statement>
+</theorem>
+
+<p>
+    You may have noticed in <xref ref="eg_open_closed_neither"/> that we paid special attention to what we call the <em>boundaries</em> of the given sets. We will now give a rigorous definition of this notion, and then reformulate open and closed in terms of it.  
+</p>
+<definition xml:id="d_boundary">
+<title>Boundary</title>
+<statement>
+<p>
+Let <m>Y</m> be a subset of <m>\C</m>. An element <m>z_0\in \C</m> is a <term>boundary point</term> of <m>Y</m> if every open disc <m>B_{r}(z_0)</m> contains at least one element from <m>Y</m> and one element from the complement <m>\C-Y</m>. The <term>boundary</term> of <m>Y</m>, denoted <m>\partial Y</m>, is the set of all boundary points of <m>Y</m>. 
+</p>
+</statement>
+</definition>
+<example xml:id="eg_boundary">
+<title>Boundary</title>
+<statement>
+<p>
+Compute the boundary of the given set.
+<ol>
+    <li>
+        <p>
+            <m>\emptyset</m>
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\C</m>
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>B_{r}(z_0)</m>, where <m>z_0\in \C</m> and <m>r &gt; 0</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\overline{B}_{r}(z_0)</m>, where <m>z_0\in \C</m> and <m>r &gt; 0</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\HH=\{z\in \C\colon \Im z&gt; 0\}</m>
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<theorem xml:id="th_boundary">
+    <title>Open and closed via boundaries</title>
+    <statement>
+        <p>
+            Let <m>Y</m> be a nonempty subset of <m>\C</m>. 
+        <ol>
+            <li>
+                <p>
+                    <m>Y</m> is open if and only if it does not contain any of its boundary points. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>Y</m> is closed if and only if it contains all of its boundary points. 
+                </p>
+            </li>
+        </ol>
+        </p>
+    </statement>
+</theorem>
+
+</subsection>
+<subsection xml:id="ss_connected">
+    <title>Connected sets</title>
+<p>
+    The topological notion of a <em>connected</em> set will also play an important role in our theory. Below we give two separate notions of connected sets, <em>connected</em> and <em>polygonally connected</em>, that turn out to be equivalent for open sets. Both notions have their advantages, depending on the context. Although polygonally connectedness is admittedly more intuitive than connectedness, you can rest assured that there are many situations where the more abstract connectedness definition comes to our aid. This is why we provide both here. 
+</p>
+<definition xml:id="d_connected">
+<title>Connected set</title>
+<statement>
+<p>
+A set <m>Y\subseteq \C</m> is <term>connected</term> if whenever we have open sets <m>U_1</m> and <m>U_2</m> satisfying <m>Y\subseteq U_1\cup U_2</m> and <m>Y\cap U_1\cap U_2=\emptyset</m>, then either <m>Y\subseteq U_1</m> or <m>Y\subseteq U_2</m>. 
+</p>
+</statement>
+</definition>
+<definition xml:id="d_polygon_connected">
+<title>Polygonally connected</title>
+<statement>
+<p>
+A nonempty set <m>Y\subseteq \C</m> is <term>polygonally connected</term> if, given any points <m>z_1, z_2\in Y</m> there is a polygonal path <m>C</m> lying within <m>Y</m> that begins at <m>z_1</m> and ends at <m>z_2</m>. 
+</p>
+</statement>
+</definition>
+<figure xml:id="fig_polygon_connected">
+    <caption>A polygonally connected set</caption>
+    <image width="50%">
+        <shortdescription>A polygonally connected set</shortdescription>
+        <sageplot>
+var('x y')
+R1=region_plot([(x-2)^2+(y-2)^2&gt;= 1, 9 &gt;= (x-2)^2+(y-2)^2],(-2,8),(-2,8),incol="lightblue",bordercol="lightblue",ticks=[[],[]],alpha=.7)
+R2=region_plot([(x-6)^2+(y-2)^2&lt;= 2,9 &lt;= (x-2)^2+(y-2)^2],(-2,8),(-2,8),incol="lightblue", bordercol="lightblue",alpha=.7)
+R3=region_plot([(x-2)^2+(y-6)^2&lt;= 2,9 &lt;= (x-2)^2+(y-2)^2],(-2,8),(-2,8),incol="lightblue", bordercol="lightblue",alpha=.7)
+P=point((2,7),color="blue",size=50)
+Q=point((6,3),color="blue",size=50)
+t1=text("$z_1$",(2.5,6.75),color="black",fontsize=14)
+t2=text("$z_2$",(6.5,2.75),color="black",fontsize=14)
+p=line([(2,7),(2,4.5),(4,2),(6,3)], color="red")
+P+R1+R2+R3+P+Q+p+t1+t2
+        </sageplot>
+        
+    </image>
+</figure>
+<theorem xml:id="th_connected">
+    <title>Connected sets</title>
+    <statement>
+        <p>
+            Let <m>Y\subseteq \C</m> be a nonempty set.
+        <ol>
+            <li>
+                <p>
+                    If <m>Y</m> is polygonally connected, then it is connected. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    If <m>Y</m> is open, then <m>Y</m> is polygonally connected if and only if <m>Y</m> is connected. 
+                </p>
+            </li>
+        </ol> 
+        </p>
+    </statement>
+</theorem>
+
+</subsection>
+    
+
+</section>

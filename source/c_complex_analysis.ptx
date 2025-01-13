@@ -3,4 +3,5 @@
     <xi:include href="s_arithmetic.ptx"/>
     <xi:include href="s_geom.ptx"/>
     <xi:include href="s_deMoivre.ptx" />
+    <xi:include href="s_topo.ptx" />
 </chapter>
