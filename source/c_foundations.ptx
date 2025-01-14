@@ -2,6 +2,7 @@
   <title>Foundations</title>
   <xi:include  href="s_sets.ptx"/>
   <xi:include  href="s_functions.ptx"/>
+   <xi:include href="s_tuples.ptx" />
   <xi:include  href="s_logic.ptx"/>
   <xi:include  href="s_proof_technique.ptx"/>
 </chapter>

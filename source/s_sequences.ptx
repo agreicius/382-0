@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Sequences and series</title>
+    
+    <introduction>
+        <p>
+        The complex modulus function <m>\abs{z}</m>, as well as the distance function <m>d(z,w)=\abs{z-w}</m> it defines, gives rise to theory of convergence of complex sequences and series that is a straightforward generalization of real sequences and series theory. 
+    </p>
+    </introduction>
+<subsection xml:id="ss_sequences">
+<title>Sequences</title>
+<definition xml:id="d_lim_seq">
+<title>Limit of sequence</title>
+<statement>
+<p>
+A sequence of complex numbers <m>(z_n)_{n=1}^\infty=z_1,z_2,\dots</m> of complex numbers <term>converges</term> if there is a complex number <m>z\in \C</m> satisfying the following property: for all <m>\epsilon &gt; 0</m>, there exists a <m>N &gt; 0</m> such that if <m>n\geq N</m>, then <m>\abs{z_n-z}&lt; \epsilon</m>. 
+We write <m>\lim\limits_{n\to \infty}z_n=z</m> (or <m>z_n\to z</m>) in this case, and call <m>z</m> the <term>limit</term> of the sequence. 
+</p>
+<p>
+    A sequence <term>diverges</term> if it does not converge. 
+</p>
+</statement>
+</definition>
+
+
+<definition xml:id="d_lim_seq_inf">
+<title>Infinite limit</title>
+<statement>
+<p>
+A complex sequence <m>(z_n)_{n=1}^\infty</m> has an <term>infinite limit</term>, denoted <m>\lim\limits_{n\to \infty}z_n=\infty</m> if for all <m>R&gt; 0</m>, there exists an <m>N&gt; 0</m> such that if <m>n\geq N</m>, then <m>\abs{z_n}&gt; R</m>. Using logical shorthand: 
+</p>
+</statement>
+</definition>
+<remark>
+<title>Infinite limit</title>
+<p>
+Identifying an element <m>z</m> of <m>\C^*=\C\cup \{\infty\}</m> with its corresponding point <m>P_z\in S^2\subseteq \R^3</m> using the stereographic projection, you can show that 
+<md>
+    <mrow>z_n\to \infty \amp \iff P_{z_n}\to N=(0,0,1)</mrow>
+</md>. 
+</p>
+</remark>
+
+<remark>
+<title>Logical shorthand</title>
+<p>
+<xref first="d_lim_seq" last="d_lim_seq_inf"/>, can be expressed using logical shorthand as follows: 
+<mdn>
+    <mrow>z_n\to z \amp \iff \forall \epsilon &gt; 0\, \exists N &gt; 0( n\geq N \implies \abs{z_n-z}&lt; \epsilon) </mrow>
+    <mrow>z_n\to\infty \amp \iff \forall R &gt; 0\, \exists N &gt; 0( n\geq N \implies \abs{z_n}&gt; R) </mrow>
+</mdn>.
+</p>
+</remark>
+<p>
+  Limits of complex sequences satisfy all the usual familiar limit properties of real sequences, and then some.   
+</p>
+<theorem xml:id="th_lim">
+<title>Limit properties</title>
+<statement>
+<p>
+    Let <m>(z_n)_{n=1}^\infty</m> and <m>(w_n)_{n=1}^\infty</m> be sequences of complex numbers. 
+<ol>
+   <li>
+      <p>
+         <m>z_{n}\rightarrow z</m> if and only if <m>\val{z_n-z}\rightarrow 0</m>. 
+      </p>
+      <p>
+        In particular, <m>z_{n}\rightarrow 0</m> if and only if <m>\val{z_n}\rightarrow 0</m>.
+      </p>
+   </li>
+
+   <li>
+      <p>
+         <m>\{z_{n}\}</m> is convergent if and only if <m>\{\Re z_{n}\}</m> and <m>\{\Im z_{n}\}</m> are both convergent, in which case 
+         <md>
+         <mrow> \lim_{n\rightarrow\infty}z_{n}\amp = (\lim_{n\rightarrow\infty}\Re z_{n})+i\lim\limits_{n\to \infty}\Im z_n </mrow>
+         </md>.
+         In particular, we have <m>\lim\limits_{n\to \infty}z_n=z</m> if and only if 
+            <md>
+                <mrow>\lim\limits_{n\to \infty}\Re z_n \amp =\Re z \amp 
+                \lim\limits_{n\to \infty}\Im z_n= \Im z</mrow>
+            </md>.
+      </p>
+   </li>
+    <li>
+        <p>
+            <m>z_n\to z</m> if and only if <m>\overline{z_n}\to \overline{z}</m>. 
+        </p>
+    </li>
+   <li>
+      <p>
+         If <m>z_{n}\rightarrow z</m>, then <m>\val{z_n}\rightarrow \val{z}</m>.
+      </p>
+   </li>
+
+   <li>
+      <p>
+         If <m>z_{n}\rightarrow z</m> and <m>w_{n}\rightarrow w</m>, then
+         <mdn>
+            <mrow xml:id="eq_lim_seq_linear">(cz_{n}+dw_{n})\amp \rightarrow (cz+dw) \text{ for any } z_0,w_0\in \C</mrow>
+            <mrow> z_{n}w_{n}\amp \rightarrow zw\amp </mrow>
+            <mrow> \frac{z_n}{w_n}\amp \to z/w,  \text{ assuming } w\ne 0 </mrow>
+         </mdn>.
+      </p>
+   </li>
+
+   <li>
+      <p>
+         <m>z_{n}\rightarrow \infty</m> if and only if <m>\frac{1}{z_{n}}\rightarrow 0</m>.
+      </p>
+   </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+    Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of <m>\abs{\ }</m>, either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration. 
+</p>
+<p>
+    For the reverse direction (<m>\Leftarrow</m>), if both <m>\lim\limits_{n\to \infty}\Re z_n</m> and <m>\lim\limits_{n\to \infty}\Im z_n</m> exist, then we have 
+    <me>
+        <mrow>\lim\limits_{n\to \infty}z_n\amp = \lim\limits_{n\to \infty}\Re z_n+i\Im z_n \amp </mrow>
+        <mrow> \amp =\lim\limits_{n\to \infty}\Re z_n+i\lim\limits_{n\to \infty}\Im z_n \amp (<xref ref="eq_lim_seq_linear"/>) </mrow>
+    </me>,
+    as desired.
+</p>
+<p>
+    Consider now the forward implication (<m>\Rightarrow</m>). We assume <m>\lim\limits_{n\to \infty}z_n=z</m> and wish to show that <m>\Re z=\lim\limits_{n\to \infty}\Re z_n</m> and  <m>\Im z=\lim\limits_{n\to \infty}\Im z_n</m> (which also proves these limits exists). We will give a proof of the second equality: you can prove the first in much the same way. Fix any positive <m>\epsilon &gt; 0</m>. Since <m>z_n\rightarrow z</m>, we can find an <m>N&gt; 0</m> such that <m>\abs{z-z_n}&lt; \epsilon</m> for all <m>n\geq N</m>. But then we have 
+    <md>
+        <mrow>\abs{\Im z-\Im z_n} \amp =\abs{\Im(z-z_n)}</mrow>
+        <mrow> \amp \leq \abs{z-z_n} </mrow>
+        <mrow> \amp &lt; \epsilon</mrow>
+    </md>
+    for all <m>n\geq N</m>, showing that <m>\Im z_n\to \Im z</m>, as desired. 
+</p>
+</proof>
+</theorem>
+
+</subsection>
+</section>
