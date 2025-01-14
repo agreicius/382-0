@@ -193,6 +193,9 @@ eBookConfig.enable_chatcodes =  false;
 #th_connected-2-1-2 { counter-set: th_connected-2-1-2 0; }
 #th_connected-2-1-2 > li::marker { content: ""counter(th_connected-2-1-2,decimal)"."; }
 #th_connected-2-1-2 > li { counter-increment: th_connected-2-1-2; }
+#th_lim-2-1-3 { counter-set: th_lim-2-1-3 0; }
+#th_lim-2-1-3 > li::marker { content: ""counter(th_lim-2-1-3,decimal)"."; }
+#th_lim-2-1-3 > li { counter-increment: th_lim-2-1-3; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -213,7 +216,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_sets_functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_sets_functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_tuples.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -330,15 +333,16 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_tuples.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Tuples and Cartesian products</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Logic</span></a></div>
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Logic</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Proof techniques</span></a></div>
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Proof techniques</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
@@ -414,6 +418,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_connected" class="internal"><span class="title">Connected sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_point_infty" class="internal"><span class="title">Point at infinity</span></a></div></li>
 </ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sequences.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Sequences and series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_sequences" class="internal"><span class="title">Sequences</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -561,9 +569,9 @@ f(g(y))\amp=y  \text{ for all } y\in Y \text{.}
 </div></article><article class="theorem theorem-like" id="th_invertible_bijective"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">0.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">Invertible is equivalent to bijective.</span>
 </h3>
-<div class="para" id="th_invertible_bijective-2-1">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is invertible if and only if it is bijective.</div></article><details id="s_functions-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="s_functions-14-1">The proof of this theorem is left as an example of proving “if and only if” statements. See <a href="s_proof_technique.html#ex_invertible_bijective" class="xref" data-knowl="./knowl/xref/ex_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 0.4.3: Proof: invertible is equivalent to bijective">Example 0.4.3</a>.</div></article></details></section></div>
+<div class="para" id="th_invertible_bijective-2-1">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is invertible if and only if it is bijective.</div></article><details id="s_functions-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="s_functions-14-1">The proof of this theorem is left as an example of proving “if and only if” statements. See <a href="s_proof_technique.html#ex_invertible_bijective" class="xref" data-knowl="./knowl/xref/ex_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 0.5.3: Proof: invertible is equivalent to bijective">Example 0.5.3</a>.</div></article></details></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_sets_functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_sets_functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_tuples.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

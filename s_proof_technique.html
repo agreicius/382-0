@@ -193,6 +193,9 @@ eBookConfig.enable_chatcodes =  false;
 #th_connected-2-1-2 { counter-set: th_connected-2-1-2 0; }
 #th_connected-2-1-2 > li::marker { content: ""counter(th_connected-2-1-2,decimal)"."; }
 #th_connected-2-1-2 > li { counter-increment: th_connected-2-1-2; }
+#th_lim-2-1-3 { counter-set: th_lim-2-1-3 0; }
+#th_lim-2-1-3 > li::marker { content: ""counter(th_lim-2-1-3,decimal)"."; }
+#th_lim-2-1-3 > li { counter-increment: th_lim-2-1-3; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -330,15 +333,16 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_tuples.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Tuples and Cartesian products</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Logic</span></a></div>
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Logic</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Proof techniques</span></a></div>
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Proof techniques</span></a></div>
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
@@ -415,6 +419,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_point_infty" class="internal"><span class="title">Point at infinity</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sequences.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Sequences and series</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_sequences" class="internal"><span class="title">Sequences</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -430,7 +438,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_proof_technique"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">0.4</span><span class="space"> </span><span class="title">Proof techniques</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">0.5</span><span class="space"> </span><span class="title">Proof techniques</span>
 </h2>
 <section class="introduction" id="s_proof_technique-2"><div class="para" id="s_proof_technique-2-1">Proof writing is an art, a technical skill you will hone and refine throughout your career; and like any art, proof writing has many tricks of the trade. We gather a few here in the form of a collection of general proof techniques. Part of mastering these techniques involves understanding the circumstances where they can be of use. When selecting a technique, we are guided in part by the logical structure and particular mathematical content of the proposition under consideration. The proof techniques below are organized under this guiding principle.</div></section><section class="subsection" id="ss_logical_structure"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Logical structure</span>
@@ -438,15 +446,15 @@ eBookConfig.enable_chatcodes =  false;
 <section class="subsubsection" id="sss_implication"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Implication</span>
 </h4>
-<div class="para" id="sss_implication-2">By <a href="s_logic.html#d_logical_ops" class="xref" data-knowl="./knowl/xref/d_logical_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.3.1: Logical operators">Definition 0.3.1</a> the only time an implication  <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is false is when <span class="process-math">\(\mathcal{P}\)</span> is true and <span class="process-math">\(\mathcal{Q}\)</span> is false. Accordingly, the <em class="emphasis">direct approach</em> to proving an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is to assume <span class="process-math">\(\mathcal{P}\)</span> is true, and use this assumption to prove <span class="process-math">\(\mathcal{Q}\)</span> is true.</div>
+<div class="para" id="sss_implication-2">By <a href="s_logic.html#d_logical_ops" class="xref" data-knowl="./knowl/xref/d_logical_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.4.1: Logical operators">Definition 0.4.1</a> the only time an implication  <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is false is when <span class="process-math">\(\mathcal{P}\)</span> is true and <span class="process-math">\(\mathcal{Q}\)</span> is false. Accordingly, the <em class="emphasis">direct approach</em> to proving an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is to assume <span class="process-math">\(\mathcal{P}\)</span> is true, and use this assumption to prove <span class="process-math">\(\mathcal{Q}\)</span> is true.</div>
 <div class="para" id="sss_implication-3">A common <em class="emphasis">indirect approach</em> used to prove an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is to prove its <em class="emphasis">contrapositive</em>  <span class="process-math">\(\neg\mathcal{Q}\implies \neg \mathcal{P} \text{,}\)</span> which is logically equivalent to the original implication. In this case we assume <span class="process-math">\(\mathcal{Q}\)</span> is not true, and show <span class="process-math">\(\mathcal{P}\)</span> is not true. (Exercise: use a truth table to show the contrapositive is logically equivalent to the original implication.)</div>
 <article class="warning remark-like" id="sss_implication-4"><h5 class="heading">
-<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.4.1</span><span class="period">.</span>
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.5.1</span><span class="period">.</span>
 </h5>
 <div class="para" id="sss_implication-4-1">The <em class="emphasis">converse</em> of an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is the implication <span class="process-math">\(\mathcal{Q}\implies \mathcal{P}\text{;}\)</span> the <em class="emphasis">inverse</em> of <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is the implication <span class="process-math">\(\neg\mathcal{P}\implies\neg\mathcal{Q}\text{.}\)</span> Neither the converse nor the inverse is equivalent to the original implication, and thus neither of these can be used to give an indirect proof of <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\text{.}\)</span> (Exercise: use a truth table to show that neither the converse nor the inverse implication is logically equivalent to the original implication. )</div></article></section><section class="subsubsection" id="sss_disjunction"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Disjunction</span>
 </h4>
-<div class="para" id="sss_disjunction-2">Again, using <a href="s_logic.html#d_logical_ops" class="xref" data-knowl="./knowl/xref/d_logical_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.3.1: Logical operators">Definition 0.3.1</a>, to directly show a disjunction <span class="process-math">\(\mathcal{P}\text{ or }\mathcal{Q}\)</span> is true, we need only show one the two component propositions is true.</div>
+<div class="para" id="sss_disjunction-2">Again, using <a href="s_logic.html#d_logical_ops" class="xref" data-knowl="./knowl/xref/d_logical_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.4.1: Logical operators">Definition 0.4.1</a>, to directly show a disjunction <span class="process-math">\(\mathcal{P}\text{ or }\mathcal{Q}\)</span> is true, we need only show one the two component propositions is true.</div>
 <div class="para" id="sss_disjunction-3">Alternatively, we can prove either of the implications <span class="process-math">\(\neg\mathcal{P}\implies\mathcal{Q}\)</span> or <span class="process-math">\(\neg Q\implies \mathcal{P}\text{,}\)</span> both of which are logically equivalent to <span class="process-math">\(\mathcal{P}\text{ or }\mathcal{Q}\text{.}\)</span> (Exercise: use a truth table to show these three propositions are indeed equivalent!)</div></section><section class="subsubsection" id="sss_equivalence"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Equivalence</span>
 </h4>
@@ -483,11 +491,11 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">only shows that <span class="process-math">\(\mathcal{P}\implies\mathcal{S}\text{.}\)</span> Indeed, we will have <span class="process-math">\(\mathcal{P}\iff\mathcal{S}\)</span> if and only if the intervening implication <span class="process-math">\(\mathcal{Q}\implies\mathcal{R}\)</span> is in fact an equivalence (i.e., the arrow goes both ways).</div>
 </div>
 <article class="warning remark-like" id="sss_logical_chains-3"><h5 class="heading">
-<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.4.2</span><span class="period">.</span>
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.5.2</span><span class="period">.</span>
 </h5>
 <div class="para" id="sss_logical_chains-3-1">It is often tempting, for the sake of space, to try and prove an equivalence <span class="process-math">\(\mathcal{P}\iff\mathcal{Q}\)</span> via a chain of equivalences, as opposed to showing <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\)</span> separately. When proceeding in this manner, make doubly sure that each <span class="process-math">\(\iff\)</span> is indeed an equivalence: i.e., that the implication arrow really goes both ways at each step. Even if each step in your chain truly is an equivalence, you should consider whether this will be obvious to your reader.</div></article><div class="para" id="sss_logical_chains-4">The example below provides the proof that a function is invertible if and only if it is bijective (<a href="s_functions.html#th_invertible_bijective" class="xref" data-knowl="./knowl/xref/th_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.2.11: Invertible is equivalent to bijective">Theorem 0.2.11</a>). The proof nicely illustrates some of the different techniques used for proving implications and equivalences. Additionally, it is a nice example of how to separate out cases of the argument into clearly distinguished steps.</div>
 <article class="example example-like" id="ex_invertible_bijective"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Proof: invertible is equivalent to bijective.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Proof: invertible is equivalent to bijective.</span>
 </h5>
 <div class="para" id="ex_invertible_bijective-2-1">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function. Prove: <span class="process-math">\(f\)</span> is invertible if and only if <span class="process-math">\(f\)</span> is bijective.</div>
 <div class="solutions"><details id="ex_invertible_bijective-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
@@ -529,13 +537,13 @@ f(x) \amp = f(f^{-1}(y))\\
 </h4>
 <div class="para" id="sss_proof_by_contradiction-2">The technique of <em class="emphasis">proof by contradiction</em> (or <em class="emphasis">reductio ad absurdum</em>) proves a proposition <span class="process-math">\(\mathcal{P}\)</span> by (a) assuming the negation <span class="process-math">\(\neg\mathcal{P}\)</span> is true, and then (b) using this assumption to derive a proposition <span class="process-math">\(\mathcal{Q}\)</span> known to be false. The choice of falsehood <span class="process-math">\(\mathcal{Q}\)</span> is completely up to the person providing the proof. However, in order for the proof to be convincing, it should be clear, either logically or because of theory assumed to be known, that <span class="process-math">\(\mathcal{Q}\)</span> is indeed false.</div>
 <article class="example example-like" id="ex_proof_by_contradiction"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Proof by contradiction.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Proof by contradiction.</span>
 </h5>
 <div class="para" id="ex_proof_by_contradiction-2-1">Prove by contradiction that <span class="process-math">\(0\)</span> has no multiplicative inverse in the reals: i.e., there is no <span class="process-math">\(r\in\R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span>
 </div>
 <div class="solutions"><details id="ex_proof_by_contradiction-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="ex_proof_by_contradiction-3-1">We prove the claim by contradiction. Assume there is an <span class="process-math">\(r\in \R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span> Since <span class="process-math">\(r\cdot 0=0\)</span> for any <span class="process-math">\(r\in \R\)</span> (a property of multiplication by 0), we have <span class="process-math">\(1=r\cdot 0=0\text{:}\)</span> a contradiction since <span class="process-math">\(1\ne 0\text{.}\)</span> We conclude that there is no <span class="process-math">\(r\in \R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span>
 </div></div></details></div></article><article class="remark remark-like" id="rm_proof_by_contradiction"><h5 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.4.5</span><span class="period">.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.5.5</span><span class="period">.</span>
 </h5>
 <div class="para" id="rm_proof_by_contradiction-1">Proof by contradiction resembles, but is not quite the same  thing as proving an implication via its contrapositive. Letting <span class="process-math">\(F\)</span> denote an arbitrary falsehood (the <span class="process-math">\(\mathcal{Q}\)</span> described above) what we do in a proof by contradiction is show that the implication <span class="process-math">\(\neg \mathcal{P}\implies F\)</span> is true. Since <span class="process-math">\(F\)</span> is false, and the implication is true, <span class="process-math">\(\neg \mathcal{P}\)</span> must be false: equivalently, <span class="process-math">\(\mathcal{P}\)</span> must be true.</div></article></section></section><section class="subsection" id="ss_Equalities"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Equalities</span>
@@ -563,7 +571,7 @@ f(x) \amp = f(f^{-1}(y))\\
 </div>
 </div>
 <article class="warning remark-like" id="sss_chain_equalities-3"><h5 class="heading">
-<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.4.6</span><span class="period">.</span>
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">0.5.6</span><span class="period">.</span>
 </h5>
 <div class="para logical" id="sss_chain_equalities-3-1">
 <div class="para">Never attempt to prove an equality by starting off with the equality you wish to prove, and then deduce a series of further equalities ending in some inanity: e.g.,</div>
@@ -648,7 +656,7 @@ x\ne x'\implies f(x)\ne f(x')
 \text{for all } y\in Y, \text{ there exists an } x\in X\ \text{ such that } f(x)=y\text{.}
 \end{equation*}
 </div>
-<div class="para">To prove <span class="process-math">\(f\)</span> is <em class="emphasis">not</em> surjective, we must prove the negation of this proposition (<a href="s_logic.html#rm_negating_quantifiers" class="xref" data-knowl="./knowl/xref/rm_negating_quantifiers.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 0.3.9: Negating quantifiers">Remark 0.3.9</a>): i.e., there exists a <span class="process-math">\(y\in Y\)</span> for which there is no <span class="process-math">\(x\in X\)</span> with <span class="process-math">\(f(x)=y\text{.}\)</span>
+<div class="para">To prove <span class="process-math">\(f\)</span> is <em class="emphasis">not</em> surjective, we must prove the negation of this proposition (<a href="s_logic.html#rm_negating_quantifiers" class="xref" data-knowl="./knowl/xref/rm_negating_quantifiers.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 0.4.9: Negating quantifiers">Remark 0.4.9</a>): i.e., there exists a <span class="process-math">\(y\in Y\)</span> for which there is no <span class="process-math">\(x\in X\)</span> with <span class="process-math">\(f(x)=y\text{.}\)</span>
 </div>
 </div></section><section class="paragraphs" id="sss_injective_surjective_bijective-5"><h5 class="heading"><span class="title">Bijectivity.</span></h5>
 <div class="para" id="sss_injective_surjective_bijective-5-2">To show <span class="process-math">\(f\)</span> is bijective directly using <a href="s_functions.html#d_injective_surjective_bijective" class="xref" data-knowl="./knowl/xref/d_injective_surjective_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.7: Injective, surjective, bijective">Definition 0.2.7</a>, we must show that <span class="process-math">\(f\)</span> is injective and surjective. This is equivalent to showing that for <span class="process-math">\(y\in Y\)</span> there exists a <em class="emphasis">unique</em> element <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span>
@@ -686,7 +694,7 @@ x\ne x'\implies f(x)\ne f(x')
 </div>
 <div class="para">In practice, if proving the implication <span class="process-math">\(P(n)\implies P(n+1)\)</span> directly, this means we assume <span class="process-math">\(P(n)\)</span> is true (the <dfn class="terminology">induction hypothesis</dfn>), and use this assumption to show <span class="process-math">\(P(n+1)\)</span> is true.</div>
 </div></section><article class="remark remark-like" id="rm_induction"><h5 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">“Step 0” of induction.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">“Step 0” of induction.</span>
 </h5>
 <div class="para logical" id="rm_induction-2">
 <div class="para">When meeting a proposition in the wild that we wish to prove by induction, you should first take care to model the proposition in the form</div>
@@ -697,7 +705,7 @@ x\ne x'\implies f(x)\ne f(x')
 </div>
 <div class="para">Make explicit the predicate <span class="process-math">\(P\)</span> in question, as well as the base case <span class="process-math">\(b\text{.}\)</span> We illustrate this preparatory “Step 0” in the examples below.</div>
 </div></article><article class="example example-like" id="eg_weak_induction"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Weak induction.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Weak induction.</span>
 </h5>
 <div class="para logical" id="eg_weak_induction-2-1">
 <div class="para">Prove the identity</div>
@@ -765,7 +773,7 @@ x\ne x'\implies f(x)\ne f(x')
 </div></section><div class="para" id="eg_weak_induction-3-5">Having completed our base and induction steps, our proof is now finished.</div>
 </div></details></div></article><div class="para" id="sss_weak_induction-8">So why does proof by induction work? In other words, why is it a valid proof technique? Imagine our propositions <span class="process-math">\(P(n)\)</span> as forming an infinite ladder that we wish to ascend. Cautious climbers that we are, we only will step on a rung if we know the corresponding proposition is true. Knowing <span class="process-math">\(P(b)\)</span> is true (the base step) allows us to step onto the first rung. The universal implication <span class="process-math">\(\forall n\geq b\, P(n)\implies P(n+1)\)</span> (induction step) gives us a <em class="emphasis">rule</em> that says if rung <span class="process-math">\(n\)</span> is secure (i.e., true), then so is rung <span class="process-math">\(n+1\text{.}\)</span> Since this rule holds for all rungs (i.e., for all <span class="process-math">\(n\geq b\)</span>), we can safely ascend the entire ladder!</div>
 <figure class="figure figure-like" id="fig_proof_induction"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_proof_induction.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">0.4.9<span class="period">.</span></span><span class="space"> </span>Mathematical induction as ladder of propositions</figcaption></figure></section><section class="subsubsection" id="sss_strong_induction"><h4 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">0.5.9<span class="period">.</span></span><span class="space"> </span>Mathematical induction as ladder of propositions</figcaption></figure></section><section class="subsubsection" id="sss_strong_induction"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Proof by strong induction</span>
 </h4>
 <div class="para" id="sss_strong_induction-3">Suppose <span class="process-math">\(P\)</span> is a predicate of integers. To prove the proposition <span class="process-math">\(\forall n\geq b P(n)\)</span> by <dfn class="terminology">strong induction</dfn>, we proceed in two steps.</div>
@@ -781,7 +789,7 @@ x\ne x'\implies f(x)\ne f(x')
 <div class="para">This technique is called strong induction, as now the induction hypothesis is much stronger: to prove this implication directly we assume <span class="process-math">\(P(k)\)</span> is true for all <span class="process-math">\(1\leq k\leq n\)</span> (not just <span class="process-math">\(k=n\)</span> as in weak induction), and use this assumption to show <span class="process-math">\(P(n+1)\)</span> is true.</div>
 </div></section><div class="para" id="sss_strong_induction-6">In fact, strong induction is, logically speaking, no stronger than weak induction. Both techniques apply to propositions of the form <span class="process-math">\(\forall n\geq b\, P(n)\text{,}\)</span> and you are free to choose which form of induction to use each time. We typically use strong induction out of convenience, when the nature of the predicate <span class="process-math">\(P\)</span> is such that we can prove <span class="process-math">\(P(n+1)\)</span> most elegantly by assuming <span class="process-math">\(P(b), P(b+1), \dots, P(n)\text{,}\)</span> as opposed to just <span class="process-math">\(P(n)\text{.}\)</span> The following example is characteristic in this regard.</div>
 <article class="example example-like" id="eg_strong_induction"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">Strong induction.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">0.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Strong induction.</span>
 </h5>
 <div class="para" id="eg_strong_induction-2-1">Prove that every integer <span class="process-math">\(n\geq 2\)</span> can be written as a product of primes.</div>
 <div class="solutions"><details id="eg_strong_induction-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">

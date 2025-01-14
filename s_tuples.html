@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Complex Analysis</title>
+<title>Tuples and Cartesian products</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -216,7 +216,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_proof_technique.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="kursobjekt.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_arithmetic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -328,12 +328,12 @@ eBookConfig.enable_chatcodes =  false;
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_tuples.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Tuples and Cartesian products</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_tuples.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Tuples and Cartesian products</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Logic</span></a></div>
 <ul class="structural toc-item-list">
@@ -383,9 +383,9 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_complex_analysis.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Analysis</span></a></div>
-<ul class="structural toc-item-list active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_arithmetic.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Complex arithmetic</span></a></div>
 <ul class="structural toc-item-list">
@@ -437,18 +437,62 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="c_complex_analysis"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">Complex Analysis</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_tuples"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">0.3</span><span class="space"> </span><span class="title">Tuples and Cartesian products</span>
 </h2>
-<nav class="summary-links"><ul>
-<li><a href="s_arithmetic.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Complex arithmetic</span></a></li>
-<li><a href="s_polar.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Geometry of complex numbers</span></a></li>
-<li><a href="s_deMoivre.html" class="internal"><span class="codenumber">1.3</span> <span class="title">De Moivre’s formula</span></a></li>
-<li><a href="s_topo.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Topology of <span class="process-math">\(\C\)</span></span></a></li>
-<li><a href="s_sequences.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Sequences and series</span></a></li>
-</ul></nav></section></div>
+<section class="introduction" id="s_tuples-2"><div class="para" id="s_tuples-2-1">We now introduce the notion of a <em class="emphasis">tuple</em>, which is a formal description of an ordered collection of objects.</div></section><article class="definition definition-like" id="d_tuple"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.3.1</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(n\)</span>-tuple.</span>
+</h3>
+<div class="para" id="d_tuple-4-1">Let <span class="process-math">\(A\)</span> be a set, and fix a positive integer <span class="process-math">\(n\text{.}\)</span> An <dfn class="terminology"><span class="process-math">\(n\)</span>-tuple</dfn> (or <dfn class="terminology">sequence of length <span class="process-math">\(n\)</span></dfn>) of elements of <span class="process-math">\(A\)</span> is an ordered sequence <span class="process-math">\((a_1,a_2,\dots, a_n)\)</span> where <span class="process-math">\(a_i\in A\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
+</div> <div class="para" id="d_tuple-4-2">We define two <span class="process-math">\(n\)</span>-tuples <span class="process-math">\((a_1,a_2,\dots, a_n)\text{,}\)</span> and <span class="process-math">\((a_1',a_2',\dots, a_n')\)</span> to be equal, denoted <span class="process-math">\((a_1,a_2,\dots, a_n)=(a_1',a_2',\dots, a_n')\text{,}\)</span> if <span class="process-math">\(a_i=a_i'\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
+</div> <div class="para" id="d_tuple-4-3">We call <span class="process-math">\(n\)</span> the <dfn class="terminology">length</dfn> of the tuple <span class="process-math">\((a_1,a_2,\dots, a_n)\text{,}\)</span> and for each <span class="process-math">\(1\leq i\leq n\)</span> we call <span class="process-math">\(a_i\)</span> its <dfn class="terminology"><span class="process-math">\(i\)</span>-th entry</dfn> or <dfn class="terminology">coordinate</dfn>.</div></article><article class="remark remark-like" id="rm_pairs_triples"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.3.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="rm_pairs_triples-1-1">We have more suggestive names for <span class="process-math">\(n\)</span>-tuples when <span class="process-math">\(n\)</span> is small: a 2-tuple <span class="process-math">\((a,b)\)</span> is called a pair, a 3-tuple <span class="process-math">\((a,b,c)\)</span> is called a triple, a 4-tuple <span class="process-math">\((a,b,c,d)\)</span> is called a quadruple, etc.. We will use the generic term “tuple” to designate a <span class="process-math">\(n\)</span>-tuple of unspecified length.</div></article><article class="remark remark-like" id="rm_tuple_ordered"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">0.3.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="rm_tuple_ordered-1-1">Observe how tuples capture the notion of an <em class="emphasis">ordered</em> collection of objects. For example, whereas the sets <span class="process-math">\(\{3, 1, 2, 4\}\)</span> and <span class="process-math">\(\{1,2,3,4\}\)</span> are equal to one another, the 4-tuples <span class="process-math">\((3,1,2,4)\)</span> and <span class="process-math">\((1,2,3,4)\)</span> are not.</div> <div class="para" id="rm_tuple_ordered-1-2">What about the tuples <span class="process-math">\((1,1,1)\)</span> and <span class="process-math">\((1,1,1,1)\text{?}\)</span> Are these equal? Technically our definition of equality only applies to tuples living in the same fixed Cartesian product. In particular, for the question of equality to make sense, the tuples must have the same length. As such we will officially avoid writing things like <span class="process-math">\((1,1,1)\ne (1,1,1,1)\text{,}\)</span> although unofficially we consider these two objects as completely different. You should think of <span class="process-math">\((1,1,1)\)</span> and <span class="process-math">\((1,1,1,1)\)</span> as creatures living on two different planets in the universe of tuples.</div></article><article class="definition definition-like" id="d_cartesian_product"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Cartesian product (finite).</span>
+</h3>
+<div class="para logical" id="d_cartesian_product-4-1">
+<div class="para">Let <span class="process-math">\(A_1, A_2, \dots, A_n\)</span> be subsets of a common set <span class="process-math">\(A\text{.}\)</span> The <dfn class="terminology">(Cartesian) product</dfn> of <span class="process-math">\(A_1, A_2,\dots, A_n\text{,}\)</span> denoted <span class="process-math">\(A_1\times A_2\times\cdots \times A_n\)</span> or <span class="process-math">\(\displaystyle\prod_{i=1}^nA_i\text{,}\)</span> is the set</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\prod_{i=1}^nA_i=\{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words <span class="process-math">\(\prod_{i=1}^nA_i\)</span> is the set of all <span class="process-math">\(n\)</span>-tuples of <span class="process-math">\(A\)</span> whose <span class="process-math">\(i\)</span>-th coordinate lies in <span class="process-math">\(A_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="d_cartesian_product-4-2">
+<div class="para">Given a set <span class="process-math">\(A\text{,}\)</span> its <dfn class="terminology"><span class="process-math">\(n\)</span>-ary Cartesian product</dfn> <span class="process-math">\(A^n\)</span> is defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^n=\prod_{i=1}^n A=\underset{n\text{ times}}{\underbrace{A\times A\times\cdots \times A}}\text{.}
+\end{equation*}
+</div>
+</div></article><div class="para" id="s_tuples-7">The notion of Cartesian product can be generalized to an infinite list of sets <span class="process-math">\(A_1, A_2, \dots\text{,}\)</span> and indeed to any collection <span class="process-math">\(\{A_i\}_{i\in I}\)</span> indexed by a set <span class="process-math">\(I\text{.}\)</span> This is accomplished by looking at tuples in a slightly different manner: namely, we can describe a tuple <span class="process-math">\((a_1,a_2,\dots, a_n)\in \prod_{k=1}^nA_i\)</span> as an <em class="emphasis">assignment</em> to each distinct element <span class="process-math">\(i\in \{1,2,\dots, n\}\)</span> an element <span class="process-math">\(a_i\in A_i\)</span> that we call the coordinate of <span class="process-math">\(i\text{.}\)</span> In other words, a tuple <span class="process-math">\((a_1,a_2,\dots, a_n)\)</span> is just a <em class="emphasis">function</em> that assigns to each <span class="process-math">\(i\)</span> in our <em class="emphasis">index set</em> <span class="process-math">\(\{1,2,\dots, n\}\)</span> an element <span class="process-math">\(a_i\in A_i\text{.}\)</span> This notion generalize easily by replacing the finite index set <span class="process-math">\(\{1,2,\dots, n\}\)</span> with an arbitrary set <span class="process-math">\(I\)</span> (finite or infinite).</div>
+<article class="definition definition-like" id="d_Ituple"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">I-tuple.</span>
+</h3>
+<div class="para" id="d_Ituple-4-1">Let <span class="process-math">\(I\)</span> be a set. Given a set <span class="process-math">\(A\text{,}\)</span> an <dfn class="terminology"><span class="process-math">\(I\)</span>-tuple</dfn> of elements of <span class="process-math">\(A\)</span> is a function <span class="process-math">\(f\colon I\rightarrow A
+\text{.}\)</span> Given an <span class="process-math">\(I\)</span>-tuple <span class="process-math">\(f\)</span> and element <span class="process-math">\(i\in I\)</span> we will often denote the value <span class="process-math">\(f(i)\)</span> as <span class="process-math">\(a_i\text{,}\)</span> and denote <span class="process-math">\(f\)</span> itself as <span class="process-math">\(f=(a_i)_{i\in I}\text{.}\)</span> In analogy to finite tuples, we call <span class="process-math">\(a_i\)</span> the <span class="process-math">\(i\)</span>-th <dfn class="terminology">entry</dfn> or <dfn class="terminology">coordinate</dfn> of <span class="process-math">\(f\text{.}\)</span>
+</div></article><article class="definition definition-like" id="d_cartesian_product_arbitrary"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">0.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Cartesian product (arbitrary).</span>
+</h3>
+<div class="para logical" id="d_cartesian_product_arbitrary-4-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be a set, and let <span class="process-math">\(\{A_i\}_{i\in I}\)</span> be a collection of subsets <span class="process-math">\(A_i\subseteq A\)</span> indexed by the set <span class="process-math">\(I\text{.}\)</span> The <dfn class="terminology">Cartesian product</dfn> <span class="process-math">\(\prod_{i\in I}A_i\)</span> of this collection is defined as</div>
+<div class="displaymath process-math" id="d_cartesian_product_arbitrary-4-1-7">
+\begin{align*}
+\prod_{i\in I}A_i\amp =\{f\colon I\rightarrow A\colon f(i)\in A_i \text{ for all } i\in I\} \\
+\amp =\{(a_i)_{i\in I}\colon a_i\in A_i \text{ for all } i\in I\}\text{.}
+\end{align*}
+</div>
+<div class="para">In other words, the Cartesian product is the set of all <span class="process-math">\(I\)</span>-tuples of elements of <span class="process-math">\(A\)</span> whose <span class="process-math">\(i\)</span>-th coordinate is an element of <span class="process-math">\(A_i\)</span> for all <span class="process-math">\(i\in I\text{.}\)</span>
+</div>
+</div> <div class="para" id="d_cartesian_product_arbitrary-4-2">In the special case where <span class="process-math">\(A_i=A\)</span> for all <span class="process-math">\(i\in I\text{,}\)</span> we denote <span class="process-math">\(\prod_{i\in I}A\)</span> as <span class="process-math">\(A^I\text{.}\)</span>
+</div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_proof_technique.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_arithmetic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

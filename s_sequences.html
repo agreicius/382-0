@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Complex Analysis</title>
+<title>Sequences and series</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -216,7 +216,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_proof_technique.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="kursobjekt.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_arithmetic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_topo.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -385,7 +385,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="c_complex_analysis.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Analysis</span></a></div>
-<ul class="structural toc-item-list active">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_arithmetic.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Complex arithmetic</span></a></div>
 <ul class="structural toc-item-list">
@@ -419,9 +419,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_point_infty" class="internal"><span class="title">Point at infinity</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s_sequences.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Sequences and series</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_sequences" class="internal"><span class="title">Sequences</span></a></div></li></ul>
+<ul class="structural toc-item-list active"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_sequences" class="internal"><span class="title">Sequences</span></a></div></li></ul>
 </li>
 </ul>
 </li>
@@ -437,18 +437,112 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="c_complex_analysis"><h2 class="heading">
-<span class="type">Chapter</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">Complex Analysis</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_sequences"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">Sequences and series</span>
 </h2>
-<nav class="summary-links"><ul>
-<li><a href="s_arithmetic.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Complex arithmetic</span></a></li>
-<li><a href="s_polar.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Geometry of complex numbers</span></a></li>
-<li><a href="s_deMoivre.html" class="internal"><span class="codenumber">1.3</span> <span class="title">De Moivre’s formula</span></a></li>
-<li><a href="s_topo.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Topology of <span class="process-math">\(\C\)</span></span></a></li>
-<li><a href="s_sequences.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Sequences and series</span></a></li>
-</ul></nav></section></div>
+<section class="introduction" id="s_sequences-2"><div class="para" id="s_sequences-2-1">The complex modulus function <span class="process-math">\(\abs{z}\text{,}\)</span> as well as the distance function <span class="process-math">\(d(z,w)=\abs{z-w}\)</span> it defines, gives rise to theory of convergence of complex sequences and series that is a straightforward generalization of real sequences and series theory.</div></section><section class="subsection" id="ss_sequences"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Sequences</span>
+</h3>
+<article class="definition definition-like" id="d_lim_seq"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of sequence.</span>
+</h4>
+<div class="para" id="d_lim_seq-2-1">A sequence of complex numbers <span class="process-math">\((z_n)_{n=1}^\infty=z_1,z_2,\dots\)</span> of complex numbers <dfn class="terminology">converges</dfn> if there is a complex number <span class="process-math">\(z\in \C\)</span> satisfying the following property: for all <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists a <span class="process-math">\(N &gt; 0\)</span> such that if <span class="process-math">\(n\geq N\text{,}\)</span> then <span class="process-math">\(\abs{z_n-z}&lt; \epsilon\text{.}\)</span> We write <span class="process-math">\(\lim\limits_{n\to \infty}z_n=z\)</span> (or <span class="process-math">\(z_n\to z\)</span>) in this case, and call <span class="process-math">\(z\)</span> the <dfn class="terminology">limit</dfn> of the sequence.</div> <div class="para" id="d_lim_seq-2-2">A sequence <dfn class="terminology">diverges</dfn> if it does not converge.</div></article><article class="definition definition-like" id="d_lim_seq_inf"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Infinite limit.</span>
+</h4>
+<div class="para" id="d_lim_seq_inf-2-1">A complex sequence <span class="process-math">\((z_n)_{n=1}^\infty\)</span> has an <dfn class="terminology">infinite limit</dfn>, denoted <span class="process-math">\(\lim\limits_{n\to \infty}z_n=\infty\)</span> if for all <span class="process-math">\(R&gt; 0\text{,}\)</span> there exists an <span class="process-math">\(N&gt; 0\)</span> such that if <span class="process-math">\(n\geq N\text{,}\)</span> then <span class="process-math">\(\abs{z_n}&gt; R\text{.}\)</span> Using logical shorthand:</div></article><article class="remark remark-like" id="ss_sequences-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Infinite limit.</span>
+</h4>
+<div class="para logical" id="ss_sequences-4-2">
+<div class="para">Identifying an element <span class="process-math">\(z\)</span> of <span class="process-math">\(\C^*=\C\cup \{\infty\}\)</span> with its corresponding point <span class="process-math">\(P_z\in S^2\subseteq \R^3\)</span> using the stereographic projection, you can show that</div>
+<div class="displaymath process-math" id="ss_sequences-4-2-4">
+\begin{align*}
+z_n\to \infty \amp \iff P_{z_n}\to N=(0,0,1)\text{.}
+\end{align*}
+</div>
+</div></article><article class="remark remark-like" id="ss_sequences-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Logical shorthand.</span>
+</h4>
+<div class="para logical" id="ss_sequences-5-2">
+<div class="para">
+<a href="s_sequences.html#d_lim_seq" class="xref" data-knowl="./knowl/xref/d_lim_seq.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.5.1: Limit of sequence">Definition 1.5.1–1.5.2</a>, can be expressed using logical shorthand as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="" id="ss_sequences-5-2-2">
+\begin{align}
+z_n\to z \amp \iff \forall \epsilon &gt; 0\, \exists N &gt; 0( n\geq N \implies \abs{z_n-z}&lt; \epsilon) \tag{1.19}\\
+z_n\to\infty \amp \iff \forall R &gt; 0\, \exists N &gt; 0( n\geq N \implies \abs{z_n}&gt; R) \text{.}\tag{1.20}
+\end{align}
+</div>
+</div></article><div class="para" id="ss_sequences-6">Limits of complex sequences satisfy all the usual familiar limit properties of real sequences, and then some.</div>
+<article class="theorem theorem-like" id="th_lim"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Limit properties.</span>
+</h4>
+<div class="para logical" id="th_lim-2-1">
+<div class="para">Let <span class="process-math">\((z_n)_{n=1}^\infty\)</span> and <span class="process-math">\((w_n)_{n=1}^\infty\)</span> be sequences of complex numbers.</div>
+<ol class="decimal" id="th_lim-2-1-3">
+<li id="th_lim-2-1-3-1">
+<div class="para" id="th_lim-2-1-3-1-1">
+<span class="process-math">\(z_{n}\rightarrow z\)</span> if and only if <span class="process-math">\(\val{z_n-z}\rightarrow 0\text{.}\)</span>
+</div>
+<div class="para" id="th_lim-2-1-3-1-2">In particular, <span class="process-math">\(z_{n}\rightarrow 0\)</span> if and only if <span class="process-math">\(\val{z_n}\rightarrow 0\text{.}\)</span>
+</div>
+</li>
+<li id="th_lim-2-1-3-2"><div class="para logical" id="th_lim-2-1-3-2-1">
+<div class="para">
+<span class="process-math">\(\{z_{n}\}\)</span> is convergent if and only if <span class="process-math">\(\{\Re z_{n}\}\)</span> and <span class="process-math">\(\{\Im z_{n}\}\)</span> are both convergent, in which case</div>
+<div class="displaymath process-math" id="th_lim-2-1-3-2-1-4">
+\begin{align*}
+\lim_{n\rightarrow\infty}z_{n}\amp = (\lim_{n\rightarrow\infty}\Re z_{n})+i\lim\limits_{n\to \infty}\Im z_n \text{.}
+\end{align*}
+</div>
+<div class="para">In particular, we have <span class="process-math">\(\lim\limits_{n\to \infty}z_n=z\)</span> if and only if</div>
+<div class="displaymath process-math" id="th_lim-2-1-3-2-1-6">
+\begin{align*}
+\lim\limits_{n\to \infty}\Re z_n \amp =\Re z \amp 
+\lim\limits_{n\to \infty}\Im z_n= \Im z\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="th_lim-2-1-3-3"><div class="para" id="th_lim-2-1-3-3-1">
+<span class="process-math">\(z_n\to z\)</span> if and only if <span class="process-math">\(\overline{z_n}\to \overline{z}\text{.}\)</span>
+</div></li>
+<li id="th_lim-2-1-3-4"><div class="para" id="th_lim-2-1-3-4-1">If <span class="process-math">\(z_{n}\rightarrow z\text{,}\)</span> then <span class="process-math">\(\val{z_n}\rightarrow \val{z}\text{.}\)</span>
+</div></li>
+<li id="th_lim-2-1-3-5"><div class="para logical" id="th_lim-2-1-3-5-1">
+<div class="para">If <span class="process-math">\(z_{n}\rightarrow z\)</span> and <span class="process-math">\(w_{n}\rightarrow w\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="th_lim-2-1-3-5-1-3">
+\begin{align}
+(cz_{n}+dw_{n})\amp \rightarrow (cz+dw) \text{ for any } z_0,w_0\in \C\tag{1.21}\\
+z_{n}w_{n}\amp \rightarrow zw\amp \tag{1.22}\\
+\frac{z_n}{w_n}\amp \to z/w,  \text{ assuming } w\ne 0 \text{.}\tag{1.23}
+\end{align}
+</div>
+</div></li>
+<li id="th_lim-2-1-3-6"><div class="para" id="th_lim-2-1-3-6-1">
+<span class="process-math">\(z_{n}\rightarrow \infty\)</span> if and only if <span class="process-math">\(\frac{1}{z_{n}}\rightarrow 0\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_lim-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_lim-3-1">Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of <span class="process-math">\(\abs{\ }\text{,}\)</span> either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.</div>
+<div class="para logical" id="th_lim-3-2">
+<div class="para">For the reverse direction (<span class="process-math">\(\Leftarrow\)</span>), if both <span class="process-math">\(\lim\limits_{n\to \infty}\Re z_n\)</span> and <span class="process-math">\(\lim\limits_{n\to \infty}\Im z_n\)</span> exist, then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lim_seq_linear.html">
+\begin{equation*}
+\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para logical" id="th_lim-3-3">
+<div class="para">Consider now the forward implication (<span class="process-math">\(\Rightarrow\)</span>). We assume <span class="process-math">\(\lim\limits_{n\to \infty}z_n=z\)</span> and wish to show that <span class="process-math">\(\Re z=\lim\limits_{n\to \infty}\Re z_n\)</span> and  <span class="process-math">\(\Im z=\lim\limits_{n\to \infty}\Im z_n\)</span> (which also proves these limits exists). We will give a proof of the second equality: you can prove the first in much the same way. Fix any positive <span class="process-math">\(\epsilon &gt; 0\text{.}\)</span> Since <span class="process-math">\(z_n\rightarrow z\text{,}\)</span> we can find an <span class="process-math">\(N&gt; 0\)</span> such that <span class="process-math">\(\abs{z-z_n}&lt; \epsilon\)</span> for all <span class="process-math">\(n\geq N\text{.}\)</span> But then we have</div>
+<div class="displaymath process-math" id="th_lim-3-3-10">
+\begin{align*}
+\abs{\Im z-\Im z_n} \amp =\abs{\Im(z-z_n)}\\
+\amp \leq \abs{z-z_n} \\
+\amp &lt; \epsilon
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(n\geq N\text{,}\)</span> showing that <span class="process-math">\(\Im z_n\to \Im z\text{,}\)</span> as desired.</div>
+</div></article></details></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_proof_technique.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_arithmetic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_topo.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
