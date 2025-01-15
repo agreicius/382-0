@@ -72,7 +72,7 @@ Identifying an element <m>z</m> of <m>\C^*=\C\cup \{\infty\}</m> with its corres
 
    <li>
       <p>
-         <m>\{z_{n}\}</m> is convergent if and only if <m>\{\Re z_{n}\}</m> and <m>\{\Im z_{n}\}</m> are both convergent, in which case 
+         <m>\{z_{n}\}</m> converges if and only if <m>\{\Re z_{n}\}</m> and <m>\{\Im z_{n}\}</m> both converge, in which case 
          <md>
          <mrow> \lim_{n\rightarrow\infty}z_{n}\amp = (\lim_{n\rightarrow\infty}\Re z_{n})+i\lim\limits_{n\to \infty}\Im z_n </mrow>
          </md>.
@@ -136,6 +136,119 @@ Identifying an element <m>z</m> of <m>\C^*=\C\cup \{\infty\}</m> with its corres
 </p>
 </proof>
 </theorem>
+<example xml:id="eg_lim_seq">
+<title>Limit of sequence</title>
+<statement>
+<p>
+Define <m>z_n=\frac{1}{n}(1+i)^n</m>. Show that <m>(z_n)_{n=1}^{\infty}</m> converges and compute its limit. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<example xml:id="eg_lim_seq_div">
+<title>Divergent sequence</title>
+<statement>
+<p>
+Show that the sequence <m>(i^n)_{n=1}^{\infty}</m> diverges. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<example xml:id="eg_lim_seq_inf">
+<title>Sequence with infinite limit</title>
+<statement>
+<p>
+Show that <m>\lim\limits_{n\to \infty}\frac{\sqrt{n}i+n^2}{5n+i}=\infty</m>. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
+
+</subsection>
+<subsection xml:id="ss_series">
+<title>Series</title>
+<p>
+    As with the reals, from a theory of convergent <em>sequences</em> we easily derive a theory of convergent <em>series</em>. The definitions and results below are all straightforward generalizations of facts about series of real numbers. 
+</p>
+<definition xml:id="d_series">
+<title>Series</title>
+<statement>
+<p>
+Given a complex sequence <m>(z_n)_{n=1}^{\infty}</m>, the formal expression <m>\sum_{n=1}^\infty z_n</m> is called a <term>(complex) series</term>. 
+</p>
+<p>
+    For each <m>k\geq 1</m> we define the <term><m>k</m>-th partial sum</term> <m>S_k</m> of the series <m>\sum_{n=1}^\infty z_n</m> as 
+    <me>
+        S_k=\sum_{n=1}^k z_k
+    </me>.
+  We say the series <term>converges</term> if 
+  <me>
+    \lim\limits_{k\to \infty}S_k=\lim\limits_{k\to \infty}\sum_{n=1}^k z_k=z
+  </me>
+    for some complex number <m>z\in \C</m>, in which case we write 
+    <me>
+        \sum_{n=1}^\infty z_n=z
+    </me>
+    and say that the series converges to <m>z</m>. 
+</p>
+</statement>
+</definition>
+
+
+<theorem xml:id="th_series">
+<title>Series properties</title>
+<statement>
+<p>
+Let <m>(z_n)_{n=1}^\infty</m> and <m>(w_n)_{n=1}^\infty</m> be complex sequences.
+<ol>
+    <li>
+        <p>
+            <m>\sum_{n=1}^\infty z_n=z</m> if and only if <m>\lim\limits_{k\to \infty}(S_k-z)=0</m>, where <m>S_k</m> is the <m>k</m>-th partial sum of <m>\sum_{n=1}^\infty z_n</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\sum_{n=1}^\infty z_n</m> converges if and only if <m>\sum_{n=1}^\infty \Re z_n</m> and <m>\sum_{n=1}^\infty \Im z_n</m> converge, in which case
+            <me>
+                \sum_{n=1}^\infty z_n=\sum_{n=1}^\infty \Re z_n +i \sum_{n=1}^\infty \Im z_n
+            </me>.
+            
+        </p>
+    </li>
+</ol> 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<example xml:id="eg_geom_series">
+<title>Geometric series</title>
+<statement>
+<p>
+Let <m>z\in \C</m>. The <term>geometric series</term> <m>\sum_{n=0}^\infty z^n</m> converges if <m>\abs{z}&lt; 1</m> and diverges for <m>\abs{z}&gt; 1</m>. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
 
 </subsection>
 </section>
