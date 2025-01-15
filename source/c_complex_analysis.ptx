@@ -5,4 +5,5 @@
     <xi:include href="s_deMoivre.ptx" />
     <xi:include href="s_topo.ptx" />
     <xi:include href="s_sequences.ptx" />
+    <xi:include href="s_complex_functions.ptx" />
 </chapter>

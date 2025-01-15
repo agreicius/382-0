@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_complex_functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Complex functions</title>
+    <p>
+        We now introduce the main object of study in this course, <em>complex functions</em>, and begin developing what ends up being an extension of calculus to this setting, starting with the notion of a limit of a complex function. 
+    </p>
+    <definition xml:id="d_complex_function">
+    <title>Complex function</title>
+    <statement>
+    <p>
+    A <term>complex function</term> is a function <m>f\colon D\rightarrow \C</m>, where <m>D\subseteq \C</m>. 
+    </p>
+    </statement>
+    </definition>
+    <definition xml:id="d_real_imag_parts">
+    <title>Real and imaginary parts</title>
+    <statement>
+    <p>
+    Given a complex function <m>f\colon D\rightarrow \C</m> with <m>D\subseteq \C</m>, we can write 
+    <me>
+        f(z)=u(z)+iv(z)
+    </me>, 
+    where <m>u(z)=\Re f(z)</m> and <m>v(z)=\Im f(z)</m>. We call the functions 
+    <md>
+        <mrow>u\colon D \amp \rightarrow \R \amp v\colon D\amp \rightarrow \R  </mrow>
+    </md>
+    the <term>real</term> and <term>imaginary</term> parts of <m>f</m>, respectively, and write <m>f=u+iv</m>. 
+    </p>
+    </statement>
+    </definition>
+    <convention>
+        <title>Real and imaginary parts</title>
+        <p>
+            Given a complex function <m>f\colon D\rightarrow \C</m>, if we write <m>f=u+iv</m> without further comment, it is assumed that <m>u</m> and <m>v</m> are the real and imaginary parts of <m>f</m>. 
+        </p>
+    </convention>
+    <remark>
+    <title>Real and imaginary parts</title>
+    <p>
+    Given a complex function <m>f\colon D\rightarrow \C</m>, <m>f=u+iv</m> its real and imaginary parts are real-valued functions with domain <m>D</m>. 
+    </p>
+    </remark>
+
+    <example xml:id="eg_real_imag_parts">
+    <title>Real and imaginary parts</title>
+    <statement>
+    <p>
+    Let <m>f\colon \C\rightarrow \C</m> be defined as <m>f(z)=z^2</m>. Find the real and imaginary parts of <m>f</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    Letting <m>z=x+iy</m>, we have 
+    <md>
+        <mrow>f(z) \amp =z^2</mrow>
+        <mrow> \amp = (x^2-y^2)+i(2xy)</mrow>
+    </md>,
+     and thus 
+    <md>
+        <mrow>u(x,y) \amp = x^2-y^2 \amp v(x,y)=2xy</mrow>
+    </md>.
+
+    </p>
+    </solution>
+    </example>
+    
+
+</section>

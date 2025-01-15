@@ -28,7 +28,7 @@ We write <m>\lim\limits_{n\to \infty}z_n=z</m> (or <m>z_n\to z</m>) in this case
 <title>Infinite limit</title>
 <statement>
 <p>
-A complex sequence <m>(z_n)_{n=1}^\infty</m> has an <term>infinite limit</term>, denoted <m>\lim\limits_{n\to \infty}z_n=\infty</m> if for all <m>R&gt; 0</m>, there exists an <m>N&gt; 0</m> such that if <m>n\geq N</m>, then <m>\abs{z_n}&gt; R</m>. Using logical shorthand: 
+A complex sequence <m>(z_n)_{n=1}^\infty</m> has an <term>infinite limit</term>, denoted <m>\lim\limits_{n\to \infty}z_n=\infty</m> if for all <m>R&gt; 0</m>, there exists an <m>N&gt; 0</m> such that if <m>n\geq N</m>, then <m>\abs{z_n}&gt; R</m>. 
 </p>
 </statement>
 </definition>
@@ -205,6 +205,9 @@ Given a complex sequence <m>(z_n)_{n=1}^{\infty}</m>, the formal expression <m>\
     </me>
     and say that the series converges to <m>z</m>. 
 </p>
+    <p>
+        A series <term>diverges</term> if it does not converge. 
+    </p>
 </statement>
 </definition>
 
