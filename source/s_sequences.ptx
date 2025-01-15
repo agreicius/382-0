@@ -6,7 +6,7 @@
     <introduction>
         <p>
         The complex modulus function <m>\abs{z}</m>, as well as the distance function <m>d(z,w)=\abs{z-w}</m> it defines, gives rise to theory of convergence of complex sequences and series that is a straightforward generalization of real sequences and series theory. 
-    </p>
+        </p>
     </introduction>
 <subsection xml:id="ss_sequences">
 <title>Sequences</title>
@@ -96,18 +96,19 @@ Identifying an element <m>z</m> of <m>\C^*=\C\cup \{\infty\}</m> with its corres
 
    <li>
       <p>
-         If <m>z_{n}\rightarrow z</m> and <m>w_{n}\rightarrow w</m>, then
+         If <m>\lim\limits_{n\to \infty}z_n=z</m> and <m>\lim\limits_{n\to \infty}w_n=w</m>, then
          <mdn>
-            <mrow xml:id="eq_lim_seq_linear">(cz_{n}+dw_{n})\amp \rightarrow (cz+dw) \text{ for any } z_0,w_0\in \C</mrow>
-            <mrow> z_{n}w_{n}\amp \rightarrow zw\amp </mrow>
-            <mrow> \frac{z_n}{w_n}\amp \to z/w,  \text{ assuming } w\ne 0 </mrow>
+            <mrow xml:id="eq_lim_seq_linear">\lim\limits_{n\to \infty} cz_{n}+\lim\limits_{n\to \infty}dw_{n}\amp = c\lim\limits_{n\to \infty}z_n+d\lim\limits_{n\to \infty}w_n=cz+dw \text{ for any } c,d\in \C</mrow>
+            <mrow> \lim\limits_{n\to \infty}z_{n}w_{n}\amp = (\lim\limits_{n\to \infty}z_n)(\lim\limits_{n\to \infty}w_m)=zw\amp </mrow>
+            <mrow> \lim\limits_{n\to \infty}\frac{z_n}{w_n}\amp = \frac{\lim\limits_{n\to \infty}z_n}{\lim\limits_{n\to \infty}w_n}= z/w,  \text{ assuming } w\ne 0 </mrow>
          </mdn>.
       </p>
    </li>
+   
 
    <li>
       <p>
-         <m>z_{n}\rightarrow \infty</m> if and only if <m>\frac{1}{z_{n}}\rightarrow 0</m>.
+         <m>z_{n}\rightarrow \infty</m> if and only if <m>\frac{1}{z_{n}}\rightarrow 0</m>, assuming <m>z_n\ne 0</m> for all <m>n</m>. 
       </p>
    </li>
 </ol>
@@ -225,9 +226,37 @@ Let <m>(z_n)_{n=1}^\infty</m> and <m>(w_n)_{n=1}^\infty</m> be complex sequences
             <me>
                 \sum_{n=1}^\infty z_n=\sum_{n=1}^\infty \Re z_n +i \sum_{n=1}^\infty \Im z_n
             </me>.
-            
+           In particular, <m>\sum_{n=1}^\infty z_n=z</m> if and only if 
+           <md>
+            <mrow>\sum_{n=1}^\infty \Re z_n \amp = \Re z \amp \sum_{n=1}^\infty \Im z_n=\Im z</mrow>
+           </md> 
         </p>
     </li>
+    <li>
+        <p>
+            If <m>\sum_{n=1}^\infty z_n=z</m> and <m>\sum_{n=1}^\infty w_n=w</m>, then 
+            <md>
+                <mrow> \sum_{n=1}^\infty cz_n+\sum_{n=1}^\infty dw_n \amp = c\sum_{n=1}^\infty z_n+d\sum_{n=1}^\infty w_n  </mrow>
+                <mrow> \amp =cz+dw </mrow>
+            </md>,
+            for any <m>c,w\in \C</m>. 
+        </p>
+    </li>
+    <li>
+    <title>Divergence test</title>
+    <p>
+        If <m>\sum_{n=1}^\infty z_n</m> converges, then <m>\lim\limits_{n\to \infty}z_n=0</m>.
+    </p>
+   </li>
+   <li>
+    <title>Absolute convergence test</title>
+    <p>
+        If <m>\sum_{n=1}^\infty \abs{z_n}</m> converges, then <m>\sum_{n=1}^\infty z_n</m> converges and 
+        <me>
+            \abs{\sum_{n=1}^\infty z_n}\leq \sum_{n=1}^\infty \abs{z_n}
+        </me>.
+    </p>
+   </li>
 </ol> 
 </p>
 </statement>
@@ -240,7 +269,7 @@ Let <m>(z_n)_{n=1}^\infty</m> and <m>(w_n)_{n=1}^\infty</m> be complex sequences
 <title>Geometric series</title>
 <statement>
 <p>
-Let <m>z\in \C</m>. The <term>geometric series</term> <m>\sum_{n=0}^\infty z^n</m> converges if <m>\abs{z}&lt; 1</m> and diverges for <m>\abs{z}&gt; 1</m>. 
+Let <m>z\in \C</m>. Show that the <term>geometric series</term> <m>\sum_{n=0}^\infty z^n</m> converges if <m>\abs{z}&lt; 1</m> and diverges for <m>\abs{z}\geq 1</m>. 
 </p>
 </statement>
 <solution>
