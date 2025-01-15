@@ -1177,7 +1177,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Sequences and series",
-  "body": " Sequences and series   The complex modulus function , as well as the distance function it defines, gives rise to theory of convergence of complex sequences and series that is a straightforward generalization of real sequences and series theory.    Sequences   Limit of sequence   A sequence of complex numbers of complex numbers converges if there is a complex number satisfying the following property: for all , there exists a such that if , then . We write (or ) in this case, and call the limit of the sequence.  A sequence diverges if it does not converge.     Infinite limit   A complex sequence has an infinite limit , denoted if for all , there exists an such that if , then . Using logical shorthand:     Infinite limit  Identifying an element of with its corresponding point using the stereographic projection, you can show that .    Logical shorthand   , can be expressed using logical shorthand as follows: .   Limits of complex sequences satisfy all the usual familiar limit properties of real sequences, and then some.   Limit properties   Let and be sequences of complex numbers.    if and only if .  In particular, if and only if .     is convergent if and only if and are both convergent, in which case . In particular, we have if and only if .     if and only if .    If , then .    If and , then .     if and only if .       Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of , either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.  For the reverse direction ( ), if both and exist, then we have , as desired.  Consider now the forward implication ( ). We assume and wish to show that and (which also proves these limits exists). We will give a proof of the second equality: you can prove the first in much the same way. Fix any positive . Since , we can find an such that for all . But then we have for all , showing that , as desired.     "
+  "body": " Sequences and series   The complex modulus function , as well as the distance function it defines, gives rise to theory of convergence of complex sequences and series that is a straightforward generalization of real sequences and series theory.    Sequences   Limit of sequence   A sequence of complex numbers of complex numbers converges if there is a complex number satisfying the following property: for all , there exists a such that if , then . We write (or ) in this case, and call the limit of the sequence.  A sequence diverges if it does not converge.     Infinite limit   A complex sequence has an infinite limit , denoted if for all , there exists an such that if , then . Using logical shorthand:     Infinite limit  Identifying an element of with its corresponding point using the stereographic projection, you can show that .    Logical shorthand   , can be expressed using logical shorthand as follows: .   Limits of complex sequences satisfy all the usual familiar limit properties of real sequences, and then some.   Limit properties   Let and be sequences of complex numbers.    if and only if .  In particular, if and only if .     converges if and only if and both converge, in which case . In particular, we have if and only if .     if and only if .    If , then .    If and , then .     if and only if , assuming for all .       Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of , either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.  For the reverse direction ( ), if both and exist, then we have , as desired.  Consider now the forward implication ( ). We assume and wish to show that and (which also proves these limits exists). We will give a proof of the second equality: you can prove the first in much the same way. Fix any positive . Since , we can find an such that for all . But then we have for all , showing that , as desired.     Limit of sequence   Define . Show that converges and compute its limit.         Divergent sequence   Show that the sequence diverges.         Sequence with infinite limit   Show that .          Series  As with the reals, from a theory of convergent sequences we easily derive a theory of convergent series . The definitions and results below are all straightforward generalizations of facts about series of real numbers.   Series   Given a complex sequence , the formal expression is called a (complex) series .  For each we define the -th partial sum  of the series as . We say the series converges if for some complex number , in which case we write and say that the series converges to .     Series properties   Let and be complex sequences.    if and only if , where is the -th partial sum of .     converges if and only if and converge, in which case . In particular, if and only if     If and , then , for any .    Divergence test  If converges, then .    Absolute convergence test  If converges, then converges and .            Geometric series   Let . Show that the geometric series  converges if and diverges for .         "
 },
 {
   "id": "d_lim_seq",
@@ -1222,7 +1222,61 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.5.5",
   "title": "Limit properties.",
-  "body": " Limit properties   Let and be sequences of complex numbers.    if and only if .  In particular, if and only if .     is convergent if and only if and are both convergent, in which case . In particular, we have if and only if .     if and only if .    If , then .    If and , then .     if and only if .       Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of , either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.  For the reverse direction ( ), if both and exist, then we have , as desired.  Consider now the forward implication ( ). We assume and wish to show that and (which also proves these limits exists). We will give a proof of the second equality: you can prove the first in much the same way. Fix any positive . Since , we can find an such that for all . But then we have for all , showing that , as desired.   "
+  "body": " Limit properties   Let and be sequences of complex numbers.    if and only if .  In particular, if and only if .     converges if and only if and both converge, in which case . In particular, we have if and only if .     if and only if .    If , then .    If and , then .     if and only if , assuming for all .       Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of , either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.  For the reverse direction ( ), if both and exist, then we have , as desired.  Consider now the forward implication ( ). We assume and wish to show that and (which also proves these limits exists). We will give a proof of the second equality: you can prove the first in much the same way. Fix any positive . Since , we can find an such that for all . But then we have for all , showing that , as desired.   "
+},
+{
+  "id": "eg_lim_seq",
+  "level": "2",
+  "url": "s_sequences.html#eg_lim_seq",
+  "type": "Example",
+  "number": "1.5.6",
+  "title": "Limit of sequence.",
+  "body": " Limit of sequence   Define . Show that converges and compute its limit.       "
+},
+{
+  "id": "eg_lim_seq_div",
+  "level": "2",
+  "url": "s_sequences.html#eg_lim_seq_div",
+  "type": "Example",
+  "number": "1.5.7",
+  "title": "Divergent sequence.",
+  "body": " Divergent sequence   Show that the sequence diverges.       "
+},
+{
+  "id": "eg_lim_seq_inf",
+  "level": "2",
+  "url": "s_sequences.html#eg_lim_seq_inf",
+  "type": "Example",
+  "number": "1.5.8",
+  "title": "Sequence with infinite limit.",
+  "body": " Sequence with infinite limit   Show that .       "
+},
+{
+  "id": "d_series",
+  "level": "2",
+  "url": "s_sequences.html#d_series",
+  "type": "Definition",
+  "number": "1.5.9",
+  "title": "Series.",
+  "body": " Series   Given a complex sequence , the formal expression is called a (complex) series .  For each we define the -th partial sum  of the series as . We say the series converges if for some complex number , in which case we write and say that the series converges to .   "
+},
+{
+  "id": "th_series",
+  "level": "2",
+  "url": "s_sequences.html#th_series",
+  "type": "Theorem",
+  "number": "1.5.10",
+  "title": "Series properties.",
+  "body": " Series properties   Let and be complex sequences.    if and only if , where is the -th partial sum of .     converges if and only if and converge, in which case . In particular, if and only if     If and , then , for any .    Divergence test  If converges, then .    Absolute convergence test  If converges, then converges and .          "
+},
+{
+  "id": "eg_geom_series",
+  "level": "2",
+  "url": "s_sequences.html#eg_geom_series",
+  "type": "Example",
+  "number": "1.5.11",
+  "title": "Geometric series.",
+  "body": " Geometric series   Let . Show that the geometric series  converges if and diverges for .       "
 },
 {
   "id": "appendix-notation",

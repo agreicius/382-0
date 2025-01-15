@@ -196,6 +196,9 @@ eBookConfig.enable_chatcodes =  false;
 #th_lim-2-1-3 { counter-set: th_lim-2-1-3 0; }
 #th_lim-2-1-3 > li::marker { content: ""counter(th_lim-2-1-3,decimal)"."; }
 #th_lim-2-1-3 > li { counter-increment: th_lim-2-1-3; }
+#th_series-2-1-3 { counter-set: th_series-2-1-3 0; }
+#th_series-2-1-3 > li::marker { content: ""counter(th_series-2-1-3,decimal)"."; }
+#th_series-2-1-3 > li { counter-increment: th_series-2-1-3; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -421,7 +424,10 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s_sequences.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Sequences and series</span></a></div>
-<ul class="structural toc-item-list active"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_sequences" class="internal"><span class="title">Sequences</span></a></div></li></ul>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_sequences" class="internal"><span class="title">Sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_series" class="internal"><span class="title">Series</span></a></div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -487,7 +493,7 @@ z_n\to\infty \amp \iff \forall R &gt; 0\, \exists N &gt; 0( n\geq N \implies \ab
 </li>
 <li id="th_lim-2-1-3-2"><div class="para logical" id="th_lim-2-1-3-2-1">
 <div class="para">
-<span class="process-math">\(\{z_{n}\}\)</span> is convergent if and only if <span class="process-math">\(\{\Re z_{n}\}\)</span> and <span class="process-math">\(\{\Im z_{n}\}\)</span> are both convergent, in which case</div>
+<span class="process-math">\(\{z_{n}\}\)</span> converges if and only if <span class="process-math">\(\{\Re z_{n}\}\)</span> and <span class="process-math">\(\{\Im z_{n}\}\)</span> both converge, in which case</div>
 <div class="displaymath process-math" id="th_lim-2-1-3-2-1-4">
 \begin{align*}
 \lim_{n\rightarrow\infty}z_{n}\amp = (\lim_{n\rightarrow\infty}\Re z_{n})+i\lim\limits_{n\to \infty}\Im z_n \text{.}
@@ -507,17 +513,17 @@ z_n\to\infty \amp \iff \forall R &gt; 0\, \exists N &gt; 0( n\geq N \implies \ab
 <li id="th_lim-2-1-3-4"><div class="para" id="th_lim-2-1-3-4-1">If <span class="process-math">\(z_{n}\rightarrow z\text{,}\)</span> then <span class="process-math">\(\val{z_n}\rightarrow \val{z}\text{.}\)</span>
 </div></li>
 <li id="th_lim-2-1-3-5"><div class="para logical" id="th_lim-2-1-3-5-1">
-<div class="para">If <span class="process-math">\(z_{n}\rightarrow z\)</span> and <span class="process-math">\(w_{n}\rightarrow w\text{,}\)</span> then</div>
+<div class="para">If <span class="process-math">\(\lim\limits_{n\to \infty}z_n=z\)</span> and <span class="process-math">\(\lim\limits_{n\to \infty}w_n=w\text{,}\)</span> then</div>
 <div class="displaymath process-math" id="th_lim-2-1-3-5-1-3">
 \begin{align}
-(cz_{n}+dw_{n})\amp \rightarrow (cz+dw) \text{ for any } z_0,w_0\in \C\tag{1.21}\\
-z_{n}w_{n}\amp \rightarrow zw\amp \tag{1.22}\\
-\frac{z_n}{w_n}\amp \to z/w,  \text{ assuming } w\ne 0 \text{.}\tag{1.23}
+\lim\limits_{n\to \infty} cz_{n}+\lim\limits_{n\to \infty}dw_{n}\amp = c\lim\limits_{n\to \infty}z_n+d\lim\limits_{n\to \infty}w_n=cz+dw \text{ for any } c,d\in \C\tag{1.21}\\
+\lim\limits_{n\to \infty}z_{n}w_{n}\amp = (\lim\limits_{n\to \infty}z_n)(\lim\limits_{n\to \infty}w_m)=zw\amp \tag{1.22}\\
+\lim\limits_{n\to \infty}\frac{z_n}{w_n}\amp = \frac{\lim\limits_{n\to \infty}z_n}{\lim\limits_{n\to \infty}w_n}= z/w,  \text{ assuming } w\ne 0 \text{.}\tag{1.23}
 \end{align}
 </div>
 </div></li>
 <li id="th_lim-2-1-3-6"><div class="para" id="th_lim-2-1-3-6-1">
-<span class="process-math">\(z_{n}\rightarrow \infty\)</span> if and only if <span class="process-math">\(\frac{1}{z_{n}}\rightarrow 0\text{.}\)</span>
+<span class="process-math">\(z_{n}\rightarrow \infty\)</span> if and only if <span class="process-math">\(\frac{1}{z_{n}}\rightarrow 0\text{,}\)</span> assuming <span class="process-math">\(z_n\ne 0\)</span> for all <span class="process-math">\(n\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><details id="th_lim-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_lim-3-1">Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of <span class="process-math">\(\abs{\ }\text{,}\)</span> either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.</div>
@@ -540,7 +546,103 @@ z_{n}w_{n}\amp \rightarrow zw\amp \tag{1.22}\\
 \end{align*}
 </div>
 <div class="para">for all <span class="process-math">\(n\geq N\text{,}\)</span> showing that <span class="process-math">\(\Im z_n\to \Im z\text{,}\)</span> as desired.</div>
-</div></article></details></section></section></div>
+</div></article></details><article class="example example-like" id="eg_lim_seq"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of sequence.</span>
+</h4>
+<div class="para" id="eg_lim_seq-2-1">Define <span class="process-math">\(z_n=\frac{1}{n}(1+i)^n\text{.}\)</span> Show that <span class="process-math">\((z_n)_{n=1}^{\infty}\)</span> converges and compute its limit.</div>
+<div class="solutions"><details id="eg_lim_seq-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_lim_seq-3-1"></div></div></details></div></article><article class="example example-like" id="eg_lim_seq_div"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Divergent sequence.</span>
+</h4>
+<div class="para" id="eg_lim_seq_div-2-1">Show that the sequence <span class="process-math">\((i^n)_{n=1}^{\infty}\)</span> diverges.</div>
+<div class="solutions"><details id="eg_lim_seq_div-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_lim_seq_div-3-1"></div></div></details></div></article><article class="example example-like" id="eg_lim_seq_inf"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Sequence with infinite limit.</span>
+</h4>
+<div class="para" id="eg_lim_seq_inf-2-1">Show that <span class="process-math">\(\lim\limits_{n\to \infty}\frac{\sqrt{n}i+n^2}{5n+i}=\infty\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_lim_seq_inf-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_lim_seq_inf-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_series"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Series</span>
+</h3>
+<div class="para" id="ss_series-2">As with the reals, from a theory of convergent <em class="emphasis">sequences</em> we easily derive a theory of convergent <em class="emphasis">series</em>. The definitions and results below are all straightforward generalizations of facts about series of real numbers.</div>
+<article class="definition definition-like" id="d_series"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Series.</span>
+</h4>
+<div class="para" id="d_series-2-1">Given a complex sequence <span class="process-math">\((z_n)_{n=1}^{\infty}\text{,}\)</span> the formal expression <span class="process-math">\(\sum_{n=1}^\infty z_n\)</span> is called a <dfn class="terminology">(complex) series</dfn>.</div> <div class="para logical" id="d_series-2-2">
+<div class="para">For each <span class="process-math">\(k\geq 1\)</span> we define the <dfn class="terminology"><span class="process-math">\(k\)</span>-th partial sum</dfn> <span class="process-math">\(S_k\)</span> of the series <span class="process-math">\(\sum_{n=1}^\infty z_n\)</span> as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+S_k=\sum_{n=1}^k z_k\text{.}
+\end{equation*}
+</div>
+<div class="para">We say the series <dfn class="terminology">converges</dfn> if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{k\to \infty}S_k=\lim\limits_{k\to \infty}\sum_{n=1}^k z_k=z
+\end{equation*}
+</div>
+<div class="para">for some complex number <span class="process-math">\(z\in \C\text{,}\)</span> in which case we write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{n=1}^\infty z_n=z
+\end{equation*}
+</div>
+<div class="para">and say that the series converges to <span class="process-math">\(z\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="th_series"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Series properties.</span>
+</h4>
+<div class="para logical" id="th_series-2-1">
+<div class="para">Let <span class="process-math">\((z_n)_{n=1}^\infty\)</span> and <span class="process-math">\((w_n)_{n=1}^\infty\)</span> be complex sequences.</div>
+<ol class="decimal" id="th_series-2-1-3">
+<li id="th_series-2-1-3-1"><div class="para" id="th_series-2-1-3-1-1">
+<span class="process-math">\(\sum_{n=1}^\infty z_n=z\)</span> if and only if <span class="process-math">\(\lim\limits_{k\to \infty}(S_k-z)=0\text{,}\)</span> where <span class="process-math">\(S_k\)</span> is the <span class="process-math">\(k\)</span>-th partial sum of <span class="process-math">\(\sum_{n=1}^\infty z_n\text{.}\)</span>
+</div></li>
+<li id="th_series-2-1-3-2"><div class="para logical" id="th_series-2-1-3-2-1">
+<div class="para">
+<span class="process-math">\(\sum_{n=1}^\infty z_n\)</span> converges if and only if <span class="process-math">\(\sum_{n=1}^\infty \Re z_n\)</span> and <span class="process-math">\(\sum_{n=1}^\infty \Im z_n\)</span> converge, in which case</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{n=1}^\infty z_n=\sum_{n=1}^\infty \Re z_n +i \sum_{n=1}^\infty \Im z_n\text{.}
+\end{equation*}
+</div>
+<div class="para">In particular, <span class="process-math">\(\sum_{n=1}^\infty z_n=z\)</span> if and only if</div>
+<div class="displaymath process-math" id="th_series-2-1-3-2-1-6">
+\begin{align*}
+\sum_{n=1}^\infty \Re z_n \amp = \Re z \amp \sum_{n=1}^\infty \Im z_n=\Im z
+\end{align*}
+</div>
+</div></li>
+<li id="th_series-2-1-3-3"><div class="para logical" id="th_series-2-1-3-3-1">
+<div class="para">If <span class="process-math">\(\sum_{n=1}^\infty z_n=z\)</span> and <span class="process-math">\(\sum_{n=1}^\infty w_n=w\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="th_series-2-1-3-3-1-3">
+\begin{align*}
+\sum_{n=1}^\infty cz_n+\sum_{n=1}^\infty dw_n \amp = c\sum_{n=1}^\infty z_n+d\sum_{n=1}^\infty w_n  \\
+\amp =cz+dw \text{,}
+\end{align*}
+</div>
+<div class="para">for any <span class="process-math">\(c,w\in \C\text{.}\)</span>
+</div>
+</div></li>
+<li id="th_series-2-1-3-4">
+<span class="heading"><span class="title">Divergence test.</span></span><div class="para" id="th_series-2-1-3-4-2">If <span class="process-math">\(\sum_{n=1}^\infty z_n\)</span> converges, then <span class="process-math">\(\lim\limits_{n\to \infty}z_n=0\text{.}\)</span>
+</div>
+</li>
+<li id="th_series-2-1-3-5">
+<span class="heading"><span class="title">Absolute convergence test.</span></span><div class="para logical" id="th_series-2-1-3-5-2">
+<div class="para">If <span class="process-math">\(\sum_{n=1}^\infty \abs{z_n}\)</span> converges, then <span class="process-math">\(\sum_{n=1}^\infty z_n\)</span> converges and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{\sum_{n=1}^\infty z_n}\leq \sum_{n=1}^\infty \abs{z_n}\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+</ol>
+</div></article><details id="th_series-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_series-3-1"></div></article></details><article class="example example-like" id="eg_geom_series"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Geometric series.</span>
+</h4>
+<div class="para" id="eg_geom_series-2-1">Let <span class="process-math">\(z\in \C\text{.}\)</span> Show that the <dfn class="terminology">geometric series</dfn> <span class="process-math">\(\sum_{n=0}^\infty z^n\)</span> converges if <span class="process-math">\(\abs{z}&lt; 1\)</span> and diverges for <span class="process-math">\(\abs{z}\geq 1\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_geom_series-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_geom_series-3-1"></div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_topo.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

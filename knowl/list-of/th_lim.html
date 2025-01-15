@@ -26,7 +26,7 @@
 </li>
 <li><div class="para logical">
 <div class="para">
-<span class="process-math">\(\{z_{n}\}\)</span> is convergent if and only if <span class="process-math">\(\{\Re z_{n}\}\)</span> and <span class="process-math">\(\{\Im z_{n}\}\)</span> are both convergent, in which case</div>
+<span class="process-math">\(\{z_{n}\}\)</span> converges if and only if <span class="process-math">\(\{\Re z_{n}\}\)</span> and <span class="process-math">\(\{\Im z_{n}\}\)</span> both converge, in which case</div>
 <div class="displaymath process-math">
 \begin{align*}
 \lim_{n\rightarrow\infty}z_{n}\amp = (\lim_{n\rightarrow\infty}\Re z_{n})+i\lim\limits_{n\to \infty}\Im z_n \text{.}
@@ -46,17 +46,17 @@
 <li><div class="para">If <span class="process-math">\(z_{n}\rightarrow z\text{,}\)</span> then <span class="process-math">\(\val{z_n}\rightarrow \val{z}\text{.}\)</span>
 </div></li>
 <li><div class="para logical">
-<div class="para">If <span class="process-math">\(z_{n}\rightarrow z\)</span> and <span class="process-math">\(w_{n}\rightarrow w\text{,}\)</span> then</div>
+<div class="para">If <span class="process-math">\(\lim\limits_{n\to \infty}z_n=z\)</span> and <span class="process-math">\(\lim\limits_{n\to \infty}w_n=w\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{align}
-(cz_{n}+dw_{n})\amp \rightarrow (cz+dw) \text{ for any } z_0,w_0\in \C\tag{1.21}\\
-z_{n}w_{n}\amp \rightarrow zw\amp \tag{1.22}\\
-\frac{z_n}{w_n}\amp \to z/w,  \text{ assuming } w\ne 0 \text{.}\tag{1.23}
+\lim\limits_{n\to \infty} cz_{n}+\lim\limits_{n\to \infty}dw_{n}\amp = c\lim\limits_{n\to \infty}z_n+d\lim\limits_{n\to \infty}w_n=cz+dw \text{ for any } c,d\in \C\tag{1.21}\\
+\lim\limits_{n\to \infty}z_{n}w_{n}\amp = (\lim\limits_{n\to \infty}z_n)(\lim\limits_{n\to \infty}w_m)=zw\amp \tag{1.22}\\
+\lim\limits_{n\to \infty}\frac{z_n}{w_n}\amp = \frac{\lim\limits_{n\to \infty}z_n}{\lim\limits_{n\to \infty}w_n}= z/w,  \text{ assuming } w\ne 0 \text{.}\tag{1.23}
 \end{align}
 </div>
 </div></li>
 <li><div class="para">
-<span class="process-math">\(z_{n}\rightarrow \infty\)</span> if and only if <span class="process-math">\(\frac{1}{z_{n}}\rightarrow 0\text{.}\)</span>
+<span class="process-math">\(z_{n}\rightarrow \infty\)</span> if and only if <span class="process-math">\(\frac{1}{z_{n}}\rightarrow 0\text{,}\)</span> assuming <span class="process-math">\(z_n\ne 0\)</span> for all <span class="process-math">\(n\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of <span class="process-math">\(\abs{\ }\text{,}\)</span> either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.</div>
