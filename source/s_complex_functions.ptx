@@ -172,7 +172,7 @@
         </li>
         <li>
             <p>
-                <m>\ell_theta=\{z\in \C\colon \Arg z=\theta+2\pi k \text{ for some } k\in \Z\}</m>
+                <m>\ell_\theta=\{z\in \C\colon \Arg z=\theta+2\pi k \text{ for some } k\in \Z\}</m>
             </p>
         </li>
         <li>
