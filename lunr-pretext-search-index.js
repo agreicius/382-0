@@ -1177,7 +1177,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Sequences and series",
-  "body": " Sequences and series   The complex modulus function , as well as the distance function it defines, gives rise to theory of convergence of complex sequences and series that is a straightforward generalization of real sequences and series theory.    Sequences   Limit of sequence   A sequence of complex numbers of complex numbers converges if there is a complex number satisfying the following property: for all , there exists a such that if , then . We write (or ) in this case, and call the limit of the sequence.  A sequence diverges if it does not converge.     Infinite limit   A complex sequence has an infinite limit , denoted if for all , there exists an such that if , then . Using logical shorthand:     Infinite limit  Identifying an element of with its corresponding point using the stereographic projection, you can show that .    Logical shorthand   , can be expressed using logical shorthand as follows: .   Limits of complex sequences satisfy all the usual familiar limit properties of real sequences, and then some.   Limit properties   Let and be sequences of complex numbers.    if and only if .  In particular, if and only if .     converges if and only if and both converge, in which case . In particular, we have if and only if .     if and only if .    If , then .    If and , then .     if and only if , assuming for all .       Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of , either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.  For the reverse direction ( ), if both and exist, then we have , as desired.  Consider now the forward implication ( ). We assume and wish to show that and (which also proves these limits exists). We will give a proof of the second equality: you can prove the first in much the same way. Fix any positive . Since , we can find an such that for all . But then we have for all , showing that , as desired.     Limit of sequence   Define . Show that converges and compute its limit.         Divergent sequence   Show that the sequence diverges.         Sequence with infinite limit   Show that .          Series  As with the reals, from a theory of convergent sequences we easily derive a theory of convergent series . The definitions and results below are all straightforward generalizations of facts about series of real numbers.   Series   Given a complex sequence , the formal expression is called a (complex) series .  For each we define the -th partial sum  of the series as . We say the series converges if for some complex number , in which case we write and say that the series converges to .     Series properties   Let and be complex sequences.    if and only if , where is the -th partial sum of .     converges if and only if and converge, in which case . In particular, if and only if     If and , then , for any .    Divergence test  If converges, then .    Absolute convergence test  If converges, then converges and .            Geometric series   Let . Show that the geometric series  converges if and diverges for .         "
+  "body": " Sequences and series   The complex modulus function , as well as the distance function it defines, gives rise to theory of convergence of complex sequences and series that is a straightforward generalization of real sequences and series theory.    Sequences   Limit of sequence   A sequence of complex numbers of complex numbers converges if there is a complex number satisfying the following property: for all , there exists a such that if , then . We write (or ) in this case, and call the limit of the sequence.  A sequence diverges if it does not converge.     Infinite limit   A complex sequence has an infinite limit , denoted if for all , there exists an such that if , then .     Infinite limit  Identifying an element of with its corresponding point using the stereographic projection, you can show that .    Logical shorthand   , can be expressed using logical shorthand as follows: .   Limits of complex sequences satisfy all the usual familiar limit properties of real sequences, and then some.   Limit properties   Let and be sequences of complex numbers.    if and only if .  In particular, if and only if .     converges if and only if and both converge, in which case . In particular, we have if and only if .     if and only if .    If , then .    If and , then .     if and only if , assuming for all .       Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of , either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.  For the reverse direction ( ), if both and exist, then we have , as desired.  Consider now the forward implication ( ). We assume and wish to show that and (which also proves these limits exists). We will give a proof of the second equality: you can prove the first in much the same way. Fix any positive . Since , we can find an such that for all . But then we have for all , showing that , as desired.     Limit of sequence   Define . Show that converges and compute its limit.         Divergent sequence   Show that the sequence diverges.         Sequence with infinite limit   Show that .          Series  As with the reals, from a theory of convergent sequences we easily derive a theory of convergent series . The definitions and results below are all straightforward generalizations of facts about series of real numbers.   Series   Given a complex sequence , the formal expression is called a (complex) series .  For each we define the -th partial sum  of the series as . We say the series converges if for some complex number , in which case we write and say that the series converges to .  A series diverges if it does not converge.     Series properties   Let and be complex sequences.    if and only if , where is the -th partial sum of .     converges if and only if and converge, in which case . In particular, if and only if     If and , then , for any .    Divergence test  If converges, then .    Absolute convergence test  If converges, then converges and .            Geometric series   Let . Show that the geometric series  converges if and diverges for .         "
 },
 {
   "id": "d_lim_seq",
@@ -1195,7 +1195,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.5.2",
   "title": "Infinite limit.",
-  "body": " Infinite limit   A complex sequence has an infinite limit , denoted if for all , there exists an such that if , then . Using logical shorthand:   "
+  "body": " Infinite limit   A complex sequence has an infinite limit , denoted if for all , there exists an such that if , then .   "
 },
 {
   "id": "ss_sequences-4",
@@ -1258,7 +1258,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.5.9",
   "title": "Series.",
-  "body": " Series   Given a complex sequence , the formal expression is called a (complex) series .  For each we define the -th partial sum  of the series as . We say the series converges if for some complex number , in which case we write and say that the series converges to .   "
+  "body": " Series   Given a complex sequence , the formal expression is called a (complex) series .  For each we define the -th partial sum  of the series as . We say the series converges if for some complex number , in which case we write and say that the series converges to .  A series diverges if it does not converge.   "
 },
 {
   "id": "th_series",
@@ -1277,6 +1277,105 @@ var ptx_lunr_docs = [
   "number": "1.5.11",
   "title": "Geometric series.",
   "body": " Geometric series   Let . Show that the geometric series  converges if and diverges for .       "
+},
+{
+  "id": "s_complex_functions",
+  "level": "1",
+  "url": "s_complex_functions.html",
+  "type": "Section",
+  "number": "1.6",
+  "title": "Complex functions",
+  "body": " Complex functions   We now introduce the main object of study in this course, complex functions , and begin developing what ends up being an extension of calculus to this setting, starting with the notion of a limit of a complex function.    Complex functions   Complex function   A complex function is a function , where .     Real and imaginary parts   Given a complex function with , we can write , where and . We call the functions and the the real and imaginary parts of , respectively, and write .  Identifying complex numbers with pairs in in the usual manner, we can think of as real-valued functions in the real variables and .     Real and imaginary parts  Given a complex function , if we write without further comment, it is assumed that and are the real and imaginary parts of .    Real and imaginary parts  Given a complex function , its real and imaginary parts are real-valued functions with domain .    Real and imaginary parts   Let be defined as .   Find the real and imaginary parts of .    Decide whether is injective.    Compute .          Letting , we have , and thus .        Complex exponential function   We define the (complex) exponential function  as . We will also us the notation to denote .     Euler's formula  At long last we have a convenient shorthand notation for complex elements of the form : namely, we see that . This equality is called Euler's formula . A particularly famous consequence of Euler's formula is given by Euler's equation : .    Exponential function properties      We have for all .    We have if and only if and for some . In particular, is not injective.     .             Visualizing complex functions  How do we visualize a complex function be a complex function? Identifying with , we can think of as a function . It is certainly possible to define the graph of of : , but this object is not so easy to visualize, being a subset of . Instead, thinking of as a transformation of the complex plane, we can visualize how transforms various useful subsets of . This is typically done by starting with two copies of the complex plane (often called the - and -planes), sketching curves or regions in the -plane, and sketching their image in the -plane.   Squaring transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    , .          , , .     ,      , .     , ,             Exponential transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    ,      , .     , ,             "
+},
+{
+  "id": "d_complex_function",
+  "level": "2",
+  "url": "s_complex_functions.html#d_complex_function",
+  "type": "Definition",
+  "number": "1.6.1",
+  "title": "Complex function.",
+  "body": " Complex function   A complex function is a function , where .   "
+},
+{
+  "id": "d_real_imag_parts",
+  "level": "2",
+  "url": "s_complex_functions.html#d_real_imag_parts",
+  "type": "Definition",
+  "number": "1.6.2",
+  "title": "Real and imaginary parts.",
+  "body": " Real and imaginary parts   Given a complex function with , we can write , where and . We call the functions and the the real and imaginary parts of , respectively, and write .  Identifying complex numbers with pairs in in the usual manner, we can think of as real-valued functions in the real variables and .   "
+},
+{
+  "id": "ss_functions-4",
+  "level": "2",
+  "url": "s_complex_functions.html#ss_functions-4",
+  "type": "Convention",
+  "number": "1.6.3",
+  "title": "Real and imaginary parts.",
+  "body": " Real and imaginary parts  Given a complex function , if we write without further comment, it is assumed that and are the real and imaginary parts of .  "
+},
+{
+  "id": "ss_functions-5",
+  "level": "2",
+  "url": "s_complex_functions.html#ss_functions-5",
+  "type": "Remark",
+  "number": "1.6.4",
+  "title": "Real and imaginary parts.",
+  "body": " Real and imaginary parts  Given a complex function , its real and imaginary parts are real-valued functions with domain .  "
+},
+{
+  "id": "eg_real_imag_parts",
+  "level": "2",
+  "url": "s_complex_functions.html#eg_real_imag_parts",
+  "type": "Example",
+  "number": "1.6.5",
+  "title": "Real and imaginary parts.",
+  "body": " Real and imaginary parts   Let be defined as .   Find the real and imaginary parts of .    Decide whether is injective.    Compute .          Letting , we have , and thus .      "
+},
+{
+  "id": "d_complex_exp",
+  "level": "2",
+  "url": "s_complex_functions.html#d_complex_exp",
+  "type": "Definition",
+  "number": "1.6.6",
+  "title": "Complex exponential function.",
+  "body": " Complex exponential function   We define the (complex) exponential function  as . We will also us the notation to denote .   "
+},
+{
+  "id": "ss_functions-8",
+  "level": "2",
+  "url": "s_complex_functions.html#ss_functions-8",
+  "type": "Remark",
+  "number": "1.6.7",
+  "title": "Euler’s formula.",
+  "body": " Euler's formula  At long last we have a convenient shorthand notation for complex elements of the form : namely, we see that . This equality is called Euler's formula . A particularly famous consequence of Euler's formula is given by Euler's equation : .  "
+},
+{
+  "id": "th_exp",
+  "level": "2",
+  "url": "s_complex_functions.html#th_exp",
+  "type": "Theorem",
+  "number": "1.6.8",
+  "title": "Exponential function properties.",
+  "body": " Exponential function properties      We have for all .    We have if and only if and for some . In particular, is not injective.     .          "
+},
+{
+  "id": "eg_square_transform",
+  "level": "2",
+  "url": "s_complex_functions.html#eg_square_transform",
+  "type": "Example",
+  "number": "1.6.9",
+  "title": "Squaring transformation.",
+  "body": " Squaring transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    , .          , , .     ,      , .     , ,           "
+},
+{
+  "id": "eg_exp_transform",
+  "level": "2",
+  "url": "s_complex_functions.html#eg_exp_transform",
+  "type": "Example",
+  "number": "1.6.10",
+  "title": "Exponential transformation.",
+  "body": " Exponential transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    ,      , .     , ,           "
 },
 {
   "id": "appendix-notation",

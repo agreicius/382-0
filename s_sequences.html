@@ -199,6 +199,21 @@ eBookConfig.enable_chatcodes =  false;
 #th_series-2-1-3 { counter-set: th_series-2-1-3 0; }
 #th_series-2-1-3 > li::marker { content: ""counter(th_series-2-1-3,decimal)"."; }
 #th_series-2-1-3 > li { counter-increment: th_series-2-1-3; }
+#eg_real_imag_parts-2-1-3 { counter-set: eg_real_imag_parts-2-1-3 0; }
+#eg_real_imag_parts-2-1-3 > li::marker { content: ""counter(eg_real_imag_parts-2-1-3,decimal)"."; }
+#eg_real_imag_parts-2-1-3 > li { counter-increment: eg_real_imag_parts-2-1-3; }
+#eg_real_imag_parts-3-1-1 { counter-set: eg_real_imag_parts-3-1-1 0; }
+#eg_real_imag_parts-3-1-1 > li::marker { content: ""counter(eg_real_imag_parts-3-1-1,decimal)"."; }
+#eg_real_imag_parts-3-1-1 > li { counter-increment: eg_real_imag_parts-3-1-1; }
+#th_exp-2-1-1 { counter-set: th_exp-2-1-1 0; }
+#th_exp-2-1-1 > li::marker { content: ""counter(th_exp-2-1-1,decimal)"."; }
+#th_exp-2-1-1 > li { counter-increment: th_exp-2-1-1; }
+#eg_square_transform-2-1-6 { counter-set: eg_square_transform-2-1-6 0; }
+#eg_square_transform-2-1-6 > li::marker { content: ""counter(eg_square_transform-2-1-6,decimal)"."; }
+#eg_square_transform-2-1-6 > li { counter-increment: eg_square_transform-2-1-6; }
+#eg_exp_transform-2-1-6 { counter-set: eg_exp_transform-2-1-6 0; }
+#eg_exp_transform-2-1-6 > li::marker { content: ""counter(eg_exp_transform-2-1-6,decimal)"."; }
+#eg_exp_transform-2-1-6 > li { counter-increment: eg_exp_transform-2-1-6; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -219,7 +234,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_topo.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_topo.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_complex_functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -429,6 +444,13 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_series" class="internal"><span class="title">Series</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_complex_functions.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Complex functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_functions.html#ss_functions" class="internal"><span class="title">Complex functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_functions.html#ss_functions_visual" class="internal"><span class="title">Visualizing complex functions</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -455,7 +477,8 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="d_lim_seq-2-1">A sequence of complex numbers <span class="process-math">\((z_n)_{n=1}^\infty=z_1,z_2,\dots\)</span> of complex numbers <dfn class="terminology">converges</dfn> if there is a complex number <span class="process-math">\(z\in \C\)</span> satisfying the following property: for all <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists a <span class="process-math">\(N &gt; 0\)</span> such that if <span class="process-math">\(n\geq N\text{,}\)</span> then <span class="process-math">\(\abs{z_n-z}&lt; \epsilon\text{.}\)</span> We write <span class="process-math">\(\lim\limits_{n\to \infty}z_n=z\)</span> (or <span class="process-math">\(z_n\to z\)</span>) in this case, and call <span class="process-math">\(z\)</span> the <dfn class="terminology">limit</dfn> of the sequence.</div> <div class="para" id="d_lim_seq-2-2">A sequence <dfn class="terminology">diverges</dfn> if it does not converge.</div></article><article class="definition definition-like" id="d_lim_seq_inf"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Infinite limit.</span>
 </h4>
-<div class="para" id="d_lim_seq_inf-2-1">A complex sequence <span class="process-math">\((z_n)_{n=1}^\infty\)</span> has an <dfn class="terminology">infinite limit</dfn>, denoted <span class="process-math">\(\lim\limits_{n\to \infty}z_n=\infty\)</span> if for all <span class="process-math">\(R&gt; 0\text{,}\)</span> there exists an <span class="process-math">\(N&gt; 0\)</span> such that if <span class="process-math">\(n\geq N\text{,}\)</span> then <span class="process-math">\(\abs{z_n}&gt; R\text{.}\)</span> Using logical shorthand:</div></article><article class="remark remark-like" id="ss_sequences-4"><h4 class="heading">
+<div class="para" id="d_lim_seq_inf-2-1">A complex sequence <span class="process-math">\((z_n)_{n=1}^\infty\)</span> has an <dfn class="terminology">infinite limit</dfn>, denoted <span class="process-math">\(\lim\limits_{n\to \infty}z_n=\infty\)</span> if for all <span class="process-math">\(R&gt; 0\text{,}\)</span> there exists an <span class="process-math">\(N&gt; 0\)</span> such that if <span class="process-math">\(n\geq N\text{,}\)</span> then <span class="process-math">\(\abs{z_n}&gt; R\text{.}\)</span>
+</div></article><article class="remark remark-like" id="ss_sequences-4"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Infinite limit.</span>
 </h4>
 <div class="para logical" id="ss_sequences-4-2">
@@ -587,7 +610,7 @@ S_k=\sum_{n=1}^k z_k\text{.}
 </div>
 <div class="para">and say that the series converges to <span class="process-math">\(z\text{.}\)</span>
 </div>
-</div></article><article class="theorem theorem-like" id="th_series"><h4 class="heading">
+</div> <div class="para" id="d_series-2-3">A series <dfn class="terminology">diverges</dfn> if it does not converge.</div></article><article class="theorem theorem-like" id="th_series"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Series properties.</span>
 </h4>
 <div class="para logical" id="th_series-2-1">
@@ -644,7 +667,7 @@ S_k=\sum_{n=1}^k z_k\text{.}
 </div>
 <div class="solutions"><details id="eg_geom_series-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_geom_series-3-1"></div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_topo.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_topo.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_complex_functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
