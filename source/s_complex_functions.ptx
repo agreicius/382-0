@@ -153,11 +153,11 @@
     <subsection xml:id="ss_functions_visual">
     <title>Visualizing complex functions</title>
     <p>
-        How do we visualize a complex function <m>f\colon \C\rightarrow \C</m> be a complex function? Identifying <m>\C</m> with <m>\R^2</m>, we can think of <m>f</m> as a function <m>f\colon \R^2\rightarrow \R^2</m>. It is certainly possible to define the graph of of <m>f</m>: 
+        How do we visualize a complex function <m>f\colon \C\rightarrow \C</m>? Identifying <m>\C</m> with <m>\R^2</m>, we can think of <m>f</m> as a function <m>f\colon \R^2\rightarrow \R^2</m>. As with any function, the <em>graph</em> <m>\Gamma_f</m> of <m>f</m> is defined as the set of all input-output pairs <m>(z,f(z))</m>. Identifying <m>z=x+iy</m> with the pair <m>(x,y)</m> and <m>f(z)=u(x,y)+iv(x,y)</m> with <m>(u(x,y),v(x,y))</m> we have 
         <me>
-            \Gamma_f=\{(x,y,u,v)\in \R^4\colon (u,v)=f(x,y)\}
-        </me>,
-        but this object is not so easy to visualize, being a subset of <m>\R^4</m>. Instead, thinking of <m>f</m> as a transformation of the complex plane, we can visualize how <m>f</m> transforms various useful subsets of <m>\C</m>. This is typically done by starting with two copies of the complex plane (often called the <m>xy</m>- and <m>uv</m>-planes), sketching curves or regions <m>D</m> in the <m>xy</m>-plane, and sketching their image <m>f(D)</m> in the <m>uv</m>-plane. 
+            \Gamma_f=\{(z,f(z))\in \C^2\colon z\in \C\}=\{(x,y,u(x,y),v(x,y))\in \R^4\colon (x,y)\in \R^2\}
+        </me>.
+        This is not such an easy object to visualize, being a subset of <m>\R^4</m>. Instead, thinking of <m>f</m> as a transformation of the complex plane, we can visualize how <m>f</m> transforms various useful subsets of <m>\C</m>. This is typically done by starting with two copies of the complex plane (often called the <m>xy</m>- and <m>uv</m>-planes), sketching curves or regions <m>D</m> in the <m>xy</m>-plane, and sketching their image <m>f(D)</m> in the <m>uv</m>-plane. 
     </p>
     <example xml:id="eg_square_transform">
     <title>Squaring transformation</title>
