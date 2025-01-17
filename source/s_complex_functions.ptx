@@ -133,7 +133,7 @@
         </li>
         <li>
             <p>
-            We have <m>e^z=e^w</m> if and only if <m>\abs{z}=\abs{w}</m> and <m>\Im w=\Im z+2\pi k</m> for some <m>k\in \Z</m>. In particular, <m>\exp</m> is not injective. 
+            We have <m>e^z=e^w</m> if and only if <m>\Re z=\Re w</m> and <m>\Im w=\Im z+2\pi k</m> for some <m>k\in \Z</m>. In particular, <m>\exp</m> is not injective. 
             </p>
         </li>
         <li>
