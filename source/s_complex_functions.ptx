@@ -2,9 +2,13 @@
 
 <section xml:id="s_complex_functions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Complex functions</title>
-    <p>
+    <introduction>
+        <p>
         We now introduce the main object of study in this course, <em>complex functions</em>, and begin developing what ends up being an extension of calculus to this setting, starting with the notion of a limit of a complex function. 
-    </p>
+        </p>
+    </introduction>
+    <subsection xml:id="ss_functions">
+    <title>Complex functions</title>
     <definition xml:id="d_complex_function">
     <title>Complex function</title>
     <statement>
@@ -21,11 +25,16 @@
     <me>
         f(z)=u(z)+iv(z)
     </me>, 
-    where <m>u(z)=\Re f(z)</m> and <m>v(z)=\Im f(z)</m>. We call the functions 
-    <md>
-        <mrow>u\colon D \amp \rightarrow \R \amp v\colon D\amp \rightarrow \R  </mrow>
-    </md>
+    where <m>u(z)=\Re f(z)</m> and <m>v(z)=\Im f(z)</m>. 
+    We call the functions <m>u</m> and <m>v</m> the 
     the <term>real</term> and <term>imaginary</term> parts of <m>f</m>, respectively, and write <m>f=u+iv</m>. 
+    </p>
+    <p>
+        Identifying complex numbers with pairs in <m>\R^2</m> in the usual manner, we can think of
+        <md>
+            <mrow>u \amp =u(x+iy)=u(x,y) \amp v=v(x+iy)=v(x,y)</mrow>
+        </md>
+        as real-valued functions in the real variables <m>x</m> and <m>y</m>. 
     </p>
     </statement>
     </definition>
@@ -46,12 +55,32 @@
     <title>Real and imaginary parts</title>
     <statement>
     <p>
-    Let <m>f\colon \C\rightarrow \C</m> be defined as <m>f(z)=z^2</m>. Find the real and imaginary parts of <m>f</m>. 
+    Let <m>f\colon \C\rightarrow \C</m> be defined as <m>f(z)=z^2</m>.
+    <ol>
+        <li>
+            <p>
+                Find the real and imaginary parts of <m>f</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Decide whether <m>f</m> is injective.
+            </p>
+        </li>
+        <li>
+            <p>
+                Compute <m>\im f=f(\C)</m>. 
+            </p>
+        </li>
+    </ol> 
     </p>
     </statement>
     <solution>
     <p>
-    Letting <m>z=x+iy</m>, we have 
+        <ol>
+            <li>
+                <p>
+                    Letting <m>z=x+iy</m>, we have 
     <md>
         <mrow>f(z) \amp =z^2</mrow>
         <mrow> \amp = (x^2-y^2)+i(2xy)</mrow>
@@ -60,10 +89,154 @@
     <md>
         <mrow>u(x,y) \amp = x^2-y^2 \amp v(x,y)=2xy</mrow>
     </md>.
+                </p>
+            </li>
+        </ol>
+    
 
     </p>
     </solution>
     </example>
+    <definition xml:id="d_complex_exp">
+    <title>Complex exponential function</title>
+    <statement>
+    <p>
+    We define the <term>(complex) exponential function</term> <m>\exp\colon \C\rightarrow \C</m> as 
+    <me>
+        \exp(x+iy)=e^x(\cos y+i\sin y)
+    </me>.
+    We will also us the notation <m>e^z</m> to denote <m>\exp(z)</m>. 
+    </p>
+    </statement>
+    </definition>
+    <remark>
+    <title>Euler's formula</title>
+    <p>
+    At long last we have a convenient shorthand notation for complex elements of the form <m>z=\cos\theta+i\sin\theta\in S^1</m>: namely, we see that 
+    <me>e^{i\theta}=e^{0+i\theta}=e^0(\cos\theta+i\sin\theta)=\cos\theta+i\sin\theta</me>.
+    This equality is called <em>Euler's formula</em>.  A particularly famous consequence of Euler's formula is given by <em>Euler's equation</em>: 
+    <me>
+        e^{\frac{i \pi}+1=0
+    </me>.
+    </p>
+    </remark>
+    
+    <theorem xml:id="th_exp">
+    <title>Exponential function properties</title>
+    <statement>
+    <p>
+    <ol>
+        <li>
+            <p>
+                We have <m>e^{z+w}=e^ze^w</m> for all <m>z,w\in \C</m>.  
+            </p>
+        </li>
+        <li>
+            <p>
+            We have <m>e^z=e^w</m> if and only if <m>\abs{z}=\abs{w}</m> and <m>\Im w=\Im z+2\pi k</m> for some <m>k\in \Z</m>. In particular, <m>\exp</m> is not injective. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\im \exp=\C-\{0\}</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    </subsection>
+    <subsection xml:id="ss_functions_visual">
+    <title>Visualizing complex functions</title>
+    <p>
+        How do we visualize a complex function <m>f\colon \C\rightarrow \C</m> be a complex function? Identifying <m>\C</m> with <m>\R^2</m>, we can think of <m>f</m> as a function <m>f\colon \R^2\rightarrow \R^2</m>. It is certainly possible to define the graph of of <m>f</m>: 
+        <me>
+            \Gamma_f=\{(x,y,u,v)\in \R^4\colon (u,v)=f(x,y)\}
+        </me>,
+        but this object is not so easy to visualize, being a subset of <m>\R^4</m>. Instead, thinking of <m>f</m> as a transformation of the complex plane, we can visualize how <m>f</m> transforms various useful subsets of <m>\C</m>. This is typically done by starting with two copies of the complex plane (often called the <m>xy</m>- and <m>uv</m>-planes), sketching curves or regions <m>D</m> in the <m>xy</m>-plane, and sketching their image <m>f(D)</m> in the <m>uv</m>-plane. 
+    </p>
+    <example xml:id="eg_square_transform">
+    <title>Squaring transformation</title>
+    <statement>
+    <p>
+    Define <m>f\colon \C\rightarrow \C</m> as <m>f(z)=z^2</m>. Sketch the given curves or regions in the complex <m>xy</m>-plane, as well as the image of these sets under <m>f</m> in the complex <m>uv</m>-plane. 
+    <ol>
+        <li>
+            <p>
+                <m>C_r=\{z\colon \abs{z}=r\}</m>, <m>r\geq 0</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\ell_theta=\{z\in \C\colon \Arg z=\theta+2\pi k \text{ for some } k\in \Z\}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>R=\{z\colon r\leq \abs{z}\leq s, \leq \Arg z+2\pi k\in [\alpha, \beta]\text{ for some } k\in \Z\}</m>, <m>0\leq r\leq s</m>, <m>\alpha\leq \beta</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>v_r=\{z\in \C\colon \Re z=r\}</m>, <m>r\in \R</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>h_s=\{z\in \C\colon \Im z=s\}</m>, <m>s\in \R</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>R=\{z\in \C\colon p\leq \Re z\leq q, r\leq \Im z\leq s\}</m>, <m>p\leq q</m>, <m>r\leq s</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_exp_transform">
+    <title>Exponential transformation</title>
+    <statement>
+    <p>
+    Define <m>f\colon \C\rightarrow \C</m> as <m>f(z)=\exp z=e^z</m>. Sketch the given curves or regions in the complex <m>xy</m>-plane, as well as the image of these sets under <m>f</m> in the complex <m>uv</m>-plane. 
+    <ol>
+        <li>
+            <p>
+                <m>v_r=\{z\in \C\colon \Re z=r\}</m>, <m>r\in \R</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>h_s=\{z\in \C\colon \Im z=s\}</m>, <m>s\in \R</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>R=\{z\in \C\colon p\leq \Re z\leq q, r\leq \Im z\leq s\}</m>, <m>p\leq q</m>, <m>r\leq s</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
+    </subsection>
+    
     
 
 </section>

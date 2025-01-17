@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_lim_cont" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Limits of functions and continuity</title>
+    <introduction>
+    <p>
+    Single-variable calculus can be succinctly described as the science of functions of the form <m>f\colon D\rightarrow \R</m>, where <m>D\subseteq \R</m>. The main tools of that science are the derivative and the integral, both of which rely on the more fundamental concept of the limit. 
+    </p>
+    </introduction>
+    <subsection xml:id="ss_lims_func">
+    <title>Limits of functions</title>
+    <definition xml:id="d_limit_point">
+    <title>Limit point</title>
+    <statement>
+    <p>
+    Given a subset <m>A\subseteq \C</m>, a <term>limit point</term> (or <term>accumulation point</term>) of <m>A</m> is an element <m>z_0\in \C</m> satisfying the following property: given any <m>\epsilon &gt; 0</m>, the open disc <m>B_\epsilon(z_0)</m> contains an element of <m>A</m> that is distinct from <m>z</m>. 
+    </p>
+    </statement>
+    </definition>
+    <example xml:id="eg_limit_points">
+    <title>Limit points</title>
+    <statement>
+    <p>
+    <ol>
+        <li>
+            <p>
+                Show that all elements of an open set <m>U</m> are limit points of <m>U</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Given a subset <m>Y\subseteq \C</m> Show that any point <m>z_0\in \partial Y-Y</m> is a limit point of <m>Y</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Give an example of a set <m>Y</m> and a boundary point <m>z_0\in \partial Y</m> that is not a limit point of <m>Y</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <definition xml:id="d_lim_func">
+    <title>Limit of a function</title>
+    <statement>
+    <p>
+    Let <m>f\colon D\rightarrow \C</m> be a complex function, and let <m>z_0</m> be a limit point of <m>D</m>. We say the limit of <m>f</m> as <m>z</m> approaches <m>z_0</m> exists if there is a complex number <m>w\in \C</m> satisfying the following property: for all <m>\epsilon &gt; 0</m>, there exists a <m>\delta&gt; 0</m> such that if <m>0&lt; \abs{z-z_0} &lt; \delta</m>, then <m>\abs{f(z)-w}&lt; \epsilon</m>. 
+    </p>
+    <p>
+When this is the case we call <m>w</m> the <term>limit</term> of <m>f</m> as <m>z</m> approaches <m>z_0</m>, and write <m>\lim\limits_{z\to z_0}f(z)=w</m>. Otherwise we say that <m>\lim\limits_{z\to z_0}f(z)</m> does not exist. 
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_lim_func">
+    <title>Limits of functions</title>
+    <statement>
+    <p>
+    Let <m>f</m> and <m>g</m> be complex functions, and let <m>z_0</m> be a limit point of the domains of <m>f</m> and <m>g</m>. 
+    <ol>
+        <li>
+            <p>
+                Write <m>f=u+iv</m> in terms of its real and imaginary parts. 
+            The limit <m>\lim\limits_{z\to z_0}f(z)</m> exists if and only if <m>\lim\limits_{z\to z_0}u(z)</m> and <m>\lim\limits_{z\to z_0}v(z)</m> exist, in which case we have 
+            <men xml:id="eg_lim_func_real_imag">
+                \lim\limits_{z\to z_0}f(z)=\lim\limits_{z\to z_0}u(z)+i\lim\limits_{z\to z_0}v(z)
+            </men>.            
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\lim\limits_{z\to z_0}f(z)=0</m> if and only if <m>\lim\limits_{z\to z_0}\abs{f(z)}=0</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>\lim\limits_{z\to z_0}f(z)=w</m>, then <m>\lim\limits_{z\to z_0}\abs{f(z)}=\abs{w} </m> and <m>\lim\limits_{z\to z_0}\overline{f(z)}=\overline{w}</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>\lim\limits_{z\to z_0}f(z)=w</m> and <m>\lim\limits_{z\to z_0}g(z)=w'</m>, then 
+                <mdn>
+                    <mrow>\lim\limits_{z\to z_0}cf(z)+dg(z) \amp =c\lim\limits_{z\to z_0}f(z)+d\lim\limits_{z\to z_0}g(z)=cw+dw' \text{ for any } c,d\in \C</mrow>
+                    <mrow>\lim\limits_{z\to z_0}f(z)g(z) \amp =\lim\limits_{z\to z_0}f(z)\, \lim\limits_{z\to z_0}g(z)=w\, w'</mrow>
+                    <mrow>\lim\limits_{z\to z_0}f(z)/g(z) \amp = \frac{\lim\limits_{z\to z_0}f(z)}{\lim\limits_{z\to z_0}g(z)}=\frac{w}{w'}, \text{ assuming } w'\ne 0</mrow>
+                </mdn>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+
+    </subsection>
+    <subsection xml:id="ss_cont">
+    <title>Continuity</title>
+    <p>
+        We end with the notion of continuity. You will notice a strong resemblance between the definition of continuity of a function at a point and the limit of that function at a point. The true nature of this connection is articulated by <xref ref="th_cont_lim"/>. 
+    </p>
+    <definition xml:id="d_cont">
+    <title>Continuous functions</title>
+    <statement>
+    <p>
+    Let <m>f\colon D\rightarrow \C</m> be a complex function. Given an element <m>z_0\in D</m>, we say that <m>f</m> is <term>continuous at <m>z_0</m></term>  if the following property holds: for all <m>\epsilon&gt; 0</m>, there exists a <m>\delta&gt; 0</m> such that if <m>\abs{z-z_0}&lt; \delta</m>, then <m>\abs{f(z)-f(z_0)}&lt; \epsilon</m>.
+    </p>
+    <p>
+        We say <m>f</m> is <term>continuous on a subset <m>A\subseteq D</m></term>, if <m>f</m> is continuous at all points <m>z_0\in A</m>. We say <m>f</m> is <term>continuous</term> if <m>f</m> is continuous on <m>D</m>. 
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_cont_lim">
+    <title>Continuity and limits</title>
+    <statement>
+    <p>
+    Let <m>f\colon D\rightarrow \C</m> be a complex function.
+    <ol>
+        <li>
+            <p>
+                Let <m>z_0\in D</m> be a limit point of <m>D</m>. The function <m>f</m> is continuous at <m>z_0</m> if and only if <m>\lim\limits_{z\to z_0}f(z)=f(z_0)</m>. In other words <m>f</m> is continuous at <m>z_0</m> if and only if the limit of <m>f</m> at <m>z_0</m> exists and is equal to <m>f(z_0)</m>.  
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>f</m> is continuous if and only if 
+                <me>
+                \lim\limits_{z\to z_0}f(z)=f(z_0)
+                </me>
+                for all <m>z_0\in D</m> that are limit points of <m>D</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    
+    </subsection>    
+    
+
+</section>
