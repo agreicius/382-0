@@ -116,7 +116,7 @@
     <me>e^{i\theta}=e^{0+i\theta}=e^0(\cos\theta+i\sin\theta)=\cos\theta+i\sin\theta</me>.
     This equality is called <em>Euler's formula</em>.  A particularly famous consequence of Euler's formula is given by <em>Euler's equation</em>: 
     <me>
-        e^{\frac{i \pi}+1=0
+        e^{i \pi}+1=0
     </me>.
     </p>
     </remark>
