@@ -172,12 +172,12 @@
         </li>
         <li>
             <p>
-                <m>\ell_\theta=\{z\in \C\colon \Arg z=\theta+2\pi k \text{ for some } k\in \Z\}</m>
+                <m>\ell_\theta=\{z\in \C\colon \Arg z=\theta\}</m>
             </p>
         </li>
         <li>
             <p>
-                <m>R=\{z\colon r\leq \abs{z}\leq s, \leq \Arg z+2\pi k\in [\alpha, \beta]\text{ for some } k\in \Z\}</m>, <m>0\leq r\leq s</m>, <m>\alpha\leq \beta</m>. 
+                <m>R=\{z\colon r\leq \abs{z}\leq s, \Arg z+2\pi k\in [\alpha, \beta]\text{ for some } k\in \Z\}</m>, <m>0\leq r\leq s</m>, <m>\alpha\leq \beta</m>. 
             </p>
         </li>
         <li>
@@ -200,10 +200,156 @@
     </statement>
     <solution>
     <p>
-    
-    </p>
+    We have 
+    <md>
+        <mrow>f(z)=f(x+iy) \amp =x^2-y^2+2xy\, i</mrow>
+        <mrow> \amp = r^2(\cos 2\theta+i\sin 2\theta)</mrow>
+    </md>,
+    where <m>r=\abs{z}</m> and <m>\theta=\Arg z</m>. Both descriptions will come in handy below. 
+    <ol>
+        <li>
+            <p>
+                Looking at the polar description of <m>f</m>, we see that <m>f</m> takes a point <m>z</m> on <m>C_r</m>, rotates it by <m>\Arg z</m> and scales it by <m>r</m>. It is clear then that <m>f(C_r)=(C_{r_2})</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                From the polar description of <m>f</m>, we see that 
+                <me>
+                    \arg z^2=\{2\Arg z+2\pi k \colon k\in \Z\}
+                </me>,
+                from whence it follows that <m>\Arg z^2=2\Arg z=2\pi k</m> for some <m>k\in \Z</m>. It is easy to see that <m>\ell_\theta=\ell_{\theta'}</m> if and only if <m>\theta=\theta'+2\pi k</m> for some <m>k\in \Z</m>. Thus <m>f</m> maps <m>\ell_\theta</m> to <m>\ell_{2\theta}</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                From the two previous parts, we conclude that <m>f</m> maps <m>R</m> to 
+                <me>
+                    f(R)=\{z\colon r^2\leq \abs{z}\leq s^2, \Arg z+2\pi k \in [2\alpha, 2\beta] \text{ for some } k\in\Z \}
+                </me>.
+                See <xref ref="fig_square_trans_circle_rays"/>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Given <m>z=r+yi\in v_r</m>, we have
+                <me>
+                    f(z)=(r^2-y^2)+2ry i, 
+                </me>.
+                When <m>r=0</m>, we see easily that this <m>f(z)</m> lies in <m>(-\infty, 0]</m>, and that <m>f(v_r)=(-\infty, 0]</m>. 
+                </p>
+                <p> Assume <m>r\ne 0</m>. 
+                Setting <m>u=r^2-y^2</m> and <m>v=2ry</m>, we see (after a little algebra) that 
+                <me>
+                    u=-\frac{1}{4r^2}v^2+r^2
+                </me>.
+                This equation defines a horizontal parabola extending to the left in the <m>uv</m>-plane, with vertex <m>(r^2, 0)</m>, and it is easy to see that the image of <m>v_r</m> under <m>f</m> is this entire parabola.  
+            </p>
+        </li>
+        <li>
+            <p>
+                A similar analysis as above shows that <m>f(h_s)=[0,\infty)</m> if <m>s=0</m>, and the rightward opening horizontal parabola defined by 
+                <me>
+                    u=\frac{1}{4s^2}v^2-s^2
+                </me>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Lastly, from the previous two parts it now follows that <m>f(R)</m> is the region bounded by the parabolas <m>f(v_p)</m>, <m>f(v_q)</m>, <m>f(h_r)</m> and <m>f(h_s)</m>. See <xref ref="fig_square_trans"/>.  
+            </p>
+        </li>
+    </ol>
+</p>
     </solution>
-    </example>
+ </example>
+ <p>
+     Our analysis in <xref ref="eg_square_transform"/> gives us a complete understanding of how <m>f(z)=z^2</m> transforms two different coordinate systems of the plane: the cartesian coordinate system (represented by the standard rectangular grid), and the polar coordinate system (represented by the polar grid). 
+ </p>
+ <p>
+    <xref ref="fig_square_trans"/> summarizes the action of <m>f</m> on the standard rectangular grid: it maps the <m>x</m>- and <m>y</m>-axes to the negative and positive <m>x</m>-axes, respectively, and it maps all other horizontal and vertical lines to horizontal parabolas.
+ </p>
+  <figure xml:id="fig_square_trans">
+        <caption>Image of standard grid under <m>f(z)=z^2</m></caption>
+    <sidebyside valign="bottom">
+        <figure xml:id="fig_square_std_grid">
+            <caption>Standard grid</caption>
+            <image>
+                <shortdescription>Standard xy-grid</shortdescription>
+                <sageplot>
+(x,y,t)=var('x y t')
+u(x,y)=x^2-y^2
+v(x,y)=2*x*y
+r(x,y)=sqrt(x^2+y^2)
+theta(x,y)=arccos(x/r(x,y))
+f(x,y)=sqrt(r(x,y))*cos(theta(x,y)/2)
+g(x,y)=sqrt(r(x,y))*sin(theta(x,y)/2)
+vlines=sum(parametric_plot((r,t),(t,-2,5)) for r in range(-2,5))
+hlines=sum(parametric_plot((t,r),(t,-2,5), color='red') for r in range(-2,5))
+R=region_plot([x &gt; 2,x &lt; 3, y&gt; 1, y &lt; 2],(x,-2,5),(y,-2,5),incol="lightblue")
+R+vlines+hlines
+                </sageplot>
+            </image>
+        </figure>
+        <figure xml:id="fig_square_std_grid_image">
+            <caption>Image of standard grid under <m>f</m></caption>
+            <image>
+                <shortdescription>Image of standard xy-grid</shortdescription>
+                <sageplot>
+(x,y,t)=var('x y t')
+u(x,y)=x^2-y^2
+v(x,y)=2*x*y
+r(x,y)=sqrt(x^2+y^2)
+theta(x,y)=arccos(x/r(x,y))
+f(x,y)=sqrt(r(x,y))*cos(theta(x,y)/2)
+g(x,y)=sqrt(r(x,y))*sin(theta(x,y)/2)
+vlines=sum(parametric_plot((u(r,t),v(r,t)),(t,-5,5)) for r in range(0,4))
+hlines=sum(parametric_plot((u(t,r),v(t,r)),(t,-5,5), color='red') for r in range(0,4))
+R=region_plot([f(x,y)&gt; 2,f(x,y)&lt; 3,g(x,y)&gt; 1, g(x,y)&lt; 2],(x,-10,10),(y,0,20),incol="lightblue")
+R+vlines+hlines
+                </sageplot>
+            </image>
+        </figure>
+    </sidebyside>
+    </figure>
+<p>
+    The action of <m>f(z)=z^2</m> on the polar grid is somewhat simpler to describe: it maps the circles <m>C_r</m> of radius <m>r</m> centered at the origin to the circle <m>C_{r^2}</m> obtained by squaring the radius; and it maps the ray <m>\ell_{\theta}</m> that makes an oriented angle of <m>\theta</m> with the <m>x</m>-axis, to the ray <m>\ell_{2\theta}</m> obtained by doubling this angle. 
+</p>
+    <figure xml:id="fig_square_trans_circle_rays">
+        <caption>Image of polar rectangle under <m>f(z)=z^2</m></caption>
+    <sidebyside valign="bottom" widths="60% 40%">
+        <figure xml:id="fig_square_polar_grid">
+            <caption>Polar grid portion</caption>
+            <image>
+                <shortdescription>Polar grid</shortdescription>
+                <sageplot>
+(x,y,t)=var('x y t')
+circs=sum(parametric_plot((r/2*cos(t),r/2*sin(t)),(t,0,3*pi/4),xmin=-2, xmax=2, ymin=-2, ymax=2) for r in range(1,5))
+rays=sum(parametric_plot(t*vector((cos(pi*r/12),sin(pi*r/12))),(t,0,2), color='red',thickness=1.75) for r in range(0,10))
+R=region_plot([arccos(x/sqrt(x^2+y^2))&lt; 3*pi/4,arccos(x/sqrt(x^2+y^2))&gt; pi/3, x^2+y^2&gt;  1, x^2+y^2&lt; 4],(x,-2,3),(y,0,3),incol="lightblue")
+t1=text("$R$", (-.2,1.75), color="black", fontsize=14)
+R+circs+rays+t1
+                </sageplot>
+            </image>
+        </figure>
+        <figure xml:id="fig_square_polar_grid_image">
+            <caption>Image of polar grid portion under <m>f</m></caption>
+            <image>
+                <shortdescription>Image of polar grid</shortdescription>
+                <sageplot>
+(x,y,t)=var('x y t')
+circs=sum(parametric_plot((r*cos(t),r*sin(t)),(t,0,3*pi/2)) for r in [1/4,1,9/4,4])
+rays=sum(parametric_plot(t*vector((cos(pi*r/6),sin(pi*r/6))),(t,0,4), color='red',thickness=1.75) for r in range(0,10))
+R=region_plot([arccos(x/sqrt(x^2+y^2))&lt; 3*pi/2,arccos(x/sqrt(x^2+y^2))&gt; 2*pi/3, x^2+y^2&gt;  1, x^2+y^2 &lt; 16],(x,-4,4),(y,-4,4),incol="lightblue")
+t1=text("$f(R)$", (-3,.75), color="black", fontsize=14)
+R+circs+rays+t1
+                </sageplot>
+            </image>
+        </figure>
+    </sidebyside>
+    </figure>
+   
+   
     <example xml:id="eg_exp_transform">
     <title>Exponential transformation</title>
     <statement>
