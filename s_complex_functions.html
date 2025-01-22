@@ -96,15 +96,15 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.1';
+eBookConfig.runestone_version = '7.5.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.87cabc2515250052.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.630d5c4fb4b681eb.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.97f3ae4f7a71ba18.css">
+<script src="_static/prefix-runtime.8b270ccf5298bad1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.630d5c4fb4b681eb.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.d966d31a41778c59.css">
 <style>
 #d_function_equality-3-1-4 { counter-set: d_function_equality-3-1-4 0; }
 #d_function_equality-3-1-4 > li::marker { content: ""counter(d_function_equality-3-1-4,lower-roman)""; }
@@ -211,6 +211,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_square_transform-2-1-6 { counter-set: eg_square_transform-2-1-6 0; }
 #eg_square_transform-2-1-6 > li::marker { content: ""counter(eg_square_transform-2-1-6,decimal)"."; }
 #eg_square_transform-2-1-6 > li { counter-increment: eg_square_transform-2-1-6; }
+#eg_square_transform-3-1-4 { counter-set: eg_square_transform-3-1-4 0; }
+#eg_square_transform-3-1-4 > li::marker { content: ""counter(eg_square_transform-3-1-4,decimal)"."; }
+#eg_square_transform-3-1-4 > li { counter-increment: eg_square_transform-3-1-4; }
 #eg_exp_transform-2-1-6 { counter-set: eg_exp_transform-2-1-6 0; }
 #eg_exp_transform-2-1-6 > li::marker { content: ""counter(eg_exp_transform-2-1-6,decimal)"."; }
 #eg_exp_transform-2-1-6 > li { counter-increment: eg_exp_transform-2-1-6; }
@@ -589,9 +592,9 @@ e^{i \pi}+1=0\text{.}
 <li id="eg_square_transform-2-1-6-1"><div class="para" id="eg_square_transform-2-1-6-1-1">
 <span class="process-math">\(C_r=\{z\colon \abs{z}=r\}\text{,}\)</span> <span class="process-math">\(r\geq 0\text{.}\)</span>
 </div></li>
-<li id="eg_square_transform-2-1-6-2"><div class="para" id="eg_square_transform-2-1-6-2-1"><span class="process-math">\(\displaystyle \ell_\theta=\{z\in \C\colon \Arg z=\theta+2\pi k \text{ for some } k\in \Z\}\)</span></div></li>
+<li id="eg_square_transform-2-1-6-2"><div class="para" id="eg_square_transform-2-1-6-2-1"><span class="process-math">\(\displaystyle \ell_\theta=\{z\in \C\colon \Arg z=\theta\}\)</span></div></li>
 <li id="eg_square_transform-2-1-6-3"><div class="para" id="eg_square_transform-2-1-6-3-1">
-<span class="process-math">\(R=\{z\colon r\leq \abs{z}\leq s, \leq \Arg z+2\pi k\in [\alpha, \beta]\text{ for some } k\in \Z\}\text{,}\)</span> <span class="process-math">\(0\leq r\leq s\text{,}\)</span> <span class="process-math">\(\alpha\leq \beta\text{.}\)</span>
+<span class="process-math">\(R=\{z\colon r\leq \abs{z}\leq s, \Arg z+2\pi k\in [\alpha, \beta]\text{ for some } k\in \Z\}\text{,}\)</span> <span class="process-math">\(0\leq r\leq s\text{,}\)</span> <span class="process-math">\(\alpha\leq \beta\text{.}\)</span>
 </div></li>
 <li id="eg_square_transform-2-1-6-4"><div class="para" id="eg_square_transform-2-1-6-4-1">
 <span class="process-math">\(v_r=\{z\in \C\colon \Re z=r\}\text{,}\)</span> <span class="process-math">\(r\in \R\)</span>
@@ -604,8 +607,82 @@ e^{i \pi}+1=0\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_square_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_square_transform-3-1"></div></div></details></div></article><article class="example example-like" id="eg_exp_transform"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Exponential transformation.</span>
+<div class="solutions"><details id="eg_square_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_square_transform-3-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_square_trans_circle_rays.html ./knowl/xref/fig_square_trans.html" id="eg_square_transform-3-1-1">
+\begin{align*}
+f(z)=f(x+iy) \amp =x^2-y^2+2xy\, i\\
+\amp = r^2(\cos 2\theta+i\sin 2\theta)\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(r=\abs{z}\)</span> and <span class="process-math">\(\theta=\Arg z\text{.}\)</span> Both descriptions will come in handy below.</div>
+<ol class="decimal" id="eg_square_transform-3-1-4">
+<li id="eg_square_transform-3-1-4-1"><div class="para" id="eg_square_transform-3-1-4-1-1">Looking at the polar description of <span class="process-math">\(f\text{,}\)</span> we see that <span class="process-math">\(f\)</span> takes a point <span class="process-math">\(z\)</span> on <span class="process-math">\(C_r\text{,}\)</span> rotates it by <span class="process-math">\(\Arg z\)</span> and scales it by <span class="process-math">\(r\text{.}\)</span> It is clear then that <span class="process-math">\(f(C_r)=(C_{r_2})\text{.}\)</span>
+</div></li>
+<li id="eg_square_transform-3-1-4-2"><div class="para logical" id="eg_square_transform-3-1-4-2-1">
+<div class="para">From the polar description of <span class="process-math">\(f\text{,}\)</span> we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\arg z^2=\{2\Arg z+2\pi k \colon k\in \Z\}\text{,}
+\end{equation*}
+</div>
+<div class="para">from whence it follows that <span class="process-math">\(\Arg z^2=2\Arg z=2\pi k\)</span> for some <span class="process-math">\(k\in \Z\text{.}\)</span> It is easy to see that <span class="process-math">\(\ell_\theta=\ell_{\theta'}\)</span> if and only if <span class="process-math">\(\theta=\theta'+2\pi k\)</span> for some <span class="process-math">\(k\in \Z\text{.}\)</span> Thus <span class="process-math">\(f\)</span> maps <span class="process-math">\(\ell_\theta\)</span> to <span class="process-math">\(\ell_{2\theta}\text{.}\)</span>
+</div>
+</div></li>
+<li id="eg_square_transform-3-1-4-3"><div class="para logical" id="eg_square_transform-3-1-4-3-1">
+<div class="para">From the two previous parts, we conclude that <span class="process-math">\(f\)</span> maps <span class="process-math">\(R\)</span> to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_square_trans_circle_rays.html">
+\begin{equation*}
+f(R)=\{z\colon r^2\leq \abs{z}\leq s^2, \Arg z+2\pi k \in [2\alpha, 2\beta] \text{ for some } k\in\Z \}\text{.}
+\end{equation*}
+</div>
+<div class="para">See <a href="s_complex_functions.html#fig_square_trans_circle_rays" class="xref" data-knowl="./knowl/xref/fig_square_trans_circle_rays.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.11">Figure 1.6.11</a>.</div>
+</div></li>
+<li id="eg_square_transform-3-1-4-4">
+<div class="para logical" id="eg_square_transform-3-1-4-4-1">
+<div class="para">Given <span class="process-math">\(z=r+yi\in v_r\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=(r^2-y^2)+2ry i, \text{.}
+\end{equation*}
+</div>
+<div class="para">When <span class="process-math">\(r=0\text{,}\)</span> we see easily that this <span class="process-math">\(f(z)\)</span> lies in <span class="process-math">\((-\infty, 0]\text{,}\)</span> and that <span class="process-math">\(f(v_r)=(-\infty, 0]\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="eg_square_transform-3-1-4-4-2">
+<div class="para">Assume <span class="process-math">\(r\ne 0\text{.}\)</span> Setting <span class="process-math">\(u=r^2-y^2\)</span> and <span class="process-math">\(v=2ry\text{,}\)</span> we see (after a little algebra) that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+u=-\frac{1}{4r^2}v^2+r^2\text{.}
+\end{equation*}
+</div>
+<div class="para">This equation defines a horizontal parabola extending to the left in the <span class="process-math">\(uv\)</span>-plane, with vertex <span class="process-math">\((r^2, 0)\text{,}\)</span> and it is easy to see that the image of <span class="process-math">\(v_r\)</span> under <span class="process-math">\(f\)</span> is this entire parabola.</div>
+</div>
+</li>
+<li id="eg_square_transform-3-1-4-5"><div class="para logical" id="eg_square_transform-3-1-4-5-1">
+<div class="para">A similar analysis as above shows that <span class="process-math">\(f(h_s)=[0,\infty)\)</span> if <span class="process-math">\(s=0\text{,}\)</span> and the rightward opening horizontal parabola defined by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+u=\frac{1}{4s^2}v^2-s^2\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="eg_square_transform-3-1-4-6"><div class="para" id="eg_square_transform-3-1-4-6-1">Lastly, from the previous two parts it now follows that <span class="process-math">\(f(R)\)</span> is the region bounded by the parabolas <span class="process-math">\(f(v_p)\text{,}\)</span> <span class="process-math">\(f(v_q)\text{,}\)</span> <span class="process-math">\(f(h_r)\)</span> and <span class="process-math">\(f(h_s)\text{.}\)</span> See <a href="s_complex_functions.html#fig_square_trans" class="xref" data-knowl="./knowl/xref/fig_square_trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.10">Figure 1.6.10</a>.</div></li>
+</ol>
+</div></div></details></div></article><div class="para" id="ss_functions_visual-4">Our analysis in <a href="s_complex_functions.html#eg_square_transform" class="xref" data-knowl="./knowl/xref/eg_square_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.9: Squaring transformation">Example 1.6.9</a> gives us a complete understanding of how <span class="process-math">\(f(z)=z^2\)</span> transforms two different coordinate systems of the plane: the cartesian coordinate system (represented by the standard rectangular grid), and the polar coordinate system (represented by the polar grid).</div>
+<div class="para" id="ss_functions_visual-5">
+<a href="s_complex_functions.html#fig_square_trans" class="xref" data-knowl="./knowl/xref/fig_square_trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.10">Figure 1.6.10</a> summarizes the action of <span class="process-math">\(f\)</span> on the standard rectangular grid: it maps the <span class="process-math">\(x\)</span>- and <span class="process-math">\(y\)</span>-axes to the negative and positive <span class="process-math">\(x\)</span>-axes, respectively, and it maps all other horizontal and vertical lines to horizontal parabolas.</div>
+<figure class="figure figure-like" id="fig_square_trans"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:50%;"><figure class="figure figure-like" id="fig_square_std_grid"><img src="generated/sageplot/fig_square_std_grid-2.svg" role="img" class="contained" alt="Standard xy-grid"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Standard grid</figcaption></figure></div>
+<div class="sbspanel bottom" style="width:50%;"><figure class="figure figure-like" id="fig_square_std_grid_image"><img src="generated/sageplot/fig_square_std_grid_image-2.svg" role="img" class="contained" alt="Image of standard xy-grid"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Image of standard grid under <span class="process-math">\(f\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.10<span class="period">.</span></span><span class="space"> </span>Image of standard grid under <span class="process-math">\(f(z)=z^2\)</span></figcaption></figure><div class="para" id="ss_functions_visual-7">The action of <span class="process-math">\(f(z)=z^2\)</span> on the polar grid is somewhat simpler to describe: it maps the circles <span class="process-math">\(C_r\)</span> of radius <span class="process-math">\(r\)</span> centered at the origin to the circle <span class="process-math">\(C_{r^2}\)</span> obtained by squaring the radius; and it maps the ray <span class="process-math">\(\ell_{\theta}\)</span> that makes an oriented angle of <span class="process-math">\(\theta\)</span> with the <span class="process-math">\(x\)</span>-axis, to the ray <span class="process-math">\(\ell_{2\theta}\)</span> obtained by doubling this angle.</div>
+<figure class="figure figure-like" id="fig_square_trans_circle_rays"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:60%;"><figure class="figure figure-like" id="fig_square_polar_grid"><img src="generated/sageplot/fig_square_polar_grid-2.svg" role="img" class="contained" alt="Polar grid"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Polar grid portion</figcaption></figure></div>
+<div class="sbspanel bottom" style="width:40%;"><figure class="figure figure-like" id="fig_square_polar_grid_image"><img src="generated/sageplot/fig_square_polar_grid_image-2.svg" role="img" class="contained" alt="Image of polar grid"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Image of polar grid portion under <span class="process-math">\(f\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.11<span class="period">.</span></span><span class="space"> </span>Image of polar rectangle under <span class="process-math">\(f(z)=z^2\)</span></figcaption></figure><article class="example example-like" id="eg_exp_transform"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.12</span><span class="period">.</span><span class="space"> </span><span class="title">Exponential transformation.</span>
 </h4>
 <div class="para logical" id="eg_exp_transform-2-1">
 <div class="para">Define <span class="process-math">\(f\colon \C\rightarrow \C\)</span> as <span class="process-math">\(f(z)=\exp z=e^z\text{.}\)</span> Sketch the given curves or regions in the complex <span class="process-math">\(xy\)</span>-plane, as well as the image of these sets under <span class="process-math">\(f\)</span> in the complex <span class="process-math">\(uv\)</span>-plane.</div>
