@@ -217,6 +217,21 @@ eBookConfig.enable_chatcodes =  false;
 #eg_exp_transform-2-1-6 { counter-set: eg_exp_transform-2-1-6 0; }
 #eg_exp_transform-2-1-6 > li::marker { content: ""counter(eg_exp_transform-2-1-6,decimal)"."; }
 #eg_exp_transform-2-1-6 > li { counter-increment: eg_exp_transform-2-1-6; }
+#eg_log-2-1-4 { counter-set: eg_log-2-1-4 0; }
+#eg_log-2-1-4 > li::marker { content: ""counter(eg_log-2-1-4,decimal)"."; }
+#eg_log-2-1-4 > li { counter-increment: eg_log-2-1-4; }
+#eg_log-3-1-1 { counter-set: eg_log-3-1-1 0; }
+#eg_log-3-1-1 > li::marker { content: ""counter(eg_log-3-1-1,decimal)"."; }
+#eg_log-3-1-1 > li { counter-increment: eg_log-3-1-1; }
+#eg_powers-2-1-1 { counter-set: eg_powers-2-1-1 0; }
+#eg_powers-2-1-1 > li::marker { content: ""counter(eg_powers-2-1-1,decimal)"."; }
+#eg_powers-2-1-1 > li { counter-increment: eg_powers-2-1-1; }
+#th_trig_props-2-1-2 { counter-set: th_trig_props-2-1-2 0; }
+#th_trig_props-2-1-2 > li::marker { content: ""counter(th_trig_props-2-1-2,decimal)"."; }
+#th_trig_props-2-1-2 > li { counter-increment: th_trig_props-2-1-2; }
+#th_hyperbolic-2-1-2 { counter-set: th_hyperbolic-2-1-2 0; }
+#th_hyperbolic-2-1-2 > li::marker { content: ""counter(th_hyperbolic-2-1-2,decimal)"."; }
+#th_hyperbolic-2-1-2 > li { counter-increment: th_hyperbolic-2-1-2; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -237,7 +252,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_log_trig.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -452,6 +467,14 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_functions.html#ss_functions" class="internal"><span class="title">Complex functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_functions.html#ss_functions_visual" class="internal"><span class="title">Visualizing complex functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_log_trig.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Logarithmic and trigonometric functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_log" class="internal"><span class="title">Logarithmic functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_power" class="internal"><span class="title">Complex exponentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_trig" class="internal"><span class="title">Tigonometric functions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -698,9 +721,61 @@ u=\frac{1}{4s^2}v^2-s^2\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_exp_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_exp_transform-3-1"></div></div></details></div></article></section></section></div>
+<div class="solutions"><details id="eg_exp_transform-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="eg_exp_transform-3-1">
+<div class="para">Writing</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=f(x+iy)=e^xe^{iy}=e^{\Re z}e^{i\Im y}.
+\end{equation*}
+</div>
+<div class="para">we see that</div>
+<div class="displaymath process-math" id="eg_exp_transform-3-1-2">
+\begin{align*}
+f(v_r) \amp = \{f(r+iy\colon y\in \R\}=\{e^re^{iy}\colon y\in \R\}\\
+f(h_s) \amp = \{f(x+is\colon x\in \R\}=\{e^xe^{is}\colon x\in \R\}\text{.}
+\end{align*}
+</div>
+<div class="para">From the first description we see that for fixed <span class="process-math">\(r\)</span> the set <span class="process-math">\(f(v_r)\)</span> is the set of all complex numbers with modulus <span class="process-math">\(e^r\text{:}\)</span> i.e., <span class="process-math">\(f(v_r)=C_{e^r}\text{,}\)</span> the circle of radius <span class="process-math">\(e^r\)</span> centered at the origin.</div>
+</div>
+<div class="para" id="eg_exp_transform-3-2">From the second description we see that for fixed <span class="process-math">\(s\)</span> the set <span class="process-math">\(f(h_s)\)</span> is the set of all <em class="emphasis">positive</em> scalar multiples of <span class="process-math">\(e^{is}\text{.}\)</span> (Positive since <span class="process-math">\(e^x\)</span> is positive for all <span class="process-math">\(x\in \R\text{.}\)</span>) This is precisely the ray <span class="process-math">\(\ell_s\)</span> of all complex numbers <span class="process-math">\(z\)</span> satisfying <span class="process-math">\(\Arg z=s+2\pi k\)</span> for some <span class="process-math">\(k\in \Z\text{.}\)</span>
+</div>
+<div class="para logical" id="eg_exp_transform-3-3">
+<div class="para">It follows that <span class="process-math">\(f\)</span> maps a rectangular region of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_exp_trans.html">
+\begin{equation*}
+R=\{z\in \C\colon p\leq \Re z\leq q, r\leq \Im z\leq s\}
+\end{equation*}
+</div>
+<div class="para">to the <em class="emphasis">polar rectangular region</em>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_exp_trans.html">
+\begin{equation*}
+f(R)=\{z\in \C\colon e^p\leq \abs{z}\leq e^q, r\leq \Arg z+2\pi k\leq s \text{ for some } k\in \Z\}\text{.}
+\end{equation*}
+</div>
+<div class="para">See <a href="s_complex_functions.html#fig_exp_trans" class="xref" data-knowl="./knowl/xref/fig_exp_trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.13">Figure 1.6.13</a>.</div>
+</div>
+</div></details></div></article><div class="para" id="ss_functions_visual-10">Our analysis in <a href="s_complex_functions.html#eg_exp_transform" class="xref" data-knowl="./knowl/xref/eg_exp_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.12: Exponential transformation">Example 1.6.12</a> can be summarized as follows: the exponential function maps the vertical lines <span class="process-math">\(x=r\)</span> to the circles <span class="process-math">\(C_{e^r}\)</span> of radius <span class="process-math">\(r\)</span> centered at the origin; and it maps the horizontal lines <span class="process-math">\(y=s\)</span> to the rays <span class="process-math">\(\ell_s\)</span> starting at the origin that make an angle of <span class="process-math">\(s\)</span> radians with the positive <span class="process-math">\(x\)</span>-axis.</div>
+<figure class="figure figure-like" id="fig_exp_trans"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:55%;"><figure class="figure figure-like" id="fig_exp_grid"><img src="generated/sageplot/fig_exp_grid-2.svg" role="img" class="contained" alt="Standard grid of plane"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Standard grid</figcaption></figure></div>
+<div class="sbspanel bottom" style="width:45%;"><figure class="figure figure-like" id="fig_exp_image_grid"><img src="generated/sageplot/fig_exp_image_grid-2.svg" role="img" class="contained" alt="Image of standard grid under f"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Image of standard grid under <span class="process-math">\(f\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.13<span class="period">.</span></span><span class="space"> </span>Image of standard grid under <span class="process-math">\(f(z)=e^z\)</span></figcaption></figure><div class="para logical" id="ss_functions_visual-12">
+<div class="para">Lastly from <a href="s_complex_functions.html#th_exp" class="xref" data-knowl="./knowl/xref/th_exp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.8: Exponential function properties">Theorem 1.6.8</a> and our anaylis above, it follows that if we restrict <span class="process-math">\(f(z)=e^z\)</span> to the infinite horizontal strip <span class="process-math">\(R=\{z\in \C\colon -\pi&lt; \Im z &lt; \pi\}\text{,}\)</span> then <span class="process-math">\(f\)</span> defines a <em class="emphasis">bijective</em> function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_exp.html">
+\begin{equation*}
+f\colon R\rightarrow \C-(-\infty, 0]\text{.}
+\end{equation*}
+</div>
+<div class="para"><figure class="figure figure-like" id="fig_exp_b"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:50%;"><figure class="figure figure-like" id="fig_exp_strip"><img src="generated/sageplot/fig_exp_strip-2.svg" role="img" class="contained" alt="Infinite horizontal strip"><figcaption><span class="codenumber">(a)</span><span class="space"> </span><span class="process-math">\(R=\{z\in \C\colon -\pi&lt; \Im z &lt; \pi\}\)</span></figcaption></figure></div>
+<div class="sbspanel bottom" style="width:50%;"><figure class="figure figure-like" id="fig_exp_image_strip"><img src="generated/sageplot/fig_exp_image_strip-2.svg" role="img" class="contained" alt="Image of the strip under the exponential"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>The image of <span class="process-math">\(R\)</span> under <span class="process-math">\(f\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.14<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(f(z)=e^z\)</span> defines a bijection from <span class="process-math">\(R\)</span> to <span class="process-math">\(\C-(-\infty,0]\)</span></figcaption></figure></div>
+</div></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_sequences.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_log_trig.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -1285,7 +1285,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "Complex functions",
-  "body": " Complex functions   We now introduce the main object of study in this course, complex functions , and begin developing what ends up being an extension of calculus to this setting, starting with the notion of a limit of a complex function.    Complex functions   Complex function   A complex function is a function , where .     Real and imaginary parts   Given a complex function with , we can write , where and . We call the functions and the the real and imaginary parts of , respectively, and write .  Identifying complex numbers with pairs in in the usual manner, we can think of as real-valued functions in the real variables and .     Real and imaginary parts  Given a complex function , if we write without further comment, it is assumed that and are the real and imaginary parts of .    Real and imaginary parts  Given a complex function , its real and imaginary parts are real-valued functions with domain .    Real and imaginary parts   Let be defined as .   Find the real and imaginary parts of .    Decide whether is injective.    Compute .          Letting , we have , and thus .        Complex exponential function   We define the (complex) exponential function  as . We will also us the notation to denote .     Euler's formula  At long last we have a convenient shorthand notation for complex elements of the form : namely, we see that . This equality is called Euler's formula . A particularly famous consequence of Euler's formula is given by Euler's equation : .    Exponential function properties      We have for all .    We have if and only if and for some . In particular, is not injective.     .             Visualizing complex functions  How do we visualize a complex function ? Identifying with , we can think of as a function . As with any function, the graph  of is defined as the set of all input-output pairs . Identifying with the pair and with we have . This is not such an easy object to visualize, being a subset of . Instead, thinking of as a transformation of the complex plane, we can visualize how transforms various useful subsets of . This is typically done by starting with two copies of the complex plane (often called the - and -planes), sketching curves or regions in the -plane, and sketching their image in the -plane.   Squaring transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    , .          , , .     ,      , .     , ,        We have , where and . Both descriptions will come in handy below.   Looking at the polar description of , we see that takes a point on , rotates it by and scales it by . It is clear then that .    From the polar description of , we see that , from whence it follows that for some . It is easy to see that if and only if for some . Thus maps to .    From the two previous parts, we conclude that maps to . See .    Given , we have . When , we see easily that this lies in , and that .  Assume . Setting and , we see (after a little algebra) that . This equation defines a horizontal parabola extending to the left in the -plane, with vertex , and it is easy to see that the image of under is this entire parabola.    A similar analysis as above shows that if , and the rightward opening horizontal parabola defined by .    Lastly, from the previous two parts it now follows that is the region bounded by the parabolas , , and . See .       Our analysis in gives us a complete understanding of how transforms two different coordinate systems of the plane: the cartesian coordinate system (represented by the standard rectangular grid), and the polar coordinate system (represented by the polar grid).   summarizes the action of on the standard rectangular grid: it maps the - and -axes to the negative and positive -axes, respectively, and it maps all other horizontal and vertical lines to horizontal parabolas.   Image of standard grid under    Standard grid   Standard xy-grid      Image of standard grid under   Image of standard xy-grid       The action of on the polar grid is somewhat simpler to describe: it maps the circles of radius centered at the origin to the circle obtained by squaring the radius; and it maps the ray that makes an oriented angle of with the -axis, to the ray obtained by doubling this angle.   Image of polar rectangle under    Polar grid portion   Polar grid      Image of polar grid portion under   Image of polar grid        Exponential transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    ,      , .     , ,             "
+  "body": " Complex functions   We now introduce the main object of study in this course, complex functions , and begin developing what ends up being an extension of calculus to this setting, starting with the notion of a limit of a complex function.    Complex functions   Complex function   A complex function is a function , where .     Real and imaginary parts   Given a complex function with , we can write , where and . We call the functions and the the real and imaginary parts of , respectively, and write .  Identifying complex numbers with pairs in in the usual manner, we can think of as real-valued functions in the real variables and .     Real and imaginary parts  Given a complex function , if we write without further comment, it is assumed that and are the real and imaginary parts of .    Real and imaginary parts  Given a complex function , its real and imaginary parts are real-valued functions with domain .    Real and imaginary parts   Let be defined as .   Find the real and imaginary parts of .    Decide whether is injective.    Compute .          Letting , we have , and thus .        Complex exponential function   We define the (complex) exponential function  as . We will also us the notation to denote .     Euler's formula  At long last we have a convenient shorthand notation for complex elements of the form : namely, we see that . This equality is called Euler's formula . A particularly famous consequence of Euler's formula is given by Euler's equation : .    Exponential function properties      We have for all .    We have if and only if and for some . In particular, is not injective.     .             Visualizing complex functions  How do we visualize a complex function ? Identifying with , we can think of as a function . As with any function, the graph  of is defined as the set of all input-output pairs . Identifying with the pair and with we have . This is not such an easy object to visualize, being a subset of . Instead, thinking of as a transformation of the complex plane, we can visualize how transforms various useful subsets of . This is typically done by starting with two copies of the complex plane (often called the - and -planes), sketching curves or regions in the -plane, and sketching their image in the -plane.   Squaring transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    , .          , , .     ,      , .     , ,        We have , where and . Both descriptions will come in handy below.   Looking at the polar description of , we see that takes a point on , rotates it by and scales it by . It is clear then that .    From the polar description of , we see that , from whence it follows that for some . It is easy to see that if and only if for some . Thus maps to .    From the two previous parts, we conclude that maps to . See .    Given , we have . When , we see easily that this lies in , and that .  Assume . Setting and , we see (after a little algebra) that . This equation defines a horizontal parabola extending to the left in the -plane, with vertex , and it is easy to see that the image of under is this entire parabola.    A similar analysis as above shows that if , and the rightward opening horizontal parabola defined by .    Lastly, from the previous two parts it now follows that is the region bounded by the parabolas , , and . See .       Our analysis in gives us a complete understanding of how transforms two different coordinate systems of the plane: the cartesian coordinate system (represented by the standard rectangular grid), and the polar coordinate system (represented by the polar grid).   summarizes the action of on the standard rectangular grid: it maps the - and -axes to the negative and positive -axes, respectively, and it maps all other horizontal and vertical lines to horizontal parabolas.   Image of standard grid under    Standard grid   Standard xy-grid      Image of standard grid under   Image of standard xy-grid       The action of on the polar grid is somewhat simpler to describe: it maps the circles of radius centered at the origin to the circle obtained by squaring the radius; and it maps the ray that makes an oriented angle of with the -axis, to the ray obtained by doubling this angle.   Image of polar rectangle under    Polar grid portion   Polar grid      Image of polar grid portion under   Image of polar grid        Exponential transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    ,      , .     , ,        Writing we see that . From the first description we see that for fixed the set is the set of all complex numbers with modulus : , , the circle of radius centered at the origin.  From the second description we see that for fixed the set is the set of all positive scalar multiples of . (Positive since is positive for all .) This is precisely the ray of all complex numbers satisfying for some .  It follows that maps a rectangular region of the form to the polar rectangular region  . See .    Our analysis in can be summarized as follows: the exponential function maps the vertical lines to the circles of radius centered at the origin; and it maps the horizontal lines to the rays starting at the origin that make an angle of radians with the positive -axis.   Image of standard grid under    Standard grid   Standard grid of plane      Image of standard grid under   Image of standard grid under f       Lastly from and our anaylis above, it follows that if we restrict to the infinite horizontal strip , then defines a bijective function .  defines a bijection from to      Infinite horizontal strip      The image of under   Image of the strip under the exponential        "
 },
 {
   "id": "d_complex_function",
@@ -1393,7 +1393,133 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.6.12",
   "title": "Exponential transformation.",
-  "body": " Exponential transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    ,      , .     , ,           "
+  "body": " Exponential transformation   Define as . Sketch the given curves or regions in the complex -plane, as well as the image of these sets under in the complex -plane.    ,      , .     , ,        Writing we see that . From the first description we see that for fixed the set is the set of all complex numbers with modulus : , , the circle of radius centered at the origin.  From the second description we see that for fixed the set is the set of all positive scalar multiples of . (Positive since is positive for all .) This is precisely the ray of all complex numbers satisfying for some .  It follows that maps a rectangular region of the form to the polar rectangular region  . See .   "
+},
+{
+  "id": "fig_exp_trans",
+  "level": "2",
+  "url": "s_complex_functions.html#fig_exp_trans",
+  "type": "Figure",
+  "number": "1.6.13",
+  "title": "",
+  "body": " Image of standard grid under    Standard grid   Standard grid of plane      Image of standard grid under   Image of standard grid under f      "
+},
+{
+  "id": "fig_exp_b",
+  "level": "2",
+  "url": "s_complex_functions.html#fig_exp_b",
+  "type": "Figure",
+  "number": "1.6.14",
+  "title": "",
+  "body": " defines a bijection from to      Infinite horizontal strip      The image of under   Image of the strip under the exponential     "
+},
+{
+  "id": "s_log_trig",
+  "level": "1",
+  "url": "s_log_trig.html",
+  "type": "Section",
+  "number": "1.7",
+  "title": "Logarithmic and trigonometric functions",
+  "body": " Logarithmic and trigonometric functions       Logarithmic functions  When showing that has image , we showed that for any , the set of solutions to is the set . This motivates the following definition.   Logarithm   Given , we define the logarithm of , denoted , to be the infinite set . The principal branch of the logarithm is the function defined as       We will see in due course that there is a good reason for the funny domain specified for . Namely, although we can in principle define for any , the domain ensures that is continuous, and is in a sense maximal in this regard.    Logarithm   Compute and for the given .              .                  Invalid identity   Show that is not always equal to .          Complex exponentiation   Complex exponentiation   Given and any , we define the set as . Given a fixed , the function defined as is called the principal branch of the power function with exponent (or principal branch of ).     Powers   Compute the following power expressions.         , .            -th roots   Let . Show that the set is precisely the set of distinct -th roots of .          Tigonometric functions   Trigonometric functions   We define the complex cosine and sine  and as follows: . We then further define complex extensions of the other elementary trigonometric functions in the usual way: .     Cosine and sine properties   Let .    if and only if for some , or for some .     if and only if for some or for some .            Complex hyperbolic functions   We define the complex hyperbolic functions  and as follows: .     Hyperbolic   Let .    and .    Writing , we have             "
+},
+{
+  "id": "d_log",
+  "level": "2",
+  "url": "s_log_trig.html#d_log",
+  "type": "Definition",
+  "number": "1.7.1",
+  "title": "Logarithm.",
+  "body": " Logarithm   Given , we define the logarithm of , denoted , to be the infinite set . The principal branch of the logarithm is the function defined as    "
+},
+{
+  "id": "ss_log-4",
+  "level": "2",
+  "url": "s_log_trig.html#ss_log-4",
+  "type": "Remark",
+  "number": "1.7.2",
+  "title": "<span class=\"process-math\">\\(\\Log\\)<\/span>.",
+  "body": "  We will see in due course that there is a good reason for the funny domain specified for . Namely, although we can in principle define for any , the domain ensures that is continuous, and is in a sense maximal in this regard.  "
+},
+{
+  "id": "eg_log",
+  "level": "2",
+  "url": "s_log_trig.html#eg_log",
+  "type": "Example",
+  "number": "1.7.3",
+  "title": "Logarithm.",
+  "body": " Logarithm   Compute and for the given .              .                "
+},
+{
+  "id": "eg_Log",
+  "level": "2",
+  "url": "s_log_trig.html#eg_Log",
+  "type": "Example",
+  "number": "1.7.4",
+  "title": "Invalid identity.",
+  "body": " Invalid identity   Show that is not always equal to .       "
+},
+{
+  "id": "d_complex_exponentiation",
+  "level": "2",
+  "url": "s_log_trig.html#d_complex_exponentiation",
+  "type": "Definition",
+  "number": "1.7.5",
+  "title": "Complex exponentiation.",
+  "body": " Complex exponentiation   Given and any , we define the set as . Given a fixed , the function defined as is called the principal branch of the power function with exponent (or principal branch of ).   "
+},
+{
+  "id": "eg_powers",
+  "level": "2",
+  "url": "s_log_trig.html#eg_powers",
+  "type": "Example",
+  "number": "1.7.6",
+  "title": "Powers.",
+  "body": " Powers   Compute the following power expressions.         , .          "
+},
+{
+  "id": "eg_nth_roots",
+  "level": "2",
+  "url": "s_log_trig.html#eg_nth_roots",
+  "type": "Example",
+  "number": "1.7.7",
+  "title": "<span class=\"process-math\">\\(n\\)<\/span>-th roots.",
+  "body": " -th roots   Let . Show that the set is precisely the set of distinct -th roots of .       "
+},
+{
+  "id": "d_trig_functions",
+  "level": "2",
+  "url": "s_log_trig.html#d_trig_functions",
+  "type": "Definition",
+  "number": "1.7.8",
+  "title": "Trigonometric functions.",
+  "body": " Trigonometric functions   We define the complex cosine and sine  and as follows: . We then further define complex extensions of the other elementary trigonometric functions in the usual way: .   "
+},
+{
+  "id": "th_trig_props",
+  "level": "2",
+  "url": "s_log_trig.html#th_trig_props",
+  "type": "Theorem",
+  "number": "1.7.9",
+  "title": "Cosine and sine properties.",
+  "body": " Cosine and sine properties   Let .    if and only if for some , or for some .     if and only if for some or for some .          "
+},
+{
+  "id": "d_hyperbolic",
+  "level": "2",
+  "url": "s_log_trig.html#d_hyperbolic",
+  "type": "Definition",
+  "number": "1.7.10",
+  "title": "Complex hyperbolic functions.",
+  "body": " Complex hyperbolic functions   We define the complex hyperbolic functions  and as follows: .   "
+},
+{
+  "id": "th_hyperbolic",
+  "level": "2",
+  "url": "s_log_trig.html#th_hyperbolic",
+  "type": "Theorem",
+  "number": "1.7.11",
+  "title": "Hyperbolic.",
+  "body": " Hyperbolic   Let .    and .    Writing , we have           "
 },
 {
   "id": "appendix-notation",
