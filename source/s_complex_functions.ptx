@@ -444,7 +444,8 @@ R+vlines+hlines+t1
     <me>
         f\colon R\rightarrow \C-(-\infty, 0]
     </me>.
-    <figure xml:id="fig_exp_b">
+</p>
+    <figure xml:id="fig_exp_trans_strip">
         <caption><m>f(z)=e^z</m> defines a bijection from <m>R</m> to <m>\C-(-\infty,0]</m></caption>
         <sidebyside valign="bottom" >
             <figure xml:id="fig_exp_strip">
@@ -477,8 +478,6 @@ R+C+L
     </image></figure>
         </sidebyside>
     </figure>
-    
-</p>
     </subsection>
     
     
