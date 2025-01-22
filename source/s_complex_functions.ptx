@@ -376,11 +376,109 @@ R+circs+rays+t1
     </statement>
     <solution>
     <p>
-    
+    Writing 
+    <me>
+        f(z)=f(x+iy)=e^xe^{iy}=e^{\Re z}e^{i\Im y}.
+    </me>
+    we see that
+    <md>
+        <mrow>f(v_r) \amp = \{f(r+iy\colon y\in \R\}=\{e^re^{iy}\colon y\in \R\}</mrow>
+        <mrow>f(h_s) \amp = \{f(x+is\colon x\in \R\}=\{e^xe^{is}\colon x\in \R\}</mrow>
+    </md>.
+    From the first description we see that for fixed <m>r</m> the set <m>f(v_r)</m> is the set of all complex numbers with modulus <m>e^r</m>: <ie/>, <m>f(v_r)=C_{e^r}</m>, the circle of radius <m>e^r</m> centered at the origin. 
+    </p>
+    <p>
+        From the second description we see that for fixed <m>s</m> the set <m>f(h_s)</m> is the set of all <em>positive</em> scalar multiples of <m>e^{is}</m>. (Positive since <m>e^x</m> is positive for all <m>x\in \R</m>.) This is precisely the ray <m>\ell_s</m> of all complex numbers <m>z</m> satisfying <m>\Arg z=s+2\pi k</m> for some <m>k\in \Z</m>. 
+    </p>
+    <p>
+       It follows that <m>f</m> maps a rectangular region of the form 
+       <me>
+        R=\{z\in \C\colon p\leq \Re z\leq q, r\leq \Im z\leq s\}
+       </me>
+       to the <em>polar rectangular region</em> 
+       <me>
+        f(R)=\{z\in \C\colon e^p\leq \abs{z}\leq e^q, r\leq \Arg z+2\pi k\leq s \text{ for some } k\in \Z\}
+       </me>.
+       See <xref ref="fig_exp_trans"/>.
     </p>
     </solution>
     </example>
+    <p>
+        Our analysis in <xref ref="eg_exp_transform"/> can be summarized as follows: the exponential function maps the vertical lines <m>x=r</m> to the circles <m>C_{e^r}</m> of radius <m>r</m> centered at the origin; and it maps the horizontal lines <m>y=s</m> to the rays <m>\ell_s</m> starting at the origin that make an angle of <m>s</m> radians with the positive <m>x</m>-axis. 
+    </p>
+    <figure xml:id="fig_exp_trans">
+        <caption>Image of standard grid under <m>f(z)=e^z</m></caption>
+        <sidebyside valign="bottom" widths="55% 45%">
+            <figure xml:id="fig_exp_grid">
+                <caption>Standard grid</caption>
+<image>
+    <shortdescription>Standard grid of plane</shortdescription>
+    <sageplot>
+var('x y t')
+vlines=sum(parametric_plot((r,t),(t,-2,2), color="blue", thickness=1.5) for r in range(-2,3))
+hlines=sum(parametric_plot((t,r),(t,-2,2), color='red', thickness=1.5) for r in range(-2,3))
+R=region_plot([x&gt; 0,x&lt; 1, 1&lt; y, y&lt; 2],(x,-2,2),(y,-2,2),incol="lightblue")
+t1=text("$R$", (.5,1.5), color="black", fontsize=14)
+R+vlines+hlines+t1 
+    </sageplot>
+</image>
+</figure>
+<figure xml:id="fig_exp_image_grid">
+    <caption>Image of standard grid under <m>f</m></caption>
+<image>
+    <shortdescription>Image of standard grid under f</shortdescription>
+<sageplot>
+var('x y t')
+vlines=sum(parametric_plot((e^r*cos(t),e^r*sin(t)),(t,-2,2), color="blue", thickness=1.5) for r in range(-2,3))
+hlines=sum(parametric_plot((e^t*cos(r),e^t*sin(r)),(t,-2,2), color='red', thickness=1.5) for r in range(-2,3))
+R=region_plot([sqrt(x^2+y^2)&gt; 1,sqrt(x^2+y^2)&lt; e, arccos(x/sqrt(x^2+y^2))&gt; 1, arccos(x/sqrt(x^2+y^2))&lt; 2],(x,-2,2),(y,.5,5),incol="lightblue")
+t1=text("$R$", (.5,1.5), color="black", fontsize=14)
+R+vlines+hlines+t1
+</sageplot>
+</image>
+</figure>
+        </sidebyside>
+    </figure>
+<p>
+    Lastly from <xref ref="th_exp"/> and our anaylis above, it follows that if we restrict <m>f(z)=e^z</m> to the infinite horizontal strip <m>R=\{z\in \C\colon -\pi&lt; \Im z &lt; \pi\}</m>, then <m>f</m> defines a <em>bijective</em> function 
+    <me>
+        f\colon R\rightarrow \C-(-\infty, 0]
+    </me>.
+    <figure xml:id="fig_exp_b">
+        <caption><m>f(z)=e^z</m> defines a bijection from <m>R</m> to <m>\C-(-\infty,0]</m></caption>
+        <sidebyside valign="bottom" >
+            <figure xml:id="fig_exp_strip">
+                <caption><m>R=\{z\in \C\colon -\pi&lt; \Im z &lt; \pi\}</m></caption>
+            <image>
+                <shortdescription>Infinite horizontal strip</shortdescription>
+                <sageplot>
+var('x y t')
+R=region_plot([y&gt; -pi, y&lt;  pi],(x,-5,5),(y,-5,5),incol="lightblue" )
+L1=parametric_plot((t,pi),(t,-5,5),color="red", thickness="1.5", linestyle="dashed")
+L2=parametric_plot((t,-pi),(t,-5,5),color="red", thickness="1.5", linestyle="dashed")
+t1=text("$R$",(1,1),color="black", fontsize="14")
+t2=text("$y=\\pi$",(2,pi+.5),color="black", fontsize="14")
+t3=text("$y=-\\pi$",(2,-pi-.5),color="black", fontsize="14")
+R+L1+L2+t1+t2+t3
+                </sageplot>
+            </image>
+            </figure>
+    <figure xml:id="fig_exp_image_strip">
+        <caption>The image of <m>R</m> under <m>f</m></caption>
+    <image>
+        <shortdescription>Image of the strip under the exponential</shortdescription>
+        <sageplot>
+var('x y t')
+R=region_plot([x^2+y^2&gt; .01],(x,-3,3),(y,-3.1,3.1),incol="lightblue")
+C=parametric_plot((.1*cos(t),.1*sin(t)),(t,0,2*pi),color="red", thickness=1.5)
+L=parametric_plot((t,0),(t,-3,-.1),color="red", thickness=2, linestyle="dashed")
+R+C+L
+        </sageplot>
+    </image></figure>
+        </sidebyside>
+    </figure>
     
+</p>
     </subsection>
     
     

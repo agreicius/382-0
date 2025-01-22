@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_log_trig" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Logarithmic and trigonometric functions</title>
+
+    <introduction>
+        <p>
+            
+        </p>
+    </introduction>
+<subsection xml:id="ss_log">
+<title>Logarithmic functions</title>
+<p>
+    When showing that <m>\exp\colon \C\rightarrow \C</m> has image <m>\C-\{0\}</m>, we showed that for any <m>z\in \C-\{0\}</m>, the set of solutions to <m>e^w=z</m> is the set 
+    <me>
+        \{w\in \C\colon \Re w=\ln \abs{z} \text{ and } \Im w\in \arg(z)\}=\{\ln\abs{z}+i(\Arg z+2\pi k)\colon k\in \Z\}
+    </me>.
+    This motivates the following definition. 
+</p>
+    <definition xml:id="d_log">
+    <title>Logarithm</title>
+    <statement>
+    <p>
+    Given <m>z\in \C-\{0\}</m>, we define the <term>logarithm</term> of <m>z</m>, denoted <m>\log z</m>, to be the infinite set 
+    <me>
+        \log z=\{w\in \C\colon \Re w=\ln \abs{z} \text{ and } \Im w\in \arg(z)\}=\{\ln\abs{z}+i(\Arg z+2\pi k)\colon k\in \Z\}
+    </me>.
+    The <term>principal branch of the logarithm</term> is the function <m>\Log\colon \C-(-\infty,0]\rightarrow \C</m> defined as 
+    <me>
+        \Log z=\ln\abs{z}+i\Arg z
+    </me>
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title><m>\Log</m></title>
+        <p>
+            We will see in due course that there is a good reason for the funny domain specified for <m>\Log z</m>. Namely, although we can in principle define <m>\Log z</m> for any <m>z\ne 0</m>, the domain <m>\C-(-\infty, 0]</m> ensures that <m>\Log z</m> is continuous, and is in a sense maximal in this regard. 
+        </p>
+    </remark>
+    <example xml:id="eg_log">
+    <title>Logarithm</title>
+    <statement>
+    <p>
+    Compute <m>\log z</m> and <m>\Log z</m> for the given <m>z</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>z=3</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z=-2</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>z=1+i</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                
+            </p>
+        </li>
+    </ol>
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_Log">
+    <title>Invalid identity</title>
+    <statement>
+    <p>
+    Show that <m>\Log(z_1z_2)</m> is not always equal to <m>\Log(z_1)+\Log(z_2)</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+</subsection>
+<subsection xml:id="ss_power">
+<title>Complex exponentiation</title>
+<definition xml:id="d_complex_exponentiation">
+    <title>Complex exponentiation</title>
+    <statement>
+        <p>
+            Given <m>z\in \C-\{0\}</m> and any <m>w\in \C</m>, we define the set <m>z^w</m> as 
+            <me>
+                z^w=e^{w\log z}
+            </me>.
+            Given a fixed <m>w\in \C</m>, the function <m>f\colon \C-(-\infty, 0]\rightarrow \C</m> defined as <m>f(z)=e^{w\Log z}</m> is called the <term>principal branch of the power function with exponent <m>w</m></term> (or <term>principal branch of <m>f(z)=z^w</m></term>). 
+        </p>
+    </statement>
+</definition>
+<example xml:id="eg_powers">
+<title>Powers</title>
+<statement>
+<p>
+Compute the following power expressions. 
+<ol>
+    <li>
+        <p>
+            <m>i^i</m>
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>z^i</m>, <m>z\ne 0</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<example xml:id="eg_nth_roots">
+<title><m>n</m>-th roots</title>
+<statement>
+<p>
+Let <m>z\ne 0</m>. Show that the set <m>z^{1/n}</m> is precisely the set of <m>n</m> distinct <m>n</m>-th roots of <m>z</m>. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
+
+</subsection>
+<subsection xml:id="ss_trig">
+<title>Tigonometric functions</title>
+<definition xml:id="d_trig_functions">
+<title>Trigonometric functions</title>
+<statement>
+<p>
+We define the <term>complex cosine and sine</term> <m>\cos\colon \C\rightarrow \C</m> and <m>\sin\colon \C\rightarrow \C</m> as follows: 
+<md>
+    <mrow>\cos(z) \amp = \frac{e^z+e^{-z}}{2} \amp \sin(z)=\frac{e^z-e^{-z}}{2i}</mrow>
+</md>.
+We then further define complex extensions of the other elementary trigonometric functions in the usual way:
+<md>
+    <mrow>\tan z \amp = \frac{\sin z}{\cos z} \amp \cot z\amp = \frac{\cos z}{\sin z}</mrow>
+    <mrow>\sec z \amp = \frac{1}{\cos z} \amp \csc z\amp =\frac{1}{\sin z}</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+<theorem xml:id="th_trig_props">
+<title>Cosine and sine properties</title>
+<statement>
+<p>
+Let <m>z,w\in \C</m>. 
+<ol>
+    <li>
+        <p>
+            <m>\cos z=\cos w</m> if and only if <m>z=w+2\pi k</m> for some <m>k\in \Z</m>, or <m>z=-w+2\pi k</m> for some <m>k\in \Z</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\sin z=\sin w</m> if and only if <m>z=w+2\pi k</m> for some <m>k\in \Z</m> or <m>z=\pi-w+2\pi k</m> for some <m>k\in \Z</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<definition xml:id="d_hyperbolic">
+<title>Complex hyperbolic functions</title>
+<statement>
+<p>
+We define the <term>complex hyperbolic functions</term> <m>\cosh\colon \C\rightarrow \C</m> and <m>\sinh\colon \C\rightarrow \C</m> as follows: 
+<md>
+    <mrow>\cosh(z) \amp =\frac{e^z+e^{-z}}{2} \amp \sinh(z)=\frac{e^{z}-e^{-z}}{2}</mrow>
+</md>.
+</p>
+</statement>
+</definition>
+<theorem xml:id="th_hyperbolic">
+<title>Hyperbolic</title>
+<statement>
+<p>
+    Let <m>z\in \C</m>. 
+<ol>
+    <li>
+        <p>
+            <m>\cosh(z)=\cos(iz)</m> and <m>\sinh(z)=\frac{\sin(iz)}{i}</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Writing <m>z=x+iy</m>, we have 
+            <md>
+                <mrow>\cos(z) \amp =\cos(x)\cosh(iy)-i\sin(x)\sinh(y)</mrow>
+                <mrow>\sin(z) \amp =\sin(x)\cosh(y)+i\cos(x)\sinh(y)</mrow>
+            </md>
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+</subsection>
+</section>
