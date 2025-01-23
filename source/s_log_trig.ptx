@@ -33,16 +33,53 @@
     </statement>
     </definition>
     <remark>
+        <p>
+            Using the same sort of shorthand as in <xref ref="rm_solve_exp"/>, we can write 
+            <md>
+                <mrow>\log z \amp = \ln\abs{z}+i\arg z</mrow>
+            </md>,
+            where as always 
+            <me>
+                \arg z=\{\Arg z+2\pi k\colon k\in \Z\}
+            </me>
+            is the set of all arguments of <m>z</m>.
+        </p>
+    </remark>
+    <remark>
         <title><m>\Log</m></title>
         <p>
             We will see in due course that there is a good reason for the funny domain specified for <m>\Log z</m>. Namely, although we can in principle define <m>\Log z</m> for any <m>z\ne 0</m>, the domain <m>\C-(-\infty, 0]</m> ensures that <m>\Log z</m> is continuous, and is in a sense maximal in this regard. 
         </p>
     </remark>
+    <theorem xml:id="th_exp_Log">
+    <title><m>\Log</m> as inverse function</title>
+    <statement>
+    <p>
+    Let <m>R=\{z\in \C\colon -\pi&lt; \Im z &lt; \pi\}</m>, and define <m>f\colon R\rightarrow \C-(-\infty,0]</m> as <m>f(z)=e^z</m>: <ie/>, <m>f</m> is the restriction of <m>\exp</m> to the set <m>R</m>. The function <m>\Log\colon \C-(-\infty, 0]\rightarrow R</m> is the inverse of <m>f</m>: <ie/>, we have 
+    <mdn>
+        <mrow xml:id="eq_log_exp">\Log(e^z) \amp = z \text{ for all } z\in R</mrow>
+        <mrow xml:id="eq_exp_log">e^{\Log(w)} \amp = w \text{ for all } w\in \C-(-\infty, 0]</mrow>
+    </mdn>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        Recall that we remarked in the discussion above <xref ref="fig_exp_trans_strip"/> that the given <m>f</m> is a bijection, and hence invertible; the theorem claims that <m>\Log</m> is the inverse of this function. First observe that <m>\im \Log\subseteq R</m>, since
+        <md>
+            <mrow>w\in \C-(-\infty,0] \amp \implies -\pi&lt; \Arg w &lt; \pi</mrow>
+            <mrow> \amp\implies -\pi &lt; \Im(\Log z) &lt; \pi</mrow>
+            <mrow> \amp \implies \Log z\in R</mrow>
+        </md>.
+        The identities <xref first="eq_log_exp" last="eq_exp_log"/> are easily verified using the formulas for <m>\exp</m> and <m>\Log</m> applied to elements in <m>R</m> and <m>\C-\{0\}</m>. 
+    </p>
+    </proof>
+    </theorem>
+    
     <example xml:id="eg_log">
     <title>Logarithm</title>
     <statement>
     <p>
-    Compute <m>\log z</m> and <m>\Log z</m> for the given <m>z</m>. 
+    Compute <m>\log z</m> and <m>\Log z</m> (if applicable) for the given <m>z</m>. 
     <ol>
         <li>
             <p>
@@ -66,8 +103,31 @@
     <p>
     <ol>
         <li>
-            <p>
-                
+            <p>We have 
+                <md>
+                    <mrow>\log 3 \amp =\ln 3+i\arg(3)=\{\ln 3+2\pi k i\colon k\in \Z\}</mrow>
+                    <mrow>\Log 3 \amp =\ln 3</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>We have 
+               <md>
+                <mrow>\log(-2) \amp = \ln\abs{-2}+i\arg(-2)</mrow>
+                <mrow> \amp = =\ln 2+i\arg(-2)</mrow>
+                <mrow> \amp = \{\ln 2+i(\pi +2\pi k)\colon k\in \Z\}</mrow>
+                <mrow> \amp = \{\ln 2+(2k+1)\pi i \colon k\in \Z\}</mrow>
+               </md>.
+               Technically, <m>\Log</m> is not defined at <m>z=-2</m>. 
+            </p>
+        </li>
+        <li>
+            <p>We have 
+                <md>
+                    <mrow>\log(1+i) \amp = \ln(\sqrt{2})+i\arg(1+i)</mrow>
+                    <mrow> \amp = \{\ln(\sqrt{2})+i(\pi/4+2\pi k)\colon k\in \Z\}</mrow>
+                    <mrow>\Log(1+i) \amp = \ln(\sqrt{2})+\frac{\pi i}{4}</mrow>
+                </md>.
             </p>
         </li>
     </ol>
@@ -83,7 +143,21 @@
     </statement>
     <solution>
     <p>
-    
+    In general we have 
+    <md>
+        <mrow>\Log(z_1z_2) \amp = \ln\abs{z_1z_2}+i\Arg(z_1z_2)</mrow>
+        <mrow> \amp =(\ln\abs{z_1}+\ln\abs{z_2})+i\Arg(z_1z_2)</mrow>
+        <mrow>\Log z_1+\Log z_2 \amp = (\ln\abs{z_1}+\ln\abs{z_2})+i(\Arg z_1+\Arg z_2)</mrow>
+    </md>.
+    The issue preventing equality to hold in general is that 
+    <me>
+        \Arg(z_1z_2)\ne \Arg(z_1)+\Arg(z_2)
+    </me>.
+    Indeed, taking <m>z_1=e^{\pi i/2}</m> and <m>z_2=e^{3\pi i/4}</m>, we have 
+    <md>
+        <mrow>\Arg(z_1z_2) \amp = \Arg(e^{5\pi i /4})=-\frac{3\pi}{4}</mrow>
+        <mrow>\Arg(z_1)+\Arg(z_2) \amp =\frac{\pi}{2}+\frac{3\pi }{4}=\frac{5\pi}{4}</mrow>
+    </md>.
     </p>
     </solution>
     </example>
@@ -144,15 +218,35 @@ Let <m>z\ne 0</m>. Show that the set <m>z^{1/n}</m> is precisely the set of <m>n
 
 </subsection>
 <subsection xml:id="ss_trig">
-<title>Tigonometric functions</title>
+    <p>
+    Given a real number <m>t\in \R</m>, from the identity 
+    <me>
+        e^{it}=\cos t+i\sin t
+    </me>
+    and our formulas 
+    <md>
+        <mrow>\Re z \amp =\frac{z+\overline{z}}{2} \amp \Im z\amp \frac{z-\overline{z}}{2i}</mrow>
+    </md>
+    it follows that 
+    <md>
+        <mrow>\cos t\amp =\frac{e^{it}+e^{-it}}{2} \amp \sin t\amp =\frac{e^{it}-e^{-it}}{2i} </mrow>
+    </md>.
+    It is then natural to extend these formulas for all complex numbers <m>z</m>, yielding our definitions for the complex cosine and sine functions: 
+    <md>
+        <mrow> \cos z\amp =\frac{e^{iz}+e^{-iz}}{2} \amp \sin z\amp =\frac{e^{iz}-e^{-iz}}{2i} </mrow>
+    </md>
+    
+    </p>
+<title>Trigonometric functions</title>
 <definition xml:id="d_trig_functions">
 <title>Trigonometric functions</title>
 <statement>
 <p>
 We define the <term>complex cosine and sine</term> <m>\cos\colon \C\rightarrow \C</m> and <m>\sin\colon \C\rightarrow \C</m> as follows: 
-<md>
-    <mrow>\cos(z) \amp = \frac{e^z+e^{-z}}{2} \amp \sin(z)=\frac{e^z-e^{-z}}{2i}</mrow>
-</md>.
+<mdn>
+    <mrow xml:id="eq_cos">\cos(z) \amp = \frac{e^{iz}+e^{-iz}}{2} \amp </mrow>
+    <mrow xml:id="eq_sin">\sin(z)\amp =\frac{e^{iz}-e^{-iz}}{2i}  </mrow>
+</mdn>.
 We then further define complex extensions of the other elementary trigonometric functions in the usual way:
 <md>
     <mrow>\tan z \amp = \frac{\sin z}{\cos z} \amp \cot z\amp = \frac{\cos z}{\sin z}</mrow>
@@ -177,11 +271,60 @@ Let <m>z,w\in \C</m>.
             <m>\sin z=\sin w</m> if and only if <m>z=w+2\pi k</m> for some <m>k\in \Z</m> or <m>z=\pi-w+2\pi k</m> for some <m>k\in \Z</m>. 
         </p>
     </li>
+    <li>
+        <p>For all <m>z,w\in \C</m> we have 
+            <mdn>
+            <mrow>\cos^2 z+\sin^2 z \amp = 1 \amp \tan^2 z+1 \amp =\sec^2 z </mrow>
+                <mrow xml:id="eq_angle_sum">\cos(z+w) \amp = \cos(z)\cos(w)-\sin(z)\sin(w) \amp 
+                \sin(z+w) \amp =\sin z\cos w+\cos z\sin w </mrow>
+                <mrow>\cos(2z) \amp = \cos^2 z-\sin^2 z \amp \sin(2z)\amp = 2\sin z\cos z</mrow>
+            </mdn>.
+        </p>
+    </li>
 </ol>
 </p>
 </statement>
 <proof>
 <p>
+    <ol>
+        <li>
+            <p>
+                Given <m>z,w\in \C</m>, we have 
+                <md>
+                    <mrow>\cos z=\cos w \amp \iff e^{iz}+e^{-iz}=e^{iw}+e^{-iw}</mrow>
+                    <mrow> \amp \iff e^{iw}e^{iz}+e^{iw}e^{-iz}=e^{iw}e^{iw}+e^{iw}e^{-iw}</mrow>
+                    <mrow> \amp \iff e^{i(z+w)}+e^{-i(z-w)}=e^{iw+iz}e^{iw-iz}+1</mrow>
+                    <mrow> \amp \iff e^{i(z+w)}+e^{-i(z-w)}=e^{i(z+w)}e^{-i(z-w)}+1</mrow>
+                    <mrow> \amp \iff e^{i(z+w)}(1-e^{-i(z-w)})-(1-e^{-i(z-w)})=0</mrow>
+                    <mrow> \amp \iff (1-e^{-i(z-w)})(e^{i(z+w)}-1)=0 </mrow>
+                    <mrow> \amp \iff e^{-i(z-w)}=1 \text{ or } e^{i(z+w)}=1</mrow>
+                </md>.
+                Next since <m>e^u=1</m> if and only if <m>u=0+2\pi k i</m> for some <m>k\in \Z</m>, we see that <m>\cos z=\cos w</m> if and only if 
+                <md>
+                    <mrow>-i(z-w)\amp =2\pi k i \text{ for some } k\in \Z </mrow>
+                    <mrow>\amp \text{ or } </mrow>
+                    <mrow>i(z+w)\amp =2\pi k i \text{ for some } k\in \Z </mrow>
+                </md>
+                if and only if 
+                <md>
+                    <mrow>z\amp =w+2\pi k  \text{ for some } k\in \Z </mrow>
+                    <mrow>\amp \text{ or } </mrow>
+                    <mrow>z\amp=-w +2\pi k  \text{ for some } k\in \Z </mrow>
+                </md>,
+                as claimed. 
+            </p>
+        </li>
+        <li>
+            <p>
+                The proof of this statement is very similar to the one above. 
+            </p>
+        </li>
+        <li>
+            <p>
+                These identities can be proved in a straightforward manner using the the defining formulas <xref first="eq_cos" last="eq_sin"/> and properties of complex multiplication. 
+            </p>
+        </li>
+    </ol>
 </p>
 </proof>
 </theorem>
@@ -197,23 +340,24 @@ We define the <term>complex hyperbolic functions</term> <m>\cosh\colon \C\righta
 </statement>
 </definition>
 <theorem xml:id="th_hyperbolic">
-<title>Hyperbolic</title>
+<title>Complex hyperbolic functions</title>
 <statement>
-<p>
-    Let <m>z\in \C</m>. 
+<p> 
 <ol>
     <li>
-        <p>
-            <m>\cosh(z)=\cos(iz)</m> and <m>\sinh(z)=\frac{\sin(iz)}{i}</m>. 
+        <p> For all <m>z\in \C</m> we have 
+        <md>
+            <mrow>\cosh(z) \amp = \cos(iz) \amp \sinh(z)\amp= \frac{\sin(iz)}{i}</mrow>
+        </md>.
         </p>
     </li>
     <li>
         <p>
-            Writing <m>z=x+iy</m>, we have 
+            For all <m>z=x+iy\in \C</m> we have 
             <md>
-                <mrow>\cos(z) \amp =\cos(x)\cosh(iy)-i\sin(x)\sinh(y)</mrow>
+                <mrow>\cos(z) \amp =\cos(x)\cosh(y)-i\sin(x)\sinh(y)</mrow>
                 <mrow>\sin(z) \amp =\sin(x)\cosh(y)+i\cos(x)\sinh(y)</mrow>
-            </md>
+            </md>.
         </p>
     </li>
 </ol>
@@ -221,6 +365,18 @@ We define the <term>complex hyperbolic functions</term> <m>\cosh\colon \C\righta
 </statement>
 <proof>
 <p>
+    <ol>
+        <li>
+            <p>
+                These identities follow directly from <xref ref="d_trig_functions"/> and <xref ref="d_hyperbolic"/>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                These identities follow directly from the sum identities in <xref ref="eq_angle_sum"/> and <xref ref="d_hyperbolic"/>. 
+            </p>
+        </li>
+    </ol>
 </p>
 </proof>
 </theorem>

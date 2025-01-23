@@ -146,9 +146,67 @@
     </statement>
     <proof>
     <p>
+        <ol>
+            <li>
+                <p>
+                    Given complex numbers <m>z</m> and <m>w</m>, we have 
+                    <md>
+                        <mrow>e^{z+w} \amp= e^{\Re (z+w)}e^{i\Im(z+w)}</mrow>
+                        <mrow> \amp = e^{\Re z+\Re w}e^{i(\Im z+\Im w)}</mrow>
+                        <mrow> \amp = (e^{\Re z}e^{i \Im z})\cdot (e^{\Re w}e^{i\Im w}) \amp (<xref ref="th_polar_mult" text="global"/>)</mrow>
+                        <mrow> \amp = e^ze^w</mrow>
+                    </md>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    We have 
+                    <md>
+                         <mrow> e^z  = e^w \amp \iff e^{\Re z}e^{i\Im z}=e^{\Re w}e^{i\Im w}</mrow>
+                         <mrow> \amp \iff e^{\Re z}=e^{\Re w} \text{ and } \Im w=\Im z+2\pi k \text{ for some } k\in \Z \amp (<xref ref="th_polar_form" text="global"/>)</mrow>
+                         <mrow> \amp \iff \Re z=\Re w \text{ and } \Im w=\Im z+2\pi k \text{ for some } k\in \Z </mrow>
+                    </md>,
+                    where the last equivalence follows from the fact that the real exponential function is injective. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Given any <m>w\ne 0</m> we can write <m>w</m> in polar form as <m>w=se^{i\theta}</m> for some <m>s=\abs{w}&gt; 0</m> and <m>\theta\in \R</m>. Letting 
+                    <me>
+                        z=\ln s+i\theta=\ln \abs{w}+i\theta
+                    </me>,
+                    we have 
+                    <md>
+                        <mrow>e^z \amp =e^{\ln s}e^{i\theta}</mrow>
+                        <mrow> \amp = se^{i\theta} \amp (\text{real exp., log. props.}) </mrow>
+                        <mrow> \amp = w</mrow>
+                    </md>.
+                    This shows that for all <m>w\in \C-\{0\}</m> there is a <m>z\in \C</m> such that <m>\exp(z)=w</m>. Thus <m>\im \exp\supseteq \C-\{0\}</m>. It is clear that <m>0\notin \im \exp</m>, and hence that <m>\im \exp=\C-\{0\}</m>.
+                </p>
+            </li>
+        </ol>
     </p>
     </proof>
     </theorem>
+    <remark xml:id="rm_solve_exp">
+        <title>Solving <m>e^z=w</m></title>
+        <p>
+            From our analysis in the proof of <xref ref="th_exp"/>, we saw that given a nonzero <m>w\in \C</m>, the complex number 
+            <me>
+                z=\ln\abs{w}+i\Arg w
+            </me>,
+            satisfies <m>e^z=w</m>. It follows from (2) of <xref ref="th_exp"/> that the set of all <m>z</m> satisfying <m>e^z=w</m> is thus
+            <me>
+                \{\ln\abs{w}+i(\Arg w+2\pi k\colon k\in \Z\}=\{\ln\abs{w}+i(\theta)\colon \theta\in \arg z\}
+            </me>.
+            As such, as a sort of shorthand, we can express this set as 
+            <me>
+                \ln\abs{w}+i\arg(w)
+            </me>,
+            where as always <m>\arg(w)=\{\Arg w+2\pi k\colon k\in \Z\}</m> is the set of all arguments of <m>w</m>. Note that the various algebraic operations in that expression must be appropriately interpreted as an operations on sets. 
+        </p>
+        
+    </remark>
     </subsection>
     <subsection xml:id="ss_functions_visual">
     <title>Visualizing complex functions</title>
