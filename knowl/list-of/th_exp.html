@@ -19,6 +19,47 @@
 </div></li>
 <li><div class="para">We have <span class="process-math">\(e^z=e^w\)</span> if and only if <span class="process-math">\(\Re z=\Re w\)</span> and <span class="process-math">\(\Im w=\Im z+2\pi k\)</span> for some <span class="process-math">\(k\in \Z\text{.}\)</span> In particular, <span class="process-math">\(\exp\)</span> is not injective.</div></li>
 <li><div class="para"><span class="process-math">\(\im \exp=\C-\{0\}\text{.}\)</span></div></li>
-</ol></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_complex_functions.html#th_exp">in-context</a></span>
+</ol></div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_exp-3-1-1">
+<li><div class="para logical">
+<div class="para">Given complex numbers <span class="process-math">\(z\)</span> and <span class="process-math">\(w\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_polar_mult.html">
+\begin{align*}
+e^{z+w} \amp= e^{\Re (z+w)}e^{i\Im(z+w)}\\
+\amp = e^{\Re z+\Re w}e^{i(\Im z+\Im w)}\\
+\amp = (e^{\Re z}e^{i \Im z})\cdot (e^{\Re w}e^{i\Im w}) \amp (\knowl{./knowl/xref/th_polar_mult.html}{\text{1.2.16}})\\
+\amp = e^ze^w\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_polar_form.html">
+\begin{align*}
+e^z  = e^w \amp \iff e^{\Re z}e^{i\Im z}=e^{\Re w}e^{i\Im w}\\
+\amp \iff e^{\Re z}=e^{\Re w} \text{ and } \Im w=\Im z+2\pi k \text{ for some } k\in \Z \amp (\knowl{./knowl/xref/th_polar_form.html}{\text{1.2.13}})\\
+\amp \iff \Re z=\Re w \text{ and } \Im w=\Im z+2\pi k \text{ for some } k\in \Z \text{,}
+\end{align*}
+</div>
+<div class="para">where the last equivalence follows from the fact that the real exponential function is injective.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Given any <span class="process-math">\(w\ne 0\)</span> we can write <span class="process-math">\(w\)</span> in polar form as <span class="process-math">\(w=se^{i\theta}\)</span> for some <span class="process-math">\(s=\abs{w}&gt; 0\)</span> and <span class="process-math">\(\theta\in \R\text{.}\)</span> Letting</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z=\ln s+i\theta=\ln \abs{w}+i\theta\text{,}
+\end{equation*}
+</div>
+<div class="para">we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+e^z \amp =e^{\ln s}e^{i\theta}\\
+\amp = se^{i\theta} \amp (\text{real exp., log. props.}) \\
+\amp = w\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that for all <span class="process-math">\(w\in \C-\{0\}\)</span> there is a <span class="process-math">\(z\in \C\)</span> such that <span class="process-math">\(\exp(z)=w\text{.}\)</span> Thus <span class="process-math">\(\im \exp\supseteq \C-\{0\}\text{.}\)</span> It is clear that <span class="process-math">\(0\notin \im \exp\text{,}\)</span> and hence that <span class="process-math">\(\im \exp=\C-\{0\}\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_complex_functions.html#th_exp">in-context</a></span>
 </body>
 </html>

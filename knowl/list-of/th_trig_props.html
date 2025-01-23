@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Cosine and sine properties.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Cosine and sine properties.</span>
 </h4>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(z,w\in \C\text{.}\)</span>
@@ -24,7 +24,52 @@
 <li><div class="para">
 <span class="process-math">\(\sin z=\sin w\)</span> if and only if <span class="process-math">\(z=w+2\pi k\)</span> for some <span class="process-math">\(k\in \Z\)</span> or <span class="process-math">\(z=\pi-w+2\pi k\)</span> for some <span class="process-math">\(k\in \Z\text{.}\)</span>
 </div></li>
+<li><div class="para logical">
+<div class="para">For all <span class="process-math">\(z,w\in \C\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align}
+\cos^2 z+\sin^2 z \amp = 1 \amp \tan^2 z+1 \amp =\sec^2 z \tag{1.28}\\
+\cos(z+w) \amp = \cos(z)\cos(w)-\sin(z)\sin(w) \amp 
+\sin(z+w) \amp =\sin z\cos w+\cos z\sin w \tag{1.29}\\
+\cos(2z) \amp = \cos^2 z-\sin^2 z \amp \sin(2z)\amp = 2\sin z\cos z\text{.}\tag{1.30}
+\end{align}
+</div>
+</div></li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_log_trig.html#th_trig_props">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_trig_props-3-1-1">
+<li><div class="para logical">
+<div class="para">Given <span class="process-math">\(z,w\in \C\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\cos z=\cos w \amp \iff e^{iz}+e^{-iz}=e^{iw}+e^{-iw}\\
+\amp \iff e^{iw}e^{iz}+e^{iw}e^{-iz}=e^{iw}e^{iw}+e^{iw}e^{-iw}\\
+\amp \iff e^{i(z+w)}+e^{-i(z-w)}=e^{iw+iz}e^{iw-iz}+1\\
+\amp \iff e^{i(z+w)}+e^{-i(z-w)}=e^{i(z+w)}e^{-i(z-w)}+1\\
+\amp \iff e^{i(z+w)}(1-e^{-i(z-w)})-(1-e^{-i(z-w)})=0\\
+\amp \iff (1-e^{-i(z-w)})(e^{i(z+w)}-1)=0 \\
+\amp \iff e^{-i(z-w)}=1 \text{ or } e^{i(z+w)}=1\text{.}
+\end{align*}
+</div>
+<div class="para">Next since <span class="process-math">\(e^u=1\)</span> if and only if <span class="process-math">\(u=0+2\pi k i\)</span> for some <span class="process-math">\(k\in \Z\text{,}\)</span> we see that <span class="process-math">\(\cos z=\cos w\)</span> if and only if</div>
+<div class="displaymath process-math">
+\begin{align*}
+-i(z-w)\amp =2\pi k i \text{ for some } k\in \Z \\
+\amp \text{ or } \\
+i(z+w)\amp =2\pi k i \text{ for some } k\in \Z 
+\end{align*}
+</div>
+<div class="para">if and only if</div>
+<div class="displaymath process-math">
+\begin{align*}
+z\amp =w+2\pi k  \text{ for some } k\in \Z \\
+\amp \text{ or } \\
+z\amp=-w +2\pi k  \text{ for some } k\in \Z \text{,}
+\end{align*}
+</div>
+<div class="para">as claimed.</div>
+</div></li>
+<li><div class="para">The proof of this statement is very similar to the one above.</div></li>
+<li><div class="para">These identities can be proved in a straightforward manner using the the defining formulas <a href="s_log_trig.html#d_trig_functions-2-1-4" class="xref" data-knowl="./knowl/xref/eq_cos.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.26">(1.26)–(1.27)</a> and properties of complex multiplication.</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_log_trig.html#th_trig_props">in-context</a></span>
 </body>
 </html>

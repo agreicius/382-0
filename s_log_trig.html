@@ -208,6 +208,9 @@ eBookConfig.enable_chatcodes =  false;
 #th_exp-2-1-1 { counter-set: th_exp-2-1-1 0; }
 #th_exp-2-1-1 > li::marker { content: ""counter(th_exp-2-1-1,decimal)"."; }
 #th_exp-2-1-1 > li { counter-increment: th_exp-2-1-1; }
+#th_exp-3-1-1 { counter-set: th_exp-3-1-1 0; }
+#th_exp-3-1-1 > li::marker { content: ""counter(th_exp-3-1-1,decimal)"."; }
+#th_exp-3-1-1 > li { counter-increment: th_exp-3-1-1; }
 #eg_square_transform-2-1-6 { counter-set: eg_square_transform-2-1-6 0; }
 #eg_square_transform-2-1-6 > li::marker { content: ""counter(eg_square_transform-2-1-6,decimal)"."; }
 #eg_square_transform-2-1-6 > li { counter-increment: eg_square_transform-2-1-6; }
@@ -229,9 +232,15 @@ eBookConfig.enable_chatcodes =  false;
 #th_trig_props-2-1-2 { counter-set: th_trig_props-2-1-2 0; }
 #th_trig_props-2-1-2 > li::marker { content: ""counter(th_trig_props-2-1-2,decimal)"."; }
 #th_trig_props-2-1-2 > li { counter-increment: th_trig_props-2-1-2; }
-#th_hyperbolic-2-1-2 { counter-set: th_hyperbolic-2-1-2 0; }
-#th_hyperbolic-2-1-2 > li::marker { content: ""counter(th_hyperbolic-2-1-2,decimal)"."; }
-#th_hyperbolic-2-1-2 > li { counter-increment: th_hyperbolic-2-1-2; }
+#th_trig_props-3-1-1 { counter-set: th_trig_props-3-1-1 0; }
+#th_trig_props-3-1-1 > li::marker { content: ""counter(th_trig_props-3-1-1,decimal)"."; }
+#th_trig_props-3-1-1 > li { counter-increment: th_trig_props-3-1-1; }
+#th_hyperbolic-2-1-1 { counter-set: th_hyperbolic-2-1-1 0; }
+#th_hyperbolic-2-1-1 > li::marker { content: ""counter(th_hyperbolic-2-1-1,decimal)"."; }
+#th_hyperbolic-2-1-1 > li { counter-increment: th_hyperbolic-2-1-1; }
+#th_hyperbolic-3-1-1 { counter-set: th_hyperbolic-3-1-1 0; }
+#th_hyperbolic-3-1-1 > li::marker { content: ""counter(th_hyperbolic-3-1-1,decimal)"."; }
+#th_hyperbolic-3-1-1 > li { counter-increment: th_hyperbolic-3-1-1; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -474,7 +483,7 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_log" class="internal"><span class="title">Logarithmic functions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_power" class="internal"><span class="title">Complex exponentiation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_trig" class="internal"><span class="title">Tigonometric functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_trig" class="internal"><span class="title">Trigonometric functions</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -523,13 +532,53 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 </div></article><article class="remark remark-like" id="ss_log-4"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Log\)</span>.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="ss_log-4-2">We will see in due course that there is a good reason for the funny domain specified for <span class="process-math">\(\Log z\text{.}\)</span> Namely, although we can in principle define <span class="process-math">\(\Log z\)</span> for any <span class="process-math">\(z\ne 0\text{,}\)</span> the domain <span class="process-math">\(\C-(-\infty, 0]\)</span> ensures that <span class="process-math">\(\Log z\)</span> is continuous, and is in a sense maximal in this regard.</div></article><article class="example example-like" id="eg_log"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Logarithm.</span>
+<div class="para logical" id="ss_log-4-1">
+<div class="para">Using the same sort of shorthand as in <a href="s_complex_functions.html#rm_solve_exp" class="xref" data-knowl="./knowl/xref/rm_solve_exp.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.6.9: Solving e^z=w">Remark 1.6.9</a>, we can write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rm_solve_exp.html" id="ss_log-4-1-2">
+\begin{align*}
+\log z \amp = \ln\abs{z}+i\arg z\text{,}
+\end{align*}
+</div>
+<div class="para">where as always</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rm_solve_exp.html">
+\begin{equation*}
+\arg z=\{\Arg z+2\pi k\colon k\in \Z\}
+\end{equation*}
+</div>
+<div class="para">is the set of all arguments of <span class="process-math">\(z\text{.}\)</span>
+</div>
+</div></article><article class="remark remark-like" id="ss_log-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Log\)</span>.</span>
+</h4>
+<div class="para" id="ss_log-5-2">We will see in due course that there is a good reason for the funny domain specified for <span class="process-math">\(\Log z\text{.}\)</span> Namely, although we can in principle define <span class="process-math">\(\Log z\)</span> for any <span class="process-math">\(z\ne 0\text{,}\)</span> the domain <span class="process-math">\(\C-(-\infty, 0]\)</span> ensures that <span class="process-math">\(\Log z\)</span> is continuous, and is in a sense maximal in this regard.</div></article><article class="theorem theorem-like" id="th_exp_Log"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Log\)</span> as inverse function.</span>
+</h4>
+<div class="para logical" id="th_exp_Log-2-1">
+<div class="para">Let <span class="process-math">\(R=\{z\in \C\colon -\pi&lt; \Im z &lt; \pi\}\text{,}\)</span> and define <span class="process-math">\(f\colon R\rightarrow \C-(-\infty,0]\)</span> as <span class="process-math">\(f(z)=e^z\text{:}\)</span> i.e., <span class="process-math">\(f\)</span> is the restriction of <span class="process-math">\(\exp\)</span> to the set <span class="process-math">\(R\text{.}\)</span> The function <span class="process-math">\(\Log\colon \C-(-\infty, 0]\rightarrow R\)</span> is the inverse of <span class="process-math">\(f\text{:}\)</span> i.e., we have</div>
+<div class="displaymath process-math" id="th_exp_Log-2-1-11">
+\begin{align}
+\Log(e^z) \amp = z \text{ for all } z\in R\tag{1.24}\\
+e^{\Log(w)} \amp = w \text{ for all } w\in \C-(-\infty, 0]\text{.}\tag{1.25}
+\end{align}
+</div>
+</div></article><details id="th_exp_Log-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_exp_Log-3-1">
+<div class="para">Recall that we remarked in the discussion above <a href="s_complex_functions.html#fig_exp_trans_strip" class="xref" data-knowl="./knowl/xref/fig_exp_trans_strip.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.15">Figure 1.6.15</a> that the given <span class="process-math">\(f\)</span> is a bijection, and hence invertible; the theorem claims that <span class="process-math">\(\Log\)</span> is the inverse of this function. First observe that <span class="process-math">\(\im \Log\subseteq R\text{,}\)</span> since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_exp_trans_strip.html " id="th_exp_Log-3-1-5">
+\begin{align*}
+w\in \C-(-\infty,0] \amp \implies -\pi&lt; \Arg w &lt; \pi\\
+\amp\implies -\pi &lt; \Im(\Log z) &lt; \pi\\
+\amp \implies \Log z\in R\text{.}
+\end{align*}
+</div>
+<div class="para">The identities <a href="s_log_trig.html#th_exp_Log-2-1-11" class="xref" data-knowl="./knowl/xref/eq_log_exp.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.24">(1.24)–(1.25)</a> are easily verified using the formulas for <span class="process-math">\(\exp\)</span> and <span class="process-math">\(\Log\)</span> applied to elements in <span class="process-math">\(R\)</span> and <span class="process-math">\(\C-\{0\}\text{.}\)</span>
+</div>
+</div></article></details><article class="example example-like" id="eg_log"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Logarithm.</span>
 </h4>
 <div class="para logical" id="eg_log-2-1">
-<div class="para">Compute <span class="process-math">\(\log z\)</span> and <span class="process-math">\(\Log z\)</span> for the given <span class="process-math">\(z\text{.}\)</span>
+<div class="para">Compute <span class="process-math">\(\log z\)</span> and <span class="process-math">\(\Log z\)</span> (if applicable) for the given <span class="process-math">\(z\text{.}\)</span>
 </div>
 <ol class="decimal" id="eg_log-2-1-4">
 <li id="eg_log-2-1-4-1"><div class="para" id="eg_log-2-1-4-1-1"><span class="process-math">\(\displaystyle z=3\)</span></div></li>
@@ -537,16 +586,71 @@ eBookConfig.enable_chatcodes =  false;
 <li id="eg_log-2-1-4-3"><div class="para" id="eg_log-2-1-4-3-1"><span class="process-math">\(z=1+i\text{.}\)</span></div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_log-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_log-3-1"><ol class="decimal" id="eg_log-3-1-1"><li id="eg_log-3-1-1-1"><div class="para" id="eg_log-3-1-1-1-1"></div></li></ol></div></div></details></div></article><article class="example example-like" id="eg_Log"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Invalid identity.</span>
+<div class="solutions"><details id="eg_log-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_log-3-1"><ol class="decimal" id="eg_log-3-1-1">
+<li id="eg_log-3-1-1-1"><div class="para logical" id="eg_log-3-1-1-1-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="eg_log-3-1-1-1-1-1">
+\begin{align*}
+\log 3 \amp =\ln 3+i\arg(3)=\{\ln 3+2\pi k i\colon k\in \Z\}\\
+\Log 3 \amp =\ln 3\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="eg_log-3-1-1-2"><div class="para logical" id="eg_log-3-1-1-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="eg_log-3-1-1-2-1-1">
+\begin{align*}
+\log(-2) \amp = \ln\abs{-2}+i\arg(-2)\\
+\amp = =\ln 2+i\arg(-2)\\
+\amp = \{\ln 2+i(\pi +2\pi k)\colon k\in \Z\}\\
+\amp = \{\ln 2+(2k+1)\pi i \colon k\in \Z\}\text{.}
+\end{align*}
+</div>
+<div class="para">Technically, <span class="process-math">\(\Log\)</span> is not defined at <span class="process-math">\(z=-2\text{.}\)</span>
+</div>
+</div></li>
+<li id="eg_log-3-1-1-3"><div class="para logical" id="eg_log-3-1-1-3-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="eg_log-3-1-1-3-1-1">
+\begin{align*}
+\log(1+i) \amp = \ln(\sqrt{2})+i\arg(1+i)\\
+\amp = \{\ln(\sqrt{2})+i(\pi/4+2\pi k)\colon k\in \Z\}\\
+\Log(1+i) \amp = \ln(\sqrt{2})+\frac{\pi i}{4}\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="example example-like" id="eg_Log"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Invalid identity.</span>
 </h4>
 <div class="para" id="eg_Log-2-1">Show that <span class="process-math">\(\Log(z_1z_2)\)</span> is not always equal to <span class="process-math">\(\Log(z_1)+\Log(z_2)\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_Log-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_Log-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_power"><h3 class="heading hide-type">
+<div class="solutions"><details id="eg_Log-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_Log-3-1">
+<div class="para">In general we have</div>
+<div class="displaymath process-math" id="eg_Log-3-1-1">
+\begin{align*}
+\Log(z_1z_2) \amp = \ln\abs{z_1z_2}+i\Arg(z_1z_2)\\
+\amp =(\ln\abs{z_1}+\ln\abs{z_2})+i\Arg(z_1z_2)\\
+\Log z_1+\Log z_2 \amp = (\ln\abs{z_1}+\ln\abs{z_2})+i(\Arg z_1+\Arg z_2)\text{.}
+\end{align*}
+</div>
+<div class="para">The issue preventing equality to hold in general is that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Arg(z_1z_2)\ne \Arg(z_1)+\Arg(z_2)\text{.}
+\end{equation*}
+</div>
+<div class="para">Indeed, taking <span class="process-math">\(z_1=e^{\pi i/2}\)</span> and <span class="process-math">\(z_2=e^{3\pi i/4}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_Log-3-1-5">
+\begin{align*}
+\Arg(z_1z_2) \amp = \Arg(e^{5\pi i /4})=-\frac{3\pi}{4}\\
+\Arg(z_1)+\Arg(z_2) \amp =\frac{\pi}{2}+\frac{3\pi }{4}=\frac{5\pi}{4}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article></section><section class="subsection" id="ss_power"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Complex exponentiation</span>
 </h3>
 <article class="definition definition-like" id="d_complex_exponentiation"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Complex exponentiation.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Complex exponentiation.</span>
 </h4>
 <div class="para logical" id="d_complex_exponentiation-2-1">
 <div class="para">Given <span class="process-math">\(z\in \C-\{0\}\)</span> and any <span class="process-math">\(w\in \C\text{,}\)</span> we define the set <span class="process-math">\(z^w\)</span> as</div>
@@ -557,7 +661,7 @@ z^w=e^{w\log z}\text{.}
 </div>
 <div class="para">Given a fixed <span class="process-math">\(w\in \C\text{,}\)</span> the function <span class="process-math">\(f\colon \C-(-\infty, 0]\rightarrow \C\)</span> defined as <span class="process-math">\(f(z)=e^{w\Log z}\)</span> is called the <dfn class="terminology">principal branch of the power function with exponent <span class="process-math">\(w\)</span></dfn> (or <dfn class="terminology">principal branch of <span class="process-math">\(f(z)=z^w\)</span></dfn>).</div>
 </div></article><article class="example example-like" id="eg_powers"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Powers.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.8</span><span class="period">.</span><span class="space"> </span><span class="title">Powers.</span>
 </h4>
 <div class="para logical" id="eg_powers-2-1">
 <div class="para">Compute the following power expressions.</div>
@@ -569,22 +673,49 @@ z^w=e^{w\log z}\text{.}
 </ol>
 </div>
 <div class="solutions"><details id="eg_powers-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_powers-3-1"></div></div></details></div></article><article class="example example-like" id="eg_nth_roots"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.7</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(n\)</span>-th roots.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(n\)</span>-th roots.</span>
 </h4>
 <div class="para" id="eg_nth_roots-2-1">Let <span class="process-math">\(z\ne 0\text{.}\)</span> Show that the set <span class="process-math">\(z^{1/n}\)</span> is precisely the set of <span class="process-math">\(n\)</span> distinct <span class="process-math">\(n\)</span>-th roots of <span class="process-math">\(z\text{.}\)</span>
 </div>
 <div class="solutions"><details id="eg_nth_roots-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_nth_roots-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_trig"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Tigonometric functions</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Trigonometric functions</span>
 </h3>
+<div class="para logical" id="ss_trig-1">
+<div class="para">Given a real number <span class="process-math">\(t\in \R\text{,}\)</span> from the identity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e^{it}=\cos t+i\sin t
+\end{equation*}
+</div>
+<div class="para">and our formulas</div>
+<div class="displaymath process-math" id="ss_trig-1-3">
+\begin{align*}
+\Re z \amp =\frac{z+\overline{z}}{2} \amp \Im z\amp \frac{z-\overline{z}}{2i}
+\end{align*}
+</div>
+<div class="para">it follows that</div>
+<div class="displaymath process-math" id="ss_trig-1-4">
+\begin{align*}
+\cos t\amp =\frac{e^{it}+e^{-it}}{2} \amp \sin t\amp =\frac{e^{it}-e^{-it}}{2i} \text{.}
+\end{align*}
+</div>
+<div class="para">It is then natural to extend these formulas for all complex numbers <span class="process-math">\(z\text{,}\)</span> yielding our definitions for the complex cosine and sine functions:</div>
+<div class="displaymath process-math" id="ss_trig-1-6">
+\begin{align*}
+\cos z\amp =\frac{e^{iz}+e^{-iz}}{2} \amp \sin z\amp =\frac{e^{iz}-e^{-iz}}{2i} 
+\end{align*}
+</div>
+</div>
 <article class="definition definition-like" id="d_trig_functions"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.8</span><span class="period">.</span><span class="space"> </span><span class="title">Trigonometric functions.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Trigonometric functions.</span>
 </h4>
 <div class="para logical" id="d_trig_functions-2-1">
 <div class="para">We define the <dfn class="terminology">complex cosine and sine</dfn> <span class="process-math">\(\cos\colon \C\rightarrow \C\)</span> and <span class="process-math">\(\sin\colon \C\rightarrow \C\)</span> as follows:</div>
 <div class="displaymath process-math" id="d_trig_functions-2-1-4">
-\begin{align*}
-\cos(z) \amp = \frac{e^z+e^{-z}}{2} \amp \sin(z)=\frac{e^z-e^{-z}}{2i}\text{.}
-\end{align*}
+\begin{align}
+\cos(z) \amp = \frac{e^{iz}+e^{-iz}}{2} \amp \tag{1.26}\\
+\sin(z)\amp =\frac{e^{iz}-e^{-iz}}{2i}  \text{.}\tag{1.27}
+\end{align}
 </div>
 <div class="para">We then further define complex extensions of the other elementary trigonometric functions in the usual way:</div>
 <div class="displaymath process-math" id="d_trig_functions-2-1-5">
@@ -594,7 +725,7 @@ z^w=e^{w\log z}\text{.}
 \end{align*}
 </div>
 </div></article><article class="theorem theorem-like" id="th_trig_props"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Cosine and sine properties.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Cosine and sine properties.</span>
 </h4>
 <div class="para logical" id="th_trig_props-2-1">
 <div class="para">Let <span class="process-math">\(z,w\in \C\text{.}\)</span>
@@ -606,9 +737,54 @@ z^w=e^{w\log z}\text{.}
 <li id="th_trig_props-2-1-2-2"><div class="para" id="th_trig_props-2-1-2-2-1">
 <span class="process-math">\(\sin z=\sin w\)</span> if and only if <span class="process-math">\(z=w+2\pi k\)</span> for some <span class="process-math">\(k\in \Z\)</span> or <span class="process-math">\(z=\pi-w+2\pi k\)</span> for some <span class="process-math">\(k\in \Z\text{.}\)</span>
 </div></li>
+<li id="th_trig_props-2-1-2-3"><div class="para logical" id="th_trig_props-2-1-2-3-1">
+<div class="para">For all <span class="process-math">\(z,w\in \C\)</span> we have</div>
+<div class="displaymath process-math" id="th_trig_props-2-1-2-3-1-2">
+\begin{align}
+\cos^2 z+\sin^2 z \amp = 1 \amp \tan^2 z+1 \amp =\sec^2 z \tag{1.28}\\
+\cos(z+w) \amp = \cos(z)\cos(w)-\sin(z)\sin(w) \amp 
+\sin(z+w) \amp =\sin z\cos w+\cos z\sin w \tag{1.29}\\
+\cos(2z) \amp = \cos^2 z-\sin^2 z \amp \sin(2z)\amp = 2\sin z\cos z\text{.}\tag{1.30}
+\end{align}
+</div>
+</div></li>
 </ol>
-</div></article><details id="th_trig_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_trig_props-3-1"></div></article></details><article class="definition definition-like" id="d_hyperbolic"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Complex hyperbolic functions.</span>
+</div></article><details id="th_trig_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_trig_props-3-1"><ol class="decimal" id="th_trig_props-3-1-1">
+<li id="th_trig_props-3-1-1-1"><div class="para logical" id="th_trig_props-3-1-1-1-1">
+<div class="para">Given <span class="process-math">\(z,w\in \C\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_trig_props-3-1-1-1-1-2">
+\begin{align*}
+\cos z=\cos w \amp \iff e^{iz}+e^{-iz}=e^{iw}+e^{-iw}\\
+\amp \iff e^{iw}e^{iz}+e^{iw}e^{-iz}=e^{iw}e^{iw}+e^{iw}e^{-iw}\\
+\amp \iff e^{i(z+w)}+e^{-i(z-w)}=e^{iw+iz}e^{iw-iz}+1\\
+\amp \iff e^{i(z+w)}+e^{-i(z-w)}=e^{i(z+w)}e^{-i(z-w)}+1\\
+\amp \iff e^{i(z+w)}(1-e^{-i(z-w)})-(1-e^{-i(z-w)})=0\\
+\amp \iff (1-e^{-i(z-w)})(e^{i(z+w)}-1)=0 \\
+\amp \iff e^{-i(z-w)}=1 \text{ or } e^{i(z+w)}=1\text{.}
+\end{align*}
+</div>
+<div class="para">Next since <span class="process-math">\(e^u=1\)</span> if and only if <span class="process-math">\(u=0+2\pi k i\)</span> for some <span class="process-math">\(k\in \Z\text{,}\)</span> we see that <span class="process-math">\(\cos z=\cos w\)</span> if and only if</div>
+<div class="displaymath process-math" id="th_trig_props-3-1-1-1-1-7">
+\begin{align*}
+-i(z-w)\amp =2\pi k i \text{ for some } k\in \Z \\
+\amp \text{ or } \\
+i(z+w)\amp =2\pi k i \text{ for some } k\in \Z 
+\end{align*}
+</div>
+<div class="para">if and only if</div>
+<div class="displaymath process-math" id="th_trig_props-3-1-1-1-1-8">
+\begin{align*}
+z\amp =w+2\pi k  \text{ for some } k\in \Z \\
+\amp \text{ or } \\
+z\amp=-w +2\pi k  \text{ for some } k\in \Z \text{,}
+\end{align*}
+</div>
+<div class="para">as claimed.</div>
+</div></li>
+<li id="th_trig_props-3-1-1-2"><div class="para" id="th_trig_props-3-1-1-2-1">The proof of this statement is very similar to the one above.</div></li>
+<li id="th_trig_props-3-1-1-3"><div class="para" id="th_trig_props-3-1-1-3-1">These identities can be proved in a straightforward manner using the the defining formulas <a href="s_log_trig.html#d_trig_functions-2-1-4" class="xref" data-knowl="./knowl/xref/eq_cos.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.26">(1.26)–(1.27)</a> and properties of complex multiplication.</div></li>
+</ol></div></article></details><article class="definition definition-like" id="d_hyperbolic"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.12</span><span class="period">.</span><span class="space"> </span><span class="title">Complex hyperbolic functions.</span>
 </h4>
 <div class="para logical" id="d_hyperbolic-2-1">
 <div class="para">We define the <dfn class="terminology">complex hyperbolic functions</dfn> <span class="process-math">\(\cosh\colon \C\rightarrow \C\)</span> and <span class="process-math">\(\sinh\colon \C\rightarrow \C\)</span> as follows:</div>
@@ -618,26 +794,30 @@ z^w=e^{w\log z}\text{.}
 \end{align*}
 </div>
 </div></article><article class="theorem theorem-like" id="th_hyperbolic"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Hyperbolic.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.13</span><span class="period">.</span><span class="space"> </span><span class="title">Complex hyperbolic functions.</span>
 </h4>
-<div class="para logical" id="th_hyperbolic-2-1">
-<div class="para">Let <span class="process-math">\(z\in \C\text{.}\)</span>
-</div>
-<ol class="decimal" id="th_hyperbolic-2-1-2">
-<li id="th_hyperbolic-2-1-2-1"><div class="para" id="th_hyperbolic-2-1-2-1-1">
-<span class="process-math">\(\cosh(z)=\cos(iz)\)</span> and <span class="process-math">\(\sinh(z)=\frac{\sin(iz)}{i}\text{.}\)</span>
-</div></li>
-<li id="th_hyperbolic-2-1-2-2"><div class="para logical" id="th_hyperbolic-2-1-2-2-1">
-<div class="para">Writing <span class="process-math">\(z=x+iy\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="th_hyperbolic-2-1-2-2-1-2">
+<div class="para logical" id="th_hyperbolic-2-1"><ol class="decimal" id="th_hyperbolic-2-1-1">
+<li id="th_hyperbolic-2-1-1-1"><div class="para logical" id="th_hyperbolic-2-1-1-1-1">
+<div class="para">For all <span class="process-math">\(z\in \C\)</span> we have</div>
+<div class="displaymath process-math" id="th_hyperbolic-2-1-1-1-1-2">
 \begin{align*}
-\cos(z) \amp =\cos(x)\cosh(iy)-i\sin(x)\sinh(y)\\
-\sin(z) \amp =\sin(x)\cosh(y)+i\cos(x)\sinh(y)
+\cosh(z) \amp = \cos(iz) \amp \sinh(z)\amp= \frac{\sin(iz)}{i}\text{.}
 \end{align*}
 </div>
 </div></li>
-</ol>
-</div></article><details id="th_hyperbolic-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_hyperbolic-3-1"></div></article></details></section></section></div>
+<li id="th_hyperbolic-2-1-1-2"><div class="para logical" id="th_hyperbolic-2-1-1-2-1">
+<div class="para">For all <span class="process-math">\(z=x+iy\in \C\)</span> we have</div>
+<div class="displaymath process-math" id="th_hyperbolic-2-1-1-2-1-2">
+\begin{align*}
+\cos(z) \amp =\cos(x)\cosh(y)-i\sin(x)\sinh(y)\\
+\sin(z) \amp =\sin(x)\cosh(y)+i\cos(x)\sinh(y)\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></article><details id="th_hyperbolic-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_hyperbolic-3-1"><ol class="decimal" id="th_hyperbolic-3-1-1">
+<li id="th_hyperbolic-3-1-1-1"><div class="para" id="th_hyperbolic-3-1-1-1-1">These identities follow directly from <a href="s_log_trig.html#d_trig_functions" class="xref" data-knowl="./knowl/xref/d_trig_functions.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.7.10: Trigonometric functions">Definition 1.7.10</a> and <a href="s_log_trig.html#d_hyperbolic" class="xref" data-knowl="./knowl/xref/d_hyperbolic.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.7.12: Complex hyperbolic functions">Definition 1.7.12</a>.</div></li>
+<li id="th_hyperbolic-3-1-1-2"><div class="para" id="th_hyperbolic-3-1-1-2-1">These identities follow from <a href="s_log_trig.html#th_trig_props-2-1-2-3-1-2" class="xref" data-knowl="./knowl/xref/eq_angle_sum.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.29">(1.29)</a> and <a href="s_log_trig.html#d_hyperbolic" class="xref" data-knowl="./knowl/xref/d_hyperbolic.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.7.12: Complex hyperbolic functions">Definition 1.7.12</a>.</div></li>
+</ol></div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_complex_functions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

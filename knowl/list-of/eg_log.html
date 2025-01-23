@@ -12,10 +12,32 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Invalid identity.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title">Invalid identity.</span>
 </h4>
 <div class="para">Show that <span class="process-math">\(\Log(z_1z_2)\)</span> is not always equal to <span class="process-math">\(\Log(z_1)+\Log(z_2)\text{.}\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_log_trig.html#eg_Log">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">In general we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\Log(z_1z_2) \amp = \ln\abs{z_1z_2}+i\Arg(z_1z_2)\\
+\amp =(\ln\abs{z_1}+\ln\abs{z_2})+i\Arg(z_1z_2)\\
+\Log z_1+\Log z_2 \amp = (\ln\abs{z_1}+\ln\abs{z_2})+i(\Arg z_1+\Arg z_2)\text{.}
+\end{align*}
+</div>
+<div class="para">The issue preventing equality to hold in general is that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Arg(z_1z_2)\ne \Arg(z_1)+\Arg(z_2)\text{.}
+\end{equation*}
+</div>
+<div class="para">Indeed, taking <span class="process-math">\(z_1=e^{\pi i/2}\)</span> and <span class="process-math">\(z_2=e^{3\pi i/4}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\Arg(z_1z_2) \amp = \Arg(e^{5\pi i /4})=-\frac{3\pi}{4}\\
+\Arg(z_1)+\Arg(z_2) \amp =\frac{\pi}{2}+\frac{3\pi }{4}=\frac{5\pi}{4}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_log_trig.html#eg_Log">in-context</a></span>
 </body>
 </html>
