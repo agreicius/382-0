@@ -57,6 +57,70 @@ When this is the case we call <m>w</m> the <term>limit</term> of <m>f</m> as <m>
     </p>
     </statement>
     </definition>
+    <theorem xml:id="th_lim_fun_seq">
+    <title>Limit of function via sequences</title>
+    <statement>
+    <p>
+    Let <m>f\colon D\rightarrow \C</m> and let <m>z_0</m> be a limit point of <m>D</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>\lim\limits_{z\to z_0}f(z)=w</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                For all sequences <m>(z_n)</m> of elements of <m>D</m> satisfying <m>z_n\to z_0</m>, we have <m>f(z_n)\to w</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        We prove each implication separately. 
+    </p>
+    <case>
+    <title>Implication: (1)<m>\implies</m>(2)</title>
+    <p>
+    Assume <m>\lim\limits_{z\to z_0}f(z)=w</m>, and suppose <m>z_n\to z_0</m> for a sequence <m>(z_n)</m> consisting of elements of <m>D</m>. We show that <m>f(z_n)\to w</m>. To this end, given any <m>\epsilon&gt; 0</m>, there is a  <m>\delta&gt; 0</m> such that 
+    <me>
+        0&lt; \abs{z-z_0}&lt; \delta \implies \abs{f(z)-w}&lt; \epsilon
+    </me>.
+    Since <m>z_n\to z_0</m>, there is an <m>N</m> such that <m>\abs{z-z_n}&lt; \delta</m> for all <m>n\geq N</m>. It follows that for all <m>n\geq N</m>, either <m>z_n=z_0</m> or <m>0&lt; \abs{z-z_n} &lt; \delta</m>. In either case, the displayed implication above implies that 
+    <m>\abs{f(z_n)-w}&lt; \epsilon</m>, as desired. 
+    </p>
+    </case>
+    <case>
+    <title>Implication: (2)<m>\implies</m>(1)</title>
+    <p>
+    We will prove the contrapositive. Suppose that <m>\lim\limits_{z\to z_0}f(z)\ne w</m>. By definition, this means there exists an <m>\epsilon &gt; 0</m> such that for each <m>\delta_n=\frac{1}{n}</m> there exists a <m>z_n\in D</m> satisfying <m>0&lt; \abs{z_n-z_0}&lt; \frac{1}{n}</m> but <m>\abs{f(z_n)-w}&gt; \epsilon</m>. It follows easily that <m>(z_n)</m> is a sequence of elements of <m>D</m> satisfying  <m>z_n\to z_0</m> and <m>f(z_n)\not\to w</m>, as desired. 
+    </p>
+    </case>
+    
+    
+    </proof>
+    </theorem>
+    <example xml:id="eg_lim_dne">
+    <title>No limit</title>
+    <statement>
+    <p>
+    Define <m>f\colon \C-\{0\}\rightarrow \C</m> as <m>f(z)=\frac{\overline{z}}{z}</m>. Show that <m>\lim\limits_{z\to 0}f(z)</m> does not exist. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    It is easy to see that if the limit existed, then we would have <m>\lim\limits_{n\to \infty}f(z_n)=\lim\limits_{n\to \infty}f(w_n)</m> for any two sequences <m>z_n\to 0</m> and <m>w_n\to 0</m>. 
+    Taking the sequences <m>(z_n)=\frac{1}{n}</m> and <m>(w_n)=\frac{i}{n}</m>, however, it is easy to see that <m>z_n\to 0</m> and <m>w_n\to 0</m>, and yet 
+    <md>
+        <mrow>\lim\limits_{n\to \infty}f(z_n) \amp = \lim\limits_{n\to \infty}\frac{\overline{1/n}}{1/n}=\lim\limits_{n\to \infty}1=1</mrow>
+        <mrow>\lim\limits_{n\to \infty}f(w_n) \amp = \lim\limits_{n\to \infty}\frac{\overline{i/n}}{i/n}=\lim\limits_{n\to \infty}-1=-1</mrow>
+    </md>. 
+    We conclude that the limit <m>\lim\limits_{z\to 0}f(z)</m> does not exist. 
+    </p>
+    </solution>
+    </example>
+    
     <theorem xml:id="th_lim_func">
     <title>Limits of functions</title>
     <statement>
@@ -100,7 +164,39 @@ When this is the case we call <m>w</m> the <term>limit</term> of <m>f</m> as <m>
     </p>
     </proof>
     </theorem>
-
+    <example xml:id="eg_lim_power">
+    <title>Limit of power function</title>
+    <statement>
+    <p>
+    Let <m>f(z)=z^n</m>, where <m>n</m> is a positive integer. Prove: for all <m>z_0\in \C</m>, <m>\lim\limits_{z\to z_0}z^n=z_0^n</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    There are a number ways of proving this statement. We give a proof by induction for <m>n\geq 1</m>. 
+    </p>
+    <p>
+        Base step: <m>n=1</m>. Given any <m>\epsilon &gt; 0</m>, setting <m>\delta=\epsilon</m>, we have 
+        <md>
+            <mrow>\abs{z-z_0}&lt; \delta\amp \implies \abs{z-z_0}&lt; \epsilon</mrow>
+            <mrow> \amp \implies \abs{f(z)-f(z_0)}&lt; \epsilon</mrow>
+        </md>,
+        since <m>f(z)=z^1=z</m> and <m>f(z_0)=z_0^1=z_0</m> in this case. This proves <m>\lim\limits_{z\to z_0}f(z)=f(z_0)</m> when <m>f(z)=z^1</m>. 
+    </p>
+    <p>
+        Induction step: we assume that <m>\lim\limits_{z\to z_0}z^n=z_0^n</m> and show that <m>\lim\limits_{z\to z_0}z^{n+1}=z_0^{n+1}</m>. To do so we use the induction hypothesis and the multiplicative property of limits from <xref ref="th_lim"/>:
+        <md>
+            <mrow> \lim\limits_{z\to z_0}z^{n+1} \amp = \lim\limits_{z\to z_0}z\cdot z^n </mrow>
+            <mrow> \amp =\lim\limits_{z\to z_0}z\, \lim\limits_{z\to z_0}z^n \amp \text{(mult. prop.)}</mrow>
+            <mrow> \amp = z_0\, z_0^n \amp (\text{base case, ind. hyp.}) </mrow>
+            <mrow> \amp =z_0^{n+1} </mrow>
+        </md>
+    </p>
+    </solution>
+    </example>
+    
+    
+    
     </subsection>
     <subsection xml:id="ss_cont">
     <title>Continuity</title>
@@ -122,27 +218,121 @@ When this is the case we call <m>w</m> the <term>limit</term> of <m>f</m> as <m>
     <title>Continuity and limits</title>
     <statement>
     <p>
-    Let <m>f\colon D\rightarrow \C</m> be a complex function.
+    Let <m>f\colon D\rightarrow \C</m> be a complex function. The following are equivalent. 
     <ol>
         <li>
             <p>
-                Let <m>z_0\in D</m> be a limit point of <m>D</m>. The function <m>f</m> is continuous at <m>z_0</m> if and only if <m>\lim\limits_{z\to z_0}f(z)=f(z_0)</m>. In other words <m>f</m> is continuous at <m>z_0</m> if and only if the limit of <m>f</m> at <m>z_0</m> exists and is equal to <m>f(z_0)</m>.  
+               <m>f</m> is continuous.
+            </p>
+        </li>
+        <li>
+            <p>For all elements <m>z_0\in D</m> that are limit points of <m>D</m>, we have 
+                <m>
+                \lim\limits_{z\to z_0}f(z)=f(z_0)
+                </m>.
             </p>
         </li>
         <li>
             <p>
-                <m>f</m> is continuous if and only if 
-                <me>
-                \lim\limits_{z\to z_0}f(z)=f(z_0)
-                </me>
-                for all <m>z_0\in D</m> that are limit points of <m>D</m>. 
+                For all sequences <m>(z_n)</m> of elements of <m>D</m> satisfying <m>z_n\to z_0</m>, we have <m>f(z_n)\to f(z_0)</m>. 
+            </p>
+        </li>
+        
+    </ol>
+    </p>
+    </statement>
+    <proof>
+        <p>
+            We will prove the cycle of implications (1)<m>\implies</m>(2)<m>\implies</m>(3)<m>\implies</m>(1). 
+        </p>
+    <case>
+    <title>Implication: (1)<m>\implies</m> (2)</title>
+    <p>
+    Assume <m>z_0\in D</m> is an accumulation point of <m>D</m> and that <m>f</m> is continuous at <m>z_0</m>. We will show that <m>\lim\limits_{z\to z_0}f(z)=f(z_0)</m>. Indeed, since <m>f</m> is continuous at <m>z_0</m> given any <m>\epsilon &gt; 0</m>, there is a <m>\delta&gt; 0</m> such that 
+    <me>
+        \abs{z-z_0} &lt; \delta \implies \abs{f(z)-f(z_0)}&lt; \epsilon
+    </me>
+    for all <m>z\in D</m>. But then it is certainly true that 
+    <me>
+         0&lt; \abs{z-z_0} &lt; \delta \implies \abs{f(z)-f(z_0)}&lt; \epsilon
+    </me>
+    for all <m>z\in D</m>. Thus <m>\lim\limits_{z\to z_0}f(z)=f(z_0)</m>. 
+    </p>
+    </case>
+    <case>
+    <title>Implication: (2)<m>\implies</m>(3)</title>
+    <p>
+        Assume (2) holds. Given any <m>z_0\in D</m>,  we wish to show that for all sequences <m>(z_n)</m> of elements of <m>D</m> satisfying <m>z_n\to z_0</m>, we have <m>f(z_n)\to f(z_0)</m>. If <m>z_0</m> is a limit point of <m>D</m>, then this follows immediately from <xref ref="th_lim_fun_seq"/>. On the other hand, if <m>z_0</m> is not a limit point of <m>D</m>, it is easy to see that there is no sequence <m>(z_n)</m> of elements of <m>D</m> satisfying <m>z_n\to z_0</m>, and so the condition is satisfied vacuously! 
+        </p>
+    </case>
+    <case>
+    <title>Implication: (3)<m>\implies</m>(1)</title>
+    <p>
+        We prove the contrapositive, using an argument very similar to the one in <xref ref="th_lim_fun_seq"/>. Namely, assuming <m>f</m> is not continuous at <m>z_0\in D</m>, we can find an <m>\epsilon&gt; 0</m> and a sequence <m>(z_n)</m> of elements of <m>D</m> satisfying 
+        <m>\abs{z_n-z_0}&lt; \frac{1}{n}</m> and <m>\abs{f(z_n)-f(z_0)}&gt; \epsilon</m>. It follows that <m>z_n\to z_0</m> but <m>f(z_n)\not\to f(z_0)</m>, as desired. 
+    </p>
+    </case>
+    
+    
+    
+    </proof>
+    </theorem>
+    <theorem xml:id="th_cont_prop">
+    <title>Continuity properties</title>
+    <statement>
+    <p>
+    Let <m>f</m> and <m>g</m> be complex functions. 
+    <ol>
+        <li>
+            <p>
+                Write <m>f=u+iv</m> in terms of its real and imaginary parts. We have <m>f</m> is continuous at <m>x_0</m> if and only if <m>u</m> and <m>v</m> are continuous at <m>x_0</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>f</m> and <m>g</m> are continuous at <m>z_0</m>, then so are 
+                <md>
+                    <mrow>\overline{f} \amp \amp \abs{f}\amp \amp cf \ (\text{for any } c\in \C) </mrow>
+                    <mrow>f+g \amp \amp fg \amp \amp f/g \ (\text{provided } g(z_0)\ne 0)  </mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>g</m> is continuous at <m>x_0</m> and <m>f</m> is continuous at <m>g(x_0)</m>, then <m>f\circ g</m> is continuous at <m>x_0</m>. 
             </p>
         </li>
     </ol>
     </p>
     </statement>
+    </theorem>
+    <theorem xml:id="th_cont_egs">
+    <title>Continuous zoo</title>
+    <statement>
+    <p>
+    Every complex function we have defined thus far is continuous on its domain. 
+    </p>
+    </statement>
     <proof>
     <p>
+        We content ourselves to prove this statement for a few examples. 
+    </p>
+    <p>
+        Consider <m>f(z)=e^z</m>. For <m>z=x+iy</m> we have <m>f(z)=u(x,y)+iv(x,y)</m>, where 
+        <md>
+            <mrow>u(x,y) \amp = e^{\sqrt{x^2+y^2}}\cos y \amp v(x,y)\amp =e^{\sqrt{x^2+y^2}}\sin y</mrow>
+        </md>.
+        Using continuity properties of real-valued functions of two variables, we see easily that <m>u</m> and <m>v</m> are both continuous everywhere. Thus <m>f(z)=e^z</m> is continuous. (It then follows easily that all of the trigonometric and hyperbolic functions are continuous, since they are defined in terms of <m>f(z)=e^z</m> using elementary operations.)
+    </p>
+    <p>
+        Consider <m>\Log=u+iv</m>, where <m>u(z)=\ln\abs{z}</m> and <m>v(z)=\Arg z</m> for all <m>z\in \C-(-\infty, 0]</m>. Since the identity function <m>f(z)=z</m> is obviously continuous, so is <m>\abs{f}=\abs{z}</m>. Since <m>\ln\colon (0,\infty)\rightarrow \R</m> is continuous, so is the composition <m>ln\abs{z}</m>. Lastly, you showed in your homework that <m>\Arg\colon \C-(-\infty, 0]\rightarrow \C</m> is continuous. Since the real and imaginary parts of <m>\Log</m> are continuous, we conclude that <m>\Log</m> is continuous. 
+    </p>
+    <p>
+        Fix a complex number <m>w</m>. Having established that <m>\Log</m> is continuous on <m>\C-(-\infty, 0]</m> it follows that the principal branch of <m>z^w</m> defined as 
+        <me>
+            f(z)=e^{w\Log z}
+        </me>
+        is continuous on its domain <m>\C-(-\infty, 0]</m>. 
     </p>
     </proof>
     </theorem>

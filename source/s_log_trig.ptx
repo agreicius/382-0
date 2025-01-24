@@ -218,6 +218,9 @@ Let <m>z\ne 0</m>. Show that the set <m>z^{1/n}</m> is precisely the set of <m>n
 
 </subsection>
 <subsection xml:id="ss_trig">
+    <title>Trigonometric functions</title>
+    
+    
     <p>
     Given a real number <m>t\in \R</m>, from the identity 
     <me>
@@ -237,7 +240,6 @@ Let <m>z\ne 0</m>. Show that the set <m>z^{1/n}</m> is precisely the set of <m>n
     </md>
     
     </p>
-<title>Trigonometric functions</title>
 <definition xml:id="d_trig_functions">
 <title>Trigonometric functions</title>
 <statement>
@@ -347,7 +349,7 @@ We define the <term>complex hyperbolic functions</term> <m>\cosh\colon \C\righta
     <li>
         <p> For all <m>z\in \C</m> we have 
         <md>
-            <mrow>\cosh(z) \amp = \cos(iz) \amp \sinh(z)\amp= \frac{\sin(iz)}{i}</mrow>
+            <mrow>\cos(iz) \amp = \cosh(z) \amp \sin(iz)\amp= i\sinh(z)</mrow>
         </md>.
         </p>
     </li>
