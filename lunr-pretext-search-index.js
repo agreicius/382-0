@@ -1429,7 +1429,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.7",
   "title": "Logarithmic and trigonometric functions",
-  "body": " Logarithmic and trigonometric functions       Logarithmic functions  When showing that has image , we showed that for any , the set of solutions to is the set . This motivates the following definition.   Logarithm   Given , we define the logarithm of , denoted , to be the infinite set . The principal branch of the logarithm is the function defined as      Using the same sort of shorthand as in , we can write , where as always is the set of all arguments of .     We will see in due course that there is a good reason for the funny domain specified for . Namely, although we can in principle define for any , the domain ensures that is continuous, and is in a sense maximal in this regard.    as inverse function   Let , and define as : , is the restriction of to the set . The function is the inverse of : , we have .    Recall that we remarked in the discussion above that the given is a bijection, and hence invertible; the theorem claims that is the inverse of this function. First observe that , since . The identities are easily verified using the formulas for and applied to elements in and .     Logarithm   Compute and (if applicable) for the given .              .          We have .    We have . Technically, is not defined at .    We have .        Invalid identity   Show that is not always equal to .    In general we have . The issue preventing equality to hold in general is that . Indeed, taking and , we have .      Complex exponentiation   Complex exponentiation   Given and any , we define the set as . Given a fixed , the function defined as is called the principal branch of the power function with exponent (or principal branch of ).     Powers   Compute the following power expressions.         , .            -th roots   Let . Show that the set is precisely the set of distinct -th roots of .          Given a real number , from the identity and our formulas it follows that . It is then natural to extend these formulas for all complex numbers , yielding our definitions for the complex cosine and sine functions:   Trigonometric functions   Trigonometric functions   We define the complex cosine and sine  and as follows: . We then further define complex extensions of the other elementary trigonometric functions in the usual way: .     Cosine and sine properties   Let .    if and only if for some , or for some .     if and only if for some or for some .    For all we have .          Given , we have . Next since if and only if for some , we see that if and only if if and only if , as claimed.    The proof of this statement is very similar to the one above.    These identities can be proved in a straightforward manner using the the defining formulas and properties of complex multiplication.        Complex hyperbolic functions   We define the complex hyperbolic functions  and as follows: .     Complex hyperbolic functions      For all we have .    For all we have .          These identities follow directly from and .    These identities follow from and .        "
+  "body": " Logarithmic and trigonometric functions       Logarithmic functions  When showing that has image , we showed that for any , the set of solutions to is the set . This motivates the following definition.   Logarithm   Given , we define the logarithm of , denoted , to be the infinite set . The principal branch of the logarithm is the function defined as      Using the same sort of shorthand as in , we can write , where as always is the set of all arguments of .     We will see in due course that there is a good reason for the funny domain specified for . Namely, although we can in principle define for any , the domain ensures that is continuous, and is in a sense maximal in this regard.    as inverse function   Let , and define as : , is the restriction of to the set . The function is the inverse of : , we have .    Recall that we remarked in the discussion above that the given is a bijection, and hence invertible; the theorem claims that is the inverse of this function. First observe that , since . The identities are easily verified using the formulas for and applied to elements in and .     Logarithm   Compute and (if applicable) for the given .              .          We have .    We have . Technically, is not defined at .    We have .        Invalid identity   Show that is not always equal to .    In general we have . The issue preventing equality to hold in general is that . Indeed, taking and , we have .      Complex exponentiation   Complex exponentiation   Given and any , we define the set as . Given a fixed , the function defined as is called the principal branch of the power function with exponent (or principal branch of ).     Powers   Compute the following power expressions.         , .            -th roots   Let . Show that the set is precisely the set of distinct -th roots of .          Trigonometric functions  Given a real number , from the identity and our formulas it follows that . It is then natural to extend these formulas for all complex numbers , yielding our definitions for the complex cosine and sine functions:    Trigonometric functions   We define the complex cosine and sine  and as follows: . We then further define complex extensions of the other elementary trigonometric functions in the usual way: .     Cosine and sine properties   Let .    if and only if for some , or for some .     if and only if for some or for some .    For all we have .          Given , we have . Next since if and only if for some , we see that if and only if if and only if , as claimed.    The proof of this statement is very similar to the one above.    These identities can be proved in a straightforward manner using the the defining formulas and properties of complex multiplication.        Complex hyperbolic functions   We define the complex hyperbolic functions  and as follows: .     Complex hyperbolic functions      For all we have .    For all we have .          These identities follow directly from and .    These identities follow directly from the sum identities in and .        "
 },
 {
   "id": "d_log",
@@ -1546,7 +1546,115 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.7.13",
   "title": "Complex hyperbolic functions.",
-  "body": " Complex hyperbolic functions      For all we have .    For all we have .          These identities follow directly from and .    These identities follow from and .      "
+  "body": " Complex hyperbolic functions      For all we have .    For all we have .          These identities follow directly from and .    These identities follow directly from the sum identities in and .      "
+},
+{
+  "id": "s_lim_cont",
+  "level": "1",
+  "url": "s_lim_cont.html",
+  "type": "Section",
+  "number": "1.8",
+  "title": "Limits of functions and continuity",
+  "body": " Limits of functions and continuity   Single-variable calculus can be succinctly described as the science of functions of the form , where . The main tools of that science are the derivative and the integral, both of which rely on the more fundamental concept of the limit.    Limits of functions   Limit point   Given a subset , a limit point (or accumulation point ) of is an element satisfying the following property: given any , the open disc contains an element of that is distinct from .     Limit points      Show that all elements of an open set are limit points of .    Given a subset Show that any point is a limit point of .    Give an example of a set and a boundary point that is not a limit point of .            Limit of a function   Let be a complex function, and let be a limit point of . We say the limit of as approaches exists if there is a complex number satisfying the following property: for all , there exists a such that if , then .  When this is the case we call the limit of as approaches , and write . Otherwise we say that does not exist.     Limit of function via sequences   Let and let be a limit point of . The following statements are equivalent.        For all sequences of elements of satisfying , we have .       We prove each implication separately.   Implication: (1) (2)  Assume , and suppose for a sequence consisting of elements of . We show that . To this end, given any , there is a such that . Since , there is an such that for all . It follows that for all , either or . In either case, the displayed implication above implies that , as desired.    Implication: (2) (1)  We will prove the contrapositive. Suppose that . By definition, this means there exists an such that for each there exists a satisfying but . It follows easily that is a sequence of elements of satisfying and , as desired.      No limit   Define as . Show that does not exist.    It is easy to see that if the limit existed, then we would have for any two sequences and . Taking the sequences and , however, it is easy to see that and , and yet . We conclude that the limit does not exist.     Limits of functions   Let and be complex functions, and let be a limit point of the domains of and .   Write in terms of its real and imaginary parts. The limit exists if and only if and exist, in which case we have .     if and only if .    If , then and .    If and , then .            Limit of power function   Let , where is a positive integer. Prove: for all , .    There are a number ways of proving this statement. We give a proof by induction for .  Base step: . Given any , setting , we have , since and in this case. This proves when .  Induction step: we assume that and show that . To do so we use the induction hypothesis and the multiplicative property of limits from :       Continuity  We end with the notion of continuity. You will notice a strong resemblance between the definition of continuity of a function at a point and the limit of that function at a point. The true nature of this connection is articulated by .   Continuous functions   Let be a complex function. Given an element , we say that is continuous at if the following property holds: for all , there exists a such that if , then .  We say is continuous on a subset , if is continuous at all points . We say is continuous if is continuous on .     Continuity and limits   Let be a complex function. The following are equivalent.    is continuous.    For all elements that are limit points of , we have .    For all sequences of elements of satisfying , we have .       We will prove the cycle of implications (1) (2) (3) (1).   Implication: (1) (2)  Assume is an accumulation point of and that is continuous at . We will show that . Indeed, since is continuous at given any , there is a such that for all . But then it is certainly true that for all . Thus .    Implication: (2) (3)  Assume (2) holds. Given any , we wish to show that for all sequences of elements of satisfying , we have . If is a limit point of , then this follows immediately from . On the other hand, if is not a limit point of , it is easy to see that there is no sequence of elements of satisfying , and so the condition is satisfied vacuously!    Implication: (3) (1)  We prove the contrapositive, using an argument very similar to the one in . Namely, assuming is not continuous at , we can find an and a sequence of elements of satisfying and . It follows that but , as desired.      Continuity properties   Let and be complex functions.   Write in terms of its real and imaginary parts. We have is continuous at if and only if and are continuous at .    If and are continuous at , then so are .    If is continuous at and is continuous at , then is continuous at .        Continuous zoo   Every complex function we have defined thus far is continuous on its domain.    We content ourselves to prove this statement for a few examples.  Consider . For we have , where . Using continuity properties of real-valued functions of two variables, we see easily that and are both continuous everywhere. Thus is continuous. (It then follows easily that all of the trigonometric and hyperbolic functions are continuous, since they are defined in terms of using elementary operations.)  Consider , where and for all . Since the identity function is obviously continuous, so is . Since is continuous, so is the composition . Lastly, you showed in your homework that is continuous. Since the real and imaginary parts of are continuous, we conclude that is continuous.  Fix a complex number . Having established that is continuous on it follows that the principal branch of defined as is continuous on its domain .     "
+},
+{
+  "id": "d_limit_point",
+  "level": "2",
+  "url": "s_lim_cont.html#d_limit_point",
+  "type": "Definition",
+  "number": "1.8.1",
+  "title": "Limit point.",
+  "body": " Limit point   Given a subset , a limit point (or accumulation point ) of is an element satisfying the following property: given any , the open disc contains an element of that is distinct from .   "
+},
+{
+  "id": "eg_limit_points",
+  "level": "2",
+  "url": "s_lim_cont.html#eg_limit_points",
+  "type": "Example",
+  "number": "1.8.2",
+  "title": "Limit points.",
+  "body": " Limit points      Show that all elements of an open set are limit points of .    Given a subset Show that any point is a limit point of .    Give an example of a set and a boundary point that is not a limit point of .          "
+},
+{
+  "id": "d_lim_func",
+  "level": "2",
+  "url": "s_lim_cont.html#d_lim_func",
+  "type": "Definition",
+  "number": "1.8.3",
+  "title": "Limit of a function.",
+  "body": " Limit of a function   Let be a complex function, and let be a limit point of . We say the limit of as approaches exists if there is a complex number satisfying the following property: for all , there exists a such that if , then .  When this is the case we call the limit of as approaches , and write . Otherwise we say that does not exist.   "
+},
+{
+  "id": "th_lim_fun_seq",
+  "level": "2",
+  "url": "s_lim_cont.html#th_lim_fun_seq",
+  "type": "Theorem",
+  "number": "1.8.4",
+  "title": "Limit of function via sequences.",
+  "body": " Limit of function via sequences   Let and let be a limit point of . The following statements are equivalent.        For all sequences of elements of satisfying , we have .       We prove each implication separately.   Implication: (1) (2)  Assume , and suppose for a sequence consisting of elements of . We show that . To this end, given any , there is a such that . Since , there is an such that for all . It follows that for all , either or . In either case, the displayed implication above implies that , as desired.    Implication: (2) (1)  We will prove the contrapositive. Suppose that . By definition, this means there exists an such that for each there exists a satisfying but . It follows easily that is a sequence of elements of satisfying and , as desired.    "
+},
+{
+  "id": "eg_lim_dne",
+  "level": "2",
+  "url": "s_lim_cont.html#eg_lim_dne",
+  "type": "Example",
+  "number": "1.8.5",
+  "title": "No limit.",
+  "body": " No limit   Define as . Show that does not exist.    It is easy to see that if the limit existed, then we would have for any two sequences and . Taking the sequences and , however, it is easy to see that and , and yet . We conclude that the limit does not exist.   "
+},
+{
+  "id": "th_lim_func",
+  "level": "2",
+  "url": "s_lim_cont.html#th_lim_func",
+  "type": "Theorem",
+  "number": "1.8.6",
+  "title": "Limits of functions.",
+  "body": " Limits of functions   Let and be complex functions, and let be a limit point of the domains of and .   Write in terms of its real and imaginary parts. The limit exists if and only if and exist, in which case we have .     if and only if .    If , then and .    If and , then .          "
+},
+{
+  "id": "eg_lim_power",
+  "level": "2",
+  "url": "s_lim_cont.html#eg_lim_power",
+  "type": "Example",
+  "number": "1.8.7",
+  "title": "Limit of power function.",
+  "body": " Limit of power function   Let , where is a positive integer. Prove: for all , .    There are a number ways of proving this statement. We give a proof by induction for .  Base step: . Given any , setting , we have , since and in this case. This proves when .  Induction step: we assume that and show that . To do so we use the induction hypothesis and the multiplicative property of limits from :    "
+},
+{
+  "id": "d_cont",
+  "level": "2",
+  "url": "s_lim_cont.html#d_cont",
+  "type": "Definition",
+  "number": "1.8.8",
+  "title": "Continuous functions.",
+  "body": " Continuous functions   Let be a complex function. Given an element , we say that is continuous at if the following property holds: for all , there exists a such that if , then .  We say is continuous on a subset , if is continuous at all points . We say is continuous if is continuous on .   "
+},
+{
+  "id": "th_cont_lim",
+  "level": "2",
+  "url": "s_lim_cont.html#th_cont_lim",
+  "type": "Theorem",
+  "number": "1.8.9",
+  "title": "Continuity and limits.",
+  "body": " Continuity and limits   Let be a complex function. The following are equivalent.    is continuous.    For all elements that are limit points of , we have .    For all sequences of elements of satisfying , we have .       We will prove the cycle of implications (1) (2) (3) (1).   Implication: (1) (2)  Assume is an accumulation point of and that is continuous at . We will show that . Indeed, since is continuous at given any , there is a such that for all . But then it is certainly true that for all . Thus .    Implication: (2) (3)  Assume (2) holds. Given any , we wish to show that for all sequences of elements of satisfying , we have . If is a limit point of , then this follows immediately from . On the other hand, if is not a limit point of , it is easy to see that there is no sequence of elements of satisfying , and so the condition is satisfied vacuously!    Implication: (3) (1)  We prove the contrapositive, using an argument very similar to the one in . Namely, assuming is not continuous at , we can find an and a sequence of elements of satisfying and . It follows that but , as desired.    "
+},
+{
+  "id": "th_cont_prop",
+  "level": "2",
+  "url": "s_lim_cont.html#th_cont_prop",
+  "type": "Theorem",
+  "number": "1.8.10",
+  "title": "Continuity properties.",
+  "body": " Continuity properties   Let and be complex functions.   Write in terms of its real and imaginary parts. We have is continuous at if and only if and are continuous at .    If and are continuous at , then so are .    If is continuous at and is continuous at , then is continuous at .      "
+},
+{
+  "id": "th_cont_egs",
+  "level": "2",
+  "url": "s_lim_cont.html#th_cont_egs",
+  "type": "Theorem",
+  "number": "1.8.11",
+  "title": "Continuous zoo.",
+  "body": " Continuous zoo   Every complex function we have defined thus far is continuous on its domain.    We content ourselves to prove this statement for a few examples.  Consider . For we have , where . Using continuity properties of real-valued functions of two variables, we see easily that and are both continuous everywhere. Thus is continuous. (It then follows easily that all of the trigonometric and hyperbolic functions are continuous, since they are defined in terms of using elementary operations.)  Consider , where and for all . Since the identity function is obviously continuous, so is . Since is continuous, so is the composition . Lastly, you showed in your homework that is continuous. Since the real and imaginary parts of are continuous, we conclude that is continuous.  Fix a complex number . Having established that is continuous on it follows that the principal branch of defined as is continuous on its domain .   "
 },
 {
   "id": "appendix-notation",

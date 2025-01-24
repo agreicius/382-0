@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.11</span><span class="period">.</span><span class="space"> </span><span class="title">Continuous zoo.</span>
+</h4>
+<div class="para">Every complex function we have defined thus far is continuous on its domain.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We content ourselves to prove this statement for a few examples.</div>
+<div class="para logical">
+<div class="para">Consider <span class="process-math">\(f(z)=e^z\text{.}\)</span> For <span class="process-math">\(z=x+iy\)</span> we have <span class="process-math">\(f(z)=u(x,y)+iv(x,y)\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{align*}
+u(x,y) \amp = e^{\sqrt{x^2+y^2}}\cos y \amp v(x,y)\amp =e^{\sqrt{x^2+y^2}}\sin y\text{.}
+\end{align*}
+</div>
+<div class="para">Using continuity properties of real-valued functions of two variables, we see easily that <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are both continuous everywhere. Thus <span class="process-math">\(f(z)=e^z\)</span> is continuous. (It then follows easily that all of the trigonometric and hyperbolic functions are continuous, since they are defined in terms of <span class="process-math">\(f(z)=e^z\)</span> using elementary operations.)</div>
+</div>
+<div class="para">Consider <span class="process-math">\(\Log=u+iv\text{,}\)</span> where <span class="process-math">\(u(z)=\ln\abs{z}\)</span> and <span class="process-math">\(v(z)=\Arg z\)</span> for all <span class="process-math">\(z\in \C-(-\infty, 0]\text{.}\)</span> Since the identity function <span class="process-math">\(f(z)=z\)</span> is obviously continuous, so is <span class="process-math">\(\abs{f}=\abs{z}\text{.}\)</span> Since <span class="process-math">\(\ln\colon (0,\infty)\rightarrow \R\)</span> is continuous, so is the composition <span class="process-math">\(ln\abs{z}\text{.}\)</span> Lastly, you showed in your homework that <span class="process-math">\(\Arg\colon \C-(-\infty, 0]\rightarrow \C\)</span> is continuous. Since the real and imaginary parts of <span class="process-math">\(\Log\)</span> are continuous, we conclude that <span class="process-math">\(\Log\)</span> is continuous.</div>
+<div class="para logical">
+<div class="para">Fix a complex number <span class="process-math">\(w\text{.}\)</span> Having established that <span class="process-math">\(\Log\)</span> is continuous on <span class="process-math">\(\C-(-\infty, 0]\)</span> it follows that the principal branch of <span class="process-math">\(z^w\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=e^{w\Log z}
+\end{equation*}
+</div>
+<div class="para">is continuous on its domain <span class="process-math">\(\C-(-\infty, 0]\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_lim_cont.html#th_cont_egs">in-context</a></span>
+</body>
+</html>

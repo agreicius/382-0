@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Limit properties.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\((z_n)_{n=1}^\infty\)</span> and <span class="process-math">\((w_n)_{n=1}^\infty\)</span> be sequences of complex numbers.</div>
+<ol class="decimal" id="th_lim-2-1-3">
+<li>
+<div class="para">
+<span class="process-math">\(z_{n}\rightarrow z\)</span> if and only if <span class="process-math">\(\val{z_n-z}\rightarrow 0\text{.}\)</span>
+</div>
+<div class="para">In particular, <span class="process-math">\(z_{n}\rightarrow 0\)</span> if and only if <span class="process-math">\(\val{z_n}\rightarrow 0\text{.}\)</span>
+</div>
+</li>
+<li><div class="para logical">
+<div class="para">
+<span class="process-math">\(\{z_{n}\}\)</span> converges if and only if <span class="process-math">\(\{\Re z_{n}\}\)</span> and <span class="process-math">\(\{\Im z_{n}\}\)</span> both converge, in which case</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lim_{n\rightarrow\infty}z_{n}\amp = (\lim_{n\rightarrow\infty}\Re z_{n})+i\lim\limits_{n\to \infty}\Im z_n \text{.}
+\end{align*}
+</div>
+<div class="para">In particular, we have <span class="process-math">\(\lim\limits_{n\to \infty}z_n=z\)</span> if and only if</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lim\limits_{n\to \infty}\Re z_n \amp =\Re z \amp 
+\lim\limits_{n\to \infty}\Im z_n= \Im z\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(z_n\to z\)</span> if and only if <span class="process-math">\(\overline{z_n}\to \overline{z}\text{.}\)</span>
+</div></li>
+<li><div class="para">If <span class="process-math">\(z_{n}\rightarrow z\text{,}\)</span> then <span class="process-math">\(\val{z_n}\rightarrow \val{z}\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">If <span class="process-math">\(\lim\limits_{n\to \infty}z_n=z\)</span> and <span class="process-math">\(\lim\limits_{n\to \infty}w_n=w\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{align}
+\lim\limits_{n\to \infty} cz_{n}+\lim\limits_{n\to \infty}dw_{n}\amp = c\lim\limits_{n\to \infty}z_n+d\lim\limits_{n\to \infty}w_n=cz+dw \text{ for any } c,d\in \C\tag{1.21}\\
+\lim\limits_{n\to \infty}z_{n}w_{n}\amp = (\lim\limits_{n\to \infty}z_n)(\lim\limits_{n\to \infty}w_m)=zw\amp \tag{1.22}\\
+\lim\limits_{n\to \infty}\frac{z_n}{w_n}\amp = \frac{\lim\limits_{n\to \infty}z_n}{\lim\limits_{n\to \infty}w_n}= z/w,  \text{ assuming } w\ne 0 \text{.}\tag{1.23}
+\end{align}
+</div>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(z_{n}\rightarrow \infty\)</span> if and only if <span class="process-math">\(\frac{1}{z_{n}}\rightarrow 0\text{,}\)</span> assuming <span class="process-math">\(z_n\ne 0\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of <span class="process-math">\(\abs{\ }\text{,}\)</span> either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.</div>
+<div class="para logical">
+<div class="para">For the reverse direction (<span class="process-math">\(\Leftarrow\)</span>), if both <span class="process-math">\(\lim\limits_{n\to \infty}\Re z_n\)</span> and <span class="process-math">\(\lim\limits_{n\to \infty}\Im z_n\)</span> exist, then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lim_seq_linear.html">
+\begin{equation*}
+\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para logical">
+<div class="para">Consider now the forward implication (<span class="process-math">\(\Rightarrow\)</span>). We assume <span class="process-math">\(\lim\limits_{n\to \infty}z_n=z\)</span> and wish to show that <span class="process-math">\(\Re z=\lim\limits_{n\to \infty}\Re z_n\)</span> and  <span class="process-math">\(\Im z=\lim\limits_{n\to \infty}\Im z_n\)</span> (which also proves these limits exists). We will give a proof of the second equality: you can prove the first in much the same way. Fix any positive <span class="process-math">\(\epsilon &gt; 0\text{.}\)</span> Since <span class="process-math">\(z_n\rightarrow z\text{,}\)</span> we can find an <span class="process-math">\(N&gt; 0\)</span> such that <span class="process-math">\(\abs{z-z_n}&lt; \epsilon\)</span> for all <span class="process-math">\(n\geq N\text{.}\)</span> But then we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\abs{\Im z-\Im z_n} \amp =\abs{\Im(z-z_n)}\\
+\amp \leq \abs{z-z_n} \\
+\amp &lt; \epsilon
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(n\geq N\text{,}\)</span> showing that <span class="process-math">\(\Im z_n\to \Im z\text{,}\)</span> as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_sequences.html#th_lim">in-context</a></span>
+</body>
+</html>

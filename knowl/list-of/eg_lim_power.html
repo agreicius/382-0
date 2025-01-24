@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.7</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of power function.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(f(z)=z^n\text{,}\)</span> where <span class="process-math">\(n\)</span> is a positive integer. Prove: for all <span class="process-math">\(z_0\in \C\text{,}\)</span> <span class="process-math">\(\lim\limits_{z\to z_0}z^n=z_0^n\text{.}\)</span>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">There are a number ways of proving this statement. We give a proof by induction for <span class="process-math">\(n\geq 1\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Base step: <span class="process-math">\(n=1\text{.}\)</span> Given any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> setting <span class="process-math">\(\delta=\epsilon\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\abs{z-z_0}&lt; \delta\amp \implies \abs{z-z_0}&lt; \epsilon\\
+\amp \implies \abs{f(z)-f(z_0)}&lt; \epsilon\text{,}
+\end{align*}
+</div>
+<div class="para">since <span class="process-math">\(f(z)=z^1=z\)</span> and <span class="process-math">\(f(z_0)=z_0^1=z_0\)</span> in this case. This proves <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=f(z_0)\)</span> when <span class="process-math">\(f(z)=z^1\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Induction step: we assume that <span class="process-math">\(\lim\limits_{z\to z_0}z^n=z_0^n\)</span> and show that <span class="process-math">\(\lim\limits_{z\to z_0}z^{n+1}=z_0^{n+1}\text{.}\)</span> To do so we use the induction hypothesis and the multiplicative property of limits from <a href="s_sequences.html#th_lim" class="xref" data-knowl="./knowl/xref/th_lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.5: Limit properties">Theorem 1.5.5</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html">
+\begin{align*}
+\lim\limits_{z\to z_0}z^{n+1} \amp = \lim\limits_{z\to z_0}z\cdot z^n \\
+\amp =\lim\limits_{z\to z_0}z\, \lim\limits_{z\to z_0}z^n \amp \text{(mult. prop.)}\\
+\amp = z_0\, z_0^n \amp (\text{base case, ind. hyp.}) \\
+\amp =z_0^{n+1} 
+\end{align*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="s_lim_cont.html#eg_lim_power">in-context</a></span>
+</body>
+</html>

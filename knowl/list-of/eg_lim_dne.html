@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">No limit.</span>
+</h4>
+<div class="para">Define <span class="process-math">\(f\colon \C-\{0\}\rightarrow \C\)</span> as <span class="process-math">\(f(z)=\frac{\overline{z}}{z}\text{.}\)</span> Show that <span class="process-math">\(\lim\limits_{z\to 0}f(z)\)</span> does not exist.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">It is easy to see that if the limit existed, then we would have <span class="process-math">\(\lim\limits_{n\to \infty}f(z_n)=\lim\limits_{n\to \infty}f(w_n)\)</span> for any two sequences <span class="process-math">\(z_n\to 0\)</span> and <span class="process-math">\(w_n\to 0\text{.}\)</span> Taking the sequences <span class="process-math">\((z_n)=\frac{1}{n}\)</span> and <span class="process-math">\((w_n)=\frac{i}{n}\text{,}\)</span> however, it is easy to see that <span class="process-math">\(z_n\to 0\)</span> and <span class="process-math">\(w_n\to 0\text{,}\)</span> and yet</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lim\limits_{n\to \infty}f(z_n) \amp = \lim\limits_{n\to \infty}\frac{\overline{1/n}}{1/n}=\lim\limits_{n\to \infty}1=1\\
+\lim\limits_{n\to \infty}f(w_n) \amp = \lim\limits_{n\to \infty}\frac{\overline{i/n}}{i/n}=\lim\limits_{n\to \infty}-1=-1\text{.}
+\end{align*}
+</div>
+<div class="para">We conclude that the limit <span class="process-math">\(\lim\limits_{z\to 0}f(z)\)</span> does not exist.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_lim_cont.html#eg_lim_dne">in-context</a></span>
+</body>
+</html>

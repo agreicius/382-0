@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of function via sequences.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f\colon D\rightarrow \C\)</span> and let <span class="process-math">\(z_0\)</span> be a limit point of <span class="process-math">\(D\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="th_lim_fun_seq-2-1-4">
+<li><div class="para"><span class="process-math">\(\displaystyle \lim\limits_{z\to z_0}f(z)=w\)</span></div></li>
+<li><div class="para">For all sequences <span class="process-math">\((z_n)\)</span> of elements of <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(z_n\to z_0\text{,}\)</span> we have <span class="process-math">\(f(z_n)\to w\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We prove each implication separately.</div>
+<article class="case"><h5 class="heading">Implication: (1)<span class="process-math">\(\implies\)</span>(2).</h5>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=w\text{,}\)</span> and suppose <span class="process-math">\(z_n\to z_0\)</span> for a sequence <span class="process-math">\((z_n)\)</span> consisting of elements of <span class="process-math">\(D\text{.}\)</span> We show that <span class="process-math">\(f(z_n)\to w\text{.}\)</span> To this end, given any <span class="process-math">\(\epsilon&gt; 0\text{,}\)</span> there is a  <span class="process-math">\(\delta&gt; 0\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0&lt; \abs{z-z_0}&lt; \delta \implies \abs{f(z)-w}&lt; \epsilon\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(z_n\to z_0\text{,}\)</span> there is an <span class="process-math">\(N\)</span> such that <span class="process-math">\(\abs{z-z_n}&lt; \delta\)</span> for all <span class="process-math">\(n\geq N\text{.}\)</span> It follows that for all <span class="process-math">\(n\geq N\text{,}\)</span> either <span class="process-math">\(z_n=z_0\)</span> or <span class="process-math">\(0&lt; \abs{z-z_n} &lt; \delta\text{.}\)</span> In either case, the displayed implication above implies that <span class="process-math">\(\abs{f(z_n)-w}&lt; \epsilon\text{,}\)</span> as desired.</div>
+</div></article><article class="case"><h5 class="heading">Implication: (2)<span class="process-math">\(\implies\)</span>(1).</h5>
+<div class="para">We will prove the contrapositive. Suppose that <span class="process-math">\(\lim\limits_{z\to z_0}f(z)\ne w\text{.}\)</span> By definition, this means there exists an <span class="process-math">\(\epsilon &gt; 0\)</span> such that for each <span class="process-math">\(\delta_n=\frac{1}{n}\)</span> there exists a <span class="process-math">\(z_n\in D\)</span> satisfying <span class="process-math">\(0&lt; \abs{z_n-z_0}&lt; \frac{1}{n}\)</span> but <span class="process-math">\(\abs{f(z_n)-w}&gt; \epsilon\text{.}\)</span> It follows easily that <span class="process-math">\((z_n)\)</span> is a sequence of elements of <span class="process-math">\(D\)</span> satisfying  <span class="process-math">\(z_n\to z_0\)</span> and <span class="process-math">\(f(z_n)\not\to w\text{,}\)</span> as desired.</div></article></article></details><span class="incontext"><a class="internal" href="s_lim_cont.html#th_lim_fun_seq">in-context</a></span>
+</body>
+</html>

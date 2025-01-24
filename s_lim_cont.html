@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Limits of functions and continuity</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 382-0">
+<meta property="book:author" content="Aaron Greicius">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.8b270ccf5298bad1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.630d5c4fb4b681eb.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.d966d31a41778c59.css">
+<style>
+#d_function_equality-3-1-4 { counter-set: d_function_equality-3-1-4 0; }
+#d_function_equality-3-1-4 > li::marker { content: ""counter(d_function_equality-3-1-4,lower-roman)""; }
+#d_function_equality-3-1-4 > li { counter-increment: d_function_equality-3-1-4; }
+#sss_function_equality-2-4 { counter-set: sss_function_equality-2-4 0; }
+#sss_function_equality-2-4 > li::marker { content: ""counter(sss_function_equality-2-4,lower-roman)""; }
+#sss_function_equality-2-4 > li { counter-increment: sss_function_equality-2-4; }
+#eg_arithmetic-2-1-5 { counter-set: eg_arithmetic-2-1-5 0; }
+#eg_arithmetic-2-1-5 > li::marker { content: ""counter(eg_arithmetic-2-1-5,decimal)"."; }
+#eg_arithmetic-2-1-5 > li { counter-increment: eg_arithmetic-2-1-5; }
+#eg_arithmetic-3-1-1 { counter-set: eg_arithmetic-3-1-1 0; }
+#eg_arithmetic-3-1-1 > li::marker { content: ""counter(eg_arithmetic-3-1-1,decimal)"."; }
+#eg_arithmetic-3-1-1 > li { counter-increment: eg_arithmetic-3-1-1; }
+#th_ring_ops-2-1-2 { counter-set: th_ring_ops-2-1-2 0; }
+#th_ring_ops-2-1-2 > li::marker { content: ""counter(th_ring_ops-2-1-2,decimal)"."; }
+#th_ring_ops-2-1-2 > li { counter-increment: th_ring_ops-2-1-2; }
+#eg_inverses-2-1-3 { counter-set: eg_inverses-2-1-3 0; }
+#eg_inverses-2-1-3 > li::marker { content: ""counter(eg_inverses-2-1-3,decimal)"."; }
+#eg_inverses-2-1-3 > li { counter-increment: eg_inverses-2-1-3; }
+#eg_inverses-3-1-1 { counter-set: eg_inverses-3-1-1 0; }
+#eg_inverses-3-1-1 > li::marker { content: ""counter(eg_inverses-3-1-1,decimal)"."; }
+#eg_inverses-3-1-1 > li { counter-increment: eg_inverses-3-1-1; }
+#th_modulus-2-1-3 { counter-set: th_modulus-2-1-3 0; }
+#th_modulus-2-1-3 > li::marker { content: ""counter(th_modulus-2-1-3,decimal)"."; }
+#th_modulus-2-1-3 > li { counter-increment: th_modulus-2-1-3; }
+#th_conj-2-1-3 { counter-set: th_conj-2-1-3 0; }
+#th_conj-2-1-3 > li::marker { content: ""counter(th_conj-2-1-3,decimal)"."; }
+#th_conj-2-1-3 > li { counter-increment: th_conj-2-1-3; }
+#th_polar_form-2-1-2 { counter-set: th_polar_form-2-1-2 0; }
+#th_polar_form-2-1-2 > li::marker { content: ""counter(th_polar_form-2-1-2,decimal)"."; }
+#th_polar_form-2-1-2 > li { counter-increment: th_polar_form-2-1-2; }
+#eg_polar-2-1-4 { counter-set: eg_polar-2-1-4 0; }
+#eg_polar-2-1-4 > li::marker { content: ""counter(eg_polar-2-1-4,decimal)"."; }
+#eg_polar-2-1-4 > li { counter-increment: eg_polar-2-1-4; }
+#th_polar_mult-2-1-4 { counter-set: th_polar_mult-2-1-4 0; }
+#th_polar_mult-2-1-4 > li::marker { content: ""counter(th_polar_mult-2-1-4,decimal)"."; }
+#th_polar_mult-2-1-4 > li { counter-increment: th_polar_mult-2-1-4; }
+#eg_polar_form_-2-1-3 { counter-set: eg_polar_form_-2-1-3 0; }
+#eg_polar_form_-2-1-3 > li::marker { content: ""counter(eg_polar_form_-2-1-3,decimal)"."; }
+#eg_polar_form_-2-1-3 > li { counter-increment: eg_polar_form_-2-1-3; }
+#th_deMoivre-2-1-4 { counter-set: th_deMoivre-2-1-4 0; }
+#th_deMoivre-2-1-4 > li::marker { content: ""counter(th_deMoivre-2-1-4,decimal)"."; }
+#th_deMoivre-2-1-4 > li { counter-increment: th_deMoivre-2-1-4; }
+#th_poly_elem-2-1-1 { counter-set: th_poly_elem-2-1-1 0; }
+#th_poly_elem-2-1-1 > li::marker { content: ""counter(th_poly_elem-2-1-1,decimal)"."; }
+#th_poly_elem-2-1-1 > li { counter-increment: th_poly_elem-2-1-1; }
+#th_roots_unity-2-1-3 { counter-set: th_roots_unity-2-1-3 0; }
+#th_roots_unity-2-1-3 > li::marker { content: ""counter(th_roots_unity-2-1-3,decimal)"."; }
+#th_roots_unity-2-1-3 > li { counter-increment: th_roots_unity-2-1-3; }
+#eg_factor_sextic-2-1-2 { counter-set: eg_factor_sextic-2-1-2 0; }
+#eg_factor_sextic-2-1-2 > li::marker { content: ""counter(eg_factor_sextic-2-1-2,decimal)"."; }
+#eg_factor_sextic-2-1-2 > li { counter-increment: eg_factor_sextic-2-1-2; }
+#eg_factor_sextic-3-1-1 { counter-set: eg_factor_sextic-3-1-1 0; }
+#eg_factor_sextic-3-1-1 > li::marker { content: ""counter(eg_factor_sextic-3-1-1,decimal)"."; }
+#eg_factor_sextic-3-1-1 > li { counter-increment: eg_factor_sextic-3-1-1; }
+#th_fund_alg-2-1-4 { counter-set: th_fund_alg-2-1-4 0; }
+#th_fund_alg-2-1-4 > li::marker { content: ""counter(th_fund_alg-2-1-4,decimal)"."; }
+#th_fund_alg-2-1-4 > li { counter-increment: th_fund_alg-2-1-4; }
+#s_topo-2-1-10 { counter-set: s_topo-2-1-10 0; }
+#s_topo-2-1-10 > li::marker { content: "("counter(s_topo-2-1-10,lower-roman)")"; }
+#s_topo-2-1-10 > li { counter-increment: s_topo-2-1-10; }
+#eg_open-2-1-2 { counter-set: eg_open-2-1-2 0; }
+#eg_open-2-1-2 > li::marker { content: ""counter(eg_open-2-1-2,decimal)"."; }
+#eg_open-2-1-2 > li { counter-increment: eg_open-2-1-2; }
+#eg_open-3-1-1 { counter-set: eg_open-3-1-1 0; }
+#eg_open-3-1-1 > li::marker { content: ""counter(eg_open-3-1-1,decimal)"."; }
+#eg_open-3-1-1 > li { counter-increment: eg_open-3-1-1; }
+#th_open-2-1-1 { counter-set: th_open-2-1-1 0; }
+#th_open-2-1-1 > li::marker { content: ""counter(th_open-2-1-1,decimal)"."; }
+#th_open-2-1-1 > li { counter-increment: th_open-2-1-1; }
+#eg_open_closed_neither-2-1-1 { counter-set: eg_open_closed_neither-2-1-1 0; }
+#eg_open_closed_neither-2-1-1 > li::marker { content: ""counter(eg_open_closed_neither-2-1-1,decimal)"."; }
+#eg_open_closed_neither-2-1-1 > li { counter-increment: eg_open_closed_neither-2-1-1; }
+#eg_open_closed_neither-3-1-1 { counter-set: eg_open_closed_neither-3-1-1 0; }
+#eg_open_closed_neither-3-1-1 > li::marker { content: ""counter(eg_open_closed_neither-3-1-1,decimal)"."; }
+#eg_open_closed_neither-3-1-1 > li { counter-increment: eg_open_closed_neither-3-1-1; }
+#th_closed-1-1-1 { counter-set: th_closed-1-1-1 0; }
+#th_closed-1-1-1 > li::marker { content: ""counter(th_closed-1-1-1,decimal)"."; }
+#th_closed-1-1-1 > li { counter-increment: th_closed-1-1-1; }
+#eg_boundary-2-1-1 { counter-set: eg_boundary-2-1-1 0; }
+#eg_boundary-2-1-1 > li::marker { content: ""counter(eg_boundary-2-1-1,decimal)"."; }
+#eg_boundary-2-1-1 > li { counter-increment: eg_boundary-2-1-1; }
+#th_boundary-2-1-3 { counter-set: th_boundary-2-1-3 0; }
+#th_boundary-2-1-3 > li::marker { content: ""counter(th_boundary-2-1-3,decimal)"."; }
+#th_boundary-2-1-3 > li { counter-increment: th_boundary-2-1-3; }
+#th_connected-2-1-2 { counter-set: th_connected-2-1-2 0; }
+#th_connected-2-1-2 > li::marker { content: ""counter(th_connected-2-1-2,decimal)"."; }
+#th_connected-2-1-2 > li { counter-increment: th_connected-2-1-2; }
+#th_lim-2-1-3 { counter-set: th_lim-2-1-3 0; }
+#th_lim-2-1-3 > li::marker { content: ""counter(th_lim-2-1-3,decimal)"."; }
+#th_lim-2-1-3 > li { counter-increment: th_lim-2-1-3; }
+#th_series-2-1-3 { counter-set: th_series-2-1-3 0; }
+#th_series-2-1-3 > li::marker { content: ""counter(th_series-2-1-3,decimal)"."; }
+#th_series-2-1-3 > li { counter-increment: th_series-2-1-3; }
+#eg_real_imag_parts-2-1-3 { counter-set: eg_real_imag_parts-2-1-3 0; }
+#eg_real_imag_parts-2-1-3 > li::marker { content: ""counter(eg_real_imag_parts-2-1-3,decimal)"."; }
+#eg_real_imag_parts-2-1-3 > li { counter-increment: eg_real_imag_parts-2-1-3; }
+#eg_real_imag_parts-3-1-1 { counter-set: eg_real_imag_parts-3-1-1 0; }
+#eg_real_imag_parts-3-1-1 > li::marker { content: ""counter(eg_real_imag_parts-3-1-1,decimal)"."; }
+#eg_real_imag_parts-3-1-1 > li { counter-increment: eg_real_imag_parts-3-1-1; }
+#th_exp-2-1-1 { counter-set: th_exp-2-1-1 0; }
+#th_exp-2-1-1 > li::marker { content: ""counter(th_exp-2-1-1,decimal)"."; }
+#th_exp-2-1-1 > li { counter-increment: th_exp-2-1-1; }
+#th_exp-3-1-1 { counter-set: th_exp-3-1-1 0; }
+#th_exp-3-1-1 > li::marker { content: ""counter(th_exp-3-1-1,decimal)"."; }
+#th_exp-3-1-1 > li { counter-increment: th_exp-3-1-1; }
+#eg_square_transform-2-1-6 { counter-set: eg_square_transform-2-1-6 0; }
+#eg_square_transform-2-1-6 > li::marker { content: ""counter(eg_square_transform-2-1-6,decimal)"."; }
+#eg_square_transform-2-1-6 > li { counter-increment: eg_square_transform-2-1-6; }
+#eg_square_transform-3-1-4 { counter-set: eg_square_transform-3-1-4 0; }
+#eg_square_transform-3-1-4 > li::marker { content: ""counter(eg_square_transform-3-1-4,decimal)"."; }
+#eg_square_transform-3-1-4 > li { counter-increment: eg_square_transform-3-1-4; }
+#eg_exp_transform-2-1-6 { counter-set: eg_exp_transform-2-1-6 0; }
+#eg_exp_transform-2-1-6 > li::marker { content: ""counter(eg_exp_transform-2-1-6,decimal)"."; }
+#eg_exp_transform-2-1-6 > li { counter-increment: eg_exp_transform-2-1-6; }
+#eg_log-2-1-4 { counter-set: eg_log-2-1-4 0; }
+#eg_log-2-1-4 > li::marker { content: ""counter(eg_log-2-1-4,decimal)"."; }
+#eg_log-2-1-4 > li { counter-increment: eg_log-2-1-4; }
+#eg_log-3-1-1 { counter-set: eg_log-3-1-1 0; }
+#eg_log-3-1-1 > li::marker { content: ""counter(eg_log-3-1-1,decimal)"."; }
+#eg_log-3-1-1 > li { counter-increment: eg_log-3-1-1; }
+#eg_powers-2-1-1 { counter-set: eg_powers-2-1-1 0; }
+#eg_powers-2-1-1 > li::marker { content: ""counter(eg_powers-2-1-1,decimal)"."; }
+#eg_powers-2-1-1 > li { counter-increment: eg_powers-2-1-1; }
+#th_trig_props-2-1-2 { counter-set: th_trig_props-2-1-2 0; }
+#th_trig_props-2-1-2 > li::marker { content: ""counter(th_trig_props-2-1-2,decimal)"."; }
+#th_trig_props-2-1-2 > li { counter-increment: th_trig_props-2-1-2; }
+#th_trig_props-3-1-1 { counter-set: th_trig_props-3-1-1 0; }
+#th_trig_props-3-1-1 > li::marker { content: ""counter(th_trig_props-3-1-1,decimal)"."; }
+#th_trig_props-3-1-1 > li { counter-increment: th_trig_props-3-1-1; }
+#th_hyperbolic-2-1-1 { counter-set: th_hyperbolic-2-1-1 0; }
+#th_hyperbolic-2-1-1 > li::marker { content: ""counter(th_hyperbolic-2-1-1,decimal)"."; }
+#th_hyperbolic-2-1-1 > li { counter-increment: th_hyperbolic-2-1-1; }
+#th_hyperbolic-3-1-1 { counter-set: th_hyperbolic-3-1-1 0; }
+#th_hyperbolic-3-1-1 > li::marker { content: ""counter(th_hyperbolic-3-1-1,decimal)"."; }
+#th_hyperbolic-3-1-1 > li { counter-increment: th_hyperbolic-3-1-1; }
+#eg_limit_points-2-1-1 { counter-set: eg_limit_points-2-1-1 0; }
+#eg_limit_points-2-1-1 > li::marker { content: ""counter(eg_limit_points-2-1-1,decimal)"."; }
+#eg_limit_points-2-1-1 > li { counter-increment: eg_limit_points-2-1-1; }
+#th_lim_fun_seq-2-1-4 { counter-set: th_lim_fun_seq-2-1-4 0; }
+#th_lim_fun_seq-2-1-4 > li::marker { content: ""counter(th_lim_fun_seq-2-1-4,decimal)"."; }
+#th_lim_fun_seq-2-1-4 > li { counter-increment: th_lim_fun_seq-2-1-4; }
+#th_lim_func-2-1-6 { counter-set: th_lim_func-2-1-6 0; }
+#th_lim_func-2-1-6 > li::marker { content: ""counter(th_lim_func-2-1-6,decimal)"."; }
+#th_lim_func-2-1-6 > li { counter-increment: th_lim_func-2-1-6; }
+#th_cont_lim-2-1-2 { counter-set: th_cont_lim-2-1-2 0; }
+#th_cont_lim-2-1-2 > li::marker { content: ""counter(th_cont_lim-2-1-2,decimal)"."; }
+#th_cont_lim-2-1-2 > li { counter-increment: th_cont_lim-2-1-2; }
+#th_cont_prop-2-1-3 { counter-set: th_cont_prop-2-1-3 0; }
+#th_cont_prop-2-1-3 > li::marker { content: ""counter(th_cont_prop-2-1-3,decimal)"."; }
+#th_cont_prop-2-1-3 > li { counter-increment: th_cont_prop-2-1-3; }
+</style>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 382-0:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-6.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_log_trig.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldE}{{\mathbf E}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lns}{lns}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\ab}{ab}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_tuples.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Tuples and Cartesian products</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_complex_analysis.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Analysis</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_arithmetic.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Complex arithmetic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_arithmetic.html#ss_complex-numbers" class="internal"><span class="title">Complex numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_arithmetic.html#ss_complex-plane" class="internal"><span class="title">Complex plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_arithmetic.html#ss_arithmetic" class="internal"><span class="title">Arithmetic operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_polar.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Geometry of complex numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_geom_add" class="internal"><span class="title">Geometry of complex addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_conjugation_modulus" class="internal"><span class="title">Modulus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_conj" class="internal"><span class="title">Complex conjugation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_polar" class="internal"><span class="title">Polar form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_deMoivre.html" class="internal"><span class="codenumber">1.3</span> <span class="title">De Moivre’s formula</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_deMoivre" class="internal"><span class="title">De Moivre’s formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_nth_roots" class="internal"><span class="title"><span class="process-math">\(n\)</span>-th roots</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_polynomials" class="internal"><span class="title">Polynomials</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_topo.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Topology of <span class="process-math">\(\C\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_open_closed" class="internal"><span class="title">Open and closed sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_connected" class="internal"><span class="title">Connected sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_point_infty" class="internal"><span class="title">Point at infinity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sequences.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Sequences and series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_sequences" class="internal"><span class="title">Sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_series" class="internal"><span class="title">Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_complex_functions.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Complex functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_functions.html#ss_functions" class="internal"><span class="title">Complex functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_functions.html#ss_functions_visual" class="internal"><span class="title">Visualizing complex functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_log_trig.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Logarithmic and trigonometric functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_log" class="internal"><span class="title">Logarithmic functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_power" class="internal"><span class="title">Complex exponentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_trig" class="internal"><span class="title">Trigonometric functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="s_lim_cont.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Limits of functions and continuity</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_lim_cont.html#ss_lims_func" class="internal"><span class="title">Limits of functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_lim_cont.html#ss_cont" class="internal"><span class="title">Continuity</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-6.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_lim_cont"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.8</span><span class="space"> </span><span class="title">Limits of functions and continuity</span>
+</h2>
+<section class="introduction" id="s_lim_cont-2"><div class="para" id="s_lim_cont-2-1">Single-variable calculus can be succinctly described as the science of functions of the form <span class="process-math">\(f\colon D\rightarrow \R\text{,}\)</span> where <span class="process-math">\(D\subseteq \R\text{.}\)</span> The main tools of that science are the derivative and the integral, both of which rely on the more fundamental concept of the limit.</div></section><section class="subsection" id="ss_lims_func"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Limits of functions</span>
+</h3>
+<article class="definition definition-like" id="d_limit_point"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Limit point.</span>
+</h4>
+<div class="para" id="d_limit_point-2-1">Given a subset <span class="process-math">\(A\subseteq \C\text{,}\)</span> a <dfn class="terminology">limit point</dfn> (or <dfn class="terminology">accumulation point</dfn>) of <span class="process-math">\(A\)</span> is an element <span class="process-math">\(z_0\in \C\)</span> satisfying the following property: given any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> the open disc <span class="process-math">\(B_\epsilon(z_0)\)</span> contains an element of <span class="process-math">\(A\)</span> that is distinct from <span class="process-math">\(z\text{.}\)</span>
+</div></article><article class="example example-like" id="eg_limit_points"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Limit points.</span>
+</h4>
+<div class="para logical" id="eg_limit_points-2-1"><ol class="decimal" id="eg_limit_points-2-1-1">
+<li id="eg_limit_points-2-1-1-1"><div class="para" id="eg_limit_points-2-1-1-1-1">Show that all elements of an open set <span class="process-math">\(U\)</span> are limit points of <span class="process-math">\(U\text{.}\)</span>
+</div></li>
+<li id="eg_limit_points-2-1-1-2"><div class="para" id="eg_limit_points-2-1-1-2-1">Given a subset <span class="process-math">\(Y\subseteq \C\)</span> Show that any point <span class="process-math">\(z_0\in \partial Y-Y\)</span> is a limit point of <span class="process-math">\(Y\text{.}\)</span>
+</div></li>
+<li id="eg_limit_points-2-1-1-3"><div class="para" id="eg_limit_points-2-1-1-3-1">Give an example of a set <span class="process-math">\(Y\)</span> and a boundary point <span class="process-math">\(z_0\in \partial Y\)</span> that is not a limit point of <span class="process-math">\(Y\text{.}\)</span>
+</div></li>
+</ol></div>
+<div class="solutions"><details id="eg_limit_points-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_limit_points-3-1"></div></div></details></div></article><article class="definition definition-like" id="d_lim_func"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of a function.</span>
+</h4>
+<div class="para" id="d_lim_func-2-1">Let <span class="process-math">\(f\colon D\rightarrow \C\)</span> be a complex function, and let <span class="process-math">\(z_0\)</span> be a limit point of <span class="process-math">\(D\text{.}\)</span> We say the limit of <span class="process-math">\(f\)</span> as <span class="process-math">\(z\)</span> approaches <span class="process-math">\(z_0\)</span> exists if there is a complex number <span class="process-math">\(w\in \C\)</span> satisfying the following property: for all <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists a <span class="process-math">\(\delta&gt; 0\)</span> such that if <span class="process-math">\(0&lt; \abs{z-z_0} &lt; \delta\text{,}\)</span> then <span class="process-math">\(\abs{f(z)-w}&lt; \epsilon\text{.}\)</span>
+</div> <div class="para" id="d_lim_func-2-2">When this is the case we call <span class="process-math">\(w\)</span> the <dfn class="terminology">limit</dfn> of <span class="process-math">\(f\)</span> as <span class="process-math">\(z\)</span> approaches <span class="process-math">\(z_0\text{,}\)</span> and write <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=w\text{.}\)</span> Otherwise we say that <span class="process-math">\(\lim\limits_{z\to z_0}f(z)\)</span> does not exist.</div></article><article class="theorem theorem-like" id="th_lim_fun_seq"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.4</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of function via sequences.</span>
+</h4>
+<div class="para logical" id="th_lim_fun_seq-2-1">
+<div class="para">Let <span class="process-math">\(f\colon D\rightarrow \C\)</span> and let <span class="process-math">\(z_0\)</span> be a limit point of <span class="process-math">\(D\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="th_lim_fun_seq-2-1-4">
+<li id="th_lim_fun_seq-2-1-4-1"><div class="para" id="th_lim_fun_seq-2-1-4-1-1"><span class="process-math">\(\displaystyle \lim\limits_{z\to z_0}f(z)=w\)</span></div></li>
+<li id="th_lim_fun_seq-2-1-4-2"><div class="para" id="th_lim_fun_seq-2-1-4-2-1">For all sequences <span class="process-math">\((z_n)\)</span> of elements of <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(z_n\to z_0\text{,}\)</span> we have <span class="process-math">\(f(z_n)\to w\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_lim_fun_seq-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_lim_fun_seq-3-1">We prove each implication separately.</div>
+<article class="case" id="th_lim_fun_seq-3-2"><h5 class="heading">Implication: (1)<span class="process-math">\(\implies\)</span>(2).</h5>
+<div class="para logical" id="th_lim_fun_seq-3-2-2">
+<div class="para">Assume <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=w\text{,}\)</span> and suppose <span class="process-math">\(z_n\to z_0\)</span> for a sequence <span class="process-math">\((z_n)\)</span> consisting of elements of <span class="process-math">\(D\text{.}\)</span> We show that <span class="process-math">\(f(z_n)\to w\text{.}\)</span> To this end, given any <span class="process-math">\(\epsilon&gt; 0\text{,}\)</span> there is a  <span class="process-math">\(\delta&gt; 0\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0&lt; \abs{z-z_0}&lt; \delta \implies \abs{f(z)-w}&lt; \epsilon\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(z_n\to z_0\text{,}\)</span> there is an <span class="process-math">\(N\)</span> such that <span class="process-math">\(\abs{z-z_n}&lt; \delta\)</span> for all <span class="process-math">\(n\geq N\text{.}\)</span> It follows that for all <span class="process-math">\(n\geq N\text{,}\)</span> either <span class="process-math">\(z_n=z_0\)</span> or <span class="process-math">\(0&lt; \abs{z-z_n} &lt; \delta\text{.}\)</span> In either case, the displayed implication above implies that <span class="process-math">\(\abs{f(z_n)-w}&lt; \epsilon\text{,}\)</span> as desired.</div>
+</div></article><article class="case" id="th_lim_fun_seq-3-3"><h5 class="heading">Implication: (2)<span class="process-math">\(\implies\)</span>(1).</h5>
+<div class="para" id="th_lim_fun_seq-3-3-2">We will prove the contrapositive. Suppose that <span class="process-math">\(\lim\limits_{z\to z_0}f(z)\ne w\text{.}\)</span> By definition, this means there exists an <span class="process-math">\(\epsilon &gt; 0\)</span> such that for each <span class="process-math">\(\delta_n=\frac{1}{n}\)</span> there exists a <span class="process-math">\(z_n\in D\)</span> satisfying <span class="process-math">\(0&lt; \abs{z_n-z_0}&lt; \frac{1}{n}\)</span> but <span class="process-math">\(\abs{f(z_n)-w}&gt; \epsilon\text{.}\)</span> It follows easily that <span class="process-math">\((z_n)\)</span> is a sequence of elements of <span class="process-math">\(D\)</span> satisfying  <span class="process-math">\(z_n\to z_0\)</span> and <span class="process-math">\(f(z_n)\not\to w\text{,}\)</span> as desired.</div></article></article></details><article class="example example-like" id="eg_lim_dne"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.5</span><span class="period">.</span><span class="space"> </span><span class="title">No limit.</span>
+</h4>
+<div class="para" id="eg_lim_dne-2-1">Define <span class="process-math">\(f\colon \C-\{0\}\rightarrow \C\)</span> as <span class="process-math">\(f(z)=\frac{\overline{z}}{z}\text{.}\)</span> Show that <span class="process-math">\(\lim\limits_{z\to 0}f(z)\)</span> does not exist.</div>
+<div class="solutions"><details id="eg_lim_dne-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_lim_dne-3-1">
+<div class="para">It is easy to see that if the limit existed, then we would have <span class="process-math">\(\lim\limits_{n\to \infty}f(z_n)=\lim\limits_{n\to \infty}f(w_n)\)</span> for any two sequences <span class="process-math">\(z_n\to 0\)</span> and <span class="process-math">\(w_n\to 0\text{.}\)</span> Taking the sequences <span class="process-math">\((z_n)=\frac{1}{n}\)</span> and <span class="process-math">\((w_n)=\frac{i}{n}\text{,}\)</span> however, it is easy to see that <span class="process-math">\(z_n\to 0\)</span> and <span class="process-math">\(w_n\to 0\text{,}\)</span> and yet</div>
+<div class="displaymath process-math" id="eg_lim_dne-3-1-8">
+\begin{align*}
+\lim\limits_{n\to \infty}f(z_n) \amp = \lim\limits_{n\to \infty}\frac{\overline{1/n}}{1/n}=\lim\limits_{n\to \infty}1=1\\
+\lim\limits_{n\to \infty}f(w_n) \amp = \lim\limits_{n\to \infty}\frac{\overline{i/n}}{i/n}=\lim\limits_{n\to \infty}-1=-1\text{.}
+\end{align*}
+</div>
+<div class="para">We conclude that the limit <span class="process-math">\(\lim\limits_{z\to 0}f(z)\)</span> does not exist.</div>
+</div></div></details></div></article><article class="theorem theorem-like" id="th_lim_func"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.6</span><span class="period">.</span><span class="space"> </span><span class="title">Limits of functions.</span>
+</h4>
+<div class="para logical" id="th_lim_func-2-1">
+<div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be complex functions, and let <span class="process-math">\(z_0\)</span> be a limit point of the domains of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_lim_func-2-1-6">
+<li id="th_lim_func-2-1-6-1"><div class="para logical" id="th_lim_func-2-1-6-1-1">
+<div class="para">Write <span class="process-math">\(f=u+iv\)</span> in terms of its real and imaginary parts. The limit <span class="process-math">\(\lim\limits_{z\to z_0}f(z)\)</span> exists if and only if <span class="process-math">\(\lim\limits_{z\to z_0}u(z)\)</span> and <span class="process-math">\(\lim\limits_{z\to z_0}v(z)\)</span> exist, in which case we have</div>
+<div class="displaymath process-math" id="eg_lim_func_real_imag">
+\begin{equation}
+\lim\limits_{z\to z_0}f(z)=\lim\limits_{z\to z_0}u(z)+i\lim\limits_{z\to z_0}v(z)\text{.}\tag{1.31}
+\end{equation}
+</div>
+</div></li>
+<li id="th_lim_func-2-1-6-2"><div class="para" id="th_lim_func-2-1-6-2-1">
+<span class="process-math">\(\lim\limits_{z\to z_0}f(z)=0\)</span> if and only if <span class="process-math">\(\lim\limits_{z\to z_0}\abs{f(z)}=0\text{.}\)</span>
+</div></li>
+<li id="th_lim_func-2-1-6-3"><div class="para" id="th_lim_func-2-1-6-3-1">If <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=w\text{,}\)</span> then <span class="process-math">\(\lim\limits_{z\to z_0}\abs{f(z)}=\abs{w} \)</span> and <span class="process-math">\(\lim\limits_{z\to z_0}\overline{f(z)}=\overline{w}\text{.}\)</span>
+</div></li>
+<li id="th_lim_func-2-1-6-4"><div class="para logical" id="th_lim_func-2-1-6-4-1">
+<div class="para">If <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=w\)</span> and <span class="process-math">\(\lim\limits_{z\to z_0}g(z)=w'\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="th_lim_func-2-1-6-4-1-3">
+\begin{align}
+\lim\limits_{z\to z_0}cf(z)+dg(z) \amp =c\lim\limits_{z\to z_0}f(z)+d\lim\limits_{z\to z_0}g(z)=cw+dw' \text{ for any } c,d\in \C\tag{1.32}\\
+\lim\limits_{z\to z_0}f(z)g(z) \amp =\lim\limits_{z\to z_0}f(z)\, \lim\limits_{z\to z_0}g(z)=w\, w'\tag{1.33}\\
+\lim\limits_{z\to z_0}f(z)/g(z) \amp = \frac{\lim\limits_{z\to z_0}f(z)}{\lim\limits_{z\to z_0}g(z)}=\frac{w}{w'}, \text{ assuming } w'\ne 0\text{.}\tag{1.34}
+\end{align}
+</div>
+</div></li>
+</ol>
+</div></article><details id="th_lim_func-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_lim_func-3-1"></div></article></details><article class="example example-like" id="eg_lim_power"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.8.7</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of power function.</span>
+</h4>
+<div class="para" id="eg_lim_power-2-1">Let <span class="process-math">\(f(z)=z^n\text{,}\)</span> where <span class="process-math">\(n\)</span> is a positive integer. Prove: for all <span class="process-math">\(z_0\in \C\text{,}\)</span> <span class="process-math">\(\lim\limits_{z\to z_0}z^n=z_0^n\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_lim_power-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="eg_lim_power-3-1">There are a number ways of proving this statement. We give a proof by induction for <span class="process-math">\(n\geq 1\text{.}\)</span>
+</div>
+<div class="para logical" id="eg_lim_power-3-2">
+<div class="para">Base step: <span class="process-math">\(n=1\text{.}\)</span> Given any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> setting <span class="process-math">\(\delta=\epsilon\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_lim_power-3-2-4">
+\begin{align*}
+\abs{z-z_0}&lt; \delta\amp \implies \abs{z-z_0}&lt; \epsilon\\
+\amp \implies \abs{f(z)-f(z_0)}&lt; \epsilon\text{,}
+\end{align*}
+</div>
+<div class="para">since <span class="process-math">\(f(z)=z^1=z\)</span> and <span class="process-math">\(f(z_0)=z_0^1=z_0\)</span> in this case. This proves <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=f(z_0)\)</span> when <span class="process-math">\(f(z)=z^1\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="eg_lim_power-3-3">
+<div class="para">Induction step: we assume that <span class="process-math">\(\lim\limits_{z\to z_0}z^n=z_0^n\)</span> and show that <span class="process-math">\(\lim\limits_{z\to z_0}z^{n+1}=z_0^{n+1}\text{.}\)</span> To do so we use the induction hypothesis and the multiplicative property of limits from <a href="s_sequences.html#th_lim" class="xref" data-knowl="./knowl/xref/th_lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.5: Limit properties">Theorem 1.5.5</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html" id="eg_lim_power-3-3-4">
+\begin{align*}
+\lim\limits_{z\to z_0}z^{n+1} \amp = \lim\limits_{z\to z_0}z\cdot z^n \\
+\amp =\lim\limits_{z\to z_0}z\, \lim\limits_{z\to z_0}z^n \amp \text{(mult. prop.)}\\
+\amp = z_0\, z_0^n \amp (\text{base case, ind. hyp.}) \\
+\amp =z_0^{n+1} 
+\end{align*}
+</div>
+</div>
+</div></details></div></article></section><section class="subsection" id="ss_cont"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Continuity</span>
+</h3>
+<div class="para" id="ss_cont-2">We end with the notion of continuity. You will notice a strong resemblance between the definition of continuity of a function at a point and the limit of that function at a point. The true nature of this connection is articulated by <a href="s_lim_cont.html#th_cont_lim" class="xref" data-knowl="./knowl/xref/th_cont_lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.9: Continuity and limits">Theorem 1.8.9</a>.</div>
+<article class="definition definition-like" id="d_cont"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Continuous functions.</span>
+</h4>
+<div class="para" id="d_cont-2-1">Let <span class="process-math">\(f\colon D\rightarrow \C\)</span> be a complex function. Given an element <span class="process-math">\(z_0\in D\text{,}\)</span> we say that <span class="process-math">\(f\)</span> is <dfn class="terminology">continuous at <span class="process-math">\(z_0\)</span></dfn>  if the following property holds: for all <span class="process-math">\(\epsilon&gt; 0\text{,}\)</span> there exists a <span class="process-math">\(\delta&gt; 0\)</span> such that if <span class="process-math">\(\abs{z-z_0}&lt; \delta\text{,}\)</span> then <span class="process-math">\(\abs{f(z)-f(z_0)}&lt; \epsilon\text{.}\)</span>
+</div> <div class="para" id="d_cont-2-2">We say <span class="process-math">\(f\)</span> is <dfn class="terminology">continuous on a subset <span class="process-math">\(A\subseteq D\)</span></dfn>, if <span class="process-math">\(f\)</span> is continuous at all points <span class="process-math">\(z_0\in A\text{.}\)</span> We say <span class="process-math">\(f\)</span> is <dfn class="terminology">continuous</dfn> if <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(D\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="th_cont_lim"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity and limits.</span>
+</h4>
+<div class="para logical" id="th_cont_lim-2-1">
+<div class="para">Let <span class="process-math">\(f\colon D\rightarrow \C\)</span> be a complex function. The following are equivalent.</div>
+<ol class="decimal" id="th_cont_lim-2-1-2">
+<li id="th_cont_lim-2-1-2-1"><div class="para" id="th_cont_lim-2-1-2-1-1">
+<span class="process-math">\(f\)</span> is continuous.</div></li>
+<li id="th_cont_lim-2-1-2-2"><div class="para" id="th_cont_lim-2-1-2-2-1">For all elements <span class="process-math">\(z_0\in D\)</span> that are limit points of <span class="process-math">\(D\text{,}\)</span> we have <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=f(z_0)
+\text{.}\)</span>
+</div></li>
+<li id="th_cont_lim-2-1-2-3"><div class="para" id="th_cont_lim-2-1-2-3-1">For all sequences <span class="process-math">\((z_n)\)</span> of elements of <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(z_n\to z_0\text{,}\)</span> we have <span class="process-math">\(f(z_n)\to f(z_0)\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_cont_lim-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cont_lim-3-1">We will prove the cycle of implications (1)<span class="process-math">\(\implies\)</span>(2)<span class="process-math">\(\implies\)</span>(3)<span class="process-math">\(\implies\)</span>(1).</div>
+<article class="case" id="th_cont_lim-3-2"><h5 class="heading">Implication: (1)<span class="process-math">\(\implies\)</span> (2).</h5>
+<div class="para logical" id="th_cont_lim-3-2-2">
+<div class="para">Assume <span class="process-math">\(z_0\in D\)</span> is an accumulation point of <span class="process-math">\(D\)</span> and that <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(z_0\text{.}\)</span> We will show that <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=f(z_0)\text{.}\)</span> Indeed, since <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(z_0\)</span> given any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there is a <span class="process-math">\(\delta&gt; 0\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{z-z_0} &lt; \delta \implies \abs{f(z)-f(z_0)}&lt; \epsilon
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in D\text{.}\)</span> But then it is certainly true that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0&lt; \abs{z-z_0} &lt; \delta \implies \abs{f(z)-f(z_0)}&lt; \epsilon
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in D\text{.}\)</span> Thus <span class="process-math">\(\lim\limits_{z\to z_0}f(z)=f(z_0)\text{.}\)</span>
+</div>
+</div></article><article class="case" id="th_cont_lim-3-3"><h5 class="heading">Implication: (2)<span class="process-math">\(\implies\)</span>(3).</h5>
+<div class="para" id="th_cont_lim-3-3-2">Assume (2) holds. Given any <span class="process-math">\(z_0\in D\text{,}\)</span>  we wish to show that for all sequences <span class="process-math">\((z_n)\)</span> of elements of <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(z_n\to z_0\text{,}\)</span> we have <span class="process-math">\(f(z_n)\to f(z_0)\text{.}\)</span> If <span class="process-math">\(z_0\)</span> is a limit point of <span class="process-math">\(D\text{,}\)</span> then this follows immediately from <a href="s_lim_cont.html#th_lim_fun_seq" class="xref" data-knowl="./knowl/xref/th_lim_fun_seq.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.4: Limit of function via sequences">Theorem 1.8.4</a>. On the other hand, if <span class="process-math">\(z_0\)</span> is not a limit point of <span class="process-math">\(D\text{,}\)</span> it is easy to see that there is no sequence <span class="process-math">\((z_n)\)</span> of elements of <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(z_n\to z_0\text{,}\)</span> and so the condition is satisfied vacuously!</div></article><article class="case" id="th_cont_lim-3-4"><h5 class="heading">Implication: (3)<span class="process-math">\(\implies\)</span>(1).</h5>
+<div class="para" id="th_cont_lim-3-4-2">We prove the contrapositive, using an argument very similar to the one in <a href="s_lim_cont.html#th_lim_fun_seq" class="xref" data-knowl="./knowl/xref/th_lim_fun_seq.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.8.4: Limit of function via sequences">Theorem 1.8.4</a>. Namely, assuming <span class="process-math">\(f\)</span> is not continuous at <span class="process-math">\(z_0\in D\text{,}\)</span> we can find an <span class="process-math">\(\epsilon&gt; 0\)</span> and a sequence <span class="process-math">\((z_n)\)</span> of elements of <span class="process-math">\(D\)</span> satisfying <span class="process-math">\(\abs{z_n-z_0}&lt; \frac{1}{n}\)</span> and <span class="process-math">\(\abs{f(z_n)-f(z_0)}&gt; \epsilon\text{.}\)</span> It follows that <span class="process-math">\(z_n\to z_0\)</span> but <span class="process-math">\(f(z_n)\not\to f(z_0)\text{,}\)</span> as desired.</div></article></article></details><article class="theorem theorem-like" id="th_cont_prop"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.10</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity properties.</span>
+</h4>
+<div class="para logical" id="th_cont_prop-2-1">
+<div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be complex functions.</div>
+<ol class="decimal" id="th_cont_prop-2-1-3">
+<li id="th_cont_prop-2-1-3-1"><div class="para" id="th_cont_prop-2-1-3-1-1">Write <span class="process-math">\(f=u+iv\)</span> in terms of its real and imaginary parts. We have <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(x_0\)</span> if and only if <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are continuous at <span class="process-math">\(x_0\text{.}\)</span>
+</div></li>
+<li id="th_cont_prop-2-1-3-2"><div class="para logical" id="th_cont_prop-2-1-3-2-1">
+<div class="para">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are continuous at <span class="process-math">\(z_0\text{,}\)</span> then so are</div>
+<div class="displaymath process-math" id="th_cont_prop-2-1-3-2-1-4">
+\begin{align*}
+\overline{f} \amp \amp \abs{f}\amp \amp cf \ (\text{for any } c\in \C) \\
+f+g \amp \amp fg \amp \amp f/g \ (\text{provided } g(z_0)\ne 0)  \text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="th_cont_prop-2-1-3-3"><div class="para" id="th_cont_prop-2-1-3-3-1">If <span class="process-math">\(g\)</span> is continuous at <span class="process-math">\(x_0\)</span> and <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(g(x_0)\text{,}\)</span> then <span class="process-math">\(f\circ g\)</span> is continuous at <span class="process-math">\(x_0\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="theorem theorem-like" id="th_cont_egs"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.8.11</span><span class="period">.</span><span class="space"> </span><span class="title">Continuous zoo.</span>
+</h4>
+<div class="para" id="th_cont_egs-2-1">Every complex function we have defined thus far is continuous on its domain.</div></article><details id="th_cont_egs-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cont_egs-3-1">We content ourselves to prove this statement for a few examples.</div>
+<div class="para logical" id="th_cont_egs-3-2">
+<div class="para">Consider <span class="process-math">\(f(z)=e^z\text{.}\)</span> For <span class="process-math">\(z=x+iy\)</span> we have <span class="process-math">\(f(z)=u(x,y)+iv(x,y)\text{,}\)</span> where</div>
+<div class="displaymath process-math" id="th_cont_egs-3-2-4">
+\begin{align*}
+u(x,y) \amp = e^{\sqrt{x^2+y^2}}\cos y \amp v(x,y)\amp =e^{\sqrt{x^2+y^2}}\sin y\text{.}
+\end{align*}
+</div>
+<div class="para">Using continuity properties of real-valued functions of two variables, we see easily that <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are both continuous everywhere. Thus <span class="process-math">\(f(z)=e^z\)</span> is continuous. (It then follows easily that all of the trigonometric and hyperbolic functions are continuous, since they are defined in terms of <span class="process-math">\(f(z)=e^z\)</span> using elementary operations.)</div>
+</div>
+<div class="para" id="th_cont_egs-3-3">Consider <span class="process-math">\(\Log=u+iv\text{,}\)</span> where <span class="process-math">\(u(z)=\ln\abs{z}\)</span> and <span class="process-math">\(v(z)=\Arg z\)</span> for all <span class="process-math">\(z\in \C-(-\infty, 0]\text{.}\)</span> Since the identity function <span class="process-math">\(f(z)=z\)</span> is obviously continuous, so is <span class="process-math">\(\abs{f}=\abs{z}\text{.}\)</span> Since <span class="process-math">\(\ln\colon (0,\infty)\rightarrow \R\)</span> is continuous, so is the composition <span class="process-math">\(ln\abs{z}\text{.}\)</span> Lastly, you showed in your homework that <span class="process-math">\(\Arg\colon \C-(-\infty, 0]\rightarrow \C\)</span> is continuous. Since the real and imaginary parts of <span class="process-math">\(\Log\)</span> are continuous, we conclude that <span class="process-math">\(\Log\)</span> is continuous.</div>
+<div class="para logical" id="th_cont_egs-3-4">
+<div class="para">Fix a complex number <span class="process-math">\(w\text{.}\)</span> Having established that <span class="process-math">\(\Log\)</span> is continuous on <span class="process-math">\(\C-(-\infty, 0]\)</span> it follows that the principal branch of <span class="process-math">\(z^w\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=e^{w\Log z}
+\end{equation*}
+</div>
+<div class="para">is continuous on its domain <span class="process-math">\(\C-(-\infty, 0]\text{.}\)</span>
+</div>
+</div></article></details></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_log_trig.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>
