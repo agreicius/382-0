@@ -359,7 +359,33 @@ Compute the boundary of the given set.
 </statement>
 <solution>
 <p>
-
+<ol>
+    <li>
+        <p>
+            We have <m>\partial \emptyset=\emptyset</m> since for all <m>z_0</m> no open ball <m>B_\epsilon(z_0)</m> can contain elements of <m>\emptyset</m>. Indeed, <m>\emptyset</m> contains no elements! 
+        </p>
+    </li>
+    <li>
+        <p>
+            We have <m>\partial \C=\emptyset</m>. Indeed, given any <m>z_0</m>, we have <m>B_r(z_0)\subseteq \C</m> for all <m>r&gt; 0</m>, and hence this ball contains nothing but elements of <m>\C</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Let <m>C_r(z_0)=\{z\in \C\colon \abs{z-z_0}\}</m>, the circle of radius <m>r</m> centered at <m>z_0</m>. We have <m>\partial B_r(z_0)=C_r(z_0)</m>. It is clear that every point on <m>C_r(z_0)</m> is a boundary point of <m>B_r(z_0)</m>. It is also easy to see that any <m>z</m> not lying on <m>C_r(z_0)</m> is not a boundary point of <m>B_r(z_0)</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            Similar reasoning as above shows that <m>\partial\overline{B}_r(z_0)=C_r(z_0)</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            It is easy to see that <m>\partial \HH=\{z\in \C\colon \Im z=0\}</m>, the <m>x</m>-axis.
+        </p>
+    </li>
+</ol>
 </p>
 </solution>
 </example>

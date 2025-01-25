@@ -120,10 +120,10 @@ Identifying an element <m>z</m> of <m>\C^*=\C\cup \{\infty\}</m> with its corres
 </p>
 <p>
     For the reverse direction (<m>\Leftarrow</m>), if both <m>\lim\limits_{n\to \infty}\Re z_n</m> and <m>\lim\limits_{n\to \infty}\Im z_n</m> exist, then we have 
-    <me>
+    <md>
         <mrow>\lim\limits_{n\to \infty}z_n\amp = \lim\limits_{n\to \infty}\Re z_n+i\Im z_n \amp </mrow>
         <mrow> \amp =\lim\limits_{n\to \infty}\Re z_n+i\lim\limits_{n\to \infty}\Im z_n \amp (<xref ref="eq_lim_seq_linear"/>) </mrow>
-    </me>,
+    </md>,
     as desired.
 </p>
 <p>
@@ -141,12 +141,20 @@ Identifying an element <m>z</m> of <m>\C^*=\C\cup \{\infty\}</m> with its corres
 <title>Limit of sequence</title>
 <statement>
 <p>
-Define <m>z_n=\frac{1}{n}(1+i)^n</m>. Show that <m>(z_n)_{n=1}^{\infty}</m> converges and compute its limit. 
+Define <m>z_n=\frac{1}{2^n}(1+i)^n</m>. Show that <m>(z_n)_{n=1}^{\infty}</m> converges and compute its limit. 
 </p>
 </statement>
 <solution>
 <p>
-
+We have <m>z_n=w^n</m>, where <m>w=\frac{1}{2}(1+i)=\frac{\sqrt{2}}{2}(\cos(\pi/4)+i\sin(\pi/4))</m>. It follows from de Moivre's formula that 
+<me>
+z_n=w^n=(\sqrt{2}/2)^n(\cos(n\pi/4)+i\sin(n\pi/4))
+</me>
+and hence that 
+<me>
+\abs{z_n}=(\sqrt{2}/2)^n.
+</me>
+Since <m>(\sqrt{2}/2)&lt; 1</m>, we have <m>\abs{z_n}\to 0</m>. It follows from <xref ref="th_lim"/> that <m>z_n\to 0</m>. 
 </p>
 </solution>
 </example>
@@ -159,7 +167,17 @@ Show that the sequence <m>(i^n)_{n=1}^{\infty}</m> diverges.
 </statement>
 <solution>
 <p>
-
+Observe first that the sequence is periodic of the form 
+\[
+i,-1,-i,1,i,-1,\dots
+\]
+Assume by contradiction that <m>i^n\to w</m> for some complex number <m>w</m>. Taking <m>\epsilon =1</m> in the definition of sequence convergence, this would imply the existence of an <m>N</m> such that <m>\abs{i^n-w}&lt; 1</m> for all <m>n\geq N</m>. In particular, we would have  <m>\abs{1-w}&lt; 1</m> and <m>\abs{-1-w}&lt; 1</m>. But this would imply that 
+<md>
+    <mrow>2=\abs{1+1} \amp = \abs{1-w-(-1-w)} </mrow>
+    <mrow> \amp\leq \abs{1-w}+\abs{-1-w} </mrow>
+    <mrow> \amp &lt; 1+1=2</mrow>
+</md>,
+a contradiction since then we'd have <m>2&lt; 2</m>. We conclude that there is no limit to the sequence. 
 </p>
 </solution>
 </example>
@@ -172,7 +190,24 @@ Show that <m>\lim\limits_{n\to \infty}\frac{\sqrt{n}i+n^2}{5n+i}=\infty</m>.
 </statement>
 <solution>
 <p>
-
+Let <m>z_n=\frac{\sqrt{n}i+n^2}{5n+i}</m>. 
+We will show that <m>\frac{1}{z_n}\to 0</m>, and thus <m>z_n\to \infty</m>, by <xref ref="th_lim"/>.  Looking at 
+<me>
+    \frac{1}{z_n}=\frac{5n+i}{\sqrt{n}i+n^2}
+</me>
+we see that the dominating term on top is the <m>5n</m> and the dominating term on the bottom is <m>n^2</m>. We will make this argument rigorous by factoring out these dominating terms from the top and bottom and computing the limit 
+using a combination of algebra and limit rules.
+<md>
+    <mrow> \lim\limits_{n\to \infty}\frac{1}{z_n}\amp= \lim\limits_{n\to \infty}\frac{5n+i}{\sqrt{n}i+n^2} </mrow>
+    <mrow> \amp = \lim\limits_{n\to \infty}\frac{n\left(5+\frac{i}{n}\right)}{n^2\left(\frac{i}{n^{3/2}}+1\right)} </mrow>
+    <mrow> \amp = \lim\limits_{n\to \infty}\frac{1}{n} \cdot \frac{5+\frac{i}{n}}{\frac{i}{n^{3/2}}+1}</mrow>
+    <mrow> \amp = \lim\limits_{n\to \infty}\frac{1}{n} \cdot \lim\limits_{n\to \infty}\frac{5+\frac{i}{n}}{\frac{i}{n^{3/2}}+1} \amp (\text{prod. rule})</mrow>
+    <mrow> \amp =\lim\limits_{n\to \infty}\frac{1}{n}\cdot  \frac{5+i\lim\limits_{n\to \infty}\frac{1}{n}}{i\lim\limits_{n\to \infty}\frac{1}{n^{3/2}}+1} \amp (\text{quot., sum, scal. rule})
+    \amp (n\to 0) </mrow>
+    <mrow> \amp =0\cdot \frac{5}{1}</mrow>
+    <mrow> \amp =0 </mrow>
+</md>.
+Since <m>1/z_n\to 0</m>, we conclude that <m>z_n\to \infty</m>. 
 </p>
 </solution>
 </example>
@@ -272,12 +307,26 @@ Let <m>(z_n)_{n=1}^\infty</m> and <m>(w_n)_{n=1}^\infty</m> be complex sequences
 <title>Geometric series</title>
 <statement>
 <p>
-Let <m>z\in \C</m>. Show that the <term>geometric series</term> <m>\sum_{n=0}^\infty z^n</m> converges if <m>\abs{z}&lt; 1</m> and diverges for <m>\abs{z}\geq 1</m>. 
+Let <m>z\in \C</m>. Show that the <term>geometric series</term> <m>\sum_{n=0}^\infty z^n</m> converges to <m>\frac{1}{1-z}</m> if <m>\abs{z}&lt; 1</m>, and diverges for <m>\abs{z}\geq 1</m>. 
 </p>
 </statement>
 <solution>
 <p>
-
+First observe that if <m>\abs{z}\geq 1</m>, then the sequence <m>(\abs{z^n})\not\to 0</m>. It follows that <m>z_n\not\to 0</m> and thus that the series diverges by the divergence test. 
+</p>
+<p>
+    Now assume <m>\abs{z}&lt; 1</m>. For all <m>k\geq 1</m> the <m>k</m>-th partia sum is 
+    <me>
+        S_k=1+z+z^2+\cdots + z^k=\frac{z^{k+1}-1}{z-1},
+    </me>
+    using the polynomial identity <xref ref="eq_cyclo_factor"/>. It follows that 
+    <md>
+        <mrow>\sum_{n=0}^\infty z^n \amp =\lim_{k\to\infty}S_k</mrow>
+        <mrow> \amp =\lim_{k\to\infty}\frac{z^{k+1}-1}{z-1}</mrow>
+        <mrow> \amp =\frac{\lim_{k\to\infty}z^{k+1}-1}{\lim_{k\to\infty}z-1}</mrow>
+        <mrow> \amp =\frac{0-1}{z-1} \amp (\abs{z}&lt; 0\implies z^{k+1}\to 0)</mrow>
+        <mrow> \amp =\frac{1}{1-z}</mrow>
+    </md>.
 </p>
 </solution>
 </example>

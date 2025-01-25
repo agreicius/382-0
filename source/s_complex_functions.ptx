@@ -91,6 +91,16 @@
     </md>.
                 </p>
             </li>
+            <li>
+                <p>
+                    Since <m>f(-z)=f(z)=z^2</m> for all <m>z</m>, we see that <m>f</m> is not injective: as a concrete counterexample, <m>f(-1)=f(1)=1</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    According to <xref ref="th_nth_roots"/>, every complex number <m>w</m> has a square-root. Thus for all <m>w\in \C</m> there is a <m>z\in \C</m> such that <m>f(z)=w</m>. This proves <m>f</m> is surjective. 
+                </p>
+            </li>
         </ol>
     
 
@@ -462,7 +472,14 @@ R+circs+rays+t1
     </solution>
     </example>
     <p>
-        Our analysis in <xref ref="eg_exp_transform"/> can be summarized as follows: the exponential function maps the vertical lines <m>x=r</m> to the circles <m>C_{e^r}</m> of radius <m>r</m> centered at the origin; and it maps the horizontal lines <m>y=s</m> to the rays <m>\ell_s</m> starting at the origin that make an angle of <m>s</m> radians with the positive <m>x</m>-axis. 
+        Our analysis in <xref ref="eg_exp_transform"/> can be summarized as follows: the exponential function maps the vertical lines <m>x=r</m> to the circles <m>C_{e^r}</m> of radius <m>r</m> centered at the origin; and it maps the horizontal lines <m>y=s</m> to the rays <m>\ell_s</m> starting at the origin that make an angle of <m>s</m> radians with the positive <m>x</m>-axis. It follows that a rectangular region of the form 
+        <me>
+            R=\{z\in \C\colon a\leq \Re z\leq b, c\leq \Im z\leq d\}
+        </me>
+        gets mapped to the <em>polar rectangular region</em> 
+        <me>
+            f(R)=\{z\in \C\colon e^{a}\leq \abs{z} \leq e^b, c\leq \Arg z+2\pi k\leq d \text{ for some } k\in \Z\}
+        </me>.
     </p>
     <figure xml:id="fig_exp_trans">
         <caption>Image of standard grid under <m>f(z)=e^z</m></caption>
@@ -490,7 +507,7 @@ var('x y t')
 vlines=sum(parametric_plot((e^r*cos(t),e^r*sin(t)),(t,-2,2), color="blue", thickness=1.5) for r in range(-2,3))
 hlines=sum(parametric_plot((e^t*cos(r),e^t*sin(r)),(t,-2,2), color='red', thickness=1.5) for r in range(-2,3))
 R=region_plot([sqrt(x^2+y^2)&gt; 1,sqrt(x^2+y^2)&lt; e, arccos(x/sqrt(x^2+y^2))&gt; 1, arccos(x/sqrt(x^2+y^2))&lt; 2],(x,-2,2),(y,.5,5),incol="lightblue")
-t1=text("$R$", (.5,1.5), color="black", fontsize=14)
+t1=text("$f(R)$", (.7,2.1), color="black", fontsize=14)
 R+vlines+hlines+t1
 </sageplot>
 </image>

@@ -197,7 +197,35 @@ Compute the following power expressions.
 </statement>
 <solution>
 <p>
-
+<ol>
+    <li>
+        <p>
+            We have 
+            <md>
+                <mrow>i^i \amp = e^{i\log(i)}</mrow>
+                <mrow> \amp = e^{i(\ln\abs{i}+i\arg(i))}</mrow>
+                <mrow> \amp = e^{i(\ln 1+i\arg(i))}</mrow>
+                <mrow> \amp = e^{i(0+i\arg(z))}</mrow>
+                <mrow> \amp = e^{-\arg(i)}</mrow>
+                <mrow> \amp =\{e^{-\pi/2+2\pi k}\colon k\in \Z\}</mrow>
+                <mrow> \amp = \{e^{-\pi/2}e^{2\pi k}\colon k\in \Z\}</mrow>
+            </md>.
+        </p>
+    </li>
+    <li>
+        <p>
+            For <m>z\ne 0</m>, we have 
+            <md>
+                <mrow>z^i \amp = e^{i\log(z)}</mrow>
+                <mrow> \amp = e^{i(\ln\abs{z}+i\arg(z))}</mrow>
+                <mrow> \amp = e^{-\arg(z)+i\ln\abs{z}}</mrow>
+                <mrow> \amp =\{e^{(-\Arg z+2\pi k)+i\ln\abs{z}}\colon k\in \Z\}</mrow>
+                <mrow> \amp = \{e^{-\Arg z+2\pi k}e^{i\ln\abs{z}}\colon k \in \Z\}</mrow>
+                <mrow> \amp = \{e^{-\Arg z}e^{2\pi k}e^{i\ln\abs{z}}e^{2\pi k}\colon k \in \Z\}</mrow>
+            </md>.
+        </p>
+    </li>
+</ol>
 </p>
 </solution>
 </example>
@@ -210,6 +238,29 @@ Let <m>z\ne 0</m>. Show that the set <m>z^{1/n}</m> is precisely the set of <m>n
 </statement>
 <solution>
 <p>
+By definition we have 
+<md>
+    <mrow>z^{1/n} \amp =e^{\frac{1}{n}\log z}</mrow>
+    <mrow> \amp = e^{\frac{1}{n}(\ln\abs{z}+i\arg(z))}</mrow>
+    <mrow> \amp = \{e^{\frac{1}{n}\ln\abs{z}}e^{i(\Arg(z)/n +2\pi k/n)}\colon k\in \Z\}</mrow>
+    <mrow> \amp = \{e^{\ln \abs{z}^{1/n}}e^{i(\Arg(z)/n+2\pi k/n)}\colon k\in \Z\} </mrow>
+    <mrow> \amp = \{\abs{z}^{1/n}e^{i(\Arg(z)/n+2\pi k/n)}\colon k\in \Z\}\amp (e^{\ln c}=c)</mrow>
+    <mrow> \amp = \{\abs{z}^{1/n}e^{i(\Arg(z)/n+2\pi k/n)}\colon 0\leq k\leq n-1\}</mrow>
+</md>,
+which we recognize as the set of all <m>n</m>-th roots of <m>z</m>. 
+</p>
+<p>Note that the last equality above follows from the fact that for any <m>k'\in \Z</m>, performing division with remainder by <m>n</m> we can write
+<me>
+   k'=nq+k 
+</me>
+for some integer <m>q</m> and remainder <m>k</m> satisfying <m>0\leq k\leq n-1</m>, whence we have 
+<me>
+    2\pi k'/n=2\pi(k+qn)/n=2\pi k+2\pi q
+</me>,
+and thus 
+<me>
+    e^{2\pi i k'/n}=e^{2\pi i k/n}
+</me>.
 
 </p>
 </solution>
