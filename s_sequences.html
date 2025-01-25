@@ -187,6 +187,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_boundary-2-1-1 { counter-set: eg_boundary-2-1-1 0; }
 #eg_boundary-2-1-1 > li::marker { content: ""counter(eg_boundary-2-1-1,decimal)"."; }
 #eg_boundary-2-1-1 > li { counter-increment: eg_boundary-2-1-1; }
+#eg_boundary-3-1-1 { counter-set: eg_boundary-3-1-1 0; }
+#eg_boundary-3-1-1 > li::marker { content: ""counter(eg_boundary-3-1-1,decimal)"."; }
+#eg_boundary-3-1-1 > li { counter-increment: eg_boundary-3-1-1; }
 #th_boundary-2-1-3 { counter-set: th_boundary-2-1-3 0; }
 #th_boundary-2-1-3 > li::marker { content: ""counter(th_boundary-2-1-3,decimal)"."; }
 #th_boundary-2-1-3 > li { counter-increment: th_boundary-2-1-3; }
@@ -229,6 +232,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_powers-2-1-1 { counter-set: eg_powers-2-1-1 0; }
 #eg_powers-2-1-1 > li::marker { content: ""counter(eg_powers-2-1-1,decimal)"."; }
 #eg_powers-2-1-1 > li { counter-increment: eg_powers-2-1-1; }
+#eg_powers-3-1-1 { counter-set: eg_powers-3-1-1 0; }
+#eg_powers-3-1-1 > li::marker { content: ""counter(eg_powers-3-1-1,decimal)"."; }
+#eg_powers-3-1-1 > li { counter-increment: eg_powers-3-1-1; }
 #th_trig_props-2-1-2 { counter-set: th_trig_props-2-1-2 0; }
 #th_trig_props-2-1-2 > li::marker { content: ""counter(th_trig_props-2-1-2,decimal)"."; }
 #th_trig_props-2-1-2 > li { counter-increment: th_trig_props-2-1-2; }
@@ -609,10 +615,11 @@ z_n\to\infty \amp \iff \forall R &gt; 0\, \exists N &gt; 0( n\geq N \implies \ab
 </div></article><details id="th_lim-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_lim-3-1">Most of these statements are proved exactly as with their analogous statements for real sequences, and both in turn use little beyond properties of <span class="process-math">\(\abs{\ }\text{,}\)</span> either as the absolute value (on the reals) or its extension, the complex modulus. We content ourselves with proving (2) by way of illustration.</div>
 <div class="para logical" id="th_lim-3-2">
 <div class="para">For the reverse direction (<span class="process-math">\(\Leftarrow\)</span>), if both <span class="process-math">\(\lim\limits_{n\to \infty}\Re z_n\)</span> and <span class="process-math">\(\lim\limits_{n\to \infty}\Im z_n\)</span> exist, then we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lim_seq_linear.html">
-\begin{equation*}
-\text{,}
-\end{equation*}
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_lim_seq_linear.html" id="th_lim-3-2-4">
+\begin{align*}
+\lim\limits_{n\to \infty}z_n\amp = \lim\limits_{n\to \infty}\Re z_n+i\Im z_n \amp \\
+\amp =\lim\limits_{n\to \infty}\Re z_n+i\lim\limits_{n\to \infty}\Im z_n \amp (\knowl{./knowl/xref/eq_lim_seq_linear.html}{\text{(1.21)}}) \text{,}
+\end{align*}
 </div>
 <div class="para">as desired.</div>
 </div>
@@ -629,17 +636,64 @@ z_n\to\infty \amp \iff \forall R &gt; 0\, \exists N &gt; 0( n\geq N \implies \ab
 </div></article></details><article class="example example-like" id="eg_lim_seq"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of sequence.</span>
 </h4>
-<div class="para" id="eg_lim_seq-2-1">Define <span class="process-math">\(z_n=\frac{1}{n}(1+i)^n\text{.}\)</span> Show that <span class="process-math">\((z_n)_{n=1}^{\infty}\)</span> converges and compute its limit.</div>
-<div class="solutions"><details id="eg_lim_seq-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_lim_seq-3-1"></div></div></details></div></article><article class="example example-like" id="eg_lim_seq_div"><h4 class="heading">
+<div class="para" id="eg_lim_seq-2-1">Define <span class="process-math">\(z_n=\frac{1}{2^n}(1+i)^n\text{.}\)</span> Show that <span class="process-math">\((z_n)_{n=1}^{\infty}\)</span> converges and compute its limit.</div>
+<div class="solutions"><details id="eg_lim_seq-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_lim_seq-3-1">
+<div class="para">We have <span class="process-math">\(z_n=w^n\text{,}\)</span> where <span class="process-math">\(w=\frac{1}{2}(1+i)=\frac{\sqrt{2}}{2}(\cos(\pi/4)+i\sin(\pi/4))\text{.}\)</span> It follows from de Moivre’s formula that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html">
+\begin{equation*}
+z_n=w^n=(\sqrt{2}/2)^n(\cos(n\pi/4)+i\sin(n\pi/4))
+\end{equation*}
+</div>
+<div class="para">and hence that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html">
+\begin{equation*}
+\abs{z_n}=(\sqrt{2}/2)^n.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\((\sqrt{2}/2)&lt; 1\text{,}\)</span> we have <span class="process-math">\(\abs{z_n}\to 0\text{.}\)</span> It follows from <a href="s_sequences.html#th_lim" class="xref" data-knowl="./knowl/xref/th_lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.5: Limit properties">Theorem 1.5.5</a> that <span class="process-math">\(z_n\to 0\text{.}\)</span>
+</div>
+</div></div></details></div></article><article class="example example-like" id="eg_lim_seq_div"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Divergent sequence.</span>
 </h4>
 <div class="para" id="eg_lim_seq_div-2-1">Show that the sequence <span class="process-math">\((i^n)_{n=1}^{\infty}\)</span> diverges.</div>
-<div class="solutions"><details id="eg_lim_seq_div-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_lim_seq_div-3-1"></div></div></details></div></article><article class="example example-like" id="eg_lim_seq_inf"><h4 class="heading">
+<div class="solutions"><details id="eg_lim_seq_div-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_lim_seq_div-3-1">
+<div class="para">Observe first that the sequence is periodic of the form \[ i,-1,-i,1,i,-1,\dots \] Assume by contradiction that <span class="process-math">\(i^n\to w\)</span> for some complex number <span class="process-math">\(w\text{.}\)</span> Taking <span class="process-math">\(\epsilon =1\)</span> in the definition of sequence convergence, this would imply the existence of an <span class="process-math">\(N\)</span> such that <span class="process-math">\(\abs{i^n-w}&lt; 1\)</span> for all <span class="process-math">\(n\geq N\text{.}\)</span> In particular, we would have  <span class="process-math">\(\abs{1-w}&lt; 1\)</span> and <span class="process-math">\(\abs{-1-w}&lt; 1\text{.}\)</span> But this would imply that</div>
+<div class="displaymath process-math" id="eg_lim_seq_div-3-1-9">
+\begin{align*}
+2=\abs{1+1} \amp = \abs{1-w-(-1-w)} \\
+\amp\leq \abs{1-w}+\abs{-1-w} \\
+\amp &lt; 1+1=2\text{,}
+\end{align*}
+</div>
+<div class="para">a contradiction since then we’d have <span class="process-math">\(2&lt; 2\text{.}\)</span> We conclude that there is no limit to the sequence.</div>
+</div></div></details></div></article><article class="example example-like" id="eg_lim_seq_inf"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Sequence with infinite limit.</span>
 </h4>
 <div class="para" id="eg_lim_seq_inf-2-1">Show that <span class="process-math">\(\lim\limits_{n\to \infty}\frac{\sqrt{n}i+n^2}{5n+i}=\infty\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_lim_seq_inf-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_lim_seq_inf-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_series"><h3 class="heading hide-type">
+<div class="solutions"><details id="eg_lim_seq_inf-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_lim_seq_inf-3-1">
+<div class="para">Let <span class="process-math">\(z_n=\frac{\sqrt{n}i+n^2}{5n+i}\text{.}\)</span> We will show that <span class="process-math">\(\frac{1}{z_n}\to 0\text{,}\)</span> and thus <span class="process-math">\(z_n\to \infty\text{,}\)</span> by <a href="s_sequences.html#th_lim" class="xref" data-knowl="./knowl/xref/th_lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.5: Limit properties">Theorem 1.5.5</a>.  Looking at</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html">
+\begin{equation*}
+\frac{1}{z_n}=\frac{5n+i}{\sqrt{n}i+n^2}
+\end{equation*}
+</div>
+<div class="para">we see that the dominating term on top is the <span class="process-math">\(5n\)</span> and the dominating term on the bottom is <span class="process-math">\(n^2\text{.}\)</span> We will make this argument rigorous by factoring out these dominating terms from the top and bottom and computing the limit using a combination of algebra and limit rules.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html" id="eg_lim_seq_inf-3-1-8">
+\begin{align*}
+\lim\limits_{n\to \infty}\frac{1}{z_n}\amp= \lim\limits_{n\to \infty}\frac{5n+i}{\sqrt{n}i+n^2} \\
+\amp = \lim\limits_{n\to \infty}\frac{n\left(5+\frac{i}{n}\right)}{n^2\left(\frac{i}{n^{3/2}}+1\right)} \\
+\amp = \lim\limits_{n\to \infty}\frac{1}{n} \cdot \frac{5+\frac{i}{n}}{\frac{i}{n^{3/2}}+1}\\
+\amp = \lim\limits_{n\to \infty}\frac{1}{n} \cdot \lim\limits_{n\to \infty}\frac{5+\frac{i}{n}}{\frac{i}{n^{3/2}}+1} \amp (\text{prod. rule})\\
+\amp =\lim\limits_{n\to \infty}\frac{1}{n}\cdot  \frac{5+i\lim\limits_{n\to \infty}\frac{1}{n}}{i\lim\limits_{n\to \infty}\frac{1}{n^{3/2}}+1} \amp (\text{quot., sum, scal. rule})
+\amp (n\to 0) \\
+\amp =0\cdot \frac{5}{1}\\
+\amp =0 \text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(1/z_n\to 0\text{,}\)</span> we conclude that <span class="process-math">\(z_n\to \infty\text{.}\)</span>
+</div>
+</div></div></details></div></article></section><section class="subsection" id="ss_series"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Series</span>
 </h3>
 <div class="para" id="ss_series-2">As with the reals, from a theory of convergent <em class="emphasis">sequences</em> we easily derive a theory of convergent <em class="emphasis">series</em>. The definitions and results below are all straightforward generalizations of facts about series of real numbers.</div>
@@ -720,9 +774,29 @@ S_k=\sum_{n=1}^k z_k\text{.}
 </div></article><details id="th_series-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_series-3-1"></div></article></details><article class="example example-like" id="eg_geom_series"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Geometric series.</span>
 </h4>
-<div class="para" id="eg_geom_series-2-1">Let <span class="process-math">\(z\in \C\text{.}\)</span> Show that the <dfn class="terminology">geometric series</dfn> <span class="process-math">\(\sum_{n=0}^\infty z^n\)</span> converges if <span class="process-math">\(\abs{z}&lt; 1\)</span> and diverges for <span class="process-math">\(\abs{z}\geq 1\text{.}\)</span>
+<div class="para" id="eg_geom_series-2-1">Let <span class="process-math">\(z\in \C\text{.}\)</span> Show that the <dfn class="terminology">geometric series</dfn> <span class="process-math">\(\sum_{n=0}^\infty z^n\)</span> converges to <span class="process-math">\(\frac{1}{1-z}\)</span> if <span class="process-math">\(\abs{z}&lt; 1\text{,}\)</span> and diverges for <span class="process-math">\(\abs{z}\geq 1\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_geom_series-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_geom_series-3-1"></div></div></details></div></article></section></section></div>
+<div class="solutions"><details id="eg_geom_series-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="eg_geom_series-3-1">First observe that if <span class="process-math">\(\abs{z}\geq 1\text{,}\)</span> then the sequence <span class="process-math">\((\abs{z^n})\not\to 0\text{.}\)</span> It follows that <span class="process-math">\(z_n\not\to 0\)</span> and thus that the series diverges by the divergence test.</div>
+<div class="para logical" id="eg_geom_series-3-2">
+<div class="para">Now assume <span class="process-math">\(\abs{z}&lt; 1\text{.}\)</span> For all <span class="process-math">\(k\geq 1\)</span> the <span class="process-math">\(k\)</span>-th partia sum is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cyclo_factor.html">
+\begin{equation*}
+S_k=1+z+z^2+\cdots + z^k=\frac{z^{k+1}-1}{z-1},
+\end{equation*}
+</div>
+<div class="para">using the polynomial identity <a href="s_deMoivre.html#eq_cyclo_factor" class="xref" data-knowl="./knowl/xref/eq_cyclo_factor.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.18">(1.18)</a>. It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cyclo_factor.html" id="eg_geom_series-3-2-6">
+\begin{align*}
+\sum_{n=0}^\infty z^n \amp =\lim_{k\to\infty}S_k\\
+\amp =\lim_{k\to\infty}\frac{z^{k+1}-1}{z-1}\\
+\amp =\frac{\lim_{k\to\infty}z^{k+1}-1}{\lim_{k\to\infty}z-1}\\
+\amp =\frac{0-1}{z-1} \amp (\abs{z}&lt; 0\implies z^{k+1}\to 0)\\
+\amp =\frac{1}{1-z}\text{.}
+\end{align*}
+</div>
+</div>
+</div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_topo.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_complex_functions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

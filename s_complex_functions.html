@@ -187,6 +187,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_boundary-2-1-1 { counter-set: eg_boundary-2-1-1 0; }
 #eg_boundary-2-1-1 > li::marker { content: ""counter(eg_boundary-2-1-1,decimal)"."; }
 #eg_boundary-2-1-1 > li { counter-increment: eg_boundary-2-1-1; }
+#eg_boundary-3-1-1 { counter-set: eg_boundary-3-1-1 0; }
+#eg_boundary-3-1-1 > li::marker { content: ""counter(eg_boundary-3-1-1,decimal)"."; }
+#eg_boundary-3-1-1 > li { counter-increment: eg_boundary-3-1-1; }
 #th_boundary-2-1-3 { counter-set: th_boundary-2-1-3 0; }
 #th_boundary-2-1-3 > li::marker { content: ""counter(th_boundary-2-1-3,decimal)"."; }
 #th_boundary-2-1-3 > li { counter-increment: th_boundary-2-1-3; }
@@ -229,6 +232,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_powers-2-1-1 { counter-set: eg_powers-2-1-1 0; }
 #eg_powers-2-1-1 > li::marker { content: ""counter(eg_powers-2-1-1,decimal)"."; }
 #eg_powers-2-1-1 > li { counter-increment: eg_powers-2-1-1; }
+#eg_powers-3-1-1 { counter-set: eg_powers-3-1-1 0; }
+#eg_powers-3-1-1 > li::marker { content: ""counter(eg_powers-3-1-1,decimal)"."; }
+#eg_powers-3-1-1 > li { counter-increment: eg_powers-3-1-1; }
 #th_trig_props-2-1-2 { counter-set: th_trig_props-2-1-2 0; }
 #th_trig_props-2-1-2 > li::marker { content: ""counter(th_trig_props-2-1-2,decimal)"."; }
 #th_trig_props-2-1-2 > li { counter-increment: th_trig_props-2-1-2; }
@@ -575,7 +581,8 @@ u \amp =u(x+iy)=u(x,y) \amp v=v(x+iy)=v(x,y)
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_real_imag_parts-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_real_imag_parts-3-1"><ol class="decimal" id="eg_real_imag_parts-3-1-1"><li id="eg_real_imag_parts-3-1-1-1"><div class="para logical" id="eg_real_imag_parts-3-1-1-1-1">
+<div class="solutions"><details id="eg_real_imag_parts-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_real_imag_parts-3-1"><ol class="decimal" id="eg_real_imag_parts-3-1-1">
+<li id="eg_real_imag_parts-3-1-1-1"><div class="para logical" id="eg_real_imag_parts-3-1-1-1-1">
 <div class="para">Letting <span class="process-math">\(z=x+iy\text{,}\)</span> we have</div>
 <div class="displaymath process-math" id="eg_real_imag_parts-3-1-1-1-1-2">
 \begin{align*}
@@ -589,7 +596,11 @@ f(z) \amp =z^2\\
 u(x,y) \amp = x^2-y^2 \amp v(x,y)=2xy\text{.}
 \end{align*}
 </div>
-</div></li></ol></div></div></details></div></article><article class="definition definition-like" id="d_complex_exp"><h4 class="heading">
+</div></li>
+<li id="eg_real_imag_parts-3-1-1-2"><div class="para" id="eg_real_imag_parts-3-1-1-2-1">Since <span class="process-math">\(f(-z)=f(z)=z^2\)</span> for all <span class="process-math">\(z\text{,}\)</span> we see that <span class="process-math">\(f\)</span> is not injective: as a concrete counterexample, <span class="process-math">\(f(-1)=f(1)=1\text{.}\)</span>
+</div></li>
+<li id="eg_real_imag_parts-3-1-1-3"><div class="para" id="eg_real_imag_parts-3-1-1-3-1">According to <a href="s_deMoivre.html#th_nth_roots" class="xref" data-knowl="./knowl/xref/th_nth_roots.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.3.8: n-th roots">Theorem 1.3.8</a>, every complex number <span class="process-math">\(w\)</span> has a square-root. Thus for all <span class="process-math">\(w\in \C\)</span> there is a <span class="process-math">\(z\in \C\)</span> such that <span class="process-math">\(f(z)=w\text{.}\)</span> This proves <span class="process-math">\(f\)</span> is surjective.</div></li>
+</ol></div></div></details></div></article><article class="definition definition-like" id="d_complex_exp"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Complex exponential function.</span>
 </h4>
 <div class="para logical" id="d_complex_exp-2-1">
@@ -851,7 +862,21 @@ f(R)=\{z\in \C\colon e^p\leq \abs{z}\leq e^q, r\leq \Arg z+2\pi k\leq s \text{ f
 </div>
 <div class="para">See <a href="s_complex_functions.html#fig_exp_trans" class="xref" data-knowl="./knowl/xref/fig_exp_trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.6.14">Figure 1.6.14</a>.</div>
 </div>
-</div></details></div></article><div class="para" id="ss_functions_visual-10">Our analysis in <a href="s_complex_functions.html#eg_exp_transform" class="xref" data-knowl="./knowl/xref/eg_exp_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.13: Exponential transformation">Example 1.6.13</a> can be summarized as follows: the exponential function maps the vertical lines <span class="process-math">\(x=r\)</span> to the circles <span class="process-math">\(C_{e^r}\)</span> of radius <span class="process-math">\(r\)</span> centered at the origin; and it maps the horizontal lines <span class="process-math">\(y=s\)</span> to the rays <span class="process-math">\(\ell_s\)</span> starting at the origin that make an angle of <span class="process-math">\(s\)</span> radians with the positive <span class="process-math">\(x\)</span>-axis.</div>
+</div></details></div></article><div class="para logical" id="ss_functions_visual-10">
+<div class="para">Our analysis in <a href="s_complex_functions.html#eg_exp_transform" class="xref" data-knowl="./knowl/xref/eg_exp_transform.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.13: Exponential transformation">Example 1.6.13</a> can be summarized as follows: the exponential function maps the vertical lines <span class="process-math">\(x=r\)</span> to the circles <span class="process-math">\(C_{e^r}\)</span> of radius <span class="process-math">\(r\)</span> centered at the origin; and it maps the horizontal lines <span class="process-math">\(y=s\)</span> to the rays <span class="process-math">\(\ell_s\)</span> starting at the origin that make an angle of <span class="process-math">\(s\)</span> radians with the positive <span class="process-math">\(x\)</span>-axis. It follows that a rectangular region of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_exp_transform.html">
+\begin{equation*}
+R=\{z\in \C\colon a\leq \Re z\leq b, c\leq \Im z\leq d\}
+\end{equation*}
+</div>
+<div class="para">gets mapped to the <em class="emphasis">polar rectangular region</em>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_exp_transform.html">
+\begin{equation*}
+f(R)=\{z\in \C\colon e^{a}\leq \abs{z} \leq e^b, c\leq \Arg z+2\pi k\leq d \text{ for some } k\in \Z\}\text{.}
+\end{equation*}
+</div>
+</div>
 <figure class="figure figure-like" id="fig_exp_trans"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel bottom" style="width:55%;"><figure class="figure figure-like" id="fig_exp_grid"><img src="generated/sageplot/fig_exp_grid-2.svg" role="img" class="contained" alt="Standard grid of plane"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Standard grid</figcaption></figure></div>
 <div class="sbspanel bottom" style="width:45%;"><figure class="figure figure-like" id="fig_exp_image_grid"><img src="generated/sageplot/fig_exp_image_grid-2.svg" role="img" class="contained" alt="Image of standard grid under f"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Image of standard grid under <span class="process-math">\(f\)</span></figcaption></figure></div>

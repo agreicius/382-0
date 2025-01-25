@@ -187,6 +187,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_boundary-2-1-1 { counter-set: eg_boundary-2-1-1 0; }
 #eg_boundary-2-1-1 > li::marker { content: ""counter(eg_boundary-2-1-1,decimal)"."; }
 #eg_boundary-2-1-1 > li { counter-increment: eg_boundary-2-1-1; }
+#eg_boundary-3-1-1 { counter-set: eg_boundary-3-1-1 0; }
+#eg_boundary-3-1-1 > li::marker { content: ""counter(eg_boundary-3-1-1,decimal)"."; }
+#eg_boundary-3-1-1 > li { counter-increment: eg_boundary-3-1-1; }
 #th_boundary-2-1-3 { counter-set: th_boundary-2-1-3 0; }
 #th_boundary-2-1-3 > li::marker { content: ""counter(th_boundary-2-1-3,decimal)"."; }
 #th_boundary-2-1-3 > li { counter-increment: th_boundary-2-1-3; }
@@ -229,6 +232,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_powers-2-1-1 { counter-set: eg_powers-2-1-1 0; }
 #eg_powers-2-1-1 > li::marker { content: ""counter(eg_powers-2-1-1,decimal)"."; }
 #eg_powers-2-1-1 > li { counter-increment: eg_powers-2-1-1; }
+#eg_powers-3-1-1 { counter-set: eg_powers-3-1-1 0; }
+#eg_powers-3-1-1 > li::marker { content: ""counter(eg_powers-3-1-1,decimal)"."; }
+#eg_powers-3-1-1 > li { counter-increment: eg_powers-3-1-1; }
 #th_trig_props-2-1-2 { counter-set: th_trig_props-2-1-2 0; }
 #th_trig_props-2-1-2 > li::marker { content: ""counter(th_trig_props-2-1-2,decimal)"."; }
 #th_trig_props-2-1-2 > li { counter-increment: th_trig_props-2-1-2; }
@@ -698,7 +704,16 @@ U=\C-\overline{B}_r(z_0)=\{z\in \C\colon d(z,z_0)&gt; r_0\}\text{,}
 <li id="eg_boundary-2-1-1-5"><div class="para" id="eg_boundary-2-1-1-5-1"><span class="process-math">\(\displaystyle \HH=\{z\in \C\colon \Im z&gt; 0\}\)</span></div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_boundary-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_boundary-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_boundary"><h4 class="heading">
+<div class="solutions"><details id="eg_boundary-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_boundary-3-1"><ol class="decimal" id="eg_boundary-3-1-1">
+<li id="eg_boundary-3-1-1-1"><div class="para" id="eg_boundary-3-1-1-1-1">We have <span class="process-math">\(\partial \emptyset=\emptyset\)</span> since for all <span class="process-math">\(z_0\)</span> no open ball <span class="process-math">\(B_\epsilon(z_0)\)</span> can contain elements of <span class="process-math">\(\emptyset\text{.}\)</span> Indeed, <span class="process-math">\(\emptyset\)</span> contains no elements!</div></li>
+<li id="eg_boundary-3-1-1-2"><div class="para" id="eg_boundary-3-1-1-2-1">We have <span class="process-math">\(\partial \C=\emptyset\text{.}\)</span> Indeed, given any <span class="process-math">\(z_0\text{,}\)</span> we have <span class="process-math">\(B_r(z_0)\subseteq \C\)</span> for all <span class="process-math">\(r&gt; 0\text{,}\)</span> and hence this ball contains nothing but elements of <span class="process-math">\(\C\text{.}\)</span>
+</div></li>
+<li id="eg_boundary-3-1-1-3"><div class="para" id="eg_boundary-3-1-1-3-1">Let <span class="process-math">\(C_r(z_0)=\{z\in \C\colon \abs{z-z_0}\}\text{,}\)</span> the circle of radius <span class="process-math">\(r\)</span> centered at <span class="process-math">\(z_0\text{.}\)</span> We have <span class="process-math">\(\partial B_r(z_0)=C_r(z_0)\text{.}\)</span> It is clear that every point on <span class="process-math">\(C_r(z_0)\)</span> is a boundary point of <span class="process-math">\(B_r(z_0)\text{.}\)</span> It is also easy to see that any <span class="process-math">\(z\)</span> not lying on <span class="process-math">\(C_r(z_0)\)</span> is not a boundary point of <span class="process-math">\(B_r(z_0)\text{.}\)</span>
+</div></li>
+<li id="eg_boundary-3-1-1-4"><div class="para" id="eg_boundary-3-1-1-4-1">Similar reasoning as above shows that <span class="process-math">\(\partial\overline{B}_r(z_0)=C_r(z_0)\text{.}\)</span>
+</div></li>
+<li id="eg_boundary-3-1-1-5"><div class="para" id="eg_boundary-3-1-1-5-1">It is easy to see that <span class="process-math">\(\partial \HH=\{z\in \C\colon \Im z=0\}\text{,}\)</span> the <span class="process-math">\(x\)</span>-axis.</div></li>
+</ol></div></div></details></div></article><article class="theorem theorem-like" id="th_boundary"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Open and closed via boundaries.</span>
 </h4>
 <div class="para logical" id="th_boundary-2-1">

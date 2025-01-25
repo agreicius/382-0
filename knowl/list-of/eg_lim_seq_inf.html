@@ -16,6 +16,28 @@
 </h4>
 <div class="para">Show that <span class="process-math">\(\lim\limits_{n\to \infty}\frac{\sqrt{n}i+n^2}{5n+i}=\infty\text{.}\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_sequences.html#eg_lim_seq_inf">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(z_n=\frac{\sqrt{n}i+n^2}{5n+i}\text{.}\)</span> We will show that <span class="process-math">\(\frac{1}{z_n}\to 0\text{,}\)</span> and thus <span class="process-math">\(z_n\to \infty\text{,}\)</span> by <a href="s_sequences.html#th_lim" class="xref" data-knowl="./knowl/xref/th_lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.5: Limit properties">Theorem 1.5.5</a>.  Looking at</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html">
+\begin{equation*}
+\frac{1}{z_n}=\frac{5n+i}{\sqrt{n}i+n^2}
+\end{equation*}
+</div>
+<div class="para">we see that the dominating term on top is the <span class="process-math">\(5n\)</span> and the dominating term on the bottom is <span class="process-math">\(n^2\text{.}\)</span> We will make this argument rigorous by factoring out these dominating terms from the top and bottom and computing the limit using a combination of algebra and limit rules.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html">
+\begin{align*}
+\lim\limits_{n\to \infty}\frac{1}{z_n}\amp= \lim\limits_{n\to \infty}\frac{5n+i}{\sqrt{n}i+n^2} \\
+\amp = \lim\limits_{n\to \infty}\frac{n\left(5+\frac{i}{n}\right)}{n^2\left(\frac{i}{n^{3/2}}+1\right)} \\
+\amp = \lim\limits_{n\to \infty}\frac{1}{n} \cdot \frac{5+\frac{i}{n}}{\frac{i}{n^{3/2}}+1}\\
+\amp = \lim\limits_{n\to \infty}\frac{1}{n} \cdot \lim\limits_{n\to \infty}\frac{5+\frac{i}{n}}{\frac{i}{n^{3/2}}+1} \amp (\text{prod. rule})\\
+\amp =\lim\limits_{n\to \infty}\frac{1}{n}\cdot  \frac{5+i\lim\limits_{n\to \infty}\frac{1}{n}}{i\lim\limits_{n\to \infty}\frac{1}{n^{3/2}}+1} \amp (\text{quot., sum, scal. rule})
+\amp (n\to 0) \\
+\amp =0\cdot \frac{5}{1}\\
+\amp =0 \text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(1/z_n\to 0\text{,}\)</span> we conclude that <span class="process-math">\(z_n\to \infty\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_sequences.html#eg_lim_seq_inf">in-context</a></span>
 </body>
 </html>

@@ -14,7 +14,22 @@
 <article class="example example-like"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Limit of sequence.</span>
 </h4>
-<div class="para">Define <span class="process-math">\(z_n=\frac{1}{n}(1+i)^n\text{.}\)</span> Show that <span class="process-math">\((z_n)_{n=1}^{\infty}\)</span> converges and compute its limit.</div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_sequences.html#eg_lim_seq">in-context</a></span>
+<div class="para">Define <span class="process-math">\(z_n=\frac{1}{2^n}(1+i)^n\text{.}\)</span> Show that <span class="process-math">\((z_n)_{n=1}^{\infty}\)</span> converges and compute its limit.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">We have <span class="process-math">\(z_n=w^n\text{,}\)</span> where <span class="process-math">\(w=\frac{1}{2}(1+i)=\frac{\sqrt{2}}{2}(\cos(\pi/4)+i\sin(\pi/4))\text{.}\)</span> It follows from de Moivre’s formula that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html">
+\begin{equation*}
+z_n=w^n=(\sqrt{2}/2)^n(\cos(n\pi/4)+i\sin(n\pi/4))
+\end{equation*}
+</div>
+<div class="para">and hence that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_lim.html">
+\begin{equation*}
+\abs{z_n}=(\sqrt{2}/2)^n.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\((\sqrt{2}/2)&lt; 1\text{,}\)</span> we have <span class="process-math">\(\abs{z_n}\to 0\text{.}\)</span> It follows from <a href="s_sequences.html#th_lim" class="xref" data-knowl="./knowl/xref/th_lim.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.5.5: Limit properties">Theorem 1.5.5</a> that <span class="process-math">\(z_n\to 0\text{.}\)</span>
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_sequences.html#eg_lim_seq">in-context</a></span>
 </body>
 </html>

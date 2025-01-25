@@ -187,6 +187,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_boundary-2-1-1 { counter-set: eg_boundary-2-1-1 0; }
 #eg_boundary-2-1-1 > li::marker { content: ""counter(eg_boundary-2-1-1,decimal)"."; }
 #eg_boundary-2-1-1 > li { counter-increment: eg_boundary-2-1-1; }
+#eg_boundary-3-1-1 { counter-set: eg_boundary-3-1-1 0; }
+#eg_boundary-3-1-1 > li::marker { content: ""counter(eg_boundary-3-1-1,decimal)"."; }
+#eg_boundary-3-1-1 > li { counter-increment: eg_boundary-3-1-1; }
 #th_boundary-2-1-3 { counter-set: th_boundary-2-1-3 0; }
 #th_boundary-2-1-3 > li::marker { content: ""counter(th_boundary-2-1-3,decimal)"."; }
 #th_boundary-2-1-3 > li { counter-increment: th_boundary-2-1-3; }
@@ -229,6 +232,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_powers-2-1-1 { counter-set: eg_powers-2-1-1 0; }
 #eg_powers-2-1-1 > li::marker { content: ""counter(eg_powers-2-1-1,decimal)"."; }
 #eg_powers-2-1-1 > li { counter-increment: eg_powers-2-1-1; }
+#eg_powers-3-1-1 { counter-set: eg_powers-3-1-1 0; }
+#eg_powers-3-1-1 > li::marker { content: ""counter(eg_powers-3-1-1,decimal)"."; }
+#eg_powers-3-1-1 > li { counter-increment: eg_powers-3-1-1; }
 #th_trig_props-2-1-2 { counter-set: th_trig_props-2-1-2 0; }
 #th_trig_props-2-1-2 > li::marker { content: ""counter(th_trig_props-2-1-2,decimal)"."; }
 #th_trig_props-2-1-2 > li { counter-increment: th_trig_props-2-1-2; }
@@ -694,12 +700,76 @@ z^w=e^{w\log z}\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_powers-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_powers-3-1"></div></div></details></div></article><article class="example example-like" id="eg_nth_roots"><h4 class="heading">
+<div class="solutions"><details id="eg_powers-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_powers-3-1"><ol class="decimal" id="eg_powers-3-1-1">
+<li id="eg_powers-3-1-1-1"><div class="para logical" id="eg_powers-3-1-1-1-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="eg_powers-3-1-1-1-1-1">
+\begin{align*}
+i^i \amp = e^{i\log(i)}\\
+\amp = e^{i(\ln\abs{i}+i\arg(i))}\\
+\amp = e^{i(\ln 1+i\arg(i))}\\
+\amp = e^{i(0+i\arg(z))}\\
+\amp = e^{-\arg(i)}\\
+\amp =\{e^{-\pi/2+2\pi k}\colon k\in \Z\}\\
+\amp = \{e^{-\pi/2}e^{2\pi k}\colon k\in \Z\}\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="eg_powers-3-1-1-2"><div class="para logical" id="eg_powers-3-1-1-2-1">
+<div class="para">For <span class="process-math">\(z\ne 0\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_powers-3-1-1-2-1-2">
+\begin{align*}
+z^i \amp = e^{i\log(z)}\\
+\amp = e^{i(\ln\abs{z}+i\arg(z))}\\
+\amp = e^{-\arg(z)+i\ln\abs{z}}\\
+\amp =\{e^{(-\Arg z+2\pi k)+i\ln\abs{z}}\colon k\in \Z\}\\
+\amp = \{e^{-\Arg z+2\pi k}e^{i\ln\abs{z}}\colon k \in \Z\}\\
+\amp = \{e^{-\Arg z}e^{2\pi k}e^{i\ln\abs{z}}e^{2\pi k}\colon k \in \Z\}\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="example example-like" id="eg_nth_roots"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(n\)</span>-th roots.</span>
 </h4>
 <div class="para" id="eg_nth_roots-2-1">Let <span class="process-math">\(z\ne 0\text{.}\)</span> Show that the set <span class="process-math">\(z^{1/n}\)</span> is precisely the set of <span class="process-math">\(n\)</span> distinct <span class="process-math">\(n\)</span>-th roots of <span class="process-math">\(z\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_nth_roots-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_nth_roots-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_trig"><h3 class="heading hide-type">
+<div class="solutions"><details id="eg_nth_roots-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="eg_nth_roots-3-1">
+<div class="para">By definition we have</div>
+<div class="displaymath process-math" id="eg_nth_roots-3-1-1">
+\begin{align*}
+z^{1/n} \amp =e^{\frac{1}{n}\log z}\\
+\amp = e^{\frac{1}{n}(\ln\abs{z}+i\arg(z))}\\
+\amp = \{e^{\frac{1}{n}\ln\abs{z}}e^{i(\Arg(z)/n +2\pi k/n)}\colon k\in \Z\}\\
+\amp = \{e^{\ln \abs{z}^{1/n}}e^{i(\Arg(z)/n+2\pi k/n)}\colon k\in \Z\} \\
+\amp = \{\abs{z}^{1/n}e^{i(\Arg(z)/n+2\pi k/n)}\colon k\in \Z\}\amp (e^{\ln c}=c)\\
+\amp = \{\abs{z}^{1/n}e^{i(\Arg(z)/n+2\pi k/n)}\colon 0\leq k\leq n-1\}\text{,}
+\end{align*}
+</div>
+<div class="para">which we recognize as the set of all <span class="process-math">\(n\)</span>-th roots of <span class="process-math">\(z\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="eg_nth_roots-3-2">
+<div class="para">Note that the last equality above follows from the fact that for any <span class="process-math">\(k'\in \Z\text{,}\)</span> performing division with remainder by <span class="process-math">\(n\)</span> we can write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+k'=nq+k 
+\end{equation*}
+</div>
+<div class="para">for some integer <span class="process-math">\(q\)</span> and remainder <span class="process-math">\(k\)</span> satisfying <span class="process-math">\(0\leq k\leq n-1\text{,}\)</span> whence we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\pi k'/n=2\pi(k+qn)/n=2\pi k+2\pi q\text{,}
+\end{equation*}
+</div>
+<div class="para">and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e^{2\pi i k'/n}=e^{2\pi i k/n}\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article></section><section class="subsection" id="ss_trig"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Trigonometric functions</span>
 </h3>
 <div class="para logical" id="ss_trig-2">
