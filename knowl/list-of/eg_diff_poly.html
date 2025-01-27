@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.9</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomials.</span>
+</h3>
+<div class="para">Let <span class="process-math">\(f(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots a_1z+a_0\text{.}\)</span> Show that <span class="process-math">\(f\)</span> is differentiable on <span class="process-math">\(\C\)</span> and compute a formula for <span class="process-math">\(f'\text{.}\)</span>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">First observe that for all nonnegative integers <span class="process-math">\(n\)</span> the function <span class="process-math">\(g(z)=z^n\)</span> is differentiable and satisfies <span class="process-math">\(g'(z)=nz^{n-1}\text{.}\)</span> This is shown easily by induction: the base case <span class="process-math">\(n=0\)</span> is just the constant function <span class="process-math">\(g(z)=1\text{,}\)</span> and for the induction step, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{d}{dz}(z^n)\amp = \frac{d}{dz}(z^{n-1}z) \\
+\amp =\frac{d}{dz}(z^{n-1})z+z^{n-1}\frac{d}{dz}z\\
+\amp = (n-1)z^{n-2}\, z+z^{n-1}\cdot 1\\
+\amp = nz^{n-1}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_derivative.html#eg_diff_poly">in-context</a></span>
+</body>
+</html>

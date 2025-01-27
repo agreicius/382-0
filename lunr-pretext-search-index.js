@@ -1657,6 +1657,105 @@ var ptx_lunr_docs = [
   "body": " Continuous zoo   Every complex function we have defined thus far is continuous on its domain.    We content ourselves to prove this statement for a few examples.  Consider . For we have , where . Using continuity properties of real-valued functions of two variables, we see easily that and are both continuous everywhere. Thus is continuous. (It then follows easily that all of the trigonometric and hyperbolic functions are continuous, since they are defined in terms of using elementary operations.)  Consider , where and for all . Since the identity function is obviously continuous, so is . Since is continuous, so is the composition . Lastly, you showed in your homework that is continuous. Since the real and imaginary parts of are continuous, we conclude that is continuous.  Fix a complex number . Having established that is continuous on it follows that the principal branch of defined as is continuous on its domain .   "
 },
 {
+  "id": "s_derivative",
+  "level": "1",
+  "url": "s_derivative.html",
+  "type": "Section",
+  "number": "1.9",
+  "title": "Complex differentiation",
+  "body": " Complex differentiation   Interior point   Given a subset , an element is an interior point of if there is an such that . The interior of , denoted is defined as the set of all interior points of .     Interior points  The following observations follows easily from the relevant definitions.   If is an interior point of , then is a limit point of ,    If is an open subset of , then all points of are interior points: , .       Complex differentiation   Given a complex function and an interior point of the domain of , we say is differentiable at if the limit exists. When this is the case we call the value of this limit the derivative of at , denoted .  The function is holomorphic (or analytic ) on an open set if it is differentiable at all points in . When is holomorphic on , the function is called the derivative of . We will also denote as , and will write to denote the derivative operation.     Holomorphic versus analytic  Technically speaking, a function analytic on an open set if for all we can represent as a convergent power series of all in an open ball around . One of the headline theorems of this class is that is differentiable on if and only if it is analytic (in the sense just described). Consequently, in the literature the terms differentiable , holomorphic , and analytic are used pretty much interchangeably. However, we will refrain from using analytic until the theorem in question is proved.    Differentiable at a limit point  In light of the limit definition of differentiability, it is of course possible to define this notion at any limit point of the domain of a function. As it turns out, however, an openness condition like the one we adopt is the more natural setting in terms of further important theorems ( , ).    Elementary examples   Prove that the given is differentiable on the given open set and provide a formula for .   Constant function   , , .    Identity function   , .    Squaring function   , .    Reciprocal function   , .            Differentiable implies continuous   If is differentiable at , then is continuous at .    Note that by definition, is assumed to be an interior point of the domain of , which implies that is a limit point of the domain. We are thus justified in using the limit definition of continuity. We have . Thus is continuous at .     Derivative properties   Assume and are differentiable at    Linear combination  For all , is differentiable at and .    Product   is differentiable at and     Quotient rule  Provided , is differentiable at and .            Polynomials   Let . Show that is differentiable on and compute a formula for .    First observe that for all nonnegative integers the function is differentiable and satisfies . This is shown easily by induction: the base case is just the constant function , and for the induction step, we have .     Chain rule   Assume is differentiable at and is differentiable at . The composition is differentiable at and .        "
+},
+{
+  "id": "d_interior_pt",
+  "level": "2",
+  "url": "s_derivative.html#d_interior_pt",
+  "type": "Definition",
+  "number": "1.9.1",
+  "title": "Interior point.",
+  "body": " Interior point   Given a subset , an element is an interior point of if there is an such that . The interior of , denoted is defined as the set of all interior points of .   "
+},
+{
+  "id": "s_derivative-3",
+  "level": "2",
+  "url": "s_derivative.html#s_derivative-3",
+  "type": "Remark",
+  "number": "1.9.2",
+  "title": "Interior points.",
+  "body": " Interior points  The following observations follows easily from the relevant definitions.   If is an interior point of , then is a limit point of ,    If is an open subset of , then all points of are interior points: , .     "
+},
+{
+  "id": "d_derivative",
+  "level": "2",
+  "url": "s_derivative.html#d_derivative",
+  "type": "Definition",
+  "number": "1.9.3",
+  "title": "Complex differentiation.",
+  "body": " Complex differentiation   Given a complex function and an interior point of the domain of , we say is differentiable at if the limit exists. When this is the case we call the value of this limit the derivative of at , denoted .  The function is holomorphic (or analytic ) on an open set if it is differentiable at all points in . When is holomorphic on , the function is called the derivative of . We will also denote as , and will write to denote the derivative operation.   "
+},
+{
+  "id": "s_derivative-5",
+  "level": "2",
+  "url": "s_derivative.html#s_derivative-5",
+  "type": "Remark",
+  "number": "1.9.4",
+  "title": "Holomorphic versus analytic.",
+  "body": " Holomorphic versus analytic  Technically speaking, a function analytic on an open set if for all we can represent as a convergent power series of all in an open ball around . One of the headline theorems of this class is that is differentiable on if and only if it is analytic (in the sense just described). Consequently, in the literature the terms differentiable , holomorphic , and analytic are used pretty much interchangeably. However, we will refrain from using analytic until the theorem in question is proved.  "
+},
+{
+  "id": "s_derivative-6",
+  "level": "2",
+  "url": "s_derivative.html#s_derivative-6",
+  "type": "Remark",
+  "number": "1.9.5",
+  "title": "Differentiable at a limit point.",
+  "body": " Differentiable at a limit point  In light of the limit definition of differentiability, it is of course possible to define this notion at any limit point of the domain of a function. As it turns out, however, an openness condition like the one we adopt is the more natural setting in terms of further important theorems ( , ).  "
+},
+{
+  "id": "eg_elem_derivs",
+  "level": "2",
+  "url": "s_derivative.html#eg_elem_derivs",
+  "type": "Example",
+  "number": "1.9.6",
+  "title": "Elementary examples.",
+  "body": " Elementary examples   Prove that the given is differentiable on the given open set and provide a formula for .   Constant function   , , .    Identity function   , .    Squaring function   , .    Reciprocal function   , .          "
+},
+{
+  "id": "th_diff_cont",
+  "level": "2",
+  "url": "s_derivative.html#th_diff_cont",
+  "type": "Theorem",
+  "number": "1.9.7",
+  "title": "Differentiable implies continuous.",
+  "body": " Differentiable implies continuous   If is differentiable at , then is continuous at .    Note that by definition, is assumed to be an interior point of the domain of , which implies that is a limit point of the domain. We are thus justified in using the limit definition of continuity. We have . Thus is continuous at .   "
+},
+{
+  "id": "th_diff_props",
+  "level": "2",
+  "url": "s_derivative.html#th_diff_props",
+  "type": "Theorem",
+  "number": "1.9.8",
+  "title": "Derivative properties.",
+  "body": " Derivative properties   Assume and are differentiable at    Linear combination  For all , is differentiable at and .    Product   is differentiable at and     Quotient rule  Provided , is differentiable at and .          "
+},
+{
+  "id": "eg_diff_poly",
+  "level": "2",
+  "url": "s_derivative.html#eg_diff_poly",
+  "type": "Example",
+  "number": "1.9.9",
+  "title": "Polynomials.",
+  "body": " Polynomials   Let . Show that is differentiable on and compute a formula for .    First observe that for all nonnegative integers the function is differentiable and satisfies . This is shown easily by induction: the base case is just the constant function , and for the induction step, we have .   "
+},
+{
+  "id": "th_chain",
+  "level": "2",
+  "url": "s_derivative.html#th_chain",
+  "type": "Theorem",
+  "number": "1.9.10",
+  "title": "Chain rule.",
+  "body": " Chain rule   Assume is differentiable at and is differentiable at . The composition is differentiable at and .       "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
