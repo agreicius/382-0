@@ -8,4 +8,5 @@
     <xi:include href="s_complex_functions.ptx" />
     <xi:include href="s_log_trig.ptx" />
     <xi:include href="s_lim_cont.ptx" />
+    <xi:include href="s_derivative.ptx" />
 </chapter>

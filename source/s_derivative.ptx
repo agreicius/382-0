@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_derivative" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Complex differentiation</title>
+
+    <definition xml:id="d_interior_pt">
+    <title>Interior point</title>
+    <statement>
+    <p>
+    Given a subset <m>D\subseteq \C</m>, an element <m>z_0\in D</m> is an <term>interior point</term> of <m>D</m> if there is an <m>r&gt; 0</m> such that <m>B_r(z_0)\subseteq D</m>. The <term>interior</term> of <m>D</m>, denoted <m>D^\circ</m> is defined as the set of all interior points of <m>D</m>. 
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title>Interior points</title>
+        <p>
+            The following observations follows easily from the relevant definitions. 
+            <ol>
+                <li>
+                    <p>
+                        If <m>z_0</m> is an interior point of <m>D</m>, then <m>z_0</m> is a limit point of <m>D</m>, 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>U</m> is an open subset of <m>\C</m>, then all points of <m>U</m> are interior points: <ie/>, <m>U^\circ=U</m>. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </remark>
+    <definition xml:id="d_derivative">
+    <title>Complex differentiation</title>
+    <statement>
+    <p>
+    Given a complex function <m>f</m> and an interior point <m>z_0</m> of the domain of <m>f</m>, we say <m>f</m> is <term>differentiable</term> at <m>z_0</m> if the limit 
+<me>
+    \lim_{z\rightarrow z_0}\frac{f(z)-f(z_{0})}{z-z_{0}}, \text{ equivalently }\lim_{h\rightarrow 0}\frac{f(z_{0}+h)-f(z_{0})}{h},
+</me>
+exists. When this is the case we call the value of this limit the <term>derivative</term> of <m>f</m> at <m>z_{0}</m>, denoted <m>f'(z_{0})</m>.
+</p>
+<p>
+The function <m>f</m> is <term>holomorphic</term> (or <term>analytic</term>) on an open set <m>U</m> if it is differentiable at all points in <m>U</m>. When <m>f</m> is holomorphic on <m>U</m>, the function 
+<md>
+    <mrow>f'\colon U \amp \rightarrow \C</mrow>
+    <mrow>z \amp \mapsto f'(z)</mrow>
+</md>
+is called the <term>derivative</term> of <m>f</m>. We will also denote <m>f'</m> as <m>\frac{df}{dz}</m>, and will write <m>\frac{d}{dz}</m> to denote the derivative operation. 
+    </p>
+    </statement>
+    </definition>
+<remark>
+    <title>Holomorphic versus analytic</title>
+    <p>
+        Technically speaking, a function <em>analytic</em> on an open set <m>U</m> if for all <m>z_0\in U</m> we can represent <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m> as a convergent power series of all <m>z</m> in an open ball around <m>z_0</m>. One of the headline theorems of this class is that <m>f</m> is differentiable on <m>U</m> if and only if it is analytic (in the sense just described). Consequently, in the literature the terms <sq>differentiable</sq>, <sq>holomorphic</sq>, and <sq>analytic</sq> are used pretty much interchangeably. However, we will refrain from using <sq>analytic</sq> until the theorem in question is proved.
+    </p>
+</remark>
+<remark>
+    <title>Differentiable at a limit point</title>
+    <p>
+        In light of the limit definition of differentiability, it is of course possible to define this notion at any limit point of the domain of a function. As it turns out, however, an openness condition like the one we adopt is the more natural setting in terms of further important theorems (<eg/>, <xref ref="th_C-R"/>).
+    </p>
+</remark>
+<example xml:id="eg_elem_derivs">
+<title>Elementary examples</title>
+<statement>
+<p>
+Prove that the given <m>f</m> is differentiable on the given open set <m>U</m> and provide a formula for <m>f'</m>. 
+<ol cols="2">
+    <li>
+        <title>Constant function</title>
+        
+        
+        <p>
+            <m>f(z)=w_0</m>, <m>w_0\in \C</m>, <m>U=\C</m>. 
+        </p>
+    </li>
+    <li>
+        <title>Identity function</title>
+        
+        
+        <p>
+            <m>f(z)=z</m>, <m>U=\C</m>. 
+        </p>
+    </li>
+     <li>
+        <title>Squaring function</title>
+        
+        
+        <p>
+            <m>f(z)=z^2</m>, <m>U=\C</m>. 
+        </p>
+    </li>
+     <li>
+        <title>Reciprocal function</title>
+        
+        
+        <p>
+            <m>f(z)=1/z</m>, <m>U=\C-\{0\}</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<theorem xml:id="th_diff_cont">
+<title>Differentiable implies continuous</title>
+<statement>
+<p>
+If <m>f</m> is differentiable at <m>z_0</m>, then <m>f</m> is continuous at <m>z_0</m>. 
+</p>
+</statement>
+<proof>
+<p>
+    Note that by definition, <m>z_0</m> is assumed to be an interior point of the domain of <m>f</m>, which implies that <m>z_0</m> is a limit point of the domain. We are thus justified in using the limit definition of continuity. We have 
+    <md>
+        <mrow>\lim\limits_{z\to z_0}f(z) \amp = \lim\limits_{z\to z_0}\left(\frac{f(z)-f(z_0)}{z-z_0}\cdot (z-z_0)+f(z_0)) </mrow>
+        <mrow> \amp = f'(z_0)(0)+f(z_0)=f(z_0)</mrow>
+    </md>.
+    Thus <m>f</m> is continuous at <m>z_0</m>. 
+</p>
+
+</proof>
+</theorem>
+<theorem xml:id="th_diff_props">
+<title>Derivative properties</title>
+<statement>
+<p>
+Assume <m>f</m> and <m>g</m> are differentiable at <m>z_0</m>
+<ol>
+    <li>
+        <title>Linear combination</title>
+        <p>
+            For all <m>c,d\in \C</m>, <m>cf+dg</m> is differentiable at <m>z_0</m> and 
+            <men xml:id="eq_diff_lin_comb">(cf+dg)'(z_0)=cf'(z_0)+dg(z_0)
+            </men>. 
+        </p>
+    </li>
+    <li>
+        <title>Product</title>
+        <p>
+        <m>fg</m> is differentiable at <m>z_0</m> and 
+        <men xml:id="eq_diff_prod">
+            (fg)'(z_0)=f'(z_0)g(z_0)+f(z_0)g'(z_0)
+        </men>
+        </p>
+    </li>
+    <li>
+        <title>Quotient rule</title>
+        <p>
+            Provided <m>g(z_0)\ne 0</m>, <m>f/g</m> is differentiable at <m>z_0</m> and 
+            <men xml:id="eq_diff_quot">
+                \left(\frac{f}{g}\right)'=\frac{f'(z_0)g(z_0)-f(z_0)g'(z_0)}{g(z_0)^2}
+            </men>.
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<example xml:id="eg_diff_poly">
+<title>Polynomials</title>
+<statement>
+<p>
+Let <m>f(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots a_1z+a_0</m>. Show that <m>f</m> is differentiable on <m>\C</m> and compute a formula for <m>f'</m>. 
+</p>
+</statement>
+<solution>
+<p>
+First observe that for all nonnegative integers <m>n</m> the function <m>g(z)=z^n</m> is differentiable and satisfies <m>g'(z)=nz^{n-1}</m>. This is shown easily by induction: the base case <m>n=0</m> is just the constant function <m>g(z)=1</m>, and for the induction step, we have 
+<md>
+    <mrow>\frac{d}{dz}(z^n)\amp = \frac{d}{dz}(z^{n-1}z) </mrow>
+    <mrow> \amp =\frac{d}{dz}(z^{n-1})z+z^{n-1}\frac{d}{dz}z</mrow>
+    <mrow> \amp = (n-1)z^{n-2}\, z+z^{n-1}\cdot 1</mrow>
+    <mrow> \amp = nz^{n-1}</mrow>
+</md>.
+</p>
+</solution>
+</example>
+
+<theorem xml:id="th_chain">
+<title>Chain rule</title>
+<statement>
+<p>
+Assume <m>g</m> is differentiable at <m>z_0</m> and <m>f</m> is differentiable at <m>w_0=f(z_0)</m>. The composition <m>f\circ g</m> is differentiable at <m>z_0</m> and 
+<men xml:id="eq_diff_chain">
+    (f\circ g)'(z_0)=f'(g(z_0))g'(z_0)
+</men>.
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+</section>

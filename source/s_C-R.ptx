@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_C-R" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Cauchy-Riemann equations</title>
+    <introduction>
+        <p>
+            We come at last to our first important result, the <em>Cauchy-Riemann equations</em>, which expressed the differentiability of a complex function <m>f</m> in terms of its real and imaginary parts. 
+        </p>
+    </introduction>
+    <subsection xml:id="">
+    <title>Cauchy-Riemann equations</title>
+    <theorem xml:id="th_C-R">
+    <title>Cauchy-Riemann equations</title>
+    <statement>
+    <p>
+    Assume <m>f</m> is 
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    
+    </subsection>
+
+    <convention>
+    <title>Constant functions</title>
+    <p>
+        Given a function <m>f</m> defined on a set <m>D</m>, we say that <m>f</m> is on constant on <m>D</m> if there is a complex number <m>w_0\in \C</m> such that <m>f(z)=w_0</m> for all <m>z\in D</m>. We will write <m>f\vert_D=w_0</m> in this case. 
+    </p>
+</convention>
+<definition xml:id="d_locally_constant">
+<title>Locally constant</title>
+<statement>
+<p>
+A function <m>f</m> is locally constant on a set <m>D</m> if for all <m>z_0\in U</m> there is an open ball <m>B_r(z_0)\subseteq U</m> such that <m>f</m> is constant on <m>B_r(z_0)\cap D</m>. 
+</p>
+</statement>
+</definition>
+
+
+<theorem xml:id="th_zero_deriv">
+<title>Functions of derivative zero</title>
+<statement>
+<p>
+Let <m>f</m> be defined on the open set <m>U</m>. The following statements are equivalent. 
+<ol>
+    <li>
+        <p>
+            <m>f</m> is locally constant on <m>U</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>f'(z)=0</m> for all <m>z\in U</m>. 
+        </p>
+    </li>
+</ol>
+As a consequence, if we assume further that <m>U</m> is connected, then <m>f'\vert_U=0</m> if and only if <m>f</m> is a constant function. 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<definition xml:id="d_discrete">
+<title>Discrete subset</title>
+<statement>
+<p>
+A set <m>D\subseteq \C</m> is <term>discrete</term> if for all <m>z_0\in D</m> there is an open ball <m>B_r(z_0)</m> such that <m>B_r(z_0)\cap D=\{z_0\}</m>. 
+</p>
+</statement>
+</definition>
+
+<theorem xml:id="th_locally_constant_connected">
+<title>Locally constant on connected sets</title>
+<statement>
+<p>
+Assume <m>f</m> is continuous on the connected set <m>D</m>. The following statements are equivalent. 
+<ol>
+    <li>
+        <p>
+            <m>f</m> is constant
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>f</m> is locally constant. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>f(D)</m> is a discrete subset of <m>\C</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+    This is left as a homework exercise. 
+</p>
+</proof>
+</theorem>
+
+</section>
