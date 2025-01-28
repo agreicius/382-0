@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.7</span><span class="period">.</span><span class="space"> </span><span class="title">Exponential and trigonometric functions.</span>
+</h4>
+<div class="para">Show that <span class="process-math">\(\exp\text{,}\)</span> <span class="process-math">\(\cos\text{,}\)</span> and <span class="process-math">\(\sin\)</span> are holomorphic functions on <span class="process-math">\(\C\)</span> and compute formulas for their derivatives.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">We have <span class="process-math">\(e^z=u+iv\text{,}\)</span> where <span class="process-math">\(u(x,y)=e^x\cos y\)</span> and <span class="process-math">\(v(x,y)=e^x\sin y\text{.}\)</span> We then have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_C-R_form.html ./knowl/xref/th_diff_props.html">
+\begin{align*}
+u_x \amp= e^x\cos y \amp u_y\amp =-e^x\sin y \\
+v_x \amp=e^x\sin y \amp e^x\cos y \text{,}
+\end{align*}
+</div>
+<div class="para">whence we see that (a) these partials exist and are continuous, and (b) satisfy the Cauchy-Riemann equations <a href="s_C-R.html#cor_C-R_open-2-1-6-2-1-3" class="xref" data-knowl="./knowl/xref/eq_C-R_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.41">(1.41)</a> for all <span class="process-math">\(z=x+iy\text{.}\)</span> We conclude that <span class="process-math">\(f(z)=e^z\)</span> is differentiable everywhere and satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_C-R_form.html ./knowl/xref/th_diff_props.html">
+\begin{equation*}
+\frac{d}{dz}(e^z)=u_x+i v_x=e^x\cos y+e^x\sin y i=e^z\text{.}
+\end{equation*}
+</div>
+<div class="para">That</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_C-R_form.html ./knowl/xref/th_diff_props.html">
+\begin{align*}
+\cos z \amp = \frac{e^{iz}+e^{-iz}}{2} \amp \sin(z)\amp =\frac{e^{iz}-e^{-iz}}{2i}
+\end{align*}
+</div>
+<div class="para">are differentiable everywhere now follows from the fact that the polynomial functions <span class="process-math">\(g(z)=iz\)</span> and <span class="process-math">\(h(z)=-iz\)</span> are differentiable, from which it follows by the chain rule that <span class="process-math">\(e^{iz}\)</span> and <span class="process-math">\(e^{-iz}\)</span> are differentiable, and then from the linear combination rule of <a href="s_derivative.html#th_diff_props" class="xref" data-knowl="./knowl/xref/th_diff_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.9.8: Derivative properties">Theorem 1.9.8</a> that <span class="process-math">\(\cos z\)</span> and <span class="process-math">\(\sin z\)</span> are differentiable everywhere. Furthermore we can compute the derivatives of <span class="process-math">\(\cos\)</span> and <span class="process-math">\(\sin\)</span> using these same rules and our formula for <span class="process-math">\(e^z\)</span> to conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_C-R_form.html ./knowl/xref/th_diff_props.html">
+\begin{align*}
+\frac{d}{dz}(\cos z) \amp =-\sin z\\
+\frac{d}{dz}(\sin z) \amp = \cos z\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_C-R.html#eg_exp_diff">in-context</a></span>
+</body>
+</html>
