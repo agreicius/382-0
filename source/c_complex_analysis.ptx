@@ -9,4 +9,5 @@
     <xi:include href="s_log_trig.ptx" />
     <xi:include href="s_lim_cont.ptx" />
     <xi:include href="s_derivative.ptx" />
+    <xi:include href="s_C-R.ptx" />
 </chapter>

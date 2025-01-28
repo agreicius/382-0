@@ -4,16 +4,105 @@
     <title>Cauchy-Riemann equations</title>
     <introduction>
         <p>
-            We come at last to our first important result, the <em>Cauchy-Riemann equations</em>, which expressed the differentiability of a complex function <m>f</m> in terms of its real and imaginary parts. 
+            We come at last to our first important result, the <em>Cauchy-Riemann equations</em>, which express the differentiability of a complex function <m>f</m> in terms of its real and imaginary parts. 
         </p>
     </introduction>
-    <subsection xml:id="">
+    
+    <subsection xml:id="ss_C-r">
     <title>Cauchy-Riemann equations</title>
+    <p>
+        The Cauchy-Riemann equations involve the partial derivatives of the real and imaginary parts of a complex function. We give a brief reminder of the definitions and notation around this concept. 
+    </p>
+    <convention>
+        <title>Partial derivatives</title>
+        <p>
+            Given a real-valued function <m>u(x,y)</m> of two real variables and an interior point <m>(x_0,y_0)</m> of its domain, the partial derivatives of <m>u</m> at <m>(x_0,y_0)</m> with respect to <m>x</m> and <m>y</m> are defined as 
+        <md>
+            <mrow>u_x(x_0,y_0) \amp = \lim_{h\to 0}\frac{u(x_0+h,y_0)-u(x_0,y_0)}{h}
+            \amp 
+            </mrow>
+            <mrow>u_y(x_0,y_0) \amp = \lim_{h\to 0}\frac{u(x_0,y_0+h)-u(x_0,y_0)}{h} \amp </mrow>
+        </md>,
+        provided of course these limits exist. We denote the resulting partial derivative functions as <m>u_x</m> and <m>u_y</m>, or alternatively as <m>\frac{\partial u}{\partial x}</m> and <m>\frac{\partial u}{\partial y}</m>. 
+        </p>
+    </convention>
     <theorem xml:id="th_C-R">
     <title>Cauchy-Riemann equations</title>
     <statement>
     <p>
-    Assume <m>f</m> is 
+    If <m>f=u+iv</m> is differentiable at <m>z_0=x_0+iy_0</m>, then the first-order partial derivatives of <m>u(x,y)</m> and <m>v(x,y)</m> exist at <m>(x_0,y_0)</m> and satisfy the <term>Cauchy-Riemann equations</term>:
+    <mdn>
+        <mrow xml:id="eq_C-R">u_x(x_0,y_0) \amp = v_y(x_0,y_0) \amp u_y(x_0,y_0)\amp =-v_x(x_0,y_0) </mrow>
+    </mdn>.
+    Furthermore, we have 
+    <men xml:id="eq_der_u_v">
+        f'(z_0)=u_x(x_0,y_0)+iv_x(x_0,y_0)
+    </men>.
+    
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <example xml:id="eg_CR_verify">
+    <title>Cauchy-Riemann verification</title>
+    <statement>
+    <p>
+    Verify that the real and imaginary parts of the holomorphic function <m>f(z)=z^2</m> satisfy the Cauchy-Riemann equations for all <m>z\in \C</m>, and that <m>f'(z)</m> satisfies <xref ref="eq_der_u_v"/>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    We have <m>f=u+iv</m>, where <m>u(x,y)=x^2-y^2</m>, <m>v(x,y)=2xy</m>, and thus 
+    <md>
+        <mrow>u_x \amp = 2x  \amp u_y\amp = -2y</mrow>
+        <mrow>v_x \amp= 2y \amp v_y\amp = 2x </mrow>
+    </md>.
+    It is clear from these computations that 
+    <md>
+        <mrow>u_x \amp= v_y \amp u_y \amp = -v_x</mrow>
+    </md>.
+    Furthermore, we saw previously that <m>f'(z)=2z</m>, and hence that 
+    <md>
+        <mrow>f'(z) \amp =2x+2yi</mrow>
+        <mrow> \amp = u_x+iv_x</mrow>
+    </md>.
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_conjugate">
+    <title>Complex conjugation</title>
+    <statement>
+    <p>
+    Define <m>f\colon \C\rightarrow \C</m> as <m>f(z)=\overline{z}</m>. Prove that <m>f</m> is not differentiable anywhere on its domain. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    We have <m>f=u+iv</m>, where <m>u(x,y)=x</m> and <m>v(x,y)=-y</m>. Thus for any <m>z=x+iy</m> we have 
+    <md>
+        <mrow>u_x(x,y) \amp = 1 \amp u_y(x,y)\amp= 0</mrow>
+        <mrow>v_x(x,y) \amp = 0 \amp v_y(x,y)\amp =-1</mrow>
+    </md>.
+    It follow that for all <m>z_0=x_0+iy_0</m> we have 
+    <me>
+        u_x(x_0,y_0)=1\ne -1 =v_y(x_0,y_0)
+    </me>.
+    We conclude that for all <m>z_0\in \C</m>, <m>f</m> is not differentiable at <m>z_0</m>, as claimed. 
+    </p>
+    </solution>
+    </example>
+    
+    <p>
+        As stated, <xref ref="th_C-R"/> provides only a <em>necessary</em> condition for <m>f'</m> to exist at <m>z_0</m>; it makes no claim as to whether this condition is <em>sufficient</em>. The next theorem improves on this slightly, by establishing something close, but not quite equal to the converse of <xref ref="th_C-R"/>. In more detail, it asserts that if the first-order partial derivatives of <m>u</m> and <m>v</m> satisfy the Cauchy-Riemann equations and are <em>continuous</em> at <m>z_0</m>, then <m>f'</m> is differentiable at <m>z_0</m>. We will see later that in fact this is extra condition is unnecessary: <ie/>, that the implication in <xref ref="th_C-R"/> is in fact an equivalence without the additional continuity condition.   
+    </p>
+    <theorem xml:id="th_C-R_cont_equiv">
+    <title>Cauchy-Riemann converse</title>
+    <statement>
+    <p>
+    Assume <m>f=u+iv</m> and that <m>z_0=x_0+iy_0</m> is an interior point of the domain of <m>f</m>. If the first-order partial derivatives of <m>u</m> and <m>v</m> are continuous at <m>(x_0,y_0)</m> and satisfy the Cauchy-Riemann equations, then <m>f</m> is differentiable at <m>z_0</m>.  
     </p>
     </statement>
     <proof>
@@ -22,8 +111,69 @@
     </proof>
     </theorem>
     
-    </subsection>
-
+    <corollary xml:id="cor_C-R_open">
+    <title>Cauchy-Riemann on open set</title>
+        <statement>
+            <p>
+                Assume <m>f=u+iv</m> is defined on the open set <m>U</m>, and that <m>u</m> and <m>v</m> have continuous first-order partial derivatives on <m>U</m>. The following statements are equivalent. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>f</m> is differentiable on <m>U</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>u</m> and <m>v</m> satisfy 
+                            <mdn>
+                                <mrow xml:id="eq_C-R_form">u_x(x,y) \amp = v_y(x,y) \amp u_y(x,y)\amp =-v_x(x,y) </mrow>
+                            </mdn>
+                            for all <m>z=x+iy\in U</m>. 
+                        </p>
+                    </li>
+                </ol>
+            When this is the case, we have 
+    <men xml:id="eq_der_u_v_formula">
+        f'(x+iy)=u_x(x,y)+iv_x(x,y)
+    </men>
+    for all <m>z=x+iy\in U</m>. 
+            </p>
+        </statement>
+    </corollary>
+    
+    
+    <example xml:id="eg_exp_diff">
+    <title>Exponential and trigonometric functions</title>
+    <statement>
+    <p>
+    Show that <m>\exp</m>, <m>\cos</m>, and <m>\sin</m> are holomorphic functions on <m>\C</m> and compute formulas for their derivatives. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    We have <m>e^z=u+iv</m>, where <m>u(x,y)=e^x\cos y</m> and <m>v(x,y)=e^x\sin y</m>. We then have
+    <md>
+        <mrow> u_x \amp= e^x\cos y \amp u_y\amp =-e^x\sin y </mrow>
+        <mrow> v_x \amp=e^x\sin y \amp e^x\cos y </mrow>
+    </md>,
+    whence we see that (a) these partials exist and are continuous, and (b) satisfy the Cauchy-Riemann equations <xref ref="eq_C-R_form"/> for all <m>z=x+iy</m>. We conclude that <m>f(z)=e^z</m> is differentiable everywhere and satisfies 
+    <me>
+        \frac{d}{dz}(e^z)=u_x+i v_x=e^x\cos y+e^x\sin y i=e^z
+    </me>.
+    That 
+    <md>
+        <mrow>\cos z \amp = \frac{e^{iz}+e^{-iz}}{2} \amp \sin(z)\amp =\frac{e^{iz}-e^{-iz}}{2i}</mrow>
+    </md>
+    are differentiable everywhere now follows from the fact that the polynomial functions <m>g(z)=iz</m> and <m>h(z)=-iz</m> are differentiable, from which it follows by the chain rule that <m>e^{iz}</m> and <m>e^{-iz}</m> are differentiable, and then from the linear combination rule of <xref ref="th_diff_props"/> that <m>\cos z</m> and <m>\sin z</m> are differentiable everywhere. Furthermore we can compute the derivatives of <m>\cos</m> and <m>\sin</m> using these same rules and our formula for <m>e^z</m> to conclude that 
+    <md>
+        <mrow>\frac{d}{dz}(\cos z) \amp =-\sin z</mrow>
+        <mrow>\frac{d}{dz}(\sin z) \amp = \cos z</mrow>
+    </md>. 
+    
+    </p>
+    </solution>
+    </example>
+    
     <convention>
     <title>Constant functions</title>
     <p>
@@ -104,5 +254,5 @@ Assume <m>f</m> is continuous on the connected set <m>D</m>. The following state
 </p>
 </proof>
 </theorem>
-
+</subsection>
 </section>
