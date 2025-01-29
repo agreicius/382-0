@@ -96,17 +96,23 @@
     </example>
     
     <p>
-        As stated, <xref ref="th_C-R"/> provides only a <em>necessary</em> condition for <m>f'</m> to exist at <m>z_0</m>; it makes no claim as to whether this condition is <em>sufficient</em>. The next theorem improves on this slightly, by establishing something close, but not quite equal to the converse of <xref ref="th_C-R"/>. In more detail, it asserts that if the first-order partial derivatives of <m>u</m> and <m>v</m> satisfy the Cauchy-Riemann equations and are <em>continuous</em> at <m>z_0</m>, then <m>f'</m> is differentiable at <m>z_0</m>. We will see later that in fact this is extra condition is unnecessary: <ie/>, that the implication in <xref ref="th_C-R"/> is in fact an equivalence without the additional continuity condition.   
+        As stated, <xref ref="th_C-R"/> provides only a <em>necessary</em> condition for <m>f'</m> to exist at <m>z_0</m>; it makes no claim as to whether this condition is <em>sufficient</em>. The next theorem improves on this slightly, by establishing something close, but not quite equal to the converse of <xref ref="th_C-R"/>. Roughly speaking, it asserts that satisfaction of the Cauchy-Riemann equations suffices as long as we throw in a certain continuity condition on the first-order partial derivatives.  We will see later that when considering differentiability on open sets this extra condition is in fact automatically satisfied, yielding a true equivalence. 
     </p>
     <theorem xml:id="th_C-R_cont_equiv">
     <title>Cauchy-Riemann converse</title>
     <statement>
     <p>
-    Assume <m>f=u+iv</m> and that <m>z_0=x_0+iy_0</m> is an interior point of the domain of <m>f</m>. If the first-order partial derivatives of <m>u</m> and <m>v</m> are continuous at <m>(x_0,y_0)</m> and satisfy the Cauchy-Riemann equations, then <m>f</m> is differentiable at <m>z_0</m>.  
+    Assume <m>f=u+iv</m> and that <m>z_0=x_0+iy_0</m> is an interior point of the domain of <m>f</m>. If the first-order partial derivatives of <m>u</m> and <m>v</m> are continuous on an open set containing <m>(x_0,y_0)</m> and satisfy the Cauchy-Riemann equations, then <m>f</m> is differentiable at <m>z_0</m>.  
     </p>
     </statement>
     <proof>
     <p>
+        In lieu of a proof, we indicate the ideas at play. As it turns out, the condition we actually need, in addition to the satisfaction of the Cauchy-Riemann equations, is that the function 
+        <md>
+            <mrow>f\colon \amp \R^2\rightarrow \R^2</mrow>
+            <mrow>(x,y) \amp \mapsto (u(x,y),v(x,y))</mrow>
+        </md>
+        is <em>differentiable</em> in the sense of multivariable calculus. I will not include that definition here (look it up in your calculus text!), but suffice it to say that it is not equivalent to the partial derivatives of <m>u</m> and <m>v</m> existing. The additional continuity condition given in the theorem implies that <m>f</m> is differentiable in the multivariable calculus sense, and hence, that <m>f</m> is differentiable in the complex sense, assuming the Cauchy-Riemann equations are satisfied. 
     </p>
     </proof>
     </theorem>
@@ -215,6 +221,14 @@ As a consequence, if we assume further that <m>U</m> is connected, then <m>f'\ve
 </p>
 </proof>
 </theorem>
+<corollary xml:id="cor_const_u_v">
+    <statement>
+        <p>
+            Assume <m>f=u+iv</m> is holomorphic on the open and connected set <m>U</m>.
+            If <m>u</m> is constant on <m>U</m> or <m>v</m> is constant on <m>U</m>, then <m>f</m> is constant on <m>U</m>. 
+        </p>
+    </statement>
+</corollary>
 <definition xml:id="d_discrete">
 <title>Discrete subset</title>
 <statement>
@@ -254,5 +268,92 @@ Assume <m>f</m> is continuous on the connected set <m>D</m>. The following state
 </p>
 </proof>
 </theorem>
+</subsection>
+<subsection xml:id="ss_C-R_polar">
+<title>Polar Cauchy-Riemann equations</title>
+<p>
+    As many of our familiar functions have a nice description in polar coordinates, it helps to have  a corresponding polar version of the Cauchy-Riemann equations. Technically speaking, when we <q>represent</q> a function <m>u(x,y)</m>in polar coordinates we are really looking at the function 
+    <md>
+        <mrow>g(r,\theta) \amp =u(r\cos \theta, r\sin\theta)=u(x(r,\theta) y(r,\theta))</mrow>
+    </md>, 
+    obtained by <em>pre-composing</em> <m>u</m> with the function <m>F\colon \R^2\rightarrow \R^2</m> defined as
+    <me>
+        F(r,\theta)=(r\cos\theta, r\sin\theta)
+    </me>. 
+    In an effort to pare down notation, we will adopt the following abuses of notation: 
+    <md>
+        <mrow>u(r,\theta) \amp = u(r\cos\theta, r\sin\theta)=g(r,\theta)</mrow>
+        <mrow>u_r(r,\theta) \amp = g_r(r,\theta)</mrow>
+        <mrow>u_\theta(r,\theta) \amp = g_\theta(r,\theta)</mrow>
+    </md>. 
+    As a result, we can express the chain rule applied to <m>g</m> as follows:
+    <md>
+        <mrow>u_r \amp =u_x\, x_r+u_y\, y_r=\cos\theta\, u_x+\sin\theta\, u_v</mrow>
+        <mrow>u_\theta \amp = u_x\, x_\theta+u_y\, y_\theta=-r\sin\theta\, u_x+r\cos\theta\, u_y</mrow>
+    </md>.
+</p>
+<theorem xml:id="th_C-R_polar">
+<title>Polar Cauchy-Riemann equations</title>
+<statement>
+<p>
+Assume <m>f=u+iv</m> is defined on the open set <m>U\subseteq \C-\{0\}</m> and that <m>u</m> and <m>v</m> have continuous first-order partial derivatives on <m>U</m>. The following statements are equivalent. 
+<ol>
+    <li>
+        <p>
+            <m>f</m> is differentiable on <m>U</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            For all <m>(r,\theta)</m> satisfying <m>re^{i\theta}\in U</m>, we have 
+            <mdn>
+                <mrow xml:id="eq_C-R_polar"> u_r(r,
+                \theta) \amp =\frac{1}{r}v_\theta(r,\theta)
+                \amp 
+               u_\theta(r,\theta) \amp =-rv_r(r,\theta) </mrow>
+            </mdn>.
+        </p>
+    </li>
+</ol> 
+When this is the case, given <m>z=re^{i\theta}\in U</m>, we have 
+<men xml:id="eq_der_formula_polar">
+    f'(z)=e^{-i\theta}(u_r(r,\theta)+iv_r(r,\theta))
+</men>.
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<example xml:id="eg_der_Log">
+<title>Derivative of <m>\Log</m></title>
+<statement>
+<p>
+Show that <m>\Log</m> is differentiable on its domain <m>\C-(-\infty, 0]</m> and compute a formula for its derivative.  
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<example xml:id="eg_der_power">
+<title>Derivative of power function</title>
+<statement>
+<p>
+Fix a complex number <m>w</m> and define <m>f(z)</m> to be the principle branch of <m>z^w</m>. Show that <m>f</m> is differentiable on its domain and compute a formula for its derivative. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
+
+
 </subsection>
 </section>
