@@ -1762,7 +1762,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.10",
   "title": "Cauchy-Riemann equations",
-  "body": " Cauchy-Riemann equations   We come at last to our first important result, the Cauchy-Riemann equations , which express the differentiability of a complex function in terms of its real and imaginary parts.    Cauchy-Riemann equations  The Cauchy-Riemann equations involve the partial derivatives of the real and imaginary parts of a complex function. We give a brief reminder of the definitions and notation around this concept.   Partial derivatives  Given a real-valued function of two real variables and an interior point of its domain, the partial derivatives of at with respect to and are defined as , provided of course these limits exist. We denote the resulting partial derivative functions as and , or alternatively as and .    Cauchy-Riemann equations   If is differentiable at , then the first-order partial derivatives of and exist at and satisfy the Cauchy-Riemann equations : . Furthermore, we have .         Cauchy-Riemann verification   Verify that the real and imaginary parts of the holomorphic function satisfy the Cauchy-Riemann equations for all , and that satisfies .    We have , where , , and thus . It is clear from these computations that . Furthermore, we saw previously that , and hence that .     Complex conjugation   Define as . Prove that is not differentiable anywhere on its domain.    We have , where and . Thus for any we have . It follow that for all we have . We conclude that for all , is not differentiable at , as claimed.    As stated, provides only a necessary condition for to exist at ; it makes no claim as to whether this condition is sufficient . The next theorem improves on this slightly, by establishing something close, but not quite equal to the converse of . In more detail, it asserts that if the first-order partial derivatives of and satisfy the Cauchy-Riemann equations and are continuous at , then is differentiable at . We will see later that in fact this is extra condition is unnecessary: , that the implication in is in fact an equivalence without the additional continuity condition.   Cauchy-Riemann converse   Assume and that is an interior point of the domain of . If the first-order partial derivatives of and are continuous at and satisfy the Cauchy-Riemann equations, then is differentiable at .         Cauchy-Riemann on open set   Assume is defined on the open set , and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .     and satisfy for all .   When this is the case, we have for all .     Exponential and trigonometric functions   Show that , , and are holomorphic functions on and compute formulas for their derivatives.    We have , where and . We then have , whence we see that (a) these partials exist and are continuous, and (b) satisfy the Cauchy-Riemann equations for all . We conclude that is differentiable everywhere and satisfies . That are differentiable everywhere now follows from the fact that the polynomial functions and are differentiable, from which it follows by the chain rule that and are differentiable, and then from the linear combination rule of that and are differentiable everywhere. Furthermore we can compute the derivatives of and using these same rules and our formula for to conclude that .     Constant functions  Given a function defined on a set , we say that is on constant on if there is a complex number such that for all . We will write in this case.    Locally constant   A function is locally constant on a set if for all there is an open ball such that is constant on .     Functions of derivative zero   Let be defined on the open set . The following statements are equivalent.    is locally constant on .     for all .   As a consequence, if we assume further that is connected, then if and only if is a constant function.         Discrete subset   A set is discrete if for all there is an open ball such that .     Locally constant on connected sets   Assume is continuous on the connected set . The following statements are equivalent.    is constant     is locally constant.     is a discrete subset of .       This is left as a homework exercise.     "
+  "body": " Cauchy-Riemann equations   We come at last to our first important result, the Cauchy-Riemann equations , which express the differentiability of a complex function in terms of its real and imaginary parts.    Cauchy-Riemann equations  The Cauchy-Riemann equations involve the partial derivatives of the real and imaginary parts of a complex function. We give a brief reminder of the definitions and notation around this concept.   Partial derivatives  Given a real-valued function of two real variables and an interior point of its domain, the partial derivatives of at with respect to and are defined as , provided of course these limits exist. We denote the resulting partial derivative functions as and , or alternatively as and .    Cauchy-Riemann equations   If is differentiable at , then the first-order partial derivatives of and exist at and satisfy the Cauchy-Riemann equations : . Furthermore, we have .         Cauchy-Riemann verification   Verify that the real and imaginary parts of the holomorphic function satisfy the Cauchy-Riemann equations for all , and that satisfies .    We have , where , , and thus . It is clear from these computations that . Furthermore, we saw previously that , and hence that .     Complex conjugation   Define as . Prove that is not differentiable anywhere on its domain.    We have , where and . Thus for any we have . It follow that for all we have . We conclude that for all , is not differentiable at , as claimed.    As stated, provides only a necessary condition for to exist at ; it makes no claim as to whether this condition is sufficient . The next theorem improves on this slightly, by establishing something close, but not quite equal to the converse of . Roughly speaking, it asserts that satisfaction of the Cauchy-Riemann equations suffices as long as we throw in a certain continuity condition on the first-order partial derivatives. We will see later that when considering differentiability on open sets this extra condition is in fact automatically satisfied, yielding a true equivalence.   Cauchy-Riemann converse   Assume and that is an interior point of the domain of . If the first-order partial derivatives of and are continuous on an open set containing and satisfy the Cauchy-Riemann equations, then is differentiable at .    In lieu of a proof, we indicate the ideas at play. As it turns out, the condition we actually need, in addition to the satisfaction of the Cauchy-Riemann equations, is that the function is differentiable in the sense of multivariable calculus. I will not include that definition here (look it up in your calculus text!), but suffice it to say that it is not equivalent to the partial derivatives of and existing. The additional continuity condition given in the theorem implies that is differentiable in the multivariable calculus sense, and hence, that is differentiable in the complex sense, assuming the Cauchy-Riemann equations are satisfied.     Cauchy-Riemann on open set   Assume is defined on the open set , and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .     and satisfy for all .   When this is the case, we have for all .     Exponential and trigonometric functions   Show that , , and are holomorphic functions on and compute formulas for their derivatives.    We have , where and . We then have , whence we see that (a) these partials exist and are continuous, and (b) satisfy the Cauchy-Riemann equations for all . We conclude that is differentiable everywhere and satisfies . That are differentiable everywhere now follows from the fact that the polynomial functions and are differentiable, from which it follows by the chain rule that and are differentiable, and then from the linear combination rule of that and are differentiable everywhere. Furthermore we can compute the derivatives of and using these same rules and our formula for to conclude that .     Constant functions  Given a function defined on a set , we say that is on constant on if there is a complex number such that for all . We will write in this case.    Locally constant   A function is locally constant on a set if for all there is an open ball such that is constant on .     Functions of derivative zero   Let be defined on the open set . The following statements are equivalent.    is locally constant on .     for all .   As a consequence, if we assume further that is connected, then if and only if is a constant function.          Assume is holomorphic on the open and connected set . If is constant on or is constant on , then is constant on .     Discrete subset   A set is discrete if for all there is an open ball such that .     Locally constant on connected sets   Assume is continuous on the connected set . The following statements are equivalent.    is constant     is locally constant.     is a discrete subset of .       This is left as a homework exercise.      Polar Cauchy-Riemann equations  As many of our familiar functions have a nice description in polar coordinates, it helps to have a corresponding polar version of the Cauchy-Riemann equations. Technically speaking, when we represent a function in polar coordinates we are really looking at the function , obtained by pre-composing  with the function defined as . In an effort to pare down notation, we will adopt the following abuses of notation: . As a result, we can express the chain rule applied to as follows: .   Polar Cauchy-Riemann equations   Assume is defined on the open set and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .    For all satisfying , we have .   When this is the case, given , we have .         Derivative of   Show that is differentiable on its domain and compute a formula for its derivative.         Derivative of power function   Fix a complex number and define to be the principle branch of . Show that is differentiable on its domain and compute a formula for its derivative.         "
 },
 {
   "id": "ss_C-r-3",
@@ -1807,7 +1807,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.10.5",
   "title": "Cauchy-Riemann converse.",
-  "body": " Cauchy-Riemann converse   Assume and that is an interior point of the domain of . If the first-order partial derivatives of and are continuous at and satisfy the Cauchy-Riemann equations, then is differentiable at .       "
+  "body": " Cauchy-Riemann converse   Assume and that is an interior point of the domain of . If the first-order partial derivatives of and are continuous on an open set containing and satisfy the Cauchy-Riemann equations, then is differentiable at .    In lieu of a proof, we indicate the ideas at play. As it turns out, the condition we actually need, in addition to the satisfaction of the Cauchy-Riemann equations, is that the function is differentiable in the sense of multivariable calculus. I will not include that definition here (look it up in your calculus text!), but suffice it to say that it is not equivalent to the partial derivatives of and existing. The additional continuity condition given in the theorem implies that is differentiable in the multivariable calculus sense, and hence, that is differentiable in the complex sense, assuming the Cauchy-Riemann equations are satisfied.   "
 },
 {
   "id": "cor_C-R_open",
@@ -1855,11 +1855,20 @@ var ptx_lunr_docs = [
   "body": " Functions of derivative zero   Let be defined on the open set . The following statements are equivalent.    is locally constant on .     for all .   As a consequence, if we assume further that is connected, then if and only if is a constant function.       "
 },
 {
+  "id": "cor_const_u_v",
+  "level": "2",
+  "url": "s_C-R.html#cor_const_u_v",
+  "type": "Corollary",
+  "number": "1.10.11",
+  "title": "",
+  "body": "  Assume is holomorphic on the open and connected set . If is constant on or is constant on , then is constant on .   "
+},
+{
   "id": "d_discrete",
   "level": "2",
   "url": "s_C-R.html#d_discrete",
   "type": "Definition",
-  "number": "1.10.11",
+  "number": "1.10.12",
   "title": "Discrete subset.",
   "body": " Discrete subset   A set is discrete if for all there is an open ball such that .   "
 },
@@ -1868,9 +1877,36 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_C-R.html#th_locally_constant_connected",
   "type": "Theorem",
-  "number": "1.10.12",
+  "number": "1.10.13",
   "title": "Locally constant on connected sets.",
   "body": " Locally constant on connected sets   Assume is continuous on the connected set . The following statements are equivalent.    is constant     is locally constant.     is a discrete subset of .       This is left as a homework exercise.   "
+},
+{
+  "id": "th_C-R_polar",
+  "level": "2",
+  "url": "s_C-R.html#th_C-R_polar",
+  "type": "Theorem",
+  "number": "1.10.14",
+  "title": "Polar Cauchy-Riemann equations.",
+  "body": " Polar Cauchy-Riemann equations   Assume is defined on the open set and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .    For all satisfying , we have .   When this is the case, given , we have .       "
+},
+{
+  "id": "eg_der_Log",
+  "level": "2",
+  "url": "s_C-R.html#eg_der_Log",
+  "type": "Example",
+  "number": "1.10.15",
+  "title": "Derivative of <span class=\"process-math\">\\(\\Log\\)<\/span>.",
+  "body": " Derivative of   Show that is differentiable on its domain and compute a formula for its derivative.       "
+},
+{
+  "id": "eg_der_power",
+  "level": "2",
+  "url": "s_C-R.html#eg_der_power",
+  "type": "Example",
+  "number": "1.10.16",
+  "title": "Derivative of power function.",
+  "body": " Derivative of power function   Fix a complex number and define to be the principle branch of . Show that is differentiable on its domain and compute a formula for its derivative.       "
 },
 {
   "id": "appendix-notation",
