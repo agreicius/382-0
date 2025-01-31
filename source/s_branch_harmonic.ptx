@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_branch_harmonic" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Branches, harmonic functions, flows</title>
+
+    <introduction>
+        <p>
+            We will round out our discussion of differentiability with some miscellany, each item of which will be take up again in the course. 
+        </p>
+    </introduction>
+    <subsection xml:id="ss_branch">
+    <title>Branches</title>
+    <p>
+        We threw the term <em>branch</em> around earlier when discussing notions of argument, logarithms, and complex powers. It is time at last to put this notion on firm, if somewhat formal ground. 
+    </p>
+    <definition xml:id="d_branch">
+    <title>Branch</title>
+    <statement>
+    <p>
+    A <term>complex set-valued function</term> is a function <m>\mathcal{F}</m> whose domain is a subset <m>D\subseteq \C</m>, and whose images <m>\mathcal{F}(z)</m> are sets of complex numbers for all <m>z\in \C</m>. 
+    </p>
+    <p>
+        A <term>branch</term> of a set-valued function <m>\mathcal{F}</m> with domain <m>D</m> is a function 
+        <m>f\colon U\rightarrow \C</m> satisfying the following properties: 
+        <ol marker="(i)">
+            <li>
+                <p>
+                    <m>U\subseteq D</m> is open and connected;
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>f</m> is continuous;
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>f(z)\in \mathcal{F}(z)</m> for all <m>z\in U</m>.
+                </p>
+            </li>
+        </ol>
+    </p>
+    </statement>
+    </definition>
+    <definition xml:id="d_arg_branches">
+    <title></title>
+    <statement>
+    <p>
+    Given <m>\alpha\in \R</m>, we define <m>R_\alpha</m> to be the ray 
+    <me>
+        R_\alpha=\{te^{i\alpha}\colon t\geq 0\}=\{z\in \C\colon \Arg z=\alpha+2\pi k \text{ for some } k\in \Z\}\cup\{0\}
+    </me>, 
+    and we define the <term><m>\alpha</m>-anchored branch</term> of <m>\arg</m> to be the function 
+    <md>
+        <mrow>\Log_\alpha\colon \C-R_\alpha \amp \rightarrow \C</mrow>
+    </md>
+    as follows: for all <m>z\in \C-\R_{\alpha}</m>, <m>\Arg_{\alpha}(z)</m> is the unique <m>\theta\in (\alpha, \alpha+2\pi</m> satisfying <m>\alpha&lt; \theta \leq \alpha+2\pi</m>. 
+    </p>
+    <p>
+        Similarly, we define the <term><m>\alpha</m>-anchored branch</term> of <m>\log</m> to be the function <m>\Log_\alpha\colon \C-R_\alpha\colon \C</m> defined as 
+        <me>
+            \Log_\alpha(z)=\ln\abs{z}+i\Arg_\alpha(z)
+        </me>;
+        and for a fixed <m>w\in \C</m>, we define the <term><m>\alpha</m>-anchored branch</term> of <m>\mathcal{F}(z)=z^w</m> to be the function 
+        <me>
+            f(z)=e^{w(\ln\abs{z}+i\Arg_\alpha(z))}
+        </me>.
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title><m>\alpha</m>-anchored branches</title>
+        <p>
+            It is easy to see that <m>\Log_\alpha</m> is indeed a branch of <m>\arg</m> for all <m>\alpha</m>, and as a result, that the <m>\alpha</m>-anchored branches of <m>\log</m> and the set-valued function <m>\mathcal{F}(z)=z^w</m> are also branches. 
+        </p>
+        <p>
+            Note further that the principal branches of these three set-valued functions are just the <m>-\pi</m>-anchored branches in our new terminology.
+        </p>
+    </remark>
+    <theorem xml:id="th_branches">
+    <title>Branches</title>
+    <statement>
+    <p>
+    Let <m>U\subseteq \C-\{0\}</m> be open and connected. 
+    <ul>
+        <li>
+            <title>Argument</title>
+            <p>
+            If <m>f</m> and <m>g</m> are two branches of <m>\arg</m> on <m>U</m>, then there is a <m>k\in \Z</m> such that <m>g(z)=f(z)+2\pi k</m> for all <m>z\in U</m>. 
+            </p>
+        </li>
+        <li>
+            <title>Logarithm</title>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                           If <m>f</m> and <m>g</m> are two branches of <m>\log</m> on <m>U</m>, then there is a <m>k\in \Z</m> such that <m>g(z)=f(z)+2\pi k i</m> for all <m>z\in \in U</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Any branch <m>f</m> of <m>\log</m> on <m>U</m> is differentiable and satisfies 
+                            <men xml:id="eq_der_branch_log">
+                                f'(z)=\frac{1}{z}
+                            </men>
+                            for all <m>z\in U</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </li>
+        <li>
+            <title>Power functions</title>
+            <p>Fix <m>w\in \C</m>, and let <m>\mathcal{F}(z)=z^w</m>. 
+                <ol>
+                    <li>
+                        <p>
+                           If <m>f</m> and <m>g</m> are two branches of <m>\mathcal{F}</m> on <m>U</m>, then there is a <m>k\in \Z</m> such that <m>g(z)=e^{2\pi i k w}f(z)</m> for all <m>z\in \in U</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Any branch <m>f</m> of <m>\mathcal{F}</m> on <m>U</m> is differentiable and satisfies 
+                            <men xml:id="eq_der_branch_power">
+                                f'(z)=\frac{wf(z)}{z}
+                            </men>
+                            for all <m>z\in U</m>.
+                        </p>
+                    </li>
+                    </ol>
+                    </p>
+                    </li>
+    </ul>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <example xml:id="eg_branch_cube">
+    <title>Branches of cube-root function</title>
+    <statement>
+    <p>
+    Let <m>U=\{z\in \C\colon \Re z\geq 0\}-\{0\}</m>. 
+    <ol>
+        <li>
+            <p>
+                Show that there are exactly three branches of <m>\mathcal{F}(z)=z^{1/3}</m> on $U$ and give explicit formulas for each. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Verify that <xref ref="eq_der_branch_power"/> holds for one of your three branches. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
+    
+    </subsection>
+<subsection xml:id="ss_harmonic">
+<title>Harmonic functions</title>
+<definition xml:id="d_harmonic">
+<title>Harmonic functions</title>
+<statement>
+<p>
+Let <m>U\subseteq \R^2</m> be an open set.  A function <m>u\colon U\rightarrow \R</m> is <term>harmonic</term> if it satisfies the <term>Laplace's equation</term>
+<me>
+    u_{xx}(x,y)+u_{yy}(x,y)=0
+</me>
+for all <m>(x,y)\in U</m>. 
+</p>
+<p>
+    A <term>pair of harmonic conjugates</term> on <m>U</m> is a pair <m>(u,v)</m> of harmonic functions on <m>U</m> satisfying  
+    <md>
+        <mrow>v_x \amp =-u_y \amp v_y=u_x</mrow>
+    </md>.
+    
+</p>
+</statement>
+</definition>
+<theorem xml:id="th_harmonic_conjugates">
+<title>Harmonic conjugates</title>
+<statement>
+<p>
+Assume <m>U</m> is an open subset of <m>\R^2</m> (identified as usual with <m>\C</m>). Assume <m>u</m> and <m>v</m> are real-valued functions on <m>U</m> whose second-order partial derivatives exist on <m>U</m>. The following statements are equivalent.
+<ol>
+    <li>
+        <p>
+            <m>u</m> and <m>v</m> are harmonic and 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>f=u+iv</m> is holomorphic on <m>U</m>.  
+        </p>
+    </li>
+</ol> 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+</subsection>
+
+</section>
