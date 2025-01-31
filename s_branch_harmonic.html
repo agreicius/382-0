@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Topology of \C</title>
+<title>Branches, harmonic functions, flows</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -318,7 +318,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_deMoivre.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_sequences.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_C-R.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -513,9 +513,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_polynomials" class="internal"><span class="title">Polynomials</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section contains-active">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_topo.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Topology of <span class="process-math">\(\C\)</span></span></a></div>
-<ul class="structural toc-item-list active">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_open_closed" class="internal"><span class="title">Open and closed sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_connected" class="internal"><span class="title">Connected sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_point_infty" class="internal"><span class="title">Point at infinity</span></a></div></li>
@@ -558,9 +558,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_C-R.html#ss_C-R_polar" class="internal"><span class="title">Polar Cauchy-Riemann equations</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s_branch_harmonic.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Branches, harmonic functions, flows</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_branch_harmonic.html#ss_branch" class="internal"><span class="title">Branches</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_branch_harmonic.html#ss_harmonic" class="internal"><span class="title">Harmonic functions</span></a></div></li>
 </ul>
@@ -579,261 +579,159 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_topo"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.4</span><span class="space"> </span><span class="title">Topology of <span class="process-math">\(\C\)</span></span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_branch_harmonic"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.11</span><span class="space"> </span><span class="title">Branches, harmonic functions, flows</span>
 </h2>
-<section class="introduction" id="s_topo-2"><div class="para logical" id="s_topo-2-1">
-<div class="para">Recall that the modulus <span class="process-math">\(\abs{z-w}\)</span> of the difference of two complex numbers <span class="process-math">\(z\)</span> and <span class="process-math">\(w\)</span> is precisely the distance <span class="process-math">\(d(z,w)\)</span> between <span class="process-math">\(z\)</span> and <span class="process-math">\(w\text{,}\)</span> considered as points in <span class="process-math">\(\R^2\text{.}\)</span> As a result of <a href="s_polar.html#th_modulus" class="xref" data-knowl="./knowl/xref/th_modulus.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.2.7: Modulus properties">Theorem 1.2.7</a>, this distance function <span class="process-math">\(d(z,w)=\abs{z-w}\)</span> satisfies the following important properties:</div>
-<ol class="lower-roman" id="s_topo-2-1-10">
-<li id="s_topo-2-1-10-1">
-<span class="heading"><span class="title">Positivity.</span></span><div class="para" id="s_topo-2-1-10-1-2">
-<span class="process-math">\(d(z,w)\geq 0\)</span> for all <span class="process-math">\(z,w\in \C\text{,}\)</span> and <span class="process-math">\(d(z,w)=0\)</span> if and only if <span class="process-math">\(z=w\text{;}\)</span>
-</div>
-</li>
-<li id="s_topo-2-1-10-2">
-<span class="heading"><span class="title">Triangle inequality.</span></span><div class="para" id="s_topo-2-1-10-2-2">
-<span class="process-math">\(d(z,w)+d(w,u)\leq d(z,u)\)</span> for all <span class="process-math">\(z,w,u\in \C\text{.}\)</span>
-</div>
-</li>
-</ol>
-<div class="para">A set together with a binary function <span class="process-math">\(d\)</span> satisfying properties (i)-(ii) is called a <em class="emphasis">metric space</em>. We can use the distance function of a metric space to define what turns out to be a useful and natural family <span class="process-math">\(\mathcal{U}\)</span> of subsets, called the <em class="emphasis">open sets</em>. We illustrate this definition below in the special case of <span class="process-math">\(\C\)</span> and <span class="process-math">\(d(z,w)=\abs{z-w}\text{.}\)</span> More generally, a <em class="emphasis">topological space</em> is a set <span class="process-math">\(X\)</span> together with a set <span class="process-math">\(\mathcal{U}\)</span> of subsets of <span class="process-math">\(X\)</span> that satisfy certain axioms. It is easy to show that the collection of sets <span class="process-math">\(\mathcal{U}\)</span> we define for <span class="process-math">\(\C\)</span> below satisfies these axioms, making <span class="process-math">\(\C\)</span> together with <span class="process-math">\(d\)</span>
-</div>
-</div></section><section class="subsection" id="ss_open_closed"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Open and closed sets</span>
+<section class="introduction" id="s_branch_harmonic-2"><div class="para" id="s_branch_harmonic-2-1">We will round out our discussion of differentiability with some miscellany, each item of which will be take up again in the course.</div></section><section class="subsection" id="ss_branch"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Branches</span>
 </h3>
-<article class="definition definition-like" id="d_discs"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Open and closed discs.</span>
+<div class="para" id="ss_branch-2">We threw the term <em class="emphasis">branch</em> around earlier when discussing notions of argument, logarithms, and complex powers. It is time at last to put this notion on firm, if somewhat formal ground.</div>
+<article class="definition definition-like" id="d_branch"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.1</span><span class="period">.</span><span class="space"> </span><span class="title">Branch.</span>
 </h4>
-<div class="para" id="d_discs-2-1">Given <span class="process-math">\(z,w\in \C\text{,}\)</span>  the <dfn class="terminology">distance</dfn> between <span class="process-math">\(z\)</span> and <span class="process-math">\(w\text{,}\)</span> denoted <span class="process-math">\(d(z,w)\text{,}\)</span> is defined as <span class="process-math">\(d(z,w)=\abs{z-w}\text{.}\)</span>
-</div> <div class="para logical" id="d_discs-2-2">
-<div class="para">Given <span class="process-math">\(z_0\in \C\)</span> and <span class="process-math">\(r\leq 0\)</span> the <dfn class="terminology">open disc</dfn> of radius <span class="process-math">\(r\)</span> centered at <span class="process-math">\(z_0\text{,}\)</span> denoted <span class="process-math">\(B_r(z_0)\text{,}\)</span> is defined as</div>
-<div class="displaymath process-math">
-\begin{equation*}
-B_r(z_0)=\{z\in \C\colon d(z,z_0)&lt; r\}=\{z\in \C\colon \abs{z-z_0}&lt; r\}\text{.}
-\end{equation*}
-</div>
-<div class="para">Similarly, the <dfn class="terminology">closed disc</dfn> of radius <span class="process-math">\(r\)</span> centered at <span class="process-math">\(z_0\text{,}\)</span> denoted <span class="process-math">\(\overline{B}_r(z_0)\text{,}\)</span> is defined as</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\overline{B}_r(z_0)=\{z\in \C\colon d(z,z_0)\leq r\}=\{z\in \C\colon \abs{z-z_0}\leq r\}\text{.}
-\end{equation*}
-</div>
-</div></article><figure class="figure figure-like" id="fig_disc"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="fig_open_disc"><img src="generated/sageplot/fig_open_disc-2.svg" role="img" class="contained" alt="Open disc"><figcaption><span class="codenumber">(a)</span><span class="space"> </span>Open disc <span class="process-math">\(B_r(z_0)\)</span></figcaption></figure></div>
-<div class="sbspanel top" style="width:50%;"><figure class="figure figure-like" id="fig_closed_disc"><img src="generated/sageplot/fig_closed_disc-2.svg" role="img" class="contained" alt="Closed disc"><figcaption><span class="codenumber">(b)</span><span class="space"> </span>Closed disc <span class="process-math">\(\overline{B}_r(z_0)\)</span></figcaption></figure></div>
-</div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.2<span class="period">.</span></span><span class="space"> </span>Open and closed discs</figcaption></figure><article class="definition definition-like" id="d_open"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Open sets of <span class="process-math">\(\C\)</span>.</span>
-</h4>
-<div class="para" id="d_open-2-1">A set <span class="process-math">\(U\subseteq \C\)</span> is <dfn class="terminology">open</dfn> if for all <span class="process-math">\(z\in U\)</span> there is an <span class="process-math">\(r &gt; 0\)</span> such that <span class="process-math">\(B_{r}(z)\subseteq U\text{.}\)</span> In plain English, a set is open if whenever it contains an element <span class="process-math">\(z\text{,}\)</span> it contains an entire open disc centered at <span class="process-math">\(z\text{.}\)</span>
-</div></article><article class="example example-like" id="eg_open"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Open sets.</span>
-</h4>
-<div class="para logical" id="eg_open-2-1">
-<div class="para">Show that the following sets are open in <span class="process-math">\(\C\text{.}\)</span>
-</div>
-<ol class="decimal" id="eg_open-2-1-2">
-<li id="eg_open-2-1-2-1"><div class="para" id="eg_open-2-1-2-1-1">
-<span class="process-math">\(B_r(z_0)\)</span> where <span class="process-math">\(z_0\in \C\)</span> and <span class="process-math">\(r&gt; 0\text{.}\)</span>
+<div class="para" id="d_branch-2-1">A <dfn class="terminology">complex set-valued function</dfn> is a function <span class="process-math">\(\mathcal{F}\)</span> whose domain is a subset <span class="process-math">\(D\subseteq \C\text{,}\)</span> and whose images <span class="process-math">\(\mathcal{F}(z)\)</span> are sets of complex numbers for all <span class="process-math">\(z\in \C\text{.}\)</span>
+</div> <div class="para logical" id="d_branch-2-2">
+<div class="para">A <dfn class="terminology">branch</dfn> of a set-valued function <span class="process-math">\(\mathcal{F}\)</span> with domain <span class="process-math">\(D\)</span> is a function <span class="process-math">\(f\colon U\rightarrow \C\)</span> satisfying the following properties:</div>
+<ol class="lower-roman" id="d_branch-2-2-5">
+<li id="d_branch-2-2-5-1"><div class="para" id="d_branch-2-2-5-1-1">
+<span class="process-math">\(U\subseteq D\)</span> is open and connected;</div></li>
+<li id="d_branch-2-2-5-2"><div class="para" id="d_branch-2-2-5-2-1">
+<span class="process-math">\(f\)</span> is continuous;</div></li>
+<li id="d_branch-2-2-5-3"><div class="para" id="d_branch-2-2-5-3-1">
+<span class="process-math">\(f(z)\in \mathcal{F}(z)\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
 </div></li>
-<li id="eg_open-2-1-2-2"><div class="para" id="eg_open-2-1-2-2-1"><span class="process-math">\(\displaystyle \HH=\{z\in \C\colon \Re z &gt; 0\}\)</span></div></li>
-<li id="eg_open-2-1-2-3"><div class="para" id="eg_open-2-1-2-3-1"><span class="process-math">\(\displaystyle A=\{z\in \C\colon 1&lt; \abs{z-(1+i)} &lt; 2\}\)</span></div></li>
 </ol>
+</div></article><article class="definition definition-like" id="d_arg_branches"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="period">.</span><span class="space"> </span><span class="title">.</span>
+</h4>
+<div class="para logical" id="d_arg_branches-2-1">
+<div class="para">Given <span class="process-math">\(\alpha\in \R\text{,}\)</span> we define <span class="process-math">\(R_\alpha\)</span> to be the ray</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R_\alpha=\{te^{i\alpha}\colon t\geq 0\}=\{z\in \C\colon \Arg z=\alpha+2\pi k \text{ for some } k\in \Z\}\cup\{0\}\text{,}
+\end{equation*}
 </div>
-<div class="solutions"><details id="eg_open-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_open-3-1"><ol class="decimal" id="eg_open-3-1-1">
-<li id="eg_open-3-1-1-1"><div class="para logical" id="eg_open-3-1-1-1-1">
-<div class="para">Suppose <span class="process-math">\(w\in B_r(z)\text{,}\)</span> and let <span class="process-math">\(s=d(w,z)=\abs{w-z}\text{.}\)</span> By definition we have <span class="process-math">\(s&lt; r\)</span> and hence <span class="process-math">\(r'=r-s &gt; 0\text{.}\)</span> We claim that <span class="process-math">\(B_{r'}(w)\subseteq B_r(z)\text{,}\)</span> and hence that <span class="process-math">\(B_r(w)\)</span> is open. Indeed, given any <span class="process-math">\(u\in B_{r'}(w)\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="eg_open-3-1-1-1-1-8">
+<div class="para">and we define the <dfn class="terminology"><span class="process-math">\(\alpha\)</span>-anchored branch</dfn> of <span class="process-math">\(\arg\)</span> to be the function</div>
+<div class="displaymath process-math" id="d_arg_branches-2-1-6">
 \begin{align*}
-d(u,z) \amp \leq d(u,w)+d(w,z) \amp (\text{tri. ineq.})\\
-\amp &lt; r'+s \amp (u\in B_{r'}(w), d(w,z)=s)\\
-\amp = r-s+s\\
-\amp = r\text{.}
+\Log_\alpha\colon \C-R_\alpha \amp \rightarrow \C
 \end{align*}
 </div>
-<div class="para">We conclude that <span class="process-math">\(d(u,z)&lt; r\)</span> and hence that <span class="process-math">\(u\in B_r(z)\text{,}\)</span> as desired.</div>
-</div></li>
-<li id="eg_open-3-1-1-2"><div class="para" id="eg_open-3-1-1-2-1">Take <span class="process-math">\(z\in U\)</span> and write <span class="process-math">\(z=a+bi\text{.}\)</span> We have <span class="process-math">\(b&gt; 0\)</span> by definition, and it is easy to see that <span class="process-math">\(B_b(z)\subseteq \HH\text{.}\)</span>
-</div></li>
-<li id="eg_open-3-1-1-3"><div class="para" id="eg_open-3-1-1-3-1">Given  <span class="process-math">\(z\in A\text{,}\)</span> let <span class="process-math">\(s=d(z,1+i)=\abs{z-(1+i)}\text{,}\)</span> and let <span class="process-math">\(r=\min\{s-1, 2-s\}\text{.}\)</span> It is easy to see that <span class="process-math">\(B_{r}(z)\subseteq A\text{.}\)</span>
-</div></li>
-</ol></div></div></details></div></article><div class="para" id="ss_open_closed-6">The set <span class="process-math">\(A\)</span> in <a href="s_topo.html#eg_open" class="xref" data-knowl="./knowl/xref/eg_open.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.4: Open sets">Example 1.4.4</a> is an example of an open annulus. These types of sets are important enough to warrant their own definition.</div>
-<article class="definition definition-like" id="d_annulus"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">Annulus.</span>
-</h4>
-<div class="para logical" id="d_annulus-2-1">
-<div class="para">Given <span class="process-math">\(z_0\in \C\)</span> and positive integers <span class="process-math">\(0&lt; r &lt; s\text{,}\)</span> the set</div>
+<div class="para">as follows: for all <span class="process-math">\(z\in \C-\R_{\alpha}\text{,}\)</span> <span class="process-math">\(\Arg_{\alpha}(z)\)</span> is the unique <span class="process-math">\(\theta\in (\alpha, \alpha+2\pi\)</span> satisfying <span class="process-math">\(\alpha&lt; \theta \leq \alpha+2\pi\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="d_arg_branches-2-2">
+<div class="para">Similarly, we define the <dfn class="terminology"><span class="process-math">\(\alpha\)</span>-anchored branch</dfn> of <span class="process-math">\(\log\)</span> to be the function <span class="process-math">\(\Log_\alpha\colon \C-R_\alpha\colon \C\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\{z\in \C\colon r&lt; d(z,z_0) &lt; s\}
+\Log_\alpha(z)=\ln\abs{z}+i\Arg_\alpha(z)\text{;}
 \end{equation*}
 </div>
-<div class="para">is called an <dfn class="terminology">open annulus</dfn> centered at <span class="process-math">\(z_0\text{.}\)</span>
-</div>
-</div></article><figure class="figure figure-like" id="fig_annulus"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/fig_annulus-2.svg" role="img" class="contained" alt="An open annulus"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.6<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(A=\{z\in \C\colon r&lt; d(z,z_0) &lt; s\}\)</span></figcaption></figure><div class="para" id="ss_open_closed-9">The following theorem indicates that the property of openness is preserved by various natural set operations.</div>
-<article class="theorem theorem-like" id="th_open"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Open sets.</span>
-</h4>
-<div class="para logical" id="th_open-2-1"><ol class="decimal" id="th_open-2-1-1">
-<li id="th_open-2-1-1-1"><div class="para" id="th_open-2-1-1-1-1">The empty set <span class="process-math">\(\emptyset=\{\}\)</span> is open, as is the set <span class="process-math">\(\C\)</span> itself.</div></li>
-<li id="th_open-2-1-1-2">
-<span class="heading"><span class="title">Finite intersection.</span></span><div class="para" id="th_open-2-1-1-2-2">Finite intersections of open sets are open.</div>
-</li>
-<li id="th_open-2-1-1-3">
-<span class="heading"><span class="title">Arbitrary union.</span></span><div class="para" id="th_open-2-1-1-3-2">Arbitrary unions of open sets are open.</div>
-</li>
-</ol></div></article><div class="para" id="ss_open_closed-11">Complementary to the notion of open sets is that of closed sets, which we now define.</div>
-<article class="definition definition-like" id="d_closed"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Closed sets.</span>
-</h4>
-<div class="para" id="d_closed-2-1">A set <span class="process-math">\(C\subseteq \C\)</span> is <dfn class="terminology">closed</dfn> if its complement <span class="process-math">\(U=\C-C\)</span> is open.</div></article><article class="example example-like" id="eg_open_closed_neither"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">Open, closed, neither.</span>
-</h4>
-<div class="para logical" id="eg_open_closed_neither-2-1">
-<div class="para">Decide whether the given set is (a) open and (b) closed.</div>
-<ol class="decimal" id="eg_open_closed_neither-2-1-1">
-<li id="eg_open_closed_neither-2-1-1-1"><div class="para" id="eg_open_closed_neither-2-1-1-1-1"><span class="process-math">\(\displaystyle \emptyset\)</span></div></li>
-<li id="eg_open_closed_neither-2-1-1-2"><div class="para" id="eg_open_closed_neither-2-1-1-2-1">
-<span class="process-math">\(\overline{B}_r(z_0)\text{,}\)</span> where <span class="process-math">\(z_0\in \C\)</span> and <span class="process-math">\(r&gt; 0\text{.}\)</span>
-</div></li>
-<li id="eg_open_closed_neither-2-1-1-3"><div class="para" id="eg_open_closed_neither-2-1-1-3-1">
-<span class="process-math">\(C_r(z_0)=\{z\in \C\colon \abs{z-z_0}=r\}\text{,}\)</span> where <span class="process-math">\(z_0\in \C\)</span> and <span class="process-math">\(r&gt; 0\text{.}\)</span>
-</div></li>
-<li id="eg_open_closed_neither-2-1-1-4"><div class="para" id="eg_open_closed_neither-2-1-1-4-1"><span class="process-math">\(\displaystyle A=\{z\in \C\colon 3 \leq \abs{z-i} &lt; 5\}\)</span></div></li>
-</ol>
-</div>
-<div class="solutions"><details id="eg_open_closed_neither-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_open_closed_neither-3-1"><ol class="decimal" id="eg_open_closed_neither-3-1-1">
-<li id="eg_open_closed_neither-3-1-1-1"><div class="para" id="eg_open_closed_neither-3-1-1-1-1">We know from <a href="s_topo.html#th_open" class="xref" data-knowl="./knowl/xref/th_open.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.7: Open sets">Theorem 1.4.7</a> that <span class="process-math">\(\emptyset\)</span> is open. Since <span class="process-math">\(\C-\emptyset=\C\)</span> is open, we conclude that <span class="process-math">\(\emptyset\)</span> is also closed.</div></li>
-<li id="eg_open_closed_neither-3-1-1-2">
-<div class="para" id="eg_open_closed_neither-3-1-1-2-1">The set is not open: if you take any <span class="process-math">\(w\)</span> on the circle <span class="process-math">\(C_{r}(z_0)\)</span> of radius <span class="process-math">\(r\)</span> centered at <span class="process-math">\(z_0\text{,}\)</span> it is easy to see that any open disc around <span class="process-math">\(w\)</span> will contain an element whose distance to <span class="process-math">\(z_0\)</span> is greater than <span class="process-math">\(r\text{.}\)</span>
-</div>
-<div class="para logical" id="eg_open_closed_neither-3-1-1-2-2">
-<div class="para">The set is closed. We have</div>
+<div class="para">and for a fixed <span class="process-math">\(w\in \C\text{,}\)</span> we define the <dfn class="terminology"><span class="process-math">\(\alpha\)</span>-anchored branch</dfn> of <span class="process-math">\(\mathcal{F}(z)=z^w\)</span> to be the function</div>
 <div class="displaymath process-math">
 \begin{equation*}
-U=\C-\overline{B}_r(z_0)=\{z\in \C\colon d(z,z_0)&gt; r_0\}\text{,}
+f(z)=e^{w(\ln\abs{z}+i\Arg_\alpha(z))}\text{.}
 \end{equation*}
 </div>
-<div class="para">and it is not difficult to show that this set is open. Indeed, given <span class="process-math">\(w\in U\text{,}\)</span> you can show that <span class="process-math">\(B_{s}(w)\subseteq U\text{,}\)</span> where <span class="process-math">\(s=d(w,z_0)-r\text{.}\)</span>
-</div>
+</div></article><article class="remark remark-like" id="ss_branch-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.11.3</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\alpha\)</span>-anchored branches.</span>
+</h4>
+<div class="para" id="ss_branch-5-2">It is easy to see that <span class="process-math">\(\Log_\alpha\)</span> is indeed a branch of <span class="process-math">\(\arg\)</span> for all <span class="process-math">\(\alpha\text{,}\)</span> and as a result, that the <span class="process-math">\(\alpha\)</span>-anchored branches of <span class="process-math">\(\log\)</span> and the set-valued function <span class="process-math">\(\mathcal{F}(z)=z^w\)</span> are also branches.</div>
+<div class="para" id="ss_branch-5-3">Note further that the principal branches of these three set-valued functions are just the <span class="process-math">\(-\pi\)</span>-anchored branches in our new terminology.</div></article><article class="theorem theorem-like" id="th_branches"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.4</span><span class="period">.</span><span class="space"> </span><span class="title">Branches.</span>
+</h4>
+<div class="para logical" id="th_branches-2-1">
+<div class="para">Let <span class="process-math">\(U\subseteq \C-\{0\}\)</span> be open and connected.</div>
+<ul class="disc" id="th_branches-2-1-2">
+<li id="th_branches-2-1-2-1">
+<span class="heading"><span class="title">Argument.</span></span><div class="para" id="th_branches-2-1-2-1-2">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are two branches of <span class="process-math">\(\arg\)</span> on <span class="process-math">\(U\text{,}\)</span> then there is a <span class="process-math">\(k\in \Z\)</span> such that <span class="process-math">\(g(z)=f(z)+2\pi k\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
 </div>
 </li>
-<li id="eg_open_closed_neither-3-1-1-3"><div class="para" id="eg_open_closed_neither-3-1-1-3-1">The set is neither open nor closed. It is easy to see that <span class="process-math">\(4i\)</span> is an element of <span class="process-math">\(A\text{,}\)</span> but not open disc centered at <span class="process-math">\(4i\)</span> is contained in <span class="process-math">\(A\text{.}\)</span> Furthermore, the complement of <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(\C-A\)</span> is not open. Indeed, we have <span class="process-math">\(6i\in \C-A\text{,}\)</span> but every open disc around <span class="process-math">\(6i\)</span> contains some element of <span class="process-math">\(A\text{.}\)</span>
+<li id="th_branches-2-1-2-2">
+<span class="heading"><span class="title">Logarithm.</span></span><div class="para logical" id="th_branches-2-1-2-2-2"><ol class="decimal" id="th_branches-2-1-2-2-2-1">
+<li id="th_branches-2-1-2-2-2-1-1"><div class="para" id="th_branches-2-1-2-2-2-1-1-1">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are two branches of <span class="process-math">\(\log\)</span> on <span class="process-math">\(U\text{,}\)</span> then there is a <span class="process-math">\(k\in \Z\)</span> such that <span class="process-math">\(g(z)=f(z)+2\pi k i\)</span> for all <span class="process-math">\(z\in \in U\text{.}\)</span>
 </div></li>
-</ol></div></div></details></div></article><div class="para" id="ss_open_closed-14">Since closed sets are defined as complement of open sets, a little bit of set theory yields the following complementary result to <a href="s_topo.html#th_open" class="xref" data-knowl="./knowl/xref/th_open.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.7: Open sets">Theorem 1.4.7</a>.</div>
-<article class="theorem theorem-like" id="th_closed"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.10</span><span class="period">.</span>
-</h4>
-<div class="para logical" id="th_closed-1-1"><ol class="decimal" id="th_closed-1-1-1">
-<li id="th_closed-1-1-1-1"><div class="para" id="th_closed-1-1-1-1-1">The empty set <span class="process-math">\(\emptyset=\{\}\)</span> is closed, as is the set <span class="process-math">\(\C\)</span> itself.</div></li>
-<li id="th_closed-1-1-1-2">
-<span class="heading"><span class="title">Finite union.</span></span><div class="para" id="th_closed-1-1-1-2-2">Finite unions of closed sets are closed.</div>
+<li id="th_branches-2-1-2-2-2-1-2"><div class="para logical" id="th_branches-2-1-2-2-2-1-2-1">
+<div class="para">Any branch <span class="process-math">\(f\)</span> of <span class="process-math">\(\log\)</span> on <span class="process-math">\(U\)</span> is differentiable and satisfies</div>
+<div class="displaymath process-math" id="eq_der_branch_log">
+\begin{equation}
+f'(z)=\frac{1}{z}\tag{1.45}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(z\in U\text{.}\)</span>
+</div>
+</div></li>
+</ol></div>
 </li>
-<li id="th_closed-1-1-1-3">
-<span class="heading"><span class="title">Arbitrary intersection.</span></span><div class="para" id="th_closed-1-1-1-3-2">Arbitrary intersections of closed sets are closed.</div>
+<li id="th_branches-2-1-2-3">
+<span class="heading"><span class="title">Power functions.</span></span><div class="para logical" id="th_branches-2-1-2-3-2">
+<div class="para">Fix <span class="process-math">\(w\in \C\text{,}\)</span> and let <span class="process-math">\(\mathcal{F}(z)=z^w\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_branches-2-1-2-3-2-3">
+<li id="th_branches-2-1-2-3-2-3-1"><div class="para" id="th_branches-2-1-2-3-2-3-1-1">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are two branches of <span class="process-math">\(\mathcal{F}\)</span> on <span class="process-math">\(U\text{,}\)</span> then there is a <span class="process-math">\(k\in \Z\)</span> such that <span class="process-math">\(g(z)=e^{2\pi i k w}f(z)\)</span> for all <span class="process-math">\(z\in \in U\text{.}\)</span>
+</div></li>
+<li id="th_branches-2-1-2-3-2-3-2"><div class="para logical" id="th_branches-2-1-2-3-2-3-2-1">
+<div class="para">Any branch <span class="process-math">\(f\)</span> of <span class="process-math">\(\mathcal{F}\)</span> on <span class="process-math">\(U\)</span> is differentiable and satisfies</div>
+<div class="displaymath process-math" id="eq_der_branch_power">
+\begin{equation}
+f'(z)=\frac{wf(z)}{z}\tag{1.46}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(z\in U\text{.}\)</span>
+</div>
+</div></li>
+</ol>
+</div>
 </li>
-</ol></div></article><div class="para" id="ss_open_closed-16">You may have noticed in <a href="s_topo.html#eg_open_closed_neither" class="xref" data-knowl="./knowl/xref/eg_open_closed_neither.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.9: Open, closed, neither">Example 1.4.9</a> that we paid special attention to what we call the <em class="emphasis">boundaries</em> of the given sets. We will now give a rigorous definition of this notion, and then reformulate open and closed in terms of it.</div>
-<article class="definition definition-like" id="d_boundary"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Boundary.</span>
-</h4>
-<div class="para" id="d_boundary-2-1">Let <span class="process-math">\(Y\)</span> be a subset of <span class="process-math">\(\C\text{.}\)</span> An element <span class="process-math">\(z_0\in \C\)</span> is a <dfn class="terminology">boundary point</dfn> of <span class="process-math">\(Y\)</span> if every open disc <span class="process-math">\(B_{r}(z_0)\)</span> contains at least one element from <span class="process-math">\(Y\)</span> and one element from the complement <span class="process-math">\(\C-Y\text{.}\)</span> The <dfn class="terminology">boundary</dfn> of <span class="process-math">\(Y\text{,}\)</span> denoted <span class="process-math">\(\partial Y\text{,}\)</span> is the set of all boundary points of <span class="process-math">\(Y\text{.}\)</span>
-</div></article><article class="example example-like" id="eg_boundary"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Boundary.</span>
-</h4>
-<div class="para logical" id="eg_boundary-2-1">
-<div class="para">Compute the boundary of the given set.</div>
-<ol class="decimal" id="eg_boundary-2-1-1">
-<li id="eg_boundary-2-1-1-1"><div class="para" id="eg_boundary-2-1-1-1-1"><span class="process-math">\(\displaystyle \emptyset\)</span></div></li>
-<li id="eg_boundary-2-1-1-2"><div class="para" id="eg_boundary-2-1-1-2-1"><span class="process-math">\(\displaystyle \C\)</span></div></li>
-<li id="eg_boundary-2-1-1-3"><div class="para" id="eg_boundary-2-1-1-3-1">
-<span class="process-math">\(B_{r}(z_0)\text{,}\)</span> where <span class="process-math">\(z_0\in \C\)</span> and <span class="process-math">\(r &gt; 0\text{.}\)</span>
-</div></li>
-<li id="eg_boundary-2-1-1-4"><div class="para" id="eg_boundary-2-1-1-4-1">
-<span class="process-math">\(\overline{B}_{r}(z_0)\text{,}\)</span> where <span class="process-math">\(z_0\in \C\)</span> and <span class="process-math">\(r &gt; 0\text{.}\)</span>
-</div></li>
-<li id="eg_boundary-2-1-1-5"><div class="para" id="eg_boundary-2-1-1-5-1"><span class="process-math">\(\displaystyle \HH=\{z\in \C\colon \Im z&gt; 0\}\)</span></div></li>
-</ol>
-</div>
-<div class="solutions"><details id="eg_boundary-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_boundary-3-1"><ol class="decimal" id="eg_boundary-3-1-1">
-<li id="eg_boundary-3-1-1-1"><div class="para" id="eg_boundary-3-1-1-1-1">We have <span class="process-math">\(\partial \emptyset=\emptyset\)</span> since for all <span class="process-math">\(z_0\)</span> no open ball <span class="process-math">\(B_\epsilon(z_0)\)</span> can contain elements of <span class="process-math">\(\emptyset\text{.}\)</span> Indeed, <span class="process-math">\(\emptyset\)</span> contains no elements!</div></li>
-<li id="eg_boundary-3-1-1-2"><div class="para" id="eg_boundary-3-1-1-2-1">We have <span class="process-math">\(\partial \C=\emptyset\text{.}\)</span> Indeed, given any <span class="process-math">\(z_0\text{,}\)</span> we have <span class="process-math">\(B_r(z_0)\subseteq \C\)</span> for all <span class="process-math">\(r&gt; 0\text{,}\)</span> and hence this ball contains nothing but elements of <span class="process-math">\(\C\text{.}\)</span>
-</div></li>
-<li id="eg_boundary-3-1-1-3"><div class="para" id="eg_boundary-3-1-1-3-1">Let <span class="process-math">\(C_r(z_0)=\{z\in \C\colon \abs{z-z_0}\}\text{,}\)</span> the circle of radius <span class="process-math">\(r\)</span> centered at <span class="process-math">\(z_0\text{.}\)</span> We have <span class="process-math">\(\partial B_r(z_0)=C_r(z_0)\text{.}\)</span> It is clear that every point on <span class="process-math">\(C_r(z_0)\)</span> is a boundary point of <span class="process-math">\(B_r(z_0)\text{.}\)</span> It is also easy to see that any <span class="process-math">\(z\)</span> not lying on <span class="process-math">\(C_r(z_0)\)</span> is not a boundary point of <span class="process-math">\(B_r(z_0)\text{.}\)</span>
-</div></li>
-<li id="eg_boundary-3-1-1-4"><div class="para" id="eg_boundary-3-1-1-4-1">Similar reasoning as above shows that <span class="process-math">\(\partial\overline{B}_r(z_0)=C_r(z_0)\text{.}\)</span>
-</div></li>
-<li id="eg_boundary-3-1-1-5"><div class="para" id="eg_boundary-3-1-1-5-1">It is easy to see that <span class="process-math">\(\partial \HH=\{z\in \C\colon \Im z=0\}\text{,}\)</span> the <span class="process-math">\(x\)</span>-axis.</div></li>
-</ol></div></div></details></div></article><article class="theorem theorem-like" id="th_boundary"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Open and closed via boundaries.</span>
-</h4>
-<div class="para logical" id="th_boundary-2-1">
-<div class="para">Let <span class="process-math">\(Y\)</span> be a nonempty subset of <span class="process-math">\(\C\text{.}\)</span>
-</div>
-<ol class="decimal" id="th_boundary-2-1-3">
-<li id="th_boundary-2-1-3-1"><div class="para" id="th_boundary-2-1-3-1-1">
-<span class="process-math">\(Y\)</span> is open if and only if it does not contain any of its boundary points.</div></li>
-<li id="th_boundary-2-1-3-2"><div class="para" id="th_boundary-2-1-3-2-1">
-<span class="process-math">\(Y\)</span> is closed if and only if it contains all of its boundary points.</div></li>
-</ol>
-</div></article></section><section class="subsection" id="ss_connected"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Connected sets</span>
-</h3>
-<div class="para" id="ss_connected-2">The topological notion of a <em class="emphasis">connected</em> set will also play an important role in our theory. Below we give two separate notions of connected sets, <em class="emphasis">connected</em> and <em class="emphasis">polygonally connected</em>, that turn out to be equivalent for open sets. Both notions have their advantages, depending on the context. Although polygonally connectedness is admittedly more intuitive than connectedness, you can rest assured that there are many situations where the more abstract connectedness definition comes to our aid. This is why we provide both here.</div>
-<article class="definition definition-like" id="d_connected"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Connected set.</span>
-</h4>
-<div class="para" id="d_connected-2-1">A set <span class="process-math">\(Y\subseteq \C\)</span> is <dfn class="terminology">connected</dfn> if whenever we have open sets <span class="process-math">\(U_1\)</span> and <span class="process-math">\(U_2\)</span> satisfying <span class="process-math">\(Y\subseteq U_1\cup U_2\)</span> and <span class="process-math">\(Y\cap U_1\cap U_2=\emptyset\text{,}\)</span> then either <span class="process-math">\(Y\subseteq U_1\)</span> or <span class="process-math">\(Y\subseteq U_2\text{.}\)</span>
-</div></article><article class="definition definition-like" id="d_polygon_connected"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Polygonally connected.</span>
-</h4>
-<div class="para" id="d_polygon_connected-2-1">A nonempty set <span class="process-math">\(Y\subseteq \C\)</span> is <dfn class="terminology">polygonally connected</dfn> if, given any points <span class="process-math">\(z_1, z_2\in Y\)</span> there is a polygonal path <span class="process-math">\(C\)</span> lying within <span class="process-math">\(Y\)</span> that begins at <span class="process-math">\(z_1\)</span> and ends at <span class="process-math">\(z_2\text{.}\)</span>
-</div></article><figure class="figure figure-like" id="fig_polygon_connected"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/fig_polygon_connected-2.svg" role="img" class="contained" alt="A polygonally connected set"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.16<span class="period">.</span></span><span class="space"> </span>A polygonally connected set</figcaption></figure><article class="theorem theorem-like" id="th_connected"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.17</span><span class="period">.</span><span class="space"> </span><span class="title">Connected sets.</span>
-</h4>
-<div class="para logical" id="th_connected-2-1">
-<div class="para">Let <span class="process-math">\(Y\subseteq \C\)</span> be a nonempty set.</div>
-<ol class="decimal" id="th_connected-2-1-2">
-<li id="th_connected-2-1-2-1"><div class="para" id="th_connected-2-1-2-1-1">If <span class="process-math">\(Y\)</span> is polygonally connected, then it is connected.</div></li>
-<li id="th_connected-2-1-2-2"><div class="para" id="th_connected-2-1-2-2-1">If <span class="process-math">\(Y\)</span> is open, then <span class="process-math">\(Y\)</span> is polygonally connected if and only if <span class="process-math">\(Y\)</span> is connected.</div></li>
-</ol>
-</div></article></section><section class="subsection" id="ss_point_infty"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Point at infinity</span>
-</h3>
-<div class="para" id="ss_point_infty-2">In calculus we introduce formal notation involving <span class="process-math">\(\infty\)</span> to give us succinct ways of describe values of variables or functions that get arbitrarily large: <span class="process-math">\(x\to \infty\)</span> of <span class="process-math">\(f(x)\to -\infty\text{.}\)</span> We will do the same with complex analysis, and even go one step further: namely, by officially adding a formal element <span class="process-math">\(\infty\)</span> to create the <em class="emphasis">extended complex plane</em>, and extending our notion of open sets to this extended set <span class="process-math">\(\C^*\text{.}\)</span>
-</div>
-<article class="definition definition-like" id="d_extended_complex_plane"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.18</span><span class="period">.</span><span class="space"> </span><span class="title">Extended complex plane.</span>
-</h4>
-<div class="para" id="d_extended_complex_plane-2-1">The <dfn class="terminology">extended complex plane</dfn> is the set <span class="process-math">\(\C^*=\C\cup \{\infty\}\text{,}\)</span> where <span class="process-math">\(\infty\)</span> is treated as a formal element.</div> <div class="para logical" id="d_extended_complex_plane-2-2">
-<div class="para">Given <span class="process-math">\(R&gt; 0\text{,}\)</span> the set <span class="process-math">\(B_R(\infty)\)</span> defined as</div>
-<div class="displaymath process-math">
-\begin{equation*}
-B_R(\infty)=\{\infty\}\cup \{z\in \C\colon \abs{z}&gt; R\}
-\end{equation*}
-</div>
-<div class="para">is called an <dfn class="terminology">open disc</dfn> centered at <span class="process-math">\(\infty\text{.}\)</span> We extend our notion of open sets on <span class="process-math">\(\C\)</span> to <span class="process-math">\(\C^*\)</span> by declaring that a set <span class="process-math">\(U^*\)</span> containing <span class="process-math">\(\infty\)</span> is open if and only if <span class="process-math">\(U=U^*\cap \C\)</span> is open in <span class="process-math">\(\C\)</span> and <span class="process-math">\(U^*\)</span> contains <span class="process-math">\(B_R(\infty)\)</span> for some <span class="process-math">\(R&gt; 0\text{.}\)</span>
-</div>
-</div></article><div class="para" id="ss_point_infty-4">We can make sense of our new topological space <span class="process-math">\(\C^*\)</span> using the <em class="emphasis">stereographic projection</em>.</div>
-<article class="definition definition-like" id="d_stereo_proj"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.19</span><span class="period">.</span><span class="space"> </span><span class="title">Stereographic projection.</span>
-</h4>
-<div class="para logical" id="d_stereo_proj-2-1">
-<div class="para">Let <span class="process-math">\(S^2=\{P\in \R^3\colon \norm{P}=1\}\text{,}\)</span> and let <span class="process-math">\(N=(0,0,1)\in S^2\text{.}\)</span> Identify <span class="process-math">\(\C\)</span> as the <span class="process-math">\(xy\)</span>-plane lying in <span class="process-math">\(\R^3\text{.}\)</span> The <dfn class="terminology">stereographic projection</dfn> is the map</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\phi\colon S^2\rightarrow \C^*
-\end{equation*}
-</div>
-<div class="para">defined as follows:</div>
-<ul class="disc" id="d_stereo_proj-2-1-8">
-<li id="d_stereo_proj-2-1-8-1"><div class="para" id="d_stereo_proj-2-1-8-1-1"><span class="process-math">\(\phi(N)=\infty\text{;}\)</span></div></li>
-<li id="d_stereo_proj-2-1-8-2"><div class="para" id="d_stereo_proj-2-1-8-2-1">given <span class="process-math">\(P\in S^2-\{N\}\text{,}\)</span> <span class="process-math">\(\phi(P)=a+bi\text{,}\)</span> where <span class="process-math">\(Q=(a,b,0)\)</span> is the intersection of the unique line passing through <span class="process-math">\(N\)</span> and <span class="process-math">\(P\)</span> with the <span class="process-math">\(xy\)</span>-plane.</div></li>
 </ul>
-</div></article></section></section></div>
+</div></article><details id="th_branches-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_branches-3-1"></div></article></details><article class="example example-like" id="eg_branch_cube"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.5</span><span class="period">.</span><span class="space"> </span><span class="title">Branches of cube-root function.</span>
+</h4>
+<div class="para logical" id="eg_branch_cube-2-1">
+<div class="para">Let <span class="process-math">\(U=\{z\in \C\colon \Re z\geq 0\}-\{0\}\text{.}\)</span>
+</div>
+<ol class="decimal" id="eg_branch_cube-2-1-2">
+<li id="eg_branch_cube-2-1-2-1"><div class="para" id="eg_branch_cube-2-1-2-1-1">Show that there are exactly three branches of <span class="process-math">\(\mathcal{F}(z)=z^{1/3}\)</span> on $U$ and give explicit formulas for each.</div></li>
+<li id="eg_branch_cube-2-1-2-2"><div class="para" id="eg_branch_cube-2-1-2-2-1">Verify that <a href="s_branch_harmonic.html#eq_der_branch_power" class="xref" data-knowl="./knowl/xref/eq_der_branch_power.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.46">(1.46)</a> holds for one of your three branches.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="eg_branch_cube-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_branch_cube-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_harmonic"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Harmonic functions</span>
+</h3>
+<article class="definition definition-like" id="d_harmonic"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.6</span><span class="period">.</span><span class="space"> </span><span class="title">Harmonic functions.</span>
+</h4>
+<div class="para logical" id="d_harmonic-2-1">
+<div class="para">Let <span class="process-math">\(U\subseteq \R^2\)</span> be an open set.  A function <span class="process-math">\(u\colon U\rightarrow \R\)</span> is <dfn class="terminology">harmonic</dfn> if it satisfies the <dfn class="terminology">Laplace’s equation</dfn>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+u_{xx}(x,y)+u_{yy}(x,y)=0
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\((x,y)\in U\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="d_harmonic-2-2">
+<div class="para">A <dfn class="terminology">pair of harmonic conjugates</dfn> on <span class="process-math">\(U\)</span> is a pair <span class="process-math">\((u,v)\)</span> of harmonic functions on <span class="process-math">\(U\)</span> satisfying</div>
+<div class="displaymath process-math" id="d_harmonic-2-2-5">
+\begin{align*}
+v_x \amp =-u_y \amp v_y=u_x\text{.}
+\end{align*}
+</div>
+</div></article><article class="theorem theorem-like" id="th_harmonic_conjugates"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.7</span><span class="period">.</span><span class="space"> </span><span class="title">Harmonic conjugates.</span>
+</h4>
+<div class="para logical" id="th_harmonic_conjugates-2-1">
+<div class="para">Assume <span class="process-math">\(U\)</span> is an open subset of <span class="process-math">\(\R^2\)</span> (identified as usual with <span class="process-math">\(\C\)</span>). Assume <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are real-valued functions on <span class="process-math">\(U\)</span> whose second-order partial derivatives exist on <span class="process-math">\(U\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="th_harmonic_conjugates-2-1-8">
+<li id="th_harmonic_conjugates-2-1-8-1"><div class="para" id="th_harmonic_conjugates-2-1-8-1-1">
+<span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are harmonic and</div></li>
+<li id="th_harmonic_conjugates-2-1-8-2"><div class="para" id="th_harmonic_conjugates-2-1-8-2-1">
+<span class="process-math">\(f=u+iv\)</span> is holomorphic on <span class="process-math">\(U\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_harmonic_conjugates-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_harmonic_conjugates-3-1"></div></article></details></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_deMoivre.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_sequences.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_C-R.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

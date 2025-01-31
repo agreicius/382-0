@@ -1909,6 +1909,78 @@ var ptx_lunr_docs = [
   "body": " Derivative of power function   Fix a complex number and define to be the principle branch of . Show that is differentiable on its domain and compute a formula for its derivative.       "
 },
 {
+  "id": "s_branch_harmonic",
+  "level": "1",
+  "url": "s_branch_harmonic.html",
+  "type": "Section",
+  "number": "1.11",
+  "title": "Branches, harmonic functions, flows",
+  "body": " Branches, harmonic functions, flows   We will round out our discussion of differentiability with some miscellany, each item of which will be take up again in the course.    Branches  We threw the term branch around earlier when discussing notions of argument, logarithms, and complex powers. It is time at last to put this notion on firm, if somewhat formal ground.   Branch   A complex set-valued function is a function whose domain is a subset , and whose images are sets of complex numbers for all .  A branch of a set-valued function with domain is a function satisfying the following properties:    is open and connected;     is continuous;     for all .          Given , we define to be the ray , and we define the -anchored branch of to be the function as follows: for all , is the unique satisfying .  Similarly, we define the -anchored branch of to be the function defined as ; and for a fixed , we define the -anchored branch of to be the function .     -anchored branches  It is easy to see that is indeed a branch of for all , and as a result, that the -anchored branches of and the set-valued function are also branches.  Note further that the principal branches of these three set-valued functions are just the -anchored branches in our new terminology.    Branches   Let be open and connected.   Argument  If and are two branches of on , then there is a such that for all .    Logarithm     If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .       Power functions  Fix , and let .   If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .               Branches of cube-root function   Let .   Show that there are exactly three branches of on $U$ and give explicit formulas for each.    Verify that holds for one of your three branches.             Harmonic functions   Harmonic functions   Let be an open set. A function is harmonic if it satisfies the Laplace's equation  for all .  A pair of harmonic conjugates on is a pair of harmonic functions on satisfying .     Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist on . The following statements are equivalent.    and are harmonic and     is holomorphic on .            "
+},
+{
+  "id": "d_branch",
+  "level": "2",
+  "url": "s_branch_harmonic.html#d_branch",
+  "type": "Definition",
+  "number": "1.11.1",
+  "title": "Branch.",
+  "body": " Branch   A complex set-valued function is a function whose domain is a subset , and whose images are sets of complex numbers for all .  A branch of a set-valued function with domain is a function satisfying the following properties:    is open and connected;     is continuous;     for all .      "
+},
+{
+  "id": "d_arg_branches",
+  "level": "2",
+  "url": "s_branch_harmonic.html#d_arg_branches",
+  "type": "Definition",
+  "number": "1.11.2",
+  "title": ".",
+  "body": "   Given , we define to be the ray , and we define the -anchored branch of to be the function as follows: for all , is the unique satisfying .  Similarly, we define the -anchored branch of to be the function defined as ; and for a fixed , we define the -anchored branch of to be the function .   "
+},
+{
+  "id": "ss_branch-5",
+  "level": "2",
+  "url": "s_branch_harmonic.html#ss_branch-5",
+  "type": "Remark",
+  "number": "1.11.3",
+  "title": "<span class=\"process-math\">\\(\\alpha\\)<\/span>-anchored branches.",
+  "body": " -anchored branches  It is easy to see that is indeed a branch of for all , and as a result, that the -anchored branches of and the set-valued function are also branches.  Note further that the principal branches of these three set-valued functions are just the -anchored branches in our new terminology.  "
+},
+{
+  "id": "th_branches",
+  "level": "2",
+  "url": "s_branch_harmonic.html#th_branches",
+  "type": "Theorem",
+  "number": "1.11.4",
+  "title": "Branches.",
+  "body": " Branches   Let be open and connected.   Argument  If and are two branches of on , then there is a such that for all .    Logarithm     If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .       Power functions  Fix , and let .   If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .             "
+},
+{
+  "id": "eg_branch_cube",
+  "level": "2",
+  "url": "s_branch_harmonic.html#eg_branch_cube",
+  "type": "Example",
+  "number": "1.11.5",
+  "title": "Branches of cube-root function.",
+  "body": " Branches of cube-root function   Let .   Show that there are exactly three branches of on $U$ and give explicit formulas for each.    Verify that holds for one of your three branches.          "
+},
+{
+  "id": "d_harmonic",
+  "level": "2",
+  "url": "s_branch_harmonic.html#d_harmonic",
+  "type": "Definition",
+  "number": "1.11.6",
+  "title": "Harmonic functions.",
+  "body": " Harmonic functions   Let be an open set. A function is harmonic if it satisfies the Laplace's equation  for all .  A pair of harmonic conjugates on is a pair of harmonic functions on satisfying .   "
+},
+{
+  "id": "th_harmonic_conjugates",
+  "level": "2",
+  "url": "s_branch_harmonic.html#th_harmonic_conjugates",
+  "type": "Theorem",
+  "number": "1.11.7",
+  "title": "Harmonic conjugates.",
+  "body": " Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist on . The following statements are equivalent.    and are harmonic and     is holomorphic on .          "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
