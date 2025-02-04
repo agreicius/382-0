@@ -185,9 +185,16 @@
         As with good old-fashioned calculus, a complex function whose derivative is zero everywhere (on a <em>connected</em> open set) is constant. Let's see why this is so. First some definitions and conventions. 
     </p>
     <convention>
-    <title>Constant functions</title>
+    <title>Restrictions and constant functions</title>
     <p>
-        Given a function <m>f</m> defined on a set <m>D</m>, we say that <m>f</m> is on constant on <m>D</m> if there is a complex number <m>w_0\in \C</m> such that <m>f(z)=w_0</m> for all <m>z\in D</m>. We will write <m>f\vert_D=w_0</m> in this case. 
+        Given a function <m>f\colon D\rightarrow \C</m> and subset <m>D'\subseteq D</m>, we denote by <m>f\vert_{D'}</m> the <em>restriction</em> of <m>f</m> to <m>D'</m>: that is 
+        <md>
+            <mrow>f\vert_{D'}\colon D' \amp\rightarrow \C </mrow>
+            <mrow>z \amp \longmapsto f(z)</mrow>
+        </md>.
+        Note that although <m>f\vert_{D'}</m> is defined via the same rule as <m>f</m>, if <m>D'\ne D</m>, it is technically a different function.
+        </p>
+        <p>Given <m>D'\subseteq D</m> we say that <m>f</m> is on constant on <m>D'</m> if there is a complex number <m>w_0\in \C</m> such that <m>f(z)=w_0</m> for all <m>z\in D'</m>. We will write <m>f\vert_{D'}=w_0</m> in this case. 
     </p>
 </convention>
 <definition xml:id="d_locally_constant">
@@ -217,7 +224,6 @@ Let <m>f</m> be defined on the open set <m>U</m>. The following statements are e
         </p>
     </li>
 </ol>
-As a consequence, if we assume further that <m>U</m> is connected, then <m>f'\vert_U=0</m> if and only if <m>f</m> is a constant function. 
 </p>
 </statement>
 <proof>
@@ -232,7 +238,7 @@ As a consequence, if we assume further that <m>U</m> is connected, then <m>f'\ve
     </p>
     </case>
     <case>
-    <title>Implication:(ii)<m>\implies</m>(i)</title>
+    <title>Implication: (ii)<m>\implies</m>(i)</title>
     <p>
     Assume <m>f'(z)=0</m> for all <m>z\in U</m>. We will show that <m>f</m> is locally constant. Given <m>z_0\in U</m>, there is an open ball <m>V=B_{r}(z_0)\subseteq U</m>. Writing <m>f=u+iv</m> and using <xref ref="th_C-R"/>, we have 
     <me>
@@ -390,6 +396,39 @@ for all <m>z\in \C-(-\infty, 0]</m>, as desired.
 </p>
 </solution>
 </example>
+<example xml:id="d_der_reciprocal">
+<title>Reciprocal function</title>
+<statement>
+<p>
+Define <m>f\colon \C-\{0\}\rightarrow \C-\{0\}</m> as <m>f(z)=1/z</m>. Re-derive the derivative formula <m>f'(z)=-1/z^2</m> using the polar Cauchy-Riemann equations. 
+</p>
+</statement>
+<solution>
+<p>
+For <m>z=re^{i\theta}</m>, we have 
+<me>f(z)=\frac{1}{r}e^{-i\theta}=\frac{\cos(-\theta)}{r}+i\,\frac{\sin(-\theta)}{r}</me>,
+and thus <m>u(r,\theta)=\cos(-\theta)/r</m> and <m>v(r,\theta)=\sin(-\theta)/r</m>. The relevant partial derivatives are then 
+<md>
+    <mrow>u_r \amp = -\frac{\cos(-\theta)}{r^2} \amp u_\theta\amp =\frac{\sin(-\theta)}{r}</mrow>
+    <mrow>v_r \amp = -\frac{\sin(-\theta)}{r^2} \amp v_\theta\amp =-\frac{\cos(-\theta)}{r} </mrow>
+</md>.
+We then easily see that 
+<md>
+    <mrow>u_r \amp = \frac{1}{r}v_\theta</mrow>
+    <mrow>u_\theta \amp = -rv_r</mrow>
+</md>.
+We conclude that <m>f</m> is differentiable on <m>\C-\{0\}</m> and 
+<md>
+    <mrow>f'(z) \amp = e^{-i\theta}(u_r(r,\theta)+iv_r(r,\theta))</mrow>
+    <mrow> \amp = e^{-i\theta}\left(-\frac{\cos(-\theta)}{r^2}-i\frac{\sin(-\theta)}{r^2}\right)</mrow>
+    <mrow> \amp = -\frac{1}{r^2}\, e^{-i\theta}e^{-i\theta}</mrow>
+    <mrow> \amp = -\frac{1}{r^2}\, e^{-2i\theta}</mrow>
+    <mrow> \amp = -\frac{1}{z^2}</mrow>
+</md>.
+</p>
+</solution>
+</example>
+
 <example xml:id="eg_der_power">
 <title>Derivative of power function</title>
 <statement>
@@ -399,7 +438,17 @@ Fix a complex number <m>w</m> and define <m>f(z)</m> to be the principle branch 
 </statement>
 <solution>
 <p>
-
+The function <m>f</m> has formula <m>f(z)=e^{w\Log z}=\exp(w\Log z)</m>. The derivative of <m>f</m> is easily computed using the the chain rule:
+<md>
+    <mrow>f'(z) \amp = \exp'(w\Log z)\cdot (w\Log z)'</mrow>
+    <mrow> \amp = w\exp(w\Log z)\cdot \frac{1}{z} \amp (\exp'=\exp, (Log z)'=1/z</mrow>
+    <mrow> \amp = \frac{f(z)}{z}</mrow>
+</md>.
+You were expecting <m>f'(z)=z^{w-1}</m>? Since <m>z^w</m> and <m>z^{w-1}</m> are not complex functions in themselves, the answer was never going to be this easy. However, writing 
+<me>
+    z^{w-1}=\frac{z^w}{z}
+</me>
+and swapping <m>z^{w}</m> out for <m>f</m>, we see that our formula is equivalent to the familiar power rule. 
 </p>
 </solution>
 </example>
