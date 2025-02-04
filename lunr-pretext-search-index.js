@@ -1924,7 +1924,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.11",
   "title": "Branches, harmonic functions, flows",
-  "body": " Branches, harmonic functions, flows   We will round out our discussion of differentiability with some miscellany, each item of which will be take up again in the course.    Branches  We threw the term branch around earlier when discussing notions of argument, logarithms, and complex powers. It is time at last to put this notion on firm, if somewhat formal ground.   Branch   A complex set-valued function is a function whose domain is a subset , and whose images are sets of complex numbers for all .  A branch of a set-valued function with domain is a function satisfying the following properties:    is open and connected;     is continuous;     for all .          Given , we define to be the ray , and we define the -cut branch of to be the function defined as follows: for all , is the unique satisfying .  Similarly, we define the -cut branch of to be the function defined as ; and for a fixed , we define the -cut branch of to be the function .     -anchored branches  It is easy to see that is indeed a branch of for all , and as a result, that the -anchored branches of and the set-valued function are also branches.  Note further that the principal branches of these three set-valued functions are just the -anchored branches in our new terminology.    is holomorphic   Show that the branch is holomorphic on its domain and satisfies     As in , we use the Cauchy-Riemann equations. Fix . Picking a small enough neighborhood in the -plane, we can assume that for close enough to we have if and only if and for some fixed . (This is because the map is continuous.) for some , and hence and for some .     Branches   Let be open and connected.   Argument  If and are two branches of on , then there is a such that for all .    Logarithm     If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .       Power functions  Fix , and let .   If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .               Branches of cube-root function   Let .   Show that there are exactly three branches of on $U$ and give explicit formulas for each.    Verify that holds for one of your three branches.             Harmonic functions   Harmonic functions   Let be an open set. A function is harmonic if it satisfies the Laplace's equation  for all .  A pair of harmonic conjugates on is a pair of harmonic functions on satisfying .     Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist on . The following statements are equivalent.    and are harmonic and     is holomorphic on .            "
+  "body": " Branches, harmonic functions, flows   We will round out our discussion of differentiability with some miscellany, each item of which will be take up again in the course.    Branches  We threw the term branch around earlier when discussing notions of argument, logarithms, and complex powers. It is time at last to put this notion on firm, if somewhat formal ground.   Branch   A complex set-valued function is a function whose domain is a subset , and whose images are sets of complex numbers for all .  A branch of a set-valued function with domain is a function satisfying the following properties:    is open and connected;     is continuous;     for all .          Given , we define to be the ray , and we define the -cut branch of to be the function defined as follows: for all , is the unique satisfying .  Similarly, we define the -cut branch of to be the function defined as ; and for a fixed , we define the -cut branch of to be the function .     -anchored branches  It is easy to see that is indeed a branch of for all , and as a result, that the -anchored branches of and the set-valued function are also branches.  Note further that the principal branches of these three set-valued functions are just the -anchored branches in our new terminology.    Relating -cut branches   Given show that .    First show that for all , where as always this must be interpreted as an equality of sets.    This is left as a homework exercise.     is holomorphic   Show that the branch is holomorphic on its domain and satisfies     As in , we use the Cauchy-Riemann equations. Fix . Picking a small enough neighborhood in the -plane, we can assume that for close enough to we have if and only if and for some fixed . (This is because the map is continuous.) We conclude that for some , and hence and for some . We then proceed exactly as in to show that the polar Cauchy-Riemann equations are satisfied, and that .     Branches   Let be open and connected.   Argument  If and are two branches of on , then there is a such that for all .    Logarithm     If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .       Power functions  Fix , and let .   If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .               Branches of cube-root function   Let .   Show that there are exactly three branches of on and give explicit formulas for each.    Verify that holds for one of your three branches.       Since , the function is a branch of . According to , the other branches are of the form . Letting vary in this manner, we see that the multiplying factor ranges over the three cube-roots of unity: , the distinct branches of on are , where . Again using, , we have , where is the -cut branch of . In other words, we have a derivative formula very much in the spirit of .      Harmonic functions   Harmonic functions   Let be an open set. A function is harmonic if it satisfies the Laplace's equation  for all .  A pair of harmonic conjugates on is a pair of harmonic functions on satisfying .     Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist on . The following statements are equivalent.    and are harmonic and     is holomorphic on .            "
 },
 {
   "id": "d_branch",
@@ -1954,20 +1954,29 @@ var ptx_lunr_docs = [
   "body": " -anchored branches  It is easy to see that is indeed a branch of for all , and as a result, that the -anchored branches of and the set-valued function are also branches.  Note further that the principal branches of these three set-valued functions are just the -anchored branches in our new terminology.  "
 },
 {
+  "id": "eg_branch_relations",
+  "level": "2",
+  "url": "s_branch_harmonic.html#eg_branch_relations",
+  "type": "Example",
+  "number": "1.11.4",
+  "title": "Relating <span class=\"process-math\">\\(\\alpha\\)<\/span>-cut branches.",
+  "body": " Relating -cut branches   Given show that .    First show that for all , where as always this must be interpreted as an equality of sets.    This is left as a homework exercise.   "
+},
+{
   "id": "eg_alpha_cuts",
   "level": "2",
   "url": "s_branch_harmonic.html#eg_alpha_cuts",
   "type": "Example",
-  "number": "1.11.4",
+  "number": "1.11.5",
   "title": "<span class=\"process-math\">\\(\\Log_\\alpha(z)\\)<\/span> is holomorphic.",
-  "body": " is holomorphic   Show that the branch is holomorphic on its domain and satisfies     As in , we use the Cauchy-Riemann equations. Fix . Picking a small enough neighborhood in the -plane, we can assume that for close enough to we have if and only if and for some fixed . (This is because the map is continuous.) for some , and hence and for some .   "
+  "body": " is holomorphic   Show that the branch is holomorphic on its domain and satisfies     As in , we use the Cauchy-Riemann equations. Fix . Picking a small enough neighborhood in the -plane, we can assume that for close enough to we have if and only if and for some fixed . (This is because the map is continuous.) We conclude that for some , and hence and for some . We then proceed exactly as in to show that the polar Cauchy-Riemann equations are satisfied, and that .   "
 },
 {
   "id": "th_branches",
   "level": "2",
   "url": "s_branch_harmonic.html#th_branches",
   "type": "Theorem",
-  "number": "1.11.5",
+  "number": "1.11.6",
   "title": "Branches.",
   "body": " Branches   Let be open and connected.   Argument  If and are two branches of on , then there is a such that for all .    Logarithm     If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .       Power functions  Fix , and let .   If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .             "
 },
@@ -1976,16 +1985,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_branch_harmonic.html#eg_branch_cube",
   "type": "Example",
-  "number": "1.11.6",
+  "number": "1.11.7",
   "title": "Branches of cube-root function.",
-  "body": " Branches of cube-root function   Let .   Show that there are exactly three branches of on $U$ and give explicit formulas for each.    Verify that holds for one of your three branches.          "
+  "body": " Branches of cube-root function   Let .   Show that there are exactly three branches of on and give explicit formulas for each.    Verify that holds for one of your three branches.       Since , the function is a branch of . According to , the other branches are of the form . Letting vary in this manner, we see that the multiplying factor ranges over the three cube-roots of unity: , the distinct branches of on are , where . Again using, , we have , where is the -cut branch of . In other words, we have a derivative formula very much in the spirit of .   "
 },
 {
   "id": "d_harmonic",
   "level": "2",
   "url": "s_branch_harmonic.html#d_harmonic",
   "type": "Definition",
-  "number": "1.11.7",
+  "number": "1.11.8",
   "title": "Harmonic functions.",
   "body": " Harmonic functions   Let be an open set. A function is harmonic if it satisfies the Laplace's equation  for all .  A pair of harmonic conjugates on is a pair of harmonic functions on satisfying .   "
 },
@@ -1994,7 +2003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_branch_harmonic.html#th_harmonic_conjugates",
   "type": "Theorem",
-  "number": "1.11.8",
+  "number": "1.11.9",
   "title": "Harmonic conjugates.",
   "body": " Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist on . The following statements are equivalent.    and are harmonic and     is holomorphic on .          "
 },

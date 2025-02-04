@@ -646,22 +646,35 @@ f(z)=e^{w(\ln\abs{z}+i\Arg_\alpha(z))}\text{.}
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.11.3</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\alpha\)</span>-anchored branches.</span>
 </h4>
 <div class="para" id="ss_branch-5-2">It is easy to see that <span class="process-math">\(\Log_\alpha\)</span> is indeed a branch of <span class="process-math">\(\arg\)</span> for all <span class="process-math">\(\alpha\text{,}\)</span> and as a result, that the <span class="process-math">\(\alpha\)</span>-anchored branches of <span class="process-math">\(\log\)</span> and the set-valued function <span class="process-math">\(\mathcal{F}(z)=z^w\)</span> are also branches.</div>
-<div class="para" id="ss_branch-5-3">Note further that the principal branches of these three set-valued functions are just the <span class="process-math">\(-\pi\)</span>-anchored branches in our new terminology.</div></article><article class="example example-like" id="eg_alpha_cuts"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Log_\alpha(z)\)</span> is holomorphic.</span>
+<div class="para" id="ss_branch-5-3">Note further that the principal branches of these three set-valued functions are just the <span class="process-math">\(-\pi\)</span>-anchored branches in our new terminology.</div></article><article class="example example-like" id="eg_branch_relations"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.4</span><span class="period">.</span><span class="space"> </span><span class="title">Relating <span class="process-math">\(\alpha\)</span>-cut branches.</span>
+</h4>
+<div class="para logical" id="eg_branch_relations-2-1">
+<div class="para">Given <span class="process-math">\(\alpha,\beta\in \R\)</span> show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Arg_\beta(z)=\Arg_\alpha(e^{i(\alpha-\beta)}z)+\beta-\alpha\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions">
+<details id="eg_branch_relations-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="eg_branch_relations-3-1">First show that <span class="process-math">\(\arg(z)=\arg(e^{i(\alpha-\beta)}z)+\beta-\alpha\)</span> for all <span class="process-math">\(z\text{,}\)</span> where as always this must be interpreted as an equality of sets.</div></div></details><details id="eg_branch_relations-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_branch_relations-4-1">This is left as a homework exercise.</div></div></details>
+</div></article><article class="example example-like" id="eg_alpha_cuts"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.5</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Log_\alpha(z)\)</span> is holomorphic.</span>
 </h4>
 <div class="para" id="eg_alpha_cuts-2-1">Show that the branch <span class="process-math">\(f(z)=\Log_\alpha(z)\)</span> is holomorphic on its domain <span class="process-math">\(\C-R_\alpha\)</span> and satisfies <span class="process-math">\(f'(z)=\frac{1}{z}\)</span>
 </div>
 <div class="solutions"><details id="eg_alpha_cuts-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_alpha_cuts-3-1">
-<div class="para">As in <a href="s_C-R.html#eg_der_Log" class="xref" data-knowl="./knowl/xref/eg_der_Log.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.10.15: Derivative of \Log">Example 1.10.15</a>, we use the Cauchy-Riemann equations. Fix <span class="process-math">\(z_0=r_0e^{i\theta_0}\in \C-R_{\alpha}\text{.}\)</span> Picking a small enough neighborhood in the <span class="process-math">\(r\theta\)</span>-plane, we can assume that for <span class="process-math">\((r,\theta)\)</span> close enough to <span class="process-math">\((r_0,\theta_0)\)</span> we have <span class="process-math">\(z=re^{i\theta}\)</span> if and only if <span class="process-math">\(r=\abs{z}\)</span> and <span class="process-math">\(\Arg_\alpha z=\theta+2\pi k\)</span> for some fixed <span class="process-math">\(k\in \Z\text{.}\)</span> (This is because the map <span class="process-math">\((r,\theta)\mapsto \Arg_\alpha(e^{i\theta})\)</span> is continuous.)</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_der_Log.html">
+<div class="para">As in <a href="s_C-R.html#eg_der_Log" class="xref" data-knowl="./knowl/xref/eg_der_Log.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.10.15: Derivative of \Log">Example 1.10.15</a>, we use the Cauchy-Riemann equations. Fix <span class="process-math">\(z_0=r_0e^{i\theta_0}\in \C-R_{\alpha}\text{.}\)</span> Picking a small enough neighborhood in the <span class="process-math">\(r\theta\)</span>-plane, we can assume that for <span class="process-math">\((r,\theta)\)</span> close enough to <span class="process-math">\((r_0,\theta_0)\)</span> we have <span class="process-math">\(z=re^{i\theta}\)</span> if and only if <span class="process-math">\(r=\abs{z}\)</span> and <span class="process-math">\(\Arg_\alpha z=\theta+2\pi k\)</span> for some fixed <span class="process-math">\(k\in \Z\text{.}\)</span> (This is because the map <span class="process-math">\((r,\theta)\mapsto \Arg_\alpha(e^{i\theta})\)</span> is continuous.) We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_der_Log.html ./knowl/xref/eg_der_Log.html">
 \begin{equation*}
 \Log_\alpha(z)=\ln \abs{z}+i \Arg_\alpha z=\ln r+i(\theta+2\pi k)
 \end{equation*}
 </div>
-<div class="para">for some <span class="process-math">\(k\in \Z\text{,}\)</span> and hence <span class="process-math">\(u(r,\theta)=r\)</span> and <span class="process-math">\(v(r,\theta)=(\theta+2\pi k)\)</span> for some <span class="process-math">\(k\text{.}\)</span>
+<div class="para">for some <span class="process-math">\(k\in \Z\text{,}\)</span> and hence <span class="process-math">\(u(r,\theta)=r\)</span> and <span class="process-math">\(v(r,\theta)=(\theta+2\pi k)\)</span> for some <span class="process-math">\(k\text{.}\)</span> We then proceed exactly as in <a href="s_C-R.html#eg_der_Log" class="xref" data-knowl="./knowl/xref/eg_der_Log.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.10.15: Derivative of \Log">Example 1.10.15</a> to show that the polar Cauchy-Riemann equations are satisfied, and that <span class="process-math">\(f'(z)=1/z\text{.}\)</span>
 </div>
 </div></div></details></div></article><article class="theorem theorem-like" id="th_branches"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.5</span><span class="period">.</span><span class="space"> </span><span class="title">Branches.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.6</span><span class="period">.</span><span class="space"> </span><span class="title">Branches.</span>
 </h4>
 <div class="para logical" id="th_branches-2-1">
 <div class="para">Let <span class="process-math">\(U\subseteq \C-\{0\}\)</span> be open and connected.</div>
@@ -708,21 +721,54 @@ f'(z)=\frac{wf(z)}{z}\tag{1.46}
 </li>
 </ul>
 </div></article><details id="th_branches-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_branches-3-1"></div></article></details><article class="example example-like" id="eg_branch_cube"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.6</span><span class="period">.</span><span class="space"> </span><span class="title">Branches of cube-root function.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.7</span><span class="period">.</span><span class="space"> </span><span class="title">Branches of cube-root function.</span>
 </h4>
 <div class="para logical" id="eg_branch_cube-2-1">
 <div class="para">Let <span class="process-math">\(U=\{z\in \C\colon \Re z\geq 0\}-\{0\}\text{.}\)</span>
 </div>
 <ol class="decimal" id="eg_branch_cube-2-1-2">
-<li id="eg_branch_cube-2-1-2-1"><div class="para" id="eg_branch_cube-2-1-2-1-1">Show that there are exactly three branches of <span class="process-math">\(\mathcal{F}(z)=z^{1/3}\)</span> on $U$ and give explicit formulas for each.</div></li>
+<li id="eg_branch_cube-2-1-2-1"><div class="para" id="eg_branch_cube-2-1-2-1-1">Show that there are exactly three branches of <span class="process-math">\(\mathcal{F}(z)=z^{1/3}\)</span> on <span class="process-math">\(U\)</span> and give explicit formulas for each.</div></li>
 <li id="eg_branch_cube-2-1-2-2"><div class="para" id="eg_branch_cube-2-1-2-2-1">Verify that <a href="s_branch_harmonic.html#eq_der_branch_power" class="xref" data-knowl="./knowl/xref/eq_der_branch_power.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.46">(1.46)</a> holds for one of your three branches.</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_branch_cube-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_branch_cube-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_harmonic"><h3 class="heading hide-type">
+<div class="solutions"><details id="eg_branch_cube-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_branch_cube-3-1">
+<div class="para">Since <span class="process-math">\(U\subseteq \C-R_{-\pi/2}\text{,}\)</span> the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_branches.html ./knowl/xref/th_branches.html" id="eg_branch_cube-3-1-2">
+\begin{align*}
+f(z)\amp =e^{\frac{1}{3}\Log_{-\pi/2}z}\\
+\amp = e^{1/3(\ln\abs{z}+i\Arg_{-\pi/2} z)}\\
+\amp =r^{1/3}e^{i(\Arg_{-\pi/2} z)/3} \amp (r=\abs{z})
+\end{align*}
+</div>
+<div class="para">is a branch of <span class="process-math">\(z^{1/3}\text{.}\)</span> According to <a href="s_branch_harmonic.html#th_branches" class="xref" data-knowl="./knowl/xref/th_branches.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.11.6: Branches">Theorem 1.11.6</a>, the other branches are of the form</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_branches.html ./knowl/xref/th_branches.html">
+\begin{equation*}
+g(z)=e^{2\pi i k/3}f(z)\text{.}
+\end{equation*}
+</div>
+<div class="para">Letting <span class="process-math">\(k\)</span> vary in this manner, we see that the multiplying factor <span class="process-math">\(e^{2\pi i k/3}\)</span> ranges over the three cube-roots of unity: i.e., the distinct branches of <span class="process-math">\(z^{1/3}\)</span> on <span class="process-math">\(U\)</span> are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_branches.html ./knowl/xref/th_branches.html">
+\begin{equation*}
+f(z), \zeta f(z), \zeta^2 f(z)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\zeta=e^{2\pi i/3}=\cos(2\pi/3)+i\sin(2\pi/3)\text{.}\)</span> Again using, <a href="s_branch_harmonic.html#th_branches" class="xref" data-knowl="./knowl/xref/th_branches.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.11.6: Branches">Theorem 1.11.6</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_branches.html ./knowl/xref/th_branches.html" id="eg_branch_cube-3-1-14">
+\begin{align*}
+f'(z)\amp =\frac{1}{3}\, \frac{f(z)}{z} \\
+\amp =\frac{\abs{z}^{1/3}e^{i(\Arg_{-\pi/2} z)/3}}{3\abs{z}e^{i \Arg_{-\pi/2}(z)}}\\
+\amp = \frac{1}{3}\abs{z}^{-2/3}e^{-(2\Arg_{-\pi/2} z)i/3}\\
+\amp = \frac{1}{3} e^{-\frac{2}{3}\Log_{-\pi/2} z}\\
+\amp = \frac{1}{3} h(z)\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(h(z)=e^{-\frac{2}{3}\Log_{-\pi/2} z}\)</span> is the <span class="process-math">\(-\pi/2\)</span>-cut branch of <span class="process-math">\(z^{-2/3}\text{.}\)</span> In other words, we have a derivative formula very much in the spirit of <span class="process-math">\(\frac{d}{dx}(x^{1/3})=\frac{1}{3}x^{-2/3}\text{.}\)</span>
+</div>
+</div></div></details></div></article></section><section class="subsection" id="ss_harmonic"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Harmonic functions</span>
 </h3>
 <article class="definition definition-like" id="d_harmonic"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.7</span><span class="period">.</span><span class="space"> </span><span class="title">Harmonic functions.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.11.8</span><span class="period">.</span><span class="space"> </span><span class="title">Harmonic functions.</span>
 </h4>
 <div class="para logical" id="d_harmonic-2-1">
 <div class="para">Let <span class="process-math">\(U\subseteq \R^2\)</span> be an open set.  A function <span class="process-math">\(u\colon U\rightarrow \R\)</span> is <dfn class="terminology">harmonic</dfn> if it satisfies the <dfn class="terminology">Laplace’s equation</dfn>
@@ -742,7 +788,7 @@ v_x \amp =-u_y \amp v_y=u_x\text{.}
 \end{align*}
 </div>
 </div></article><article class="theorem theorem-like" id="th_harmonic_conjugates"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.8</span><span class="period">.</span><span class="space"> </span><span class="title">Harmonic conjugates.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.11.9</span><span class="period">.</span><span class="space"> </span><span class="title">Harmonic conjugates.</span>
 </h4>
 <div class="para logical" id="th_harmonic_conjugates-2-1">
 <div class="para">Assume <span class="process-math">\(U\)</span> is an open subset of <span class="process-math">\(\R^2\)</span> (identified as usual with <span class="process-math">\(\C\)</span>). Assume <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are real-valued functions on <span class="process-math">\(U\)</span> whose second-order partial derivatives exist on <span class="process-math">\(U\text{.}\)</span> The following statements are equivalent.</div>
