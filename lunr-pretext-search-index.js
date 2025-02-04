@@ -1923,8 +1923,8 @@ var ptx_lunr_docs = [
   "url": "s_branch_harmonic.html",
   "type": "Section",
   "number": "1.11",
-  "title": "Branches, harmonic functions, flows",
-  "body": " Branches, harmonic functions, flows   We will round out our discussion of differentiability with some miscellany, each item of which will be take up again in the course.    Branches  We threw the term branch around earlier when discussing notions of argument, logarithms, and complex powers. It is time at last to put this notion on firm, if somewhat formal ground.   Branch   A complex set-valued function is a function whose domain is a subset , and whose images are sets of complex numbers for all .  A branch of a set-valued function with domain is a function satisfying the following properties:    is open and connected;     is continuous;     for all .          Given , we define to be the ray , and we define the -cut branch of to be the function defined as follows: for all , is the unique satisfying .  Similarly, we define the -cut branch of to be the function defined as ; and for a fixed , we define the -cut branch of to be the function .     -anchored branches  It is easy to see that is indeed a branch of for all , and as a result, that the -anchored branches of and the set-valued function are also branches.  Note further that the principal branches of these three set-valued functions are just the -anchored branches in our new terminology.    Relating -cut branches   Given show that .    First show that for all , where as always this must be interpreted as an equality of sets.    This is left as a homework exercise.     is holomorphic   Show that the branch is holomorphic on its domain and satisfies     As in , we use the Cauchy-Riemann equations. Fix . Picking a small enough neighborhood in the -plane, we can assume that for close enough to we have if and only if and for some fixed . (This is because the map is continuous.) We conclude that for some , and hence and for some . We then proceed exactly as in to show that the polar Cauchy-Riemann equations are satisfied, and that .     Branches   Let be open and connected.   Argument  If and are two branches of on , then there is a such that for all .    Logarithm     If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .       Power functions  Fix , and let .   If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .               Branches of cube-root function   Let .   Show that there are exactly three branches of on and give explicit formulas for each.    Verify that holds for one of your three branches.       Since , the function is a branch of . According to , the other branches are of the form . Letting vary in this manner, we see that the multiplying factor ranges over the three cube-roots of unity: , the distinct branches of on are , where . Again using, , we have , where is the -cut branch of . In other words, we have a derivative formula very much in the spirit of .      Harmonic functions   Harmonic functions   Let be an open set. A function is harmonic if it satisfies the Laplace's equation  for all .  A pair of harmonic conjugates on is a pair of harmonic functions on satisfying .     Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist on . The following statements are equivalent.    and are harmonic and     is holomorphic on .            "
+  "title": "Branches and harmonic functions",
+  "body": " Branches and harmonic functions   We will round out our discussion of differentiability with some miscellany, each item of which will be take up again in the course.    Branches  We threw the term branch around earlier when discussing notions of argument, logarithms, and complex powers. It is time at last to put this notion on firm, if somewhat formal ground.   Branch   A complex set-valued function is a function whose domain is a subset , and whose images are sets of complex numbers for all .  A branch of a set-valued function with domain is a function satisfying the following properties:    is open and connected;     is continuous;     for all .          Given , we define to be the ray , and we define the -cut branch of to be the function defined as follows: for all , is the unique satisfying .  Similarly, we define the -cut branch of to be the function defined as ; and for a fixed , we define the -cut branch of to be the function .     -anchored branches  It is easy to see that is indeed a branch of for all , and as a result, that the -anchored branches of and the set-valued function are also branches.  Note further that the principal branches of these three set-valued functions are just the -anchored branches in our new terminology.    Relating -cut branches   Given show that .    First show that for all , where as always this must be interpreted as an equality of sets.    This is left as a homework exercise.     is holomorphic   Show that the branch is holomorphic on its domain and satisfies     As in , we use the Cauchy-Riemann equations. Fix . Picking a small enough neighborhood in the -plane, we can assume that for close enough to we have if and only if and for some fixed . (This is because the map is continuous.) We conclude that for some , and hence and for some . We then proceed exactly as in to show that the polar Cauchy-Riemann equations are satisfied, and that .     Branches   Let be open and connected.   Argument  If and are two branches of on , then there is a such that for all .    Logarithm     If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .       Power functions  Fix , and let .   If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .          We only provide a proof for the statements concerning . The claims for were shown on a homework assignment. Similarly, the special case with for power functions is left as a homework exercise. The case for general is slightly more difficult, but not beyond our means. Nonetheless we omit the proof here.  Suppose and are two branches of on the open connected set . It follows that for all there is an integer such that . This means that the function defined as is a continuous function and satisfies . Since is clearly a discrete subset of , and since is continuous and is connected, it follows that is a constant function: , there is a such that for all  . We conclude that there is a such that for all , as desired.  For the second statement, assume is a branch of on , and let . We wish to show . Write , and let be the corresponding branch of defined on . Since and are open, so is . Since , we can find an open ball . Our two functions and are both branches of on . Since is connected, we conclude that there is a such that for all . Taking derivatives, we then have for all . In particular, we have , as desired.     Branches of cube-root function   Let .   Show that there are exactly three branches of on and give explicit formulas for each.    Verify that holds for one of your three branches.       Since , where , the function is a branch of . According to , the other branches are of the form . Letting vary in this manner, we see that the multiplying factor ranges over the three cube-roots of unity: , the distinct branches of on are , where . Again using, , we have , where is the -cut branch of . In other words, we have a derivative formula very much in the spirit of .      Harmonic functions   Harmonic functions   Let be an open set. A function is harmonic if it satisfies the Laplace's equation  for all .  A pair of harmonic conjugates on is a pair of harmonic functions on satisfying .     Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist and are continuous on . The following statements are equivalent.    and are harmonic and     is holomorphic on .       This is left as a homework exercise.     Harmonic conjugates   Show that defined as is harmonic and find a harmonic conjugate of .    We have , where and . Since is holomorphic on (and the partials of and are sufficiently nice), we conclude that (a) and are both harmonic, and (b) is a harmonic conjugate of .     "
 },
 {
   "id": "d_branch",
@@ -1978,7 +1978,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.11.6",
   "title": "Branches.",
-  "body": " Branches   Let be open and connected.   Argument  If and are two branches of on , then there is a such that for all .    Logarithm     If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .       Power functions  Fix , and let .   If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .             "
+  "body": " Branches   Let be open and connected.   Argument  If and are two branches of on , then there is a such that for all .    Logarithm     If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .       Power functions  Fix , and let .   If and are two branches of on , then there is a such that for all .    Any branch of on is differentiable and satisfies for all .          We only provide a proof for the statements concerning . The claims for were shown on a homework assignment. Similarly, the special case with for power functions is left as a homework exercise. The case for general is slightly more difficult, but not beyond our means. Nonetheless we omit the proof here.  Suppose and are two branches of on the open connected set . It follows that for all there is an integer such that . This means that the function defined as is a continuous function and satisfies . Since is clearly a discrete subset of , and since is continuous and is connected, it follows that is a constant function: , there is a such that for all  . We conclude that there is a such that for all , as desired.  For the second statement, assume is a branch of on , and let . We wish to show . Write , and let be the corresponding branch of defined on . Since and are open, so is . Since , we can find an open ball . Our two functions and are both branches of on . Since is connected, we conclude that there is a such that for all . Taking derivatives, we then have for all . In particular, we have , as desired.   "
 },
 {
   "id": "eg_branch_cube",
@@ -1987,7 +1987,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.11.7",
   "title": "Branches of cube-root function.",
-  "body": " Branches of cube-root function   Let .   Show that there are exactly three branches of on and give explicit formulas for each.    Verify that holds for one of your three branches.       Since , the function is a branch of . According to , the other branches are of the form . Letting vary in this manner, we see that the multiplying factor ranges over the three cube-roots of unity: , the distinct branches of on are , where . Again using, , we have , where is the -cut branch of . In other words, we have a derivative formula very much in the spirit of .   "
+  "body": " Branches of cube-root function   Let .   Show that there are exactly three branches of on and give explicit formulas for each.    Verify that holds for one of your three branches.       Since , where , the function is a branch of . According to , the other branches are of the form . Letting vary in this manner, we see that the multiplying factor ranges over the three cube-roots of unity: , the distinct branches of on are , where . Again using, , we have , where is the -cut branch of . In other words, we have a derivative formula very much in the spirit of .   "
 },
 {
   "id": "d_harmonic",
@@ -2005,7 +2005,16 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.11.9",
   "title": "Harmonic conjugates.",
-  "body": " Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist on . The following statements are equivalent.    and are harmonic and     is holomorphic on .          "
+  "body": " Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist and are continuous on . The following statements are equivalent.    and are harmonic and     is holomorphic on .       This is left as a homework exercise.   "
+},
+{
+  "id": "eg_harmonic_conjugates",
+  "level": "2",
+  "url": "s_branch_harmonic.html#eg_harmonic_conjugates",
+  "type": "Example",
+  "number": "1.11.10",
+  "title": "Harmonic conjugates.",
+  "body": " Harmonic conjugates   Show that defined as is harmonic and find a harmonic conjugate of .    We have , where and . Since is holomorphic on (and the partials of and are sufficiently nice), we conclude that (a) and are both harmonic, and (b) is a harmonic conjugate of .   "
 },
 {
   "id": "s_complex_paths",
@@ -2105,6 +2114,42 @@ var ptx_lunr_docs = [
   "number": "1.12.10",
   "title": "Complex-valued function integration.",
   "body": " Complex-valued function integration   Let . Compute using two different techniques: directly, using , and indirectly using .       "
+},
+{
+  "id": "s_line_integral",
+  "level": "1",
+  "url": "s_line_integral.html",
+  "type": "Section",
+  "number": "1.13",
+  "title": "Complex line integrals",
+  "body": " Complex line integrals   Paths and their images  From now on we reserve the right to conflate a path with its image . We will take care not to abuse this privilege.    Complex line integral   Let be smooth path. Given a complex function defined on , the integral of over , denoted , is defined as , provided this integral exists.  If is the concatenation of smooth curves , , then we define . Integrals as in or are called complex line integrals (or complex contour integrals ).     Connection with Riemann integral  It can be shown that the complex line integral for a piecewise smooth curve has an equivalent definition as the limit of Riemann-like sums of the form , where the points partition the curve into curve segments whose arc lengths approach zero as . In this sense the complex line integral over a general smoothly parametrized curve in can be seen directly as an extension of the Riemann integral of function along a line segment .   Classic line integral   Show that , where , .         "
+},
+{
+  "id": "s_line_integral-2",
+  "level": "2",
+  "url": "s_line_integral.html#s_line_integral-2",
+  "type": "Convention",
+  "number": "1.13.1",
+  "title": "Paths and their images.",
+  "body": " Paths and their images  From now on we reserve the right to conflate a path with its image . We will take care not to abuse this privilege.  "
+},
+{
+  "id": "d_line_integral",
+  "level": "2",
+  "url": "s_line_integral.html#d_line_integral",
+  "type": "Definition",
+  "number": "1.13.2",
+  "title": "Complex line integral.",
+  "body": " Complex line integral   Let be smooth path. Given a complex function defined on , the integral of over , denoted , is defined as , provided this integral exists.  If is the concatenation of smooth curves , , then we define . Integrals as in or are called complex line integrals (or complex contour integrals ).   "
+},
+{
+  "id": "s_line_integral-4",
+  "level": "2",
+  "url": "s_line_integral.html#s_line_integral-4",
+  "type": "Remark",
+  "number": "1.13.3",
+  "title": "Connection with Riemann integral.",
+  "body": " Connection with Riemann integral  It can be shown that the complex line integral for a piecewise smooth curve has an equivalent definition as the limit of Riemann-like sums of the form , where the points partition the curve into curve segments whose arc lengths approach zero as . In this sense the complex line integral over a general smoothly parametrized curve in can be seen directly as an extension of the Riemann integral of function along a line segment .   Classic line integral   Show that , where , .        "
 },
 {
   "id": "appendix-notation",

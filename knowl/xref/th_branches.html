@@ -58,6 +58,26 @@ f'(z)=\frac{wf(z)}{z}\tag{1.46}
 </div>
 </li>
 </ul>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_branch_harmonic.html#th_branches">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">We only provide a proof for the statements concerning <span class="process-math">\(\log\text{.}\)</span> The claims for <span class="process-math">\(\arg\)</span> were shown on a homework assignment. Similarly, the special case <span class="process-math">\(\mathcal{F}(z)=z^w\)</span> with <span class="process-math">\(w=1/n\)</span> for power functions is left as a homework exercise. The case for general <span class="process-math">\(w\)</span> is slightly more difficult, but not beyond our means. Nonetheless we omit the proof here.</div>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are two branches of <span class="process-math">\(\log\)</span> on the open connected set <span class="process-math">\(U\text{.}\)</span> It follows that for all <span class="process-math">\(z\in U\)</span> there is an integer <span class="process-math">\(k\in \Z\)</span> such that <span class="process-math">\(f(z)=g(z)+2\pi i k\text{.}\)</span> This means that the function <span class="process-math">\(h\colon U\rightarrow \C\)</span> defined as <span class="process-math">\(h(z)=f(z)-g(z)\)</span> is a continuous function and satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(U)\subseteq \{2\pi i k \colon k\in \Z\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\{2\pi i k\colon k\ in \Z\}\)</span> is clearly a discrete subset of <span class="process-math">\(\C\text{,}\)</span> and since <span class="process-math">\(h\)</span> is continuous and <span class="process-math">\(U\)</span> is connected, it follows that <span class="process-math">\(h\)</span> is a constant function: i.e., there is a <span class="process-math">\(k\in \Z\)</span> such that <span class="process-math">\(h(z)=2\pi i k\)</span> for <em class="emphasis">all</em> <span class="process-math">\(z\in U\text{.}\)</span> We conclude that there is a <span class="process-math">\(k\in \Z\)</span> such that <span class="process-math">\(f(z)=g(z)+2\pi i k\)</span> for all <span class="process-math">\(z\in U\text{,}\)</span> as desired.</div>
+</div>
+<div class="para logical">
+<div class="para">For the second statement, assume <span class="process-math">\(f\)</span> is a branch of <span class="process-math">\(\log\)</span> on <span class="process-math">\(U\text{,}\)</span> and let <span class="process-math">\(z_0\in U\text{.}\)</span> We wish to show <span class="process-math">\(f'(z_0)=1/z_0\text{.}\)</span> Write <span class="process-math">\(z_0=r^{i\alpha}\text{,}\)</span> and let <span class="process-math">\(\Log_{-\alpha}\)</span> be the corresponding branch of <span class="process-math">\(\log\)</span> defined on <span class="process-math">\(V=\C-R_{-{\alpha}}\text{.}\)</span> Since <span class="process-math">\(U\)</span> and <span class="process-math">\(V\)</span> are open, so is <span class="process-math">\(U\cap V\text{.}\)</span> Since <span class="process-math">\(z_0\in U\cap V\text{,}\)</span> we can find an open ball <span class="process-math">\(B_{r}(z_0)\subseteq U\cap V\text{.}\)</span> Our two functions <span class="process-math">\(f\)</span> and <span class="process-math">\(\Log_{-\alpha}\)</span> are both branches of <span class="process-math">\(\log\)</span> on <span class="process-math">\(B_r(z_0)\text{.}\)</span> Since <span class="process-math">\(B_r(z_0)\)</span> is connected, we conclude that there is a <span class="process-math">\(k\in \Z\)</span> such that <span class="process-math">\(f(z)=\Log_{-\alpha}(z)+2\pi i k\)</span> for all <span class="process-math">\(z\in B_{r}(z_0)\text{.}\)</span> Taking derivatives, we then have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_alpha_cuts.html">
+\begin{align*}
+f'(z) \amp =\frac{d}{dz}\Log_{-\alpha}(z)+\frac{d}{dz}(2\pi i k)\\
+\amp = \frac{1}{z}+0 \amp \knowl{./knowl/xref/eg_alpha_cuts.html}{\text{Example 1.11.5}} \\
+\amp = \frac{1}{z}
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in B_{r}(z_0)\text{.}\)</span> In particular, we have <span class="process-math">\(f'(z_0)=1/z_0\text{,}\)</span> as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_branch_harmonic.html#th_branches">in-context</a></span>
 </body>
 </html>

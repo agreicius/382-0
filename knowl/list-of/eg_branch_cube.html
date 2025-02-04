@@ -15,7 +15,7 @@
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.11.7</span><span class="period">.</span><span class="space"> </span><span class="title">Branches of cube-root function.</span>
 </h4>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(U=\{z\in \C\colon \Re z\geq 0\}-\{0\}\text{.}\)</span>
+<div class="para">Let <span class="process-math">\(U=\{z\in \C\colon \Im z\geq 0 \text{ or } \Re z &lt; 0\}\text{.}\)</span>
 </div>
 <ol class="decimal" id="eg_branch_cube-2-1-2">
 <li><div class="para">Show that there are exactly three branches of <span class="process-math">\(\mathcal{F}(z)=z^{1/3}\)</span> on <span class="process-math">\(U\)</span> and give explicit formulas for each.</div></li>
@@ -23,12 +23,12 @@
 </ol>
 </div>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
-<div class="para">Since <span class="process-math">\(U\subseteq \C-R_{-\pi/2}\text{,}\)</span> the function</div>
+<div class="para">Since <span class="process-math">\(U\subseteq \C-R_{\alpha}\text{,}\)</span> where <span class="process-math">\(\alpha=7\pi/4\text{,}\)</span> the function</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_branches.html ./knowl/xref/th_branches.html">
 \begin{align*}
-f(z)\amp =e^{\frac{1}{3}\Log_{-\pi/2}z}\\
-\amp = e^{1/3(\ln\abs{z}+i\Arg_{-\pi/2} z)}\\
-\amp =r^{1/3}e^{i(\Arg_{-\pi/2} z)/3} \amp (r=\abs{z})
+f(z)\amp =e^{\frac{1}{3}\Log_{\alpha}z}\\
+\amp = e^{1/3(\ln\abs{z}+i\Arg_{\alpha} z)}\\
+\amp =r^{1/3}e^{i(\Arg_{\alpha} z)/3} \amp (r=\abs{z})
 \end{align*}
 </div>
 <div class="para">is a branch of <span class="process-math">\(z^{1/3}\text{.}\)</span> According to <a href="s_branch_harmonic.html#th_branches" class="xref" data-knowl="./knowl/xref/th_branches.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.11.6: Branches">Theorem 1.11.6</a>, the other branches are of the form</div>
@@ -47,13 +47,13 @@ f(z), \zeta f(z), \zeta^2 f(z)\text{,}
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_branches.html ./knowl/xref/th_branches.html">
 \begin{align*}
 f'(z)\amp =\frac{1}{3}\, \frac{f(z)}{z} \\
-\amp =\frac{\abs{z}^{1/3}e^{i(\Arg_{-\pi/2} z)/3}}{3\abs{z}e^{i \Arg_{-\pi/2}(z)}}\\
-\amp = \frac{1}{3}\abs{z}^{-2/3}e^{-(2\Arg_{-\pi/2} z)i/3}\\
-\amp = \frac{1}{3} e^{-\frac{2}{3}\Log_{-\pi/2} z}\\
+\amp =\frac{\abs{z}^{1/3}e^{i(\Arg_{\alpha} z)/3}}{3\abs{z}e^{i \Arg_{\alpha}(z)}}\\
+\amp = \frac{1}{3}\abs{z}^{-2/3}e^{-(2\Arg_{\alpha} z)i/3}\\
+\amp = \frac{1}{3} e^{-\frac{2}{3}\Log_{\alpha} z}\\
 \amp = \frac{1}{3} h(z)\text{,}
 \end{align*}
 </div>
-<div class="para">where <span class="process-math">\(h(z)=e^{-\frac{2}{3}\Log_{-\pi/2} z}\)</span> is the <span class="process-math">\(-\pi/2\)</span>-cut branch of <span class="process-math">\(z^{-2/3}\text{.}\)</span> In other words, we have a derivative formula very much in the spirit of <span class="process-math">\(\frac{d}{dx}(x^{1/3})=\frac{1}{3}x^{-2/3}\text{.}\)</span>
+<div class="para">where <span class="process-math">\(h(z)=e^{-\frac{2}{3}\Log_{\alpha} z}\)</span> is the <span class="process-math">\(7\pi/4\)</span>-cut branch of <span class="process-math">\(z^{-2/3}\text{.}\)</span> In other words, we have a derivative formula very much in the spirit of <span class="process-math">\(\frac{d}{dx}(x^{1/3})=\frac{1}{3}x^{-2/3}\text{.}\)</span>
 </div>
 </div></div></details></div></article><span class="incontext"><a class="internal" href="s_branch_harmonic.html#eg_branch_cube">in-context</a></span>
 </body>
