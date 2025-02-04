@@ -40,6 +40,36 @@
 </li>
 </ol>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_derivative.html#eg_elem_derivs">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">It is easy to see using the limit definition that <span class="process-math">\(\frac{d}{dz}(w)=0\)</span> and <span class="process-math">\(\frac{d}{dz}(z)=1\text{.}\)</span> We illustrate the definition only for <span class="process-math">\(f(z)=z^2\)</span> and <span class="process-math">\(f(z)=1/z\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Given <span class="process-math">\(f(z)=z^2\)</span> and any <span class="process-math">\(z_0\in \C\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lim\limits_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0} \amp = \lim\limits_{z\to z_0}\frac{z^2-z_0^2}{z-z_0} \\
+\amp =\lim\limits_{z\to z_0}\frac{(z-z_0)(z+z_0)}{z-z_0}\\
+\amp =\lim\limits_{z\to z_0}z+z_0\\
+\amp = 2z_0\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\frac{d}{dz}(z^2)=2z\)</span> for all <span class="process-math">\(z\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Now let <span class="process-math">\(f(z)=1/z\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lim\limits_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0} \amp = \lim\limits_{z\to z_0}\frac{1/z-1/z_0}{z-z_0}\\
+\amp = \lim\limits_{z\to z_0}\frac{(z_0-z)/(zz_0)}{z-z_0}\\
+\amp = \lim\limits_{z\to z_0}\frac{z_0-z}{zz_0(z-z_0)}\\
+\amp = \lim\limits_{z\to z_0}-\frac{1}{zz_0}\\
+\amp = -\frac{1}{z_0^2}\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\frac{d}{dz}(1/z)=-1/z^2\)</span> for all <span class="process-math">\(z\text{.}\)</span>
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="s_derivative.html#eg_elem_derivs">in-context</a></span>
 </body>
 </html>

@@ -1663,7 +1663,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.9",
   "title": "Complex differentiation",
-  "body": " Complex differentiation   Interior point   Given a subset , an element is an interior point of if there is an such that . The interior of , denoted is defined as the set of all interior points of .     Interior points  The following observations follows easily from the relevant definitions.   If is an interior point of , then is a limit point of ,    If is an open subset of , then all points of are interior points: , .       Complex differentiation   Given a complex function and an interior point of the domain of , we say is differentiable at if the limit exists. When this is the case we call the value of this limit the derivative of at , denoted .  The function is holomorphic (or analytic ) on an open set if it is differentiable at all points in . When is holomorphic on , the function is called the derivative of . We will also denote as , and will write to denote the derivative operation.     Holomorphic versus analytic  Technically speaking, a function analytic on an open set if for all we can represent as a convergent power series of all in an open ball around . One of the headline theorems of this class is that is differentiable on if and only if it is analytic (in the sense just described). Consequently, in the literature the terms differentiable , holomorphic , and analytic are used pretty much interchangeably. However, we will refrain from using analytic until the theorem in question is proved.    Differentiable at a limit point  In light of the limit definition of differentiability, it is of course possible to define this notion at any limit point of the domain of a function. As it turns out, however, an openness condition like the one we adopt is the more natural setting in terms of further important theorems ( , ).    Elementary examples   Prove that the given is differentiable on the given open set and provide a formula for .   Constant function   , , .    Identity function   , .    Squaring function   , .    Reciprocal function   , .            Differentiable implies continuous   If is differentiable at , then is continuous at .    Note that by definition, is assumed to be an interior point of the domain of , which implies that is a limit point of the domain. We are thus justified in using the limit definition of continuity. We have . Thus is continuous at .     Derivative properties   Assume and are differentiable at    Linear combination  For all , is differentiable at and .    Product   is differentiable at and     Quotient rule  Provided , is differentiable at and .            Polynomials   Let . Show that is differentiable on and compute a formula for .    First observe that for all nonnegative integers the function is differentiable and satisfies . This is shown easily by induction: the base case is just the constant function , and for the induction step, we have .     Chain rule   Assume is differentiable at and is differentiable at . The composition is differentiable at and .        "
+  "body": " Complex differentiation   Interior point   Given a subset , an element is an interior point of if there is an such that . The interior of , denoted is defined as the set of all interior points of .     Interior points  The following observations follows easily from the relevant definitions.   If is an interior point of , then is a limit point of ,    If is an open subset of , then all points of are interior points: , .       Complex differentiation   Given a complex function and an interior point of the domain of , we say is differentiable at if the limit exists. When this is the case we call the value of this limit the derivative of at , denoted .  The function is holomorphic (or analytic ) on an open set if it is differentiable at all points in . When is holomorphic on , the function is called the derivative of . We will also denote as , and will write to denote the derivative operation.     Holomorphic versus analytic  Technically speaking, a function analytic on an open set if for all we can represent as a convergent power series of all in an open ball around . One of the headline theorems of this class is that is differentiable on if and only if it is analytic (in the sense just described). Consequently, in the literature the terms differentiable , holomorphic , and analytic are used pretty much interchangeably. However, we will refrain from using analytic until the theorem in question is proved.    Differentiable at a limit point  In light of the limit definition of differentiability, it is of course possible to define this notion at any limit point of the domain of a function. As it turns out, however, an openness condition like the one we adopt is the more natural setting in terms of further important theorems ( , ).    Elementary examples   Prove that the given is differentiable on the given open set and provide a formula for .   Constant function   , , .    Identity function   , .    Squaring function   , .    Reciprocal function   , .       It is easy to see using the limit definition that and . We illustrate the definition only for and .  Given and any , we have . This shows that for all .  Now let . We have . This shows that for all .     Differentiable implies continuous   If is differentiable at , then is continuous at .    Note that by definition, is assumed to be an interior point of the domain of , which implies that is a limit point of the domain. We are thus justified in using the limit definition of continuity. We have . Thus is continuous at .     Derivative properties   Assume and are differentiable at    Linear combination  For all , is differentiable at and .    Product   is differentiable at and     Quotient rule  Provided , is differentiable at and .       These statements are proved in essentially the same way as the corresponding statements from elementary calculus. We omit them here.     Polynomials   Let . Show that is differentiable on and compute a formula for .    First observe that for all nonnegative integers the function is differentiable and satisfies . This is shown easily by induction: the base case is just the constant function , and for the induction step, we have .     Chain rule   Assume is differentiable at and is differentiable at . The composition is differentiable at and .    This is left as a homework exercise.    "
 },
 {
   "id": "d_interior_pt",
@@ -1717,7 +1717,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.9.6",
   "title": "Elementary examples.",
-  "body": " Elementary examples   Prove that the given is differentiable on the given open set and provide a formula for .   Constant function   , , .    Identity function   , .    Squaring function   , .    Reciprocal function   , .          "
+  "body": " Elementary examples   Prove that the given is differentiable on the given open set and provide a formula for .   Constant function   , , .    Identity function   , .    Squaring function   , .    Reciprocal function   , .       It is easy to see using the limit definition that and . We illustrate the definition only for and .  Given and any , we have . This shows that for all .  Now let . We have . This shows that for all .   "
 },
 {
   "id": "th_diff_cont",
@@ -1735,7 +1735,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.9.8",
   "title": "Derivative properties.",
-  "body": " Derivative properties   Assume and are differentiable at    Linear combination  For all , is differentiable at and .    Product   is differentiable at and     Quotient rule  Provided , is differentiable at and .          "
+  "body": " Derivative properties   Assume and are differentiable at    Linear combination  For all , is differentiable at and .    Product   is differentiable at and     Quotient rule  Provided , is differentiable at and .       These statements are proved in essentially the same way as the corresponding statements from elementary calculus. We omit them here.   "
 },
 {
   "id": "eg_diff_poly",
@@ -1753,7 +1753,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.9.10",
   "title": "Chain rule.",
-  "body": " Chain rule   Assume is differentiable at and is differentiable at . The composition is differentiable at and .       "
+  "body": " Chain rule   Assume is differentiable at and is differentiable at . The composition is differentiable at and .    This is left as a homework exercise.   "
 },
 {
   "id": "s_C-R",
@@ -1762,7 +1762,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.10",
   "title": "Cauchy-Riemann equations",
-  "body": " Cauchy-Riemann equations   We come at last to our first important result, the Cauchy-Riemann equations , which express the differentiability of a complex function in terms of its real and imaginary parts.    Cauchy-Riemann equations  The Cauchy-Riemann equations involve the partial derivatives of the real and imaginary parts of a complex function. We give a brief reminder of the definitions and notation around this concept.   Partial derivatives  Given a real-valued function of two real variables and an interior point of its domain, the partial derivatives of at with respect to and are defined as , provided of course these limits exist. We denote the resulting partial derivative functions as and , or alternatively as and .    Cauchy-Riemann equations   If is differentiable at , then the first-order partial derivatives of and exist at and satisfy the Cauchy-Riemann equations : . Furthermore, we have .         Cauchy-Riemann verification   Verify that the real and imaginary parts of the holomorphic function satisfy the Cauchy-Riemann equations for all , and that satisfies .    We have , where , , and thus . It is clear from these computations that . Furthermore, we saw previously that , and hence that .     Complex conjugation   Define as . Prove that is not differentiable anywhere on its domain.    We have , where and . Thus for any we have . It follow that for all we have . We conclude that for all , is not differentiable at , as claimed.    As stated, provides only a necessary condition for to exist at ; it makes no claim as to whether this condition is sufficient . The next theorem improves on this slightly, by establishing something close, but not quite equal to the converse of . Roughly speaking, it asserts that satisfaction of the Cauchy-Riemann equations suffices as long as we throw in a certain continuity condition on the first-order partial derivatives. We will see later that when considering differentiability on open sets this extra condition is in fact automatically satisfied, yielding a true equivalence.   Cauchy-Riemann converse   Assume and that is an interior point of the domain of . If the first-order partial derivatives of and are continuous on an open set containing and satisfy the Cauchy-Riemann equations, then is differentiable at .    In lieu of a proof, we indicate the ideas at play. As it turns out, the condition we actually need, in addition to the satisfaction of the Cauchy-Riemann equations, is that the function is differentiable in the sense of multivariable calculus. I will not include that definition here (look it up in your calculus text!), but suffice it to say that it is not equivalent to the partial derivatives of and existing. The additional continuity condition given in the theorem implies that is differentiable in the multivariable calculus sense, and hence, that is differentiable in the complex sense, assuming the Cauchy-Riemann equations are satisfied.     Cauchy-Riemann on open set   Assume is defined on the open set , and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .     and satisfy for all .   When this is the case, we have for all .     Exponential and trigonometric functions   Show that , , and are holomorphic functions on and compute formulas for their derivatives.    We have , where and . We then have , whence we see that (a) these partials exist and are continuous, and (b) satisfy the Cauchy-Riemann equations for all . We conclude that is differentiable everywhere and satisfies . That are differentiable everywhere now follows from the fact that the polynomial functions and are differentiable, from which it follows by the chain rule that and are differentiable, and then from the linear combination rule of that and are differentiable everywhere. Furthermore we can compute the derivatives of and using these same rules and our formula for to conclude that .     Constant functions  Given a function defined on a set , we say that is on constant on if there is a complex number such that for all . We will write in this case.    Locally constant   A function is locally constant on a set if for all there is an open ball such that is constant on .     Functions of derivative zero   Let be defined on the open set . The following statements are equivalent.    is locally constant on .     for all .   As a consequence, if we assume further that is connected, then if and only if is a constant function.          Assume is holomorphic on the open and connected set . If is constant on or is constant on , then is constant on .     Discrete subset   A set is discrete if for all there is an open ball such that .     Locally constant on connected sets   Assume is continuous on the connected set . The following statements are equivalent.    is constant     is locally constant.     is a discrete subset of .       This is left as a homework exercise.      Polar Cauchy-Riemann equations  As many of our familiar functions have a nice description in polar coordinates, it helps to have a corresponding polar version of the Cauchy-Riemann equations. Technically speaking, when we represent a function in polar coordinates we are really looking at the function , obtained by pre-composing  with the function defined as . In an effort to pare down notation, we will adopt the following abuses of notation: . As a result, we can express the chain rule applied to as follows: .   Polar Cauchy-Riemann equations   Assume is defined on the open set and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .    For all satisfying , we have .   When this is the case, given , we have .         Derivative of   Show that is differentiable on its domain and compute a formula for its derivative.         Derivative of power function   Fix a complex number and define to be the principle branch of . Show that is differentiable on its domain and compute a formula for its derivative.         "
+  "body": " Cauchy-Riemann equations   We come at last to our first important result, the Cauchy-Riemann equations , which express the differentiability of a complex function in terms of its real and imaginary parts.    Cauchy-Riemann equations  The Cauchy-Riemann equations involve the partial derivatives of the real and imaginary parts of a complex function. We give a brief reminder of the definitions and notation around this concept.   Partial derivatives  Given a real-valued function of two real variables and an interior point of its domain, the partial derivatives of at with respect to and are defined as , provided of course these limits exist. We denote the resulting partial derivative functions as and , or alternatively as and .    Cauchy-Riemann equations   If is differentiable at , then the first-order partial derivatives of and exist at and satisfy the Cauchy-Riemann equations : . Furthermore, we have .         Cauchy-Riemann verification   Verify that the real and imaginary parts of the holomorphic function satisfy the Cauchy-Riemann equations for all , and that satisfies .    We have , where , , and thus . It is clear from these computations that . Furthermore, we saw previously that , and hence that .     Complex conjugation   Define as . Prove that is not differentiable anywhere on its domain.    We have , where and . Thus for any we have . It follow that for all we have . We conclude that for all , is not differentiable at , as claimed.    As stated, provides only a necessary condition for to exist at ; it makes no claim as to whether this condition is sufficient . The next theorem improves on this slightly, by establishing something close, but not quite equal to the converse of . Roughly speaking, it asserts that satisfaction of the Cauchy-Riemann equations suffices as long as we throw in a certain continuity condition on the first-order partial derivatives. We will see later that when considering differentiability on open sets this extra condition is in fact automatically satisfied, yielding a true equivalence.   Cauchy-Riemann converse   Assume and that is an interior point of the domain of . If the first-order partial derivatives of and are continuous on an open set containing and satisfy the Cauchy-Riemann equations, then is differentiable at .    In lieu of a proof, we indicate the ideas at play. As it turns out, the condition we actually need, in addition to the satisfaction of the Cauchy-Riemann equations, is that the function is differentiable in the sense of multivariable calculus. I will not include that definition here (look it up in your calculus text!), but suffice it to say that it is not equivalent to the partial derivatives of and existing. The additional continuity condition given in the theorem implies that is differentiable in the multivariable calculus sense, and hence, that is differentiable in the complex sense, assuming the Cauchy-Riemann equations are satisfied.    As an immediate corollary of we have the following corollary, which will be our main tool for investigating differentiability.   Cauchy-Riemann on open set   Assume is defined on the open set , and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .     and satisfy for all .   When this is the case, we have for all .     Exponential and trigonometric functions   Show that , , and are holomorphic functions on and compute formulas for their derivatives.    We have , where and . We then have , whence we see that (a) these partials exist and are continuous, and (b) satisfy the Cauchy-Riemann equations for all . We conclude that is differentiable everywhere and satisfies . That are differentiable everywhere now follows from the fact that the polynomial functions and are differentiable, from which it follows by the chain rule that and are differentiable, and then from the linear combination rule of that and are differentiable everywhere. Furthermore we can compute the derivatives of and using these same rules and our formula for to conclude that .    As with good old-fashioned calculus, a complex function whose derivative is zero everywhere (on a connected open set) is constant. Let's see why this is so. First some definitions and conventions.   Constant functions  Given a function defined on a set , we say that is on constant on if there is a complex number such that for all . We will write in this case.    Locally constant   A function is locally constant on a set if for all there is an open ball such that is constant on .     Functions of derivative zero   Let be defined on the open set . The following statements are equivalent.    is locally constant on .     for all .   As a consequence, if we assume further that is connected, then if and only if is a constant function.     Implication: (i) (ii)  Assume is locally constant. Given any we can find an open ball such that the restriction . for some . It is easy to see that is differentiable at if and only if its restriction is differentiable at , and that , since is constant. (See .) It follows that for all .    Implication:(ii) (i)  Assume for all . We will show that is locally constant. Given , there is an open ball . Writing and using , we have and thus for all . Since is connected, it follows from multivariable calculus facts that and for some constants for all . Thus the restriction is constant on . This proves is locally constant.     The next corollary follows directly from and . The latter was left as a homework exercise, but is important enough to enshrine here as an official result.    Assume is holomorphic on the open and connected set . If is constant on or is constant on , then is constant on .     Discrete subset   A set is discrete if for all there is an open ball such that .     Locally constant on connected sets   Assume is continuous on the connected set . The following statements are equivalent.    is constant     is locally constant.     is a discrete subset of .       This is left as a homework exercise.      Polar Cauchy-Riemann equations  As many of our familiar functions have a nice description in polar coordinates, it helps to have a corresponding polar version of the Cauchy-Riemann equations. Technically speaking, when we represent a function in polar coordinates we are really looking at the function , obtained by pre-composing  with the function defined as . In an effort to pare down notation, we will adopt the following abuses of notation: . As a result, we can express the chain rule applied to as follows: .   Polar Cauchy-Riemann equations   Assume is defined on the open set and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .    For all satisfying , we have .   When this is the case, given , we have .    This is left as a homework exercise.     Derivative of   Show that is differentiable on its domain and compute a formula for its derivative.    For any , we have if and only if and for some . It follows that and thus and . Computing partial derivatives, we see have , from which we see clearly that . It follows that is differentiable and that given , we have . We conclude that for all , as desired.     Derivative of power function   Fix a complex number and define to be the principle branch of . Show that is differentiable on its domain and compute a formula for its derivative.         "
 },
 {
   "id": "ss_C-r-3",
@@ -1828,9 +1828,9 @@ var ptx_lunr_docs = [
   "body": " Exponential and trigonometric functions   Show that , , and are holomorphic functions on and compute formulas for their derivatives.    We have , where and . We then have , whence we see that (a) these partials exist and are continuous, and (b) satisfy the Cauchy-Riemann equations for all . We conclude that is differentiable everywhere and satisfies . That are differentiable everywhere now follows from the fact that the polynomial functions and are differentiable, from which it follows by the chain rule that and are differentiable, and then from the linear combination rule of that and are differentiable everywhere. Furthermore we can compute the derivatives of and using these same rules and our formula for to conclude that .   "
 },
 {
-  "id": "ss_C-r-11",
+  "id": "ss_C-r-13",
   "level": "2",
-  "url": "s_C-R.html#ss_C-r-11",
+  "url": "s_C-R.html#ss_C-r-13",
   "type": "Convention",
   "number": "1.10.8",
   "title": "Constant functions.",
@@ -1852,7 +1852,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.10.10",
   "title": "Functions of derivative zero.",
-  "body": " Functions of derivative zero   Let be defined on the open set . The following statements are equivalent.    is locally constant on .     for all .   As a consequence, if we assume further that is connected, then if and only if is a constant function.       "
+  "body": " Functions of derivative zero   Let be defined on the open set . The following statements are equivalent.    is locally constant on .     for all .   As a consequence, if we assume further that is connected, then if and only if is a constant function.     Implication: (i) (ii)  Assume is locally constant. Given any we can find an open ball such that the restriction . for some . It is easy to see that is differentiable at if and only if its restriction is differentiable at , and that , since is constant. (See .) It follows that for all .    Implication:(ii) (i)  Assume for all . We will show that is locally constant. Given , there is an open ball . Writing and using , we have and thus for all . Since is connected, it follows from multivariable calculus facts that and for some constants for all . Thus the restriction is constant on . This proves is locally constant.    "
 },
 {
   "id": "cor_const_u_v",
@@ -1888,7 +1888,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.10.14",
   "title": "Polar Cauchy-Riemann equations.",
-  "body": " Polar Cauchy-Riemann equations   Assume is defined on the open set and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .    For all satisfying , we have .   When this is the case, given , we have .       "
+  "body": " Polar Cauchy-Riemann equations   Assume is defined on the open set and that and have continuous first-order partial derivatives on . The following statements are equivalent.    is differentiable on .    For all satisfying , we have .   When this is the case, given , we have .    This is left as a homework exercise.   "
 },
 {
   "id": "eg_der_Log",
@@ -1897,7 +1897,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.10.15",
   "title": "Derivative of <span class=\"process-math\">\\(\\Log\\)<\/span>.",
-  "body": " Derivative of   Show that is differentiable on its domain and compute a formula for its derivative.       "
+  "body": " Derivative of   Show that is differentiable on its domain and compute a formula for its derivative.    For any , we have if and only if and for some . It follows that and thus and . Computing partial derivatives, we see have , from which we see clearly that . It follows that is differentiable and that given , we have . We conclude that for all , as desired.   "
 },
 {
   "id": "eg_der_power",
@@ -1979,6 +1979,105 @@ var ptx_lunr_docs = [
   "number": "1.11.7",
   "title": "Harmonic conjugates.",
   "body": " Harmonic conjugates   Assume is an open subset of (identified as usual with ). Assume and are real-valued functions on whose second-order partial derivatives exist on . The following statements are equivalent.    and are harmonic and     is holomorphic on .          "
+},
+{
+  "id": "s_complex_paths",
+  "level": "1",
+  "url": "s_complex_paths.html",
+  "type": "Section",
+  "number": "1.12",
+  "title": "Complex paths",
+  "body": " Complex paths   Complex path   A complex path is a continuous function where is a real interval.  We say that a path  parametrizes its image .     Paths  Note that since can be thought of as a subset of , a path can be treated as a complex function with a particularly restricted domain . As such, the same conventions around complex functions apply to paths. In particular, we may write in terms of its real and imaginary parts. Furthermore, identifying with , we can also think of a complex path as a continuous function .    Parametrized curves   For the given curve find a path that parametrizes .   Fix and . Let .    Fix and . Let be the directed line segment that begins at and ends at .            Path jargon   Let be a path.   The points and are called the initial and terminal points of , respectively.     is closed if .     is simple if for all .    The path defined as is called the reverse of .    Given a path satisfying , the concatentation of and , denoted , is the path defined as and .       We now define a notion of real differentiability of paths. Note that though we can indeed think of a path as a complex function, since no element in its domain is an interior point of , considered as a subset of , the notion of complex differentiability does not apply to .   Path derivative   Given a path with and element , we say is (real) differentiable at if and are differentiable at , and define . Geometrically we interpret as a tangent vector to at the point . The path is smooth on if exists and is continuous at all ; it is piecewise smooth if we can write as a concatenation of finitely many smooth curves.     Tangent vectors   Compute for your parametrizations in and provide a sketch illustrating the relationship of to .        Of course, identifying with the planar path (or curve) , we recognize its derivative as the derivative of this planar path (or curve). As a result, all the usual properties of derivatives of planar paths carry over to our complex setting. We will not list them here, but will make a connection with complex differentiation.   Complex and path differentiation   Let be holomorphic, and suppose is a smooth path.   The path is smooth on and satisfies for all .    In particular, if contains the real interval , then the path defined as is smooth and satisfies .            Integration of complex-valued functions   Let be a complex-valued function, and write . We say is Riemann integrable on if the Riemann integrals exist, in which case we write .     Fundamental theorem of calculus   Let be continuous.   The function is differentiable on and satisfies for all .    If satisfies for all , then .            Complex-valued function integration   Let . Compute using two different techniques: directly, using , and indirectly using .        "
+},
+{
+  "id": "d_complex_path",
+  "level": "2",
+  "url": "s_complex_paths.html#d_complex_path",
+  "type": "Definition",
+  "number": "1.12.1",
+  "title": "Complex path.",
+  "body": " Complex path   A complex path is a continuous function where is a real interval.  We say that a path  parametrizes its image .   "
+},
+{
+  "id": "s_complex_paths-3",
+  "level": "2",
+  "url": "s_complex_paths.html#s_complex_paths-3",
+  "type": "Remark",
+  "number": "1.12.2",
+  "title": "Paths.",
+  "body": " Paths  Note that since can be thought of as a subset of , a path can be treated as a complex function with a particularly restricted domain . As such, the same conventions around complex functions apply to paths. In particular, we may write in terms of its real and imaginary parts. Furthermore, identifying with , we can also think of a complex path as a continuous function .  "
+},
+{
+  "id": "eg_parametrized_circle",
+  "level": "2",
+  "url": "s_complex_paths.html#eg_parametrized_circle",
+  "type": "Example",
+  "number": "1.12.3",
+  "title": "Parametrized curves.",
+  "body": " Parametrized curves   For the given curve find a path that parametrizes .   Fix and . Let .    Fix and . Let be the directed line segment that begins at and ends at .          "
+},
+{
+  "id": "d_path_properties",
+  "level": "2",
+  "url": "s_complex_paths.html#d_path_properties",
+  "type": "Definition",
+  "number": "1.12.4",
+  "title": "Path jargon.",
+  "body": " Path jargon   Let be a path.   The points and are called the initial and terminal points of , respectively.     is closed if .     is simple if for all .    The path defined as is called the reverse of .    Given a path satisfying , the concatentation of and , denoted , is the path defined as and .      "
+},
+{
+  "id": "d_path_derivative",
+  "level": "2",
+  "url": "s_complex_paths.html#d_path_derivative",
+  "type": "Definition",
+  "number": "1.12.5",
+  "title": "Path derivative.",
+  "body": " Path derivative   Given a path with and element , we say is (real) differentiable at if and are differentiable at , and define . Geometrically we interpret as a tangent vector to at the point . The path is smooth on if exists and is continuous at all ; it is piecewise smooth if we can write as a concatenation of finitely many smooth curves.   "
+},
+{
+  "id": "eg_derivative",
+  "level": "2",
+  "url": "s_complex_paths.html#eg_derivative",
+  "type": "Example",
+  "number": "1.12.6",
+  "title": "Tangent vectors.",
+  "body": " Tangent vectors   Compute for your parametrizations in and provide a sketch illustrating the relationship of to .       "
+},
+{
+  "id": "th_real_complex_diff",
+  "level": "2",
+  "url": "s_complex_paths.html#th_real_complex_diff",
+  "type": "Theorem",
+  "number": "1.12.7",
+  "title": "Complex and path differentiation.",
+  "body": " Complex and path differentiation   Let be holomorphic, and suppose is a smooth path.   The path is smooth on and satisfies for all .    In particular, if contains the real interval , then the path defined as is smooth and satisfies .          "
+},
+{
+  "id": "d_path_integration",
+  "level": "2",
+  "url": "s_complex_paths.html#d_path_integration",
+  "type": "Definition",
+  "number": "1.12.8",
+  "title": "Integration of complex-valued functions.",
+  "body": " Integration of complex-valued functions   Let be a complex-valued function, and write . We say is Riemann integrable on if the Riemann integrals exist, in which case we write .   "
+},
+{
+  "id": "th_FTC",
+  "level": "2",
+  "url": "s_complex_paths.html#th_FTC",
+  "type": "Theorem",
+  "number": "1.12.9",
+  "title": "Fundamental theorem of calculus.",
+  "body": " Fundamental theorem of calculus   Let be continuous.   The function is differentiable on and satisfies for all .    If satisfies for all , then .          "
+},
+{
+  "id": "eg_path_integral",
+  "level": "2",
+  "url": "s_complex_paths.html#eg_path_integral",
+  "type": "Example",
+  "number": "1.12.10",
+  "title": "Complex-valued function integration.",
+  "body": " Complex-valued function integration   Let . Compute using two different techniques: directly, using , and indirectly using .       "
 },
 {
   "id": "appendix-notation",

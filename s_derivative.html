@@ -96,14 +96,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.4';
+eBookConfig.runestone_version = '7.5.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.596d7408a9995282.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.82032a8574f6ce75.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6a985cbf816db5c7.css">
 <style>
 #d_function_equality-3-1-4 { counter-set: d_function_equality-3-1-4 0; }
@@ -298,6 +298,15 @@ eBookConfig.enable_chatcodes =  false;
 #th_harmonic_conjugates-2-1-8 { counter-set: th_harmonic_conjugates-2-1-8 0; }
 #th_harmonic_conjugates-2-1-8 > li::marker { content: ""counter(th_harmonic_conjugates-2-1-8,decimal)"."; }
 #th_harmonic_conjugates-2-1-8 > li { counter-increment: th_harmonic_conjugates-2-1-8; }
+#eg_parametrized_circle-2-1-4 { counter-set: eg_parametrized_circle-2-1-4 0; }
+#eg_parametrized_circle-2-1-4 > li::marker { content: ""counter(eg_parametrized_circle-2-1-4,decimal)"."; }
+#eg_parametrized_circle-2-1-4 > li { counter-increment: eg_parametrized_circle-2-1-4; }
+#th_real_complex_diff-2-1-3 { counter-set: th_real_complex_diff-2-1-3 0; }
+#th_real_complex_diff-2-1-3 > li::marker { content: ""counter(th_real_complex_diff-2-1-3,decimal)"."; }
+#th_real_complex_diff-2-1-3 > li { counter-increment: th_real_complex_diff-2-1-3; }
+#th_FTC-2-1-2 { counter-set: th_FTC-2-1-2 0; }
+#th_FTC-2-1-2 > li::marker { content: ""counter(th_FTC-2-1-2,decimal)"."; }
+#th_FTC-2-1-2 > li { counter-increment: th_FTC-2-1-2; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -565,6 +574,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_branch_harmonic.html#ss_harmonic" class="internal"><span class="title">Harmonic functions</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_complex_paths.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Complex paths</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -653,7 +663,37 @@ z \amp \mapsto f'(z)
 </li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_elem_derivs-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_elem_derivs-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_diff_cont"><h3 class="heading">
+<div class="solutions"><details id="eg_elem_derivs-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="eg_elem_derivs-3-1">It is easy to see using the limit definition that <span class="process-math">\(\frac{d}{dz}(w)=0\)</span> and <span class="process-math">\(\frac{d}{dz}(z)=1\text{.}\)</span> We illustrate the definition only for <span class="process-math">\(f(z)=z^2\)</span> and <span class="process-math">\(f(z)=1/z\text{.}\)</span>
+</div>
+<div class="para logical" id="eg_elem_derivs-3-2">
+<div class="para">Given <span class="process-math">\(f(z)=z^2\)</span> and any <span class="process-math">\(z_0\in \C\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eg_elem_derivs-3-2-3">
+\begin{align*}
+\lim\limits_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0} \amp = \lim\limits_{z\to z_0}\frac{z^2-z_0^2}{z-z_0} \\
+\amp =\lim\limits_{z\to z_0}\frac{(z-z_0)(z+z_0)}{z-z_0}\\
+\amp =\lim\limits_{z\to z_0}z+z_0\\
+\amp = 2z_0\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\frac{d}{dz}(z^2)=2z\)</span> for all <span class="process-math">\(z\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="eg_elem_derivs-3-3">
+<div class="para">Now let <span class="process-math">\(f(z)=1/z\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="eg_elem_derivs-3-3-2">
+\begin{align*}
+\lim\limits_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0} \amp = \lim\limits_{z\to z_0}\frac{1/z-1/z_0}{z-z_0}\\
+\amp = \lim\limits_{z\to z_0}\frac{(z_0-z)/(zz_0)}{z-z_0}\\
+\amp = \lim\limits_{z\to z_0}\frac{z_0-z}{zz_0(z-z_0)}\\
+\amp = \lim\limits_{z\to z_0}-\frac{1}{zz_0}\\
+\amp = -\frac{1}{z_0^2}\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\frac{d}{dz}(1/z)=-1/z^2\)</span> for all <span class="process-math">\(z\text{.}\)</span>
+</div>
+</div>
+</div></details></div></article><article class="theorem theorem-like" id="th_diff_cont"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.7</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiable implies continuous.</span>
 </h3>
 <div class="para" id="th_diff_cont-2-1">If <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(z_0\text{,}\)</span> then <span class="process-math">\(f\)</span> is continuous at <span class="process-math">\(z_0\text{.}\)</span>
@@ -661,7 +701,7 @@ z \amp \mapsto f'(z)
 <div class="para">Note that by definition, <span class="process-math">\(z_0\)</span> is assumed to be an interior point of the domain of <span class="process-math">\(f\text{,}\)</span> which implies that <span class="process-math">\(z_0\)</span> is a limit point of the domain. We are thus justified in using the limit definition of continuity. We have</div>
 <div class="displaymath process-math" id="th_diff_cont-3-1-4">
 \begin{align*}
-\lim\limits_{z\to z_0}f(z) \amp = \lim\limits_{z\to z_0}\left(\frac{f(z)-f(z_0)}{z-z_0}\cdot (z-z_0)+f(z_0)) \\
+\lim\limits_{z\to z_0}f(z) \amp = \lim\limits_{z\to z_0}\left(\frac{f(z)-f(z_0)}{z-z_0}\cdot (z-z_0)+f(z_0)\right) \\
 \amp = f'(z_0)(0)+f(z_0)=f(z_0)\text{.}
 \end{align*}
 </div>
@@ -706,7 +746,7 @@ z \amp \mapsto f'(z)
 </div>
 </li>
 </ol>
-</div></article><details id="th_diff_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_diff_props-3-1"></div></article></details><article class="example example-like" id="eg_diff_poly"><h3 class="heading">
+</div></article><details id="th_diff_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_diff_props-3-1">These statements are proved in essentially the same way as the corresponding statements from elementary calculus. We omit them here.</div></article></details><article class="example example-like" id="eg_diff_poly"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.9</span><span class="period">.</span><span class="space"> </span><span class="title">Polynomials.</span>
 </h3>
 <div class="para" id="eg_diff_poly-2-1">Let <span class="process-math">\(f(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots a_1z+a_0\text{.}\)</span> Show that <span class="process-math">\(f\)</span> is differentiable on <span class="process-math">\(\C\)</span> and compute a formula for <span class="process-math">\(f'\text{.}\)</span>
@@ -725,13 +765,13 @@ z \amp \mapsto f'(z)
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.10</span><span class="period">.</span><span class="space"> </span><span class="title">Chain rule.</span>
 </h3>
 <div class="para logical" id="th_chain-2-1">
-<div class="para">Assume <span class="process-math">\(g\)</span> is differentiable at <span class="process-math">\(z_0\)</span> and <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(w_0=f(z_0)\text{.}\)</span> The composition <span class="process-math">\(f\circ g\)</span> is differentiable at <span class="process-math">\(z_0\)</span> and</div>
+<div class="para">Assume <span class="process-math">\(g\)</span> is differentiable at <span class="process-math">\(z_0\)</span> and <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(w_0=g(z_0)\text{.}\)</span> The composition <span class="process-math">\(f\circ g\)</span> is differentiable at <span class="process-math">\(z_0\)</span> and</div>
 <div class="displaymath process-math" id="eq_diff_chain">
 \begin{equation}
 (f\circ g)'(z_0)=f'(g(z_0))g'(z_0)\text{.}\tag{1.38}
 \end{equation}
 </div>
-</div></article><details id="th_chain-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_chain-3-1"></div></article></details></section></div>
+</div></article><details id="th_chain-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_chain-3-1">This is left as a homework exercise.</div></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_lim_cont.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_C-R.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

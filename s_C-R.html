@@ -96,14 +96,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.4';
+eBookConfig.runestone_version = '7.5.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.596d7408a9995282.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.82032a8574f6ce75.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6a985cbf816db5c7.css">
 <style>
 #d_function_equality-3-1-4 { counter-set: d_function_equality-3-1-4 0; }
@@ -298,6 +298,15 @@ eBookConfig.enable_chatcodes =  false;
 #th_harmonic_conjugates-2-1-8 { counter-set: th_harmonic_conjugates-2-1-8 0; }
 #th_harmonic_conjugates-2-1-8 > li::marker { content: ""counter(th_harmonic_conjugates-2-1-8,decimal)"."; }
 #th_harmonic_conjugates-2-1-8 > li { counter-increment: th_harmonic_conjugates-2-1-8; }
+#eg_parametrized_circle-2-1-4 { counter-set: eg_parametrized_circle-2-1-4 0; }
+#eg_parametrized_circle-2-1-4 > li::marker { content: ""counter(eg_parametrized_circle-2-1-4,decimal)"."; }
+#eg_parametrized_circle-2-1-4 > li { counter-increment: eg_parametrized_circle-2-1-4; }
+#th_real_complex_diff-2-1-3 { counter-set: th_real_complex_diff-2-1-3 0; }
+#th_real_complex_diff-2-1-3 > li::marker { content: ""counter(th_real_complex_diff-2-1-3,decimal)"."; }
+#th_real_complex_diff-2-1-3 > li { counter-increment: th_real_complex_diff-2-1-3; }
+#th_FTC-2-1-2 { counter-set: th_FTC-2-1-2 0; }
+#th_FTC-2-1-2 > li::marker { content: ""counter(th_FTC-2-1-2,decimal)"."; }
+#th_FTC-2-1-2 > li { counter-increment: th_FTC-2-1-2; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -565,6 +574,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_branch_harmonic.html#ss_harmonic" class="internal"><span class="title">Harmonic functions</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_complex_paths.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Complex paths</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -674,7 +684,8 @@ f\colon \amp \R^2\rightarrow \R^2\\
 \end{align*}
 </div>
 <div class="para">is <em class="emphasis">differentiable</em> in the sense of multivariable calculus. I will not include that definition here (look it up in your calculus text!), but suffice it to say that it is not equivalent to the partial derivatives of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> existing. The additional continuity condition given in the theorem implies that <span class="process-math">\(f\)</span> is differentiable in the multivariable calculus sense, and hence, that <span class="process-math">\(f\)</span> is differentiable in the complex sense, assuming the Cauchy-Riemann equations are satisfied.</div>
-</div></article></details><article class="corollary theorem-like" id="cor_C-R_open"><h4 class="heading">
+</div></article></details><div class="para" id="ss_C-r-9">As an immediate corollary of <a href="s_C-R.html#th_C-R_cont_equiv" class="xref" data-knowl="./knowl/xref/th_C-R_cont_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.10.5: Cauchy-Riemann converse">Theorem 1.10.5</a> we have the following corollary, which will be our main tool for investigating differentiability.</div>
+<article class="corollary theorem-like" id="cor_C-R_open"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.10.6</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Riemann on open set.</span>
 </h4>
 <div class="para logical" id="cor_C-R_open-2-1">
@@ -734,10 +745,11 @@ v_x \amp=e^x\sin y \amp e^x\cos y \text{,}
 \frac{d}{dz}(\sin z) \amp = \cos z\text{.}
 \end{align*}
 </div>
-</div></div></details></div></article><article class="convention remark-like" id="ss_C-r-11"><h4 class="heading">
+</div></div></details></div></article><div class="para" id="ss_C-r-12">As with good old-fashioned calculus, a complex function whose derivative is zero everywhere (on a <em class="emphasis">connected</em> open set) is constant. Let’s see why this is so. First some definitions and conventions.</div>
+<article class="convention remark-like" id="ss_C-r-13"><h4 class="heading">
 <span class="type">Convention</span><span class="space"> </span><span class="codenumber">1.10.8</span><span class="period">.</span><span class="space"> </span><span class="title">Constant functions.</span>
 </h4>
-<div class="para" id="ss_C-r-11-2">Given a function <span class="process-math">\(f\)</span> defined on a set <span class="process-math">\(D\text{,}\)</span> we say that <span class="process-math">\(f\)</span> is on constant on <span class="process-math">\(D\)</span> if there is a complex number <span class="process-math">\(w_0\in \C\)</span> such that <span class="process-math">\(f(z)=w_0\)</span> for all <span class="process-math">\(z\in D\text{.}\)</span> We will write <span class="process-math">\(f\vert_D=w_0\)</span> in this case.</div></article><article class="definition definition-like" id="d_locally_constant"><h4 class="heading">
+<div class="para" id="ss_C-r-13-2">Given a function <span class="process-math">\(f\)</span> defined on a set <span class="process-math">\(D\text{,}\)</span> we say that <span class="process-math">\(f\)</span> is on constant on <span class="process-math">\(D\)</span> if there is a complex number <span class="process-math">\(w_0\in \C\)</span> such that <span class="process-math">\(f(z)=w_0\)</span> for all <span class="process-math">\(z\in D\text{.}\)</span> We will write <span class="process-math">\(f\vert_D=w_0\)</span> in this case.</div></article><article class="definition definition-like" id="d_locally_constant"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.10.9</span><span class="period">.</span><span class="space"> </span><span class="title">Locally constant.</span>
 </h4>
 <div class="para" id="d_locally_constant-2-1">A function <span class="process-math">\(f\)</span> is locally constant on a set <span class="process-math">\(D\)</span> if for all <span class="process-math">\(z_0\in U\)</span> there is an open ball <span class="process-math">\(B_r(z_0)\subseteq U\)</span> such that <span class="process-math">\(f\)</span> is constant on <span class="process-math">\(B_r(z_0)\cap D\text{.}\)</span>
@@ -755,7 +767,33 @@ v_x \amp=e^x\sin y \amp e^x\cos y \text{,}
 </div></li>
 </ol>
 <div class="para">As a consequence, if we assume further that <span class="process-math">\(U\)</span> is connected, then <span class="process-math">\(f'\vert_U=0\)</span> if and only if <span class="process-math">\(f\)</span> is a constant function.</div>
-</div></article><details id="th_zero_deriv-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_zero_deriv-3-1"></div></article></details><article class="corollary theorem-like" id="cor_const_u_v"><h4 class="heading">
+</div></article><details id="th_zero_deriv-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><article class="case" id="th_zero_deriv-3-1"><h5 class="heading">Implication: (i)<span class="process-math">\(\implies\)</span>(ii).</h5>
+<div class="para logical" id="th_zero_deriv-3-1-2">
+<div class="para">Assume <span class="process-math">\(f\)</span> is locally constant. Given any <span class="process-math">\(z_0\in U\)</span> we can find an open ball <span class="process-math">\(V=B_r(z_0)\subseteq U\)</span> such that the restriction <span class="process-math">\(f\vert_V=w_0\text{.}\)</span> for some <span class="process-math">\(w_0\in \C\text{.}\)</span> It is easy to see that <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(z_0\)</span> if and only if its restriction <span class="process-math">\(f_V\)</span> is differentiable at <span class="process-math">\(z_0\text{,}\)</span> and that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_derivative.html">
+\begin{equation*}
+f'(z_0)=(f\vert_V)'(z_0)=0\text{,}
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(f\vert_V\)</span> is constant. (See <a href="s_complex_paths.html#eg_derivative" class="xref" data-knowl="./knowl/xref/eg_derivative.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.12.6: Tangent vectors">Example 1.12.6</a>.) It follows that <span class="process-math">\(f'(z)=0\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
+</div>
+</div></article><article class="case" id="th_zero_deriv-3-2"><h5 class="heading">Implication:(ii)<span class="process-math">\(\implies\)</span>(i).</h5>
+<div class="para logical" id="th_zero_deriv-3-2-2">
+<div class="para">Assume <span class="process-math">\(f'(z)=0\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span> We will show that <span class="process-math">\(f\)</span> is locally constant. Given <span class="process-math">\(z_0\in U\text{,}\)</span> there is an open ball <span class="process-math">\(V=B_{r}(z_0)\subseteq U\text{.}\)</span> Writing <span class="process-math">\(f=u+iv\)</span> and using <a href="s_C-R.html#th_C-R" class="xref" data-knowl="./knowl/xref/th_C-R.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.10.2: Cauchy-Riemann equations">Theorem 1.10.2</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_C-R.html">
+\begin{equation*}
+0=f'(z)=u_x(z)+iv_x(z)=v_y(z)-iu_y(z),
+\end{equation*}
+</div>
+<div class="para">and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_C-R.html">
+\begin{equation*}
+u_x(z)=u_y(z)=v_x(z)=v_y(z)=0
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in V\text{.}\)</span> Since <span class="process-math">\(V=B_r(z_0)\)</span> is connected, it follows from multivariable calculus facts that <span class="process-math">\(u(x,y)=C\)</span> and <span class="process-math">\(v(x,y)=D\)</span> for some constants <span class="process-math">\(C,D\in \R\)</span> for all <span class="process-math">\(z=x+iy\in V\text{.}\)</span> Thus the restriction <span class="process-math">\(f\vert_V=C+iD\)</span> is constant on <span class="process-math">\(V\text{.}\)</span> This proves <span class="process-math">\(f\)</span> is locally constant.</div>
+</div></article></article></details><div class="para" id="ss_C-r-16">The next corollary follows directly from <a href="s_C-R.html#th_zero_deriv" class="xref" data-knowl="./knowl/xref/th_zero_deriv.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.10.10: Functions of derivative zero">Theorem 1.10.10</a> and <a href="s_C-R.html#th_locally_constant_connected" class="xref" data-knowl="./knowl/xref/th_locally_constant_connected.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.10.13: Locally constant on connected sets">Theorem 1.10.13</a>. The latter was left as a homework exercise, but is important enough to enshrine here as an official result.</div>
+<article class="corollary theorem-like" id="cor_const_u_v"><h4 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.10.11</span><span class="period">.</span>
 </h4>
 <div class="para" id="cor_const_u_v-1-1">Assume <span class="process-math">\(f=u+iv\)</span> is holomorphic on the open and connected set <span class="process-math">\(U\text{.}\)</span> If <span class="process-math">\(u\)</span> is constant on <span class="process-math">\(U\)</span> or <span class="process-math">\(v\)</span> is constant on <span class="process-math">\(U\text{,}\)</span> then <span class="process-math">\(f\)</span> is constant on <span class="process-math">\(U\text{.}\)</span>
@@ -836,11 +874,44 @@ u_\theta(r,\theta) \amp =-rv_r(r,\theta) \text{.}\tag{1.43}
 f'(z)=e^{-i\theta}(u_r(r,\theta)+iv_r(r,\theta))\text{.}\tag{1.44}
 \end{equation}
 </div>
-</div></article><details id="th_C-R_polar-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_C-R_polar-3-1"></div></article></details><article class="example example-like" id="eg_der_Log"><h4 class="heading">
+</div></article><details id="th_C-R_polar-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_C-R_polar-3-1">This is left as a homework exercise.</div></article></details><article class="example example-like" id="eg_der_Log"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.15</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative of <span class="process-math">\(\Log\)</span>.</span>
 </h4>
 <div class="para" id="eg_der_Log-2-1">Show that <span class="process-math">\(\Log\)</span> is differentiable on its domain <span class="process-math">\(\C-(-\infty, 0]\)</span> and compute a formula for its derivative.</div>
-<div class="solutions"><details id="eg_der_Log-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_der_Log-3-1"></div></div></details></div></article><article class="example example-like" id="eg_der_power"><h4 class="heading">
+<div class="solutions"><details id="eg_der_Log-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_der_Log-3-1">
+<div class="para">For any <span class="process-math">\(z\in \C-(-\infty, 0]\text{,}\)</span> we have <span class="process-math">\(z=re^{i\theta}\)</span> if and only if <span class="process-math">\(r=\abs{z}\)</span> and <span class="process-math">\(\Arg z=\theta+2\pi k\)</span> for some <span class="process-math">\(k\in \Z\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Log(z)=\ln\abs{z}+i(\theta+2\pi k)
+\end{equation*}
+</div>
+<div class="para">and thus <span class="process-math">\(u(r,\theta)=\ln r\)</span> and <span class="process-math">\(v(r,\theta)=\theta+2\pi k\text{.}\)</span> Computing partial derivatives, we see have</div>
+<div class="displaymath process-math" id="eg_der_Log-3-1-9">
+\begin{align*}
+u_r \amp = \frac{1}{r} \amp u_\theta \amp = 0\\
+v_r \amp = 0 \amp v_\theta\amp =1\text{,}
+\end{align*}
+</div>
+<div class="para">from which we see clearly that</div>
+<div class="displaymath process-math" id="eg_der_Log-3-1-10">
+\begin{align*}
+u_r \amp = \frac{1}{r}v_\theta \amp u_\theta\amp =-r\v_r\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that <span class="process-math">\(\Log z\)</span> is differentiable and that given <span class="process-math">\(z=re^{i\theta}\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{d}{dz}(\Log z)=e^{-i\theta}(\frac{1}{r}+0i)=\frac{1}{r}e^{-i\theta}=\frac{1}{z}\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{d}{dz}\Log z=\frac{1}{z}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in \C-(-\infty, 0]\text{,}\)</span> as desired.</div>
+</div></div></details></div></article><article class="example example-like" id="eg_der_power"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.16</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative of power function.</span>
 </h4>
 <div class="para" id="eg_der_power-2-1">Fix a complex number <span class="process-math">\(w\)</span> and define <span class="process-math">\(f(z)\)</span> to be the principle branch of <span class="process-math">\(z^w\text{.}\)</span> Show that <span class="process-math">\(f\)</span> is differentiable on its domain and compute a formula for its derivative.</div>
