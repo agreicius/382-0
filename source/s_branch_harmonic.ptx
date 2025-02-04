@@ -201,7 +201,7 @@
     <title>Branches of cube-root function</title>
     <statement>
     <p>
-    Let <m>U=\{z\in \C\colon \Im z\geq 0 \text{ or } \Re z &lt; 0\}</m>. 
+    Let <m>U=\{z\in \C\colon \Im z&gt;  0 \text{ or } \Re z &lt; 0\}</m>. 
     <ol>
         <li>
             <p>
