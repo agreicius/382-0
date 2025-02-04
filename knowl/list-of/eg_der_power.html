@@ -12,9 +12,25 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.16</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative of power function.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.17</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative of power function.</span>
 </h4>
 <div class="para">Fix a complex number <span class="process-math">\(w\)</span> and define <span class="process-math">\(f(z)\)</span> to be the principle branch of <span class="process-math">\(z^w\text{.}\)</span> Show that <span class="process-math">\(f\)</span> is differentiable on its domain and compute a formula for its derivative.</div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_C-R.html#eg_der_power">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">The function <span class="process-math">\(f\)</span> has formula <span class="process-math">\(f(z)=e^{w\Log z}=\exp(w\Log z)\text{.}\)</span> The derivative of <span class="process-math">\(f\)</span> is easily computed using the the chain rule:</div>
+<div class="displaymath process-math">
+\begin{align*}
+f'(z) \amp = \exp'(w\Log z)\cdot (w\Log z)'\\
+\amp = w\exp(w\Log z)\cdot \frac{1}{z} \amp (\exp'=\exp, (Log z)'=1/z\\
+\amp = \frac{f(z)}{z}\text{.}
+\end{align*}
+</div>
+<div class="para">You were expecting <span class="process-math">\(f'(z)=z^{w-1}\text{?}\)</span> Since <span class="process-math">\(z^w\)</span> and <span class="process-math">\(z^{w-1}\)</span> are not complex functions in themselves, the answer was never going to be this easy. However, writing</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z^{w-1}=\frac{z^w}{z}
+\end{equation*}
+</div>
+<div class="para">and swapping <span class="process-math">\(z^{w}\)</span> out for <span class="process-math">\(f\text{,}\)</span> we see that our formula is equivalent to the familiar power rule.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_C-R.html#eg_der_power">in-context</a></span>
 </body>
 </html>
