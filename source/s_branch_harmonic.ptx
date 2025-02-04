@@ -77,6 +77,29 @@
             Note further that the principal branches of these three set-valued functions are just the <m>-\pi</m>-anchored branches in our new terminology.
         </p>
     </remark>
+    <example xml:id="eg_branch_relations">
+    <title>Relating <m>\alpha</m>-cut branches</title>
+    <statement>
+    <p>
+    Given <m>\alpha,\beta\in \R</m> show that 
+    <me>
+        \Arg_\beta(z)=\Arg_\alpha(e^{i(\alpha-\beta)}z)+\beta-\alpha
+    </me>.
+    </p>
+    </statement>
+    <hint>
+        <p>
+           First show that <m>\arg(z)=\arg(e^{i(\alpha-\beta)}z)+\beta-\alpha</m> for all <m>z</m>, where as always this must be interpreted as an equality of sets. 
+        </p>
+    </hint>
+    <solution>
+    <p>
+    This is left as a homework exercise.
+    </p>
+    </solution>
+    
+    </example>
+    
     <example xml:id="eg_alpha_cuts">
     <title><m>\Log_\alpha(z)</m> is holomorphic</title>
     <statement>
@@ -86,12 +109,11 @@
     </statement>
     <solution>
     <p>
-    As in <xref ref="eg_der_Log"/>, we use the Cauchy-Riemann equations. Fix <m>z_0=r_0e^{i\theta_0}\in \C-R_{\alpha}</m>. Picking a small enough neighborhood in the <m>r\theta</m>-plane, we can assume that for <m>(r,\theta)</m> close enough to <m>(r_0,\theta_0)</m> we have <m>z=re^{i\theta}</m> if and only if <m>r=\abs{z}</m> and <m>\Arg_\alpha z=\theta+2\pi k</m> for some fixed <m>k\in \Z</m>. (This is because the map <m>(r,\theta)\mapsto \Arg_\alpha(e^{i\theta})</m> is continuous.)
+    As in <xref ref="eg_der_Log"/>, we use the Cauchy-Riemann equations. Fix <m>z_0=r_0e^{i\theta_0}\in \C-R_{\alpha}</m>. Picking a small enough neighborhood in the <m>r\theta</m>-plane, we can assume that for <m>(r,\theta)</m> close enough to <m>(r_0,\theta_0)</m> we have <m>z=re^{i\theta}</m> if and only if <m>r=\abs{z}</m> and <m>\Arg_\alpha z=\theta+2\pi k</m> for some fixed <m>k\in \Z</m>. (This is because the map <m>(r,\theta)\mapsto \Arg_\alpha(e^{i\theta})</m> is continuous.) We conclude that 
     <me>
         \Log_\alpha(z)=\ln \abs{z}+i \Arg_\alpha z=\ln r+i(\theta+2\pi k)
     </me>
-    for some <m>k\in \Z</m>, and hence <m>u(r,\theta)=r</m> and <m>v(r,\theta)=(\theta+2\pi k)</m> for some <m>k</m>. 
-     
+    for some <m>k\in \Z</m>, and hence <m>u(r,\theta)=r</m> and <m>v(r,\theta)=(\theta+2\pi k)</m> for some <m>k</m>. We then proceed exactly as in <xref ref="eg_der_Log"/> to show that the polar Cauchy-Riemann equations are satisfied, and that <m>f'(z)=1/z</m>. 
     </p>
     </solution>
     </example>
@@ -166,7 +188,7 @@
     <ol>
         <li>
             <p>
-                Show that there are exactly three branches of <m>\mathcal{F}(z)=z^{1/3}</m> on $U$ and give explicit formulas for each. 
+                Show that there are exactly three branches of <m>\mathcal{F}(z)=z^{1/3}</m> on <m>U</m> and give explicit formulas for each. 
             </p>
         </li>
         <li>
@@ -179,7 +201,29 @@
     </statement>
     <solution>
     <p>
-    
+    Since <m>U\subseteq \C-R_{-\pi/2}</m>, the function 
+    <md>
+    <mrow>f(z)\amp =e^{\frac{1}{3}\Log_{-\pi/2}z}</mrow>
+    <mrow> \amp = e^{1/3(\ln\abs{z}+i\Arg_{-\pi/2} z)}</mrow>
+    <mrow> \amp =r^{1/3}e^{i(\Arg_{-\pi/2} z)/3} \amp (r=\abs{z})</mrow>
+    </md>
+    is a branch of <m>z^{1/3}</m>. According to <xref ref="th_branches"/>, the other branches are of the form 
+    <me>
+        g(z)=e^{2\pi i k/3}f(z)
+    </me>.
+    Letting <m>k</m> vary in this manner, we see that the multiplying factor <m>e^{2\pi i k/3}</m> ranges over the three cube-roots of unity: <ie/>, the distinct branches of <m>z^{1/3}</m> on <m>U</m> are 
+    <me>
+        f(z), \zeta f(z), \zeta^2 f(z)
+    </me>,
+    where <m>\zeta=e^{2\pi i/3}=\cos(2\pi/3)+i\sin(2\pi/3)</m>. Again using, <xref ref="th_branches"/>, we have 
+    <md>
+        <mrow>f'(z)\amp =\frac{1}{3}\, \frac{f(z)}{z} </mrow>
+        <mrow> \amp =\frac{\abs{z}^{1/3}e^{i(\Arg_{-\pi/2} z)/3}}{3\abs{z}e^{i \Arg_{-\pi/2}(z)}}</mrow>
+        <mrow> \amp = \frac{1}{3}\abs{z}^{-2/3}e^{-(2\Arg_{-\pi/2} z)i/3}</mrow>
+        <mrow> \amp = \frac{1}{3} e^{-\frac{2}{3}\Log_{-\pi/2} z}</mrow>
+        <mrow> \amp = \frac{1}{3} h(z)</mrow>
+    </md>,
+    where <m>h(z)=e^{-\frac{2}{3}\Log_{-\pi/2} z}</m> is the <m>-\pi/2</m>-cut branch of <m>z^{-2/3}</m>. In other words, we have a derivative formula very much in the spirit of <m>\frac{d}{dx}(x^{1/3})=\frac{1}{3}x^{-2/3}</m>. 
     </p>
     </solution>
     </example>
