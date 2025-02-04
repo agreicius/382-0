@@ -104,7 +104,28 @@ Prove that the given <m>f</m> is differentiable on the given open set <m>U</m> a
 </statement>
 <solution>
 <p>
-
+It is easy to see using the limit definition that <m>\frac{d}{dz}(w)=0</m> and <m>\frac{d}{dz}(z)=1</m>. We illustrate the definition only for <m>f(z)=z^2</m> and <m>f(z)=1/z</m>. 
+</p>
+<p>
+    Given <m>f(z)=z^2</m> and any <m>z_0\in \C</m>, we have 
+    <md>
+        <mrow>\lim\limits_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0} \amp = \lim\limits_{z\to z_0}\frac{z^2-z_0^2}{z-z_0} </mrow>
+        <mrow> \amp =\lim\limits_{z\to z_0}\frac{(z-z_0)(z+z_0)}{z-z_0}</mrow>
+        <mrow> \amp =\lim\limits_{z\to z_0}z+z_0</mrow>
+        <mrow> \amp = 2z_0</mrow>
+    </md>.
+    This shows that <m>\frac{d}{dz}(z^2)=2z</m> for all <m>z</m>. 
+</p>
+<p>
+    Now let <m>f(z)=1/z</m>. We have 
+    <md>
+        <mrow>\lim\limits_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0} \amp = \lim\limits_{z\to z_0}\frac{1/z-1/z_0}{z-z_0}</mrow>
+        <mrow> \amp = \lim\limits_{z\to z_0}\frac{(z_0-z)/(zz_0)}{z-z_0}</mrow>
+        <mrow> \amp = \lim\limits_{z\to z_0}\frac{z_0-z}{zz_0(z-z_0)}</mrow>
+        <mrow> \amp = \lim\limits_{z\to z_0}-\frac{1}{zz_0}</mrow>
+        <mrow> \amp = -\frac{1}{z_0^2}</mrow>
+    </md>.
+    This shows that <m>\frac{d}{dz}(1/z)=-1/z^2</m> for all <m>z</m>. 
 </p>
 </solution>
 </example>
@@ -119,7 +140,7 @@ If <m>f</m> is differentiable at <m>z_0</m>, then <m>f</m> is continuous at <m>z
 <p>
     Note that by definition, <m>z_0</m> is assumed to be an interior point of the domain of <m>f</m>, which implies that <m>z_0</m> is a limit point of the domain. We are thus justified in using the limit definition of continuity. We have 
     <md>
-        <mrow>\lim\limits_{z\to z_0}f(z) \amp = \lim\limits_{z\to z_0}\left(\frac{f(z)-f(z_0)}{z-z_0}\cdot (z-z_0)+f(z_0)) </mrow>
+        <mrow>\lim\limits_{z\to z_0}f(z) \amp = \lim\limits_{z\to z_0}\left(\frac{f(z)-f(z_0)}{z-z_0}\cdot (z-z_0)+f(z_0)\right) </mrow>
         <mrow> \amp = f'(z_0)(0)+f(z_0)=f(z_0)</mrow>
     </md>.
     Thus <m>f</m> is continuous at <m>z_0</m>. 
@@ -164,6 +185,7 @@ Assume <m>f</m> and <m>g</m> are differentiable at <m>z_0</m>
 </statement>
 <proof>
 <p>
+    These statements are proved in essentially the same way as the corresponding statements from elementary calculus. We omit them here. 
 </p>
 </proof>
 </theorem>
@@ -191,7 +213,7 @@ First observe that for all nonnegative integers <m>n</m> the function <m>g(z)=z^
 <title>Chain rule</title>
 <statement>
 <p>
-Assume <m>g</m> is differentiable at <m>z_0</m> and <m>f</m> is differentiable at <m>w_0=f(z_0)</m>. The composition <m>f\circ g</m> is differentiable at <m>z_0</m> and 
+Assume <m>g</m> is differentiable at <m>z_0</m> and <m>f</m> is differentiable at <m>w_0=g(z_0)</m>. The composition <m>f\circ g</m> is differentiable at <m>z_0</m> and 
 <men xml:id="eq_diff_chain">
     (f\circ g)'(z_0)=f'(g(z_0))g'(z_0)
 </men>.
@@ -199,6 +221,7 @@ Assume <m>g</m> is differentiable at <m>z_0</m> and <m>f</m> is differentiable a
 </statement>
 <proof>
 <p>
+    This is left as a homework exercise. 
 </p>
 </proof>
 </theorem>

@@ -11,4 +11,5 @@
     <xi:include href="s_derivative.ptx" />
     <xi:include href="s_C-R.ptx" />
     <xi:include href="s_branch_harmonic.ptx" />
+    <xi:include href="s_complex_paths.ptx" />
 </chapter>

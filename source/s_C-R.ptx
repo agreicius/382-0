@@ -116,7 +116,9 @@
     </p>
     </proof>
     </theorem>
-    
+    <p>
+        As an immediate corollary of <xref ref="th_C-R_cont_equiv"/> we have the following corollary, which will be our main tool for investigating differentiability. 
+    </p>
     <corollary xml:id="cor_C-R_open">
     <title>Cauchy-Riemann on open set</title>
         <statement>
@@ -179,7 +181,9 @@
     </p>
     </solution>
     </example>
-    
+    <p>
+        As with good old-fashioned calculus, a complex function whose derivative is zero everywhere (on a <em>connected</em> open set) is constant. Let's see why this is so. First some definitions and conventions. 
+    </p>
     <convention>
     <title>Constant functions</title>
     <p>
@@ -217,10 +221,35 @@ As a consequence, if we assume further that <m>U</m> is connected, then <m>f'\ve
 </p>
 </statement>
 <proof>
-<p>
-</p>
-</proof>
+<case>
+    <title>Implication: (i)<m>\implies</m>(ii) </title>
+    <p>
+    Assume <m>f</m> is locally constant. Given any <m>z_0\in U</m> we can find an open ball <m>V=B_r(z_0)\subseteq U</m> such that the restriction <m>f\vert_V=w_0</m>. for some <m>w_0\in \C</m>. It is easy to see that <m>f</m> is differentiable at <m>z_0</m> if and only if its restriction <m>f_V</m> is differentiable at <m>z_0</m>, and that 
+    <me>
+        f'(z_0)=(f\vert_V)'(z_0)=0
+    </me>,
+    since <m>f\vert_V</m> is constant. (See <xref ref="eg_derivative"/>.) It follows that <m>f'(z)=0</m> for all <m>z\in U</m>. 
+    </p>
+    </case>
+    <case>
+    <title>Implication:(ii)<m>\implies</m>(i)</title>
+    <p>
+    Assume <m>f'(z)=0</m> for all <m>z\in U</m>. We will show that <m>f</m> is locally constant. Given <m>z_0\in U</m>, there is an open ball <m>V=B_{r}(z_0)\subseteq U</m>. Writing <m>f=u+iv</m> and using <xref ref="th_C-R"/>, we have 
+    <me>
+        0=f'(z)=u_x(z)+iv_x(z)=v_y(z)-iu_y(z),
+    </me>
+    and thus
+    <me>
+        u_x(z)=u_y(z)=v_x(z)=v_y(z)=0
+    </me>
+    for all <m>z\in V</m>. Since <m>V=B_r(z_0)</m> is connected, it follows from multivariable calculus facts that <m>u(x,y)=C</m> and <m>v(x,y)=D</m> for some constants <m>C,D\in \R</m> for all <m>z=x+iy\in V</m>. Thus the restriction <m>f\vert_V=C+iD</m> is constant on <m>V</m>. This proves <m>f</m> is locally constant. 
+    </p>
+    </case>
+ </proof>
 </theorem>
+<p>
+    The next corollary follows directly from <xref ref="th_zero_deriv"/> and <xref ref="th_locally_constant_connected"/>. The latter was left as a homework exercise, but is important enough to enshrine here as an official result. 
+</p>
 <corollary xml:id="cor_const_u_v">
     <statement>
         <p>
@@ -323,6 +352,7 @@ When this is the case, given <m>z=re^{i\theta}\in U</m>, we have
 </statement>
 <proof>
 <p>
+    This is left as a homework exercise. 
 </p>
 </proof>
 </theorem>
@@ -335,7 +365,28 @@ Show that <m>\Log</m> is differentiable on its domain <m>\C-(-\infty, 0]</m> and
 </statement>
 <solution>
 <p>
-
+For any <m>z\in \C-(-\infty, 0]</m>, we have <m>z=re^{i\theta}</m> if and only if <m>r=\abs{z}</m> and <m>\Arg z=\theta+2\pi k</m> for some <m>k\in \Z</m>. It follows that 
+<me>
+    \Log(z)=\ln\abs{z}+i(\theta+2\pi k)
+</me>
+and thus <m>u(r,\theta)=\ln r</m> and <m>v(r,\theta)=\theta+2\pi k</m>. Computing partial derivatives, we see have 
+<md>
+    <mrow>u_r \amp = \frac{1}{r} \amp u_\theta \amp = 0</mrow>
+    <mrow>v_r \amp = 0 \amp v_\theta\amp =1</mrow>
+</md>,
+from which we see clearly that 
+<md>
+    <mrow>u_r \amp = \frac{1}{r}v_\theta \amp u_\theta\amp =-r\v_r</mrow>
+</md>.
+It follows that <m>\Log z</m> is differentiable and that given <m>z=re^{i\theta}</m>, we have 
+<me>
+    \frac{d}{dz}(\Log z)=e^{-i\theta}(\frac{1}{r}+0i)=\frac{1}{r}e^{-i\theta}=\frac{1}{z}
+</me>.
+We conclude that 
+<me>
+    \frac{d}{dz}\Log z=\frac{1}{z}
+</me>
+for all <m>z\in \C-(-\infty, 0]</m>, as desired. 
 </p>
 </solution>
 </example>

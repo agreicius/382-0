@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_complex_paths" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Complex paths</title>
+    <definition xml:id="d_complex_path">
+    <title>Complex path</title>
+    <statement>
+    <p>
+    A <term>complex path</term> is a continuous function <m>\phi \colon[a,b]\rightarrow \C</m> where <m>[a,b]\subseteq \R</m> is a real interval. 
+    </p>
+    <p>
+        We say that a path <m>\phi\colon[a,b]\rightarrow \C</m> <term>parametrizes</term> its image <m>\mathcal{C}=\{\phi(t)\colon t\in [a,b]\}\subseteq \C</m>. 
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title>Paths</title>
+        <p>
+            Note that since <m>[a,b]\subseteq \R\subseteq \C</m> can be thought of as a subset of <m>\C</m>, a path <m>\phi\colon [a,b]\rightarrow \C</m> can be treated as a complex function with a particularly restricted domain <m>D=[a,b]</m>. As such, the same conventions around complex functions apply to paths. In particular, we may write 
+            <me>
+                \phi(t)=u(t)+iv(t)
+            </me>
+            in terms of its real and imaginary parts. Furthermore, identifying <m>\C</m> with <m>\R^2</m>, we can also think of a complex path <m>\phi=u+iv</m> as a continuous function 
+            <md>
+                <mrow>\phi\colon \R \amp \rightarrow \R^2 </mrow>
+                <mrow>t \amp \longmapsto (u(t),v(t))</mrow>
+            </md>.
+        </p>
+    </remark>
+    <example xml:id="eg_parametrized_circle">
+    <title>Parametrized curves</title>
+    <statement>
+    <p>
+    For the given curve <m>\mathcal{C}</m> find a path <m>\phi\colon [a,b]\rightarrow \C</m> that parametrizes <m>\mathcal{C}</m>. 
+    <ol>
+        <li>
+            <p>
+                Fix <m>z_0=a_0+ib_0</m> and <m>r&gt; 0</m>. Let <m>\mathcal{C}=\{z\in \C\colon \abs{z-z_0}=r\}</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Fix <m>z_0=a_0+ib_0</m> and <m>z_1=a_1+ib_1</m>. Let <m>\mathcal{C}</m> be the directed line segment that begins at <m>z_0</m> and ends at  <m>z_1</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <definition xml:id="d_path_properties">
+    <title>Path jargon</title>
+    <statement>
+    <p>
+    Let <m>\phi\colon [a,b]\rightarrow \C</m> be a path. 
+    
+    <ul>
+        <li>
+            <p>
+                The points <m>z_0=\phi(a)</m> and <m>z_1=\phi(b)</m> are called the <term>initial</term> and <term>terminal</term> points of <m>\phi</m>, respectively. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\phi</m> is <term>closed</term> if <m>\phi(a)=\phi(b)</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\phi</m> is <term>simple</term> if <m>\phi(t)\ne \phi(s)</m> for all <m>t,s\in (a,b)</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                The path <m>-\phi\colon [a,b]\rightarrow \C</m> defined as <m>-\phi(t)=\phi(ta+(1-t)b)</m> is called the <term>reverse</term> of <m>\phi</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Given a path <m>\psi\colon [b,c]\rightarrow \C</m> satisfying <m>\phi(b)=\psi(b)</m>, the <term>concatentation</term> of <m>\phi</m> and <m>\psi</m>, denoted <m>\phi*\psi</m>, is the path <m>\phi*\psi\colon [a,c]\rightarrow \C</m> defined as <m>\phi*\psi\vert_{[a,b]}=\phi</m> and <m>\phi*\psi\vert_{[b,c]}=\psi</m>. 
+            </p>
+        </li>
+    </ul>
+    </p>
+    </statement>
+    </definition>
+    <p>
+        We now define a notion of <em>real differentiability</em> of paths. Note that though we can indeed think of a path <m>\phi\colon [a,b]\rightarrow \C</m> as a complex function, since no element <m>t_0</m> in its domain <m>[a,b]</m> is an interior point of <m>[a,b]</m>, considered as a subset of <m>\C</m>, the notion of complex differentiability does not apply to <m>\phi</m>. 
+    </p>
+    <definition xml:id="d_path_derivative">
+    <title>Path derivative</title>
+    <statement>
+    <p>
+    Given a path <m>\phi\colon [a,b]\rightarrow \C</m> with <m>\phi=u+iv</m> and element <m>t_0\in [a,b]</m>, we say <m>\phi</m> is <term>(real) differentiable</term> at <m>t_0</m> if <m>u</m> and <m>v</m> are differentiable at <m>t_0</m>, and define 
+    <me>
+        \phi'(t_0)=u'(t_0)+iv'(t_0)
+    </me>.
+    Geometrically we interpret <m>\phi'(t_0)</m> as a <term>tangent vector</term> to <m>\mathcal{C}=\{\phi(t)\colon t\in [a,b]\}</m> at the point <m>\phi(t_0)</m>. 
+    The path <m>\phi</m> is <term>smooth</term> on <m>[a,b]</m> if <m>\phi'</m> exists and is continuous at all <m>t\in (a,b)</m>; it is <term>piecewise smooth</term> if we can write <m>\phi=\phi_1*\phi_2\cdots *\phi_k</m> as a concatenation of finitely many smooth curves. 
+    </p>
+    </statement>
+    </definition>
+    <example xml:id="eg_derivative">
+    <title>Tangent vectors</title>
+    <statement>
+    <p>
+    Compute <m>\phi'</m> for your parametrizations in <xref ref="eg_parametrized_circle"/> and provide a sketch illustrating the relationship of <m>\phi'</m> to <m>\phi</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <p>
+        Of course, identifying <m>\phi=u+iv</m> with the planar path (or curve) <m>(u(t),v(t))</m> , we recognize its derivative <m>\phi'=u'+iv'</m> as the derivative <m>(u'(t), v'(t))</m> of this planar path (or curve). As a result, all the usual properties of derivatives of planar paths carry over to our complex setting. We will not list them here, but will make a connection with complex differentiation. 
+    </p>
+    <theorem xml:id="th_real_complex_diff">
+    <title>Complex and path differentiation</title>
+    <statement>
+    <p>
+    Let <m>f\colon U\rightarrow \C</m> be holomorphic, and suppose <m>\phi\colon [a,b]\rightarrow U </m> is a smooth path.
+    <ol>
+        <li>
+            <p>
+                The path <m>\psi=f\circ \phi</m> is smooth on <m>[a,b]</m> and satisfies <m>\psi'(t)=f'(\phi(t))\phi'(t)</m> for all <m>t\in [a,b]</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                In particular, if <m>U</m> contains the real interval <m>[a,b]</m>, then the path <m>\psi\colon [a,b]\rightarrow \C</m> defined as 
+                <me>
+                    \psi(t)=f(t)
+                </me>
+                is smooth and satisfies <m>\psi'(t)=f'(t)</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <definition xml:id="d_path_integration">
+    <title>Integration of complex-valued functions</title>
+    <statement>
+    <p>
+    Let <m>f\colon [a,b]\rightarrow \C</m> be a complex-valued function, and write <m>f=u+iv</m>. We say <m>f</m> is <term>Riemann integrable</term> on <m>[a,b]</m> if the Riemann integrals 
+    <md>
+        <mrow>\int_a^b u(t)\, dt \amp  \amp \int_a^b v(t)\, dt</mrow>
+    </md>
+    exist, in which case we write 
+    <me>
+        \int_a^b f(t)\, dt=\int_a^bu(t)\, dt+i\int_a^b v(t)\, dt
+    </me>.
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_FTC">
+    <title>Fundamental theorem of calculus</title>
+    <statement>
+    <p>
+    Let <m>f\colon [a,b]\rightarrow \C</m> be continuous. 
+    <ol>
+        <li>
+            <p>
+                The function <m>F(s)=\int_a^s f(x)\, ds</m> is differentiable on <m>[a,b]</m> and satisfies <m>F'(s)=f(s)</m> for all <m>s\in [a,b]</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>G\colon [a,b]\rightarrow \C</m> satisfies <m>G'(t)=f(t)</m> for all <m>t\in [a,b]</m>, then 
+                <me>
+                    \int_a^b f(t)\, dt=G(b)-G(a)
+                </me>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <example xml:id="eg_path_integral">
+    <title>Complex-valued function integration</title>
+    <statement>
+    <p>
+    Let <m>f(t)=e^{(1+i)t}</m>. Compute <m>\int_0^\pi f(t)\, dt</m> using two different techniques: directly, using <xref ref="d_path_integration"/>, and indirectly using <xref ref="th_FTC"/>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
+    
+    
+
+</section>
