@@ -50,18 +50,18 @@
     <me>
         R_\alpha=\{te^{i\alpha}\colon t\geq 0\}=\{z\in \C\colon \Arg z=\alpha+2\pi k \text{ for some } k\in \Z\}\cup\{0\}
     </me>, 
-    and we define the <term><m>\alpha</m>-anchored branch</term> of <m>\arg</m> to be the function 
+    and we define the <term><m>\alpha</m>-cut branch</term> of <m>\arg</m> to be the function 
     <md>
         <mrow>\Log_\alpha\colon \C-R_\alpha \amp \rightarrow \C</mrow>
     </md>
-    as follows: for all <m>z\in \C-\R_{\alpha}</m>, <m>\Arg_{\alpha}(z)</m> is the unique <m>\theta\in (\alpha, \alpha+2\pi</m> satisfying <m>\alpha&lt; \theta \leq \alpha+2\pi</m>. 
+    defined as follows: for all <m>z\in \C-\R_{\alpha}</m>, <m>\Arg_{\alpha}(z)</m> is the unique <m>\theta\in (\alpha, \alpha+2\pi</m> satisfying <m>\alpha&lt; \theta \leq \alpha+2\pi</m>. 
     </p>
     <p>
-        Similarly, we define the <term><m>\alpha</m>-anchored branch</term> of <m>\log</m> to be the function <m>\Log_\alpha\colon \C-R_\alpha\colon \C</m> defined as 
+        Similarly, we define the <term><m>\alpha</m>-cut branch</term> of <m>\log</m> to be the function <m>\Log_\alpha\colon \C-R_\alpha\colon \C</m> defined as 
         <me>
             \Log_\alpha(z)=\ln\abs{z}+i\Arg_\alpha(z)
         </me>;
-        and for a fixed <m>w\in \C</m>, we define the <term><m>\alpha</m>-anchored branch</term> of <m>\mathcal{F}(z)=z^w</m> to be the function 
+        and for a fixed <m>w\in \C</m>, we define the <term><m>\alpha</m>-cut branch</term> of <m>\mathcal{F}(z)=z^w</m> to be the function 
         <me>
             f(z)=e^{w(\ln\abs{z}+i\Arg_\alpha(z))}
         </me>.
@@ -77,6 +77,25 @@
             Note further that the principal branches of these three set-valued functions are just the <m>-\pi</m>-anchored branches in our new terminology.
         </p>
     </remark>
+    <example xml:id="eg_alpha_cuts">
+    <title><m>\Log_\alpha(z)</m> is holomorphic</title>
+    <statement>
+    <p>
+    Show that the branch <m>f(z)=\Log_\alpha(z)</m> is holomorphic on its domain <m>\C-R_\alpha</m> and satisfies <m>f'(z)=\frac{1}{z}</m>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    As in <xref ref="eg_der_Log"/>, we use the Cauchy-Riemann equations. Fix <m>z_0=r_0e^{i\theta_0}\in \C-R_{\alpha}</m>. Picking a small enough neighborhood in the <m>r\theta</m>-plane, we can assume that for <m>(r,\theta)</m> close enough to <m>(r_0,\theta_0)</m> we have <m>z=re^{i\theta}</m> if and only if <m>r=\abs{z}</m> and <m>\Arg_\alpha z=\theta+2\pi k</m> for some fixed <m>k\in \Z</m>. 
+    <me>
+        \Log_\alpha(z)=\ln \abs{z}+i \Arg_\alpha z=\ln r+i(\theta+2\pi k)
+    </me>
+    for some <m>k\in \Z</m>, and hence <m>u(r,\theta)=r</m> and <m>v(r,\theta)=(\theta+2\pi k)</m> for some <m>k</m>. 
+     
+    </p>
+    </solution>
+    </example>
+    
     <theorem xml:id="th_branches">
     <title>Branches</title>
     <statement>

@@ -371,20 +371,20 @@ Show that <m>\Log</m> is differentiable on its domain <m>\C-(-\infty, 0]</m> and
 </statement>
 <solution>
 <p>
-For any <m>z\in \C-(-\infty, 0]</m>, we have <m>z=re^{i\theta}</m> if and only if <m>r=\abs{z}</m> and <m>\Arg z=\theta+2\pi k</m> for some <m>k\in \Z</m>. It follows that 
+Fix any <m>z_0\in \C-(-\infty, 0]</m>, and write <m>z_0=r_0e^{i\theta_0}</m>. Picking a small enough neighborhood in the <m>r\theta</m>-plane, we can assume that for <m>(r,\theta)</m> close enough to <m>(r_0,\theta_0)</m> we have <m>z=re^{i\theta}</m> if and only if <m>r=\abs{z}</m> and <m>\Arg z=\theta+2\pi k</m> for some fixed <m>k\in \Z</m>. It follows that 
 <me>
     \Log(z)=\ln\abs{z}+i(\theta+2\pi k)
 </me>
 and thus <m>u(r,\theta)=\ln r</m> and <m>v(r,\theta)=\theta+2\pi k</m>. Computing partial derivatives, we see have 
 <md>
-    <mrow>u_r \amp = \frac{1}{r} \amp u_\theta \amp = 0</mrow>
+    <mrow>u_r(r_0,\theta_0) \amp = \frac{1}{r_0} \amp u_\theta \amp = 0</mrow>
     <mrow>v_r \amp = 0 \amp v_\theta\amp =1</mrow>
 </md>,
 from which we see clearly that 
 <md>
     <mrow>u_r \amp = \frac{1}{r}v_\theta \amp u_\theta\amp =-r\v_r</mrow>
 </md>.
-It follows that <m>\Log z</m> is differentiable and that given <m>z=re^{i\theta}</m>, we have 
+It follows that <m>\Log z</m> is differentiable on <m>\C-(-\infty,0]</m> and that given <m>z=re^{i\theta}</m>, we have 
 <me>
     \frac{d}{dz}(\Log z)=e^{-i\theta}(\frac{1}{r}+0i)=\frac{1}{r}e^{-i\theta}=\frac{1}{z}
 </me>.
