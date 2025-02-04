@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_line_integral" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Complex line integrals</title>
+    <convention>
+        <title>Paths and their images</title>
+        <p>
+            From now on we reserve the right to conflate a path <m>\gamma\colon [a,b]\rightarrow \C</m> with its image 
+            <me>
+                \im \phi=\{\phi(t)\colon t\in [a,b]\}
+            </me>.
+            We will take care not to abuse this privilege. 
+        </p>
+    </convention>
+    <definition xml:id="d_line_integral">
+    <title>Complex line integral</title>
+    <statement>
+    <p>
+    Let <m>\gamma\colon [a,b]\rightarrow \C</m> be smooth path. Given a complex function <m>f</m> defined on <m>\gamma</m>, the <term>integral of <m>f</m> over <m>\gamma</m></term>, denoted <m>\int\limits_{\gamma}f\, dz</m>, is defined as
+    <men xml:id="eq_line_integral">
+        \int\limits_{\gamma}f\, dz=\int_a^bf(\gamma(t))\, \gamma'(t)\, dt
+    </men>,
+    provided this integral exists. 
+    </p>
+    <p>
+    If <m>\gamma</m> is the concatenation of smooth curves <m>\gamma_k</m>, <m>1\leq k\leq n</m>, then we define 
+    <men xml:id="eq_line_integral_piecewise">
+        \int_\gamma f\, dz=\sum_{k=1}^n\int_{\gamma_k}f\, dz
+    </men>.
+    Integrals as in <xref ref="eq_line_integral"/> or <xref ref="eq_line_integral_piecewise"/> are called <term>complex line integrals</term> (or <term>complex contour integrals</term>).
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title>Connection with Riemann integral</title>
+    <p>
+        It can be shown that the complex line integral <m>\int\limits_\gamma f\, dz</m> for a piecewise smooth curve <m>\gamma\colon[a,b]\rightarrow \C</m> has an equivalent definition as the limit of Riemann-like sums of the form 
+        <me>
+            \sum_{k=0}^{n-1} f(z_k^*)(z_{k+1}-z_k)
+        </me>,
+        where the points <m>z_0,z_1,\dots, z_n</m> partition the curve <m>\mathcal{C}=\{\gamma(t)\colon t\in [a,b]\}</m> into curve segments whose arc lengths approach zero as <m>n\to \infty</m>. In this sense the complex line integral over a general smoothly parametrized curve in <m>\C</m> can be seen directly as an extension of the Riemann integral of function along a line segment <m>[a,b]</m>.
+    </p>
+    <example xml:id="eg_classic_int">
+    <title>Classic line integral</title>
+    <statement>
+    <p>
+    Show that 
+    <me>
+        \int_{\gamma}\frac{1}{z}\, dz=2\pi i
+    </me>,
+    where <m>\gamma(t)=e^{it}</m>, <m>t\in [0,2\pi]</m>.
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
+    </remark>
+    
+
+</section>
