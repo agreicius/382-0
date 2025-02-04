@@ -371,7 +371,7 @@ Show that <m>\Log</m> is differentiable on its domain <m>\C-(-\infty, 0]</m> and
 </statement>
 <solution>
 <p>
-Fix any <m>z_0\in \C-(-\infty, 0]</m>, and write <m>z_0=r_0e^{i\theta_0}</m>. Picking a small enough neighborhood in the <m>r\theta</m>-plane, we can assume that for <m>(r,\theta)</m> close enough to <m>(r_0,\theta_0)</m> we have <m>z=re^{i\theta}</m> if and only if <m>r=\abs{z}</m> and <m>\Arg z=\theta+2\pi k</m> for some fixed <m>k\in \Z</m>. It follows that 
+Fix any <m>z_0\in \C-(-\infty, 0]</m>, and write <m>z_0=r_0e^{i\theta_0}</m>. Picking a small enough neighborhood in the <m>r\theta</m>-plane, we can assume that for <m>(r,\theta)</m> close enough to <m>(r_0,\theta_0)</m> we have <m>z=re^{i\theta}</m> if and only if <m>r=\abs{z}</m> and <m>\Arg z=\theta+2\pi k</m> for some fixed <m>k\in \Z</m>. (This is because the map <m>(r,\theta)\mapsto \Arg(e^{i\theta})</m> is continuous.) It follows that 
 <me>
     \Log(z)=\ln\abs{z}+i(\theta+2\pi k)
 </me>
