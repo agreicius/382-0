@@ -40,25 +40,122 @@
         </me>,
         where the points <m>z_0,z_1,\dots, z_n</m> partition the curve <m>\mathcal{C}=\{\gamma(t)\colon t\in [a,b]\}</m> into curve segments whose arc lengths approach zero as <m>n\to \infty</m>. In this sense the complex line integral over a general smoothly parametrized curve in <m>\C</m> can be seen directly as an extension of the Riemann integral of function along a line segment <m>[a,b]</m>.
     </p>
+     </remark>
     <example xml:id="eg_classic_int">
     <title>Classic line integral</title>
     <statement>
     <p>
-    Show that 
+    Fix <m>R&gt; 0</m>. Show that 
     <me>
         \int_{\gamma}\frac{1}{z}\, dz=2\pi i
     </me>,
-    where <m>\gamma(t)=e^{it}</m>, <m>t\in [0,2\pi]</m>.
+    where <m>\gamma(t)=Re^{it}</m>, <m>t\in [0,2\pi]</m>.
+    </p>
+    <p>
+        More generally, show that 
+        <men>
+            \int_{\gamma}\frac{1}{z-z_0}\, dz=2\pi i
+        </men>
+        for any fixed <m>z_0\in C</m>, where <m>\gamma(t)=z_0+Re^{it}</m>, <m>t\in [0,2\pi]</m>.
     </p>
     </statement>
     <solution>
     <p>
-    
+        
     </p>
     </solution>
     </example>
+    <p>
+    Fix a piecewise smooth complex path <m>\gamma</m>.  Since the line integral <m>\int_\gamma f\, dz</m> is defined as the   complex-valued function integral <m>\int_a^bf(\gamma(t))\gamma'(t)\, dt</m>, all the usual properties of integration also hold for complex line integrals. For example:
+    <ul>
+        <li>
+            <p>
+                <m>\int_\gamma cf+dg\, dz=c\int_\gamma f\, dz+d\int_\gamma g\, dz</m> for any <m>\gamma</m>-integrable functions <m>f, g</m> and complex constants <m>c,d\in \C</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>\int_{-\gamma}f\, dz=-\int_{\gamma}f\, dz</m> for any <m>\gamma</m>-integrable function <m>f</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>\gamma'</m> is a reparametrization of <m>\gamma</m>, then <m>\int_\gamma f\, dz=\int_{\gamma'}f\, dz</m> for all <m>\gamma</m>-integrable functions <m>f</m>. 
+            </p>
+        </li>
+    </ul>
+    We also have a fundamental theorem of calculus for line integrals. 
+</p>
+<theorem xml:id="th_ftc_line_int">
+<title>Line integrals: fundamental theorem of calculus</title>
+<statement>
+<p>
+Let <m>\gamma\colon [a,b]\rightarrow \C</m> be piecewise smooth, let <m>U</m> be an open set containing <m>\im \phi=\{\gamma(t)\colon t\in [a,b]\}</m>, and suppose <m>f\colon U\rightarrow \C</m> is continuous. If <m>F\colon U\rightarrow \C</m> satisfies <m>F'(z)=f(z)</m> for all <m>z\in U</m>, then 
+<men xml:id="eq_FTC_line_int">
+    \int_\gamma f\, dz=F(\gamma(b))-F(\gamma(a))=F(z_1)-F(z_0)
+</men>,
+where <m>z_0=\gamma(a)</m> and <m>z_1=\gamma(b)</m> are the initial and terminal points of <m>\gamma</m>, respectively. 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<example xml:id="eg_FTC_line_int">
+<title>Line integral: FTC</title>
+<statement>
+<p>
+Let <m>\gamma\colon [a,b]\rightarrow \C</m> be a piecewise smooth closed curve. Prove: <m>\int_\gamma \sin(iz)\, dz=0</m>. 
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
+<definition xml:id="d_antiderivative">
+<title>Antiderivative</title>
+<statement>
+<p>
+Let <m>f</m> be a complex function defined on the open set <m>U</m>. An <term>antiderivative</term> of <m>f</m> on <m>U</m> is a complex function <m>F</m> satisfying <m>F'(z)=f(z)</m> for all <m>z\in U</m>. 
+</p>
+</statement>
+</definition>
+<corollary xml:id="cor_FTC">
+    <statement>
+        <p>
+            Let <m>f</m> be a complex function that is continuous on the open set <m>U</m>. If <m>f</m> has an antiderivative on <m>U</m>, then 
+        <me>
+            \int_\gamma f\, dz=0
+        </me>
+        for any piecewise smooth curve <m>\gamma</m> with image lying in <m>U</m>.
+        </p>
+    </statement>
+</corollary>
+<theorem xml:id="th_mod_ineq_line_int">
+<title>ML-inequality</title>
+<statement>
+<p>
+Let <m>\gamma\colon [a,b]\rightarrow \C</m> be piecewise smooth, and let <m>L</m> be the arclength of <m>\gamma</m>. If <m>f</m> is <m>\gamma</m>-integrable and satisfies <m>\abs{f(\gamma(t))}\leq M</m> for all <m>t\in [a,b]</m>, then 
+<men xml:id="eq_ML_inequality">
+    \abs{\int_\gamma f\, dz}\leq M\, L
+</men>.
+
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
     
-    </remark>
+
+    
+   
     
 
 </section>

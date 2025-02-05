@@ -2,6 +2,9 @@
 
 <section xml:id="s_complex_paths" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Complex paths</title>
+    
+    <subsection xml:id="ss_complex_paths">
+    <title>Complex paths</title>
     <definition xml:id="d_complex_path">
     <title>Complex path</title>
     <statement>
@@ -48,7 +51,26 @@
     </statement>
     <solution>
     <p>
-    
+    <ol>
+        <li>
+            <p>
+                Since <m>e^{it}</m>,<m>t\in [0,2\pi]</m>, parametrizes the unit circle centered at the origin, we see easily that 
+                <me>
+                    \phi(t)=z_0+Re^{it}, t\in [0,2\pi]
+                </me>
+                is a parametrization of <m>\mathcal{C}</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                For any points <m>P,Q\in \R^2</m>, the line segment between them is parametrized by 
+                <m>P+t(P-Q)=(1-t)P+tQ</m>, <m>t\in [0,1]</m>. The equivalent complex parametrization from <m>z_0</m> to <m>z_1</m> is thus 
+                <me>
+                    \phi(t)=(1-t)z_0+tz_1, t\in [0,1]
+                </me>.
+            </p>
+        </li>
+    </ol>
     </p>
     </solution>
     </example>
@@ -104,6 +126,23 @@
     </p>
     </statement>
     </definition>
+    <figure xml:id="fig_circ_tan">
+        <caption>Visualizing <m>\phi(t)=Re^{it}</m> and <m>\phi'(t)</m></caption>
+        <image width="50%">
+            <shortdescription>Visualizing a path and its derivative in case of a circle</shortdescription>
+            <sageplot>
+t=var('t')
+phi(t)=(2*cos(t),2*sin(t))
+dphi(t)=derivative(phi,t)
+C=parametric_plot(phi(t),(t,0,2*pi), ticks=[[-2,2],[-2,2]], tick_formatter=[["$-R$","$R$"],["$-R$","$R$"]])
+P=point(phi(pi/8),size=60)
+V=arrow(phi(pi/8), phi(pi/8)+dphi(pi/8), color="red")
+t1=text("$\\phi(t)$", (1.2)*phi(pi/8),color="black", fontsize=16)
+t2=text("$\\phi'(t)$", (1.2)*phi(pi/8)+0.5*dphi(pi/8),color="black", fontsize=16)
+C+V+P+t1+t2
+            </sageplot>
+        </image>
+    </figure>
     <example xml:id="eg_derivative">
     <title>Tangent vectors</title>
     <statement>
@@ -113,7 +152,21 @@
     </statement>
     <solution>
     <p>
-    
+    <ol>
+        <li>
+            <p>
+                 For <m>\phi(t)=z_0+Re^{it}</m>, we have <m>\phi'(t)=Rie^{it}</m>. Since multiplication by <m>i</m> rotates a complex number by <m>\pi/2</m>, we see that the tangent vector <m>\phi'(t)</m> is always orthogonal to <m>\phi(t)</m>. See (<xref ref="fig_circ_tan"/>.) Note also that the modulus of <m>\phi'(t)</m> is
+                 <me>
+                    \abs{\phi'(t)}=R\abs{i}\abs{e^{it}}=R
+                 </me>.
+            </p>
+        </li>
+        <li>
+            <p>
+                For <m>\phi(t)=(1-t)z_0+z_1</m>, we have <m>\phi'(t)=-z_0+z_1=z_1-z_0</m>. Thus the derivative is a constant function, equal to the direction vector from <m>z_0</m> to <m>z_1</m>. 
+            </p>
+        </li>
+    </ol>
     </p>
     </solution>
     </example>
@@ -148,30 +201,45 @@
     </p>
     </proof>
     </theorem>
+    </subsection>
+    
+    
+    <subsection xml:id="ss_vector-valued_integration">
+    <title>Complex-valued function integration</title>
+    <p>
+        Turning now to a notion of integration, we will introduce the synonymous term <em>complex-valued function</em> for complex paths. We will also favor lowercase Roman letters for naming these functions: <eg/>, <m>f\colon [a,b]\rightarrow \C</m>, <m>f(t)=f_1(t)+if_2(t)</m>. This shift in terminology and notation is meant to both draw a <em>connection</em> with Riemann integrals of single-variable real-valued functions, and also to make a <em>distinction</em> between the more general notion of line integrals of complex functions over paths we will define in <xref ref="s_line_integral"/>.
+    </p>
     <definition xml:id="d_path_integration">
     <title>Integration of complex-valued functions</title>
     <statement>
     <p>
-    Let <m>f\colon [a,b]\rightarrow \C</m> be a complex-valued function, and write <m>f=u+iv</m>. We say <m>f</m> is <term>Riemann integrable</term> on <m>[a,b]</m> if the Riemann integrals 
+    Let <m>f\colon [a,b]\rightarrow \C</m> be a complex-valued function, and write <m>f=f_1+if_2</m>. We say <m>f</m> is <term>Riemann integrable</term> over <m>[a,b]</m> if the Riemann integrals 
     <md>
-        <mrow>\int_a^b u(t)\, dt \amp  \amp \int_a^b v(t)\, dt</mrow>
+        <mrow>\int_a^b f_1(t)\, dt \amp  \amp \int_a^b f_2(t)\, dt</mrow>
     </md>
     exist, in which case we write 
     <me>
-        \int_a^b f(t)\, dt=\int_a^bu(t)\, dt+i\int_a^b v(t)\, dt
+        \int_a^b f(t)\, dt=\int_a^bf_1(t)\, dt+i\int_a^b f_2(t)\, dt
     </me>.
     </p>
     </statement>
     </definition>
+    <p>
+        Since the integral of a complex-valued function <m>f\colon [a,b]\rightarrow \C</m> is defined in terms of its real and imaginary parts, each of which is an integral of a real-valued function, it should come as no surprise that complex valued integrals satisfy all of the usual integration properties. For example, this integration operation is linear in the sense that 
+        <me>
+            \int_a^b cf(t)+dg(t)\, dt=c\int_a^bf(t)\, dt+d\int_a^bg(t)\, dt
+        </me>
+        for any complex-valued functions <m>f,g\colon [a,b]\rightarrow \C</m> and complex constants <m>c,d\in \C</m>. Furthermore, complex-valued functions satisfy slightly generalized version of the fundamental theorem of calculus.
+    </p>
     <theorem xml:id="th_FTC">
-    <title>Fundamental theorem of calculus</title>
+    <title>Complex-valued functions: fundamental theorem of calculus</title>
     <statement>
     <p>
     Let <m>f\colon [a,b]\rightarrow \C</m> be continuous. 
     <ol>
         <li>
             <p>
-                The function <m>F(s)=\int_a^s f(x)\, ds</m> is differentiable on <m>[a,b]</m> and satisfies <m>F'(s)=f(s)</m> for all <m>s\in [a,b]</m>. 
+                The function <m>F(s)=\int_a^s f(t)\, dt</m> is differentiable on <m>[a,b]</m> and satisfies <m>F'(s)=f(s)</m> for all <m>s\in [a,b]</m>. 
             </p>
         </li>
         <li>
@@ -185,10 +253,6 @@
     </ol>
     </p>
     </statement>
-    <proof>
-    <p>
-    </p>
-    </proof>
     </theorem>
     <example xml:id="eg_path_integral">
     <title>Complex-valued function integration</title>
@@ -199,11 +263,114 @@
     </statement>
     <solution>
     <p>
-    
+    First we compute the integral directly: 
+    <md>
+        <mrow>\int_0^\pif(t)\, dt \amp =\int_0^\pi e^t\cos t+ie^t\sin t\, dt</mrow>
+        <mrow> \amp = \frac{e^t\cos t-e^t\sin t}{2}\Bigr\vert_0^\pi+ i\, \frac{e^t\sin t-e^t\cos t}{2}\Bigr\vert_0^\pi </mrow>
+        <mrow> \amp =-(e^\pi+1)/2+i(e^\pi+1)/2 </mrow>
+    </md>.
+    Observe that in the middle of that computation we needed to compute antiderivatives of <m>e^t\cos t</m> and <m>e^t\sin t</m>, which is normally done using integration by parts (twice).
+    </p>
+    <p>Alternatively, using the fundamental theorem of calculus, we observe that <m>F(t)=\frac{1}{1+i}e^{(1+i)t}</m> is an antiderivative of <m>f(t)</m>, and hence 
+    <md>
+        <mrow> \int_0^\pif(t)\, dt \amp = F(\pi)-F(0) </mrow>
+        <mrow> \amp =\frac{1}{1+i}(e^{\pi+i\pi}-e^{0})</mrow>
+        <mrow> \amp = \frac{1}{1+i}(-e^\pi-1)</mrow>
+        <mrow> \amp =-\frac{1-i}{2}(e^\pi+1) </mrow>
+        <mrow> \amp = -(e^\pi+1)/2+i(e^\pi+1)/2 </mrow>
+    </md>.
     </p>
     </solution>
     </example>
+    <p>
+        Lastly, we record here an important inequality bounding the modulus of a complex-valued function, which is a clear generalization of a corresponding inequality about integrals of real-valued functions. Contrary to what you might expect, the proof of this fact does not proceed so directly from real-valued function properties. We will provide two proofs: one which makes use of the geometry of <m>\C</m>, and another that identifies <m>\C</m> with <m>\R^2</m> and uses the Cauchy-Schwarz inequality. The latter has the advantage of generalizing directly to more general <em>vector-valued functions</em> <m>f\colon[a,b]\rightarrow \R^n</m>, where <m>n</m> is any positive integer. 
+    </p>
+    <theorem xml:id="th_comp_val_int_ineq">
+    <title>Complex-valued functions: modulus inequality</title>
+    <statement>
+    <p>
+    Let <m>f\colon [a,b]\rightarrow \C</m> be Riemann integrable. We have 
+    <men xml:id="eq_comp_val_int_ineq">
+       \abs{\int_a^b f(t)\, dt}\leq \int_a^b \abs{f(t)}\, dt 
+    </men>.
+    </p>
+    </statement>
+    <proof>
+        <title>First proof: geometric</title>
+    <p>
+        Let <m>w=\int_a^bf(t)\, dt</m>, and write <m>w=re^{i\alpha}</m> in polar form. It follows that <m>\abs{w}=r=e^{-i\alpha}w</m>, and thus we have  
+        <md>
+            <mrow>\abs{\int_a^bf(t)\, dt} \amp = e^{-i\alpha}w</mrow>
+            <mrow> \amp = e^{-i\alpha}\int_a^b f(t)\, dt</mrow>
+            <mrow> \amp = \int_a^b e^{-i\alpha}f(t)\, dt</mrow>
+            <mrow> \amp = \Re \int_a^b e^{-i\alpha}f(t)\, dt \amp (r=\int_a^b e^{-i\alpha}f(t)\, dt\in \R)</mrow>
+            <mrow> \amp = \int_a^b \Re e^{-i\alpha}f(t)\, dt \amp \text{(by def.)}</mrow>
+            <mrow> \amp = \abs{\int_a^b \Re e^{-i\alpha}f(t)\, dt} \amp (r\geq 0)</mrow>
+            <mrow> \amp \leq \int_a^b \abs{\Re e^{-i\alpha}f(t)}\, dt \amp \text{(real int. prop.)}</mrow>
+            <mrow> \amp \leq \int_a^b \abs{e^{-i\alpha}f(t)}\, dt \amp (\abs{\Re z}\leq \abs{z})</mrow>
+            <mrow> \amp = \int_a^b \abs{f(t)}\, dt \amp (\abs{e^{-i\alpha}}=1)</mrow>
+        </md>
+        
+    </p>
+    </proof>
+    <proof>
+        <title>Second proof: using Cauchy-Schwarz</title>
+    <p>
+        We will identify <m>\C</m> with <m>\R^2</m>. Observe that under this identification, the modulus of a complex number <m>z=a+ib</m> is the norm of the vector <m>(a,b)</m>: that is, 
+        <me>
+            \abs{a+ib}=\norm{(a,b)}=\sqrt{a^2+b^2}
+        </me>.
+        Under this identification, a complex-valued function <m>f=f_1+if_2</m> is identified as the <em>vector-valued</em> function 
+        <md>
+            <mrow>f\colon [a,b] \amp\rightarrow \R^2</mrow>
+            <mrow>t \amp \longmapsto (f_1(t),f_2(t))</mrow>
+        </md>,
+        and the integral <m>\int_a^bf(t)\, dt</m> is then identified as the vector-valued integral
+        <me>
+            \int_a^bf(t)\, dt=\left(\int_a^bf_1(t)\, dt, \int_a^bf_2(t)\, dt\right)
+        </me>.
+        Lastly, for vectors <m>\boldv=(a,b)</m> and <m>\boldw=(c,d)</m>, we will denote their dot product as <m>\angvec{\boldv, \boldw}</m>: <ie/>,
+        <me>
+            \angvec{\boldv, \boldw}=ac+bd
+        </me>.
+        Since integration of vector-valued functions is linear, and since the inner product is linear in each variable, it follows easily that 
+        <men xml:id="eq_dot_int">
+            \angvec{\int_a^bf(t)\, dt, \boldv}=\int_a^b \angvec{f(t), \boldv}\, dt
+        </men>
+        for any integrable vector-valued function and vector <m>\boldv\in \R^2</m>. 
+        </p>
+        <p>
+        In this setting we wish to show that 
+        <me>
+            \norm{\int_a^bf(t)\, dt}\leq \int \norm{f(t)}\, dt
+        </me>.
+         The claim is obvious if <m>\int_a^b f(t)\, dt=\boldzero</m>. Otherwise, since  <m>\norm{\boldv}^2=\angvec{\boldv,\boldv}</m> for any <m>\boldv\in \R^2</m>, we have 
+         <md>
+            <mrow>\norm{\int_a^b f(t)\, dt}^2 \amp = \angvec{\int_a^b f(t)\, dt, \int_a^b f(t)\, dt} </mrow>
+            <mrow> \amp = \int_a^b \angvec{f(t), \int_a^b f(t)\, dt}\, dt \amp <xref ref="eq_dot_int"/> </mrow>
+            <mrow> \amp = \abs{\int_a^b \angvec{f(t), \int_a^b f(t)\, dt}\, dt} \amp (\text{quantity is nonnegative})</mrow>
+            <mrow> \amp\leq \int_a^b\abs{\angvec{f(t), \int_a^b f(t)\, dt}} \, dt \amp (\text{real int. prop.})</mrow>
+            <mrow> \amp \leq \leq \int_a^b\norm{f(t)}\norm{\int_a^b f(t)\, dt} \, dt \amp (\text{Cauchy-Schwarz ineq.}) </mrow>
+            <mrow> \amp = \norm{\int_a^b f(t)\, dt}\int_a^b\norm{f(t)}\, dt </mrow>
+         </md>.
+         In summary, we have 
+         <me>
+            \norm{\int_a^b f(t)\, dt}^2\leq \norm{\int_a^b f(t)\, dt}\int_a^b\norm{f(t)}\, dt
+         </me>.
+         Since we assume that <m>\int_a^b f(t)\, dt\ne \boldzero</m>, we have <m>\norm{\int_a^b f(t)\, dt}\ne 0</m>, allowing us to cancel and obtain 
+         <me>
+            \norm{\int_a^b f(t)\, dt}\leq \int_a^b\norm{f(t)}\, dt
+         </me>,
+         as desired.
+        
+        
+        
+    </p>
+    </proof>
+    </theorem>
     
+    
+    </subsection>
     
     
 
