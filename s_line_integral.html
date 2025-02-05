@@ -301,6 +301,12 @@ eBookConfig.enable_chatcodes =  false;
 #eg_parametrized_circle-2-1-4 { counter-set: eg_parametrized_circle-2-1-4 0; }
 #eg_parametrized_circle-2-1-4 > li::marker { content: ""counter(eg_parametrized_circle-2-1-4,decimal)"."; }
 #eg_parametrized_circle-2-1-4 > li { counter-increment: eg_parametrized_circle-2-1-4; }
+#eg_parametrized_circle-3-1-1 { counter-set: eg_parametrized_circle-3-1-1 0; }
+#eg_parametrized_circle-3-1-1 > li::marker { content: ""counter(eg_parametrized_circle-3-1-1,decimal)"."; }
+#eg_parametrized_circle-3-1-1 > li { counter-increment: eg_parametrized_circle-3-1-1; }
+#eg_derivative-3-1-1 { counter-set: eg_derivative-3-1-1 0; }
+#eg_derivative-3-1-1 > li::marker { content: ""counter(eg_derivative-3-1-1,decimal)"."; }
+#eg_derivative-3-1-1 > li { counter-increment: eg_derivative-3-1-1; }
 #th_real_complex_diff-2-1-3 { counter-set: th_real_complex_diff-2-1-3 0; }
 #th_real_complex_diff-2-1-3 > li::marker { content: ""counter(th_real_complex_diff-2-1-3,decimal)"."; }
 #th_real_complex_diff-2-1-3 > li { counter-increment: th_real_complex_diff-2-1-3; }
@@ -574,7 +580,13 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_branch_harmonic.html#ss_harmonic" class="internal"><span class="title">Harmonic functions</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_complex_paths.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Complex paths</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_complex_paths.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Complex paths</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_paths.html#ss_complex_paths" class="internal"><span class="title">Complex paths</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_paths.html#ss_vector-valued_integration" class="internal"><span class="title">Complex-valued function integration</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_line_integral.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Complex line integrals</span></a></div></li>
 </ul>
 </li>
@@ -611,7 +623,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">Let <span class="process-math">\(\gamma\colon [a,b]\rightarrow \C\)</span> be smooth path. Given a complex function <span class="process-math">\(f\)</span> defined on <span class="process-math">\(\gamma\text{,}\)</span> the <dfn class="terminology">integral of <span class="process-math">\(f\)</span> over <span class="process-math">\(\gamma\)</span></dfn>, denoted <span class="process-math">\(\int\limits_{\gamma}f\, dz\text{,}\)</span> is defined as</div>
 <div class="displaymath process-math" id="eq_line_integral">
 \begin{equation}
-\int\limits_{\gamma}f\, dz=\int_a^bf(\gamma(t))\, \gamma'(t)\, dt\text{,}\tag{1.47}
+\int\limits_{\gamma}f\, dz=\int_a^bf(\gamma(t))\, \gamma'(t)\, dt\text{,}\tag{1.49}
 \end{equation}
 </div>
 <div class="para">provided this integral exists.</div>
@@ -619,10 +631,10 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">If <span class="process-math">\(\gamma\)</span> is the concatenation of smooth curves <span class="process-math">\(\gamma_k\text{,}\)</span> <span class="process-math">\(1\leq k\leq n\text{,}\)</span> then we define</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_line_integral.html ./knowl/xref/eq_line_integral_piecewise.html" id="eq_line_integral_piecewise">
 \begin{equation}
-\int_\gamma f\, dz=\sum_{k=1}^n\int_{\gamma_k}f\, dz\text{.}\tag{1.48}
+\int_\gamma f\, dz=\sum_{k=1}^n\int_{\gamma_k}f\, dz\text{.}\tag{1.50}
 \end{equation}
 </div>
-<div class="para">Integrals as in <a href="s_line_integral.html#eq_line_integral" class="xref" data-knowl="./knowl/xref/eq_line_integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.47">(1.47)</a> or <a href="s_line_integral.html#eq_line_integral_piecewise" class="xref" data-knowl="./knowl/xref/eq_line_integral_piecewise.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.48">(1.48)</a> are called <dfn class="terminology">complex line integrals</dfn> (or <dfn class="terminology">complex contour integrals</dfn>).</div>
+<div class="para">Integrals as in <a href="s_line_integral.html#eq_line_integral" class="xref" data-knowl="./knowl/xref/eq_line_integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.49">(1.49)</a> or <a href="s_line_integral.html#eq_line_integral_piecewise" class="xref" data-knowl="./knowl/xref/eq_line_integral_piecewise.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.50">(1.50)</a> are called <dfn class="terminology">complex line integrals</dfn> (or <dfn class="terminology">complex contour integrals</dfn>).</div>
 </div></article><article class="remark remark-like" id="s_line_integral-4"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.13.3</span><span class="period">.</span><span class="space"> </span><span class="title">Connection with Riemann integral.</span>
 </h3>
@@ -635,21 +647,85 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para">where the points <span class="process-math">\(z_0,z_1,\dots, z_n\)</span> partition the curve <span class="process-math">\(\mathcal{C}=\{\gamma(t)\colon t\in [a,b]\}\)</span> into curve segments whose arc lengths approach zero as <span class="process-math">\(n\to \infty\text{.}\)</span> In this sense the complex line integral over a general smoothly parametrized curve in <span class="process-math">\(\C\)</span> can be seen directly as an extension of the Riemann integral of function along a line segment <span class="process-math">\([a,b]\text{.}\)</span>
 </div>
-</div>
-<article class="example example-like" id="eg_classic_int"><h4 class="heading">
+</div></article><article class="example example-like" id="eg_classic_int"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.13.4</span><span class="period">.</span><span class="space"> </span><span class="title">Classic line integral.</span>
-</h4>
+</h3>
 <div class="para logical" id="eg_classic_int-2-1">
-<div class="para">Show that</div>
+<div class="para">Fix <span class="process-math">\(R&gt; 0\text{.}\)</span> Show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \int_{\gamma}\frac{1}{z}\, dz=2\pi i\text{,}
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\gamma(t)=e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span>
+<div class="para">where <span class="process-math">\(\gamma(t)=Re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="eg_classic_int-2-2">
+<div class="para">More generally, show that</div>
+<div class="displaymath process-math" id="eg_classic_int-2-2-1">
+\begin{equation}
+\int_{\gamma}\frac{1}{z-z_0}\, dz=2\pi i\tag{1.51}
+\end{equation}
+</div>
+<div class="para">for any fixed <span class="process-math">\(z_0\in C\text{,}\)</span> where <span class="process-math">\(\gamma(t)=z_0+Re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span>
 </div>
 </div>
-<div class="solutions"><details id="eg_classic_int-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_classic_int-3-1"></div></div></details></div></article></article></section></div>
+<div class="solutions"><details id="eg_classic_int-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_classic_int-3-1"></div></div></details></div></article><div class="para logical" id="s_line_integral-6">
+<div class="para">Fix a piecewise smooth complex path <span class="process-math">\(\gamma\text{.}\)</span>  Since the line integral <span class="process-math">\(\int_\gamma f\, dz\)</span> is defined as the   complex-valued function integral <span class="process-math">\(\int_a^bf(\gamma(t))\gamma'(t)\, dt\text{,}\)</span> all the usual properties of integration also hold for complex line integrals. For example:</div>
+<ul class="disc" id="s_line_integral-6-4">
+<li id="s_line_integral-6-4-1"><div class="para" id="s_line_integral-6-4-1-1">
+<span class="process-math">\(\int_\gamma cf+dg\, dz=c\int_\gamma f\, dz+d\int_\gamma g\, dz\)</span> for any <span class="process-math">\(\gamma\)</span>-integrable functions <span class="process-math">\(f, g\)</span> and complex constants <span class="process-math">\(c,d\in \C\text{.}\)</span>
+</div></li>
+<li id="s_line_integral-6-4-2"><div class="para" id="s_line_integral-6-4-2-1">
+<span class="process-math">\(\int_{-\gamma}f\, dz=-\int_{\gamma}f\, dz\)</span> for any <span class="process-math">\(\gamma\)</span>-integrable function <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+<li id="s_line_integral-6-4-3"><div class="para" id="s_line_integral-6-4-3-1">If <span class="process-math">\(\gamma'\)</span> is a reparametrization of <span class="process-math">\(\gamma\text{,}\)</span> then <span class="process-math">\(\int_\gamma f\, dz=\int_{\gamma'}f\, dz\)</span> for all <span class="process-math">\(\gamma\)</span>-integrable functions <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+</ul>
+<div class="para">We also have a fundamental theorem of calculus for line integrals.</div>
+</div>
+<article class="theorem theorem-like" id="th_ftc_line_int"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.5</span><span class="period">.</span><span class="space"> </span><span class="title">Line integrals: fundamental theorem of calculus.</span>
+</h3>
+<div class="para logical" id="th_ftc_line_int-2-1">
+<div class="para">Let <span class="process-math">\(\gamma\colon [a,b]\rightarrow \C\)</span> be piecewise smooth, let <span class="process-math">\(U\)</span> be an open set containing <span class="process-math">\(\im \phi=\{\gamma(t)\colon t\in [a,b]\}\text{,}\)</span> and suppose <span class="process-math">\(f\colon U\rightarrow \C\)</span> is continuous. If <span class="process-math">\(F\colon U\rightarrow \C\)</span> satisfies <span class="process-math">\(F'(z)=f(z)\)</span> for all <span class="process-math">\(z\in U\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="eq_FTC_line_int">
+\begin{equation}
+\int_\gamma f\, dz=F(\gamma(b))-F(\gamma(a))=F(z_1)-F(z_0)\text{,}\tag{1.52}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(z_0=\gamma(a)\)</span> and <span class="process-math">\(z_1=\gamma(b)\)</span> are the initial and terminal points of <span class="process-math">\(\gamma\text{,}\)</span> respectively.</div>
+</div></article><details id="th_ftc_line_int-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_ftc_line_int-3-1"></div></article></details><article class="example example-like" id="eg_FTC_line_int"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.13.6</span><span class="period">.</span><span class="space"> </span><span class="title">Line integral: FTC.</span>
+</h3>
+<div class="para" id="eg_FTC_line_int-2-1">Let <span class="process-math">\(\gamma\colon [a,b]\rightarrow \C\)</span> be a piecewise smooth closed curve. Prove: <span class="process-math">\(\int_\gamma \sin(iz)\, dz=0\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_FTC_line_int-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_FTC_line_int-3-1"></div></div></details></div></article><article class="definition definition-like" id="d_antiderivative"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.13.7</span><span class="period">.</span><span class="space"> </span><span class="title">Antiderivative.</span>
+</h3>
+<div class="para" id="d_antiderivative-2-1">Let <span class="process-math">\(f\)</span> be a complex function defined on the open set <span class="process-math">\(U\text{.}\)</span> An <dfn class="terminology">antiderivative</dfn> of <span class="process-math">\(f\)</span> on <span class="process-math">\(U\)</span> is a complex function <span class="process-math">\(F\)</span> satisfying <span class="process-math">\(F'(z)=f(z)\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
+</div></article><article class="corollary theorem-like" id="cor_FTC"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.13.8</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="cor_FTC-1-1">
+<div class="para">Let <span class="process-math">\(f\)</span> be a complex function that is continuous on the open set <span class="process-math">\(U\text{.}\)</span> If <span class="process-math">\(f\)</span> has an antiderivative on <span class="process-math">\(U\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_\gamma f\, dz=0
+\end{equation*}
+</div>
+<div class="para">for any piecewise smooth curve <span class="process-math">\(\gamma\)</span> with image lying in <span class="process-math">\(U\text{.}\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="th_mod_ineq_line_int"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.13.9</span><span class="period">.</span><span class="space"> </span><span class="title">ML-inequality.</span>
+</h3>
+<div class="para logical" id="th_mod_ineq_line_int-2-1">
+<div class="para">Let <span class="process-math">\(\gamma\colon [a,b]\rightarrow \C\)</span> be piecewise smooth, and let <span class="process-math">\(L\)</span> be the arclength of <span class="process-math">\(\gamma\text{.}\)</span> If <span class="process-math">\(f\)</span> is <span class="process-math">\(\gamma\)</span>-integrable and satisfies <span class="process-math">\(\abs{f(\gamma(t))}\leq M\)</span> for all <span class="process-math">\(t\in [a,b]\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="eq_ML_inequality">
+\begin{equation}
+\abs{\int_\gamma f\, dz}\leq M\, L\text{.}\tag{1.53}
+\end{equation}
+</div>
+</div></article><details id="th_mod_ineq_line_int-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_mod_ineq_line_int-3-1"></div></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_complex_paths.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

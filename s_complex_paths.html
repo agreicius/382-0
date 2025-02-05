@@ -301,6 +301,12 @@ eBookConfig.enable_chatcodes =  false;
 #eg_parametrized_circle-2-1-4 { counter-set: eg_parametrized_circle-2-1-4 0; }
 #eg_parametrized_circle-2-1-4 > li::marker { content: ""counter(eg_parametrized_circle-2-1-4,decimal)"."; }
 #eg_parametrized_circle-2-1-4 > li { counter-increment: eg_parametrized_circle-2-1-4; }
+#eg_parametrized_circle-3-1-1 { counter-set: eg_parametrized_circle-3-1-1 0; }
+#eg_parametrized_circle-3-1-1 > li::marker { content: ""counter(eg_parametrized_circle-3-1-1,decimal)"."; }
+#eg_parametrized_circle-3-1-1 > li { counter-increment: eg_parametrized_circle-3-1-1; }
+#eg_derivative-3-1-1 { counter-set: eg_derivative-3-1-1 0; }
+#eg_derivative-3-1-1 > li::marker { content: ""counter(eg_derivative-3-1-1,decimal)"."; }
+#eg_derivative-3-1-1 > li { counter-increment: eg_derivative-3-1-1; }
 #th_real_complex_diff-2-1-3 { counter-set: th_real_complex_diff-2-1-3 0; }
 #th_real_complex_diff-2-1-3 > li::marker { content: ""counter(th_real_complex_diff-2-1-3,decimal)"."; }
 #th_real_complex_diff-2-1-3 > li { counter-increment: th_real_complex_diff-2-1-3; }
@@ -574,7 +580,13 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_branch_harmonic.html#ss_harmonic" class="internal"><span class="title">Harmonic functions</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_complex_paths.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Complex paths</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="s_complex_paths.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Complex paths</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_paths.html#ss_complex_paths" class="internal"><span class="title">Complex paths</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_paths.html#ss_vector-valued_integration" class="internal"><span class="title">Complex-valued function integration</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_line_integral.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Complex line integrals</span></a></div></li>
 </ul>
 </li>
@@ -593,14 +605,17 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_complex_paths"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.12</span><span class="space"> </span><span class="title">Complex paths</span>
 </h2>
-<article class="definition definition-like" id="d_complex_path"><h3 class="heading">
+<section class="subsection" id="ss_complex_paths"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Complex paths</span>
+</h3>
+<article class="definition definition-like" id="d_complex_path"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12.1</span><span class="period">.</span><span class="space"> </span><span class="title">Complex path.</span>
-</h3>
+</h4>
 <div class="para" id="d_complex_path-2-1">A <dfn class="terminology">complex path</dfn> is a continuous function <span class="process-math">\(\phi \colon[a,b]\rightarrow \C\)</span> where <span class="process-math">\([a,b]\subseteq \R\)</span> is a real interval.</div> <div class="para" id="d_complex_path-2-2">We say that a path <span class="process-math">\(\phi\colon[a,b]\rightarrow \C\)</span> <dfn class="terminology">parametrizes</dfn> its image <span class="process-math">\(\mathcal{C}=\{\phi(t)\colon t\in [a,b]\}\subseteq \C\text{.}\)</span>
-</div></article><article class="remark remark-like" id="s_complex_paths-3"><h3 class="heading">
+</div></article><article class="remark remark-like" id="ss_complex_paths-3"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.12.2</span><span class="period">.</span><span class="space"> </span><span class="title">Paths.</span>
-</h3>
-<div class="para logical" id="s_complex_paths-3-2">
+</h4>
+<div class="para logical" id="ss_complex_paths-3-2">
 <div class="para">Note that since <span class="process-math">\([a,b]\subseteq \R\subseteq \C\)</span> can be thought of as a subset of <span class="process-math">\(\C\text{,}\)</span> a path <span class="process-math">\(\phi\colon [a,b]\rightarrow \C\)</span> can be treated as a complex function with a particularly restricted domain <span class="process-math">\(D=[a,b]\text{.}\)</span> As such, the same conventions around complex functions apply to paths. In particular, we may write</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -608,15 +623,15 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 <div class="para">in terms of its real and imaginary parts. Furthermore, identifying <span class="process-math">\(\C\)</span> with <span class="process-math">\(\R^2\text{,}\)</span> we can also think of a complex path <span class="process-math">\(\phi=u+iv\)</span> as a continuous function</div>
-<div class="displaymath process-math" id="s_complex_paths-3-2-9">
+<div class="displaymath process-math" id="ss_complex_paths-3-2-9">
 \begin{align*}
 \phi\colon \R \amp \rightarrow \R^2 \\
 t \amp \longmapsto (u(t),v(t))\text{.}
 \end{align*}
 </div>
-</div></article><article class="example example-like" id="eg_parametrized_circle"><h3 class="heading">
+</div></article><article class="example example-like" id="eg_parametrized_circle"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.3</span><span class="period">.</span><span class="space"> </span><span class="title">Parametrized curves.</span>
-</h3>
+</h4>
 <div class="para logical" id="eg_parametrized_circle-2-1">
 <div class="para">For the given curve <span class="process-math">\(\mathcal{C}\)</span> find a path <span class="process-math">\(\phi\colon [a,b]\rightarrow \C\)</span> that parametrizes <span class="process-math">\(\mathcal{C}\text{.}\)</span>
 </div>
@@ -627,9 +642,28 @@ t \amp \longmapsto (u(t),v(t))\text{.}
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_parametrized_circle-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_parametrized_circle-3-1"></div></div></details></div></article><article class="definition definition-like" id="d_path_properties"><h3 class="heading">
+<div class="solutions"><details id="eg_parametrized_circle-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_parametrized_circle-3-1"><ol class="decimal" id="eg_parametrized_circle-3-1-1">
+<li id="eg_parametrized_circle-3-1-1-1"><div class="para logical" id="eg_parametrized_circle-3-1-1-1-1">
+<div class="para">Since <span class="process-math">\(e^{it}\text{,}\)</span><span class="process-math">\(t\in [0,2\pi]\text{,}\)</span> parametrizes the unit circle centered at the origin, we see easily that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi(t)=z_0+Re^{it}, t\in [0,2\pi]
+\end{equation*}
+</div>
+<div class="para">is a parametrization of <span class="process-math">\(\mathcal{C}\text{.}\)</span>
+</div>
+</div></li>
+<li id="eg_parametrized_circle-3-1-1-2"><div class="para logical" id="eg_parametrized_circle-3-1-1-2-1">
+<div class="para">For any points <span class="process-math">\(P,Q\in \R^2\text{,}\)</span> the line segment between them is parametrized by <span class="process-math">\(P+t(P-Q)=(1-t)P+tQ\text{,}\)</span> <span class="process-math">\(t\in [0,1]\text{.}\)</span> The equivalent complex parametrization from <span class="process-math">\(z_0\)</span> to <span class="process-math">\(z_1\)</span> is thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi(t)=(1-t)z_0+tz_1, t\in [0,1]\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><article class="definition definition-like" id="d_path_properties"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12.4</span><span class="period">.</span><span class="space"> </span><span class="title">Path jargon.</span>
-</h3>
+</h4>
 <div class="para logical" id="d_path_properties-2-1">
 <div class="para">Let <span class="process-math">\(\phi\colon [a,b]\rightarrow \C\)</span> be a path.</div>
 <ul class="disc" id="d_path_properties-2-1-2">
@@ -645,11 +679,11 @@ t \amp \longmapsto (u(t),v(t))\text{.}
 <li id="d_path_properties-2-1-2-5"><div class="para" id="d_path_properties-2-1-2-5-1">Given a path <span class="process-math">\(\psi\colon [b,c]\rightarrow \C\)</span> satisfying <span class="process-math">\(\phi(b)=\psi(b)\text{,}\)</span> the <dfn class="terminology">concatentation</dfn> of <span class="process-math">\(\phi\)</span> and <span class="process-math">\(\psi\text{,}\)</span> denoted <span class="process-math">\(\phi*\psi\text{,}\)</span> is the path <span class="process-math">\(\phi*\psi\colon [a,c]\rightarrow \C\)</span> defined as <span class="process-math">\(\phi*\psi\vert_{[a,b]}=\phi\)</span> and <span class="process-math">\(\phi*\psi\vert_{[b,c]}=\psi\text{.}\)</span>
 </div></li>
 </ul>
-</div></article><div class="para" id="s_complex_paths-6">We now define a notion of <em class="emphasis">real differentiability</em> of paths. Note that though we can indeed think of a path <span class="process-math">\(\phi\colon [a,b]\rightarrow \C\)</span> as a complex function, since no element <span class="process-math">\(t_0\)</span> in its domain <span class="process-math">\([a,b]\)</span> is an interior point of <span class="process-math">\([a,b]\text{,}\)</span> considered as a subset of <span class="process-math">\(\C\text{,}\)</span> the notion of complex differentiability does not apply to <span class="process-math">\(\phi\text{.}\)</span>
+</div></article><div class="para" id="ss_complex_paths-6">We now define a notion of <em class="emphasis">real differentiability</em> of paths. Note that though we can indeed think of a path <span class="process-math">\(\phi\colon [a,b]\rightarrow \C\)</span> as a complex function, since no element <span class="process-math">\(t_0\)</span> in its domain <span class="process-math">\([a,b]\)</span> is an interior point of <span class="process-math">\([a,b]\text{,}\)</span> considered as a subset of <span class="process-math">\(\C\text{,}\)</span> the notion of complex differentiability does not apply to <span class="process-math">\(\phi\text{.}\)</span>
 </div>
-<article class="definition definition-like" id="d_path_derivative"><h3 class="heading">
+<article class="definition definition-like" id="d_path_derivative"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12.5</span><span class="period">.</span><span class="space"> </span><span class="title">Path derivative.</span>
-</h3>
+</h4>
 <div class="para logical" id="d_path_derivative-2-1">
 <div class="para">Given a path <span class="process-math">\(\phi\colon [a,b]\rightarrow \C\)</span> with <span class="process-math">\(\phi=u+iv\)</span> and element <span class="process-math">\(t_0\in [a,b]\text{,}\)</span> we say <span class="process-math">\(\phi\)</span> is <dfn class="terminology">(real) differentiable</dfn> at <span class="process-math">\(t_0\)</span> if <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are differentiable at <span class="process-math">\(t_0\text{,}\)</span> and define</div>
 <div class="displaymath process-math">
@@ -658,15 +692,27 @@ t \amp \longmapsto (u(t),v(t))\text{.}
 \end{equation*}
 </div>
 <div class="para">Geometrically we interpret <span class="process-math">\(\phi'(t_0)\)</span> as a <dfn class="terminology">tangent vector</dfn> to <span class="process-math">\(\mathcal{C}=\{\phi(t)\colon t\in [a,b]\}\)</span> at the point <span class="process-math">\(\phi(t_0)\text{.}\)</span> The path <span class="process-math">\(\phi\)</span> is <dfn class="terminology">smooth</dfn> on <span class="process-math">\([a,b]\)</span> if <span class="process-math">\(\phi'\)</span> exists and is continuous at all <span class="process-math">\(t\in (a,b)\text{;}\)</span> it is <dfn class="terminology">piecewise smooth</dfn> if we can write <span class="process-math">\(\phi=\phi_1*\phi_2\cdots *\phi_k\)</span> as a concatenation of finitely many smooth curves.</div>
-</div></article><article class="example example-like" id="eg_derivative"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.6</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent vectors.</span>
-</h3>
+</div></article><figure class="figure figure-like" id="fig_circ_tan"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/fig_circ_tan-2.svg" role="img" class="contained" alt="Visualizing a path and its derivative in case of a circle"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.12.6<span class="period">.</span></span><span class="space"> </span>Visualizing <span class="process-math">\(\phi(t)=Re^{it}\)</span> and <span class="process-math">\(\phi'(t)\)</span></figcaption></figure><article class="example example-like" id="eg_derivative"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.7</span><span class="period">.</span><span class="space"> </span><span class="title">Tangent vectors.</span>
+</h4>
 <div class="para" id="eg_derivative-2-1">Compute <span class="process-math">\(\phi'\)</span> for your parametrizations in <a href="s_complex_paths.html#eg_parametrized_circle" class="xref" data-knowl="./knowl/xref/eg_parametrized_circle.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.12.3: Parametrized curves">Example 1.12.3</a> and provide a sketch illustrating the relationship of <span class="process-math">\(\phi'\)</span> to <span class="process-math">\(\phi\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_derivative-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_derivative-3-1"></div></div></details></div></article><div class="para" id="s_complex_paths-9">Of course, identifying <span class="process-math">\(\phi=u+iv\)</span> with the planar path (or curve) <span class="process-math">\((u(t),v(t))\)</span> , we recognize its derivative <span class="process-math">\(\phi'=u'+iv'\)</span> as the derivative <span class="process-math">\((u'(t), v'(t))\)</span> of this planar path (or curve). As a result, all the usual properties of derivatives of planar paths carry over to our complex setting. We will not list them here, but will make a connection with complex differentiation.</div>
-<article class="theorem theorem-like" id="th_real_complex_diff"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.7</span><span class="period">.</span><span class="space"> </span><span class="title">Complex and path differentiation.</span>
-</h3>
+<div class="solutions"><details id="eg_derivative-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_derivative-3-1"><ol class="decimal" id="eg_derivative-3-1-1">
+<li id="eg_derivative-3-1-1-1"><div class="para logical" id="eg_derivative-3-1-1-1-1">
+<div class="para">For <span class="process-math">\(\phi(t)=z_0+Re^{it}\text{,}\)</span> we have <span class="process-math">\(\phi'(t)=Rie^{it}\text{.}\)</span> Since multiplication by <span class="process-math">\(i\)</span> rotates a complex number by <span class="process-math">\(\pi/2\text{,}\)</span> we see that the tangent vector <span class="process-math">\(\phi'(t)\)</span> is always orthogonal to <span class="process-math">\(\phi(t)\text{.}\)</span> See (<a href="s_complex_paths.html#fig_circ_tan" class="xref" data-knowl="./knowl/xref/fig_circ_tan.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.12.6">Figure 1.12.6</a>.) Note also that the modulus of <span class="process-math">\(\phi'(t)\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_circ_tan.html">
+\begin{equation*}
+\abs{\phi'(t)}=R\abs{i}\abs{e^{it}}=R\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="eg_derivative-3-1-1-2"><div class="para" id="eg_derivative-3-1-1-2-1">For <span class="process-math">\(\phi(t)=(1-t)z_0+z_1\text{,}\)</span> we have <span class="process-math">\(\phi'(t)=-z_0+z_1=z_1-z_0\text{.}\)</span> Thus the derivative is a constant function, equal to the direction vector from <span class="process-math">\(z_0\)</span> to <span class="process-math">\(z_1\text{.}\)</span>
+</div></li>
+</ol></div></div></details></div></article><div class="para" id="ss_complex_paths-10">Of course, identifying <span class="process-math">\(\phi=u+iv\)</span> with the planar path (or curve) <span class="process-math">\((u(t),v(t))\)</span> , we recognize its derivative <span class="process-math">\(\phi'=u'+iv'\)</span> as the derivative <span class="process-math">\((u'(t), v'(t))\)</span> of this planar path (or curve). As a result, all the usual properties of derivatives of planar paths carry over to our complex setting. We will not list them here, but will make a connection with complex differentiation.</div>
+<article class="theorem theorem-like" id="th_real_complex_diff"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.8</span><span class="period">.</span><span class="space"> </span><span class="title">Complex and path differentiation.</span>
+</h4>
 <div class="para logical" id="th_real_complex_diff-2-1">
 <div class="para">Let <span class="process-math">\(f\colon U\rightarrow \C\)</span> be holomorphic, and suppose <span class="process-math">\(\phi\colon [a,b]\rightarrow U \)</span> is a smooth path.</div>
 <ol class="decimal" id="th_real_complex_diff-2-1-3">
@@ -683,29 +729,42 @@ t \amp \longmapsto (u(t),v(t))\text{.}
 </div>
 </div></li>
 </ol>
-</div></article><details id="th_real_complex_diff-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_real_complex_diff-3-1"></div></article></details><article class="definition definition-like" id="d_path_integration"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12.8</span><span class="period">.</span><span class="space"> </span><span class="title">Integration of complex-valued functions.</span>
+</div></article><details id="th_real_complex_diff-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_real_complex_diff-3-1"></div></article></details></section><section class="subsection" id="ss_vector-valued_integration"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Complex-valued function integration</span>
 </h3>
+<div class="para" id="ss_vector-valued_integration-2">Turning now to a notion of integration, we will introduce the synonymous term <em class="emphasis">complex-valued function</em> for complex paths. We will also favor lowercase Roman letters for naming these functions: e.g., <span class="process-math">\(f\colon [a,b]\rightarrow \C\text{,}\)</span> <span class="process-math">\(f(t)=f_1(t)+if_2(t)\text{.}\)</span> This shift in terminology and notation is meant to both draw a <em class="emphasis">connection</em> with Riemann integrals of single-variable real-valued functions, and also to make a <em class="emphasis">distinction</em> between the more general notion of line integrals of complex functions over paths we will define in <a href="s_line_integral.html" class="internal" title="Section 1.13: Complex line integrals">Section 1.13</a>.</div>
+<article class="definition definition-like" id="d_path_integration"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.12.9</span><span class="period">.</span><span class="space"> </span><span class="title">Integration of complex-valued functions.</span>
+</h4>
 <div class="para logical" id="d_path_integration-2-1">
-<div class="para">Let <span class="process-math">\(f\colon [a,b]\rightarrow \C\)</span> be a complex-valued function, and write <span class="process-math">\(f=u+iv\text{.}\)</span> We say <span class="process-math">\(f\)</span> is <dfn class="terminology">Riemann integrable</dfn> on <span class="process-math">\([a,b]\)</span> if the Riemann integrals</div>
+<div class="para">Let <span class="process-math">\(f\colon [a,b]\rightarrow \C\)</span> be a complex-valued function, and write <span class="process-math">\(f=f_1+if_2\text{.}\)</span> We say <span class="process-math">\(f\)</span> is <dfn class="terminology">Riemann integrable</dfn> over <span class="process-math">\([a,b]\)</span> if the Riemann integrals</div>
 <div class="displaymath process-math" id="d_path_integration-2-1-6">
 \begin{align*}
-\int_a^b u(t)\, dt \amp  \amp \int_a^b v(t)\, dt
+\int_a^b f_1(t)\, dt \amp  \amp \int_a^b f_2(t)\, dt
 \end{align*}
 </div>
 <div class="para">exist, in which case we write</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int_a^b f(t)\, dt=\int_a^bu(t)\, dt+i\int_a^b v(t)\, dt\text{.}
+\int_a^b f(t)\, dt=\int_a^bf_1(t)\, dt+i\int_a^b f_2(t)\, dt\text{.}
 \end{equation*}
 </div>
-</div></article><article class="theorem theorem-like" id="th_FTC"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.9</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental theorem of calculus.</span>
-</h3>
+</div></article><div class="para logical" id="ss_vector-valued_integration-4">
+<div class="para">Since the integral of a complex-valued function <span class="process-math">\(f\colon [a,b]\rightarrow \C\)</span> is defined in terms of its real and imaginary parts, each of which is an integral of a real-valued function, it should come as no surprise that complex valued integrals satisfy all of the usual integration properties. For example, this integration operation is linear in the sense that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b cf(t)+dg(t)\, dt=c\int_a^bf(t)\, dt+d\int_a^bg(t)\, dt
+\end{equation*}
+</div>
+<div class="para">for any complex-valued functions <span class="process-math">\(f,g\colon [a,b]\rightarrow \C\)</span> and complex constants <span class="process-math">\(c,d\in \C\text{.}\)</span> Furthermore, complex-valued functions satisfy slightly generalized version of the fundamental theorem of calculus.</div>
+</div>
+<article class="theorem theorem-like" id="th_FTC"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.10</span><span class="period">.</span><span class="space"> </span><span class="title">Complex-valued functions: fundamental theorem of calculus.</span>
+</h4>
 <div class="para logical" id="th_FTC-2-1">
 <div class="para">Let <span class="process-math">\(f\colon [a,b]\rightarrow \C\)</span> be continuous.</div>
 <ol class="decimal" id="th_FTC-2-1-2">
-<li id="th_FTC-2-1-2-1"><div class="para" id="th_FTC-2-1-2-1-1">The function <span class="process-math">\(F(s)=\int_a^s f(x)\, ds\)</span> is differentiable on <span class="process-math">\([a,b]\)</span> and satisfies <span class="process-math">\(F'(s)=f(s)\)</span> for all <span class="process-math">\(s\in [a,b]\text{.}\)</span>
+<li id="th_FTC-2-1-2-1"><div class="para" id="th_FTC-2-1-2-1-1">The function <span class="process-math">\(F(s)=\int_a^s f(t)\, dt\)</span> is differentiable on <span class="process-math">\([a,b]\)</span> and satisfies <span class="process-math">\(F'(s)=f(s)\)</span> for all <span class="process-math">\(s\in [a,b]\text{.}\)</span>
 </div></li>
 <li id="th_FTC-2-1-2-2"><div class="para logical" id="th_FTC-2-1-2-2-1">
 <div class="para">If <span class="process-math">\(G\colon [a,b]\rightarrow \C\)</span> satisfies <span class="process-math">\(G'(t)=f(t)\)</span> for all <span class="process-math">\(t\in [a,b]\text{,}\)</span> then</div>
@@ -716,11 +775,127 @@ t \amp \longmapsto (u(t),v(t))\text{.}
 </div>
 </div></li>
 </ol>
-</div></article><details id="th_FTC-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_FTC-3-1"></div></article></details><article class="example example-like" id="eg_path_integral"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.10</span><span class="period">.</span><span class="space"> </span><span class="title">Complex-valued function integration.</span>
-</h3>
-<div class="para" id="eg_path_integral-2-1">Let <span class="process-math">\(f(t)=e^{(1+i)t}\text{.}\)</span> Compute <span class="process-math">\(\int_0^\pi f(t)\, dt\)</span> using two different techniques: directly, using <a href="s_complex_paths.html#d_path_integration" class="xref" data-knowl="./knowl/xref/d_path_integration.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.12.8: Integration of complex-valued functions">Definition 1.12.8</a>, and indirectly using <a href="s_complex_paths.html#th_FTC" class="xref" data-knowl="./knowl/xref/th_FTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.12.9: Fundamental theorem of calculus">Theorem 1.12.9</a>.</div>
-<div class="solutions"><details id="eg_path_integral-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_path_integral-3-1"></div></div></details></div></article></section></div>
+</div></article><article class="example example-like" id="eg_path_integral"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.11</span><span class="period">.</span><span class="space"> </span><span class="title">Complex-valued function integration.</span>
+</h4>
+<div class="para" id="eg_path_integral-2-1">Let <span class="process-math">\(f(t)=e^{(1+i)t}\text{.}\)</span> Compute <span class="process-math">\(\int_0^\pi f(t)\, dt\)</span> using two different techniques: directly, using <a href="s_complex_paths.html#d_path_integration" class="xref" data-knowl="./knowl/xref/d_path_integration.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.12.9: Integration of complex-valued functions">Definition 1.12.9</a>, and indirectly using <a href="s_complex_paths.html#th_FTC" class="xref" data-knowl="./knowl/xref/th_FTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.12.10: Complex-valued functions: fundamental theorem of calculus">Theorem 1.12.10</a>.</div>
+<div class="solutions"><details id="eg_path_integral-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="eg_path_integral-3-1">
+<div class="para">First we compute the integral directly:</div>
+<div class="displaymath process-math" id="eg_path_integral-3-1-1">
+\begin{align*}
+\int_0^\pif(t)\, dt \amp =\int_0^\pi e^t\cos t+ie^t\sin t\, dt\\
+\amp = \frac{e^t\cos t-e^t\sin t}{2}\Bigr\vert_0^\pi+ i\, \frac{e^t\sin t-e^t\cos t}{2}\Bigr\vert_0^\pi \\
+\amp =-(e^\pi+1)/2+i(e^\pi+1)/2 \text{.}
+\end{align*}
+</div>
+<div class="para">Observe that in the middle of that computation we needed to compute antiderivatives of <span class="process-math">\(e^t\cos t\)</span> and <span class="process-math">\(e^t\sin t\text{,}\)</span> which is normally done using integration by parts (twice).</div>
+</div>
+<div class="para logical" id="eg_path_integral-3-2">
+<div class="para">Alternatively, using the fundamental theorem of calculus, we observe that <span class="process-math">\(F(t)=\frac{1}{1+i}e^{(1+i)t}\)</span> is an antiderivative of <span class="process-math">\(f(t)\text{,}\)</span> and hence</div>
+<div class="displaymath process-math" id="eg_path_integral-3-2-3">
+\begin{align*}
+\int_0^\pif(t)\, dt \amp = F(\pi)-F(0) \\
+\amp =\frac{1}{1+i}(e^{\pi+i\pi}-e^{0})\\
+\amp = \frac{1}{1+i}(-e^\pi-1)\\
+\amp =-\frac{1-i}{2}(e^\pi+1) \\
+\amp = -(e^\pi+1)/2+i(e^\pi+1)/2 \text{.}
+\end{align*}
+</div>
+</div>
+</div></details></div></article><div class="para" id="ss_vector-valued_integration-7">Lastly, we record here an important inequality bounding the modulus of a complex-valued function, which is a clear generalization of a corresponding inequality about integrals of real-valued functions. Contrary to what you might expect, the proof of this fact does not proceed so directly from real-valued function properties. We will provide two proofs: one which makes use of the geometry of <span class="process-math">\(\C\text{,}\)</span> and another that identifies <span class="process-math">\(\C\)</span> with <span class="process-math">\(\R^2\)</span> and uses the Cauchy-Schwarz inequality. The latter has the advantage of generalizing directly to more general <em class="emphasis">vector-valued functions</em> <span class="process-math">\(f\colon[a,b]\rightarrow \R^n\text{,}\)</span> where <span class="process-math">\(n\)</span> is any positive integer.</div>
+<article class="theorem theorem-like" id="th_comp_val_int_ineq"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.12</span><span class="period">.</span><span class="space"> </span><span class="title">Complex-valued functions: modulus inequality.</span>
+</h4>
+<div class="para logical" id="th_comp_val_int_ineq-2-1">
+<div class="para">Let <span class="process-math">\(f\colon [a,b]\rightarrow \C\)</span> be Riemann integrable. We have</div>
+<div class="displaymath process-math" id="eq_comp_val_int_ineq">
+\begin{equation}
+\abs{\int_a^b f(t)\, dt}\leq \int_a^b \abs{f(t)}\, dt \text{.}\tag{1.47}
+\end{equation}
+</div>
+</div></article><details id="th_comp_val_int_ineq-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">First proof: geometric.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_comp_val_int_ineq-3-2">
+<div class="para">Let <span class="process-math">\(w=\int_a^bf(t)\, dt\text{,}\)</span> and write <span class="process-math">\(w=re^{i\alpha}\)</span> in polar form. It follows that <span class="process-math">\(\abs{w}=r=e^{-i\alpha}w\text{,}\)</span> and thus we have</div>
+<div class="displaymath process-math" id="th_comp_val_int_ineq-3-2-4">
+\begin{align*}
+\abs{\int_a^bf(t)\, dt} \amp = e^{-i\alpha}w\\
+\amp = e^{-i\alpha}\int_a^b f(t)\, dt\\
+\amp = \int_a^b e^{-i\alpha}f(t)\, dt\\
+\amp = \Re \int_a^b e^{-i\alpha}f(t)\, dt \amp (r=\int_a^b e^{-i\alpha}f(t)\, dt\in \R)\\
+\amp = \int_a^b \Re e^{-i\alpha}f(t)\, dt \amp \text{(by def.)}\\
+\amp = \abs{\int_a^b \Re e^{-i\alpha}f(t)\, dt} \amp (r\geq 0)\\
+\amp \leq \int_a^b \abs{\Re e^{-i\alpha}f(t)}\, dt \amp \text{(real int. prop.)}\\
+\amp \leq \int_a^b \abs{e^{-i\alpha}f(t)}\, dt \amp (\abs{\Re z}\leq \abs{z})\\
+\amp = \int_a^b \abs{f(t)}\, dt \amp (\abs{e^{-i\alpha}}=1)
+\end{align*}
+</div>
+</div></article></details><details id="th_comp_val_int_ineq-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Second proof: using Cauchy-Schwarz.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_comp_val_int_ineq-4-2">
+<div class="para">We will identify <span class="process-math">\(\C\)</span> with <span class="process-math">\(\R^2\text{.}\)</span> Observe that under this identification, the modulus of a complex number <span class="process-math">\(z=a+ib\)</span> is the norm of the vector <span class="process-math">\((a,b)\text{:}\)</span> that is,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{a+ib}=\norm{(a,b)}=\sqrt{a^2+b^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">Under this identification, a complex-valued function <span class="process-math">\(f=f_1+if_2\)</span> is identified as the <em class="emphasis">vector-valued</em> function</div>
+<div class="displaymath process-math" id="th_comp_val_int_ineq-4-2-8">
+\begin{align*}
+f\colon [a,b] \amp\rightarrow \R^2\\
+t \amp \longmapsto (f_1(t),f_2(t))\text{,}
+\end{align*}
+</div>
+<div class="para">and the integral <span class="process-math">\(\int_a^bf(t)\, dt\)</span> is then identified as the vector-valued integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^bf(t)\, dt=\left(\int_a^bf_1(t)\, dt, \int_a^bf_2(t)\, dt\right)\text{.}
+\end{equation*}
+</div>
+<div class="para">Lastly, for vectors <span class="process-math">\(\boldv=(a,b)\)</span> and <span class="process-math">\(\boldw=(c,d)\text{,}\)</span> we will denote their dot product as <span class="process-math">\(\angvec{\boldv, \boldw}\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\angvec{\boldv, \boldw}=ac+bd\text{.}
+\end{equation*}
+</div>
+<div class="para">Since integration of vector-valued functions is linear, and since the inner product is linear in each variable, it follows easily that</div>
+<div class="displaymath process-math" id="eq_dot_int">
+\begin{equation}
+\angvec{\int_a^bf(t)\, dt, \boldv}=\int_a^b \angvec{f(t), \boldv}\, dt\tag{1.48}
+\end{equation}
+</div>
+<div class="para">for any integrable vector-valued function and vector <span class="process-math">\(\boldv\in \R^2\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th_comp_val_int_ineq-4-3">
+<div class="para">In this setting we wish to show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_dot_int.html">
+\begin{equation*}
+\norm{\int_a^bf(t)\, dt}\leq \int \norm{f(t)}\, dt\text{.}
+\end{equation*}
+</div>
+<div class="para">The claim is obvious if <span class="process-math">\(\int_a^b f(t)\, dt=\boldzero\text{.}\)</span> Otherwise, since  <span class="process-math">\(\norm{\boldv}^2=\angvec{\boldv,\boldv}\)</span> for any <span class="process-math">\(\boldv\in \R^2\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_dot_int.html" id="th_comp_val_int_ineq-4-3-5">
+\begin{align*}
+\norm{\int_a^b f(t)\, dt}^2 \amp = \angvec{\int_a^b f(t)\, dt, \int_a^b f(t)\, dt} \\
+\amp = \int_a^b \angvec{f(t), \int_a^b f(t)\, dt}\, dt \amp \knowl{./knowl/xref/eq_dot_int.html}{\text{(1.48)}} \\
+\amp = \abs{\int_a^b \angvec{f(t), \int_a^b f(t)\, dt}\, dt} \amp (\text{quantity is nonnegative})\\
+\amp\leq \int_a^b\abs{\angvec{f(t), \int_a^b f(t)\, dt}} \, dt \amp (\text{real int. prop.})\\
+\amp \leq \leq \int_a^b\norm{f(t)}\norm{\int_a^b f(t)\, dt} \, dt \amp (\text{Cauchy-Schwarz ineq.}) \\
+\amp = \norm{\int_a^b f(t)\, dt}\int_a^b\norm{f(t)}\, dt \text{.}
+\end{align*}
+</div>
+<div class="para">In summary, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_dot_int.html">
+\begin{equation*}
+\norm{\int_a^b f(t)\, dt}^2\leq \norm{\int_a^b f(t)\, dt}\int_a^b\norm{f(t)}\, dt\text{.}
+\end{equation*}
+</div>
+<div class="para">Since we assume that <span class="process-math">\(\int_a^b f(t)\, dt\ne \boldzero\text{,}\)</span> we have <span class="process-math">\(\norm{\int_a^b f(t)\, dt}\ne 0\text{,}\)</span> allowing us to cancel and obtain</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_dot_int.html">
+\begin{equation*}
+\norm{\int_a^b f(t)\, dt}\leq \int_a^b\norm{f(t)}\, dt\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_branch_harmonic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_line_integral.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -2023,7 +2023,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.12",
   "title": "Complex paths",
-  "body": " Complex paths   Complex path   A complex path is a continuous function where is a real interval.  We say that a path  parametrizes its image .     Paths  Note that since can be thought of as a subset of , a path can be treated as a complex function with a particularly restricted domain . As such, the same conventions around complex functions apply to paths. In particular, we may write in terms of its real and imaginary parts. Furthermore, identifying with , we can also think of a complex path as a continuous function .    Parametrized curves   For the given curve find a path that parametrizes .   Fix and . Let .    Fix and . Let be the directed line segment that begins at and ends at .            Path jargon   Let be a path.   The points and are called the initial and terminal points of , respectively.     is closed if .     is simple if for all .    The path defined as is called the reverse of .    Given a path satisfying , the concatentation of and , denoted , is the path defined as and .       We now define a notion of real differentiability of paths. Note that though we can indeed think of a path as a complex function, since no element in its domain is an interior point of , considered as a subset of , the notion of complex differentiability does not apply to .   Path derivative   Given a path with and element , we say is (real) differentiable at if and are differentiable at , and define . Geometrically we interpret as a tangent vector to at the point . The path is smooth on if exists and is continuous at all ; it is piecewise smooth if we can write as a concatenation of finitely many smooth curves.     Tangent vectors   Compute for your parametrizations in and provide a sketch illustrating the relationship of to .        Of course, identifying with the planar path (or curve) , we recognize its derivative as the derivative of this planar path (or curve). As a result, all the usual properties of derivatives of planar paths carry over to our complex setting. We will not list them here, but will make a connection with complex differentiation.   Complex and path differentiation   Let be holomorphic, and suppose is a smooth path.   The path is smooth on and satisfies for all .    In particular, if contains the real interval , then the path defined as is smooth and satisfies .            Integration of complex-valued functions   Let be a complex-valued function, and write . We say is Riemann integrable on if the Riemann integrals exist, in which case we write .     Fundamental theorem of calculus   Let be continuous.   The function is differentiable on and satisfies for all .    If satisfies for all , then .            Complex-valued function integration   Let . Compute using two different techniques: directly, using , and indirectly using .        "
+  "body": " Complex paths   Complex paths   Complex path   A complex path is a continuous function where is a real interval.  We say that a path  parametrizes its image .     Paths  Note that since can be thought of as a subset of , a path can be treated as a complex function with a particularly restricted domain . As such, the same conventions around complex functions apply to paths. In particular, we may write in terms of its real and imaginary parts. Furthermore, identifying with , we can also think of a complex path as a continuous function .    Parametrized curves   For the given curve find a path that parametrizes .   Fix and . Let .    Fix and . Let be the directed line segment that begins at and ends at .          Since , , parametrizes the unit circle centered at the origin, we see easily that is a parametrization of .    For any points , the line segment between them is parametrized by , . The equivalent complex parametrization from to is thus .        Path jargon   Let be a path.   The points and are called the initial and terminal points of , respectively.     is closed if .     is simple if for all .    The path defined as is called the reverse of .    Given a path satisfying , the concatentation of and , denoted , is the path defined as and .       We now define a notion of real differentiability of paths. Note that though we can indeed think of a path as a complex function, since no element in its domain is an interior point of , considered as a subset of , the notion of complex differentiability does not apply to .   Path derivative   Given a path with and element , we say is (real) differentiable at if and are differentiable at , and define . Geometrically we interpret as a tangent vector to at the point . The path is smooth on if exists and is continuous at all ; it is piecewise smooth if we can write as a concatenation of finitely many smooth curves.     Visualizing and   Visualizing a path and its derivative in case of a circle      Tangent vectors   Compute for your parametrizations in and provide a sketch illustrating the relationship of to .       For , we have . Since multiplication by rotates a complex number by , we see that the tangent vector is always orthogonal to . See ( .) Note also that the modulus of is .    For , we have . Thus the derivative is a constant function, equal to the direction vector from to .       Of course, identifying with the planar path (or curve) , we recognize its derivative as the derivative of this planar path (or curve). As a result, all the usual properties of derivatives of planar paths carry over to our complex setting. We will not list them here, but will make a connection with complex differentiation.   Complex and path differentiation   Let be holomorphic, and suppose is a smooth path.   The path is smooth on and satisfies for all .    In particular, if contains the real interval , then the path defined as is smooth and satisfies .             Complex-valued function integration  Turning now to a notion of integration, we will introduce the synonymous term complex-valued function for complex paths. We will also favor lowercase Roman letters for naming these functions: , , . This shift in terminology and notation is meant to both draw a connection with Riemann integrals of single-variable real-valued functions, and also to make a distinction between the more general notion of line integrals of complex functions over paths we will define in .   Integration of complex-valued functions   Let be a complex-valued function, and write . We say is Riemann integrable over if the Riemann integrals exist, in which case we write .    Since the integral of a complex-valued function is defined in terms of its real and imaginary parts, each of which is an integral of a real-valued function, it should come as no surprise that complex valued integrals satisfy all of the usual integration properties. For example, this integration operation is linear in the sense that for any complex-valued functions and complex constants . Furthermore, complex-valued functions satisfy slightly generalized version of the fundamental theorem of calculus.   Complex-valued functions: fundamental theorem of calculus   Let be continuous.   The function is differentiable on and satisfies for all .    If satisfies for all , then .        Complex-valued function integration   Let . Compute using two different techniques: directly, using , and indirectly using .    First we compute the integral directly: . Observe that in the middle of that computation we needed to compute antiderivatives of and , which is normally done using integration by parts (twice).  Alternatively, using the fundamental theorem of calculus, we observe that is an antiderivative of , and hence .    Lastly, we record here an important inequality bounding the modulus of a complex-valued function, which is a clear generalization of a corresponding inequality about integrals of real-valued functions. Contrary to what you might expect, the proof of this fact does not proceed so directly from real-valued function properties. We will provide two proofs: one which makes use of the geometry of , and another that identifies with and uses the Cauchy-Schwarz inequality. The latter has the advantage of generalizing directly to more general vector-valued functions  , where is any positive integer.   Complex-valued functions: modulus inequality   Let be Riemann integrable. We have .    First proof: geometric  Let , and write in polar form. It follows that , and thus we have     Second proof: using Cauchy-Schwarz  We will identify with . Observe that under this identification, the modulus of a complex number is the norm of the vector : that is, . Under this identification, a complex-valued function is identified as the vector-valued function , and the integral is then identified as the vector-valued integral . Lastly, for vectors and , we will denote their dot product as : , . Since integration of vector-valued functions is linear, and since the inner product is linear in each variable, it follows easily that for any integrable vector-valued function and vector .  In this setting we wish to show that . The claim is obvious if . Otherwise, since for any , we have . In summary, we have . Since we assume that , we have , allowing us to cancel and obtain , as desired.     "
 },
 {
   "id": "d_complex_path",
@@ -2035,9 +2035,9 @@ var ptx_lunr_docs = [
   "body": " Complex path   A complex path is a continuous function where is a real interval.  We say that a path  parametrizes its image .   "
 },
 {
-  "id": "s_complex_paths-3",
+  "id": "ss_complex_paths-3",
   "level": "2",
-  "url": "s_complex_paths.html#s_complex_paths-3",
+  "url": "s_complex_paths.html#ss_complex_paths-3",
   "type": "Remark",
   "number": "1.12.2",
   "title": "Paths.",
@@ -2050,7 +2050,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.12.3",
   "title": "Parametrized curves.",
-  "body": " Parametrized curves   For the given curve find a path that parametrizes .   Fix and . Let .    Fix and . Let be the directed line segment that begins at and ends at .          "
+  "body": " Parametrized curves   For the given curve find a path that parametrizes .   Fix and . Let .    Fix and . Let be the directed line segment that begins at and ends at .          Since , , parametrizes the unit circle centered at the origin, we see easily that is a parametrization of .    For any points , the line segment between them is parametrized by , . The equivalent complex parametrization from to is thus .      "
 },
 {
   "id": "d_path_properties",
@@ -2071,20 +2071,29 @@ var ptx_lunr_docs = [
   "body": " Path derivative   Given a path with and element , we say is (real) differentiable at if and are differentiable at , and define . Geometrically we interpret as a tangent vector to at the point . The path is smooth on if exists and is continuous at all ; it is piecewise smooth if we can write as a concatenation of finitely many smooth curves.   "
 },
 {
+  "id": "fig_circ_tan",
+  "level": "2",
+  "url": "s_complex_paths.html#fig_circ_tan",
+  "type": "Figure",
+  "number": "1.12.6",
+  "title": "",
+  "body": " Visualizing and   Visualizing a path and its derivative in case of a circle    "
+},
+{
   "id": "eg_derivative",
   "level": "2",
   "url": "s_complex_paths.html#eg_derivative",
   "type": "Example",
-  "number": "1.12.6",
+  "number": "1.12.7",
   "title": "Tangent vectors.",
-  "body": " Tangent vectors   Compute for your parametrizations in and provide a sketch illustrating the relationship of to .       "
+  "body": " Tangent vectors   Compute for your parametrizations in and provide a sketch illustrating the relationship of to .       For , we have . Since multiplication by rotates a complex number by , we see that the tangent vector is always orthogonal to . See ( .) Note also that the modulus of is .    For , we have . Thus the derivative is a constant function, equal to the direction vector from to .      "
 },
 {
   "id": "th_real_complex_diff",
   "level": "2",
   "url": "s_complex_paths.html#th_real_complex_diff",
   "type": "Theorem",
-  "number": "1.12.7",
+  "number": "1.12.8",
   "title": "Complex and path differentiation.",
   "body": " Complex and path differentiation   Let be holomorphic, and suppose is a smooth path.   The path is smooth on and satisfies for all .    In particular, if contains the real interval , then the path defined as is smooth and satisfies .          "
 },
@@ -2093,27 +2102,36 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_complex_paths.html#d_path_integration",
   "type": "Definition",
-  "number": "1.12.8",
+  "number": "1.12.9",
   "title": "Integration of complex-valued functions.",
-  "body": " Integration of complex-valued functions   Let be a complex-valued function, and write . We say is Riemann integrable on if the Riemann integrals exist, in which case we write .   "
+  "body": " Integration of complex-valued functions   Let be a complex-valued function, and write . We say is Riemann integrable over if the Riemann integrals exist, in which case we write .   "
 },
 {
   "id": "th_FTC",
   "level": "2",
   "url": "s_complex_paths.html#th_FTC",
   "type": "Theorem",
-  "number": "1.12.9",
-  "title": "Fundamental theorem of calculus.",
-  "body": " Fundamental theorem of calculus   Let be continuous.   The function is differentiable on and satisfies for all .    If satisfies for all , then .          "
+  "number": "1.12.10",
+  "title": "Complex-valued functions: fundamental theorem of calculus.",
+  "body": " Complex-valued functions: fundamental theorem of calculus   Let be continuous.   The function is differentiable on and satisfies for all .    If satisfies for all , then .      "
 },
 {
   "id": "eg_path_integral",
   "level": "2",
   "url": "s_complex_paths.html#eg_path_integral",
   "type": "Example",
-  "number": "1.12.10",
+  "number": "1.12.11",
   "title": "Complex-valued function integration.",
-  "body": " Complex-valued function integration   Let . Compute using two different techniques: directly, using , and indirectly using .       "
+  "body": " Complex-valued function integration   Let . Compute using two different techniques: directly, using , and indirectly using .    First we compute the integral directly: . Observe that in the middle of that computation we needed to compute antiderivatives of and , which is normally done using integration by parts (twice).  Alternatively, using the fundamental theorem of calculus, we observe that is an antiderivative of , and hence .   "
+},
+{
+  "id": "th_comp_val_int_ineq",
+  "level": "2",
+  "url": "s_complex_paths.html#th_comp_val_int_ineq",
+  "type": "Theorem",
+  "number": "1.12.12",
+  "title": "Complex-valued functions: modulus inequality.",
+  "body": " Complex-valued functions: modulus inequality   Let be Riemann integrable. We have .    First proof: geometric  Let , and write in polar form. It follows that , and thus we have     Second proof: using Cauchy-Schwarz  We will identify with . Observe that under this identification, the modulus of a complex number is the norm of the vector : that is, . Under this identification, a complex-valued function is identified as the vector-valued function , and the integral is then identified as the vector-valued integral . Lastly, for vectors and , we will denote their dot product as : , . Since integration of vector-valued functions is linear, and since the inner product is linear in each variable, it follows easily that for any integrable vector-valued function and vector .  In this setting we wish to show that . The claim is obvious if . Otherwise, since for any , we have . In summary, we have . Since we assume that , we have , allowing us to cancel and obtain , as desired.   "
 },
 {
   "id": "s_line_integral",
@@ -2122,7 +2140,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.13",
   "title": "Complex line integrals",
-  "body": " Complex line integrals   Paths and their images  From now on we reserve the right to conflate a path with its image . We will take care not to abuse this privilege.    Complex line integral   Let be smooth path. Given a complex function defined on , the integral of over , denoted , is defined as , provided this integral exists.  If is the concatenation of smooth curves , , then we define . Integrals as in or are called complex line integrals (or complex contour integrals ).     Connection with Riemann integral  It can be shown that the complex line integral for a piecewise smooth curve has an equivalent definition as the limit of Riemann-like sums of the form , where the points partition the curve into curve segments whose arc lengths approach zero as . In this sense the complex line integral over a general smoothly parametrized curve in can be seen directly as an extension of the Riemann integral of function along a line segment .   Classic line integral   Show that , where , .         "
+  "body": " Complex line integrals   Paths and their images  From now on we reserve the right to conflate a path with its image . We will take care not to abuse this privilege.    Complex line integral   Let be smooth path. Given a complex function defined on , the integral of over , denoted , is defined as , provided this integral exists.  If is the concatenation of smooth curves , , then we define . Integrals as in or are called complex line integrals (or complex contour integrals ).     Connection with Riemann integral  It can be shown that the complex line integral for a piecewise smooth curve has an equivalent definition as the limit of Riemann-like sums of the form , where the points partition the curve into curve segments whose arc lengths approach zero as . In this sense the complex line integral over a general smoothly parametrized curve in can be seen directly as an extension of the Riemann integral of function along a line segment .    Classic line integral   Fix . Show that , where , .  More generally, show that for any fixed , where , .        Fix a piecewise smooth complex path . Since the line integral is defined as the complex-valued function integral , all the usual properties of integration also hold for complex line integrals. For example:    for any -integrable functions and complex constants .     for any -integrable function .    If is a reparametrization of , then for all -integrable functions .   We also have a fundamental theorem of calculus for line integrals.   Line integrals: fundamental theorem of calculus   Let be piecewise smooth, let be an open set containing , and suppose is continuous. If satisfies for all , then , where and are the initial and terminal points of , respectively.         Line integral: FTC   Let be a piecewise smooth closed curve. Prove: .         Antiderivative   Let be a complex function defined on the open set . An antiderivative of on is a complex function satisfying for all .      Let be a complex function that is continuous on the open set . If has an antiderivative on , then for any piecewise smooth curve with image lying in .     ML-inequality   Let be piecewise smooth, and let be the arclength of . If is -integrable and satisfies for all , then .        "
 },
 {
   "id": "s_line_integral-2",
@@ -2149,7 +2167,61 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "1.13.3",
   "title": "Connection with Riemann integral.",
-  "body": " Connection with Riemann integral  It can be shown that the complex line integral for a piecewise smooth curve has an equivalent definition as the limit of Riemann-like sums of the form , where the points partition the curve into curve segments whose arc lengths approach zero as . In this sense the complex line integral over a general smoothly parametrized curve in can be seen directly as an extension of the Riemann integral of function along a line segment .   Classic line integral   Show that , where , .        "
+  "body": " Connection with Riemann integral  It can be shown that the complex line integral for a piecewise smooth curve has an equivalent definition as the limit of Riemann-like sums of the form , where the points partition the curve into curve segments whose arc lengths approach zero as . In this sense the complex line integral over a general smoothly parametrized curve in can be seen directly as an extension of the Riemann integral of function along a line segment .  "
+},
+{
+  "id": "eg_classic_int",
+  "level": "2",
+  "url": "s_line_integral.html#eg_classic_int",
+  "type": "Example",
+  "number": "1.13.4",
+  "title": "Classic line integral.",
+  "body": " Classic line integral   Fix . Show that , where , .  More generally, show that for any fixed , where , .       "
+},
+{
+  "id": "th_ftc_line_int",
+  "level": "2",
+  "url": "s_line_integral.html#th_ftc_line_int",
+  "type": "Theorem",
+  "number": "1.13.5",
+  "title": "Line integrals: fundamental theorem of calculus.",
+  "body": " Line integrals: fundamental theorem of calculus   Let be piecewise smooth, let be an open set containing , and suppose is continuous. If satisfies for all , then , where and are the initial and terminal points of , respectively.       "
+},
+{
+  "id": "eg_FTC_line_int",
+  "level": "2",
+  "url": "s_line_integral.html#eg_FTC_line_int",
+  "type": "Example",
+  "number": "1.13.6",
+  "title": "Line integral: FTC.",
+  "body": " Line integral: FTC   Let be a piecewise smooth closed curve. Prove: .       "
+},
+{
+  "id": "d_antiderivative",
+  "level": "2",
+  "url": "s_line_integral.html#d_antiderivative",
+  "type": "Definition",
+  "number": "1.13.7",
+  "title": "Antiderivative.",
+  "body": " Antiderivative   Let be a complex function defined on the open set . An antiderivative of on is a complex function satisfying for all .   "
+},
+{
+  "id": "cor_FTC",
+  "level": "2",
+  "url": "s_line_integral.html#cor_FTC",
+  "type": "Corollary",
+  "number": "1.13.8",
+  "title": "",
+  "body": "  Let be a complex function that is continuous on the open set . If has an antiderivative on , then for any piecewise smooth curve with image lying in .   "
+},
+{
+  "id": "th_mod_ineq_line_int",
+  "level": "2",
+  "url": "s_line_integral.html#th_mod_ineq_line_int",
+  "type": "Theorem",
+  "number": "1.13.9",
+  "title": "ML-inequality.",
+  "body": " ML-inequality   Let be piecewise smooth, and let be the arclength of . If is -integrable and satisfies for all , then .       "
 },
 {
   "id": "appendix-notation",

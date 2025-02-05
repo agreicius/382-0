@@ -11,10 +11,34 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="example example-like"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.10</span><span class="period">.</span><span class="space"> </span><span class="title">Complex-valued function integration.</span>
-</h3>
-<div class="para">Let <span class="process-math">\(f(t)=e^{(1+i)t}\text{.}\)</span> Compute <span class="process-math">\(\int_0^\pi f(t)\, dt\)</span> using two different techniques: directly, using <a href="s_complex_paths.html#d_path_integration" class="xref" data-knowl="./knowl/xref/d_path_integration.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.12.8: Integration of complex-valued functions">Definition 1.12.8</a>, and indirectly using <a href="s_complex_paths.html#th_FTC" class="xref" data-knowl="./knowl/xref/th_FTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.12.9: Fundamental theorem of calculus">Theorem 1.12.9</a>.</div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_complex_paths.html#eg_path_integral">in-context</a></span>
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.12.11</span><span class="period">.</span><span class="space"> </span><span class="title">Complex-valued function integration.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(f(t)=e^{(1+i)t}\text{.}\)</span> Compute <span class="process-math">\(\int_0^\pi f(t)\, dt\)</span> using two different techniques: directly, using <a href="s_complex_paths.html#d_path_integration" class="xref" data-knowl="./knowl/xref/d_path_integration.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.12.9: Integration of complex-valued functions">Definition 1.12.9</a>, and indirectly using <a href="s_complex_paths.html#th_FTC" class="xref" data-knowl="./knowl/xref/th_FTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.12.10: Complex-valued functions: fundamental theorem of calculus">Theorem 1.12.10</a>.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">First we compute the integral directly:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_0^\pif(t)\, dt \amp =\int_0^\pi e^t\cos t+ie^t\sin t\, dt\\
+\amp = \frac{e^t\cos t-e^t\sin t}{2}\Bigr\vert_0^\pi+ i\, \frac{e^t\sin t-e^t\cos t}{2}\Bigr\vert_0^\pi \\
+\amp =-(e^\pi+1)/2+i(e^\pi+1)/2 \text{.}
+\end{align*}
+</div>
+<div class="para">Observe that in the middle of that computation we needed to compute antiderivatives of <span class="process-math">\(e^t\cos t\)</span> and <span class="process-math">\(e^t\sin t\text{,}\)</span> which is normally done using integration by parts (twice).</div>
+</div>
+<div class="para logical">
+<div class="para">Alternatively, using the fundamental theorem of calculus, we observe that <span class="process-math">\(F(t)=\frac{1}{1+i}e^{(1+i)t}\)</span> is an antiderivative of <span class="process-math">\(f(t)\text{,}\)</span> and hence</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_0^\pif(t)\, dt \amp = F(\pi)-F(0) \\
+\amp =\frac{1}{1+i}(e^{\pi+i\pi}-e^{0})\\
+\amp = \frac{1}{1+i}(-e^\pi-1)\\
+\amp =-\frac{1-i}{2}(e^\pi+1) \\
+\amp = -(e^\pi+1)/2+i(e^\pi+1)/2 \text{.}
+\end{align*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="s_complex_paths.html#eg_path_integral">in-context</a></span>
 </body>
 </html>
