@@ -96,7 +96,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.5';
+eBookConfig.runestone_version = '7.5.6';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -313,6 +313,12 @@ eBookConfig.enable_chatcodes =  false;
 #th_FTC-2-1-2 { counter-set: th_FTC-2-1-2 0; }
 #th_FTC-2-1-2 > li::marker { content: ""counter(th_FTC-2-1-2,decimal)"."; }
 #th_FTC-2-1-2 > li { counter-increment: th_FTC-2-1-2; }
+#th_antider-2-1-4 { counter-set: th_antider-2-1-4 0; }
+#th_antider-2-1-4 > li::marker { content: ""counter(th_antider-2-1-4,decimal)"."; }
+#th_antider-2-1-4 > li { counter-increment: th_antider-2-1-4; }
+#th_cauchy_goursat_star-2-1-2 { counter-set: th_cauchy_goursat_star-2-1-2 0; }
+#th_cauchy_goursat_star-2-1-2 > li::marker { content: ""counter(th_cauchy_goursat_star-2-1-2,decimal)"."; }
+#th_cauchy_goursat_star-2-1-2 > li { counter-increment: th_cauchy_goursat_star-2-1-2; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -588,6 +594,13 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_line_integral.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Complex line integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_cauchy_goursat.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Cauchy-Goursat theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_cauchy_goursat.html#ss_primitives" class="internal"><span class="title">Existence of antiderivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_cauchy_goursat.html#ss_cauchy_goursat" class="internal"><span class="title">Cauchy-Goursat theorems</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter contains-active">
@@ -736,7 +749,22 @@ eBookConfig.enable_chatcodes =  false;
 <div>
 <a href="s_line_integral.html#cor_FTC" class="xref" data-knowl="./knowl/list-of/cor_FTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.13.8">Corollary 1.13.8</a> </div>
 <div>
-<a href="s_line_integral.html#th_mod_ineq_line_int" class="xref" data-knowl="./knowl/list-of/th_mod_ineq_line_int.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.9: ML-inequality">Theorem 1.13.9</a> ML-inequality</div></section></div>
+<a href="s_line_integral.html#th_mod_ineq_line_int" class="xref" data-knowl="./knowl/list-of/th_mod_ineq_line_int.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.13.9: ML-inequality">Theorem 1.13.9</a> ML-inequality</div>
+<h4 class="heading hide-type" title="Section 1.14: Cauchy-Goursat theorem">
+<span class="codenumber">1.14</span><span class="space"> </span><span class="title">Cauchy-Goursat theorem</span>
+</h4>
+<div>
+<a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/list-of/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a> Antiderivative theorem</div>
+<div>
+<a href="s_cauchy_goursat.html#th_cauchy-goursat_triangle" class="xref" data-knowl="./knowl/list-of/th_cauchy-goursat_triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.4: Cauchy-Goursat: triangles">Theorem 1.14.4</a> Cauchy-Goursat: triangles</div>
+<div>
+<a href="s_cauchy_goursat.html#th_cauchy_goursat_star" class="xref" data-knowl="./knowl/list-of/th_cauchy_goursat_star.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.7: Cauchy-Goursat: star-shaped regions">Theorem 1.14.7</a> Cauchy-Goursat: star-shaped regions</div>
+<div>
+<a href="s_cauchy_goursat.html#cor_cauchy_goursat_star" class="xref" data-knowl="./knowl/list-of/cor_cauchy_goursat_star.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.14.10: Existence of log branches">Corollary 1.14.10</a> Existence of log branches</div>
+<div>
+<a href="s_cauchy_goursat.html#th_elem_regions" class="xref" data-knowl="./knowl/list-of/th_elem_regions.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.11: Elementary region building">Theorem 1.14.11</a> Elementary region building</div>
+<div>
+<a href="s_cauchy_goursat.html#th_cauchy_goursat_boundary" class="xref" data-knowl="./knowl/list-of/th_cauchy_goursat_boundary.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.12: Cauchy-Goursat: boundary curve">Theorem 1.14.12</a> Cauchy-Goursat: boundary curve</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="appendix-defs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="appendix-specimens.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

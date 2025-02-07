@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.2</span><span class="period">.</span><span class="space"> </span><span class="title">Antiderivative theorem.</span>
+</h4>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(U\subseteq \C\)</span> be open and connected, and assume <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(U\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="th_antider-2-1-4">
+<li>
+<span class="heading"><span class="title">Existence of antiderivative.</span></span><div class="para">
+<span class="process-math">\(f\)</span> has an antiderivative on <span class="process-math">\(U\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Closed paths.</span></span><div class="para">
+<span class="process-math">\(\int_\gamma f\, dz=0\)</span> for any closed path <span class="process-math">\(\gamma\)</span> lying in <span class="process-math">\(U\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Independence of paths.</span></span><div class="para">
+<span class="process-math">\(\int_\alpha f\, dz=\int_\beta f\, dz\)</span> for any paths <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> lying in <span class="process-math">\(U\)</span> that have the same initial and terminal points.</div>
+</li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><article class="case"><h5 class="heading">Implication: (1)<span class="process-math">\(\implies\)</span>(2).</h5>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be an antiderivative of <span class="process-math">\(f\)</span> on <span class="process-math">\(U\text{.}\)</span> Given a closed piecewise smooth path <span class="process-math">\(\gamma\text{,}\)</span> let <span class="process-math">\(z_0=z_1\)</span> be its initial/terminal point. By the fundamental theorem of calculus for line integrals, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_\gamma f\, dz=F(z_1)-F(z_0)=F(z_0)-F(z_0)=0\text{.}
+\end{equation*}
+</div>
+</div></article><article class="case"><h5 class="heading">Implication: (2)<span class="process-math">\(\implies\)</span>(3).</h5>
+<div class="para logical">
+<div class="para">Since <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> share the same initial and terminal points, the curve  <span class="process-math">\(\gamma=\alpha* (-\beta)\)</span> is closed, and we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0=\int_\gamma f\, dz=\int_\alpha f\, dz+\int_{-\beta}f\, dz=\int_\alpha f\, dz-\int_\beta f\, dz\text{.}
+\end{equation*}
+</div>
+<div class="para">It follow that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_\alpha f\, dz=\int_\beta f\, dz\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article><article class="case"><h5 class="heading">Implication: (3)<span class="process-math">\(\implies\)</span>(1).</h5>
+<div class="para"></div></article></article></details><span class="incontext"><a class="internal" href="s_cauchy_goursat.html#th_antider">in-context</a></span>
+</body>
+</html>

@@ -2224,6 +2224,123 @@ var ptx_lunr_docs = [
   "body": " ML-inequality   Let be piecewise smooth, and let be the arclength of . If is -integrable and satisfies for all , then .       "
 },
 {
+  "id": "s_cauchy_goursat",
+  "level": "1",
+  "url": "s_cauchy_goursat.html",
+  "type": "Section",
+  "number": "1.14",
+  "title": "Cauchy-Goursat theorem",
+  "body": " Cauchy-Goursat theorem   In this section we meet the famous Cauchy-Goursat theorem: our first truly deep theorem, and one that is fundamental to all the theoretical highlights that follow.    Existence of antiderivatives   Paths  From now on, unless explicitly stated otherwise, a path will be assumed to be piecewise smooth.   As we observed in , if has an antiderivative on the open set , then for any closed path lying in . Equivalently, if  for some closed path lying in , then there is no antiderivative of on .  Applying this result to , we see that for any open connected set containing , there is no antiderivative of on : indeed, the path lies in for small enough, and we have computed that for any such path. As a further consequence, it follows that there can be no branch of on an open set of the form where contains , since as we have seen previously, any such branch would be an antiderivative of !  The example illustrates the subtlety of the question of whether an antiderivative exists for a continuous complex function. The next theorem tells us that the implication from is in fact an equivalence if is open and connected.   Antiderivative theorem   Let be open and connected, and assume is continuous on . The following statements are equivalent.   Existence of antiderivative   has an antiderivative on .    Closed paths   for any closed path lying in .    Independence of paths   for any paths and lying in that have the same initial and terminal points.        Implication: (1) (2)  Let be an antiderivative of on . Given a closed piecewise smooth path , let be its initial\/terminal point. By the fundamental theorem of calculus for line integrals, we have .    Implication: (2) (3)  Since and share the same initial and terminal points, the curve is closed, and we have . It follow that , as desired.    Implication: (3) (1)         Cauchy-Goursat theorems   Triangles  Given three non-colinear complex numbers , we denote by any simple closed path of the form , where denotes a simple straight-line path from to . We denote by the triangular region consisting of and all points lying within it. It is easy to see that is closed and that .    Cauchy-Goursat: triangles   Assume is holomorphic on . Given any triangle contained in , we have .         Star-shaped sets   A set is star shaped if there is an element such that for all the line segment between and lies in .     Star-shaped regions  Observe that since a star-shaped region is clearly polygonally connected, it is connected.    Cauchy-Goursat: star-shaped regions   Assume is open and star-shaped.   Closed paths  If is holomorphic on , then for any closed path lying in .    Antiderivatives  If is holomorphic on , then has an antiderivative on .            Elementary regions   An open connected set is elementary if for all paths lying in and all functions that are holomorphic on . Equivalently, an open connected set is elementary if every holomorphic function on has an antiderivative on .     Elementary regions  According to , any open star-shaped region is elementary. In particular, open balls are elementary.    Existence of log branches   Assume is elementary. If and are holomorphic on and for all , then there exists a holomorphic branch of on .     Elementary region building   If and are elementary regions, and if is connected, then is elementary.         Cauchy-Goursat: boundary curve   Assume         "
+},
+{
+  "id": "ss_primitives-2",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#ss_primitives-2",
+  "type": "Convention",
+  "number": "1.14.1",
+  "title": "Paths.",
+  "body": " Paths  From now on, unless explicitly stated otherwise, a path will be assumed to be piecewise smooth.  "
+},
+{
+  "id": "th_antider",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#th_antider",
+  "type": "Theorem",
+  "number": "1.14.2",
+  "title": "Antiderivative theorem.",
+  "body": " Antiderivative theorem   Let be open and connected, and assume is continuous on . The following statements are equivalent.   Existence of antiderivative   has an antiderivative on .    Closed paths   for any closed path lying in .    Independence of paths   for any paths and lying in that have the same initial and terminal points.        Implication: (1) (2)  Let be an antiderivative of on . Given a closed piecewise smooth path , let be its initial\/terminal point. By the fundamental theorem of calculus for line integrals, we have .    Implication: (2) (3)  Since and share the same initial and terminal points, the curve is closed, and we have . It follow that , as desired.    Implication: (3) (1)      "
+},
+{
+  "id": "ss_cauchy_goursat-2",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#ss_cauchy_goursat-2",
+  "type": "Convention",
+  "number": "1.14.3",
+  "title": "Triangles.",
+  "body": " Triangles  Given three non-colinear complex numbers , we denote by any simple closed path of the form , where denotes a simple straight-line path from to . We denote by the triangular region consisting of and all points lying within it. It is easy to see that is closed and that .  "
+},
+{
+  "id": "th_cauchy-goursat_triangle",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#th_cauchy-goursat_triangle",
+  "type": "Theorem",
+  "number": "1.14.4",
+  "title": "Cauchy-Goursat: triangles.",
+  "body": " Cauchy-Goursat: triangles   Assume is holomorphic on . Given any triangle contained in , we have .       "
+},
+{
+  "id": "d_star_shaped",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#d_star_shaped",
+  "type": "Definition",
+  "number": "1.14.5",
+  "title": "Star-shaped sets.",
+  "body": " Star-shaped sets   A set is star shaped if there is an element such that for all the line segment between and lies in .   "
+},
+{
+  "id": "ss_cauchy_goursat-5",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#ss_cauchy_goursat-5",
+  "type": "Remark",
+  "number": "1.14.6",
+  "title": "Star-shaped regions.",
+  "body": " Star-shaped regions  Observe that since a star-shaped region is clearly polygonally connected, it is connected.  "
+},
+{
+  "id": "th_cauchy_goursat_star",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#th_cauchy_goursat_star",
+  "type": "Theorem",
+  "number": "1.14.7",
+  "title": "Cauchy-Goursat: star-shaped regions.",
+  "body": " Cauchy-Goursat: star-shaped regions   Assume is open and star-shaped.   Closed paths  If is holomorphic on , then for any closed path lying in .    Antiderivatives  If is holomorphic on , then has an antiderivative on .          "
+},
+{
+  "id": "d_elementary_regions",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#d_elementary_regions",
+  "type": "Definition",
+  "number": "1.14.8",
+  "title": "Elementary regions.",
+  "body": " Elementary regions   An open connected set is elementary if for all paths lying in and all functions that are holomorphic on . Equivalently, an open connected set is elementary if every holomorphic function on has an antiderivative on .   "
+},
+{
+  "id": "ss_cauchy_goursat-8",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#ss_cauchy_goursat-8",
+  "type": "Remark",
+  "number": "1.14.9",
+  "title": "Elementary regions.",
+  "body": " Elementary regions  According to , any open star-shaped region is elementary. In particular, open balls are elementary.  "
+},
+{
+  "id": "cor_cauchy_goursat_star",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#cor_cauchy_goursat_star",
+  "type": "Corollary",
+  "number": "1.14.10",
+  "title": "Existence of log branches.",
+  "body": " Existence of log branches   Assume is elementary. If and are holomorphic on and for all , then there exists a holomorphic branch of on .   "
+},
+{
+  "id": "th_elem_regions",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#th_elem_regions",
+  "type": "Theorem",
+  "number": "1.14.11",
+  "title": "Elementary region building.",
+  "body": " Elementary region building   If and are elementary regions, and if is connected, then is elementary.       "
+},
+{
+  "id": "th_cauchy_goursat_boundary",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#th_cauchy_goursat_boundary",
+  "type": "Theorem",
+  "number": "1.14.12",
+  "title": "Cauchy-Goursat: boundary curve.",
+  "body": " Cauchy-Goursat: boundary curve   Assume       "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
