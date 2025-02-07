@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_cauchy_goursat" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Cauchy-Goursat theorem</title>
+    <introduction>
+        <p>
+            In this section we meet the famous Cauchy-Goursat theorem: our first truly deep theorem, and one that is fundamental to all the theoretical highlights that follow.
+        </p>
+    </introduction>
+<subsection xml:id="ss_primitives">
+<title>Existence of antiderivatives</title>
+<convention>
+    <title>Paths</title>
+    <p>
+        From now on, unless explicitly stated otherwise, a path <m>\gamma\colon [a,b]\rightarrow \C</m> will be assumed to be piecewise smooth. 
+    </p>
+</convention>
+<p>
+    As we observed in <xref ref="cor_FTC"/>, if <m>f</m> has an antiderivative on the open set <m>U</m>, then <m>\int_\gamma f\, dz=0</m> for any closed path lying in <m>U</m>. Equivalently, if <m>\int_\gamma f\, dz\ne 0</m> <em>for some</em> closed path lying in <m>U</m>, then there is no antiderivative of <m>f</m> on <m>U</m>. 
+</p>
+<p>
+    Applying this result to <m>f(z)=1/z</m>, we see that for any open connected set <m>U</m> containing <m>0</m>, there is no antiderivative of <m>f</m> on <m>U-\{0\}</m>: indeed, the path <m>\gamma(t)=re^{it}</m> lies in <m>U</m> for <m>r</m> small enough, and we have computed that <m>\int_\gamma 1/z\, dz=2\pi i\ne 0</m> for any such path. As a further consequence, it follows that there can be no branch of <m>\log</m> on an open set of the form <m>U-\{0\}</m> where <m>U</m> contains <m>0</m>, since as we have seen previously, any such branch would be an antiderivative of <m>f</m>!
+</p>
+<p>
+    The example illustrates the subtlety of the question of whether an antiderivative exists for a continuous complex function. The next theorem tells us that the implication from <xref ref="cor_FTC"/> is in fact an equivalence if <m>U</m> is open and connected.  
+</p>
+<theorem xml:id="th_antider">
+<title>Antiderivative theorem</title>
+<statement>
+<p>
+Let <m>U\subseteq \C</m> be open and connected, and assume <m>f</m> is continuous on <m>U</m>. The following statements are equivalent. 
+<ol>
+    <li>
+        <title>Existence of antiderivative</title>
+        <p>
+            <m>f</m> has an antiderivative on <m>U</m>. 
+        </p>
+    </li>
+    <li>
+        <title>Closed paths</title>
+        <p>
+            <m>\int_\gamma f\, dz=0</m> for any closed path <m>\gamma</m> lying in <m>U</m>. 
+        </p>
+    </li>
+    <li>
+        <title>Independence of paths</title>
+        <p>
+            <m>\int_\alpha f\, dz=\int_\beta f\, dz</m> for any paths <m>\alpha</m> and <m>\beta</m> lying in <m>U</m> that have the same initial and terminal points. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<case>
+<title>Implication: (1)<m>\implies</m>(2)</title>
+<p>
+Let <m>F</m> be an antiderivative of <m>f</m> on <m>U</m>. Given a closed piecewise smooth path <m>\gamma</m>, let <m>z_0=z_1</m> be its initial/terminal point. By the fundamental theorem of calculus for line integrals, we have 
+<me>
+    \int_\gamma f\, dz=F(z_1)-F(z_0)=F(z_0)-F(z_0)=0
+</me>.
+</p>
+</case>
+<case>
+<title>Implication: (2)<m>\implies</m>(3)</title>
+<p>
+Since <m>\alpha</m> and <m>\beta</m> share the same initial and terminal points, the curve  <m>\gamma=\alpha* (-\beta)</m> is closed, and we have 
+<me>
+    0=\int_\gamma f\, dz=\int_\alpha f\, dz+\int_{-\beta}f\, dz=\int_\alpha f\, dz-\int_\beta f\, dz
+</me>.
+It follow that 
+<me>
+    \int_\alpha f\, dz=\int_\beta f\, dz
+</me>,
+as desired. 
+</p>
+</case>
+<case>
+<title>Implication: (3)<m>\implies</m>(1)</title>
+<p>
+
+</p>
+</case>
+
+</proof>
+</theorem>
+
+</subsection>
+<subsection xml:id="ss_cauchy_goursat">
+<title>Cauchy-Goursat theorems</title>
+<convention>
+    <title>Triangles</title>
+    <p>
+        Given three non-colinear complex numbers <m>z_0,z_1,z_2</m>, we denote by <m>\gamma_{(z_0,z_1,z_2)}</m> any simple closed path of the form 
+        <me>
+            \gamma_{(z_1,z_2)}*\gamma_{(z_2,z_3)}*\gamma_{(z_3,z_0)}
+        </me>,
+        where <m>\gamma_{(z_i,z_j)}</m> denotes a simple straight-line path from <m>z_i</m> to <m>z_k</m>. We denote by <m>\triangle z_0,z_1,z_2</m> the triangular region consisting of <m>\gamma_{(z_1,z_2,z_3)}</m> and all points lying within it. It is easy to see that <m>\triangle=\triangle z_0,z_1,z_2</m> is closed and that <m>\partial \triangle=\gamma_{(z_1,z_2,z_3)}</m>. 
+    </p>
+</convention>
+<theorem xml:id="th_cauchy-goursat_triangle">
+<title>Cauchy-Goursat: triangles</title>
+<statement>
+<p>
+Assume <m>f</m> is holomorphic on <m>U</m>. Given any triangle <m>\triangle z_0,z_1,z_2</m> contained in <m>U</m>, we have 
+<me>
+    \int_{\gamma_{(z_0,z_1,z_2)}}f\, dz=0
+</me>.
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<definition xml:id="d_star_shaped">
+<title>Star-shaped sets</title>
+<statement>
+<p>
+A set <m>D\subseteq \C</m> is <term>star shaped</term> if there is an element <m>z^*</m> such that for all <m>z\in D</m> the line segment between <m>z</m> and <m>z^*</m> lies in <m>D</m>. 
+</p>
+</statement>
+</definition>
+<remark>
+    <title>Star-shaped regions</title>
+    <p>
+        Observe that since a star-shaped region is clearly polygonally connected, it is connected. 
+    </p>
+</remark>
+<theorem xml:id="th_cauchy_goursat_star">
+<title>Cauchy-Goursat: star-shaped regions</title>
+<statement>
+<p>
+Assume <m>U\subseteq \C</m> is open and star-shaped.
+<ol>
+    <li>
+        <title>Closed paths</title>
+        <p>
+            If <m>f</m> is holomorphic on <m>U</m>, then <m>\int_\gamma f\, dz=0</m> for any closed path <m>\gamma</m> lying in <m>U</m>. 
+        </p>
+    </li>
+    <li>
+        <title>Antiderivatives</title>
+        <p>
+            If <m>f</m> is holomorphic on <m>U</m>, then <m>f</m> has an antiderivative on <m>U</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<definition xml:id="d_elementary_regions">
+<title>Elementary regions</title>
+<statement>
+<p>
+An open connected set <m>U</m> is <term>elementary</term> if 
+<me>
+    \int_\gamma f\, dz=0
+</me>
+for all paths <m>\gamma</m> lying in <m>U</m> and all functions <m>f</m> that are holomorphic on <m>U</m>. Equivalently, an open connected set <m>U</m> is elementary if every holomorphic function on <m>U</m> has an antiderivative on <m>U</m>. 
+</p>
+</statement>
+</definition>
+<remark>
+    <title>Elementary regions</title>
+    <p>
+        According to <xref ref="th_cauchy_goursat_star"/>, any open star-shaped region is elementary. In particular, open balls are elementary. 
+    </p>
+</remark>
+<corollary xml:id="cor_cauchy_goursat_star">
+    <title>Existence of log branches</title>
+    <statement>
+        <p>
+            Assume <m>U</m> is elementary. If <m>f</m> and <m>f'</m> are holomorphic on <m>U</m> and <m>f(z)\ne 0</m> for all <m>z\in U</m>, then there exists a holomorphic branch of <m>\mathcal{F}=\log (f(z))</m> on <m>U</m>. 
+        </p>
+    </statement>
+</corollary>
+<theorem xml:id="th_elem_regions">
+<title>Elementary region building</title>
+<statement>
+<p>
+If <m>U_1</m> and <m>U_2</m> are elementary regions, and if <m>U_1\cap U_2</m> is connected, then <m>U_1\cup U_2</m> is elementary. 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<theorem xml:id="th_cauchy_goursat_boundary">
+<title>Cauchy-Goursat: boundary curve</title>
+<statement>
+<p>
+Assume 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+
+
+
+</subsection>
+    
+
+</section>

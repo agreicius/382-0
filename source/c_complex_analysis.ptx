@@ -13,4 +13,5 @@
     <xi:include href="s_branch_harmonic.ptx" />
     <xi:include href="s_complex_paths.ptx" />
     <xi:include href="s_line_integral.ptx" />
+     <xi:include href="s_cauchy_goursat.ptx" />
 </chapter>
