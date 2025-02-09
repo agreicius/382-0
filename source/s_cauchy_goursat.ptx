@@ -78,7 +78,51 @@ as desired.
 <case>
 <title>Implication: (3)<m>\implies</m>(1)</title>
 <p>
-
+Pick any element <m>z^*\in U</m>. Since <m>U</m> is open and connected,  it is polygonally connected. Thus for any <m>z\in U</m> there exists a polygonal path beginning at <m>z^*</m> and ending at <m>z</m>. We define the function <m>F\colon U\rightarrow \C</m> as 
+<men xml:id="eq_antider">
+    F(z)=\int_{z^*}^z f\, dz
+</men>,
+where <m>\int_{z^*}^z f\, dz</m> denotes the contour integral along <em>any</em> polygonal path from <m>z^*</m> to <m>z</m>. Since we assume that line integrals of <m>f</m> are path independent, our function <m>F</m> is well-defined: <ie/>, <m>F(z)</m> does indeed return a single well-defined value, no matter which path you choose. It remains to show that <m>F</m> is an antiderivative of <m>f</m> on <m>U</m>. 
+</p>
+<p>
+    Pick any <m>z_0\in U</m>. Firstly, since <m>U</m> is open we can find a <m>\delta&gt; 0</m> such that <m>B_{\delta}(z_0)\subseteq U</m>. We will prove that <m>F'(z_0)</m> by showing that 
+    <me>
+        F(z)-F(z_0)=f(z_0)(z-z_0)+r(z)
+    </me>
+    for all <m>z\in B_{\delta}(z_0)</m>, where <m>r(z)</m> satisfies 
+    <me>
+        \lim\limits_{z\to z_0}\frac{\abs{r(z)}}{\abs{z-z_0}}=0
+    </me>.
+    To this end note that for all <m>z\in B_{\delta}(z_0)</m>, we have 
+    <md>
+        <mrow>F(z)-F(z_0) \amp = \int_{z^*}^zf\, dz-\int_{z^*}^{z_0} f\, dz</mrow>
+        <mrow> \amp = \int_{z^*}^{z_0}f\, dz +\int_{\gamma_{z_0,z}}f\, dz-\int_{z^*}^{z_0}f\, dz</mrow>
+        <mrow> \amp = \int_{\gamma_{z_0,z}}f\, dz </mrow>
+    </md>,
+    where <m>\gamma_{z0,z1}</m> is the straight line path from <m>z_0</m> to <m>z</m>. Next, we have 
+    <md>
+        <mrow>\int_{\gamma_{z_0,z}}f\, dz \amp = \int_{\gamma_{z_0,z}}f(z_0)+f(z)-f(z_0)\, dz</mrow>
+        <mrow> \amp = \int_{\gamma_{z_0,z}}f(z_0)\, dz+\int_{\gamma_{z_0,z}}f(z)-f(z_0)\, dz</mrow>
+        <mrow> \amp =f(z_0)(z-z_0)+\int_{\gamma_{z_0,z}}f(z)-f(z_0)\, dz</mrow>
+    </md>,
+    where the last step follows from the fact that <m>G(z)=z</m> is an antiderivative of <m>1</m>, and thus 
+    <me>
+        \int_{\gamma_{z_0,z}}f(z_0)\, dz=f(z_0)\int_{\gamma_{z_0,z}}1\, dz=f(z_0)(z-z_0)
+    </me>,
+    by the fundamental theorem of calculus for line integrals. 
+    </p>
+    <p>
+    Letting <m>r(z)=\int_{z_0,z}f(z)-f(z_0)\, dz</m>, we then have 
+    <me>
+        F(z)-F(z_0)=f(z_0)(z-z_0)+r(z)
+    </me>.
+    It remains to show that <m>\lim\limits_{z\to z_0}\abs{r(z)}/{\abs{z-z_0}}=0</m>. To this end, given any <m>\epsilon &gt; 0</m>, shrink <m>\delta</m> as necessary so that <m>\abs{z-z_0}&lt; \delta</m> implies <m>\abs{f(z)-f(z)}&lt; \epsilon</m>. We then have 
+    <md>
+        <mrow>\frac{\abs{r(z)}}{\abs{z-z_0}} \amp = \frac{\abs{\int_{z_0,z}f\, dz}}{\abs{z-z_0}} </mrow>
+        <mrow> \amp \leq \frac{\epsilon \abs{z-z_0}}{\abs{z-z_0}} \amp (ML-\text{ineq.})</mrow>
+        <mrow> \amp \leq \epsilon</mrow>
+    </md>.
+    Since <m>\epsilon</m> was abribitrary, we see that <m>\lim\limits_{z\to z_0}\abs{r(z)}/\abs{z-z_0}=0</m>, as desired. 
 </p>
 </case>
 
@@ -95,7 +139,7 @@ as desired.
         <me>
             \gamma_{(z_1,z_2)}*\gamma_{(z_2,z_3)}*\gamma_{(z_3,z_0)}
         </me>,
-        where <m>\gamma_{(z_i,z_j)}</m> denotes a simple straight-line path from <m>z_i</m> to <m>z_k</m>. We denote by <m>\triangle z_0,z_1,z_2</m> the triangular region consisting of <m>\gamma_{(z_1,z_2,z_3)}</m> and all points lying within it. It is easy to see that <m>\triangle=\triangle z_0,z_1,z_2</m> is closed and that <m>\partial \triangle=\gamma_{(z_1,z_2,z_3)}</m>. 
+        where <m>\gamma_{(z_i,z_j)}</m> denotes a simple straight-line path from <m>z_i</m> to <m>z_k</m>. We denote by <m>\triangle(z_0,z_1,z_2)</m> the triangular region consisting of <m>\gamma_{(z_1,z_2,z_3)}</m> and all points lying within it. It is easy to see that <m>\triangle=\triangle(z_0,z_1,z_2)</m> is closed and that <m>\partial \triangle=\gamma_{(z_1,z_2,z_3)}</m>. 
     </p>
 </convention>
 <theorem xml:id="th_cauchy-goursat_triangle">
@@ -110,9 +154,143 @@ Assume <m>f</m> is holomorphic on <m>U</m>. Given any triangle <m>\triangle z_0,
 </statement>
 <proof>
 <p>
+    We give a near complete proof, save for one unproved fact about closed and bounded sets (aka., <em>compact sets</em>). Let <m>\Delta=\Delta(z_0,z_1,z_2)</m> and let <m>\gamma=\gamma_{(z_0,z_1,z_2)}</m>. 
 </p>
+<case>
+<title>Idea: compare <m>\int_\gamma f\, dz</m> with integral over smaller triangles</title>
+<p>
+Let <m>w_0,w_1,w_2</m> be the midpoints of the sides <m>\Delta</m> and consider the four closed paths 
+<md>
+    <mrow>\gamma_1 \amp = \gamma_{z_0,w_0,w_1}</mrow>
+    <mrow>\gamma_2 \amp = \gamma_{w_0,z_1,w_1}</mrow>
+    <mrow>\gamma_3 \amp = \gamma_{w_1,z_2,w_2}</mrow>
+    <mrow>\gamma_4 \amp = \gamma_{w_2,w_0,w_1}</mrow>
+</md>.
+See <xref ref="fig_cauchy-goursat"/>. Using elementary integral properties, thanks to the cancellation that occurs due to <m>\gamma_4</m> we have
+<me>
+    \int_\gamma f\, dz=\int_{\gamma_1} f\, dz+\int_{\gamma_2} f\, dz+\int_{\gamma_3} f\, dz+\int_{\gamma_4} f\, dz
+</me>.
+Picking any <m>1\leq k_0\leq 4</m> satisfying
+<me>\max\left\{\abs{\int_{\gamma_k} f\, dz}\colon 1\leq k\leq 4\right\}=\abs{\int_{\gamma_{k_0}}f\, dz} 
+</me>,
+we then have 
+<md>
+    <mrow>\abs{\int_\gamma f\, dz} \amp \leq \sum_{k=1}^4\abs{\int_{\gamma_k}f\, dz}</mrow>
+    <mrow> \amp \leq 4 \abs{\int_{\gamma_{k_0}} f\, dz}</mrow>
+</md>.
+Define <m>\gamma^{(1)}=\gamma_{k_0}</m>, and let <m>\Delta^{(1)}</m> be triangle enclosed by <m>\gamma^{(1)}</m>. Iterating this procedure on <m>\Delta^{(1)}</m>, we get a sequence of <em>nested</em> triangles
+<men xml:id="eq_nested_tri">
+    \Delta\supseteq \Delta^{(1)}\supseteq \Delta^{(2)}\supseteq \dots
+</men>
+and whose corresponding closed paths <m>\gamma^{(n)}</m> satisfy (by induction)
+<md>
+    <mrow>\abs{\int_\gamma f\, dz} \amp \leq 4^n\abs{\int_{\gamma^{(n)}}f\, dz}</mrow>
+    <mrow>L(\gamma^{(n)}) \amp =\frac{L(\gamma)}{2^n}</mrow>
+</md>,
+where here <m>L(\phi)</m> denotes the arc length of any piecewise smooth path <m>\phi</m>. 
+</p>
+</case>
+<case>
+<title>Pick point in <m>\bigcap\limits_{n=1}^\infty \Delta^{(n)}</m></title>
+<p>
+We now use what really is a result about <em>compact sets</em>. We will refrain from giving the general topological definition of compactness; suffice it to say that in the context of <m>\C</m>, a compact set is just a closed and bounded set. A general fact about compact sets is that for any descending nested sequence of compact subsets like the one in <xref ref="eq_nested_tri"/>, the intersection of the nested sets is nonempty. Thus we can find a <m>z_0\in \bigcap_{n=1}^\infty \Delta^{(n)}</m> that lies within all of our nested triangles. The remainder of the proof will try and give useful bounds on <m>\abs{\int_{\gamma^{(n)}}f\, dz}</m> by using the fact that <m>z_0\in \Delta^{(n)}</m> and <m>f</m> is differentiable at <m>z_0</m>. 
+</p>
+</case>
+<case>
+<title>Estimating <m>\abs{\int_{\gamma^{(n)}}f\, dz}</m> using <m>f'(z_0)</m></title>
+<p>
+Since <m>f</m> is differentiable at <m>z_0</m>, we have 
+<me>
+    f(z)=f(z_0)+f'(z_0)(z-z_0)+r(z)
+</me>
+where 
+<men xml:id="eq_r_func">
+    r(z)=f(z)-f(z_0)-f'(z_0)(z-z_0)
+</men>
+is continuous on <m>\Delta</m> and satisfies 
+<men xml:id="eq_r_ineq">
+    \lim\limits_{z\to z_0}\frac{\abs{r(z)}}{\abs{z-z_0}}=0.
+</men>
+Note that the function 
+<me>
+    g(z)=f(z_0)+f'(z_0)(z-z_0)
+</me>
+is a linear polynomial with antiderivative <m>G(z)=f(z_0)z+\frac{1}{2}f'(z_0)(z-z_0)^2</m>. It follows from <xref ref="cor_FTC"/> that <m>\int_{\gamma^{(n)}}g(z)\, dz=0</m>, and thus 
+<md>
+    <mrow>\int_{\gamma^{(n)}}f\, dz \amp = \int_{\gamma^{(n)}}g(z)+r(z)\, dz</mrow>
+    <mrow> \amp = \int_{\gamma^{(n)}}g(z)\, dz+\int_{\gamma^{(n)}}r(z)\, dz</mrow>
+    <mrow> \amp =\int_{\gamma^{(n)}} r(z)\,  dz  </mrow>
+</md>.
+
+
+</p>
+</case>
+<case>
+<title>Proof that <m>\int_{\gamma}f\, dz=0</m></title>
+<p>
+To reach our desired conclusion, we will show that 
+<me>
+\abs{\int_{\gamma}f\, dz}\leq  \epsilon
+</me>
+for any <m>\epsilon &gt; 0</m>. To this end, fix <m>\epsilon &gt; 0</m>. Since the function <m>r(z)</m> defined above satisfies the inequality <xref ref="eq_r_ineq"/>, for <m>z</m> sufficiently close to <m>z_0</m> we have 
+<me>
+    \abs{r(z)} &lt; \abs{z-z_0}\frac{\epsilon}{L(\gamma)^2} 
+</me>.
+Clearly, we can pick <m>n</m> large enough so that this inequality holds for all <m>z\in \Delta^{(n)}</m>. A straightforward geometric argument shows that <m>\abs{z-z_0}\leq L(\gamma^{(n)})</m> for all <m>z\in \Delta^{(n)}</m>, and thus that 
+<me>
+    \abs{r(z)}&lt; \frac{L(\gamma^{(n)})\epsilon}{L(\gamma)^2}
+</me>
+for all <m>z\in \Delta^{(n)}</m>. 
+We conclude that 
+<md>
+    <mrow>\abs{\int_\gamma f\, dz} \amp \leq 4^n\abs{\int_{\gamma^{(n)}}f\, dz}</mrow>
+    <mrow> \amp =4^n\abs{\int_{\gamma^{(n)}}r(z)\, dz} </mrow>
+    <mrow> \amp \leq 4^n\cdot \max\{r(z)\colon z\in \Delta^{(n)}\}\cdot L(\gamma^{(n)}) \amp (ML-\text{ineq.})</mrow>
+    <mrow> \amp &lt; 4^n \cdot \frac{L(\gamma^{(n)})\epsilon}{L(\gamma)^2} \cdot L(\gamma^{(n)}) </mrow>
+    <mrow> \amp = 4^n \cdot \frac{L(\gamma)\epsilon}{2^n L(\gamma)^2} \cdot \frac{L(\gamma)}{2^n}</mrow>
+    <mrow> \amp =\epsilon</mrow>
+</md>,
+as desired.
+</p>
+</case>
+
+
+
+
 </proof>
 </theorem>
+<figure xml:id="fig_cauchy-goursat">
+    <caption>Kernel idea of iterative proof of Cauchy-Goursat for triangles</caption>
+    <image width="50%">
+        <shortdescription>Kernel idea behind iterative proof of Cauchy-Goursat for triangles</shortdescription>
+        <sageplot>
+z0=[0,0]
+z2=[cos(pi/3), sin(pi/3)]
+z1=[1,0]
+v0=vector(z0)
+v1=vector(z1)
+v2=vector(z2)
+w1=(v0+v1)/2
+w2=(v1+v2)/2
+w3=(v0+v2)/2
+c=2/3*(v1+v2)/2
+v1=vector(z1)
+v2=vector(z2)
+L=line([z0,z1,z2,z0], axes=False, aspect_ratio=1)
+L1=line([z0,w1,w3,z0], axes=False, aspect_ratio=1, color="red", thickness=2)
+L2=line([w1,z1,w2,w1], axes=False, aspect_ratio=1, color="green",thickness=2)
+L3=line([w2,z2,w3,w2], axes=False, aspect_ratio=1, color="orange",thickness=2)
+L4=line([w1,w2,w3,w1], axes=False, aspect_ratio=1, color="pink",thickness=2)
+t1=text("$z_0$", -.1*c,color="black",fontsize=14)
+t2=text("$z_1$", v1+(.1)*(v1-c),color="black",fontsize=14)
+t3=text("$z_2$", v2+(.1)*(v2-c),color="black",fontsize=14)
+t4=text("$w_0$", w1+(.15)*(w1-c),color="black",fontsize=14)
+t5=text("$w_1$", w2+(.15)*(w2-c),color="black",fontsize=14)
+t6=text("$w_2$", w3+(.15)*(w3-c),color="black",fontsize=14)
+L+L1+L2+L3+t1+t2+t3+t4+t5+t6
+        </sageplot>
+    </image>
+</figure>
 <definition xml:id="d_star_shaped">
 <title>Star-shaped sets</title>
 <statement>
@@ -150,6 +328,22 @@ Assume <m>U\subseteq \C</m> is open and star-shaped.
 </statement>
 <proof>
 <p>
+    The two statements are equivalent by <xref ref="th_antider"/>. Thus it suffices to prove (2). We will proceed in a manner much like the proof of <xref ref="th_antider"/>. Pick a star-center <m>z^*</m> of <m>U</m>.  For any <m>z\in U</m> we define <m>F(z)=\int_{\gamma_{z^*,z}}f\, dz</m>, where for any two points <m>w, w'</m> we denote by <m>\gamma_{w,w'}</m> the straight-line path between them. Note that the question of <m>F</m> being well defined does not even arise here, as we have specified an explicit path to compute the integral over. 
+</p>
+<p>
+    As in the proof of <xref ref="th_antider"/>, we first pick a <m>\delta</m> such that <m>B_{\delta}(z_0)\subseteq U</m>. As long as we can show that 
+    <men xml:id="eq_star">
+        F(z)-F(z_0)=\int_{\gamma_{z_0,z}}f\, dz
+    </men>
+    for all <m>z\in B_{\delta}(z_0)</m> the rest of the proof of <xref ref="th_antider"/> follows to show that <m>F'(z_0)=f(z_0)</m>. Showing that <xref ref="eq_star"/> holds in this situation requires a little work, however, since we cannot assume that line integrals are path independent! Instead, we make use of <xref ref="th_cauchy-goursat_triangle"/>. Using the fact that <m>U</m> is star-shaped, it is easy to see that for any <m>z\in B_{\delta}(z_0)</m>, the entire triangle <m>\Delta(z^*,z_0,z)</m> is contained in <m>U</m>. The Cauchy-Goursat theorem for triangles then applies, yielding 
+    <me>
+        0=\int_{\gamma_{z^*,z_0,z}}f\, dz=\int_{\gamma_{z^*,z_0}}f\, dz+\int_{\gamma_{z_0,z}}f\, dz+\int_{\gamma_{z,z_0}}f\, dz
+    </me>,
+    or equivalently, 
+    <me>
+        \int_{\gamma_{z_0,z}}f\, dz=\int_{\gamma_{z^*,z}}f\, dz-\int_{\gamma_{z^*,z_0}}f\, dz=F(z)-F(z_0)
+    </me>,
+    as desired.
 </p>
 </proof>
 </theorem>
@@ -178,6 +372,11 @@ for all paths <m>\gamma</m> lying in <m>U</m> and all functions <m>f</m> that ar
             Assume <m>U</m> is elementary. If <m>f</m> and <m>f'</m> are holomorphic on <m>U</m> and <m>f(z)\ne 0</m> for all <m>z\in U</m>, then there exists a holomorphic branch of <m>\mathcal{F}=\log (f(z))</m> on <m>U</m>. 
         </p>
     </statement>
+    <proof>
+        <p>
+            Left as an exercise. 
+        </p>
+    </proof>
 </corollary>
 <theorem xml:id="th_elem_regions">
 <title>Elementary region building</title>
@@ -188,21 +387,143 @@ If <m>U_1</m> and <m>U_2</m> are elementary regions, and if <m>U_1\cap U_2</m> i
 </statement>
 <proof>
 <p>
+    Left as an exercise. 
 </p>
 </proof>
 </theorem>
+<remark xml:id="rm_elementary">
+    <title>Elementary versus simply connected</title>
+    <p>
+    Starting with some simple star-shaped regions like open discs, we can use <xref ref="th_elem_regions"/> to build an extensive collection of elementary domains. Indeed for any explicit example we consider, these tools will suffice to show that a given region is in fact elementary.
+</p>
+<p>
+    That said, it is desirable to have some geometric intuition about whether an open connected set is elementary. As it turns out, there is a purely topological characterization of which subsets of <m>\C</m> are elementary: namely, <m>U\subseteq \C</m> is elementary if and only if it is open and <em>simply connected</em>. The notion of a simply connected set is a tad too technical for us to include in this course, but the intuitive idea is that an open connected set <m>U</m> is simply connected if given any two paths <m>\alpha</m> and <m>\beta</m> in <m>U</m> with the same endpoints, we can be <em>continuously deform</em> <m>\alpha</m> to <m>\beta</m> without leaving <m>U</m>. Another, even less technical intuitive description of a simply connected region is that it is connected and <em>contains no holes</em>. 
+</p>
+<p>
+   This intuitive notion of simply connected regions (and its relation to elementary regions) will suffice for our purposes. In more detail, given an open connected set <m>U</m>, we can use this intuition to identify it informally as simply connected or not, and hence as elementary or not. If it is then required of us to prove a given region actually is elementary, then we will be able to do so using <xref ref="th_elem_regions"/>. 
+</p>
+</remark>
+<figure xml:id="fig_simply_vs_not_simply_connected">
+    <caption>Simply connected versus not simply connected</caption>
+    <sidebyside valign="bottom" widths="45% 55%">
+        <figure xml:id="fig_simply_connected">
+            <caption><m>U</m> is simply connected. Any <m>\alpha</m> can be deformed to any other <m>\beta</m> with the same endpoints.</caption>
+            <image source="simply_connected.png">
+                <shortdescription>A simply connected set</shortdescription>
+            </image>
+        </figure>
+        <figure xml:id="fig_not_simply_connected">
+            <caption><m>U</m> is not simply connected. The hole prevents <m>\alpha</m> from being deformable to <m>\beta</m>. </caption>
+            <image source="not_simply_connected.png">
+                <shortdescription>A set that is not simply connected</shortdescription>
+            </image>
+        </figure>
+    </sidebyside>
+</figure>
+<p>
+    In the spirit of <xref ref="rm_elementary"/>, we state one more version of the Cauchy-Goursat theorem for connected regions bounded by piecewise smooth closed curves. Significant work must be done to show this last version follows from our previous versions. In particular, the result relies on the famous <em>Jordan curve theorem</em>, which says that if <m>\phi</m> is a closed piecewise smooth and simple parametrization of the curve <m>\mathcal{C}</m> the region within <m>\mathcal{C}</m> is simply connected. 
+</p>
 <theorem xml:id="th_cauchy_goursat_boundary">
 <title>Cauchy-Goursat: boundary curve</title>
 <statement>
 <p>
-Assume 
+Let <m>U</m> be an open and connected set whose boundary curve <m>\partial U</m> is the disjoint union of closed piecwise smooth and simple paths <m>\gamma_k</m>, <m>1\leq k\leq n</m>, and suppose further that each path <m>\phi_k</m> is positively oriented with respect to <m>U</m>. If <m>f</m> is holomorphic on <m>U</m>, then 
+<me>
+    \int_{\partial U} f\, dz=\sum_{k=1}^{n}\int_{\gamma_k}f\, dz=0
+</me>.
 </p>
 </statement>
-<proof>
-<p>
-</p>
-</proof>
 </theorem>
+<corollary xml:id="cor_cauchy_goursat_boundary">
+<title>Principle of deformation</title>
+    <statement>
+        <p>
+            Assume <m>\gamma</m> is a closed piecwise smooth and simple path with counterclockwise orientation, and assume <m>\gamma_1, \gamma_2,\dots, \gamma_n</m> are closed piecewise smooth and simple curves lying within <m>\gamma</m> and oriented counterclockwise. If <m>f</m> is holomorphic on the set <m>U</m> of all points lying inside <m>\gamma</m> and outside <m>\gamma_k</m> for all <m>k</m>, then 
+            <men xml:id="eq_deformation">
+                \int_\gamma f\, dz=\sum_{k=1}^n\int_{\gamma_k}f\, dz
+            </men>.
+        </p>
+    </statement>
+</corollary>
+<figure xml:id="fig_deformation">
+    <caption>Principle of deformation: <m>\int_\gamma f\, dz=\sum_{k=1}^n\int_{\gamma_k}f\, dz</m>.</caption>
+    <image source="deformation.png" width="75%">
+        <shortdescription>Image illustrating principle of deformation</shortdescription>
+    </image>
+</figure>
+<p>
+    We state <xref ref="th_cauchy_goursat_boundary"/> and <xref ref="cor_cauchy_goursat_boundary"/> in this level of generality as a convenience, but hasten to add that in any situation that comes up in our investigations, we will be able to derive the result rigorously simply by using <xref ref="th_cauchy_goursat_star"/> and <xref ref="th_elem_regions"/>. The following example is typical. 
+</p>
+<example xml:id="eg_deformation">
+<title>Principle of deformation</title>
+<statement>
+<p>
+Let <m>\gamma(t)=3e^{it}</m>, <m>t\in [0,2\pi]</m>. 
+<ol>
+    <li>
+        <p>
+            Show, using only <xref ref="th_cauchy_goursat_star"/> and <xref ref="th_elem_regions"/>, that <m>\int_{\gamma}1/(z-1)\, dz=\int_{\gamma'}1/(z-1)\, dz</m>, where <m>\gamma'(t)=1+e^{it}</m>, <m>t\in [0,2\pi]</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            Conclude that <m>\int_{\gamma}1/(z-1)\, dz=2\pi i</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Express the real and imaginary parts of <m>\int_{\gamma}1/(z-1)\, dz</m> as real integrals over <m>[0,2\pi]</m> to derive an interesting integral formula. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol>
+    <li>
+        <p>
+            Note first that <m>f</m> is holomorphic on <m>\C-\{1\}</m>. Let <m>\alpha</m> and <m>\beta</m> be the closed paths starting at the point <m>3</m> pictured in <xref ref="fig_eg_deform"/>. Since <m>\alpha</m> is closed and lies within the elementary region <m>U=\C-\{1-ti\colon t\geq 0\}</m>, and since <m>\beta</m> is closed and lies within the elementary region <m>V=\C-\{1+ti\colon t\geq 0\}</m>, and since <m>f</m> is holomorphic in both of these regions, we have 
+            <me>
+                \int_\alpha f\, dz=\int_\beta f\, dz=0
+            </me>.
+            Furthermore, letting <m>\gamma''=\alpha*\beta</m>, we have on the one hand 
+            <me>
+                \int_{\gamma''}f\, dz=\int_{\alpha} f\ , dz+\int_{\beta} f\, dz=0
+            </me>,
+            and on the other hand, thanks to the cancellation along the real line segments, 
+            <me>
+                \int_{\gamma''}f\, dz=\int_\gamma f\, dz+\int_{-\gamma'}f\, dz
+            </me>.
+            It follows that <m>0=\int_{\gamma}f\, dz+\int_{-\gamma'}f\, dz</m>, or equivalently,  
+            <me>
+                \int_{\gamma}f\, dz=-\int_{-\gamma'}f\, dz=\int_{\gamma'}f\, dz
+            </me>,
+            as claimed.             
+        </p>
+    </li>
+    <li>
+        <p>
+            This follows from the classic integral formula <m>\int_{\gamma}1/(z-z_0)\, dz=2\pi i</m>, for <m>\gamma(t)=z_0+re^{it}</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            
+        </p>
+    </li>
+</ol>
+</p>
+</solution>
+</example>
+<figure xml:id="fig_eg_deform">
+    <caption>Method for simple principle of deformation examples</caption>
+    <image source="eg_deform.png" width="60%">
+        <shortdescription>Two paths alpha and beta related to paths gamma and gamma prime</shortdescription>
+    </image>
+</figure>
+
+
 
 
 
