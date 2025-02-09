@@ -472,7 +472,7 @@ Let <m>\gamma(t)=3e^{it}</m>, <m>t\in [0,2\pi]</m>.
     </li>
     <li>
         <p>
-            Express the real and imaginary parts of <m>\int_{\gamma}1/(z-1)\, dz</m> as real integrals over <m>[0,2\pi]</m> to derive an interesting integral formula. 
+            Express the real and imaginary parts of <m>\int_{\gamma}1/(z-1)\, dz</m> as real integrals over <m>[0,2\pi]</m> to derive some interesting integral formulas. 
         </p>
     </li>
 </ol>
@@ -509,7 +509,18 @@ Let <m>\gamma(t)=3e^{it}</m>, <m>t\in [0,2\pi]</m>.
     </li>
     <li>
         <p>
-            
+            Using the explicit definition of the integral, we have 
+            <md>
+                <mrow>2\pi i \amp = \int_\gamma 1/(z-1)\, dz</mrow>
+                <mrow> \amp = \int_0^{2\pi}\gamma'(t)/(\gamma(t)-1)\, dt</mrow>
+                <mrow> \amp = \int_0^{2\pi}\frac{3ie^{it}}{3e^{it}-1}\, dt</mrow>
+                <mrow> \amp = 3i\left( \int_0^{2\pi} \frac{3-\cos t}{10-6\cos t}\, dt-i\int_0^{2\pi}\frac{\sin t}{10-6\cos t}\, dt\right)</mrow>
+            </md>.
+            It follows that 
+            <md>
+                <mrow>\frac{2\pi}{3} \amp = \int_0^{2\pi} \frac{3-\cos t}{10-6\cos t}\, dt</mrow>
+                <mrow>0 \amp = \int_0^{2\pi} \frac{\sin t}{10-6\cos t}\, dt</mrow>
+            </md>.
         </p>
     </li>
 </ol>
