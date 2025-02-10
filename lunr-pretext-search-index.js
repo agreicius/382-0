@@ -2140,7 +2140,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.13",
   "title": "Complex line integrals",
-  "body": " Complex line integrals   Paths and their images  From now on we reserve the right to conflate a path with its image . We will take care not to abuse this privilege.    Complex line integral   Let be smooth path. Given a complex function defined on , the integral of over , denoted , is defined as , provided this integral exists.  If is the concatenation of smooth curves , , then we define . Integrals as in or are called complex line integrals (or complex contour integrals ).     Connection with Riemann integral  It can be shown that the complex line integral for a piecewise smooth curve has an equivalent definition as the limit of Riemann-like sums of the form , where the points partition the curve into curve segments whose arc lengths approach zero as . In this sense the complex line integral over a general smoothly parametrized curve in can be seen directly as an extension of the Riemann integral of function along a line segment .    Classic line integral   Fix . Show that , where , .  More generally, show that for any fixed , where , .        Fix a piecewise smooth complex path . Since the line integral is defined as the complex-valued function integral , all the usual properties of integration also hold for complex line integrals. For example:    for any -integrable functions and complex constants .     for any -integrable function .    If is a reparametrization of , then for all -integrable functions .   We also have a fundamental theorem of calculus for line integrals.   Line integrals: fundamental theorem of calculus   Let be piecewise smooth, let be an open set containing , and suppose is continuous. If satisfies for all , then , where and are the initial and terminal points of , respectively.         Line integral: FTC   Let be a piecewise smooth closed curve. Prove: .         Antiderivative   Let be a complex function defined on the open set . An antiderivative of on is a complex function satisfying for all .      Let be a complex function that is continuous on the open set . If has an antiderivative on , then for any piecewise smooth curve with image lying in .     ML-inequality   Let be piecewise smooth, and let be the arclength of . If is -integrable and satisfies for all , then .        "
+  "body": " Complex line integrals   Paths and their images  From now on we reserve the right to conflate a path with its image . We will take care not to abuse this privilege.    Complex line integral   Let be smooth path. Given a complex function defined on , the integral of over , denoted , is defined as , provided this integral exists.  If is the concatenation of smooth curves , , then we define . Integrals as in or are called complex line integrals (or complex contour integrals ).     Connection with Riemann integral  It can be shown that the complex line integral for a piecewise smooth curve has an equivalent definition as the limit of Riemann-like sums of the form , where the points partition the curve into curve segments whose arc lengths approach zero as . In this sense the complex line integral over a general smoothly parametrized curve in can be seen directly as an extension of the Riemann integral of function along a line segment .    Classic line integral   Fix . Show that , where , .  More generally, show that for any fixed , where , .        Fix a piecewise smooth complex path . Since the line integral is defined as the complex-valued function integral , all the usual properties of integration also hold for complex line integrals. For example:    for any -integrable functions and complex constants .     for any -integrable function .    If is a reparametrization of , then for all -integrable functions .   We also have a fundamental theorem of calculus for line integrals.   Line integrals: fundamental theorem of calculus   Let be piecewise smooth, let be an open set containing , and suppose is continuous. If satisfies for all , then , where and are the initial and terminal points of , respectively.         Line integral: FTC   Let be a piecewise smooth closed curve. Prove: .         Antiderivative   Let be a complex function defined on the open set . An antiderivative of on is a complex function satisfying for all .      Let be a complex function that is continuous on the open set . If has an antiderivative on , then for any closed piecewise smooth curve with image lying in .     ML-inequality   Let be piecewise smooth, and let be the arclength of . If is -integrable and satisfies for all , then .        "
 },
 {
   "id": "s_line_integral-2",
@@ -2212,7 +2212,7 @@ var ptx_lunr_docs = [
   "type": "Corollary",
   "number": "1.13.8",
   "title": "",
-  "body": "  Let be a complex function that is continuous on the open set . If has an antiderivative on , then for any piecewise smooth curve with image lying in .   "
+  "body": "  Let be a complex function that is continuous on the open set . If has an antiderivative on , then for any closed piecewise smooth curve with image lying in .   "
 },
 {
   "id": "th_mod_ineq_line_int",
@@ -2419,7 +2419,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.15",
   "title": "Cauchy integral formula",
-  "body": " Cauchy integral formula    Assume is continuous on an open set containing . For each let , . We have .     Cauchy-integral theorem   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have          Cauchy Integral formula   Compute , where the triangular closed path , where , to , to          Cauchy integral formula: cosine   Compute .        "
+  "body": " Cauchy integral formula    Assume is continuous on an open set containing . For each let , . We have .     Cauchy-integral formula   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have          Cauchy Integral formula   Compute , where the triangular closed path , where , to , to          Cauchy integral formula: cosine   Compute .        "
 },
 {
   "id": "lemma_cauchy_integral",
@@ -2436,8 +2436,8 @@ var ptx_lunr_docs = [
   "url": "s_cauchy_integral_formula.html#",
   "type": "Theorem",
   "number": "1.15.2",
-  "title": "Cauchy-integral theorem.",
-  "body": " Cauchy-integral theorem   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have        "
+  "title": "Cauchy-integral formula.",
+  "body": " Cauchy-integral formula   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have        "
 },
 {
   "id": "eg_cauchy_integral",
