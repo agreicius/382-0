@@ -391,6 +391,37 @@ If <m>U_1</m> and <m>U_2</m> are elementary regions, and if <m>U_1\cap U_2</m> i
 </p>
 </proof>
 </theorem>
+<example xml:id="eg_elem_regions">
+<title>Start-shaped and elementary regions</title>
+<statement>
+<p>
+It is not difficult to show that the following regions are star-shaped: 
+<ul>
+    <li>
+        <p>
+            <m>\C-R_{\alpha}</m>, <m>\alpha\in \R</m>,
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\{z\in \C\colon \abs{z}&gt; r, \pi/2-\alpha&lt; \Arg_{0} z&lt; \pi/2+\alpha\}</m>, <m>r&gt; 0</m>, <m>0&lt; \alpha &lt; \pi/2</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>\{z\in \C\colon  r &lt; \abs{z}&lt; R, \pi/2-\alpha&lt; \Arg_{0} z&lt; \pi/2+\alpha\}</m>, 
+        </p>
+    </li>
+</ul>
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
 <remark xml:id="rm_elementary">
     <title>Elementary versus simply connected</title>
     <p>
