@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_cauchy_integral_formula" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Cauchy integral formula</title>
+    <lemma xml:id="lemma_cauchy_integral">
+        <statement>
+            <p>
+            Assume <m>f</m> is continuous on an open set <m>U</m> containing <m>z_0</m>. For each <m>r&gt; 0</m> let <m>\gamma_r=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m>. We have 
+            <men xml:id="eq_lemma_cauchy_integral">
+                \lim\limits_{r\to 0}\int_{\gamma_r}\frac{f(z)}{z-z_0}\, dz=2\pi i f(z_0)
+            </men>.
+            </p>
+        </statement>
+    </lemma>
+    <theorem xml:id="">
+    <title>Cauchy-integral theorem</title>
+    <statement>
+    <p>
+    Assume <m>f</m> is holomorphic on an open set <m>U</m> containing the <m>z_0</m>, suppose <m>\overline{B}_r(z_0)\subseteq U</m> for some <m>r&gt; 0</m>, and let <m>\gamma=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m>. For any <m>w\in B_{r}(z_0)</m> we have 
+    <men xml:id="eq_cauchy_integral">
+        f(w)=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{z-w}\, dz
+    </men>
+    
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <example xml:id="eg_cauchy_integral">
+    <title>Cauchy Integral formula</title>
+    <statement>
+    <p>
+    Compute <m>\int_\gamma \frac{e^{-z^2-1}}{z^2+6z+5}\, dz</m>, where <m>\gamma</m> the triangular closed path <m>\gamma_{(z_0,z_1,z_2)}</m>, where  <m>z_0=2-i</m>, to <m>z_1=-1+1</m>, to <m>z_2=-3-i</m>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_cauchy_integral_2">
+    <title>Cauchy integral formula: cosine</title>
+    <statement>
+    <p>
+    Compute <m>\int_0^{2\pi}\frac{1}{2-\cos t}\, dt</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
+    
+
+</section>
