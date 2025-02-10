@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Math 382-0</title>
+<title>Cauchy integral formula</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -345,7 +345,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><span class="up-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></span><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_cauchy_goursat.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -512,9 +512,9 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="c_complex_analysis.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Analysis</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_arithmetic.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Complex arithmetic</span></a></div>
 <ul class="structural toc-item-list">
@@ -607,7 +607,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_cauchy_goursat.html#ss_cauchy_goursat" class="internal"><span class="title">Cauchy-Goursat theorems</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_formula.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Cauchy integral formula</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_cauchy_integral_formula.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Cauchy integral formula</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -622,14 +622,42 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="book" id="kursobjekt"><nav class="summary-links"><ul>
-<li><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></li>
-<li><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></li>
-<li><a href="c_complex_analysis.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Analysis</span></a></li>
-<li><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></li>
-</ul></nav></section></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_cauchy_integral_formula"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.15</span><span class="space"> </span><span class="title">Cauchy integral formula</span>
+</h2>
+<article class="lemma theorem-like" id="lemma_cauchy_integral"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.15.1</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="lemma_cauchy_integral-1-1">
+<div class="para">Assume <span class="process-math">\(f\)</span> is continuous on an open set <span class="process-math">\(U\)</span> containing <span class="process-math">\(z_0\text{.}\)</span> For each <span class="process-math">\(r&gt; 0\)</span> let <span class="process-math">\(\gamma_r=z_0+re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="eq_lemma_cauchy_integral">
+\begin{equation}
+\lim\limits_{r\to 0}\int_{\gamma_r}\frac{f(z)}{z-z_0}\, dz=2\pi i f(z_0)\text{.}\tag{1.60}
+\end{equation}
+</div>
+</div></article><article class="theorem theorem-like" id=""><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.15.2</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-integral theorem.</span>
+</h3>
+<div class="para logical" id="-2-1">
+<div class="para">Assume <span class="process-math">\(f\)</span> is holomorphic on an open set <span class="process-math">\(U\)</span> containing the <span class="process-math">\(z_0\text{,}\)</span> suppose <span class="process-math">\(\overline{B}_r(z_0)\subseteq U\)</span> for some <span class="process-math">\(r&gt; 0\text{,}\)</span> and let <span class="process-math">\(\gamma=z_0+re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> For any <span class="process-math">\(w\in B_{r}(z_0)\)</span> we have</div>
+<div class="displaymath process-math" id="eq_cauchy_integral">
+\begin{equation}
+f(w)=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{z-w}\, dz\tag{1.61}
+\end{equation}
+</div>
+</div></article><details id="-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="-3-1"></div></article></details><article class="example example-like" id="eg_cauchy_integral"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.15.3</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy Integral formula.</span>
+</h3>
+<div class="para" id="eg_cauchy_integral-2-1">Compute <span class="process-math">\(\int_\gamma \frac{e^{-z^2-1}}{z^2+6z+5}\, dz\text{,}\)</span> where <span class="process-math">\(\gamma\)</span> the triangular closed path <span class="process-math">\(\gamma_{(z_0,z_1,z_2)}\text{,}\)</span> where  <span class="process-math">\(z_0=2-i\text{,}\)</span> to <span class="process-math">\(z_1=-1+1\text{,}\)</span> to <span class="process-math">\(z_2=-3-i\)</span>
+</div>
+<div class="solutions"><details id="eg_cauchy_integral-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_cauchy_integral-3-1"></div></div></details></div></article><article class="example example-like" id="eg_cauchy_integral_2"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.15.4</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy integral formula: cosine.</span>
+</h3>
+<div class="para" id="eg_cauchy_integral_2-2-1">Compute <span class="process-math">\(\int_0^{2\pi}\frac{1}{2-\cos t}\, dt\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_cauchy_integral_2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_cauchy_integral_2-3-1"></div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
-<span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="frontmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_cauchy_goursat.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

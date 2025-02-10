@@ -2413,6 +2413,51 @@ var ptx_lunr_docs = [
   "body": " Method for simple principle of deformation examples   Two paths alpha and beta related to paths gamma and gamma prime   "
 },
 {
+  "id": "s_cauchy_integral_formula",
+  "level": "1",
+  "url": "s_cauchy_integral_formula.html",
+  "type": "Section",
+  "number": "1.15",
+  "title": "Cauchy integral formula",
+  "body": " Cauchy integral formula    Assume is continuous on an open set containing . For each let , . We have .     Cauchy-integral theorem   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have          Cauchy Integral formula   Compute , where the triangular closed path , where , to , to          Cauchy integral formula: cosine   Compute .        "
+},
+{
+  "id": "lemma_cauchy_integral",
+  "level": "2",
+  "url": "s_cauchy_integral_formula.html#lemma_cauchy_integral",
+  "type": "Lemma",
+  "number": "1.15.1",
+  "title": "",
+  "body": "  Assume is continuous on an open set containing . For each let , . We have .   "
+},
+{
+  "id": "",
+  "level": "2",
+  "url": "s_cauchy_integral_formula.html#",
+  "type": "Theorem",
+  "number": "1.15.2",
+  "title": "Cauchy-integral theorem.",
+  "body": " Cauchy-integral theorem   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have        "
+},
+{
+  "id": "eg_cauchy_integral",
+  "level": "2",
+  "url": "s_cauchy_integral_formula.html#eg_cauchy_integral",
+  "type": "Example",
+  "number": "1.15.3",
+  "title": "Cauchy Integral formula.",
+  "body": " Cauchy Integral formula   Compute , where the triangular closed path , where , to , to        "
+},
+{
+  "id": "eg_cauchy_integral_2",
+  "level": "2",
+  "url": "s_cauchy_integral_formula.html#eg_cauchy_integral_2",
+  "type": "Example",
+  "number": "1.15.4",
+  "title": "Cauchy integral formula: cosine.",
+  "body": " Cauchy integral formula: cosine   Compute .       "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
