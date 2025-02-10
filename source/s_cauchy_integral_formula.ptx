@@ -13,7 +13,7 @@
         </statement>
     </lemma>
     <theorem xml:id="">
-    <title>Cauchy-integral theorem</title>
+    <title>Cauchy-integral formula</title>
     <statement>
     <p>
     Assume <m>f</m> is holomorphic on an open set <m>U</m> containing the <m>z_0</m>, suppose <m>\overline{B}_r(z_0)\subseteq U</m> for some <m>r&gt; 0</m>, and let <m>\gamma=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m>. For any <m>w\in B_{r}(z_0)</m> we have 
@@ -32,7 +32,7 @@
     <title>Cauchy Integral formula</title>
     <statement>
     <p>
-    Compute <m>\int_\gamma \frac{e^{-z^2-1}}{z^2+6z+5}\, dz</m>, where <m>\gamma</m> the triangular closed path <m>\gamma_{(z_0,z_1,z_2)}</m>, where  <m>z_0=2-i</m>, to <m>z_1=-1+1</m>, to <m>z_2=-3-i</m>
+    Compute <m>\int_\gamma \frac{e^{z^2-1}}{z^2+6z+5}\, dz</m>, where <m>\gamma</m> the triangular closed path <m>\gamma_{(z_0,z_1,z_2)}</m>, where  <m>z_0=2-i</m>, to <m>z_1=-1+1</m>, to <m>z_2=-3-i</m>
     </p>
     </statement>
     <solution>

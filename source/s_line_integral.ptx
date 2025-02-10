@@ -131,7 +131,7 @@ Let <m>f</m> be a complex function defined on the open set <m>U</m>. An <term>an
         <me>
             \int_\gamma f\, dz=0
         </me>
-        for any piecewise smooth curve <m>\gamma</m> with image lying in <m>U</m>.
+        for any closed piecewise smooth curve <m>\gamma</m> with image lying in <m>U</m>.
         </p>
     </statement>
 </corollary>
