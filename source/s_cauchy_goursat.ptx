@@ -392,10 +392,10 @@ If <m>U_1</m> and <m>U_2</m> are elementary regions, and if <m>U_1\cap U_2</m> i
 </proof>
 </theorem>
 <example xml:id="eg_elem_regions">
-<title>Start-shaped and elementary regions</title>
+<title>Star-shaped and elementary regions</title>
 <statement>
 <p>
-It is not difficult to show that the following regions are star-shaped: 
+It is not difficult to show that the following regions (and thus any transformations thereof by a rigid motion) are star-shaped: 
 <ul>
     <li>
         <p>
@@ -409,17 +409,39 @@ It is not difficult to show that the following regions are star-shaped:
     </li>
     <li>
         <p>
-            <m>\{z\in \C\colon  r &lt; \abs{z}&lt; R, \pi/2-\alpha&lt; \Arg_{0} z&lt; \pi/2+\alpha\}</m>, 
+            <m>\{z\in \C\colon  r &lt; \abs{z}&lt; R, \pi/2-\alpha&lt; \Arg_{0} z&lt; \pi/2+\alpha\}</m>, <m>0&lt; r &lt; R</m>, <m>0&lt; \alpha &lt; \pi/2</m>. 
         </p>
     </li>
 </ul>
 </p>
-</statement>
-<solution>
+<figure xml:id="fig_star_shaped">
+    <caption>Star-shaped regions</caption>
+    <image source="star_shape_regions.png">
+        <shortdescription>Three different star-shaped regions</shortdescription>
+    </image>
+</figure>
 <p>
-
+    It follows from <xref ref="th_elem_regions"/> the following region types (and any transformation thereof by a rigid motion) are elementary:
+<ul>
+    <li>
+        <p>
+            <m>\{z\in \C\colon  r &lt; \abs{z}&lt; R, \alpha&lt; \Arg_{0} z&lt; \beta\}</m>, <m>0&lt; r &lt; R</m>, <m>0&lt; \alpha &lt; \beta\leq 2\pi</m>,    
+        </p>
+    </li>
+    <li>
+        <p>
+             <m>\{z\in \C\colon  r &lt; \abs{z}&lt; R, \Arg_0 z\ne \alpha\}</m>, <m>0&lt; r &lt; R</m>, <m>0&lt; \alpha \leq 2\pi</m>.
+        </p>
+    </li>
+</ul>
 </p>
-</solution>
+<figure xml:id="fig_elem_regions">
+    <caption>Elementary regions built from star-shaped regions</caption>
+    <image source="elem_regions.png">
+        <shortdescription>Elementary regions built from star-shaped regions</shortdescription>
+    </image>
+</figure>
+</statement>
 </example>
 
 <remark xml:id="rm_elementary">
@@ -458,7 +480,7 @@ It is not difficult to show that the following regions are star-shaped:
 <title>Cauchy-Goursat: boundary curve</title>
 <statement>
 <p>
-Let <m>U</m> be an open and connected set whose boundary curve <m>\partial U</m> is the disjoint union of closed piecwise smooth and simple paths <m>\gamma_k</m>, <m>1\leq k\leq n</m>, and suppose further that each path <m>\phi_k</m> is positively oriented with respect to <m>U</m>. If <m>f</m> is holomorphic on <m>U</m>, then 
+Let <m>U</m> be an open and connected set whose boundary curve <m>\partial U</m> is the disjoint union of closed piecwise smooth and simple paths <m>\gamma_k</m>, <m>1\leq k\leq n</m>, and suppose further that each path <m>\phi_k</m> is positively oriented with respect to <m>U</m>. If <m>f</m> is holomorphic on <m>U</m> and <m>\partial U</m>, then 
 <me>
     \int_{\partial U} f\, dz=\sum_{k=1}^{n}\int_{\gamma_k}f\, dz=0
 </me>.
@@ -469,7 +491,7 @@ Let <m>U</m> be an open and connected set whose boundary curve <m>\partial U</m>
 <title>Principle of deformation</title>
     <statement>
         <p>
-            Assume <m>\gamma</m> is a closed piecwise smooth and simple path with counterclockwise orientation, and assume <m>\gamma_1, \gamma_2,\dots, \gamma_n</m> are closed piecewise smooth and simple curves lying within <m>\gamma</m> and oriented counterclockwise. If <m>f</m> is holomorphic on the set <m>U</m> of all points lying inside <m>\gamma</m> and outside <m>\gamma_k</m> for all <m>k</m>, then 
+            Assume <m>\gamma</m> is a closed piecwise smooth and simple path with counterclockwise orientation, and assume <m>\gamma_1, \gamma_2,\dots, \gamma_n</m> are closed piecewise smooth and simple curves lying within <m>\gamma</m> and oriented counterclockwise. If <m>f</m> is holomorphic on the set <m>U</m> of all points lying inside or on <m>\gamma</m> and outside or on <m>\gamma_k</m> for all <m>k</m>, then 
             <men xml:id="eq_deformation">
                 \int_\gamma f\, dz=\sum_{k=1}^n\int_{\gamma_k}f\, dz
             </men>.
