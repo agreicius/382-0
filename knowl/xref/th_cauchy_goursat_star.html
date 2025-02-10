@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.7</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Goursat: star-shaped regions.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.8</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Goursat: star-shaped regions.</span>
 </h4>
 <div class="para logical">
 <div class="para">Assume <span class="process-math">\(U\subseteq \C\)</span> is open and star-shaped.</div>
@@ -26,6 +26,27 @@
 </div>
 </li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_cauchy_goursat.html#th_cauchy_goursat_star">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para">The two statements are equivalent by <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a>. Thus it suffices to prove (2). We will proceed in a manner much like the proof of <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a>. Pick a star-center <span class="process-math">\(z^*\)</span> of <span class="process-math">\(U\text{.}\)</span>  For any <span class="process-math">\(z\in U\)</span> we define <span class="process-math">\(F(z)=\int_{\gamma_{z^*,z}}f\, dz\text{,}\)</span> where for any two points <span class="process-math">\(w, w'\)</span> we denote by <span class="process-math">\(\gamma_{w,w'}\)</span> the straight-line path between them. Note that the question of <span class="process-math">\(F\)</span> being well defined does not even arise here, as we have specified an explicit path to compute the integral over.</div>
+<div class="para logical">
+<div class="para">As in the proof of <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a>, we first pick a <span class="process-math">\(\delta\)</span> such that <span class="process-math">\(B_{\delta}(z_0)\subseteq U\text{.}\)</span> As long as we can show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_antider.html ./knowl/xref/eq_star.html ./knowl/xref/th_cauchy-goursat_triangle.html">
+\begin{equation}
+F(z)-F(z_0)=\int_{\gamma_{z_0,z}}f\, dz\tag{1.58}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(z\in B_{\delta}(z_0)\)</span> the rest of the proof of <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a> follows to show that <span class="process-math">\(F'(z_0)=f(z_0)\text{.}\)</span> Showing that <a href="s_cauchy_goursat.html#eq_star" class="xref" data-knowl="./knowl/xref/eq_star.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.58">(1.58)</a> holds in this situation requires a little work, however, since we cannot assume that line integrals are path independent! Instead, we make use of <a href="s_cauchy_goursat.html#th_cauchy-goursat_triangle" class="xref" data-knowl="./knowl/xref/th_cauchy-goursat_triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.4: Cauchy-Goursat: triangles">Theorem 1.14.4</a>. Using the fact that <span class="process-math">\(U\)</span> is star-shaped, it is easy to see that for any <span class="process-math">\(z\in B_{\delta}(z_0)\text{,}\)</span> the entire triangle <span class="process-math">\(\Delta(z^*,z_0,z)\)</span> is contained in <span class="process-math">\(U\text{.}\)</span> The Cauchy-Goursat theorem for triangles then applies, yielding</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_antider.html ./knowl/xref/eq_star.html ./knowl/xref/th_cauchy-goursat_triangle.html">
+\begin{equation*}
+0=\int_{\gamma_{z^*,z_0,z}}f\, dz=\int_{\gamma_{z^*,z_0}}f\, dz+\int_{\gamma_{z_0,z}}f\, dz+\int_{\gamma_{z,z_0}}f\, dz\text{,}
+\end{equation*}
+</div>
+<div class="para">or equivalently,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_antider.html ./knowl/xref/eq_star.html ./knowl/xref/th_cauchy-goursat_triangle.html">
+\begin{equation*}
+\int_{\gamma_{z_0,z}}f\, dz=\int_{\gamma_{z^*,z}}f\, dz-\int_{\gamma_{z^*,z_0}}f\, dz=F(z)-F(z_0)\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_cauchy_goursat.html#th_cauchy_goursat_star">in-context</a></span>
 </body>
 </html>

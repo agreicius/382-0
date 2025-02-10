@@ -319,6 +319,12 @@ eBookConfig.enable_chatcodes =  false;
 #th_cauchy_goursat_star-2-1-2 { counter-set: th_cauchy_goursat_star-2-1-2 0; }
 #th_cauchy_goursat_star-2-1-2 > li::marker { content: ""counter(th_cauchy_goursat_star-2-1-2,decimal)"."; }
 #th_cauchy_goursat_star-2-1-2 > li { counter-increment: th_cauchy_goursat_star-2-1-2; }
+#eg_deformation-2-1-3 { counter-set: eg_deformation-2-1-3 0; }
+#eg_deformation-2-1-3 > li::marker { content: ""counter(eg_deformation-2-1-3,decimal)"."; }
+#eg_deformation-2-1-3 > li { counter-increment: eg_deformation-2-1-3; }
+#eg_deformation-3-1-1 { counter-set: eg_deformation-3-1-1 0; }
+#eg_deformation-3-1-1 > li::marker { content: ""counter(eg_deformation-3-1-1,decimal)"."; }
+#eg_deformation-3-1-1 > li { counter-increment: eg_deformation-3-1-1; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -674,7 +680,70 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para">as desired.</div>
 </div></article><article class="case" id="th_antider-3-3"><h5 class="heading">Implication: (3)<span class="process-math">\(\implies\)</span>(1).</h5>
-<div class="para" id="th_antider-3-3-2"></div></article></article></details></section><section class="subsection" id="ss_cauchy_goursat"><h3 class="heading hide-type">
+<div class="para logical" id="th_antider-3-3-2">
+<div class="para">Pick any element <span class="process-math">\(z^*\in U\text{.}\)</span> Since <span class="process-math">\(U\)</span> is open and connected,  it is polygonally connected. Thus for any <span class="process-math">\(z\in U\)</span> there exists a polygonal path beginning at <span class="process-math">\(z^*\)</span> and ending at <span class="process-math">\(z\text{.}\)</span> We define the function <span class="process-math">\(F\colon U\rightarrow \C\)</span> as</div>
+<div class="displaymath process-math" id="eq_antider">
+\begin{equation}
+F(z)=\int_{z^*}^z f\, dz\text{,}\tag{1.54}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\int_{z^*}^z f\, dz\)</span> denotes the contour integral along <em class="emphasis">any</em> polygonal path from <span class="process-math">\(z^*\)</span> to <span class="process-math">\(z\text{.}\)</span> Since we assume that line integrals of <span class="process-math">\(f\)</span> are path independent, our function <span class="process-math">\(F\)</span> is well-defined: i.e., <span class="process-math">\(F(z)\)</span> does indeed return a single well-defined value, no matter which path you choose. It remains to show that <span class="process-math">\(F\)</span> is an antiderivative of <span class="process-math">\(f\)</span> on <span class="process-math">\(U\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="th_antider-3-3-3">
+<div class="para">Pick any <span class="process-math">\(z_0\in U\text{.}\)</span> Firstly, since <span class="process-math">\(U\)</span> is open we can find a <span class="process-math">\(\delta&gt; 0\)</span> such that <span class="process-math">\(B_{\delta}(z_0)\subseteq U\text{.}\)</span> We will prove that <span class="process-math">\(F'(z_0)\)</span> by showing that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(z)-F(z_0)=f(z_0)(z-z_0)+r(z)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in B_{\delta}(z_0)\text{,}\)</span> where <span class="process-math">\(r(z)\)</span> satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{z\to z_0}\frac{\abs{r(z)}}{\abs{z-z_0}}=0\text{.}
+\end{equation*}
+</div>
+<div class="para">To this end note that for all <span class="process-math">\(z\in B_{\delta}(z_0)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="th_antider-3-3-3-11">
+\begin{align*}
+F(z)-F(z_0) \amp = \int_{z^*}^zf\, dz-\int_{z^*}^{z_0} f\, dz\\
+\amp = \int_{z^*}^{z_0}f\, dz +\int_{\gamma_{z_0,z}}f\, dz-\int_{z^*}^{z_0}f\, dz\\
+\amp = \int_{\gamma_{z_0,z}}f\, dz \text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\gamma_{z0,z1}\)</span> is the straight line path from <span class="process-math">\(z_0\)</span> to <span class="process-math">\(z\text{.}\)</span> Next, we have</div>
+<div class="displaymath process-math" id="th_antider-3-3-3-15">
+\begin{align*}
+\int_{\gamma_{z_0,z}}f\, dz \amp = \int_{\gamma_{z_0,z}}f(z_0)+f(z)-f(z_0)\, dz\\
+\amp = \int_{\gamma_{z_0,z}}f(z_0)\, dz+\int_{\gamma_{z_0,z}}f(z)-f(z_0)\, dz\\
+\amp =f(z_0)(z-z_0)+\int_{\gamma_{z_0,z}}f(z)-f(z_0)\, dz\text{,}
+\end{align*}
+</div>
+<div class="para">where the last step follows from the fact that <span class="process-math">\(G(z)=z\)</span> is an antiderivative of <span class="process-math">\(1\text{,}\)</span> and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\gamma_{z_0,z}}f(z_0)\, dz=f(z_0)\int_{\gamma_{z_0,z}}1\, dz=f(z_0)(z-z_0)\text{,}
+\end{equation*}
+</div>
+<div class="para">by the fundamental theorem of calculus for line integrals.</div>
+</div>
+<div class="para logical" id="th_antider-3-3-4">
+<div class="para">Letting <span class="process-math">\(r(z)=\int_{z_0,z}f(z)-f(z_0)\, dz\text{,}\)</span> we then have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(z)-F(z_0)=f(z_0)(z-z_0)+r(z)\text{.}
+\end{equation*}
+</div>
+<div class="para">It remains to show that <span class="process-math">\(\lim\limits_{z\to z_0}\abs{r(z)}/{\abs{z-z_0}}=0\text{.}\)</span> To this end, given any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> shrink <span class="process-math">\(\delta\)</span> as necessary so that <span class="process-math">\(\abs{z-z_0}&lt; \delta\)</span> implies <span class="process-math">\(\abs{f(z)-f(z)}&lt; \epsilon\text{.}\)</span> We then have</div>
+<div class="displaymath process-math" id="th_antider-3-3-4-8">
+\begin{align*}
+\frac{\abs{r(z)}}{\abs{z-z_0}} \amp = \frac{\abs{\int_{z_0,z}f\, dz}}{\abs{z-z_0}} \\
+\amp \leq \frac{\epsilon \abs{z-z_0}}{\abs{z-z_0}} \amp (ML-\text{ineq.})\\
+\amp \leq \epsilon\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(\epsilon\)</span> was abribitrary, we see that <span class="process-math">\(\lim\limits_{z\to z_0}\abs{r(z)}/\abs{z-z_0}=0\text{,}\)</span> as desired.</div>
+</div></article></article></details></section><section class="subsection" id="ss_cauchy_goursat"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Cauchy-Goursat theorems</span>
 </h3>
 <article class="convention remark-like" id="ss_cauchy_goursat-2"><h4 class="heading">
@@ -687,7 +756,7 @@ eBookConfig.enable_chatcodes =  false;
 \gamma_{(z_1,z_2)}*\gamma_{(z_2,z_3)}*\gamma_{(z_3,z_0)}\text{,}
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\gamma_{(z_i,z_j)}\)</span> denotes a simple straight-line path from <span class="process-math">\(z_i\)</span> to <span class="process-math">\(z_k\text{.}\)</span> We denote by <span class="process-math">\(\triangle z_0,z_1,z_2\)</span> the triangular region consisting of <span class="process-math">\(\gamma_{(z_1,z_2,z_3)}\)</span> and all points lying within it. It is easy to see that <span class="process-math">\(\triangle=\triangle z_0,z_1,z_2\)</span> is closed and that <span class="process-math">\(\partial \triangle=\gamma_{(z_1,z_2,z_3)}\text{.}\)</span>
+<div class="para">where <span class="process-math">\(\gamma_{(z_i,z_j)}\)</span> denotes a simple straight-line path from <span class="process-math">\(z_i\)</span> to <span class="process-math">\(z_k\text{.}\)</span> We denote by <span class="process-math">\(\triangle(z_0,z_1,z_2)\)</span> the triangular region consisting of <span class="process-math">\(\gamma_{(z_1,z_2,z_3)}\)</span> and all points lying within it. It is easy to see that <span class="process-math">\(\triangle=\triangle(z_0,z_1,z_2)\)</span> is closed and that <span class="process-math">\(\partial \triangle=\gamma_{(z_1,z_2,z_3)}\text{.}\)</span>
 </div>
 </div></article><article class="theorem theorem-like" id="th_cauchy-goursat_triangle"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.4</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Goursat: triangles.</span>
@@ -699,15 +768,131 @@ eBookConfig.enable_chatcodes =  false;
 \int_{\gamma_{(z_0,z_1,z_2)}}f\, dz=0\text{.}
 \end{equation*}
 </div>
-</div></article><details id="th_cauchy-goursat_triangle-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cauchy-goursat_triangle-3-1"></div></article></details><article class="definition definition-like" id="d_star_shaped"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.14.5</span><span class="period">.</span><span class="space"> </span><span class="title">Star-shaped sets.</span>
+</div></article><details id="th_cauchy-goursat_triangle-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cauchy-goursat_triangle-3-1">We give a near complete proof, save for one unproved fact about closed and bounded sets (aka., <em class="emphasis">compact sets</em>). Let <span class="process-math">\(\Delta=\Delta(z_0,z_1,z_2)\)</span> and let <span class="process-math">\(\gamma=\gamma_{(z_0,z_1,z_2)}\text{.}\)</span>
+</div>
+<article class="case" id="th_cauchy-goursat_triangle-3-2"><h5 class="heading">Idea: compare <span class="process-math">\(\int_\gamma f\, dz\)</span> with integral over smaller triangles.</h5>
+<div class="para logical" id="th_cauchy-goursat_triangle-3-2-2">
+<div class="para">Let <span class="process-math">\(w_0,w_1,w_2\)</span> be the midpoints of the sides <span class="process-math">\(\Delta\)</span> and consider the four closed paths</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_cauchy-goursat.html" id="th_cauchy-goursat_triangle-3-2-2-3">
+\begin{align*}
+\gamma_1 \amp = \gamma_{z_0,w_0,w_1}\\
+\gamma_2 \amp = \gamma_{w_0,z_1,w_1}\\
+\gamma_3 \amp = \gamma_{w_1,z_2,w_2}\\
+\gamma_4 \amp = \gamma_{w_2,w_0,w_1}\text{.}
+\end{align*}
+</div>
+<div class="para">See <a href="s_cauchy_goursat.html#fig_cauchy-goursat" class="xref" data-knowl="./knowl/xref/fig_cauchy-goursat.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.14.5">Figure 1.14.5</a>. Using elementary integral properties, thanks to the cancellation that occurs due to <span class="process-math">\(\gamma_4\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_cauchy-goursat.html">
+\begin{equation*}
+\int_\gamma f\, dz=\int_{\gamma_1} f\, dz+\int_{\gamma_2} f\, dz+\int_{\gamma_3} f\, dz+\int_{\gamma_4} f\, dz\text{.}
+\end{equation*}
+</div>
+<div class="para">Picking any <span class="process-math">\(1\leq k_0\leq 4\)</span> satisfying</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_cauchy-goursat.html">
+\begin{equation*}
+\max\left\{\abs{\int_{\gamma_k} f\, dz}\colon 1\leq k\leq 4\right\}=\abs{\int_{\gamma_{k_0}}f\, dz} \text{,}
+\end{equation*}
+</div>
+<div class="para">we then have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_cauchy-goursat.html" id="th_cauchy-goursat_triangle-3-2-2-9">
+\begin{align*}
+\abs{\int_\gamma f\, dz} \amp \leq \sum_{k=1}^4\abs{\int_{\gamma_k}f\, dz}\\
+\amp \leq 4 \abs{\int_{\gamma_{k_0}} f\, dz}\text{.}
+\end{align*}
+</div>
+<div class="para">Define <span class="process-math">\(\gamma^{(1)}=\gamma_{k_0}\text{,}\)</span> and let <span class="process-math">\(\Delta^{(1)}\)</span> be triangle enclosed by <span class="process-math">\(\gamma^{(1)}\text{.}\)</span> Iterating this procedure on <span class="process-math">\(\Delta^{(1)}\text{,}\)</span> we get a sequence of <em class="emphasis">nested</em> triangles</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_cauchy-goursat.html" id="eq_nested_tri">
+\begin{equation}
+\Delta\supseteq \Delta^{(1)}\supseteq \Delta^{(2)}\supseteq \dots\tag{1.55}
+\end{equation}
+</div>
+<div class="para">and whose corresponding closed paths <span class="process-math">\(\gamma^{(n)}\)</span> satisfy (by induction)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_cauchy-goursat.html" id="th_cauchy-goursat_triangle-3-2-2-17">
+\begin{align*}
+\abs{\int_\gamma f\, dz} \amp \leq 4^n\abs{\int_{\gamma^{(n)}}f\, dz}\\
+L(\gamma^{(n)}) \amp =\frac{L(\gamma)}{2^n}\text{,}
+\end{align*}
+</div>
+<div class="para">where here <span class="process-math">\(L(\phi)\)</span> denotes the arc length of any piecewise smooth path <span class="process-math">\(\phi\text{.}\)</span>
+</div>
+</div></article><article class="case" id="th_cauchy-goursat_triangle-3-3"><h5 class="heading">Pick point in <span class="process-math">\(\bigcap\limits_{n=1}^\infty \Delta^{(n)}\)</span>.</h5>
+<div class="para" id="th_cauchy-goursat_triangle-3-3-2">We now use what really is a result about <em class="emphasis">compact sets</em>. We will refrain from giving the general topological definition of compactness; suffice it to say that in the context of <span class="process-math">\(\C\text{,}\)</span> a compact set is just a closed and bounded set. A general fact about compact sets is that for any descending nested sequence of compact subsets like the one in <a href="s_cauchy_goursat.html#eq_nested_tri" class="xref" data-knowl="./knowl/xref/eq_nested_tri.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.55">(1.55)</a>, the intersection of the nested sets is nonempty. Thus we can find a <span class="process-math">\(z_0\in \bigcap_{n=1}^\infty \Delta^{(n)}\)</span> that lies within all of our nested triangles. The remainder of the proof will try and give useful bounds on <span class="process-math">\(\abs{\int_{\gamma^{(n)}}f\, dz}\)</span> by using the fact that <span class="process-math">\(z_0\in \Delta^{(n)}\)</span> and <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(z_0\text{.}\)</span>
+</div></article><article class="case" id="th_cauchy-goursat_triangle-3-4"><h5 class="heading">Estimating <span class="process-math">\(\abs{\int_{\gamma^{(n)}}f\, dz}\)</span> using <span class="process-math">\(f'(z_0)\)</span>.</h5>
+<div class="para logical" id="th_cauchy-goursat_triangle-3-4-2">
+<div class="para">Since <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(z_0\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_FTC.html">
+\begin{equation*}
+f(z)=f(z_0)+f'(z_0)(z-z_0)+r(z)
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_FTC.html" id="eq_r_func">
+\begin{equation}
+r(z)=f(z)-f(z_0)-f'(z_0)(z-z_0)\tag{1.56}
+\end{equation}
+</div>
+<div class="para">is continuous on <span class="process-math">\(\Delta\)</span> and satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_FTC.html" id="eq_r_ineq">
+\begin{equation}
+\lim\limits_{z\to z_0}\frac{\abs{r(z)}}{\abs{z-z_0}}=0.\tag{1.57}
+\end{equation}
+</div>
+<div class="para">Note that the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_FTC.html">
+\begin{equation*}
+g(z)=f(z_0)+f'(z_0)(z-z_0)
+\end{equation*}
+</div>
+<div class="para">is a linear polynomial with antiderivative <span class="process-math">\(G(z)=f(z_0)z+\frac{1}{2}f'(z_0)(z-z_0)^2\text{.}\)</span> It follows from <a href="s_line_integral.html#cor_FTC" class="xref" data-knowl="./knowl/xref/cor_FTC.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.13.8">Corollary 1.13.8</a> that <span class="process-math">\(\int_{\gamma^{(n)}}g(z)\, dz=0\text{,}\)</span> and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_FTC.html" id="th_cauchy-goursat_triangle-3-4-2-11">
+\begin{align*}
+\int_{\gamma^{(n)}}f\, dz \amp = \int_{\gamma^{(n)}}g(z)+r(z)\, dz\\
+\amp = \int_{\gamma^{(n)}}g(z)\, dz+\int_{\gamma^{(n)}}r(z)\, dz\\
+\amp =\int_{\gamma^{(n)}} r(z)\,  dz  \text{.}
+\end{align*}
+</div>
+</div></article><article class="case" id="th_cauchy-goursat_triangle-3-5"><h5 class="heading">Proof that <span class="process-math">\(\int_{\gamma}f\, dz=0\)</span>.</h5>
+<div class="para logical" id="th_cauchy-goursat_triangle-3-5-2">
+<div class="para">To reach our desired conclusion, we will show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_r_ineq.html">
+\begin{equation*}
+\abs{\int_{\gamma}f\, dz}\leq  \epsilon
+\end{equation*}
+</div>
+<div class="para">for any <span class="process-math">\(\epsilon &gt; 0\text{.}\)</span> To this end, fix <span class="process-math">\(\epsilon &gt; 0\text{.}\)</span> Since the function <span class="process-math">\(r(z)\)</span> defined above satisfies the inequality <a href="s_cauchy_goursat.html#eq_r_ineq" class="xref" data-knowl="./knowl/xref/eq_r_ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.57">(1.57)</a>, for <span class="process-math">\(z\)</span> sufficiently close to <span class="process-math">\(z_0\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_r_ineq.html">
+\begin{equation*}
+\abs{r(z)} &lt; \abs{z-z_0}\frac{\epsilon}{L(\gamma)^2} \text{.}
+\end{equation*}
+</div>
+<div class="para">Clearly, we can pick <span class="process-math">\(n\)</span> large enough so that this inequality holds for all <span class="process-math">\(z\in \Delta^{(n)}\text{.}\)</span> A straightforward geometric argument shows that <span class="process-math">\(\abs{z-z_0}\leq L(\gamma^{(n)})\)</span> for all <span class="process-math">\(z\in \Delta^{(n)}\text{,}\)</span> and thus that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_r_ineq.html">
+\begin{equation*}
+\abs{r(z)}&lt; \frac{L(\gamma^{(n)})\epsilon}{L(\gamma)^2}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in \Delta^{(n)}\text{.}\)</span> We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_r_ineq.html" id="th_cauchy-goursat_triangle-3-5-2-15">
+\begin{align*}
+\abs{\int_\gamma f\, dz} \amp \leq 4^n\abs{\int_{\gamma^{(n)}}f\, dz}\\
+\amp =4^n\abs{\int_{\gamma^{(n)}}r(z)\, dz} \\
+\amp \leq 4^n\cdot \max\{r(z)\colon z\in \Delta^{(n)}\}\cdot L(\gamma^{(n)}) \amp (ML-\text{ineq.})\\
+\amp &lt; 4^n \cdot \frac{L(\gamma^{(n)})\epsilon}{L(\gamma)^2} \cdot L(\gamma^{(n)}) \\
+\amp = 4^n \cdot \frac{L(\gamma)\epsilon}{2^n L(\gamma)^2} \cdot \frac{L(\gamma)}{2^n}\\
+\amp =\epsilon\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></article></details><figure class="figure figure-like" id="fig_cauchy-goursat"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/fig_cauchy-goursat-2.svg" role="img" class="contained" alt="Kernel idea behind iterative proof of Cauchy-Goursat for triangles"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.14.5<span class="period">.</span></span><span class="space"> </span>Kernel idea of iterative proof of Cauchy-Goursat for triangles</figcaption></figure><article class="definition definition-like" id="d_star_shaped"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.14.6</span><span class="period">.</span><span class="space"> </span><span class="title">Star-shaped sets.</span>
 </h4>
 <div class="para" id="d_star_shaped-2-1">A set <span class="process-math">\(D\subseteq \C\)</span> is <dfn class="terminology">star shaped</dfn> if there is an element <span class="process-math">\(z^*\)</span> such that for all <span class="process-math">\(z\in D\)</span> the line segment between <span class="process-math">\(z\)</span> and <span class="process-math">\(z^*\)</span> lies in <span class="process-math">\(D\text{.}\)</span>
-</div></article><article class="remark remark-like" id="ss_cauchy_goursat-5"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.14.6</span><span class="period">.</span><span class="space"> </span><span class="title">Star-shaped regions.</span>
+</div></article><article class="remark remark-like" id="ss_cauchy_goursat-6"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.14.7</span><span class="period">.</span><span class="space"> </span><span class="title">Star-shaped regions.</span>
 </h4>
-<div class="para" id="ss_cauchy_goursat-5-2">Observe that since a star-shaped region is clearly polygonally connected, it is connected.</div></article><article class="theorem theorem-like" id="th_cauchy_goursat_star"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.7</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Goursat: star-shaped regions.</span>
+<div class="para" id="ss_cauchy_goursat-6-2">Observe that since a star-shaped region is clearly polygonally connected, it is connected.</div></article><article class="theorem theorem-like" id="th_cauchy_goursat_star"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.8</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Goursat: star-shaped regions.</span>
 </h4>
 <div class="para logical" id="th_cauchy_goursat_star-2-1">
 <div class="para">Assume <span class="process-math">\(U\subseteq \C\)</span> is open and star-shaped.</div>
@@ -721,8 +906,29 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </li>
 </ol>
-</div></article><details id="th_cauchy_goursat_star-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cauchy_goursat_star-3-1"></div></article></details><article class="definition definition-like" id="d_elementary_regions"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.14.8</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary regions.</span>
+</div></article><details id="th_cauchy_goursat_star-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cauchy_goursat_star-3-1">The two statements are equivalent by <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a>. Thus it suffices to prove (2). We will proceed in a manner much like the proof of <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a>. Pick a star-center <span class="process-math">\(z^*\)</span> of <span class="process-math">\(U\text{.}\)</span>  For any <span class="process-math">\(z\in U\)</span> we define <span class="process-math">\(F(z)=\int_{\gamma_{z^*,z}}f\, dz\text{,}\)</span> where for any two points <span class="process-math">\(w, w'\)</span> we denote by <span class="process-math">\(\gamma_{w,w'}\)</span> the straight-line path between them. Note that the question of <span class="process-math">\(F\)</span> being well defined does not even arise here, as we have specified an explicit path to compute the integral over.</div>
+<div class="para logical" id="th_cauchy_goursat_star-3-2">
+<div class="para">As in the proof of <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a>, we first pick a <span class="process-math">\(\delta\)</span> such that <span class="process-math">\(B_{\delta}(z_0)\subseteq U\text{.}\)</span> As long as we can show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_antider.html ./knowl/xref/eq_star.html ./knowl/xref/th_cauchy-goursat_triangle.html" id="eq_star">
+\begin{equation}
+F(z)-F(z_0)=\int_{\gamma_{z_0,z}}f\, dz\tag{1.58}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(z\in B_{\delta}(z_0)\)</span> the rest of the proof of <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a> follows to show that <span class="process-math">\(F'(z_0)=f(z_0)\text{.}\)</span> Showing that <a href="s_cauchy_goursat.html#eq_star" class="xref" data-knowl="./knowl/xref/eq_star.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.58">(1.58)</a> holds in this situation requires a little work, however, since we cannot assume that line integrals are path independent! Instead, we make use of <a href="s_cauchy_goursat.html#th_cauchy-goursat_triangle" class="xref" data-knowl="./knowl/xref/th_cauchy-goursat_triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.4: Cauchy-Goursat: triangles">Theorem 1.14.4</a>. Using the fact that <span class="process-math">\(U\)</span> is star-shaped, it is easy to see that for any <span class="process-math">\(z\in B_{\delta}(z_0)\text{,}\)</span> the entire triangle <span class="process-math">\(\Delta(z^*,z_0,z)\)</span> is contained in <span class="process-math">\(U\text{.}\)</span> The Cauchy-Goursat theorem for triangles then applies, yielding</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_antider.html ./knowl/xref/eq_star.html ./knowl/xref/th_cauchy-goursat_triangle.html">
+\begin{equation*}
+0=\int_{\gamma_{z^*,z_0,z}}f\, dz=\int_{\gamma_{z^*,z_0}}f\, dz+\int_{\gamma_{z_0,z}}f\, dz+\int_{\gamma_{z,z_0}}f\, dz\text{,}
+\end{equation*}
+</div>
+<div class="para">or equivalently,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_antider.html ./knowl/xref/eq_star.html ./knowl/xref/th_cauchy-goursat_triangle.html">
+\begin{equation*}
+\int_{\gamma_{z_0,z}}f\, dz=\int_{\gamma_{z^*,z}}f\, dz-\int_{\gamma_{z^*,z_0}}f\, dz=F(z)-F(z_0)\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><article class="definition definition-like" id="d_elementary_regions"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.14.9</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary regions.</span>
 </h4>
 <div class="para logical" id="d_elementary_regions-2-1">
 <div class="para">An open connected set <span class="process-math">\(U\)</span> is <dfn class="terminology">elementary</dfn> if</div>
@@ -733,20 +939,127 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="para">for all paths <span class="process-math">\(\gamma\)</span> lying in <span class="process-math">\(U\)</span> and all functions <span class="process-math">\(f\)</span> that are holomorphic on <span class="process-math">\(U\text{.}\)</span> Equivalently, an open connected set <span class="process-math">\(U\)</span> is elementary if every holomorphic function on <span class="process-math">\(U\)</span> has an antiderivative on <span class="process-math">\(U\text{.}\)</span>
 </div>
-</div></article><article class="remark remark-like" id="ss_cauchy_goursat-8"><h4 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.14.9</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary regions.</span>
+</div></article><article class="remark remark-like" id="ss_cauchy_goursat-9"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.14.10</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary regions.</span>
 </h4>
-<div class="para" id="ss_cauchy_goursat-8-2">According to <a href="s_cauchy_goursat.html#th_cauchy_goursat_star" class="xref" data-knowl="./knowl/xref/th_cauchy_goursat_star.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.7: Cauchy-Goursat: star-shaped regions">Theorem 1.14.7</a>, any open star-shaped region is elementary. In particular, open balls are elementary.</div></article><article class="corollary theorem-like" id="cor_cauchy_goursat_star"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.14.10</span><span class="period">.</span><span class="space"> </span><span class="title">Existence of log branches.</span>
+<div class="para" id="ss_cauchy_goursat-9-2">According to <a href="s_cauchy_goursat.html#th_cauchy_goursat_star" class="xref" data-knowl="./knowl/xref/th_cauchy_goursat_star.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.8: Cauchy-Goursat: star-shaped regions">Theorem 1.14.8</a>, any open star-shaped region is elementary. In particular, open balls are elementary.</div></article><article class="corollary theorem-like" id="cor_cauchy_goursat_star"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.14.11</span><span class="period">.</span><span class="space"> </span><span class="title">Existence of log branches.</span>
 </h4>
 <div class="para" id="cor_cauchy_goursat_star-2-1">Assume <span class="process-math">\(U\)</span> is elementary. If <span class="process-math">\(f\)</span> and <span class="process-math">\(f'\)</span> are holomorphic on <span class="process-math">\(U\)</span> and <span class="process-math">\(f(z)\ne 0\)</span> for all <span class="process-math">\(z\in U\text{,}\)</span> then there exists a holomorphic branch of <span class="process-math">\(\mathcal{F}=\log (f(z))\)</span> on <span class="process-math">\(U\text{.}\)</span>
-</div></article><article class="theorem theorem-like" id="th_elem_regions"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.11</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary region building.</span>
+</div></article><details id="cor_cauchy_goursat_star-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_cauchy_goursat_star-3-1">Left as an exercise.</div></article></details><article class="theorem theorem-like" id="th_elem_regions"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.12</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary region building.</span>
 </h4>
-<div class="para" id="th_elem_regions-2-1">If <span class="process-math">\(U_1\)</span> and <span class="process-math">\(U_2\)</span> are elementary regions, and if <span class="process-math">\(U_1\cap U_2\)</span> is connected, then <span class="process-math">\(U_1\cup U_2\)</span> is elementary.</div></article><details id="th_elem_regions-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_elem_regions-3-1"></div></article></details><article class="theorem theorem-like" id="th_cauchy_goursat_boundary"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.12</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Goursat: boundary curve.</span>
+<div class="para" id="th_elem_regions-2-1">If <span class="process-math">\(U_1\)</span> and <span class="process-math">\(U_2\)</span> are elementary regions, and if <span class="process-math">\(U_1\cap U_2\)</span> is connected, then <span class="process-math">\(U_1\cup U_2\)</span> is elementary.</div></article><details id="th_elem_regions-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_elem_regions-3-1">Left as an exercise.</div></article></details><article class="example example-like" id="eg_elem_regions"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.14.13</span><span class="period">.</span><span class="space"> </span><span class="title">Start-shaped and elementary regions.</span>
 </h4>
-<div class="para" id="th_cauchy_goursat_boundary-2-1">Assume</div></article><details id="th_cauchy_goursat_boundary-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cauchy_goursat_boundary-3-1"></div></article></details></section></section></div>
+<div class="para logical" id="eg_elem_regions-2-1">
+<div class="para">It is not difficult to show that the following regions are star-shaped:</div>
+<ul class="disc" id="eg_elem_regions-2-1-1">
+<li id="eg_elem_regions-2-1-1-1"><div class="para" id="eg_elem_regions-2-1-1-1-1">
+<span class="process-math">\(\C-R_{\alpha}\text{,}\)</span> <span class="process-math">\(\alpha\in \R\text{,}\)</span>
+</div></li>
+<li id="eg_elem_regions-2-1-1-2"><div class="para" id="eg_elem_regions-2-1-1-2-1">
+<span class="process-math">\(\{z\in \C\colon \abs{z}&gt; r, \pi/2-\alpha&lt; \Arg_{0} z&lt; \pi/2+\alpha\}\text{,}\)</span> <span class="process-math">\(r&gt; 0\text{,}\)</span> <span class="process-math">\(0&lt; \alpha &lt; \pi/2\text{.}\)</span>
+</div></li>
+<li id="eg_elem_regions-2-1-1-3"><div class="para" id="eg_elem_regions-2-1-1-3-1"><span class="process-math">\(\{z\in \C\colon  r &lt; \abs{z}&lt; R, \pi/2-\alpha&lt; \Arg_{0} z&lt; \pi/2+\alpha\}\text{,}\)</span></div></li>
+</ul>
+</div>
+<div class="solutions"><details id="eg_elem_regions-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_elem_regions-3-1"></div></div></details></div></article><article class="remark remark-like" id="rm_elementary"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.14.14</span><span class="period">.</span><span class="space"> </span><span class="title">Elementary versus simply connected.</span>
+</h4>
+<div class="para" id="rm_elementary-2">Starting with some simple star-shaped regions like open discs, we can use <a href="s_cauchy_goursat.html#th_elem_regions" class="xref" data-knowl="./knowl/xref/th_elem_regions.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.12: Elementary region building">Theorem 1.14.12</a> to build an extensive collection of elementary domains. Indeed for any explicit example we consider, these tools will suffice to show that a given region is in fact elementary.</div>
+<div class="para" id="rm_elementary-3">That said, it is desirable to have some geometric intuition about whether an open connected set is elementary. As it turns out, there is a purely topological characterization of which subsets of <span class="process-math">\(\C\)</span> are elementary: namely, <span class="process-math">\(U\subseteq \C\)</span> is elementary if and only if it is open and <em class="emphasis">simply connected</em>. The notion of a simply connected set is a tad too technical for us to include in this course, but the intuitive idea is that an open connected set <span class="process-math">\(U\)</span> is simply connected if given any two paths <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> in <span class="process-math">\(U\)</span> with the same endpoints, we can be <em class="emphasis">continuously deform</em> <span class="process-math">\(\alpha\)</span> to <span class="process-math">\(\beta\)</span> without leaving <span class="process-math">\(U\text{.}\)</span> Another, even less technical intuitive description of a simply connected region is that it is connected and <em class="emphasis">contains no holes</em>.</div>
+<div class="para" id="rm_elementary-4">This intuitive notion of simply connected regions (and its relation to elementary regions) will suffice for our purposes. In more detail, given an open connected set <span class="process-math">\(U\text{,}\)</span> we can use this intuition to identify it informally as simply connected or not, and hence as elementary or not. If it is then required of us to prove a given region actually is elementary, then we will be able to do so using <a href="s_cauchy_goursat.html#th_elem_regions" class="xref" data-knowl="./knowl/xref/th_elem_regions.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.12: Elementary region building">Theorem 1.14.12</a>.</div></article><figure class="figure figure-like" id="fig_simply_vs_not_simply_connected"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel bottom" style="width:45%;"><figure class="figure figure-like" id="fig_simply_connected"><img src="external/simply_connected.png" class="contained" alt="A simply connected set"><figcaption><span class="codenumber">(a)</span><span class="space"> </span><span class="process-math">\(U\)</span> is simply connected. Any <span class="process-math">\(\alpha\)</span> can be deformed to any other <span class="process-math">\(\beta\)</span> with the same endpoints.</figcaption></figure></div>
+<div class="sbspanel bottom" style="width:55%;"><figure class="figure figure-like" id="fig_not_simply_connected"><img src="external/not_simply_connected.png" class="contained" alt="A set that is not simply connected"><figcaption><span class="codenumber">(b)</span><span class="space"> </span><span class="process-math">\(U\)</span> is not simply connected. The hole prevents <span class="process-math">\(\alpha\)</span> from being deformable to <span class="process-math">\(\beta\text{.}\)</span></figcaption></figure></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.14.15<span class="period">.</span></span><span class="space"> </span>Simply connected versus not simply connected</figcaption></figure><div class="para" id="ss_cauchy_goursat-15">In the spirit of <a href="s_cauchy_goursat.html#rm_elementary" class="xref" data-knowl="./knowl/xref/rm_elementary.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.14.14: Elementary versus simply connected">Remark 1.14.14</a>, we state one more version of the Cauchy-Goursat theorem for connected regions bounded by piecewise smooth closed curves. Significant work must be done to show this last version follows from our previous versions. In particular, the result relies on the famous <em class="emphasis">Jordan curve theorem</em>, which says that if <span class="process-math">\(\phi\)</span> is a closed piecewise smooth and simple parametrization of the curve <span class="process-math">\(\mathcal{C}\)</span> the region within <span class="process-math">\(\mathcal{C}\)</span> is simply connected.</div>
+<article class="theorem theorem-like" id="th_cauchy_goursat_boundary"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.14.16</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-Goursat: boundary curve.</span>
+</h4>
+<div class="para logical" id="th_cauchy_goursat_boundary-2-1">
+<div class="para">Let <span class="process-math">\(U\)</span> be an open and connected set whose boundary curve <span class="process-math">\(\partial U\)</span> is the disjoint union of closed piecwise smooth and simple paths <span class="process-math">\(\gamma_k\text{,}\)</span> <span class="process-math">\(1\leq k\leq n\text{,}\)</span> and suppose further that each path <span class="process-math">\(\phi_k\)</span> is positively oriented with respect to <span class="process-math">\(U\text{.}\)</span> If <span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(U\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\partial U} f\, dz=\sum_{k=1}^{n}\int_{\gamma_k}f\, dz=0\text{.}
+\end{equation*}
+</div>
+</div></article><article class="corollary theorem-like" id="cor_cauchy_goursat_boundary"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.14.17</span><span class="period">.</span><span class="space"> </span><span class="title">Principle of deformation.</span>
+</h4>
+<div class="para logical" id="cor_cauchy_goursat_boundary-2-1">
+<div class="para">Assume <span class="process-math">\(\gamma\)</span> is a closed piecwise smooth and simple path with counterclockwise orientation, and assume <span class="process-math">\(\gamma_1, \gamma_2,\dots, \gamma_n\)</span> are closed piecewise smooth and simple curves lying within <span class="process-math">\(\gamma\)</span> and oriented counterclockwise. If <span class="process-math">\(f\)</span> is holomorphic on the set <span class="process-math">\(U\)</span> of all points lying inside <span class="process-math">\(\gamma\)</span> and outside <span class="process-math">\(\gamma_k\)</span> for all <span class="process-math">\(k\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="eq_deformation">
+\begin{equation}
+\int_\gamma f\, dz=\sum_{k=1}^n\int_{\gamma_k}f\, dz\text{.}\tag{1.59}
+\end{equation}
+</div>
+</div></article><figure class="figure figure-like" id="fig_deformation"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="external/deformation.png" class="contained" alt="Image illustrating principle of deformation"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.14.18<span class="period">.</span></span><span class="space"> </span>Principle of deformation: <span class="process-math">\(\int_\gamma f\, dz=\sum_{k=1}^n\int_{\gamma_k}f\, dz\text{.}\)</span></figcaption></figure><div class="para" id="ss_cauchy_goursat-19">We state <a href="s_cauchy_goursat.html#th_cauchy_goursat_boundary" class="xref" data-knowl="./knowl/xref/th_cauchy_goursat_boundary.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.16: Cauchy-Goursat: boundary curve">Theorem 1.14.16</a> and <a href="s_cauchy_goursat.html#cor_cauchy_goursat_boundary" class="xref" data-knowl="./knowl/xref/cor_cauchy_goursat_boundary.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.14.17: Principle of deformation">Corollary 1.14.17</a> in this level of generality as a convenience, but hasten to add that in any situation that comes up in our investigations, we will be able to derive the result rigorously simply by using <a href="s_cauchy_goursat.html#th_cauchy_goursat_star" class="xref" data-knowl="./knowl/xref/th_cauchy_goursat_star.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.8: Cauchy-Goursat: star-shaped regions">Theorem 1.14.8</a> and <a href="s_cauchy_goursat.html#th_elem_regions" class="xref" data-knowl="./knowl/xref/th_elem_regions.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.12: Elementary region building">Theorem 1.14.12</a>. The following example is typical.</div>
+<article class="example example-like" id="eg_deformation"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.14.19</span><span class="period">.</span><span class="space"> </span><span class="title">Principle of deformation.</span>
+</h4>
+<div class="para logical" id="eg_deformation-2-1">
+<div class="para">Let <span class="process-math">\(\gamma(t)=3e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span>
+</div>
+<ol class="decimal" id="eg_deformation-2-1-3">
+<li id="eg_deformation-2-1-3-1"><div class="para" id="eg_deformation-2-1-3-1-1">Show, using only <a href="s_cauchy_goursat.html#th_cauchy_goursat_star" class="xref" data-knowl="./knowl/xref/th_cauchy_goursat_star.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.8: Cauchy-Goursat: star-shaped regions">Theorem 1.14.8</a> and <a href="s_cauchy_goursat.html#th_elem_regions" class="xref" data-knowl="./knowl/xref/th_elem_regions.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.12: Elementary region building">Theorem 1.14.12</a>, that <span class="process-math">\(\int_{\gamma}1/(z-1)\, dz=\int_{\gamma'}1/(z-1)\, dz\text{,}\)</span> where <span class="process-math">\(\gamma'(t)=1+e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span>
+</div></li>
+<li id="eg_deformation-2-1-3-2"><div class="para" id="eg_deformation-2-1-3-2-1">Conclude that <span class="process-math">\(\int_{\gamma}1/(z-1)\, dz=2\pi i\text{.}\)</span>
+</div></li>
+<li id="eg_deformation-2-1-3-3"><div class="para" id="eg_deformation-2-1-3-3-1">Express the real and imaginary parts of <span class="process-math">\(\int_{\gamma}1/(z-1)\, dz\)</span> as real integrals over <span class="process-math">\([0,2\pi]\)</span> to derive some interesting integral formulas.</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="eg_deformation-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_deformation-3-1"><ol class="decimal" id="eg_deformation-3-1-1">
+<li id="eg_deformation-3-1-1-1"><div class="para logical" id="eg_deformation-3-1-1-1-1">
+<div class="para">Note first that <span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(\C-\{1\}\text{.}\)</span> Let <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\)</span> be the closed paths starting at the point <span class="process-math">\(3\)</span> pictured in <a href="s_cauchy_goursat.html#fig_eg_deform" class="xref" data-knowl="./knowl/xref/fig_eg_deform.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.14.20">Figure 1.14.20</a>. Since <span class="process-math">\(\alpha\)</span> is closed and lies within the elementary region <span class="process-math">\(U=\C-\{1-ti\colon t\geq 0\}\text{,}\)</span> and since <span class="process-math">\(\beta\)</span> is closed and lies within the elementary region <span class="process-math">\(V=\C-\{1+ti\colon t\geq 0\}\text{,}\)</span> and since <span class="process-math">\(f\)</span> is holomorphic in both of these regions, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_eg_deform.html">
+\begin{equation*}
+\int_\alpha f\, dz=\int_\beta f\, dz=0\text{.}
+\end{equation*}
+</div>
+<div class="para">Furthermore, letting <span class="process-math">\(\gamma''=\alpha*\beta\text{,}\)</span> we have on the one hand</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_eg_deform.html">
+\begin{equation*}
+\int_{\gamma''}f\, dz=\int_{\alpha} f\ , dz+\int_{\beta} f\, dz=0\text{,}
+\end{equation*}
+</div>
+<div class="para">and on the other hand, thanks to the cancellation along the real line segments,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_eg_deform.html">
+\begin{equation*}
+\int_{\gamma''}f\, dz=\int_\gamma f\, dz+\int_{-\gamma'}f\, dz\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(0=\int_{\gamma}f\, dz+\int_{-\gamma'}f\, dz\text{,}\)</span> or equivalently,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_eg_deform.html">
+\begin{equation*}
+\int_{\gamma}f\, dz=-\int_{-\gamma'}f\, dz=\int_{\gamma'}f\, dz\text{,}
+\end{equation*}
+</div>
+<div class="para">as claimed.</div>
+</div></li>
+<li id="eg_deformation-3-1-1-2"><div class="para" id="eg_deformation-3-1-1-2-1">This follows from the classic integral formula <span class="process-math">\(\int_{\gamma}1/(z-z_0)\, dz=2\pi i\text{,}\)</span> for <span class="process-math">\(\gamma(t)=z_0+re^{it}\text{.}\)</span>
+</div></li>
+<li id="eg_deformation-3-1-1-3"><div class="para logical" id="eg_deformation-3-1-1-3-1">
+<div class="para">Using the explicit definition of the integral, we have</div>
+<div class="displaymath process-math" id="eg_deformation-3-1-1-3-1-1">
+\begin{align*}
+2\pi i \amp = \int_\gamma 1/(z-1)\, dz\\
+\amp = \int_0^{2\pi}\gamma'(t)/(\gamma(t)-1)\, dt\\
+\amp = \int_0^{2\pi}\frac{3ie^{it}}{3e^{it}-1}\, dt\\
+\amp = 3i\left( \int_0^{2\pi} \frac{3-\cos t}{10-6\cos t}\, dt-i\int_0^{2\pi}\frac{\sin t}{10-6\cos t}\, dt\right)\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math" id="eg_deformation-3-1-1-3-1-2">
+\begin{align*}
+\frac{2\pi}{3} \amp = \int_0^{2\pi} \frac{3-\cos t}{10-6\cos t}\, dt\\
+0 \amp = \int_0^{2\pi} \frac{\sin t}{10-6\cos t}\, dt\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><figure class="figure figure-like" id="fig_eg_deform"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external/eg_deform.png" class="contained" alt="Two paths alpha and beta related to paths gamma and gamma prime"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.14.20<span class="period">.</span></span><span class="space"> </span>Method for simple principle of deformation examples</figcaption></figure></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_line_integral.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

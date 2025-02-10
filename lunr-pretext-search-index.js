@@ -2230,7 +2230,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.14",
   "title": "Cauchy-Goursat theorem",
-  "body": " Cauchy-Goursat theorem   In this section we meet the famous Cauchy-Goursat theorem: our first truly deep theorem, and one that is fundamental to all the theoretical highlights that follow.    Existence of antiderivatives   Paths  From now on, unless explicitly stated otherwise, a path will be assumed to be piecewise smooth.   As we observed in , if has an antiderivative on the open set , then for any closed path lying in . Equivalently, if  for some closed path lying in , then there is no antiderivative of on .  Applying this result to , we see that for any open connected set containing , there is no antiderivative of on : indeed, the path lies in for small enough, and we have computed that for any such path. As a further consequence, it follows that there can be no branch of on an open set of the form where contains , since as we have seen previously, any such branch would be an antiderivative of !  The example illustrates the subtlety of the question of whether an antiderivative exists for a continuous complex function. The next theorem tells us that the implication from is in fact an equivalence if is open and connected.   Antiderivative theorem   Let be open and connected, and assume is continuous on . The following statements are equivalent.   Existence of antiderivative   has an antiderivative on .    Closed paths   for any closed path lying in .    Independence of paths   for any paths and lying in that have the same initial and terminal points.        Implication: (1) (2)  Let be an antiderivative of on . Given a closed piecewise smooth path , let be its initial\/terminal point. By the fundamental theorem of calculus for line integrals, we have .    Implication: (2) (3)  Since and share the same initial and terminal points, the curve is closed, and we have . It follow that , as desired.    Implication: (3) (1)         Cauchy-Goursat theorems   Triangles  Given three non-colinear complex numbers , we denote by any simple closed path of the form , where denotes a simple straight-line path from to . We denote by the triangular region consisting of and all points lying within it. It is easy to see that is closed and that .    Cauchy-Goursat: triangles   Assume is holomorphic on . Given any triangle contained in , we have .         Star-shaped sets   A set is star shaped if there is an element such that for all the line segment between and lies in .     Star-shaped regions  Observe that since a star-shaped region is clearly polygonally connected, it is connected.    Cauchy-Goursat: star-shaped regions   Assume is open and star-shaped.   Closed paths  If is holomorphic on , then for any closed path lying in .    Antiderivatives  If is holomorphic on , then has an antiderivative on .            Elementary regions   An open connected set is elementary if for all paths lying in and all functions that are holomorphic on . Equivalently, an open connected set is elementary if every holomorphic function on has an antiderivative on .     Elementary regions  According to , any open star-shaped region is elementary. In particular, open balls are elementary.    Existence of log branches   Assume is elementary. If and are holomorphic on and for all , then there exists a holomorphic branch of on .     Elementary region building   If and are elementary regions, and if is connected, then is elementary.         Cauchy-Goursat: boundary curve   Assume         "
+  "body": " Cauchy-Goursat theorem   In this section we meet the famous Cauchy-Goursat theorem: our first truly deep theorem, and one that is fundamental to all the theoretical highlights that follow.    Existence of antiderivatives   Paths  From now on, unless explicitly stated otherwise, a path will be assumed to be piecewise smooth.   As we observed in , if has an antiderivative on the open set , then for any closed path lying in . Equivalently, if  for some closed path lying in , then there is no antiderivative of on .  Applying this result to , we see that for any open connected set containing , there is no antiderivative of on : indeed, the path lies in for small enough, and we have computed that for any such path. As a further consequence, it follows that there can be no branch of on an open set of the form where contains , since as we have seen previously, any such branch would be an antiderivative of !  The example illustrates the subtlety of the question of whether an antiderivative exists for a continuous complex function. The next theorem tells us that the implication from is in fact an equivalence if is open and connected.   Antiderivative theorem   Let be open and connected, and assume is continuous on . The following statements are equivalent.   Existence of antiderivative   has an antiderivative on .    Closed paths   for any closed path lying in .    Independence of paths   for any paths and lying in that have the same initial and terminal points.        Implication: (1) (2)  Let be an antiderivative of on . Given a closed piecewise smooth path , let be its initial\/terminal point. By the fundamental theorem of calculus for line integrals, we have .    Implication: (2) (3)  Since and share the same initial and terminal points, the curve is closed, and we have . It follow that , as desired.    Implication: (3) (1)  Pick any element . Since is open and connected, it is polygonally connected. Thus for any there exists a polygonal path beginning at and ending at . We define the function as , where denotes the contour integral along any polygonal path from to . Since we assume that line integrals of are path independent, our function is well-defined: , does indeed return a single well-defined value, no matter which path you choose. It remains to show that is an antiderivative of on .  Pick any . Firstly, since is open we can find a such that . We will prove that by showing that for all , where satisfies . To this end note that for all , we have , where is the straight line path from to . Next, we have , where the last step follows from the fact that is an antiderivative of , and thus , by the fundamental theorem of calculus for line integrals.  Letting , we then have . It remains to show that . To this end, given any , shrink as necessary so that implies . We then have . Since was abribitrary, we see that , as desired.       Cauchy-Goursat theorems   Triangles  Given three non-colinear complex numbers , we denote by any simple closed path of the form , where denotes a simple straight-line path from to . We denote by the triangular region consisting of and all points lying within it. It is easy to see that is closed and that .    Cauchy-Goursat: triangles   Assume is holomorphic on . Given any triangle contained in , we have .    We give a near complete proof, save for one unproved fact about closed and bounded sets (aka., compact sets ). Let and let .   Idea: compare with integral over smaller triangles  Let be the midpoints of the sides and consider the four closed paths . See . Using elementary integral properties, thanks to the cancellation that occurs due to we have . Picking any satisfying , we then have . Define , and let be triangle enclosed by . Iterating this procedure on , we get a sequence of nested triangles and whose corresponding closed paths satisfy (by induction) , where here denotes the arc length of any piecewise smooth path .    Pick point in  We now use what really is a result about compact sets . We will refrain from giving the general topological definition of compactness; suffice it to say that in the context of , a compact set is just a closed and bounded set. A general fact about compact sets is that for any descending nested sequence of compact subsets like the one in , the intersection of the nested sets is nonempty. Thus we can find a that lies within all of our nested triangles. The remainder of the proof will try and give useful bounds on by using the fact that and is differentiable at .    Estimating using  Since is differentiable at , we have where is continuous on and satisfies Note that the function is a linear polynomial with antiderivative . It follows from that , and thus .    Proof that  To reach our desired conclusion, we will show that for any . To this end, fix . Since the function defined above satisfies the inequality , for sufficiently close to we have . Clearly, we can pick large enough so that this inequality holds for all . A straightforward geometric argument shows that for all , and thus that for all . We conclude that , as desired.      Kernel idea of iterative proof of Cauchy-Goursat for triangles   Kernel idea behind iterative proof of Cauchy-Goursat for triangles      Star-shaped sets   A set is star shaped if there is an element such that for all the line segment between and lies in .     Star-shaped regions  Observe that since a star-shaped region is clearly polygonally connected, it is connected.    Cauchy-Goursat: star-shaped regions   Assume is open and star-shaped.   Closed paths  If is holomorphic on , then for any closed path lying in .    Antiderivatives  If is holomorphic on , then has an antiderivative on .       The two statements are equivalent by . Thus it suffices to prove (2). We will proceed in a manner much like the proof of . Pick a star-center of . For any we define , where for any two points we denote by the straight-line path between them. Note that the question of being well defined does not even arise here, as we have specified an explicit path to compute the integral over.  As in the proof of , we first pick a such that . As long as we can show that for all the rest of the proof of follows to show that . Showing that holds in this situation requires a little work, however, since we cannot assume that line integrals are path independent! Instead, we make use of . Using the fact that is star-shaped, it is easy to see that for any , the entire triangle is contained in . The Cauchy-Goursat theorem for triangles then applies, yielding , or equivalently, , as desired.     Elementary regions   An open connected set is elementary if for all paths lying in and all functions that are holomorphic on . Equivalently, an open connected set is elementary if every holomorphic function on has an antiderivative on .     Elementary regions  According to , any open star-shaped region is elementary. In particular, open balls are elementary.    Existence of log branches   Assume is elementary. If and are holomorphic on and for all , then there exists a holomorphic branch of on .    Left as an exercise.     Elementary region building   If and are elementary regions, and if is connected, then is elementary.    Left as an exercise.     Start-shaped and elementary regions   It is not difficult to show that the following regions are star-shaped:    , ,     , , .     ,            Elementary versus simply connected  Starting with some simple star-shaped regions like open discs, we can use to build an extensive collection of elementary domains. Indeed for any explicit example we consider, these tools will suffice to show that a given region is in fact elementary.  That said, it is desirable to have some geometric intuition about whether an open connected set is elementary. As it turns out, there is a purely topological characterization of which subsets of are elementary: namely, is elementary if and only if it is open and simply connected . The notion of a simply connected set is a tad too technical for us to include in this course, but the intuitive idea is that an open connected set is simply connected if given any two paths and in with the same endpoints, we can be continuously deform  to without leaving . Another, even less technical intuitive description of a simply connected region is that it is connected and contains no holes .  This intuitive notion of simply connected regions (and its relation to elementary regions) will suffice for our purposes. In more detail, given an open connected set , we can use this intuition to identify it informally as simply connected or not, and hence as elementary or not. If it is then required of us to prove a given region actually is elementary, then we will be able to do so using .    Simply connected versus not simply connected    is simply connected. Any can be deformed to any other with the same endpoints.   A simply connected set     is not simply connected. The hole prevents from being deformable to .   A set that is not simply connected      In the spirit of , we state one more version of the Cauchy-Goursat theorem for connected regions bounded by piecewise smooth closed curves. Significant work must be done to show this last version follows from our previous versions. In particular, the result relies on the famous Jordan curve theorem , which says that if is a closed piecewise smooth and simple parametrization of the curve the region within is simply connected.   Cauchy-Goursat: boundary curve   Let be an open and connected set whose boundary curve is the disjoint union of closed piecwise smooth and simple paths , , and suppose further that each path is positively oriented with respect to . If is holomorphic on , then .     Principle of deformation   Assume is a closed piecwise smooth and simple path with counterclockwise orientation, and assume are closed piecewise smooth and simple curves lying within and oriented counterclockwise. If is holomorphic on the set of all points lying inside and outside for all , then .     Principle of deformation: .   Image illustrating principle of deformation    We state and in this level of generality as a convenience, but hasten to add that in any situation that comes up in our investigations, we will be able to derive the result rigorously simply by using and . The following example is typical.   Principle of deformation   Let , .   Show, using only and , that , where , .    Conclude that .    Express the real and imaginary parts of as real integrals over to derive some interesting integral formulas.          Note first that is holomorphic on . Let and be the closed paths starting at the point pictured in . Since is closed and lies within the elementary region , and since is closed and lies within the elementary region , and since is holomorphic in both of these regions, we have . Furthermore, letting , we have on the one hand , and on the other hand, thanks to the cancellation along the real line segments, . It follows that , or equivalently, , as claimed.    This follows from the classic integral formula , for .    Using the explicit definition of the integral, we have . It follows that .        Method for simple principle of deformation examples   Two paths alpha and beta related to paths gamma and gamma prime     "
 },
 {
   "id": "ss_primitives-2",
@@ -2248,7 +2248,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.14.2",
   "title": "Antiderivative theorem.",
-  "body": " Antiderivative theorem   Let be open and connected, and assume is continuous on . The following statements are equivalent.   Existence of antiderivative   has an antiderivative on .    Closed paths   for any closed path lying in .    Independence of paths   for any paths and lying in that have the same initial and terminal points.        Implication: (1) (2)  Let be an antiderivative of on . Given a closed piecewise smooth path , let be its initial\/terminal point. By the fundamental theorem of calculus for line integrals, we have .    Implication: (2) (3)  Since and share the same initial and terminal points, the curve is closed, and we have . It follow that , as desired.    Implication: (3) (1)      "
+  "body": " Antiderivative theorem   Let be open and connected, and assume is continuous on . The following statements are equivalent.   Existence of antiderivative   has an antiderivative on .    Closed paths   for any closed path lying in .    Independence of paths   for any paths and lying in that have the same initial and terminal points.        Implication: (1) (2)  Let be an antiderivative of on . Given a closed piecewise smooth path , let be its initial\/terminal point. By the fundamental theorem of calculus for line integrals, we have .    Implication: (2) (3)  Since and share the same initial and terminal points, the curve is closed, and we have . It follow that , as desired.    Implication: (3) (1)  Pick any element . Since is open and connected, it is polygonally connected. Thus for any there exists a polygonal path beginning at and ending at . We define the function as , where denotes the contour integral along any polygonal path from to . Since we assume that line integrals of are path independent, our function is well-defined: , does indeed return a single well-defined value, no matter which path you choose. It remains to show that is an antiderivative of on .  Pick any . Firstly, since is open we can find a such that . We will prove that by showing that for all , where satisfies . To this end note that for all , we have , where is the straight line path from to . Next, we have , where the last step follows from the fact that is an antiderivative of , and thus , by the fundamental theorem of calculus for line integrals.  Letting , we then have . It remains to show that . To this end, given any , shrink as necessary so that implies . We then have . Since was abribitrary, we see that , as desired.    "
 },
 {
   "id": "ss_cauchy_goursat-2",
@@ -2266,23 +2266,32 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.14.4",
   "title": "Cauchy-Goursat: triangles.",
-  "body": " Cauchy-Goursat: triangles   Assume is holomorphic on . Given any triangle contained in , we have .       "
+  "body": " Cauchy-Goursat: triangles   Assume is holomorphic on . Given any triangle contained in , we have .    We give a near complete proof, save for one unproved fact about closed and bounded sets (aka., compact sets ). Let and let .   Idea: compare with integral over smaller triangles  Let be the midpoints of the sides and consider the four closed paths . See . Using elementary integral properties, thanks to the cancellation that occurs due to we have . Picking any satisfying , we then have . Define , and let be triangle enclosed by . Iterating this procedure on , we get a sequence of nested triangles and whose corresponding closed paths satisfy (by induction) , where here denotes the arc length of any piecewise smooth path .    Pick point in  We now use what really is a result about compact sets . We will refrain from giving the general topological definition of compactness; suffice it to say that in the context of , a compact set is just a closed and bounded set. A general fact about compact sets is that for any descending nested sequence of compact subsets like the one in , the intersection of the nested sets is nonempty. Thus we can find a that lies within all of our nested triangles. The remainder of the proof will try and give useful bounds on by using the fact that and is differentiable at .    Estimating using  Since is differentiable at , we have where is continuous on and satisfies Note that the function is a linear polynomial with antiderivative . It follows from that , and thus .    Proof that  To reach our desired conclusion, we will show that for any . To this end, fix . Since the function defined above satisfies the inequality , for sufficiently close to we have . Clearly, we can pick large enough so that this inequality holds for all . A straightforward geometric argument shows that for all , and thus that for all . We conclude that , as desired.    "
+},
+{
+  "id": "fig_cauchy-goursat",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#fig_cauchy-goursat",
+  "type": "Figure",
+  "number": "1.14.5",
+  "title": "",
+  "body": " Kernel idea of iterative proof of Cauchy-Goursat for triangles   Kernel idea behind iterative proof of Cauchy-Goursat for triangles    "
 },
 {
   "id": "d_star_shaped",
   "level": "2",
   "url": "s_cauchy_goursat.html#d_star_shaped",
   "type": "Definition",
-  "number": "1.14.5",
+  "number": "1.14.6",
   "title": "Star-shaped sets.",
   "body": " Star-shaped sets   A set is star shaped if there is an element such that for all the line segment between and lies in .   "
 },
 {
-  "id": "ss_cauchy_goursat-5",
+  "id": "ss_cauchy_goursat-6",
   "level": "2",
-  "url": "s_cauchy_goursat.html#ss_cauchy_goursat-5",
+  "url": "s_cauchy_goursat.html#ss_cauchy_goursat-6",
   "type": "Remark",
-  "number": "1.14.6",
+  "number": "1.14.7",
   "title": "Star-shaped regions.",
   "body": " Star-shaped regions  Observe that since a star-shaped region is clearly polygonally connected, it is connected.  "
 },
@@ -2291,25 +2300,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_cauchy_goursat.html#th_cauchy_goursat_star",
   "type": "Theorem",
-  "number": "1.14.7",
+  "number": "1.14.8",
   "title": "Cauchy-Goursat: star-shaped regions.",
-  "body": " Cauchy-Goursat: star-shaped regions   Assume is open and star-shaped.   Closed paths  If is holomorphic on , then for any closed path lying in .    Antiderivatives  If is holomorphic on , then has an antiderivative on .          "
+  "body": " Cauchy-Goursat: star-shaped regions   Assume is open and star-shaped.   Closed paths  If is holomorphic on , then for any closed path lying in .    Antiderivatives  If is holomorphic on , then has an antiderivative on .       The two statements are equivalent by . Thus it suffices to prove (2). We will proceed in a manner much like the proof of . Pick a star-center of . For any we define , where for any two points we denote by the straight-line path between them. Note that the question of being well defined does not even arise here, as we have specified an explicit path to compute the integral over.  As in the proof of , we first pick a such that . As long as we can show that for all the rest of the proof of follows to show that . Showing that holds in this situation requires a little work, however, since we cannot assume that line integrals are path independent! Instead, we make use of . Using the fact that is star-shaped, it is easy to see that for any , the entire triangle is contained in . The Cauchy-Goursat theorem for triangles then applies, yielding , or equivalently, , as desired.   "
 },
 {
   "id": "d_elementary_regions",
   "level": "2",
   "url": "s_cauchy_goursat.html#d_elementary_regions",
   "type": "Definition",
-  "number": "1.14.8",
+  "number": "1.14.9",
   "title": "Elementary regions.",
   "body": " Elementary regions   An open connected set is elementary if for all paths lying in and all functions that are holomorphic on . Equivalently, an open connected set is elementary if every holomorphic function on has an antiderivative on .   "
 },
 {
-  "id": "ss_cauchy_goursat-8",
+  "id": "ss_cauchy_goursat-9",
   "level": "2",
-  "url": "s_cauchy_goursat.html#ss_cauchy_goursat-8",
+  "url": "s_cauchy_goursat.html#ss_cauchy_goursat-9",
   "type": "Remark",
-  "number": "1.14.9",
+  "number": "1.14.10",
   "title": "Elementary regions.",
   "body": " Elementary regions  According to , any open star-shaped region is elementary. In particular, open balls are elementary.  "
 },
@@ -2318,27 +2327,90 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_cauchy_goursat.html#cor_cauchy_goursat_star",
   "type": "Corollary",
-  "number": "1.14.10",
+  "number": "1.14.11",
   "title": "Existence of log branches.",
-  "body": " Existence of log branches   Assume is elementary. If and are holomorphic on and for all , then there exists a holomorphic branch of on .   "
+  "body": " Existence of log branches   Assume is elementary. If and are holomorphic on and for all , then there exists a holomorphic branch of on .    Left as an exercise.   "
 },
 {
   "id": "th_elem_regions",
   "level": "2",
   "url": "s_cauchy_goursat.html#th_elem_regions",
   "type": "Theorem",
-  "number": "1.14.11",
+  "number": "1.14.12",
   "title": "Elementary region building.",
-  "body": " Elementary region building   If and are elementary regions, and if is connected, then is elementary.       "
+  "body": " Elementary region building   If and are elementary regions, and if is connected, then is elementary.    Left as an exercise.   "
+},
+{
+  "id": "eg_elem_regions",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#eg_elem_regions",
+  "type": "Example",
+  "number": "1.14.13",
+  "title": "Start-shaped and elementary regions.",
+  "body": " Start-shaped and elementary regions   It is not difficult to show that the following regions are star-shaped:    , ,     , , .     ,          "
+},
+{
+  "id": "rm_elementary",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#rm_elementary",
+  "type": "Remark",
+  "number": "1.14.14",
+  "title": "Elementary versus simply connected.",
+  "body": " Elementary versus simply connected  Starting with some simple star-shaped regions like open discs, we can use to build an extensive collection of elementary domains. Indeed for any explicit example we consider, these tools will suffice to show that a given region is in fact elementary.  That said, it is desirable to have some geometric intuition about whether an open connected set is elementary. As it turns out, there is a purely topological characterization of which subsets of are elementary: namely, is elementary if and only if it is open and simply connected . The notion of a simply connected set is a tad too technical for us to include in this course, but the intuitive idea is that an open connected set is simply connected if given any two paths and in with the same endpoints, we can be continuously deform  to without leaving . Another, even less technical intuitive description of a simply connected region is that it is connected and contains no holes .  This intuitive notion of simply connected regions (and its relation to elementary regions) will suffice for our purposes. In more detail, given an open connected set , we can use this intuition to identify it informally as simply connected or not, and hence as elementary or not. If it is then required of us to prove a given region actually is elementary, then we will be able to do so using .  "
+},
+{
+  "id": "fig_simply_vs_not_simply_connected",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#fig_simply_vs_not_simply_connected",
+  "type": "Figure",
+  "number": "1.14.15",
+  "title": "",
+  "body": " Simply connected versus not simply connected    is simply connected. Any can be deformed to any other with the same endpoints.   A simply connected set     is not simply connected. The hole prevents from being deformable to .   A set that is not simply connected     "
 },
 {
   "id": "th_cauchy_goursat_boundary",
   "level": "2",
   "url": "s_cauchy_goursat.html#th_cauchy_goursat_boundary",
   "type": "Theorem",
-  "number": "1.14.12",
+  "number": "1.14.16",
   "title": "Cauchy-Goursat: boundary curve.",
-  "body": " Cauchy-Goursat: boundary curve   Assume       "
+  "body": " Cauchy-Goursat: boundary curve   Let be an open and connected set whose boundary curve is the disjoint union of closed piecwise smooth and simple paths , , and suppose further that each path is positively oriented with respect to . If is holomorphic on , then .   "
+},
+{
+  "id": "cor_cauchy_goursat_boundary",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#cor_cauchy_goursat_boundary",
+  "type": "Corollary",
+  "number": "1.14.17",
+  "title": "Principle of deformation.",
+  "body": " Principle of deformation   Assume is a closed piecwise smooth and simple path with counterclockwise orientation, and assume are closed piecewise smooth and simple curves lying within and oriented counterclockwise. If is holomorphic on the set of all points lying inside and outside for all , then .   "
+},
+{
+  "id": "fig_deformation",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#fig_deformation",
+  "type": "Figure",
+  "number": "1.14.18",
+  "title": "",
+  "body": " Principle of deformation: .   Image illustrating principle of deformation   "
+},
+{
+  "id": "eg_deformation",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#eg_deformation",
+  "type": "Example",
+  "number": "1.14.19",
+  "title": "Principle of deformation.",
+  "body": " Principle of deformation   Let , .   Show, using only and , that , where , .    Conclude that .    Express the real and imaginary parts of as real integrals over to derive some interesting integral formulas.          Note first that is holomorphic on . Let and be the closed paths starting at the point pictured in . Since is closed and lies within the elementary region , and since is closed and lies within the elementary region , and since is holomorphic in both of these regions, we have . Furthermore, letting , we have on the one hand , and on the other hand, thanks to the cancellation along the real line segments, . It follows that , or equivalently, , as claimed.    This follows from the classic integral formula , for .    Using the explicit definition of the integral, we have . It follows that .      "
+},
+{
+  "id": "fig_eg_deform",
+  "level": "2",
+  "url": "s_cauchy_goursat.html#fig_eg_deform",
+  "type": "Figure",
+  "number": "1.14.20",
+  "title": "",
+  "body": " Method for simple principle of deformation examples   Two paths alpha and beta related to paths gamma and gamma prime   "
 },
 {
   "id": "appendix-notation",
