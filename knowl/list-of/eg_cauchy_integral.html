@@ -14,8 +14,31 @@
 <article class="example example-like"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.15.3</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy Integral formula.</span>
 </h3>
-<div class="para">Compute <span class="process-math">\(\int_\gamma \frac{e^{z^2-1}}{z^2+6z+5}\, dz\text{,}\)</span> where <span class="process-math">\(\gamma\)</span> the triangular closed path <span class="process-math">\(\gamma_{(z_0,z_1,z_2)}\text{,}\)</span> where  <span class="process-math">\(z_0=2-i\text{,}\)</span> to <span class="process-math">\(z_1=-1+1\text{,}\)</span> to <span class="process-math">\(z_2=-3-i\)</span>
+<div class="para">Compute <span class="process-math">\(\int_\gamma \frac{e^{z^2-1}}{z^2+6z+5}\, dz\text{,}\)</span> where <span class="process-math">\(\gamma\)</span> is the triangular closed path <span class="process-math">\(\gamma_{(z_0,z_1,z_2)}\text{,}\)</span> where  <span class="process-math">\(z_0=2-i\text{,}\)</span> to <span class="process-math">\(z_1=-1+1\text{,}\)</span> to <span class="process-math">\(z_2=-3-i\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_cauchy_integral_formula.html#eg_cauchy_integral">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_caucy_int_tri.html">
+\begin{align*}
+\int_\gamma \frac{e^{z^2-1}}{z^2+6z+5}\, dz  \amp = \int_\gamma \frac{e^{z^2-1}}{(z+1)(z+5)}\, dz \\
+\amp = \int_\gamma \frac{g(z)}{z+1}\, dz\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(g(z)=e^{z^2-1}/(z+5)\)</span> is holomorphic away from <span class="process-math">\(-5\text{.}\)</span> In particular, <span class="process-math">\(g\)</span> is holomorphic in the open ball <span class="process-math">\(U=B_5(0)\text{.}\)</span> Consider the path <span class="process-math">\(\alpha=-1+4e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> (See <a href="s_cauchy_integral_formula.html#fig_caucy_int_tri" class="xref" data-knowl="./knowl/xref/fig_caucy_int_tri.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.15.4">Figure 1.15.4</a>.) Since <span class="process-math">\(\gamma\)</span> lies within <span class="process-math">\(\alpha\text{,}\)</span> and since <span class="process-math">\(g(z)/(z+1)\)</span> is holomorphic at all points within <span class="process-math">\(\alpha\)</span> and outside of <span class="process-math">\(\gamma\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_caucy_int_tri.html">
+\begin{equation*}
+\int_\alpha \frac{g(z)}{z+1}\, dz=\int_\gamma \frac{g(z)}{z+1}\, dz\text{.}
+\end{equation*}
+</div>
+<div class="para">Now using the Cauchy integral formula, applied to <span class="process-math">\(U=B_5(0)\)</span> and <span class="process-math">\(\alpha\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_caucy_int_tri.html">
+\begin{align*}
+\int_\gamma \frac{e^{z^2-1}}{z^2+6z+5}\, dz \amp = \int_\alpha \frac{g(z)}{z+1}\, dz  \\
+\amp = 2\pi i g(-1)\\
+\amp = 2\pi i \cdot \frac{e^0}{4}\\
+\amp = \frac{\pi i}{2}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_cauchy_integral_formula.html#eg_cauchy_integral">in-context</a></span>
 </body>
 </html>

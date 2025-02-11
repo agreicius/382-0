@@ -2419,7 +2419,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.15",
   "title": "Cauchy integral formula",
-  "body": " Cauchy integral formula    Assume is continuous on an open set containing . For each let , . We have .     Cauchy-integral formula   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have          Cauchy Integral formula   Compute , where the triangular closed path , where , to , to          Cauchy integral formula: cosine   Compute .        "
+  "body": " Cauchy integral formula    Assume is continuous on an open set containing . For each let , . We have .    First observe that for all we have , and thus . Let . We will show that there is a such that implies , and thus that the limit statement holds. Using continuity at , for any , we can find a such that implies . It follows that for any we have , as desired.     Cauchy-integral formula   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have     Given any , for any with , the principle of deformation theorem implies that , where , . (Note that $f(z)\/(z-w)$ is holomorphic at all points lying within and outside of .) Since this is true for all (sufficiently small) , it follows from that , as claimed.     Cauchy Integral formula   Compute , where is the triangular closed path , where , to , to     We have , where is holomorphic away from . In particular, is holomorphic in the open ball . Consider the path , . (See .) Since lies within , and since is holomorphic at all points within and outside of , we have . Now using the Cauchy integral formula, applied to and , we have .     Cauchy integral formula on triangular path   Cauchy integral formula on triangular path      Cauchy integral formula: cosine   Compute .        "
 },
 {
   "id": "lemma_cauchy_integral",
@@ -2428,7 +2428,7 @@ var ptx_lunr_docs = [
   "type": "Lemma",
   "number": "1.15.1",
   "title": "",
-  "body": "  Assume is continuous on an open set containing . For each let , . We have .   "
+  "body": "  Assume is continuous on an open set containing . For each let , . We have .    First observe that for all we have , and thus . Let . We will show that there is a such that implies , and thus that the limit statement holds. Using continuity at , for any , we can find a such that implies . It follows that for any we have , as desired.   "
 },
 {
   "id": "",
@@ -2437,7 +2437,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.15.2",
   "title": "Cauchy-integral formula.",
-  "body": " Cauchy-integral formula   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have        "
+  "body": " Cauchy-integral formula   Assume is holomorphic on an open set containing the , suppose for some , and let , . For any we have     Given any , for any with , the principle of deformation theorem implies that , where , . (Note that $f(z)\/(z-w)$ is holomorphic at all points lying within and outside of .) Since this is true for all (sufficiently small) , it follows from that , as claimed.   "
 },
 {
   "id": "eg_cauchy_integral",
@@ -2446,14 +2446,23 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.15.3",
   "title": "Cauchy Integral formula.",
-  "body": " Cauchy Integral formula   Compute , where the triangular closed path , where , to , to        "
+  "body": " Cauchy Integral formula   Compute , where is the triangular closed path , where , to , to     We have , where is holomorphic away from . In particular, is holomorphic in the open ball . Consider the path , . (See .) Since lies within , and since is holomorphic at all points within and outside of , we have . Now using the Cauchy integral formula, applied to and , we have .   "
+},
+{
+  "id": "fig_caucy_int_tri",
+  "level": "2",
+  "url": "s_cauchy_integral_formula.html#fig_caucy_int_tri",
+  "type": "Figure",
+  "number": "1.15.4",
+  "title": "",
+  "body": " Cauchy integral formula on triangular path   Cauchy integral formula on triangular path    "
 },
 {
   "id": "eg_cauchy_integral_2",
   "level": "2",
   "url": "s_cauchy_integral_formula.html#eg_cauchy_integral_2",
   "type": "Example",
-  "number": "1.15.4",
+  "number": "1.15.5",
   "title": "Cauchy integral formula: cosine.",
   "body": " Cauchy integral formula: cosine   Compute .       "
 },
