@@ -11,6 +11,32 @@
             </men>.
             </p>
         </statement>
+        <proof>
+            <p>
+                First observe that for all <m>r</m> we have  
+                <md>
+                    <mrow>\int_{\gamma_r} \frac{f(z)}{z-z_0}\, dz \amp = \int_{\gamma_r} \frac{f(z)-f(z_0)+f(z_0)}{z-z_0}\, dz</mrow>
+                    <mrow> \amp = \int_{\gamma_r} \frac{f(z)-f(z_0)}{z-z_0}\, dz +\int_{\gamma_r} \frac{f(z_0)}{z-z_0}\, dz</mrow>
+                    <mrow> \amp =\int_{\gamma_r} \frac{f(z)-f(z_0)}{z-z_0}\, dz+2\pi i f(z_0)</mrow>
+                </md>,
+                 and thus
+                 <me>
+                    \abs{\int_{\gamma_r} \frac{f(z)}{z-z_0}\, dz-2\pi i f(z_0)}=\abs{\int_{\gamma_r} \frac{f(z)-f(z_0)}{z-z_0}\, dz}
+                 </me>.
+                Let <m>\epsilon&gt; 0</m>. We will show that there is a <m>\delta&gt; 0</m> such that <m>r&lt; \delta</m> implies 
+                <me>
+                    \abs{\int_{\gamma_r} \frac{f(z)}{z-z_0}\, dz-2\pi i f(z_0)}=\abs{\int_{\gamma_r} \frac{f(z)-f(z_0)}{z-z_0}\, dz}\leq \epsilon
+                 </me>,
+                 and thus that the limit statement holds. 
+                Using continuity at <m>z_0</m>,  for any <m>\epsilon &gt; 0</m>, we can find a <m>\delta&gt; 0</m> such that <m>\abs{z-z_0}&lt; \delta</m> implies <m>\abs{f(z)-f(z_0)}&lt; \epsilon/(2\pi)</m>. It follows that for any <m>0&lt; r&lt; \delta</m> we have 
+                <md>
+                    <mrow> \abs{\int_{\gamma_r} \frac{f(z)}{z-z_0}\, dz-2\pi i f(z_0)}\amp=\abs{\int_{\gamma_r} \frac{f(z)-f(z_0)}{z-z_0}\, dz}\amp </mrow>
+                    <mrow> \amp \leq \frac{\epsilon}{2\pi r}\cdot 2\pi r \amp (ML-\text{ineq.})</mrow>
+                    <mrow> \amp =\epsilon </mrow>
+                </md>,
+                as desired.
+            </p>
+        </proof>
     </lemma>
     <theorem xml:id="">
     <title>Cauchy-integral formula</title>
@@ -20,11 +46,21 @@
     <men xml:id="eq_cauchy_integral">
         f(w)=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{z-w}\, dz
     </men>
-    
     </p>
     </statement>
     <proof>
     <p>
+        Given any <m>w\in B_{r}(z_0)</m>, for any <m>s&gt; 0</m> with <m>B_s(z_0)\subseteq B_r(z_0)</m>, the <xref ref="cor_cauchy_goursat_boundary" text="custom">principle of deformation theorem</xref>  implies that 
+        <me>
+            \int_\gamma\frac{f(z)}{z-w}\, dz=\int_{\gamma_s}\frac{f(z)}{w-z}
+        </me>,
+        where <m>\gamma_s=w+se^{it}</m>, <m>t\in [0,2\pi]</m>. (Note that $f(z)/(z-w)$ is holomorphic at all points lying within <m>\gamma</m> and outside of <m>\gamma_s</m>.) Since this is true for all (sufficiently small) <m>s</m>,  it follows from <xref ref="lemma_cauchy_integral"/> that 
+        <md>
+            <mrow>f(w) \amp = \lim\limits_{s\to 0}\int_{\gamma_s}\frac{f(z)}{z-w}\, dz</mrow>
+            <mrow> \amp = \lim\limits_{s\to 0}\int_{\gamma}\frac{f(z)}{z-w}\, dz </mrow>
+            <mrow> \amp = \int_{\gamma}\frac{f(z)}{z-w}\, dz</mrow>
+        </md>,
+        as claimed.
     </p>
     </proof>
     </theorem>
@@ -32,15 +68,47 @@
     <title>Cauchy Integral formula</title>
     <statement>
     <p>
-    Compute <m>\int_\gamma \frac{e^{z^2-1}}{z^2+6z+5}\, dz</m>, where <m>\gamma</m> the triangular closed path <m>\gamma_{(z_0,z_1,z_2)}</m>, where  <m>z_0=2-i</m>, to <m>z_1=-1+1</m>, to <m>z_2=-3-i</m>
+    Compute <m>\int_\gamma \frac{e^{z^2-1}}{z^2+6z+5}\, dz</m>, where <m>\gamma</m> is the triangular closed path <m>\gamma_{(z_0,z_1,z_2)}</m>, where  <m>z_0=2-i</m>, to <m>z_1=-1+1</m>, to <m>z_2=-3-i</m>
     </p>
     </statement>
     <solution>
     <p>
-    
+    We have 
+    <md>
+        <mrow>\int_\gamma \frac{e^{z^2-1}}{z^2+6z+5}\, dz  \amp = \int_\gamma \frac{e^{z^2-1}}{(z+1)(z+5)}\, dz </mrow>
+        <mrow> \amp = \int_\gamma \frac{g(z)}{z+1}\, dz</mrow>
+    </md>,
+    where <m>g(z)=e^{z^2-1}/(z+5)</m> is holomorphic away from <m>-5</m>. In particular, <m>g</m> is holomorphic in the open ball <m>U=B_5(0)</m>. Consider the path <m>\alpha=-1+4e^{it}</m>, <m>t\in [0,2\pi]</m>. (See <xref ref="fig_caucy_int_tri"/>.) Since <m>\gamma</m> lies within <m>\alpha</m>, and since <m>g(z)/(z+1)</m> is holomorphic at all points within <m>\alpha</m> and outside of <m>\gamma</m>, we have 
+    <me>
+        \int_\alpha \frac{g(z)}{z+1}\, dz=\int_\gamma \frac{g(z)}{z+1}\, dz
+    </me>.
+    Now using the Cauchy integral formula, applied to <m>U=B_5(0)</m> and <m>\alpha</m>, we have 
+    <md>
+        <mrow>\int_\gamma \frac{e^{z^2-1}}{z^2+6z+5}\, dz \amp = \int_\alpha \frac{g(z)}{z+1}\, dz  </mrow>
+        <mrow> \amp = 2\pi i g(-1)</mrow>
+        <mrow> \amp = 2\pi i \cdot \frac{e^0}{4}</mrow>
+        <mrow> \amp = \frac{\pi i}{2}</mrow>
+    </md>.
     </p>
     </solution>
     </example>
+    <figure xml:id="fig_caucy_int_tri">
+        <caption>Cauchy integral formula on triangular path</caption>
+        <image width="50%">
+            <shortdescription>Cauchy integral formula on triangular path</shortdescription>
+            <sageplot>
+t=var('t')
+L=[vector((2,-1)),vector((-1,1)),vector((-3,-1))]
+phi=line([L[0],L[1],L[2],L[0]],color="blue",thickness=1.5,aspect_ratio=1)
+Arrows=sum(arrow(L[i],L[i]+(L[(i+1).mod(3)]-L[i])/2, color="blue") for i in range(0,3))
+P=point((-1,0),color="blue", size=60)
+Q=point((-5,0),color="blue", size=60)
+gamma=circle((0,0),4, color="red")
+carrows=sum(arrow((4*cos(pi*t/4),4*sin(pi*t/4)),(4*cos(pi*t/4+.01),4*sin(pi*t/4+.01)), color="red") for t in range(0,9))
+phi+Arrows+P+Q+gamma+carrows
+            </sageplot>
+        </image>
+    </figure>
     <example xml:id="eg_cauchy_integral_2">
     <title>Cauchy integral formula: cosine</title>
     <statement>
