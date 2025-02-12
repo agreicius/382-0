@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_power_series" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Complex power series</title>
+
+    <definition xml:id="d_power_series">
+    <title>Complex power series</title>
+    <statement>
+    <p>
+    Given <m>z_0\in \C</m>, a <term>(complex) power series centered at <m>z_0</m></term> in the variable (or unknown) <m>z</m> is an expression of the form 
+    <men xml:id="eq_power_series">
+    f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n=a_0+a_1(z-z_1)+a_2(z-z_0)^2+\cdots
+    </men>, where <m>a_n\in \C</m>. We call <m>z_0</m> the <term>center</term> of the power series, and <m>a_n</m> the <m>n</m>-th <term>coefficient</term> of the series. 
+    </p>
+    <p>
+        For any integer <m>N\geq 0</m>, the <term><m>n</m>-th partial sum</term> of the power series <m>f</m> is the function <m>f_N(z)</m> defined as 
+        <me>
+            f_N(z)=\sum_{n=0}^Na_nz^n
+        </me>.
+    </p>
+    <p>
+        Given <m>w\in \C</m>, we say the power series <m>f(z)=\sum_{n=0}^{\infty}a_n(z-z_0)^n</m> <term>converges</term> (resp. <term>diverges</term>) at <m>w</m> if the infinite series <m>f(w)=\sum_{n=0}^{\infty}a_n(w-z_0)^n</m> converges (resp. diverges).
+    </p>
+    </statement>
+    </definition>
+    <p>
+        Recall the geometric series <m>f(z)=\sum_{n=0}^\infty z^n</m> treated in <xref ref="eg_geom_series"/>. We saw there that the series converges for all <m>z</m> with <m>\abs{z}&lt; 1</m> and showed that for all such <m>z</m> we have 
+        <men xml:id="eq_geom_series">
+            f(z)=\sum_{n=0}^\infty z^n=\frac{1}{1-z}
+        </men>.
+        We also showed that the series diverges for all <m>z</m> with <m>\abs{z}&gt; 0</m> (as well as for all <m>z</m> with <m>\abs{z}=1</m>). Make this example your friend. It is both one of the simplest power series and one of the most fundamental, and will show up with an uncanny persistence.
+    </p>
+    <p>
+        The formula for the function <m>f(z)=\frac{1}{1-z}</m> given in <xref ref="eq_geom_series"/> is an example of a <em>power series representation</em> of <m>f</m> on the open set <m>B_1(0)</m>. 
+    </p>
+    <definition xml:id="d_power_series_expansion">
+    <title>Power series representation</title>
+    <statement>
+    <p>
+    Given a complex function <m>f</m> defined on the open set <m>U</m>, a <term>power series representation</term> (or <term>expansion</term>) of <m>f</m> on <m>U</m> is a power series <m>\sum_{n=0}^\infty a_n(z-z_0)^n</m> that satisfies 
+    <me>
+        f(z)=\sum_{n=0}^{\infty}a_n(z-z_0)^n
+    </me>
+    for all <m>z\in U</m>. 
+    </p>
+    </statement>
+    </definition>
+    <p>
+        We will be able to generate many power series representations of functions from the geometric series, as the next example indicates. 
+    </p>
+    <example xml:id="eg_power_series">
+    <title>Power series representation</title>
+    <statement>
+    <p>
+    Let <m>f(z)=\frac{z^3}{9-z^2}</m>.
+    Find power series representation of <m>f</m> centered at <m>z_0=0</m> on the open set <m>U=B_3(0)</m>.  
+    </p>
+    </statement>
+    <solution>
+    
+            <p>
+                We have 
+                <md>
+                    <mrow>f(z) \amp =\frac{z^3}{9}\cdot \frac{1}{1-(z/3)^2}</mrow>
+                </md>.
+                Since formula <xref ref="eq_geom_series"/> is valid for <em>all</em> complex in <m>B_1(0)</m>, we have 
+                <me>
+                    \frac{1}{1-(z/3)^2}=\sum_{n=0}^\infty((z/3)^2)^n=\sum_{n=0}^\infty \frac{1}{3^{2n}}z^{2n}
+                </me>
+                for all <m>z</m> with <m>\abs{(z/3)^2}&lt; 1</m>, and thus for all <m>z</m> with <m>\abs{z}&lt; 3</m>. Using the product law for limits, it follows that 
+                <me>
+                    f(z)=\frac{z}{9}\sum_{n=0}^\infty \frac{1}{3^{2n}}z^{2n}=\sum_{n=0}^\infty\frac{1}{3^{2n+2}}z^{2n+1}
+                </me>.
+            </p>
+    </solution>
+    </example>
+    
+    
+    
+
+</section>
