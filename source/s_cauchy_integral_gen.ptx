@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_cauchy_integral_generalize" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Generalized Cauchy integral formula</title>
+    <p>
+        We begin to see how Cauchy-Goursat sets off a cascade of increasingly stunning consequences. In this section we will generalize the <xref ref="th_cauchy_integral" text="custom">Cauchy integral formula</xref>, give a surprising equivalent condition for being holomorphic (<xref ref="th_morera" text="custom">Morera's theorem</xref>), show that bounded holomorphic functions on <m>\C</m> are constant (<xref ref="th_liouville" text="custom">Liouville's theorem</xref>), and prove the fundamental theorem of algebra. All of these results can claim Cauchy-Goursat as a close logical ancestor. 
+    </p>
+    <theorem xml:id="th_gen_cauchy_int">
+    <title>Generalized Cauchy integral formula</title>
+    <statement>
+    <p>
+    If <m>f</m> is holomorphic on the open set <m>U</m>, then <m>f</m> is infinitely differentiable on <m>U</m> and for all <m>n\geq 0</m> we have 
+    <men xml:id="eq_gen_cauchy_int">
+        f^{(n)}(z_0)=\frac{n!}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz
+    </men>,
+    where <m>\gamma</m> is the counterclockwise oriented circular boundary of of any closed ball <m>\overline{B}\subseteq U</m> that contains <m>z_0</m>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+        This can be proved by induction, the base case (<m>n=0</m>) being a re-statement of the <xref ref="th_cauchy_integral" text="custom">Cauchy integral formula</xref> . We will not give here a complete proof of the general induction step: <ie/>, that for all <m>n\geq 0</m> the formula for <m>f^{(n)}</m> implies the formula for <m>f^{(n+1)}</m>. Instead, we will only show how <m>n=0</m> case implies the <m>n=1</m> case. At the end, we will show how the general induction step proceeds in much the same manner, only with slightly more complicated algebra. In any case, we will see later when discussing power series representations of holomorphic functions, how the <m>n=1</m> result implies the general result thanks to some facts about integrals and derivatives of power series. 
+    </p>
+   
+  <case>
+  <title>Case <m>n=1</m></title>
+   <p>
+        To verify the <m>n=1</m> case, we begin compute <m>f'(w_0)</m> using the limit definition for <m>w_0\in U</m>. Pick an open ball <m>B_r(w_0)</m> containing <m>w_0</m> satisfying <m>\overline{B}_r(w_0)\subseteq U</m>, and let <m>\gamma=w_0+re^{it}</m>. We have 
+        <md>
+            <mrow>f'(w_0) \amp = \lim\limits_{w\to w_0}\frac{f(w)-f(w_0)}{w-w_0} </mrow>
+            <mrow> \amp =\lim\limits_{w\to w_0}\frac{\frac{1}{2\pi i}\int_\gamma f(z)/(z-w)\, dz-\frac{1}{2\pi i}\int_\gamma f(z)/(z-w_0)\, dz}{w-w_0}</mrow>
+            <mrow> \amp =\frac{1}{2\pi}\lim\limits_{w\to w_0}\int_\gamma \frac{f(z)(w-w_0)}{(w-w_0)(z-w)(z-w_0)}\, dz</mrow>
+            <mrow> \amp =\frac{1}{2\pi}\lim\limits_{w\to w_0}\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz</mrow>
+        </md>.
+       The second equality above uses <xref ref="th_cauchy_integral"/> for both <m>f(w)</m> and <m>f(w_0)</m>. Note that for all <m>w</m> sufficiently close to <m>w_0</m>, we have <m>w\in B_r(w_0)</m>, justifying the use of the formula for <m>f(w)</m> in the limit. 
+    </p>
+    <p>
+        We are sorely tempted to continue our computation as follows:
+        <md>
+            <mrow> \frac{1}{2\pi}\lim\limits_{w\to w_0}\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz\amp \stackrel{?}{=}\frac{1}{2\pi}\int_\gamma\lim\limits_{w\to w_0} \frac{f(z)}{(z-w)(z-w_0)}\, dz </mrow>
+            <mrow> \amp =\frac{1}{2\pi i}\int_\gamma\frac{f(z)}{(z-w_0)^2}\, dz</mrow>
+        </md>.
+        However, as indicated by the <m>\stackrel{?}{=}</m> it is not clear whether we are justified in swapping the order of the limit and integral operations. It turns out that we are indeed justified in doing so, but the explanation pivots on the somewhat technical notion of <em>uniform convergence</em>. We will define that notion rigorously when we discuss power series. For now we sidestep this obstacle by showing directly that 
+        <me>
+           \lim\limits_{w\to w_0}\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz= \int_\gamma\frac{f(z)}{(z-w_0)^2}\, dz
+        </me>
+        using the definition of the limit. More precisely, we will show that 
+        <me>
+            \abs{\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz-\int_\gamma \frac{f(z)}{(z-w_0)^2}\, dz} = \abs{\int_\gamma \frac{f(z)(w-w_0)}{(z-w)(z-w_0)^2}\, dz}
+        </me>
+        approaches zero as <m>w\to w_0</m>. 
+        To that end, recall that <m>\gamma=w_0+re^{it}</m>.  It follows that <m>\abs{z-w_0}=r</m> and <m>\abs{z-w}=\abs{(z-w_0)+(w_0-w)}\geq \abs{r-\abs{w-w_0}}</m>. Furthermore, since <m>g(t)=\abs{f(\gamma(t))}</m> is a continuous real-valued function on <m>[0,2\pi]</m>, the extreme value theorem implies that there is an <m>M</m> such that <m>\abs{f(z)}\leq M</m> for all <m>z=\gamma(t)</m>. We conclude, using the <m>ML</m>-inequality, that 
+        <md>
+            <mrow>\abs{\int_\gamma \frac{f(z)(w-w_0)}{(z-w)(z-w_0)^2}\, dz} \amp = \abs{w-w_0}\abs{\int_\gamma \frac{f(z)}{(z-w)(z-w_0)^2}\, dz}</mrow>
+            <mrow> \amp \leq \abs{w-w_0}2\pi r \frac{M}{(r-\abs{w-w_0})r^2}</mrow>
+        </md>.
+        Since <m>r</m> and <m>M</m> are fixed constants, we see that 
+        <me>
+            \lim\limits_{w\to w_0}\abs{w-w_0}2\pi r \frac{M}{(r-\abs{w-w_0})r^2}=0
+        </me>,
+         and hence that  
+        <me>
+            \lim\limits_{w\to w_0} \abs{\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz-\int_\gamma \frac{f(z)}{(z-w_0)^2}\, dz} =0
+        </me>,
+        as desired. This proves the result for <m>n=1</m>. 
+    </p>
+  </case>
+  
+    <case>
+    <title>General induction step</title>
+      <p>
+        What about a proof for the general induction step: <ie/>, that the formula for <m>f^{(n)}</m> implies the formula for <m>f^{(n+1)}</m>? The structure and ideas of the proof are very similar. We begin with the limit expression <m>f^{(n+1)}(w_0)=\lim\limits_{w\to w_0}(f^{(n)}(w)-f^{(n)}(w_0))/(w-w_0)</m> and apply the generalized Cauchy integral formula for <m>f^{(n)}(w)</m> and <m>f^{(n)}(w_0)</m> to yield (after some algebra) the expression 
+        <me>
+            \frac{n!}{2\pi i}\lim\limits_{w\to w_0}\int_\gamma\frac{f(z)((z-w_0)^{n+1}-(z-w)^{n+1})}{(w-w_0)(z-w_0)^{n+1}(z-w)^{n+1}}\, dz
+        </me>.
+        As with the <m>n=1</m> case, if we could swap the order of the limit and integral operations above, we obtain the desired result since 
+        <md>
+            <mrow>\lim\limits_{w\to w_0}\frac{f(z)((z-w_0)^{n+1}-(z-w)^{n+1})}{(w-w_0)(z-w_0)^{n+1}(z-w)^{n+1}}</mrow>
+            <mrow>=\frac{f(z)}{(z-w_0)^{2n+2}}\lim\limits_{w\to w_0}\frac{(z-w_0)^{n+1}-(z-w)^{n+1}}{w-w_0}  </mrow>
+            <mrow>=\frac{f(z)}{(z-w_0)^{2n+2}}\cdot (n+1)(z-w_0)^{n}  </mrow>
+            <mrow>=\frac{(n+1)f(z)}{(z-w_0)^{n+2}}</mrow>
+        </md>.
+        Note that the limit computed in the penultimate line follows from the limit definition of the derivative of the function <m>g(w)=(z-w)^{n+1}</m>, which satisfies <m>g'(w)=-(n+1)(z-w)^n</m>.
+    </p>
+    <p>
+        As with the <m>n=1</m> case, we have run straight into this tricky issue of whether we really can swap the order of the limit and integral. And just as with that case, it is possible to sidestep the issue and show the limit result we want directly. But we leave those details to you! 
+    </p>
+    </case>
+    
+    </proof>
+    </theorem>
+    <remark>
+        <title>Differentiable implies infinitely differentiable</title>
+        <p>
+            Let us not pass by one truly remarkable consequence of <xref ref="th_gen_cauchy_int"/>: namely, that if <m>f</m> is differentiable on an open set <m>U</m>, then it is infinitely differentiable on <m>U</m>. This is in marked contrast with real number calculus. Examples abound of functions <m>f\colon \R\rightarrow \R</m> that are differentiable, but not twice differentiable, or more generally <m>n</m>-times differentiable but not <m>(n+1)</m>-times differentiable. This is yet another indication of who strong a condition complex differentiability is. 
+        </p>
+    </remark>
+    <p>
+        Another consequence of <xref ref="th_gen_cauchy_int"/>, is that if <m>f</m> has an antiderivative on <m>U</m>, then <m>f</m> is holomorphic on <m>U</m>. Indeed, if <m>F</m> is an antiderivative of <m>f</m> on <m>U</m> then <m>F</m> is differentiable, and hence infinitely differentiable. In particular, <m>f=F'</m> must be differentiable. 
+    </p>
+    <corollary xml:id="cor_gen_cauchy_integral">
+        <title>Antiderivatives and derivatives</title>
+        <statement>
+            <p>
+                Let <m>f</m> be a complex function defined on the open set <m>U</m>. If <m>f</m> has an antiderivative on <m>U</m>, then <m>f</m> is holomorphic on <m>U</m>. 
+            </p>
+        </statement>
+    </corollary>
+    <example xml:id="eg_">
+    <title>Generalized Cauchy integral formula</title>
+    <statement>
+    <p>
+    Compute <m>\int_\gamma\tfrac{1}{z^3+z^2-z-1}\, dz</m> where <m>\gamma</m> is the closed simple polygonal path that traverses the square 
+    <me>
+    \{z\in \C\colon \abs{\Re(z+1)}+\abs{\Im(z+1)}=1\}
+    </me> 
+    in the <em>clockwise</em> direction. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <theorem xml:id="th_morera">
+    <title>Morera's theorem</title>
+    <statement>
+    <p>
+    Let <m>f</m> be continuous on the open set <m>U</m>. The following statements are equivalent. 
+    <ol>
+        <li>
+            <p>
+                <m>f</m> is holomorphic on <m>U</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                For all triangles <m>\Delta(z_0,z_1,z_2)\subseteq U</m> we have 
+                <me>
+                    \int_{\gamma_{(z_0,z_1,z_2)}}f\, dz=0
+                </me>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        The implication (1)<m>\implies</m>(2) is a restatement of <xref ref="th_cauchy-goursat_triangle"/>. 
+    </p>
+    <p>
+        We now show the reverse implication holds. Assume (2) is the case. Given any <m>z_0\in U</m>, we can find an open ball <m>B_r(z_0)\subseteq U</m>. For all <m>w\in B_{r}(z_0)</m>, define <m>F(w)=\int_{\gamma_{(z_0,w)}}f\, dz</m>, where as usual <m>\gamma_{z_0,w}</m> is the straight line path from <m>z_0</m> to <m>w</m>. We can now mount the same argument used in the proof of <xref ref="th_antider"/>, to show that <m>F'(w_0)=f(w_0)</m> for all <m>w_0\in B_{r}(z_0)</m>. Indeed, all that is needed in order to use that argument is to show that 
+        <me>
+            F(w)-F(w_0)=\int_{\gamma_{(w_0,w)}} f(z)\, dz
+        </me>,
+        and this follows since the triangle <m>\Delta(z_0,w_0,w)</m> lies within <m>B_r(z_0)</m>, and thus 
+        <me>
+            0=\int_{\gamma_{(z_0,w_0,w)}}f\, dz=\int_{\gamma_{(z_0,w_0)}}f\, dz+\int_{\gamma_{(w_0,w)}}f\, dz+\int_{\gamma_{(w,w_0)}}f\, dz
+        </me>,
+        or equivalently, 
+        <me>
+            \int_{\gamma_{(w_0,w)}}f\, dz=\int_{\gamma_{(z_0,w)}}f\, dz-\int_{\gamma_{(z_0,w_0)}}f\, dz=F(w)-F(w_0)
+        </me>.
+        Lastly, since <m>f</m> has an antiderivative on <m>B_r(z_0)</m>, <m>f</m> is differentiable on <m>B_r(z_0)</m> by <xref ref="cor_gen_cauchy_integral"/>. It follows that <m>f</m> is differentiable at <m>z_0</m>, and hence differentiable everywhere on <m>U</m>.
+    </p>
+    </proof>
+    </theorem>
+    <definition xml:id="d_entire_bounded">
+    <title>Entire function</title>
+    <statement>
+    <p>
+    A complex function <m>f</m> is <term>entire</term> if it is holomorphic on all of <m>\C</m>. 
+    </p>
+    </statement>
+    </definition>
+    <definition xml:id="d_bounded">
+    <title>Bounded function</title>
+    <statement>
+    <p>
+    A complex function <m>f\colon D\rightarrow \C</m> is <term>bounded on a set <m>A\subseteq D</m></term> if there exists an <m>M\geq 0</m> such that <m>\abs{f(z)}\leq M</m> for all <m>z\in A</m>. The function is <term>bounded</term> if it is bounded on its entire domain. 
+    </p>
+    </statement>
+    </definition>
+    
+    
+    <theorem xml:id="th_liouville">
+    <title>Liouville's theorem</title>
+    <statement>
+    <p>
+    If <m>f\colon \C\rightarrow \C</m> is entire and bounded, then <m>f</m> is a constant function. 
+    </p>
+    </statement>
+    <proof>
+    <p>
+        Assume <m>f</m> is entire and that there is a constant <m>C\geq 0</m> such that <m>\abs{f(z)}\leq C</m> for all <m>z\in \C</m>. We will show that <m>f'(z_0)=0</m> for all <m>z_0\in \C</m>. Since <m>\C</m> is connected, this implies that <m>f</m> is a constant function.
+    </p>
+    <p>
+        Pick any <m>z_0\in \C</m>. Given any <m>R&gt; 0</m>, let <m>\gamma_R=z_0+Re^{it}</m>. Using the <m>n=1</m> case of <xref ref="th_gen_cauchy_int"/>, we have 
+        <md>
+            <mrow>\abs{f'(z_0)} \amp =\abs{\frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{(z-z_0)^2}\, dz}</mrow>
+            <mrow> \amp \leq \frac{1}{2\pi}\, \frac{C}{R^2}\cdot 2\pi R </mrow>
+            <mrow> \amp = \frac{C}{R}</mrow>
+        </md>,
+        where the penultimate inequality is an instance of the <m>ML</m>-inequality, using the fact that 
+        <md>
+            <mrow>\abs{f(z)} \amp \leq C \text{ for all } z \amp \abs{z-z_0}\amp =R \text{ for all } z=\phi(t)</mrow>
+        </md>.
+        Since our inequality <m>\abs{f'(z_0)}\leq C/R</m> holds <em>for all</em> <m>R</m>, and since clearly 
+        <me>
+            \lim\limits_{R\to \infty}\frac{C}{R}=0
+        </me>,
+        we see that we must have <m>\abs{f'(z_0)}=0</m>, and thus <m>f'(z_0)=0</m>, as desired. 
+    </p>
+    </proof>
+    </theorem>
+    <theorem xml:id="th_fta">
+    <title>Fundamental theorem of algebra</title>
+    <statement>
+    <p>
+    Let <m>f\colon \C\rightarrow \C</m> be a nonconstant polynomial: <ie/>, <m>\deg f \geq 1</m>. 
+    <ol>
+        <li>
+            <title><m>f</m> has a complex root</title>
+            <p>
+                There is a <m>w\in \C</m> such that  <m>f(w)=0</m>. 
+            </p>
+        </li>
+        <li>
+            <title><m>f</m> spits completely</title>
+            <p>
+                There are complex numbers <m>w_1,w_2,\dots, w_n</m> such that 
+                <me>
+                    f(z)=c\prod_{k=1}^n(z-w_k)
+                </me>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        We have remarked before that (2) follows from (1) using some facts about factoring polynomials. We prove (1) by contradiction. 
+    </p>
+    <p>
+        Assume that <m>f(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots a_1z+a_0</m> is a nonconstant polynomial and that <m>f(z)\ne 0</m> for all <m>z\in \C</m>. Since <m>f</m> is a polynomial, it is entire; since <m>f(z)\ne 0</m>, the reciprocal function <m>1/f</m> is also entire. We claim that <m>1/f</m> is bounded. 
+        </p>
+        <p>
+            To see why, first note that <m>\lim_{z\to \infty}f(z)=\infty</m>, since 
+        <md>
+            <mrow> \lim_{z\to \infty}\abs{f(z)}\amp = \lim_{z\to \infty}\abs{z^n}\abs{(a_n+a_{n-1}/z+\cdots +a_1/z^{n-1}+a_0/z^{n})} </mrow>
+        </md>
+        and 
+       <md>
+        <mrow>\lim_{z\to \infty}\abs{z^n}\amp =\infty, \text{ and } \amp </mrow>
+        <mrow>\lim_{z\to \infty}\abs{(a_n+a_{n-1}/z+\cdots +a_1/z^{n-1}+a_0/z^{n})}\amp=\abs{a_n+0+\cdots+0} </mrow>
+        <mrow> \amp =\abs{a_n}</mrow>
+       </md>.
+       Since <m>\lim\limits_{z\to \infty}f(z)=\infty</m>, we have <m>\lim\limits_{z\to \infty}1/f(z)=0</m>. It follows that there is an <m>R&gt; 0</m> such that <m>\abs{1/f(z)}\leq 1</m> for all <m>z</m> with <m>\abs{z}&gt; R</m>. Finally, since <m>g=1/f</m> is continuous on the closed bounded set <m>\overline{B}_R(0)</m>, the extreme value theorem from multivariable calculus implies that the continuous function 
+       <me>
+       \abs{g}\colon \overline{B}_R(0) \rightarrow \R 
+       </me> 
+       is bounded. Thus there is an <m>M\geq 0</m> such that <m>\abs{g(z)}=\abs{1/f(z)}\leq M</m> for all <m>z\in \overline{B}_R(0)</m>. Since <m>\abs{1/g(z)}\leq 1</m> for all <m>z\in \C-\overline{B}_R(0)</m>, we see that <m>\abs{1/f(z)}\leq \max\{M, 1\}</m> for all <m>z\in \C</m>. Thus <m>1/f</m> is bounded on <m>\C</m>.  
+    </p>
+    <p>
+        But now we have our contradiction! Since <m>1/f</m> is entire and bounded, it is constant by Liouiville's theorem. This contradicts the assumption that <m>f</m> was a nonconstant polynomial. 
+    </p>
+    </proof>
+    </theorem>
+    
+    
+
+</section>

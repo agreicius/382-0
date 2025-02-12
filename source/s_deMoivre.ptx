@@ -87,11 +87,11 @@ Compute <m>(1+i)^{14}</m>. Express you answer in both polar form and in the form
 <p>
 First write <m>1+i</m> in polar form as <m>1+i=\sqrt{2}(\cos \pi/4+i\sin\pi/4)</m>. Using de Moivre's formula, we have 
 <md>
-    <mrow>(1+i)^{14} \amp = (\sqrt{2})^{14}(\cos (14\pi/4)+i\sin(14\pi/ 4)</mrow>
-    <mrow> \amp = 2^{14/2}(\cos 7\pi/2+i\sin 7\pi/2) \amp (\sqrt{2}=2^{1/2}</mrow>
+    <mrow>(1+i)^{14} \amp = (\sqrt{2})^{14}(\cos (14\pi/4)+i\sin(14\pi/ 4))</mrow>
+    <mrow> \amp = 2^{14/2}(\cos 7\pi/2+i\sin 7\pi/2) \amp (\sqrt{2}=2^{1/2})</mrow>
     <mrow> \amp 128(0-i) \amp (7\pi/2=3\pi/2+2\pi)</mrow>
-    <mrow> \amp =-128i</mrow>.
-</md>
+    <mrow> \amp =-128i</mrow>
+</md>.
 </p>
 </solution>
 </example>
@@ -199,7 +199,7 @@ are cube-roots of <m>8i</m>. We claim further that these are all of the cube-roo
 <figure xml:id="fig_cuberoots_8i">
     <caption>Cube-roots of <m>8i</m></caption>
     <image width="100%">
-        <shortdescription>Cube-roots of <m>8i</m></shortdescription>
+        <shortdescription>Cube-roots of 8i</shortdescription>
         <sageplot>
 S=circle((0,0),2,color="blue", ticks=[list(range(-2,3)),list(range(-2,3))],ymin=-2)
 p=vector((2*cos(pi/6),2*sin(pi/6)))
@@ -453,25 +453,26 @@ Give two distinct factorizations of <m>f(x)=x^6-1</m>:
 <theorem xml:id="th_fund_alg">
     <title>Fundamental theorem of algebra</title>
     <statement>
-        <p>
-            Let <m>f(z)</m> be a nonconstant polynomial: <ie/>, <m>\deg f\geq 1</m>.
-            <ol>
-                <li>
-                    <p>
-                        Any polynomial <m>f</m> of degree <m>n\geq 1</m> has a complex root: <ie/>, there is a <m>w\in \C</m> such that <m>f(w)=0</m>.  
-                    </p>
-                </li>
-                <li>
-                    <p>
-                         As a consequence, any polynomial <m>f</m> of degree <m>n\geq 1</m> factors completely over <m>\C</m> as 
-            <me>
-                f(z)=c\prod_{k=0}^{n-1}(z-w_k)
-            </me>
-            for some complex numbers <m>c,w_k\in \C</m>, <m>0\leq k\leq n-1</m>. 
-                    </p>
-                </li>
-            </ol>  
-        </p>
+    <p>
+    Let <m>f\colon \C\rightarrow \C</m> be a nonconstant polynomial: <ie/>, <m>\deg f \geq 1</m>. 
+    <ol>
+        <li>
+            <title><m>f</m> has a complex root</title>
+            <p>
+                There is a <m>w\in \C</m> such that  <m>f(w)=0</m>. 
+            </p>
+        </li>
+        <li>
+            <title><m>f</m> spits completely</title>
+            <p>
+                There are complex numbers <m>w_1,w_2,\dots, w_n</m> such that 
+                <me>
+                    f(z)=c\prod_{k=1}^n(z-w_k)
+                </me>.
+            </p>
+        </li>
+    </ol>
+    </p>
     </statement>
 </theorem>
 

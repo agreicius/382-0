@@ -38,7 +38,7 @@
             </p>
         </proof>
     </lemma>
-    <theorem xml:id="">
+    <theorem xml:id="th_cauchy_integral">
     <title>Cauchy-integral formula</title>
     <statement>
     <p>
