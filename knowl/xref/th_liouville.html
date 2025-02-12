@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.8</span><span class="period">.</span><span class="space"> </span><span class="title">Liouville’s theorem.</span>
+</h3>
+<div class="para">If <span class="process-math">\(f\colon \C\rightarrow \C\)</span> is entire and bounded, then <span class="process-math">\(f\)</span> is a constant function.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">Assume <span class="process-math">\(f\)</span> is entire and that there is a constant <span class="process-math">\(C\geq 0\)</span> such that <span class="process-math">\(\abs{f(z)}\leq C\)</span> for all <span class="process-math">\(z\in \C\text{.}\)</span> We will show that <span class="process-math">\(f'(z_0)=0\)</span> for all <span class="process-math">\(z_0\in \C\text{.}\)</span> Since <span class="process-math">\(\C\)</span> is connected, this implies that <span class="process-math">\(f\)</span> is a constant function.</div>
+<div class="para logical">
+<div class="para">Pick any <span class="process-math">\(z_0\in \C\text{.}\)</span> Given any <span class="process-math">\(R&gt; 0\text{,}\)</span> let <span class="process-math">\(\gamma_R=z_0+Re^{it}\text{.}\)</span> Using the <span class="process-math">\(n=1\)</span> case of <a href="s_cauchy_integral_generalize.html#th_gen_cauchy_int" class="xref" data-knowl="./knowl/xref/th_gen_cauchy_int.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.16.1: Generalized Cauchy integral formula">Theorem 1.16.1</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_cauchy_int.html">
+\begin{align*}
+\abs{f'(z_0)} \amp =\abs{\frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{(z-z_0)^2}\, dz}\\
+\amp \leq \frac{1}{2\pi}\, \frac{C}{R^2}\cdot 2\pi R \\
+\amp = \frac{C}{R}\text{,}
+\end{align*}
+</div>
+<div class="para">where the penultimate inequality is an instance of the <span class="process-math">\(ML\)</span>-inequality, using the fact that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_cauchy_int.html">
+\begin{align*}
+\abs{f(z)} \amp \leq C \text{ for all } z \amp \abs{z-z_0}\amp =R \text{ for all } z=\phi(t)\text{.}
+\end{align*}
+</div>
+<div class="para">Since our inequality <span class="process-math">\(\abs{f'(z_0)}\leq C/R\)</span> holds <em class="emphasis">for all</em> <span class="process-math">\(R\text{,}\)</span> and since clearly</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_cauchy_int.html">
+\begin{equation*}
+\lim\limits_{R\to \infty}\frac{C}{R}=0\text{,}
+\end{equation*}
+</div>
+<div class="para">we see that we must have <span class="process-math">\(\abs{f'(z_0)}=0\text{,}\)</span> and thus <span class="process-math">\(f'(z_0)=0\text{,}\)</span> as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_cauchy_integral_generalize.html#th_liouville">in-context</a></span>
+</body>
+</html>

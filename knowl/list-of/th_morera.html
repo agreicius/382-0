@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.5</span><span class="period">.</span><span class="space"> </span><span class="title">Morera’s theorem.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f\)</span> be continuous on the open set <span class="process-math">\(U\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="th_morera-2-1-3">
+<li><div class="para">
+<span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(U\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">For all triangles <span class="process-math">\(\Delta(z_0,z_1,z_2)\subseteq U\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\gamma_{(z_0,z_1,z_2)}}f\, dz=0\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">The implication (1)<span class="process-math">\(\implies\)</span>(2) is a restatement of <a href="s_cauchy_goursat.html#th_cauchy-goursat_triangle" class="xref" data-knowl="./knowl/xref/th_cauchy-goursat_triangle.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.4: Cauchy-Goursat: triangles">Theorem 1.14.4</a>.</div>
+<div class="para logical">
+<div class="para">We now show the reverse implication holds. Assume (2) is the case. Given any <span class="process-math">\(z_0\in U\text{,}\)</span> we can find an open ball <span class="process-math">\(B_r(z_0)\subseteq U\text{.}\)</span> For all <span class="process-math">\(w\in B_{r}(z_0)\text{,}\)</span> define <span class="process-math">\(F(w)=\int_{\gamma_{(z_0,w)}}f\, dz\text{,}\)</span> where as usual <span class="process-math">\(\gamma_{z_0,w}\)</span> is the straight line path from <span class="process-math">\(z_0\)</span> to <span class="process-math">\(w\text{.}\)</span> We can now mount the same argument used in the proof of <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a>, to show that <span class="process-math">\(F'(w_0)=f(w_0)\)</span> for all <span class="process-math">\(w_0\in B_{r}(z_0)\text{.}\)</span> Indeed, all that is needed in order to use that argument is to show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/cor_gen_cauchy_integral.html">
+\begin{equation*}
+F(w)-F(w_0)=\int_{\gamma_{(w_0,w)}} f(z)\, dz\text{,}
+\end{equation*}
+</div>
+<div class="para">and this follows since the triangle <span class="process-math">\(\Delta(z_0,w_0,w)\)</span> lies within <span class="process-math">\(B_r(z_0)\text{,}\)</span> and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/cor_gen_cauchy_integral.html">
+\begin{equation*}
+0=\int_{\gamma_{(z_0,w_0,w)}}f\, dz=\int_{\gamma_{(z_0,w_0)}}f\, dz+\int_{\gamma_{(w_0,w)}}f\, dz+\int_{\gamma_{(w,w_0)}}f\, dz\text{,}
+\end{equation*}
+</div>
+<div class="para">or equivalently,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/cor_gen_cauchy_integral.html">
+\begin{equation*}
+\int_{\gamma_{(w_0,w)}}f\, dz=\int_{\gamma_{(z_0,w)}}f\, dz-\int_{\gamma_{(z_0,w_0)}}f\, dz=F(w)-F(w_0)\text{.}
+\end{equation*}
+</div>
+<div class="para">Lastly, since <span class="process-math">\(f\)</span> has an antiderivative on <span class="process-math">\(B_r(z_0)\text{,}\)</span> <span class="process-math">\(f\)</span> is differentiable on <span class="process-math">\(B_r(z_0)\)</span> by <a href="s_cauchy_integral_generalize.html#cor_gen_cauchy_integral" class="xref" data-knowl="./knowl/xref/cor_gen_cauchy_integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.16.3: Antiderivatives and derivatives">Corollary 1.16.3</a>. It follows that <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(z_0\text{,}\)</span> and hence differentiable everywhere on <span class="process-math">\(U\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_cauchy_integral_generalize.html#th_morera">in-context</a></span>
+</body>
+</html>

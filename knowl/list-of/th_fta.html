@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.9</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental theorem of algebra.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f\colon \C\rightarrow \C\)</span> be a nonconstant polynomial: i.e., <span class="process-math">\(\deg f \geq 1\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_fta-2-1-4">
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(f\)</span> has a complex root.</span></span><div class="para">There is a <span class="process-math">\(w\in \C\)</span> such that  <span class="process-math">\(f(w)=0\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title"><span class="process-math">\(f\)</span> spits completely.</span></span><div class="para logical">
+<div class="para">There are complex numbers <span class="process-math">\(w_1,w_2,\dots, w_n\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=c\prod_{k=1}^n(z-w_k)\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">We have remarked before that (2) follows from (1) using some facts about factoring polynomials. We prove (1) by contradiction.</div>
+<div class="para">Assume that <span class="process-math">\(f(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots a_1z+a_0\)</span> is a nonconstant polynomial and that <span class="process-math">\(f(z)\ne 0\)</span> for all <span class="process-math">\(z\in \C\text{.}\)</span> Since <span class="process-math">\(f\)</span> is a polynomial, it is entire; since <span class="process-math">\(f(z)\ne 0\text{,}\)</span> the reciprocal function <span class="process-math">\(1/f\)</span> is also entire. We claim that <span class="process-math">\(1/f\)</span> is bounded.</div>
+<div class="para logical">
+<div class="para">To see why, first note that <span class="process-math">\(\lim_{z\to \infty}f(z)=\infty\text{,}\)</span> since</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lim_{z\to \infty}\abs{f(z)}\amp = \lim_{z\to \infty}\abs{z^n}\abs{(a_n+a_{n-1}/z+\cdots +a_1/z^{n-1}+a_0/z^{n})} 
+\end{align*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lim_{z\to \infty}\abs{z^n}\amp =\infty, \text{ and } \amp \\
+\lim_{z\to \infty}\abs{(a_n+a_{n-1}/z+\cdots +a_1/z^{n-1}+a_0/z^{n})}\amp=\abs{a_n+0+\cdots+0} \\
+\amp =\abs{a_n}\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(\lim\limits_{z\to \infty}f(z)=\infty\text{,}\)</span> we have <span class="process-math">\(\lim\limits_{z\to \infty}1/f(z)=0\text{.}\)</span> It follows that there is an <span class="process-math">\(R&gt; 0\)</span> such that <span class="process-math">\(\abs{1/f(z)}\leq 1\)</span> for all <span class="process-math">\(z\)</span> with <span class="process-math">\(\abs{z}&gt; R\text{.}\)</span> Finally, since <span class="process-math">\(g=1/f\)</span> is continuous on the closed bounded set <span class="process-math">\(\overline{B}_R(0)\text{,}\)</span> the extreme value theorem from multivariable calculus implies that the continuous function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{g}\colon \overline{B}_R(0) \rightarrow \R 
+\end{equation*}
+</div>
+<div class="para">is bounded. Thus there is an <span class="process-math">\(M\geq 0\)</span> such that <span class="process-math">\(\abs{g(z)}=\abs{1/f(z)}\leq M\)</span> for all <span class="process-math">\(z\in \overline{B}_R(0)\text{.}\)</span> Since <span class="process-math">\(\abs{1/g(z)}\leq 1\)</span> for all <span class="process-math">\(z\in \C-\overline{B}_R(0)\text{,}\)</span> we see that <span class="process-math">\(\abs{1/f(z)}\leq \max\{M, 1\}\)</span> for all <span class="process-math">\(z\in \C\text{.}\)</span> Thus <span class="process-math">\(1/f\)</span> is bounded on <span class="process-math">\(\C\text{.}\)</span>
+</div>
+</div>
+<div class="para">But now we have our contradiction! Since <span class="process-math">\(1/f\)</span> is entire and bounded, it is constant by Liouiville’s theorem. This contradicts the assumption that <span class="process-math">\(f\)</span> was a nonconstant polynomial.</div></article></details><span class="incontext"><a class="internal" href="s_cauchy_integral_generalize.html#th_fta">in-context</a></span>
+</body>
+</html>

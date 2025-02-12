@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Geometric series.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(z\in \C\text{.}\)</span> Show that the <dfn class="terminology">geometric series</dfn> <span class="process-math">\(\sum_{n=0}^\infty z^n\)</span> converges to <span class="process-math">\(\frac{1}{1-z}\)</span> if <span class="process-math">\(\abs{z}&lt; 1\text{,}\)</span> and diverges for <span class="process-math">\(\abs{z}\geq 1\text{.}\)</span>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">First observe that if <span class="process-math">\(\abs{z}\geq 1\text{,}\)</span> then the sequence <span class="process-math">\((\abs{z^n})\not\to 0\text{.}\)</span> It follows that <span class="process-math">\(z_n\not\to 0\)</span> and thus that the series diverges by the divergence test.</div>
+<div class="para logical">
+<div class="para">Now assume <span class="process-math">\(\abs{z}&lt; 1\text{.}\)</span> For all <span class="process-math">\(k\geq 1\)</span> the <span class="process-math">\(k\)</span>-th partia sum is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cyclo_factor.html">
+\begin{equation*}
+S_k=1+z+z^2+\cdots + z^k=\frac{z^{k+1}-1}{z-1},
+\end{equation*}
+</div>
+<div class="para">using the polynomial identity <a href="s_deMoivre.html#eq_cyclo_factor" class="xref" data-knowl="./knowl/xref/eq_cyclo_factor.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.18">(1.18)</a>. It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_cyclo_factor.html">
+\begin{align*}
+\sum_{n=0}^\infty z^n \amp =\lim_{k\to\infty}S_k\\
+\amp =\lim_{k\to\infty}\frac{z^{k+1}-1}{z-1}\\
+\amp =\frac{\lim_{k\to\infty}z^{k+1}-1}{\lim_{k\to\infty}z-1}\\
+\amp =\frac{0-1}{z-1} \amp (\abs{z}&lt; 0\implies z^{k+1}\to 0)\\
+\amp =\frac{1}{1-z}\text{.}
+\end{align*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="s_sequences.html#eg_geom_series">in-context</a></span>
+</body>
+</html>

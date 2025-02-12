@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.1</span><span class="period">.</span><span class="space"> </span><span class="title">Generalized Cauchy integral formula.</span>
+</h3>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(f\)</span> is holomorphic on the open set <span class="process-math">\(U\text{,}\)</span> then <span class="process-math">\(f\)</span> is infinitely differentiable on <span class="process-math">\(U\)</span> and for all <span class="process-math">\(n\geq 0\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+f^{(n)}(z_0)=\frac{n!}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz\text{,}\tag{1.62}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\gamma\)</span> is the counterclockwise oriented circular boundary of of any closed ball <span class="process-math">\(\overline{B}\subseteq U\)</span> that contains <span class="process-math">\(z_0\text{.}\)</span>
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">This can be proved by induction, the base case (<span class="process-math">\(n=0\)</span>) being a re-statement of the <a href="s_cauchy_integral_formula.html#th_cauchy_integral" class="xref" data-knowl="./knowl/xref/th_cauchy_integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.15.2: Cauchy-integral formula">Cauchy integral formula</a> . We will not give here a complete proof of the general induction step: i.e., that for all <span class="process-math">\(n\geq 0\)</span> the formula for <span class="process-math">\(f^{(n)}\)</span> implies the formula for <span class="process-math">\(f^{(n+1)}\text{.}\)</span> Instead, we will only show how <span class="process-math">\(n=0\)</span> case implies the <span class="process-math">\(n=1\)</span> case. At the end, we will show how the general induction step proceeds in much the same manner, only with slightly more complicated algebra. In any case, we will see later when discussing power series representations of holomorphic functions, how the <span class="process-math">\(n=1\)</span> result implies the general result thanks to some facts about integrals and derivatives of power series.</div>
+<article class="case"><h4 class="heading">Case <span class="process-math">\(n=1\)</span>.</h4>
+<div class="para logical">
+<div class="para">To verify the <span class="process-math">\(n=1\)</span> case, we begin compute <span class="process-math">\(f'(w_0)\)</span> using the limit definition for <span class="process-math">\(w_0\in U\text{.}\)</span> Pick an open ball <span class="process-math">\(B_r(w_0)\)</span> containing <span class="process-math">\(w_0\)</span> satisfying <span class="process-math">\(\overline{B}_r(w_0)\subseteq U\text{,}\)</span> and let <span class="process-math">\(\gamma=w_0+re^{it}\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cauchy_integral.html">
+\begin{align*}
+f'(w_0) \amp = \lim\limits_{w\to w_0}\frac{f(w)-f(w_0)}{w-w_0} \\
+\amp =\lim\limits_{w\to w_0}\frac{\frac{1}{2\pi i}\int_\gamma f(z)/(z-w)\, dz-\frac{1}{2\pi i}\int_\gamma f(z)/(z-w_0)\, dz}{w-w_0}\\
+\amp =\frac{1}{2\pi}\lim\limits_{w\to w_0}\int_\gamma \frac{f(z)(w-w_0)}{(w-w_0)(z-w)(z-w_0)}\, dz\\
+\amp =\frac{1}{2\pi}\lim\limits_{w\to w_0}\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz\text{.}
+\end{align*}
+</div>
+<div class="para">The second equality above uses <a href="s_cauchy_integral_formula.html#th_cauchy_integral" class="xref" data-knowl="./knowl/xref/th_cauchy_integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.15.2: Cauchy-integral formula">Theorem 1.15.2</a> for both <span class="process-math">\(f(w)\)</span> and <span class="process-math">\(f(w_0)\text{.}\)</span> Note that for all <span class="process-math">\(w\)</span> sufficiently close to <span class="process-math">\(w_0\text{,}\)</span> we have <span class="process-math">\(w\in B_r(w_0)\text{,}\)</span> justifying the use of the formula for <span class="process-math">\(f(w)\)</span> in the limit.</div>
+</div>
+<div class="para logical">
+<div class="para">We are sorely tempted to continue our computation as follows:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{1}{2\pi}\lim\limits_{w\to w_0}\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz\amp \stackrel{?}{=}\frac{1}{2\pi}\int_\gamma\lim\limits_{w\to w_0} \frac{f(z)}{(z-w)(z-w_0)}\, dz \\
+\amp =\frac{1}{2\pi i}\int_\gamma\frac{f(z)}{(z-w_0)^2}\, dz\text{.}
+\end{align*}
+</div>
+<div class="para">However, as indicated by the <span class="process-math">\(\stackrel{?}{=}\)</span> it is not clear whether we are justified in swapping the order of the limit and integral operations. It turns out that we are indeed justified in doing so, but the explanation pivots on the somewhat technical notion of <em class="emphasis">uniform convergence</em>. We will define that notion rigorously when we discuss power series. For now we sidestep this obstacle by showing directly that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{w\to w_0}\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz= \int_\gamma\frac{f(z)}{(z-w_0)^2}\, dz
+\end{equation*}
+</div>
+<div class="para">using the definition of the limit. More precisely, we will show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz-\int_\gamma \frac{f(z)}{(z-w_0)^2}\, dz} = \abs{\int_\gamma \frac{f(z)(w-w_0)}{(z-w)(z-w_0)^2}\, dz}
+\end{equation*}
+</div>
+<div class="para">approaches zero as <span class="process-math">\(w\to w_0\text{.}\)</span> To that end, recall that <span class="process-math">\(\gamma=w_0+re^{it}\text{.}\)</span>  It follows that <span class="process-math">\(\abs{z-w_0}=r\)</span> and <span class="process-math">\(\abs{z-w}=\abs{(z-w_0)+(w_0-w)}\geq \abs{r-\abs{w-w_0}}\text{.}\)</span> Furthermore, since <span class="process-math">\(g(t)=\abs{f(\gamma(t))}\)</span> is a continuous real-valued function on <span class="process-math">\([0,2\pi]\text{,}\)</span> the extreme value theorem implies that there is an <span class="process-math">\(M\)</span> such that <span class="process-math">\(\abs{f(z)}\leq M\)</span> for all <span class="process-math">\(z=\gamma(t)\text{.}\)</span> We conclude, using the <span class="process-math">\(ML\)</span>-inequality, that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\abs{\int_\gamma \frac{f(z)(w-w_0)}{(z-w)(z-w_0)^2}\, dz} \amp = \abs{w-w_0}\abs{\int_\gamma \frac{f(z)}{(z-w)(z-w_0)^2}\, dz}\\
+\amp \leq \abs{w-w_0}2\pi r \frac{M}{(r-\abs{w-w_0})r^2}\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(r\)</span> and <span class="process-math">\(M\)</span> are fixed constants, we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{w\to w_0}\abs{w-w_0}2\pi r \frac{M}{(r-\abs{w-w_0})r^2}=0\text{,}
+\end{equation*}
+</div>
+<div class="para">and hence that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{w\to w_0} \abs{\int_\gamma \frac{f(z)}{(z-w)(z-w_0)}\, dz-\int_\gamma \frac{f(z)}{(z-w_0)^2}\, dz} =0\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired. This proves the result for <span class="process-math">\(n=1\text{.}\)</span>
+</div>
+</div></article><article class="case"><h4 class="heading">General induction step.</h4>
+<div class="para logical">
+<div class="para">What about a proof for the general induction step: i.e., that the formula for <span class="process-math">\(f^{(n)}\)</span> implies the formula for <span class="process-math">\(f^{(n+1)}\text{?}\)</span> The structure and ideas of the proof are very similar. We begin with the limit expression <span class="process-math">\(f^{(n+1)}(w_0)=\lim\limits_{w\to w_0}(f^{(n)}(w)-f^{(n)}(w_0))/(w-w_0)\)</span> and apply the generalized Cauchy integral formula for <span class="process-math">\(f^{(n)}(w)\)</span> and <span class="process-math">\(f^{(n)}(w_0)\)</span> to yield (after some algebra) the expression</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{n!}{2\pi i}\lim\limits_{w\to w_0}\int_\gamma\frac{f(z)((z-w_0)^{n+1}-(z-w)^{n+1})}{(w-w_0)(z-w_0)^{n+1}(z-w)^{n+1}}\, dz\text{.}
+\end{equation*}
+</div>
+<div class="para">As with the <span class="process-math">\(n=1\)</span> case, if we could swap the order of the limit and integral operations above, we obtain the desired result since</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\lim\limits_{w\to w_0}\frac{f(z)((z-w_0)^{n+1}-(z-w)^{n+1})}{(w-w_0)(z-w_0)^{n+1}(z-w)^{n+1}}\\
+=\frac{f(z)}{(z-w_0)^{2n+2}}\lim\limits_{w\to w_0}\frac{(z-w_0)^{n+1}-(z-w)^{n+1}}{w-w_0}  \\
+=\frac{f(z)}{(z-w_0)^{2n+2}}\cdot (n+1)(z-w_0)^{n}  \\
+=\frac{(n+1)f(z)}{(z-w_0)^{n+2}}\text{.}
+\end{gather*}
+</div>
+<div class="para">Note that the limit computed in the penultimate line follows from the limit definition of the derivative of the function <span class="process-math">\(g(w)=(z-w)^{n+1}\text{,}\)</span> which satisfies <span class="process-math">\(g'(w)=-(n+1)(z-w)^n\text{.}\)</span>
+</div>
+</div>
+<div class="para">As with the <span class="process-math">\(n=1\)</span> case, we have run straight into this tricky issue of whether we really can swap the order of the limit and integral. And just as with that case, it is possible to sidestep the issue and show the limit result we want directly. But we leave those details to you!</div></article></article></details><span class="incontext"><a class="internal" href="s_cauchy_integral_generalize.html#th_gen_cauchy_int">in-context</a></span>
+</body>
+</html>

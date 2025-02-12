@@ -325,6 +325,12 @@ eBookConfig.enable_chatcodes =  false;
 #eg_deformation-3-1-1 { counter-set: eg_deformation-3-1-1 0; }
 #eg_deformation-3-1-1 > li::marker { content: ""counter(eg_deformation-3-1-1,decimal)"."; }
 #eg_deformation-3-1-1 > li { counter-increment: eg_deformation-3-1-1; }
+#th_morera-2-1-3 { counter-set: th_morera-2-1-3 0; }
+#th_morera-2-1-3 > li::marker { content: ""counter(th_morera-2-1-3,decimal)"."; }
+#th_morera-2-1-3 > li { counter-increment: th_morera-2-1-3; }
+#th_fta-2-1-4 { counter-set: th_fta-2-1-4 0; }
+#th_fta-2-1-4 > li::marker { content: ""counter(th_fta-2-1-4,decimal)"."; }
+#th_fta-2-1-4 > li { counter-increment: th_fta-2-1-4; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -608,6 +614,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_formula.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Cauchy integral formula</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_generalize.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Generalized Cauchy integral formula</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -706,10 +713,10 @@ z^{n+1} \amp = z\, z^n\\
 <div class="para">First write <span class="process-math">\(1+i\)</span> in polar form as <span class="process-math">\(1+i=\sqrt{2}(\cos \pi/4+i\sin\pi/4)\text{.}\)</span> Using de Moivre’s formula, we have</div>
 <div class="displaymath process-math" id="eg_deMoivre-3-1-3">
 \begin{align*}
-(1+i)^{14} \amp = (\sqrt{2})^{14}(\cos (14\pi/4)+i\sin(14\pi/ 4)\\
-\amp = 2^{14/2}(\cos 7\pi/2+i\sin 7\pi/2) \amp (\sqrt{2}=2^{1/2}\\
+(1+i)^{14} \amp = (\sqrt{2})^{14}(\cos (14\pi/4)+i\sin(14\pi/ 4))\\
+\amp = 2^{14/2}(\cos 7\pi/2+i\sin 7\pi/2) \amp (\sqrt{2}=2^{1/2})\\
 \amp 128(0-i) \amp (7\pi/2=3\pi/2+2\pi)\\
-\amp =-128i
+\amp =-128i\text{.}
 \end{align*}
 </div>
 </div></div></details></div></article><article class="example example-like" id="eg_deMoivre_trig"><h4 class="heading">
@@ -817,7 +824,7 @@ z_2 \amp = 2(\cos(3\pi/2)+i\sin(3\pi/2))=-2i
 <div class="para">are cube-roots of <span class="process-math">\(8i\text{.}\)</span> We claim further that these are all of the cube-roots of <span class="process-math">\(8i\text{.}\)</span> This follows from the fact that any angle of the form <span class="process-math">\(\pi/6+2\pi k/n\)</span> is obtained from one of the three angles <span class="process-math">\(pi/6, 5\pi/6, 3\pi/2\)</span> by adding a multiple of <span class="process-math">\(2\pi\text{.}\)</span>
 </div>
 </div>
-<figure class="figure figure-like" id="fig_cuberoots_8i"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/sageplot/fig_cuberoots_8i-2.svg" role="img" class="contained" alt="Cube-roots of \(8i\)"></div>
+<figure class="figure figure-like" id="fig_cuberoots_8i"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/sageplot/fig_cuberoots_8i-2.svg" role="img" class="contained" alt="Cube-roots of 8i"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.7<span class="period">.</span></span><span class="space"> </span>Cube-roots of <span class="process-math">\(8i\)</span></figcaption></figure>
 </div></details></div></article><div class="para" id="ss_nth_roots-5">The reasoning in <a href="s_deMoivre.html#eg_3d_root" class="xref" data-knowl="./knowl/xref/eg_3d_root.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.3.6: Cube-roots of 8i">Example 1.3.6</a> can easily be generalized to produce a procedure for computing <span class="process-math">\(n\)</span>-th roots of an arbitrary complex number.</div>
 <article class="theorem theorem-like" id="th_nth_roots"><h4 class="heading">
@@ -1026,21 +1033,23 @@ f(z)\amp =z^{n-1}+z^{n-2}+\cdots +z+1 \text{.}
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Fundamental theorem of algebra.</span>
 </h4>
 <div class="para logical" id="th_fund_alg-2-1">
-<div class="para">Let <span class="process-math">\(f(z)\)</span> be a nonconstant polynomial: i.e., <span class="process-math">\(\deg f\geq 1\text{.}\)</span>
+<div class="para">Let <span class="process-math">\(f\colon \C\rightarrow \C\)</span> be a nonconstant polynomial: i.e., <span class="process-math">\(\deg f \geq 1\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_fund_alg-2-1-4">
-<li id="th_fund_alg-2-1-4-1"><div class="para" id="th_fund_alg-2-1-4-1-1">Any polynomial <span class="process-math">\(f\)</span> of degree <span class="process-math">\(n\geq 1\)</span> has a complex root: i.e., there is a <span class="process-math">\(w\in \C\)</span> such that <span class="process-math">\(f(w)=0\text{.}\)</span>
-</div></li>
-<li id="th_fund_alg-2-1-4-2"><div class="para logical" id="th_fund_alg-2-1-4-2-1">
-<div class="para">As a consequence, any polynomial <span class="process-math">\(f\)</span> of degree <span class="process-math">\(n\geq 1\)</span> factors completely over <span class="process-math">\(\C\)</span> as</div>
+<li id="th_fund_alg-2-1-4-1">
+<span class="heading"><span class="title"><span class="process-math">\(f\)</span> has a complex root.</span></span><div class="para" id="th_fund_alg-2-1-4-1-2">There is a <span class="process-math">\(w\in \C\)</span> such that  <span class="process-math">\(f(w)=0\text{.}\)</span>
+</div>
+</li>
+<li id="th_fund_alg-2-1-4-2">
+<span class="heading"><span class="title"><span class="process-math">\(f\)</span> spits completely.</span></span><div class="para logical" id="th_fund_alg-2-1-4-2-2">
+<div class="para">There are complex numbers <span class="process-math">\(w_1,w_2,\dots, w_n\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f(z)=c\prod_{k=0}^{n-1}(z-w_k)
+f(z)=c\prod_{k=1}^n(z-w_k)\text{.}
 \end{equation*}
 </div>
-<div class="para">for some complex numbers <span class="process-math">\(c,w_k\in \C\text{,}\)</span> <span class="process-math">\(0\leq k\leq n-1\text{.}\)</span>
 </div>
-</div></li>
+</li>
 </ol>
 </div></article></section></section></div>
 <div class="ptx-content-footer">

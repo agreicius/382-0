@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.15.2</span><span class="period">.</span><span class="space"> </span><span class="title">Cauchy-integral formula.</span>
+</h3>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(f\)</span> is holomorphic on an open set <span class="process-math">\(U\)</span> containing the <span class="process-math">\(z_0\text{,}\)</span> suppose <span class="process-math">\(\overline{B}_r(z_0)\subseteq U\)</span> for some <span class="process-math">\(r&gt; 0\text{,}\)</span> and let <span class="process-math">\(\gamma=z_0+re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> For any <span class="process-math">\(w\in B_{r}(z_0)\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+f(w)=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{z-w}\, dz\tag{1.61}
+\end{equation}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Given any <span class="process-math">\(w\in B_{r}(z_0)\text{,}\)</span> for any <span class="process-math">\(s&gt; 0\)</span> with <span class="process-math">\(B_s(z_0)\subseteq B_r(z_0)\text{,}\)</span> the <a href="s_cauchy_goursat.html#cor_cauchy_goursat_boundary" class="xref" data-knowl="./knowl/xref/cor_cauchy_goursat_boundary.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.14.19: Principle of deformation">principle of deformation theorem</a>  implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_cauchy_goursat_boundary.html ./knowl/xref/lemma_cauchy_integral.html">
+\begin{equation*}
+\int_\gamma\frac{f(z)}{z-w}\, dz=\int_{\gamma_s}\frac{f(z)}{w-z}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\gamma_s=w+se^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> (Note that $f(z)/(z-w)$ is holomorphic at all points lying within <span class="process-math">\(\gamma\)</span> and outside of <span class="process-math">\(\gamma_s\text{.}\)</span>) Since this is true for all (sufficiently small) <span class="process-math">\(s\text{,}\)</span>  it follows from <a href="s_cauchy_integral_formula.html#lemma_cauchy_integral" class="xref" data-knowl="./knowl/xref/lemma_cauchy_integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.15.1">Lemma 1.15.1</a> that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_cauchy_goursat_boundary.html ./knowl/xref/lemma_cauchy_integral.html">
+\begin{align*}
+f(w) \amp = \lim\limits_{s\to 0}\int_{\gamma_s}\frac{f(z)}{z-w}\, dz\\
+\amp = \lim\limits_{s\to 0}\int_{\gamma}\frac{f(z)}{z-w}\, dz \\
+\amp = \int_{\gamma}\frac{f(z)}{z-w}\, dz\text{,}
+\end{align*}
+</div>
+<div class="para">as claimed.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_cauchy_integral_formula.html#th_cauchy_integral">in-context</a></span>
+</body>
+</html>
