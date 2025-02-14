@@ -16,5 +16,5 @@
      <xi:include href="s_cauchy_goursat.ptx" />
      <xi:include href="s_cauchy_integral_formula.ptx" />
      <xi:include href="s_cauchy_integral_gen.ptx" />
-     <!-- <xi:include href="s_power_series.ptx" /> -->
+     <xi:include href="s_power_series.ptx" />
 </chapter>

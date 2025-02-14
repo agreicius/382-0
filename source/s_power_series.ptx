@@ -74,6 +74,140 @@
             </p>
     </solution>
     </example>
+    <definition xml:id="d_function_convergence">
+    <title>Sequences of functions</title>
+    <statement>
+    <p>
+    Let <m>(f_n)_{n=0}^\infty</m> be a sequence of complex functions of the form <m>f_n\colon D\rightarrow \C</m>.
+    <ul>
+        <li>
+            <title>Pointwise convergence</title>
+            <p>
+                The sequence <m>(f_n)</m> is said to <term>converge pointwise</term> to a function <m>f\colon D\rightarrow \C</m> if for all <m>z\in D</m> we have <m>f_n(z)\to f(z)</m>: <ie/>, for all <m>z\in D</m> and <m>\epsilon &gt; 0</m>, there exists an integer <m>N\geq 0</m> such that <m>\abs{f_n(z)-f(z)}&lt; \epsilon</m> for all <m>n\geq N</m>. We write <m>\lim\limits_{n\to \infty}f_n=f</m> or <m>f_n\to f</m> when this is the case. 
+            </p>
+        </li>
+        <li>
+            <title>Uniform convergence</title>
+            <p>
+                The sequence <m>(f_n)</m> is said to <term>converge uniformly</term> to a function <m>f\colon D\rightarrow \C</m> if for all <m>\epsilon &gt; 0</m>, there exists an integer <m>N\geq 0</m> such that for all <m>z\in D</m> and for all <m>n\geq N</m>, <m>\abs{f_n(z)-f(z)}&lt; \epsilon</m>.
+            </p>
+        </li>
+    </ul>  
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_powerseries_conv">
+    <title>Power series convergence</title>
+    <statement>
+    <p>
+    Let <m>f(z)=\sum_{n=0}^\infty a_n (z-z_0)^n</m> be a complex power series and suppose <m>f</m> converges at <m>w_0\in \C</m>. Let <m>R=\abs{w_0-z_0}</m>. 
+    <ol>
+        <li>
+            <title>Absolute convergence</title>
+            <p>
+                For all <m>z\in B_{R}(z_0)</m> the infinite series <m>f(z)</m> converges absolutely.
+            </p>
+        </li>
+        <li>
+            <p>
+                For all integers <m>k\geq 0</m>, let <m>f_k(z)=\sum_{n=0}^ka_nz^n</m> be the <m>k</m>-th partial sum of <m>f</m>. Given any <m>r</m> with <m>0&lt; r&lt; R</m> the sequence of partial sums <m>(f_k)_{k=0}^{\infty}</m> converges to <m>f</m> uniformly on <m>\overline{B}_r(z_0)</m>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <corollary xml:id="cor_radius_convergence">
+        <title>Radius of convergence</title>
+        <statement>
+            <p>
+               Let <m>f(z)=\sum_{n=0}^\infty a_n (z-z_0)^n</m> be a complex power series. There is a unique extended real number <m>R\in [0,\infty)\cup \{\infty\}</m> satisfying the properties below. 
+               <ol marker="(i)">
+                <li>
+                    <p>
+                        <m>f</m> converges for all <m>z</m> satisfying <m>\abs{z-z_0}&lt; R</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>f</m> diverges for all <m>z</m> satisfying <m>\abs{z-z_0}&gt; R</m>. 
+                    </p>
+                </li>
+               </ol> 
+            </p>
+        </statement>
+    </corollary>
+    <definition xml:id="d_">
+    <title>Radius of convergence</title>
+    <statement>
+    <p>
+    The <term>radius of convergence</term> of a power series <m>f(z)=\sum_{n=0}^\infty a_nz^n</m> is the unique extended real number <m>R\in [0,\infty)\cup \{\infty\}</m> satisfying properties (i)-(ii) in <xref ref="cor_radius_convergence"/>. The <term>circle of convergence</term> of the power series <m>f</m> is the set <m>\{z\in \C\colon \abs{z-z_0}=R\}</m>. 
+    </p>
+    </statement>
+    </definition>
+    <theorem xml:id="th_power_series_integral_der">
+    <title>Power series integration and differentiation</title>
+    <statement>
+    <p>
+    Let <m>f(z)=\sum_{n=0}^\infty a_nz^n</m> be a power series with radius of convergence <m>R</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>f</m> is continuous on <m>B_R(z_0)</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>f</m> is holomorphic on <m>B_R(z_0)</m> and 
+                <men xml:id="eq_power_series_der">
+                f'(z)=a_1+2a_2z+3a_3z^2+\cdots=\sum_{n=0}^\infty (n+1)a_{n+1}z^n
+                </men>. 
+                In other words, we a power series representation of <m>f'</m> by differentiating <m>f</m> term by term. 
+            </p>
+        </li>
+        <li>
+            <p>
+                For any path <m>\gamma</m> lying in <m>B_{R}(z_0)</m>, we have 
+                <men xml:id="eq_power_series_int">
+                    \int_\gamma f\, dz=\sum_{n=0}^\infty \int_\gamma a_n(z-z_0)\, dz
+                </men>.
+                
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <definition xml:id="d_analytic">
+    <title>Analytic functions</title>
+    <statement>
+    <p>
+    Let <m>f\colon U\rightarrow \C</m> be a complex function, with <m>U</m> an open set. We say <m>f</m> is <term>analytic at a point</term>  <m>z_0\in U</m> if <m>f</m> has a power series representation <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m> with positive radius of convergence. We say <m>f</m> is <term>analytic on a set</term> <m>D\subseteq U</m> if <m>f</m> is analytic at all points in <m>D</m>, and we say <m>f</m> is <term>analytic</term> if it is analytic on its domain.  
+    </p>
+    </statement>
+    </definition>
+    <corollary xml:id="cor_analytic_implies_holomorphic">
+        <title>Analytic implies holomorphic</title>
+        <statement>
+            <p>
+                Let <m>U\subseteq \C</m> be an open set.   If <m>f</m> is analytic on <m>U</m>, then <m>f</m> is holomorphic on <m>U</m>. Furthermore, for any <m>z_0\in U</m> we have power series representation <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m> with positive radius of convergence, where 
+                <men>
+                    a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}
+                </men>,
+                where <m>\gamma</m> is the counterclockwise oriented boundary of any closed disk <m>\overline{B}\subseteq U</m> containing <m>z_0</m>. 
+            </p>
+        </statement>
+    </corollary>
+
+    
     
     
     
