@@ -13,9 +13,9 @@
     </men>, where <m>a_n\in \C</m>. We call <m>z_0</m> the <term>center</term> of the power series, and <m>a_n</m> the <m>n</m>-th <term>coefficient</term> of the series. 
     </p>
     <p>
-        For any integer <m>N\geq 0</m>, the <term><m>n</m>-th partial sum</term> of the power series <m>f</m> is the function <m>f_N(z)</m> defined as 
+        For any integer <m>k\geq 0</m>, the <term><m>k</m>-th partial sum</term> of the power series <m>f</m> is the function <m>f_k(z)</m> defined as 
         <me>
-            f_N(z)=\sum_{n=0}^Na_nz^n
+            f_k(z)=\sum_{n=0}^ka_nz^n
         </me>.
     </p>
     <p>
@@ -52,8 +52,8 @@
     <title>Power series representation</title>
     <statement>
     <p>
-    Let <m>f(z)=\frac{z^3}{9-z^2}</m>.
-    Find power series representation of <m>f</m> centered at <m>z_0=0</m> on the open set <m>U=B_3(0)</m>.  
+    Find a power series representation of the given function, centered at the given <m>z_0</m>. 
+    Let <m>f(z)=\frac{z^3}{9-z^2}</m>. Find power series representation of <m>f</m> centered at <m>z_0=0</m> on the open set <m>U=B_3(0)</m>.  
     </p>
     </statement>
     <solution>
@@ -74,6 +74,9 @@
             </p>
     </solution>
     </example>
+    <p>
+        <xref ref="th_powerseries_conv"/> details not only where a power series converges, but also <em>how</em> it converges. The latter discussion touches on the notion of uniform convergence of sequences of functions, which we now officially introduce. 
+    </p>
     <definition xml:id="d_function_convergence">
     <title>Sequences of functions</title>
     <statement>
@@ -109,6 +112,7 @@
             </p>
         </li>
         <li>
+            <title>Uniform convergence</title>
             <p>
                 For all integers <m>k\geq 0</m>, let <m>f_k(z)=\sum_{n=0}^ka_nz^n</m> be the <m>k</m>-th partial sum of <m>f</m>. Given any <m>r</m> with <m>0&lt; r&lt; R</m> the sequence of partial sums <m>(f_k)_{k=0}^{\infty}</m> converges to <m>f</m> uniformly on <m>\overline{B}_r(z_0)</m>.
             </p>
@@ -118,6 +122,65 @@
     </statement>
     <proof>
     <p>
+        We first observe that since <m>f(w_0)=\sum_{n=0}^\infty a_n(w_0-z_0)^n</m> converges, we have 
+        <me>
+            \abs{a_n (w_0-z_0)^n}\to 0
+        </me>,
+        and this in turn implies that there is an <m>M\geq 0</m> such that <m>\abs{a_n (w_0-z_0)^n}\leq M</m> for all <m>n</m>.         
+        <ol>
+            <li>
+                <p>
+                    Let <m>w\in B_R(z_0)</m>. We will show that 
+                    <me>
+                        \sum_{n=0}^\infty \abs{a_n(w-z_0)^n}
+                    </me>
+                    converges by comparing it to a certain geometric series. Namely, we have 
+                    <md>
+                        <mrow>\abs{a_n(w-z_0)^n} \amp =\abs{a_n(w_0-z_0)^n\left(\frac{w-z_0}{w_0-z_0}\right)^n}</mrow>
+                        <mrow> \amp = \abs{a_n(w_0-z_0)^n}\abs{\frac{w-z_0}{R}}^n </mrow>
+                        <mrow> \amp \leq M\abs{\frac{w-z_0}{R}}^n</mrow>
+                    </md>,
+                    where <m>M</m> is the bound on <m>\abs{a_n(w_0-z_0)^n</m> discussed above. 
+                    Since <m>w\in B_R(z_0)</m>, we have <m>\abs{(w-z_0)/r}&lt; 1</m>, and thus the geometric series 
+                    <me>
+                        \sum_{n=0}^\infty M \abs{\frac{w-z_0}{R}}^n
+                    </me>
+                    converges. It follows by the comparison test that <m>\sum_{n=0}^\infty \abs{a_n(w-w_0)^n}</m> converges. Thus <m>f(w)</m> is absolutely convergent.
+                </p>
+            </li>
+            <li>
+                <p>
+                    First observe that for all <m>z\in B_R(z_0)</m> we have
+                    <md>
+                        <mrow>\abs{f_k(z)-f(z)} \amp = \abs{f(z)-f_k(z)}</mrow>
+                        <mrow> \amp = \abs{\sum_{n=0}^\infty a_n(z-w_0)^n-\sum_{n=k}^\infty a_n(z-w_0)^n}</mrow>
+                        <mrow> \amp = \abs{\sum_{n=k+1}^\infty a_n(z-w_0)^n}</mrow>
+                    </md>
+                    for all integers <m>k\geq 0</m>. Fix any <m>r</m> with <m>0 &lt; r &lt; R</m>. Given any <m>z\in B_r(z_0)</m>,  arguing exactly as above, we have 
+                    <md>
+                    <mrow> \abs{\sum_{n=k+1}^\infty a_n(z-w_0)^n}\amp \leq \sum_{n=k+1}^\infty \abs{a_n(z-w_0)^n}</mrow>
+                    <mrow> \amp \leq \sum_{n=k+1}^\infty M\abs{\frac{z-z_0}{w_0-z_0}}^n</mrow>
+                    <mrow> \amp = M\sum_{n=k+1}^\infty (r/R)^n</mrow>
+                    <mrow> \amp = M(r/R)^k\sum_{n=0}^\infty (r/R)^n</mrow>
+                    <mrow> \amp = M(r/R)^k\cdot \frac{1}{1-(r/R)}</mrow>
+                    <mrow> \amp =(r/R)^k\cdot \frac{MR}{R-r}</mrow>
+                    </md>,
+                    since <m>r/R&lt; 1</m>. Since <m>M</m>, <m>R</m>, and <m>r</m> are fixed constants, we see that 
+                    <me>
+                        (r/R)^k\cdot \frac{MR}{R-r}\to 0
+                    </me>
+                    as <m>k\to \infty</m>. It follows that for any <m>\epsilon &gt; 0</m> we can find an integer <m>N\geq 0</m> such that <m>k\geq N</m> implies 
+                    <me>
+                        (r/R)^k\cdot \frac{MR}{R-r}&lt; \epsilon
+                    </me>.
+                    We conclude that for all <m>z\in B_{r}(z_0)</m> we have 
+                    <me>
+                        \abs{f_k(z)-f(z)}\leq (r/R)^k\cdot \frac{MR}{R-r}&lt; \epsilon
+                    </me>
+                    for all <m>k\geq N</m>. This shows that <m>f_k\to f</m> uniformly on <m>B_r(z_0)</m>, as claimed.
+                </p>
+            </li>
+        </ol>
     </p>
     </proof>
     </theorem>
