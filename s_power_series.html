@@ -331,6 +331,18 @@ eBookConfig.enable_chatcodes =  false;
 #th_fta-2-1-4 { counter-set: th_fta-2-1-4 0; }
 #th_fta-2-1-4 > li::marker { content: ""counter(th_fta-2-1-4,decimal)"."; }
 #th_fta-2-1-4 > li { counter-increment: th_fta-2-1-4; }
+#th_powerseries_conv-2-1-5 { counter-set: th_powerseries_conv-2-1-5 0; }
+#th_powerseries_conv-2-1-5 > li::marker { content: ""counter(th_powerseries_conv-2-1-5,decimal)"."; }
+#th_powerseries_conv-2-1-5 > li { counter-increment: th_powerseries_conv-2-1-5; }
+#th_powerseries_conv-3-1-6 { counter-set: th_powerseries_conv-3-1-6 0; }
+#th_powerseries_conv-3-1-6 > li::marker { content: ""counter(th_powerseries_conv-3-1-6,decimal)"."; }
+#th_powerseries_conv-3-1-6 > li { counter-increment: th_powerseries_conv-3-1-6; }
+#cor_radius_convergence-2-1-3 { counter-set: cor_radius_convergence-2-1-3 0; }
+#cor_radius_convergence-2-1-3 > li::marker { content: "("counter(cor_radius_convergence-2-1-3,lower-roman)")"; }
+#cor_radius_convergence-2-1-3 > li { counter-increment: cor_radius_convergence-2-1-3; }
+#th_power_series_integral_der-2-1-3 { counter-set: th_power_series_integral_der-2-1-3 0; }
+#th_power_series_integral_der-2-1-3 > li::marker { content: ""counter(th_power_series_integral_der-2-1-3,decimal)"."; }
+#th_power_series_integral_der-2-1-3 > li { counter-increment: th_power_series_integral_der-2-1-3; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -645,10 +657,10 @@ f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n=a_0+a_1(z-z_1)+a_2(z-z_0)^2+\cdots\text{,}\t
 </div>
 <div class="para">where <span class="process-math">\(a_n\in \C\text{.}\)</span> We call <span class="process-math">\(z_0\)</span> the <dfn class="terminology">center</dfn> of the power series, and <span class="process-math">\(a_n\)</span> the <span class="process-math">\(n\)</span>-th <dfn class="terminology">coefficient</dfn> of the series.</div>
 </div> <div class="para logical" id="d_power_series-2-2">
-<div class="para">For any integer <span class="process-math">\(N\geq 0\text{,}\)</span> the <dfn class="terminology"><span class="process-math">\(n\)</span>-th partial sum</dfn> of the power series <span class="process-math">\(f\)</span> is the function <span class="process-math">\(f_N(z)\)</span> defined as</div>
+<div class="para">For any integer <span class="process-math">\(k\geq 0\text{,}\)</span> the <dfn class="terminology"><span class="process-math">\(k\)</span>-th partial sum</dfn> of the power series <span class="process-math">\(f\)</span> is the function <span class="process-math">\(f_k(z)\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f_N(z)=\sum_{n=0}^Na_nz^n\text{.}
+f_k(z)=\sum_{n=0}^ka_nz^n\text{.}
 \end{equation*}
 </div>
 </div> <div class="para" id="d_power_series-2-3">Given <span class="process-math">\(w\in \C\text{,}\)</span> we say the power series <span class="process-math">\(f(z)=\sum_{n=0}^{\infty}a_n(z-z_0)^n\)</span> <dfn class="terminology">converges</dfn> (resp. <dfn class="terminology">diverges</dfn>) at <span class="process-math">\(w\)</span> if the infinite series <span class="process-math">\(f(w)=\sum_{n=0}^{\infty}a_n(w-z_0)^n\)</span> converges (resp. diverges).</div></article><div class="para logical" id="s_power_series-3">
@@ -678,7 +690,7 @@ f(z)=\sum_{n=0}^{\infty}a_n(z-z_0)^n
 <article class="example example-like" id="eg_power_series"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.3</span><span class="period">.</span><span class="space"> </span><span class="title">Power series representation.</span>
 </h3>
-<div class="para" id="eg_power_series-2-1">Let <span class="process-math">\(f(z)=\frac{z^3}{9-z^2}\text{.}\)</span> Find power series representation of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0=0\)</span> on the open set <span class="process-math">\(U=B_3(0)\text{.}\)</span>
+<div class="para" id="eg_power_series-2-1">Find a power series representation of the given function, centered at the given <span class="process-math">\(z_0\text{.}\)</span> Let <span class="process-math">\(f(z)=\frac{z^3}{9-z^2}\text{.}\)</span> Find power series representation of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0=0\)</span> on the open set <span class="process-math">\(U=B_3(0)\text{.}\)</span>
 </div>
 <div class="solutions"><details id="eg_power_series-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_power_series-3-1">
 <div class="para">We have</div>
@@ -699,7 +711,174 @@ f(z) \amp =\frac{z^3}{9}\cdot \frac{1}{1-(z/3)^2}\text{.}
 f(z)=\frac{z}{9}\sum_{n=0}^\infty \frac{1}{3^{2n}}z^{2n}=\sum_{n=0}^\infty\frac{1}{3^{2n+2}}z^{2n+1}\text{.}
 \end{equation*}
 </div>
-</div></div></details></div></article></section></div>
+</div></div></details></div></article><div class="para" id="s_power_series-8">
+<a href="s_power_series.html#th_powerseries_conv" class="xref" data-knowl="./knowl/xref/th_powerseries_conv.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.5: Power series convergence">Theorem 1.17.5</a> details not only where a power series converges, but also <em class="emphasis">how</em> it converges. The latter discussion touches on the notion of uniform convergence of sequences of functions, which we now officially introduce.</div>
+<article class="definition definition-like" id="d_function_convergence"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.17.4</span><span class="period">.</span><span class="space"> </span><span class="title">Sequences of functions.</span>
+</h3>
+<div class="para logical" id="d_function_convergence-2-1">
+<div class="para">Let <span class="process-math">\((f_n)_{n=0}^\infty\)</span> be a sequence of complex functions of the form <span class="process-math">\(f_n\colon D\rightarrow \C\text{.}\)</span>
+</div>
+<ul class="disc" id="d_function_convergence-2-1-3">
+<li id="d_function_convergence-2-1-3-1">
+<span class="heading"><span class="title">Pointwise convergence.</span></span><div class="para" id="d_function_convergence-2-1-3-1-2">The sequence <span class="process-math">\((f_n)\)</span> is said to <dfn class="terminology">converge pointwise</dfn> to a function <span class="process-math">\(f\colon D\rightarrow \C\)</span> if for all <span class="process-math">\(z\in D\)</span> we have <span class="process-math">\(f_n(z)\to f(z)\text{:}\)</span> i.e., for all <span class="process-math">\(z\in D\)</span> and <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists an integer <span class="process-math">\(N\geq 0\)</span> such that <span class="process-math">\(\abs{f_n(z)-f(z)}&lt; \epsilon\)</span> for all <span class="process-math">\(n\geq N\text{.}\)</span> We write <span class="process-math">\(\lim\limits_{n\to \infty}f_n=f\)</span> or <span class="process-math">\(f_n\to f\)</span> when this is the case.</div>
+</li>
+<li id="d_function_convergence-2-1-3-2">
+<span class="heading"><span class="title">Uniform convergence.</span></span><div class="para" id="d_function_convergence-2-1-3-2-2">The sequence <span class="process-math">\((f_n)\)</span> is said to <dfn class="terminology">converge uniformly</dfn> to a function <span class="process-math">\(f\colon D\rightarrow \C\)</span> if for all <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there exists an integer <span class="process-math">\(N\geq 0\)</span> such that for all <span class="process-math">\(z\in D\)</span> and for all <span class="process-math">\(n\geq N\text{,}\)</span> <span class="process-math">\(\abs{f_n(z)-f(z)}&lt; \epsilon\text{.}\)</span>
+</div>
+</li>
+</ul>
+</div></article><article class="theorem theorem-like" id="th_powerseries_conv"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.17.5</span><span class="period">.</span><span class="space"> </span><span class="title">Power series convergence.</span>
+</h3>
+<div class="para logical" id="th_powerseries_conv-2-1">
+<div class="para">Let <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n (z-z_0)^n\)</span> be a complex power series and suppose <span class="process-math">\(f\)</span> converges at <span class="process-math">\(w_0\in \C\text{.}\)</span> Let <span class="process-math">\(R=\abs{w_0-z_0}\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_powerseries_conv-2-1-5">
+<li id="th_powerseries_conv-2-1-5-1">
+<span class="heading"><span class="title">Absolute convergence.</span></span><div class="para" id="th_powerseries_conv-2-1-5-1-2">For all <span class="process-math">\(z\in B_{R}(z_0)\)</span> the infinite series <span class="process-math">\(f(z)\)</span> converges absolutely.</div>
+</li>
+<li id="th_powerseries_conv-2-1-5-2">
+<span class="heading"><span class="title">Uniform convergence.</span></span><div class="para" id="th_powerseries_conv-2-1-5-2-2">For all integers <span class="process-math">\(k\geq 0\text{,}\)</span> let <span class="process-math">\(f_k(z)=\sum_{n=0}^ka_nz^n\)</span> be the <span class="process-math">\(k\)</span>-th partial sum of <span class="process-math">\(f\text{.}\)</span> Given any <span class="process-math">\(r\)</span> with <span class="process-math">\(0&lt; r&lt; R\)</span> the sequence of partial sums <span class="process-math">\((f_k)_{k=0}^{\infty}\)</span> converges to <span class="process-math">\(f\)</span> uniformly on <span class="process-math">\(\overline{B}_r(z_0)\text{.}\)</span>
+</div>
+</li>
+</ol>
+</div></article><details id="th_powerseries_conv-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_powerseries_conv-3-1">
+<div class="para">We first observe that since <span class="process-math">\(f(w_0)=\sum_{n=0}^\infty a_n(w_0-z_0)^n\)</span> converges, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{a_n (w_0-z_0)^n}\to 0\text{,}
+\end{equation*}
+</div>
+<div class="para">and this in turn implies that there is an <span class="process-math">\(M\geq 0\)</span> such that <span class="process-math">\(\abs{a_n (w_0-z_0)^n}\leq M\)</span> for all <span class="process-math">\(n\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_powerseries_conv-3-1-6">
+<li id="th_powerseries_conv-3-1-6-1"><div class="para logical" id="th_powerseries_conv-3-1-6-1-1">
+<div class="para">Let <span class="process-math">\(w\in B_R(z_0)\text{.}\)</span> We will show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{n=0}^\infty \abs{a_n(w-z_0)^n}
+\end{equation*}
+</div>
+<div class="para">converges by comparing it to a certain geometric series. Namely, we have</div>
+<div class="displaymath process-math" id="th_powerseries_conv-3-1-6-1-1-3">
+\begin{align*}
+\abs{a_n(w-z_0)^n} \amp =\abs{a_n(w_0-z_0)^n\left(\frac{w-z_0}{w_0-z_0}\right)^n}\\
+\amp = \abs{a_n(w_0-z_0)^n}\abs{\frac{w-z_0}{R}}^n \\
+\amp \leq M\abs{\frac{w-z_0}{R}}^n\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(M\)</span> is the bound on <span class="process-math">\(\abs{a_n(w_0-z_0)^n\)</span> discussed above. Since <span class="process-math">\(w\in B_R(z_0)\text{,}\)</span> we have <span class="process-math">\(\abs{(w-z_0)/r}&lt; 1\text{,}\)</span> and thus the geometric series</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{n=0}^\infty M \abs{\frac{w-z_0}{R}}^n
+\end{equation*}
+</div>
+<div class="para">converges. It follows by the comparison test that <span class="process-math">\(\sum_{n=0}^\infty \abs{a_n(w-w_0)^n}\)</span> converges. Thus <span class="process-math">\(f(w)\)</span> is absolutely convergent.</div>
+</div></li>
+<li id="th_powerseries_conv-3-1-6-2"><div class="para logical" id="th_powerseries_conv-3-1-6-2-1">
+<div class="para">First observe that for all <span class="process-math">\(z\in B_R(z_0)\)</span> we have</div>
+<div class="displaymath process-math" id="th_powerseries_conv-3-1-6-2-1-2">
+\begin{align*}
+\abs{f_k(z)-f(z)} \amp = \abs{f(z)-f_k(z)}\\
+\amp = \abs{\sum_{n=0}^\infty a_n(z-w_0)^n-\sum_{n=k}^\infty a_n(z-w_0)^n}\\
+\amp = \abs{\sum_{n=k+1}^\infty a_n(z-w_0)^n}
+\end{align*}
+</div>
+<div class="para">for all integers <span class="process-math">\(k\geq 0\text{.}\)</span> Fix any <span class="process-math">\(r\)</span> with <span class="process-math">\(0 &lt; r &lt; R\text{.}\)</span> Given any <span class="process-math">\(z\in B_r(z_0)\text{,}\)</span>  arguing exactly as above, we have</div>
+<div class="displaymath process-math" id="th_powerseries_conv-3-1-6-2-1-7">
+\begin{align*}
+\abs{\sum_{n=k+1}^\infty a_n(z-w_0)^n}\amp \leq \sum_{n=k+1}^\infty \abs{a_n(z-w_0)^n}\\
+\amp \leq \sum_{n=k+1}^\infty M\abs{\frac{z-z_0}{w_0-z_0}}^n\\
+\amp = M\sum_{n=k+1}^\infty (r/R)^n\\
+\amp = M(r/R)^k\sum_{n=0}^\infty (r/R)^n\\
+\amp = M(r/R)^k\cdot \frac{1}{1-(r/R)}\\
+\amp =(r/R)^k\cdot \frac{MR}{R-r}\text{,}
+\end{align*}
+</div>
+<div class="para">since <span class="process-math">\(r/R&lt; 1\text{.}\)</span> Since <span class="process-math">\(M\text{,}\)</span> <span class="process-math">\(R\text{,}\)</span> and <span class="process-math">\(r\)</span> are fixed constants, we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(r/R)^k\cdot \frac{MR}{R-r}\to 0
+\end{equation*}
+</div>
+<div class="para">as <span class="process-math">\(k\to \infty\text{.}\)</span> It follows that for any <span class="process-math">\(\epsilon &gt; 0\)</span> we can find an integer <span class="process-math">\(N\geq 0\)</span> such that <span class="process-math">\(k\geq N\)</span> implies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(r/R)^k\cdot \frac{MR}{R-r}&lt; \epsilon\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that for all <span class="process-math">\(z\in B_{r}(z_0)\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{f_k(z)-f(z)}\leq (r/R)^k\cdot \frac{MR}{R-r}&lt; \epsilon
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(k\geq N\text{.}\)</span> This shows that <span class="process-math">\(f_k\to f\)</span> uniformly on <span class="process-math">\(B_r(z_0)\text{,}\)</span> as claimed.</div>
+</div></li>
+</ol>
+</div></article></details><article class="corollary theorem-like" id="cor_radius_convergence"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.6</span><span class="period">.</span><span class="space"> </span><span class="title">Radius of convergence.</span>
+</h3>
+<div class="para logical" id="cor_radius_convergence-2-1">
+<div class="para">Let <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n (z-z_0)^n\)</span> be a complex power series. There is a unique extended real number <span class="process-math">\(R\in [0,\infty)\cup \{\infty\}\)</span> satisfying the properties below.</div>
+<ol class="lower-roman" id="cor_radius_convergence-2-1-3">
+<li id="cor_radius_convergence-2-1-3-1"><div class="para" id="cor_radius_convergence-2-1-3-1-1">
+<span class="process-math">\(f\)</span> converges for all <span class="process-math">\(z\)</span> satisfying <span class="process-math">\(\abs{z-z_0}&lt; R\text{.}\)</span>
+</div></li>
+<li id="cor_radius_convergence-2-1-3-2"><div class="para" id="cor_radius_convergence-2-1-3-2-1">
+<span class="process-math">\(f\)</span> diverges for all <span class="process-math">\(z\)</span> satisfying <span class="process-math">\(\abs{z-z_0}&gt; R\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="definition definition-like" id="d_"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.17.7</span><span class="period">.</span><span class="space"> </span><span class="title">Radius of convergence.</span>
+</h3>
+<div class="para" id="d_-2-1">The <dfn class="terminology">radius of convergence</dfn> of a power series <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_nz^n\)</span> is the unique extended real number <span class="process-math">\(R\in [0,\infty)\cup \{\infty\}\)</span> satisfying properties (i)-(ii) in <a href="s_power_series.html#cor_radius_convergence" class="xref" data-knowl="./knowl/xref/cor_radius_convergence.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.6: Radius of convergence">Corollary 1.17.6</a>. The <dfn class="terminology">circle of convergence</dfn> of the power series <span class="process-math">\(f\)</span> is the set <span class="process-math">\(\{z\in \C\colon \abs{z-z_0}=R\}\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="th_power_series_integral_der"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.17.8</span><span class="period">.</span><span class="space"> </span><span class="title">Power series integration and differentiation.</span>
+</h3>
+<div class="para logical" id="th_power_series_integral_der-2-1">
+<div class="para">Let <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_nz^n\)</span> be a power series with radius of convergence <span class="process-math">\(R\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_power_series_integral_der-2-1-3">
+<li id="th_power_series_integral_der-2-1-3-1"><div class="para" id="th_power_series_integral_der-2-1-3-1-1">
+<span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(B_R(z_0)\text{.}\)</span>
+</div></li>
+<li id="th_power_series_integral_der-2-1-3-2"><div class="para logical" id="th_power_series_integral_der-2-1-3-2-1">
+<div class="para">
+<span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(B_R(z_0)\)</span> and</div>
+<div class="displaymath process-math" id="eq_power_series_der">
+\begin{equation}
+f'(z)=a_1+2a_2z+3a_3z^2+\cdots=\sum_{n=0}^\infty (n+1)a_{n+1}z^n\text{.}\tag{1.65}
+\end{equation}
+</div>
+<div class="para">In other words, we a power series representation of <span class="process-math">\(f'\)</span> by differentiating <span class="process-math">\(f\)</span> term by term.</div>
+</div></li>
+<li id="th_power_series_integral_der-2-1-3-3"><div class="para logical" id="th_power_series_integral_der-2-1-3-3-1">
+<div class="para">For any path <span class="process-math">\(\gamma\)</span> lying in <span class="process-math">\(B_{R}(z_0)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="eq_power_series_int">
+\begin{equation}
+\int_\gamma f\, dz=\sum_{n=0}^\infty \int_\gamma a_n(z-z_0)\, dz\text{.}\tag{1.66}
+\end{equation}
+</div>
+</div></li>
+</ol>
+</div></article><details id="th_power_series_integral_der-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_power_series_integral_der-3-1"></div></article></details><article class="definition definition-like" id="d_analytic"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.17.9</span><span class="period">.</span><span class="space"> </span><span class="title">Analytic functions.</span>
+</h3>
+<div class="para" id="d_analytic-2-1">Let <span class="process-math">\(f\colon U\rightarrow \C\)</span> be a complex function, with <span class="process-math">\(U\)</span> an open set. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic at a point</dfn>  <span class="process-math">\(z_0\in U\)</span> if <span class="process-math">\(f\)</span> has a power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\)</span> with positive radius of convergence. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic on a set</dfn> <span class="process-math">\(D\subseteq U\)</span> if <span class="process-math">\(f\)</span> is analytic at all points in <span class="process-math">\(D\text{,}\)</span> and we say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic</dfn> if it is analytic on its domain.</div></article><article class="corollary theorem-like" id="cor_analytic_implies_holomorphic"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.10</span><span class="period">.</span><span class="space"> </span><span class="title">Analytic implies holomorphic.</span>
+</h3>
+<div class="para logical" id="cor_analytic_implies_holomorphic-2-1">
+<div class="para">Let <span class="process-math">\(U\subseteq \C\)</span> be an open set.   If <span class="process-math">\(f\)</span> is analytic on <span class="process-math">\(U\text{,}\)</span> then <span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(U\text{.}\)</span> Furthermore, for any <span class="process-math">\(z_0\in U\)</span> we have power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\)</span> with positive radius of convergence, where</div>
+<div class="displaymath process-math" id="cor_analytic_implies_holomorphic-2-1-8">
+\begin{equation}
+a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\text{,}\tag{1.67}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\gamma\)</span> is the counterclockwise oriented boundary of any closed disk <span class="process-math">\(\overline{B}\subseteq U\)</span> containing <span class="process-math">\(z_0\text{.}\)</span>
+</div>
+</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_cauchy_integral_generalize.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

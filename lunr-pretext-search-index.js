@@ -2557,6 +2557,105 @@ var ptx_lunr_docs = [
   "body": " Fundamental theorem of algebra   Let be a nonconstant polynomial: , .   has a complex root  There is a such that .    spits completely  There are complex numbers such that .       We have remarked before that (2) follows from (1) using some facts about factoring polynomials. We prove (1) by contradiction.  Assume that is a nonconstant polynomial and that for all . Since is a polynomial, it is entire; since , the reciprocal function is also entire. We claim that is bounded.  To see why, first note that , since and . Since , we have . It follows that there is an such that for all with . Finally, since is continuous on the closed bounded set , the extreme value theorem from multivariable calculus implies that the continuous function is bounded. Thus there is an such that for all . Since for all , we see that for all . Thus is bounded on .  But now we have our contradiction! Since is entire and bounded, it is constant by Liouiville's theorem. This contradicts the assumption that was a nonconstant polynomial.   "
 },
 {
+  "id": "s_power_series",
+  "level": "1",
+  "url": "s_power_series.html",
+  "type": "Section",
+  "number": "1.17",
+  "title": "Complex power series",
+  "body": " Complex power series   Complex power series   Given , a (complex) power series centered at in the variable (or unknown) is an expression of the form , where . We call the center of the power series, and the -th coefficient of the series.  For any integer , the -th partial sum of the power series is the function defined as .  Given , we say the power series  converges (resp. diverges ) at if the infinite series converges (resp. diverges).    Recall the geometric series treated in . We saw there that the series converges for all with and showed that for all such we have . We also showed that the series diverges for all with (as well as for all with ). Make this example your friend. It is both one of the simplest power series and one of the most fundamental, and will show up with an uncanny persistence.  The formula for the function given in is an example of a power series representation of on the open set .   Power series representation   Given a complex function defined on the open set , a power series representation (or expansion ) of on is a power series that satisfies for all .    We will be able to generate many power series representations of functions from the geometric series, as the next example indicates.   Power series representation   Find a power series representation of the given function, centered at the given . Let . Find power series representation of centered at on the open set .    We have . Since formula is valid for all complex in , we have for all with , and thus for all with . Using the product law for limits, it follows that .     details not only where a power series converges, but also how it converges. The latter discussion touches on the notion of uniform convergence of sequences of functions, which we now officially introduce.   Sequences of functions   Let be a sequence of complex functions of the form .   Pointwise convergence  The sequence is said to converge pointwise to a function if for all we have : , for all and , there exists an integer such that for all . We write or when this is the case.    Uniform convergence  The sequence is said to converge uniformly to a function if for all , there exists an integer such that for all and for all , .        Power series convergence   Let be a complex power series and suppose converges at . Let .   Absolute convergence  For all the infinite series converges absolutely.    Uniform convergence  For all integers , let be the -th partial sum of . Given any with the sequence of partial sums converges to uniformly on .       We first observe that since converges, we have , and this in turn implies that there is an such that for all .   Let . We will show that converges by comparing it to a certain geometric series. Namely, we have , where is the bound on discussed above. Since , we have , and thus the geometric series converges. It follows by the comparison test that converges. Thus is absolutely convergent.    First observe that for all we have for all integers . Fix any with . Given any , arguing exactly as above, we have , since . Since , , and are fixed constants, we see that as . It follows that for any we can find an integer such that implies . We conclude that for all we have for all . This shows that uniformly on , as claimed.        Radius of convergence   Let be a complex power series. There is a unique extended real number satisfying the properties below.    converges for all satisfying .     diverges for all satisfying .        Radius of convergence   The radius of convergence of a power series is the unique extended real number satisfying properties (i)-(ii) in . The circle of convergence of the power series is the set .     Power series integration and differentiation   Let be a power series with radius of convergence .    is continuous on .     is holomorphic on and . In other words, we a power series representation of by differentiating term by term.    For any path lying in , we have .            Analytic functions   Let be a complex function, with an open set. We say is analytic at a point  if has a power series representation with positive radius of convergence. We say is analytic on a set  if is analytic at all points in , and we say is analytic if it is analytic on its domain.     Analytic implies holomorphic   Let be an open set. If is analytic on , then is holomorphic on . Furthermore, for any we have power series representation with positive radius of convergence, where , where is the counterclockwise oriented boundary of any closed disk containing .    "
+},
+{
+  "id": "d_power_series",
+  "level": "2",
+  "url": "s_power_series.html#d_power_series",
+  "type": "Definition",
+  "number": "1.17.1",
+  "title": "Complex power series.",
+  "body": " Complex power series   Given , a (complex) power series centered at in the variable (or unknown) is an expression of the form , where . We call the center of the power series, and the -th coefficient of the series.  For any integer , the -th partial sum of the power series is the function defined as .  Given , we say the power series  converges (resp. diverges ) at if the infinite series converges (resp. diverges).   "
+},
+{
+  "id": "d_power_series_expansion",
+  "level": "2",
+  "url": "s_power_series.html#d_power_series_expansion",
+  "type": "Definition",
+  "number": "1.17.2",
+  "title": "Power series representation.",
+  "body": " Power series representation   Given a complex function defined on the open set , a power series representation (or expansion ) of on is a power series that satisfies for all .   "
+},
+{
+  "id": "eg_power_series",
+  "level": "2",
+  "url": "s_power_series.html#eg_power_series",
+  "type": "Example",
+  "number": "1.17.3",
+  "title": "Power series representation.",
+  "body": " Power series representation   Find a power series representation of the given function, centered at the given . Let . Find power series representation of centered at on the open set .    We have . Since formula is valid for all complex in , we have for all with , and thus for all with . Using the product law for limits, it follows that .   "
+},
+{
+  "id": "d_function_convergence",
+  "level": "2",
+  "url": "s_power_series.html#d_function_convergence",
+  "type": "Definition",
+  "number": "1.17.4",
+  "title": "Sequences of functions.",
+  "body": " Sequences of functions   Let be a sequence of complex functions of the form .   Pointwise convergence  The sequence is said to converge pointwise to a function if for all we have : , for all and , there exists an integer such that for all . We write or when this is the case.    Uniform convergence  The sequence is said to converge uniformly to a function if for all , there exists an integer such that for all and for all , .      "
+},
+{
+  "id": "th_powerseries_conv",
+  "level": "2",
+  "url": "s_power_series.html#th_powerseries_conv",
+  "type": "Theorem",
+  "number": "1.17.5",
+  "title": "Power series convergence.",
+  "body": " Power series convergence   Let be a complex power series and suppose converges at . Let .   Absolute convergence  For all the infinite series converges absolutely.    Uniform convergence  For all integers , let be the -th partial sum of . Given any with the sequence of partial sums converges to uniformly on .       We first observe that since converges, we have , and this in turn implies that there is an such that for all .   Let . We will show that converges by comparing it to a certain geometric series. Namely, we have , where is the bound on discussed above. Since , we have , and thus the geometric series converges. It follows by the comparison test that converges. Thus is absolutely convergent.    First observe that for all we have for all integers . Fix any with . Given any , arguing exactly as above, we have , since . Since , , and are fixed constants, we see that as . It follows that for any we can find an integer such that implies . We conclude that for all we have for all . This shows that uniformly on , as claimed.      "
+},
+{
+  "id": "cor_radius_convergence",
+  "level": "2",
+  "url": "s_power_series.html#cor_radius_convergence",
+  "type": "Corollary",
+  "number": "1.17.6",
+  "title": "Radius of convergence.",
+  "body": " Radius of convergence   Let be a complex power series. There is a unique extended real number satisfying the properties below.    converges for all satisfying .     diverges for all satisfying .      "
+},
+{
+  "id": "d_",
+  "level": "2",
+  "url": "s_power_series.html#d_",
+  "type": "Definition",
+  "number": "1.17.7",
+  "title": "Radius of convergence.",
+  "body": " Radius of convergence   The radius of convergence of a power series is the unique extended real number satisfying properties (i)-(ii) in . The circle of convergence of the power series is the set .   "
+},
+{
+  "id": "th_power_series_integral_der",
+  "level": "2",
+  "url": "s_power_series.html#th_power_series_integral_der",
+  "type": "Theorem",
+  "number": "1.17.8",
+  "title": "Power series integration and differentiation.",
+  "body": " Power series integration and differentiation   Let be a power series with radius of convergence .    is continuous on .     is holomorphic on and . In other words, we a power series representation of by differentiating term by term.    For any path lying in , we have .          "
+},
+{
+  "id": "d_analytic",
+  "level": "2",
+  "url": "s_power_series.html#d_analytic",
+  "type": "Definition",
+  "number": "1.17.9",
+  "title": "Analytic functions.",
+  "body": " Analytic functions   Let be a complex function, with an open set. We say is analytic at a point  if has a power series representation with positive radius of convergence. We say is analytic on a set  if is analytic at all points in , and we say is analytic if it is analytic on its domain.   "
+},
+{
+  "id": "cor_analytic_implies_holomorphic",
+  "level": "2",
+  "url": "s_power_series.html#cor_analytic_implies_holomorphic",
+  "type": "Corollary",
+  "number": "1.17.10",
+  "title": "Analytic implies holomorphic.",
+  "body": " Analytic implies holomorphic   Let be an open set. If is analytic on , then is holomorphic on . Furthermore, for any we have power series representation with positive radius of convergence, where , where is the counterclockwise oriented boundary of any closed disk containing .   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
