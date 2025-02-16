@@ -212,6 +212,85 @@
     </p>
     </statement>
     </definition>
+    
+    <example xml:id="eg_expansions_radii">
+    <title>Expansions and radii of convergence</title>
+    <statement>
+    <p>
+    Find a power series expansion of the given <m>f</m> centered at the given <m>z_0</m> and compute the radius of convergence of the expansion. 
+    <ol>
+        <li>
+            <p>
+                <m>f(z)=1/z</m>, <m>z_0=i</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>f(z)=1/z</m>, <m>z_0=2</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>f(z)=1/(z^2+2)</m>, <m>z_0=0</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                We can write 
+                <me>
+                    \frac{1}{z}=\frac{1}{i+z-i}=\frac{1}{i}\cdot\frac{1}{1-i(z-i)}
+                </me>.
+                Since
+                <me>
+                \frac{1}{1-w}=\sum_{n=0}^\infty w^n
+                </me>
+                for all <m>w\in B_{1}(0)</m>, we see that
+                <men xml:id="eq_expansion_radii_1">
+                    \frac{1}{z}=\frac{1}{i}\sum_{n=0}^\infty(i(z-i))^n=\sum_{n=0}^\infty i^{n-1}(z-i)^n
+                </men>
+                for all <m>z</m> satisfying <m>\abs{i(z-i)}=\abs{z-i}&lt; 1</m>. Furthermore, since 
+                the geometric series diverges for all <m>\abs{w}&gt; 1</m>, we see that the series <m>\sum_{n=0}^\infty i^{n-1}(z-i)</m> diverges for all <m>z</m> with <m>\abs{z-i}&gt; 1</m>. We conclude that the radius of convergence is <m>1</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Proceeding similarly as in (1), we have 
+                <me>
+                    \frac{1}{z}=\frac{1}{2+(z-2)}=\frac{1}{2}\cdot\frac{1}{1+(z-2)/2}
+                </me>,
+                and thus, using the expansion <m>\frac{1}{1+w}=\frac{1}{1-(-w)}=1-w+w^2+\cdots </m>, we have 
+                <me>
+                    \frac{1}{z}=\frac{1}{2}\sum_{n=0}^{\infty}(-1)^n(z-2)^n/2^{n}=\sum_{n=0}^\infty \frac{(-1)^n}{2^{n+1}}(z-2)^n
+                </me>.
+                Furthermore, reasoning just as in (1), we see that the radius of convergence of this power series is <m>2</m>: <ie/>, the series converges for all <m>z\in B_2(2)</m> and diverges for all <m>z</m> with <m>\abs{z-2}&gt; 2</m>.   
+            </p>
+        </li>
+        <li>
+            <p>
+                Since 
+                <me>
+                    \frac{1}{z^2+4}=\frac{1}{4}\cdot\frac{1}{1+(z^2/4)}
+                </me>,
+                reasoning as above we see that
+                <me>
+                    \frac{1}{z^2+4}=\frac{1}{4}\sum_{n=0}^\infty (-1)^n(z^2/4)^n=\sum_{n=0}^\infty \frac{(-1)^n}{4^{n+1}}z^{2n}
+                </me>,
+                for all <m>z</m> satisfying <m>\abs{z^2}/4 &lt; 1</m>, or equivalently <m>\abs{z}&lt; 2</m>. Similarly since the series is seen to diverge if <m>\abs{z}&gt; 2</m>, we conclude that the radius of convergence is <m>2</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </solution>
+    </example>
+    <p>
+        An important consequence of the uniform convergence of the partial sum polynonmial functions <m>f_k(z)=\sum_{n=0}^ka_n(z-z_0)^n</m> to <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m> is that the function <m>f</m> itself can be treated much like a polynomial: in particular, just as with polynomials we can differentiate and integrate <m>f</m> term by term. 
+    </p>
     <theorem xml:id="th_power_series_integral_der">
     <title>Power series integration and differentiation</title>
     <statement>
@@ -225,15 +304,6 @@
         </li>
         <li>
             <p>
-                <m>f</m> is holomorphic on <m>B_R(z_0)</m> and 
-                <men xml:id="eq_power_series_der">
-                f'(z)=a_1+2a_2z+3a_3z^2+\cdots=\sum_{n=0}^\infty (n+1)a_{n+1}z^n
-                </men>. 
-                In other words, we a power series representation of <m>f'</m> by differentiating <m>f</m> term by term. 
-            </p>
-        </li>
-        <li>
-            <p>
                 For any path <m>\gamma</m> lying in <m>B_{R}(z_0)</m>, we have 
                 <men xml:id="eq_power_series_int">
                     \int_\gamma f\, dz=\sum_{n=0}^\infty \int_\gamma a_n(z-z_0)\, dz
@@ -241,14 +311,156 @@
                 
             </p>
         </li>
+        <li>
+            <p>
+                <m>f</m> is holomorphic on <m>B_R(z_0)</m> and 
+                <men xml:id="eq_power_series_der">
+                f'(z)=a_1+2a_2z+3a_3z^2+\cdots=\sum_{n=0}^\infty (n+1)a_{n+1}z^n
+                </men>. 
+                In other words, we a power series representation of <m>f'</m> by differentiating <m>f</m> term by term. 
+            </p>
+        </li>
     </ol>
     </p>
     </statement>
     <proof>
     <p>
+        <ol>
+            <li>
+                <p>
+                We show directly that <m>f</m> is continuous at all <m>z\in B_R(z_0)</m>. Given <m>z\in B_{R}(z_0)</m> and <m>\epsilon &gt; 0</m>, first pick an <m>r&gt; 0</m> such that <m>\abs{z-z_0}&lt; r &lt; R</m>.  Since the partial sum functions <m>f_k(z)</m> converge uniformly to <m>f(z)</m> on <m>\overline{B}_r(z_0)</m>, we can find an integer <m>N</m> such that <m>\abs{f_k{w}-f(w)}&lt; \epsilon/3</m> for all <m>w\in B_r(z_0)</m> and all <m>k\geq N</m>. Furthermore, since <m>f_N(z)</m> is continuous (being a polynomial), we can find a <m>delta</m> such that <m>\abs{w-z}&lt; \delta</m> implies <m>\abs{f_N(w)-f_N(z)}&lt; \epsilon/3</m>. Shrinking <m>\delta</m> as necessary, we can further assume that <m>\abs{w-z}&lt; \delta</m> implies <m>w\in B_r(z_0)</m>. We then conclude for all such <m>w</m> we have 
+                <md>
+                    <mrow>\abs{f(w)-f(z)} \amp = \abs{f(w)-f_k(w)+(f_k(w)-f_k(z))+(f_k(z)-f(w))} </mrow>
+                    <mrow> \amp \leq \abs{f(w)-f_k(w)}+\abs{f_k(w)-f_k(z)}+\abs{f_k(z)-f_k(z)}</mrow>
+                    <mrow> \amp &lt;  \frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}</mrow>
+                    <mrow> \amp = \epsilon</mrow>
+                </md>.
+                This shows <m>f</m> is continuous at all <m>z\in B_R(z_0)</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Let <m>\gamma\colon [a,b]\rightarrow B_R(z)</m> be a closed simple path.  We show something more general: namely, if <m>(f_k)</m> is <em>any</em> sequence of functions that converges uniformly to <m>f</m> on <m>\gamma</m>, then 
+                    <me>
+                        \int_\gamma f\, dz=\lim_{k\to \infty}\int_\gamma f_k\, dz
+                    </me>.
+                    The result of the theorem then follows by picking <m>r&lt; R</m> such that <m>\gamma</m> lies within <m>\overline{B}_r(z_0)</m>, and taking <m>(f_k)</m> to be the sequence of partial sum functions. 
+                </p>
+                <p>
+                    We now prove our more general claim. Given <m>\epsilon &gt; 0</m>, pick <m>N</m> such that <m>\abs{f_k(z)-f(z)}&lt;  \epsilon/L(\gamma)</m> for all <m>k\geq N</m> , where <m>L=\int_a^b\abs{\gamma'(t)}\, dt</m> is the arc length of <m>\gamma</m>. It follows that for all <m>k\geq N</m> we have 
+                    <md>
+                        <mrow>\abs{\int_\gamma f\, dz-\int_\gamma f_k \, dz} \amp = \abs{\int_\gamma f(z)-f_k(z) \, dz}   </mrow>
+                        <mrow> \amp \leq \int_\gamma\abs{f(z)-f_k(z)}\, dz</mrow>
+                        <mrow> \amp \leq \frac{\epsilon}{L(\gamma)}\cdot L(\gamma) </mrow>
+                        <mrow> \amp = \epsilon</mrow>
+                    </md>.
+                    This proves 
+                    <me>
+                        \lim\limits_{k\to \infty}\int_\gamma f_k\, dz=\int_\gamma f\, dz
+                    </me>,
+                    as claimed.
+                </p>
+            </li>
+            <li>
+                <p>
+                   For each integer <m>k\geq 0</m>, let <m>f_k(z)=\sum_{n=0}^ka_n(z-z_0)^k</m> be the <m>k</m>-th partial sum of the power series.  Interestingly, we will prove the claim  by using our general result in (2) about limits of integrals, and the <m>n=1</m> case of the <xref ref="s_cauchy_integral_generalize" text="custom">generalized Cauchy integral formula</xref>. In more detail, given any <m>w\in B_R(z_0)</m>, pick an <m>r</m> such that <m>w\in \overline{B}_r(z_0)\subseteq B_R(z_0)</m> and pick an <m>s&gt; 0</m> such that <m>\gamma(t)=w+se^{it}\subseteq \overline{B}_r(z_0)</m>. We then have  
+                   <md>
+                    <mrow>f'(w)\amp=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z-w}\, dz </mrow>
+                    <mrow>f_k'(w) \amp = \frac{1}{2\pi i}\int_\gamma \frac{f_k(z)}{z-w}\, dz </mrow>
+                   </md>.
+                   Since <m>f_k(z)\to f(z)</m> uniformly for all <m>z\in \overline{B}_r(z_0)</m>, it follows that <m>\tfrac{f_k(z)}{2\pi i(z-w)}\to \tfrac{f(z)}{2\pi i(z-w)}</m> uniformly on <m>\gamma</m>. Indeed, given any <m>\epsilon &gt; 0</m>, pick <m>N</m> such that <m>\abs{f_k(z)-f(z)}&lt; 2\pi \epsilon s</m> for all <m>k\geq N</m>; then for all <m>z=w+se^{it}</m> on <m>\gamma</m>, we have
+                   <md>
+                    <mrow> \abs{\frac{f(z)}{2\pi i(z-w)}-\frac{f_k(z)}{2\pi i(z-w)}}\amp =  \frac{\abs{f(z)-f_k(z)}}{2\pi\abs{z-w}}  </mrow>
+                    <mrow> \amp &lt; \frac{2\pi \epsilon s}{2\pi s}</mrow>
+                    <mrow> \amp &lt; \epsilon</mrow>
+                   </md>.
+                   Lastly, since <m>\tfrac{f_k(z)}{2\pi i(z-w)}\to \tfrac{f(z)}{2\pi i(z-w)}</m> uniformly on <m>\gamma</m>, by the general result proved in (2) above , we have 
+                   <md>
+                    <mrow>f'(z) \amp =\int_{\gamma}\frac{f(z)}{2\pi i(z-w)}\, dz</mrow>
+                    <mrow> \amp = \lim\limits_{k\to \infty} \int_{\gamma}\frac{f_k(z)}{2\pi i(z-w)}\, dz </mrow>
+                    <mrow> \amp = \lim\limits_{k\to \infty}f_k'(z) </mrow>
+                    <mrow> \amp = \lim\limits_{k\to \infty}\sum_{n=0}^kna_n(z-z_0)^{n-1} \amp (f_k(z)=\sum_{n=0}^k a_n(z-z_0)^n) </mrow>
+                    <mrow> \amp = \sum_{n=0}^\infty na_n(z-z_0)^{n-1}</mrow>
+                    <mrow> \amp = \sum_{n=0}^\infty (n+1)a_{n+1}(z-z_0)^{n}</mrow>
+                   </md>,
+                   as claimed.
+                </p>
+            </li>
+        </ol>
     </p>
     </proof>
     </theorem>
+    <example xml:id="eg_power_deriv">
+    <title>Differentiating power series</title>
+    <statement>
+    <p>
+    Let <m>f(z)=1/(1-z)^m</m>, where <m>m</m> is a positive integer. Find a power series representation of <m>f</m> centered at <m>z_0=0</m> that converges on <m>B_1(0)</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    The idea is to relate  <m>f</m> with <m>g(z)=1/(1-z)</m>. Note that <m>g'(z)=1/(1-z)^2</m>, <m>g''(z)=2/(1-z)^3</m>, and more generally (using an easy induction argument)
+    <me>
+        g^{(m)}(z)=m!(1-z)^{-(m+1)}=\frac{m!}{(1-z)^{m+1}}
+    </me>
+    for all <m>m\geq 1</m>. Thus we have 
+    <me>
+        f(z)=\frac{1}{(m-1)!}g^{(m-1)}(z)
+    </me>.
+    Now, beginning with the power series representation <m>g(z)=\sum_{n=0}^\infty z^n</m> and using (3) of <xref ref="th_power_series_integral_der"/>, we see that 
+    <md>
+        <mrow>g'(z) \amp =\sum_{n=0}^\infty nz^{n-1}=\sum_{n=1}^\infty nz^{n-1}=\sum_{n=0}^\infty (n+1)a_{n+1}z^{n}</mrow>
+        <mrow>g''(z) \amp = \sum_{n=0}^\infty n(n-1)z^{n-2}=\sum_{n=0}^\infty (n+2)(n+1)z^{n}</mrow>
+        <mrow> \amp \vdots \ (\text{induction argument}) </mrow>
+        <mrow>g^{(m-1)}(z) \amp = \sum_{n=0}^\infty (n+(m-1))(n+(m-2))\cdots (n+1)z^{n}</mrow>
+        <mrow> \amp = \sum_{n=0}^\infty \frac{(n+m-1)!}{n!}z^{n} </mrow>
+    </md>.
+    We conclude that 
+    <md>
+        <mrow>\frac{1}{(1-z)^{m}} \amp = \frac{1}{(m-1)!}g^{(m-1)}(z)</mrow>
+        <mrow> \amp = \sum_{n=0}^\infty\frac{(n+m-1)!}{n!(m-1)!}z^{n}</mrow>
+        <mrow> \amp = \sum_{n=0}^\infty{n+m-1\choose n}z^{n}</mrow>
+    </md>,
+    where we use the binomial coefficient notation <m>{r\choose s}=\tfrac{r!}{s!(r-s)!}</m>. Note that since the original power series for <m>g(z)</m> converges for all <m>z\in B_1(0)</m>, each successive formal derivative of this power series also converges for all <m>z\in B_1(0)</m>. 
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_power_series_Log">
+    <title>Power series for <m>\Log</m></title>
+    <statement>
+    <p>
+        Find a power series expansion of <m>-\Log(1-z)</m> that converges on <m>B_1(0)</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    Let <m>f(z)=1/(1-z)</m>. Since <m>f</m> is holomorphic on <m>B_1(0)</m>, we know from the proof of <xref ref="th_antider"/> that we can define an antiderivative of <m>f</m> on <m>B_1(0)</m> via the formula 
+    <me>
+        F(z)=\int_{\gamma_{0,z}}f(w)\, dw
+    </me>,
+    where <m>\gamma_{0,z}</m> is the straight line parametrization. Using (2) of <xref ref="th_power_series_integral_der"/>, we then have 
+    <md>
+        <mrow>F(z) \amp =\int_{\gamma_{0,z}}f(w)\, dw</mrow>
+        <mrow> \amp = \int_{\gamma_{0,z}}\sum_{n=0}^\infty w^n\, dw</mrow>
+        <mrow> \amp = \sum_{n=0}^\infty\int_{\gamma_{0,z}} w^n\, dw \amp (<xref ref="th_power_series_integral_der" text="global"/>)</mrow>
+        <mrow> \amp =\sum_{n=0}^\infty \frac{z^{n+1}}{n+1} </mrow>
+    </md>,
+    and that this power series converges for all <m>z\in B_1(0)</m>. Note that the last step in the chain of equalities above follows from the fact that <m>G(w)=\frac{w^{n+1}}{n+1}</m> is an antiderivative of <m>w^n</m>, and thus 
+    <me>
+    \int_{\gamma_{0,z}} w^n\, dw=G(z)-G(0)=\frac{z^{n+1}}{n+1}
+    </me>.
+    Lastly, since <m>F</m> and <m>-\Log(1-z)</m> are both antiderivatives of <m>f</m> on <m>B_1(0)</m> (check this for yourself for <m>-\Log(1-z)</m>), we have <m>-\Log(1-z)=F(z)+C</m> for some <m>C</m>. Evaluating at <m>z=0</m>, we see that since <m>-\Log(1-0)=F(0)=0</m>, we must have <m>C=0</m>. We conclude that 
+    <me>
+        -\Log(1-z)=F(z)=\sum_{n=0}^\infty \frac{1}{n+1}z^{n+1}=z+\frac{z^2}{2}+\frac{z^3}{3}+\cdots 
+    </me>
+    for all <m>z\in B_1(0)</m>. 
+    </p>
+    </solution>
+    </example>
+    <p>
+        According to <xref ref="th_power_series_integral_der"/>, functions <m>f</m> that admit a power series expansion <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m> in some open ball around <m>z_0</m> behave very nicely with respect to the operations of integration and differentiation. As such it is worth giving such functions a special designation: <em>analytic</em>. 
+    </p>
+    
     <definition xml:id="d_analytic">
     <title>Analytic functions</title>
     <statement>
@@ -257,6 +469,9 @@
     </p>
     </statement>
     </definition>
+    <p>
+        An easy consequence of <xref ref="th_power_series_integral_der"/> is that analytic functions are holomorphic, and in fact infinitely differentiable. The corollary below makes this result official and further provides a formula for the <m>n</m>-th coefficient of a power series expansion of <m>f</m> in terms of the <m>n</m>-th derivative of <m>f</m>. That formula follows easily from taking the formal derivative of the power series <m>n</m> times in succession. 
+    </p>
     <corollary xml:id="cor_analytic_implies_holomorphic">
         <title>Analytic implies holomorphic</title>
         <statement>
@@ -269,10 +484,15 @@
             </p>
         </statement>
     </corollary>
-
-    
-    
-    
-    
+    <p>
+        As always in mathematics, when confronted with an implication like 
+        <men xml:id="eq_analyic_implies_holomorphic">
+            f \text{ analytic at } z_0 \implies  f \text{ holomorphic at } z_0
+        </men>
+         we should always ask whether its converse is true: <ie/>, whether the implication is in fact an equivalence. In the next section we will see that this is indeed the case for <xref ref="eq_analyic_implies_holomorphic"/>: <ie/>, we have 
+         <men xml:id="eq_analytic_iff_holomorphic">
+            f \text{ analytic at } z_0 \iff f \text{ holomorphic at } z_0
+         </men>.
+    </p>
 
 </section>
