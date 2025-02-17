@@ -470,27 +470,39 @@
     </statement>
     </definition>
     <p>
-        An easy consequence of <xref ref="th_power_series_integral_der"/> is that analytic functions are holomorphic, and in fact infinitely differentiable. The corollary below makes this result official and further provides a formula for the <m>n</m>-th coefficient of a power series expansion of <m>f</m> in terms of the <m>n</m>-th derivative of <m>f</m>. That formula follows easily from taking the formal derivative of the power series <m>n</m> times in succession. 
+        An easy consequence of <xref ref="th_power_series_integral_der"/> is that analytic functions are holomorphic, and in fact infinitely differentiable. Statement (1) of the corollary below makes this result official. Furthermore, statement (2) provides a formula for the <m>n</m>-th coefficient of a power series expansion of <m>f</m> both in terms of the <m>n</m>-th derivative of <m>f</m> (as well as in term of certain line integrals). That formula follows easily from taking the formal derivative of the power series <m>n</m> times in succession and evaluating at <m>z_0</m>. 
     </p>
     <corollary xml:id="cor_analytic_implies_holomorphic">
         <title>Analytic implies holomorphic</title>
         <statement>
             <p>
-                Let <m>U\subseteq \C</m> be an open set.   If <m>f</m> is analytic on <m>U</m>, then <m>f</m> is holomorphic on <m>U</m>. Furthermore, for any <m>z_0\in U</m> we have power series representation <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m> with positive radius of convergence, where 
-                <men>
-                    a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}
-                </men>,
-                where <m>\gamma</m> is the counterclockwise oriented boundary of any closed disk <m>\overline{B}\subseteq U</m> containing <m>z_0</m>. 
+                Let <m>f</m> be a complex function. 
+                <ol>
+                    <li>
+                        <p>
+                            If <m>f</m> is analytic at a point <m>z_0\in \C</m>, then <m>f</m> is holomorphic at <m>z_0</m>. Using logical shorthand: 
+                        <men xml:id="eq_analyic_implies_holomorphic">
+                            f \text{ analytic at } z_0 \implies  f \text{ holomorphic at } z_0
+                        </men>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>f</m> is analytic at <m>z_0</m> with power series representation <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m>, then 
+                                <men>
+                                    a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}
+                                </men>,
+                            where <m>\gamma</m> is the counterclockwise oriented boundary of any closed disk <m>\overline{B}\subseteq U</m> containing <m>z_0</m>. 
+                        </p>
+                    </li>
+                </ol>
             </p>
         </statement>
     </corollary>
     <p>
-        As always in mathematics, when confronted with an implication like 
-        <men xml:id="eq_analyic_implies_holomorphic">
-            f \text{ analytic at } z_0 \implies  f \text{ holomorphic at } z_0
-        </men>
+        As always in mathematics, when confronted with an implication like <xref ref="eq_analyic_implies_holomorphic"/>,       
          we should always ask whether its converse is true: <ie/>, whether the implication is in fact an equivalence. In the next section we will see that this is indeed the case for <xref ref="eq_analyic_implies_holomorphic"/>: <ie/>, we have 
-         <men xml:id="eq_analytic_iff_holomorphic">
+         <men>
             f \text{ analytic at } z_0 \iff f \text{ holomorphic at } z_0
          </men>.
     </p>
