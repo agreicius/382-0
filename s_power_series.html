@@ -845,28 +845,36 @@ F(z) \amp =\int_{\gamma_{0,z}}f(w)\, dw\\
 <article class="definition definition-like" id="d_analytic"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.17.12</span><span class="period">.</span><span class="space"> </span><span class="title">Analytic functions.</span>
 </h3>
-<div class="para" id="d_analytic-2-1">Let <span class="process-math">\(f\colon U\rightarrow \C\)</span> be a complex function, with <span class="process-math">\(U\)</span> an open set. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic at a point</dfn>  <span class="process-math">\(z_0\in U\)</span> if <span class="process-math">\(f\)</span> has a power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\)</span> with positive radius of convergence. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic on a set</dfn> <span class="process-math">\(D\subseteq U\)</span> if <span class="process-math">\(f\)</span> is analytic at all points in <span class="process-math">\(D\text{,}\)</span> and we say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic</dfn> if it is analytic on its domain.</div></article><div class="para" id="s_power_series-20">An easy consequence of <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/xref/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a> is that analytic functions are holomorphic, and in fact infinitely differentiable. The corollary below makes this result official and further provides a formula for the <span class="process-math">\(n\)</span>-th coefficient of a power series expansion of <span class="process-math">\(f\)</span> in terms of the <span class="process-math">\(n\)</span>-th derivative of <span class="process-math">\(f\text{.}\)</span> That formula follows easily from taking the formal derivative of the power series <span class="process-math">\(n\)</span> times in succession.</div>
+<div class="para" id="d_analytic-2-1">Let <span class="process-math">\(f\colon U\rightarrow \C\)</span> be a complex function, with <span class="process-math">\(U\)</span> an open set. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic at a point</dfn>  <span class="process-math">\(z_0\in U\)</span> if <span class="process-math">\(f\)</span> has a power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\)</span> with positive radius of convergence. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic on a set</dfn> <span class="process-math">\(D\subseteq U\)</span> if <span class="process-math">\(f\)</span> is analytic at all points in <span class="process-math">\(D\text{,}\)</span> and we say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic</dfn> if it is analytic on its domain.</div></article><div class="para" id="s_power_series-20">An easy consequence of <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/xref/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a> is that analytic functions are holomorphic, and in fact infinitely differentiable. Statement (1) of the corollary below makes this result official. Furthermore, statement (2) provides a formula for the <span class="process-math">\(n\)</span>-th coefficient of a power series expansion of <span class="process-math">\(f\)</span> both in terms of the <span class="process-math">\(n\)</span>-th derivative of <span class="process-math">\(f\)</span> (as well as in term of certain line integrals). That formula follows easily from taking the formal derivative of the power series <span class="process-math">\(n\)</span> times in succession and evaluating at <span class="process-math">\(z_0\text{.}\)</span>
+</div>
 <article class="corollary theorem-like" id="cor_analytic_implies_holomorphic"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.13</span><span class="period">.</span><span class="space"> </span><span class="title">Analytic implies holomorphic.</span>
 </h3>
 <div class="para logical" id="cor_analytic_implies_holomorphic-2-1">
-<div class="para">Let <span class="process-math">\(U\subseteq \C\)</span> be an open set.   If <span class="process-math">\(f\)</span> is analytic on <span class="process-math">\(U\text{,}\)</span> then <span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(U\text{.}\)</span> Furthermore, for any <span class="process-math">\(z_0\in U\)</span> we have power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\)</span> with positive radius of convergence, where</div>
-<div class="displaymath process-math" id="cor_analytic_implies_holomorphic-2-1-8">
+<div class="para">Let <span class="process-math">\(f\)</span> be a complex function.</div>
+<ol class="decimal" id="cor_analytic_implies_holomorphic-2-1-2">
+<li id="cor_analytic_implies_holomorphic-2-1-2-1"><div class="para logical" id="cor_analytic_implies_holomorphic-2-1-2-1-1">
+<div class="para">If <span class="process-math">\(f\)</span> is analytic at a point <span class="process-math">\(z_0\in \C\text{,}\)</span> then <span class="process-math">\(f\)</span> is holomorphic at <span class="process-math">\(z_0\text{.}\)</span> Using logical shorthand:</div>
+<div class="displaymath process-math" id="eq_analyic_implies_holomorphic">
 \begin{equation}
-a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\text{,}\tag{1.68}
+f \text{ analytic at } z_0 \implies  f \text{ holomorphic at } z_0\tag{1.68}
+\end{equation}
+</div>
+</div></li>
+<li id="cor_analytic_implies_holomorphic-2-1-2-2"><div class="para logical" id="cor_analytic_implies_holomorphic-2-1-2-2-1">
+<div class="para">If <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\)</span> with power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="cor_analytic_implies_holomorphic-2-1-2-2-1-4">
+\begin{equation}
+a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\text{,}\tag{1.69}
 \end{equation}
 </div>
 <div class="para">where <span class="process-math">\(\gamma\)</span> is the counterclockwise oriented boundary of any closed disk <span class="process-math">\(\overline{B}\subseteq U\)</span> containing <span class="process-math">\(z_0\text{.}\)</span>
 </div>
+</div></li>
+</ol>
 </div></article><div class="para logical" id="s_power_series-22">
-<div class="para">As always in mathematics, when confronted with an implication like</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_analyic_implies_holomorphic.html" id="eq_analyic_implies_holomorphic">
-\begin{equation}
-f \text{ analytic at } z_0 \implies  f \text{ holomorphic at } z_0\tag{1.69}
-\end{equation}
-</div>
-<div class="para">we should always ask whether its converse is true: i.e., whether the implication is in fact an equivalence. In the next section we will see that this is indeed the case for <a href="s_power_series.html#eq_analyic_implies_holomorphic" class="xref" data-knowl="./knowl/xref/eq_analyic_implies_holomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.69">(1.69)</a>: i.e., we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_analyic_implies_holomorphic.html" id="eq_analytic_iff_holomorphic">
+<div class="para">As always in mathematics, when confronted with an implication like <a href="s_power_series.html#eq_analyic_implies_holomorphic" class="xref" data-knowl="./knowl/xref/eq_analyic_implies_holomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.68">(1.68)</a>, we should always ask whether its converse is true: i.e., whether the implication is in fact an equivalence. In the next section we will see that this is indeed the case for <a href="s_power_series.html#eq_analyic_implies_holomorphic" class="xref" data-knowl="./knowl/xref/eq_analyic_implies_holomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.68">(1.68)</a>: i.e., we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_analyic_implies_holomorphic.html ./knowl/xref/eq_analyic_implies_holomorphic.html" id="s_power_series-22-5">
 \begin{equation}
 f \text{ analytic at } z_0 \iff f \text{ holomorphic at } z_0\text{.}\tag{1.70}
 \end{equation}
