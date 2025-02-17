@@ -24,7 +24,93 @@ In particular, <m>f</m> is holomorphic at <m>z_0</m> if and only if <m>f</m> is 
 </p>
 </proof>
 </theorem>
+<corollary xml:id="cor_power_series">
+    <statement>
+        <p>
+            We have the following power series expansions centered at <m>z_0=0</m> with indicated radius of convergence <m>R</m>. 
+            <md>
+                <mrow>\frac{1}{1-z} \amp = \sum_{n=0}^\infty z^n \amp R\amp =1</mrow>
+                <mrow>\frac{1}{1+z} \amp = \sum_{n=0}^\infty (-1)^nz^n \amp R\amp =1</mrow>
+                <mrow>\frac{1}{(1-z)^2} \amp = \sum_{n=0}^\infty (n+1)z^{n} \amp R\amp =1 </mrow>
+                <mrow>-\Log(1-z) \amp = \sum_{n=1}^\infty \frac{1}{n}z^n \amp R \amp =1 </mrow>
+                <mrow>e^z \amp = \sum_{n=0}^\infty \frac{1}{n!}z^n \amp R \amp =\infty</mrow>
+                <mrow>\cos z \amp = \sum_{n=0}^\infty \frac{(-1)^n}{(2n!)}z^{2n} \amp R \amp =\infty</mrow>
+                <mrow>\sin z \amp = \sum_{n=0}^\infty \frac{(-1)^{n}}{(2n+1)!}z^{2n+1} \amp R \amp =\infty</mrow>
+            </md>.
+        </p>
+    </statement>
+</corollary>
+<theorem xml:id="th_holomorphic">
+<title>Holomorphic equivalences</title>
+<statement>
+<p>
+Let <m>f=u+iv</m> be a complex function defined on the open connected set <m>U</m>. The following statements are equivalent. 
+<ol>
+    <li>
+        <title>Holomorphic</title>
+        <p>
+            <m>f</m> is holomorphic on <m>U</m>.
+        </p>
+    </li>
+    <li>
+        <title>Analytic</title>
+        <p>
+         <m>f</m> is analytic on <m>U</m>. In fact, for all <m>B_R(z_0)\subseteq U</m>, <m>f</m> admits a power series expansion centered at <m>z_0</m> that converges on <m>B_R(z_0)</m>. 
+        </p>
+    </li>
+    <li>
+        <title>Cauchy-Riemann</title>
+        <p>
+            <m>u</m> and <m>v</m> have continuous first-order partial derivatives and satisfy the Cauchy-Riemann equations. 
+        </p>
+    </li>
+    <li>
+        <title>Morera's theorem</title>
+        <p>
+            <m>f</m> is continuous and satisfies <m>\int_{\gamma_{(z_0,z_1,z_2)}}f\, dz=0</m> for any triangle <m>\triangle(z_0,z_1,z_2)\subseteq U</m>. 
+        </p>
+    </li>
+    <li>
+        <title>Local antiderivative</title>
+        <p>
+            For all <m>z_0\in U</m> there is an open ball <m>B=B_R(z_0)\subseteq U</m> and function <m>F</m> such that <m>F</m> is an antiderivative of <m>f</m> on <m>B</m>. 
+        </p>
+    </li>
+    <li>
+        <title>Cauchy integral formula</title>
+        <p>
+            <m>f</m> is continuous and for all closed balls <m>\overline{B}_r(z_0)\subseteq U</m>, we have <m>f(z_0)=\frac{1}{2\pi i}\int_\gamma f(z)/(z-z_0)\, dz</m>, where <m>\gamma=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
 
+<theorem xml:id="th_limit_point">
+<title>Limit point</title>
+<statement>
+<p>
+Let <m>U</m> be open and connected, and assume <m>f</m> is holomorphic on <m>U</m>. Let <m>Z=\{z\in U\colon f(z)=0\}</m> be the set of zeros of <m>f</m> on <m>U</m>. If <m>Z</m> has an limit point, then <m>f(z)=0</m> for all <m>z\in U</m>. 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<corollary xml:id="cor_limit_points">
+    <title>Rigidity</title>
+    <statement>
+        <p>
+           Let <m>U</m> be open and connected, and let <m>f</m> and <m>g</m> be holomorphic functions on <m>U</m>. If the set <m>Z=\{z\in U\colon f(z)=g(z)\}</m> has a limit point, then <m>f(z)=g(z)</m> for all <m>z\in U</m>. 
+        </p>
+    </statement>
+</corollary>
     
 
 </section>
