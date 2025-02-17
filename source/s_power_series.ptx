@@ -470,34 +470,49 @@
     </statement>
     </definition>
     <p>
-        An easy consequence of <xref ref="th_power_series_integral_der"/> is that analytic functions are holomorphic, and in fact infinitely differentiable. Statement (1) of the corollary below makes this result official. Furthermore, statement (2) provides a formula for the <m>n</m>-th coefficient of a power series expansion of <m>f</m> both in terms of the <m>n</m>-th derivative of <m>f</m> (as well as in term of certain line integrals). That formula follows easily from taking the formal derivative of the power series <m>n</m> times in succession and evaluating at <m>z_0</m>. 
+        A direct consequence of <xref ref="th_power_series_integral_der"/> is that analytic functions are holomorphic, and in fact infinitely differentiable. We make this official now. 
     </p>
     <corollary xml:id="cor_analytic_implies_holomorphic">
         <title>Analytic implies holomorphic</title>
         <statement>
             <p>
                 Let <m>f</m> be a complex function. 
-                <ol>
-                    <li>
-                        <p>
-                            If <m>f</m> is analytic at a point <m>z_0\in \C</m>, then <m>f</m> is holomorphic at <m>z_0</m>. Using logical shorthand: 
-                        <men xml:id="eq_analyic_implies_holomorphic">
-                            f \text{ analytic at } z_0 \implies  f \text{ holomorphic at } z_0
-                        </men>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            If <m>f</m> is analytic at <m>z_0</m> with power series representation <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m>, then 
+                If <m>f</m> is analytic at a point <m>z_0\in \C</m>, then <m>f</m> is holomorphic at <m>z_0</m>. Using logical shorthand: 
+                <men xml:id="eq_analyic_implies_holomorphic">
+                    f \text{ analytic at } z_0 \implies  f \text{ holomorphic at } z_0
+                </men>
+            </p>
+        </statement>
+    </corollary>
+    <p>
+        The next corollary provides a formula for the <m>n</m>-th coefficient of a power series expansion of <m>f</m> both in terms of the <m>n</m>-th derivative of <m>f</m> (as well as in term of certain line integrals). As a result, we see that a power series expansion of an analytic function is uniquely determined by the function. 
+    </p>
+    <corollary xml:id="cor_power_series_expansion">
+        <title>Uniqueness of expansions</title>
+        <statement>
+            <p>
+                            Let <m>f</m> be a complex function. If <m>f</m> is analytic at <m>z_0</m> with power series representation <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m>, then 
                                 <men>
                                     a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}
                                 </men>,
                             where <m>\gamma</m> is the counterclockwise oriented boundary of any closed disk <m>\overline{B}\subseteq U</m> containing <m>z_0</m>. 
                         </p>
-                    </li>
-                </ol>
-            </p>
+                        <p>
+                            In particular the power series expansion of <m>f</m> centered at <m>z_0</m> is unique. 
+                        </p>
         </statement>
+        <proof>
+            <p>
+                We prove the derivative formula for <m>a_n</m> for all <m>n\geq 0</m>. The integral formula follows directly from the generalized Cauchy integral formula. Our proof is by induction.
+            </p>
+            <case>
+            <title>Base case: <m>n=0</m></title>
+            <p>
+            
+            </p>
+            </case>
+            
+        </proof>
     </corollary>
     <p>
         As always in mathematics, when confronted with an implication like <xref ref="eq_analyic_implies_holomorphic"/>,       
