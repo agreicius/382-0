@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_analyticity" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Analyticity of holomorphic functions</title>
+<p>
+    We now prove the converse of <xref ref="eq_analyic_implies_holomorphic"/>. 
+</p>
+<theorem xml:id="th_holo_implies_analytic">
+<title>Holomorphic implies analytic</title>
+<statement>
+<p>
+Let <m>f</m> be holomorphic on the open set <m>U</m>. Given any <m>z_0\in U</m> and <m>R&gt; 0</m> satisfying <m>B_R(z_0)\subseteq U</m>, we have <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m> for all <m>z\in B_{R}(z_0)</m>, where 
+<men xml:id="eq_power_series_coeff_formula">
+     a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}
+</men>.
+In particular, <m>f</m> is holomorphic at <m>z_0</m> if and only if <m>f</m> is analytic at <m>z_0</m>. Using logical shorthand: 
+<men xml:id="eq_holo_iff_anal">
+    f \text{ holomorphic at } z_0 \iff  f \text{ analytic at } z_0
+</men>.
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+    
+
+</section>
