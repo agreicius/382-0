@@ -118,7 +118,26 @@
     </statement>
     <solution>
     <p>
-    
+    Let <m>f(z)=1/(z^3+z^2-z-1)</m>. Factoring the denominator, we see that 
+    <me>
+        f(z)=\frac{1}{(z-1)(z^2+2z+1)}=\frac{1}{(z-1)(z+1)^2}
+    </me>.
+    Next observe that the square in question has vertices <m>0, -1+i, -2, -1-i</m>. Since the function <m>f</m> is holomorphic on <m>\C-\{1,-1\}</m>, we see using the principle of deformation, that 
+    <me>
+        \int_\gamma f\, dz=\int_{-\alpha}f\, dz=-\int_\alpha f\, dz
+    </me>,
+    where <m>\alpha=-1+(3/2)e^{it}</m>, <m>t\in [0,2\pi]</m>. (Note that we needed <m>-\alpha</m> in the first equality above, as by definition <m>\gamma</m> is oriented clockwise.) We have 
+    <me>
+        f(z)=\frac{g(z)}{(z+1)^2}
+    </me>,
+    where <m>g(z)=\tfrac{1}{(z-1)}</m> is holomorphic on <m>U=\C-\{1\}</m>. Since <m>B_{3/2}(-1)\subseteq U</m>, we may apply the generalized Cauchy integral formula to <m>g</m> to conclude 
+    <me>
+        \int_{\alpha}f(z)\, dz=\int_{\alpha}\frac{g(z)}{(z+1)^2}\, dz=2\pi i g'(-1)=-\pi i
+    </me>.
+    Putting it all together, we have 
+    <me>
+        \int_\gamma f(z)\, dz=-\int_{\alpha}f(z)\, dz=-(-\pi i)=\pi i
+    </me>.  
     </p>
     </solution>
     </example>

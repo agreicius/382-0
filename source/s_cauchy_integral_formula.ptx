@@ -52,9 +52,9 @@
     <p>
         Given any <m>w\in B_{r}(z_0)</m>, for any <m>s&gt; 0</m> with <m>B_s(z_0)\subseteq B_r(z_0)</m>, the <xref ref="cor_cauchy_goursat_boundary" text="custom">principle of deformation theorem</xref>  implies that 
         <me>
-            \int_\gamma\frac{f(z)}{z-w}\, dz=\int_{\gamma_s}\frac{f(z)}{w-z}
+            \int_\gamma\frac{f(z)}{z-w}\, dz=\int_{\gamma_s}\frac{f(z)}{z-w}\, dz
         </me>,
-        where <m>\gamma_s=w+se^{it}</m>, <m>t\in [0,2\pi]</m>. (Note that $f(z)/(z-w)$ is holomorphic at all points lying within <m>\gamma</m> and outside of <m>\gamma_s</m>.) Since this is true for all (sufficiently small) <m>s</m>,  it follows from <xref ref="lemma_cauchy_integral"/> that 
+        where <m>\gamma_s=w+se^{it}</m>, <m>t\in [0,2\pi]</m>. (Note that <m>f(z)/(z-w)</m> is holomorphic at all points lying within <m>\gamma</m> and outside of <m>\gamma_s</m>.) Since this is true for all (sufficiently small) <m>s</m>,  it follows from <xref ref="lemma_cauchy_integral"/> that 
         <md>
             <mrow>f(w) \amp = \lim\limits_{s\to 0}\int_{\gamma_s}\frac{f(z)}{z-w}\, dz</mrow>
             <mrow> \amp = \lim\limits_{s\to 0}\int_{\gamma}\frac{f(z)}{z-w}\, dz </mrow>
@@ -118,7 +118,23 @@ phi+Arrows+P+Q+gamma+carrows
     </statement>
     <solution>
     <p>
-    
+    Writing <m>\cos t=(e^{it}+e^{-it})/2=(e^{it}+1/e^{it})/2</m>. We see that the integral in question is <em>almost</em> the result of integrating <m>f(z)=1/(2-(z+1/z)/2)</m> over the path <m>\gamma(t)=e^{it}</m>, <m>t\in [0,1]</m>; we are only missing the <m>\gamma'(t)=ie^{it}</m> term in the numerator. Let's explore further, using a little algebra: 
+    <md>
+        <mrow>\int_0^{2\pi}\frac{1}{2-\cos t}\, dt \amp= \int_0^{2\pi}\frac{1}{2-(e^{it}+e^{-it})/2}\, dt</mrow>
+        <mrow> \amp = \int_0^{2\pi}\frac{1}{2-(e^{it}+e^{-it})/2}\cdot \frac{ie^{it}}{ie^{it}}\, dt </mrow>
+        <mrow> \amp = \int_\gamma\frac{1}{2-(z+1/z)/2}\cdot \frac{1}{iz}\, dz</mrow>
+        <mrow> \amp = \int_{\gamma}\frac{2}{i(4z-z^2-1)}\, dz</mrow>
+        <mrow> \amp = \int_{\gamma}\frac{2i}{z^2-4z+1}\, dz</mrow>
+        <mrow> \amp = \int_{\gamma}\frac{2i}{(z-\alpha)(z-\beta)}\, dz</mrow>
+    </md>,
+    where <m>\gamma(t)=e^{it}</m>, <m>t\in [0, 2\pi]</m>, <m>\alpha=2-\sqrt{3}</m>, <m>\beta=2+\sqrt{3}</m>. Since <m>\alpha</m> lies within <m>\gamma</m>, and <m>\beta</m> lies without <m>\gamma</m>, can apply the Cauchy integral formula to the function <m>f(z)=2i/(z-\beta)</m> (which is holomorphic on <m>\C-\{\beta\}</m>) to conclude that 
+    <md>
+        <mrow> \int_0^{2\pi}\frac{1}{2-\cos t}\, dt \amp= \int_{\gamma}\frac{f(z)}{(z-\alpha)}\, dz </mrow>
+        <mrow> \amp = 2\pi i f(\alpha)</mrow>
+        <mrow> \amp = 2\pi i\cdot \frac{2i}{\alpha-\beta}</mrow>
+        <mrow> \amp = \frac{-4\pi}{-2\sqrt{3}}</mrow>
+        <mrow> \amp =\frac{2\pi}{\sqrt{3}}</mrow>
+    </md>.
     </p>
     </solution>
     </example>
