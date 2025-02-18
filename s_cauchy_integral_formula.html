@@ -97,7 +97,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.8';
+eBookConfig.runestone_version = '7.5.9';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -388,6 +388,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_cauchy_integral_formula.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Cauchy integral formula</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_generalize.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Generalized Cauchy integral formula</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_power_series.html" class="internal"><span class="codenumber">1.17</span> <span class="title">Complex power series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_analyticity.html" class="internal"><span class="codenumber">1.18</span> <span class="title">Analyticity of holomorphic functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -459,11 +460,11 @@ f(w)=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{z-w}\, dz\tag{1.61}
 <div class="para">Given any <span class="process-math">\(w\in B_{r}(z_0)\text{,}\)</span> for any <span class="process-math">\(s&gt; 0\)</span> with <span class="process-math">\(B_s(z_0)\subseteq B_r(z_0)\text{,}\)</span> the <a href="s_cauchy_goursat.html#cor_cauchy_goursat_boundary" class="xref" data-knowl="./knowl/xref/cor_cauchy_goursat_boundary.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.14.19: Principle of deformation">principle of deformation theorem</a>  implies that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_cauchy_goursat_boundary.html ./knowl/xref/lemma_cauchy_integral.html">
 \begin{equation*}
-\int_\gamma\frac{f(z)}{z-w}\, dz=\int_{\gamma_s}\frac{f(z)}{w-z}\text{,}
+\int_\gamma\frac{f(z)}{z-w}\, dz=\int_{\gamma_s}\frac{f(z)}{z-w}\, dz\text{,}
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\gamma_s=w+se^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> (Note that $f(z)/(z-w)$ is holomorphic at all points lying within <span class="process-math">\(\gamma\)</span> and outside of <span class="process-math">\(\gamma_s\text{.}\)</span>) Since this is true for all (sufficiently small) <span class="process-math">\(s\text{,}\)</span>  it follows from <a href="s_cauchy_integral_formula.html#lemma_cauchy_integral" class="xref" data-knowl="./knowl/xref/lemma_cauchy_integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.15.1">Lemma 1.15.1</a> that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_cauchy_goursat_boundary.html ./knowl/xref/lemma_cauchy_integral.html" id="th_cauchy_integral-3-1-12">
+<div class="para">where <span class="process-math">\(\gamma_s=w+se^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> (Note that <span class="process-math">\(f(z)/(z-w)\)</span> is holomorphic at all points lying within <span class="process-math">\(\gamma\)</span> and outside of <span class="process-math">\(\gamma_s\text{.}\)</span>) Since this is true for all (sufficiently small) <span class="process-math">\(s\text{,}\)</span>  it follows from <a href="s_cauchy_integral_formula.html#lemma_cauchy_integral" class="xref" data-knowl="./knowl/xref/lemma_cauchy_integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.15.1">Lemma 1.15.1</a> that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_cauchy_goursat_boundary.html ./knowl/xref/lemma_cauchy_integral.html" id="th_cauchy_integral-3-1-13">
 \begin{align*}
 f(w) \amp = \lim\limits_{s\to 0}\int_{\gamma_s}\frac{f(z)}{z-w}\, dz\\
 \amp = \lim\limits_{s\to 0}\int_{\gamma}\frac{f(z)}{z-w}\, dz \\
@@ -505,7 +506,29 @@ f(w) \amp = \lim\limits_{s\to 0}\int_{\gamma_s}\frac{f(z)}{z-w}\, dz\\
 </h3>
 <div class="para" id="eg_cauchy_integral_2-2-1">Compute <span class="process-math">\(\int_0^{2\pi}\frac{1}{2-\cos t}\, dt\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_cauchy_integral_2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_cauchy_integral_2-3-1"></div></div></details></div></article></section></div>
+<div class="solutions"><details id="eg_cauchy_integral_2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_cauchy_integral_2-3-1">
+<div class="para">Writing <span class="process-math">\(\cos t=(e^{it}+e^{-it})/2=(e^{it}+1/e^{it})/2\text{.}\)</span> We see that the integral in question is <em class="emphasis">almost</em> the result of integrating <span class="process-math">\(f(z)=1/(2-(z+1/z)/2)\)</span> over the path <span class="process-math">\(\gamma(t)=e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,1]\text{;}\)</span> we are only missing the <span class="process-math">\(\gamma'(t)=ie^{it}\)</span> term in the numerator. Let’s explore further, using a little algebra:</div>
+<div class="displaymath process-math" id="eg_cauchy_integral_2-3-1-7">
+\begin{align*}
+\int_0^{2\pi}\frac{1}{2-\cos t}\, dt \amp= \int_0^{2\pi}\frac{1}{2-(e^{it}+e^{-it})/2}\, dt\\
+\amp = \int_0^{2\pi}\frac{1}{2-(e^{it}+e^{-it})/2}\cdot \frac{ie^{it}}{ie^{it}}\, dt \\
+\amp = \int_\gamma\frac{1}{2-(z+1/z)/2}\cdot \frac{1}{iz}\, dz\\
+\amp = \int_{\gamma}\frac{2}{i(4z-z^2-1)}\, dz\\
+\amp = \int_{\gamma}\frac{2i}{z^2-4z+1}\, dz\\
+\amp = \int_{\gamma}\frac{2i}{(z-\alpha)(z-\beta)}\, dz\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\gamma(t)=e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0, 2\pi]\text{,}\)</span> <span class="process-math">\(\alpha=2-\sqrt{3}\text{,}\)</span> <span class="process-math">\(\beta=2+\sqrt{3}\text{.}\)</span> Since <span class="process-math">\(\alpha\)</span> lies within <span class="process-math">\(\gamma\text{,}\)</span> and <span class="process-math">\(\beta\)</span> lies without <span class="process-math">\(\gamma\text{,}\)</span> can apply the Cauchy integral formula to the function <span class="process-math">\(f(z)=2i/(z-\beta)\)</span> (which is holomorphic on <span class="process-math">\(\C-\{\beta\}\)</span>) to conclude that</div>
+<div class="displaymath process-math" id="eg_cauchy_integral_2-3-1-18">
+\begin{align*}
+\int_0^{2\pi}\frac{1}{2-\cos t}\, dt \amp= \int_{\gamma}\frac{f(z)}{(z-\alpha)}\, dz \\
+\amp = 2\pi i f(\alpha)\\
+\amp = 2\pi i\cdot \frac{2i}{\alpha-\beta}\\
+\amp = \frac{-4\pi}{-2\sqrt{3}}\\
+\amp =\frac{2\pi}{\sqrt{3}}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_cauchy_goursat.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_cauchy_integral_generalize.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

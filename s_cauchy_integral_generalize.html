@@ -97,7 +97,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.8';
+eBookConfig.runestone_version = '7.5.9';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -388,6 +388,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_formula.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Cauchy integral formula</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_cauchy_integral_generalize.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Generalized Cauchy integral formula</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_power_series.html" class="internal"><span class="codenumber">1.17</span> <span class="title">Complex power series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_analyticity.html" class="internal"><span class="codenumber">1.18</span> <span class="title">Analyticity of holomorphic functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -513,7 +514,38 @@ f'(w_0) \amp = \lim\limits_{w\to w_0}\frac{f(w)-f(w_0)}{w-w_0} \\
 </div>
 <div class="para">in the <em class="emphasis">clockwise</em> direction.</div>
 </div>
-<div class="solutions"><details id="eg_-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_morera"><h3 class="heading">
+<div class="solutions"><details id="eg_-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_-3-1">
+<div class="para">Let <span class="process-math">\(f(z)=1/(z^3+z^2-z-1)\text{.}\)</span> Factoring the denominator, we see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=\frac{1}{(z-1)(z^2+2z+1)}=\frac{1}{(z-1)(z+1)^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">Next observe that the square in question has vertices <span class="process-math">\(0, -1+i, -2, -1-i\text{.}\)</span> Since the function <span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(\C-\{1,-1\}\text{,}\)</span> we see using the principle of deformation, that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_\gamma f\, dz=\int_{-\alpha}f\, dz=-\int_\alpha f\, dz\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\alpha=-1+(3/2)e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> (Note that we needed <span class="process-math">\(-\alpha\)</span> in the first equality above, as by definition <span class="process-math">\(\gamma\)</span> is oriented clockwise.) We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=\frac{g(z)}{(z+1)^2}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(g(z)=\tfrac{1}{(z-1)}\)</span> is holomorphic on <span class="process-math">\(U=\C-\{1\}\text{.}\)</span> Since <span class="process-math">\(B_{3/2}(-1)\subseteq U\text{,}\)</span> we may apply the generalized Cauchy integral formula to <span class="process-math">\(g\)</span> to conclude</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{\alpha}f(z)\, dz=\int_{\alpha}\frac{g(z)}{(z+1)^2}\, dz=2\pi i g'(-1)=-\pi i\text{.}
+\end{equation*}
+</div>
+<div class="para">Putting it all together, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_\gamma f(z)\, dz=-\int_{\alpha}f(z)\, dz=-(-\pi i)=\pi i\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><article class="theorem theorem-like" id="th_morera"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.5</span><span class="period">.</span><span class="space"> </span><span class="title">Morera’s theorem.</span>
 </h3>
 <div class="para logical" id="th_morera-2-1">

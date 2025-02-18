@@ -97,7 +97,7 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.8';
+eBookConfig.runestone_version = '7.5.9';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
@@ -123,7 +123,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_cauchy_integral_generalize.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_cauchy_integral_generalize.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_analyticity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -388,6 +388,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_formula.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Cauchy integral formula</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_generalize.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Generalized Cauchy integral formula</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_power_series.html" class="internal"><span class="codenumber">1.17</span> <span class="title">Complex power series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_analyticity.html" class="internal"><span class="codenumber">1.18</span> <span class="title">Analyticity of holomorphic functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -845,43 +846,42 @@ F(z) \amp =\int_{\gamma_{0,z}}f(w)\, dw\\
 <article class="definition definition-like" id="d_analytic"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.17.12</span><span class="period">.</span><span class="space"> </span><span class="title">Analytic functions.</span>
 </h3>
-<div class="para" id="d_analytic-2-1">Let <span class="process-math">\(f\colon U\rightarrow \C\)</span> be a complex function, with <span class="process-math">\(U\)</span> an open set. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic at a point</dfn>  <span class="process-math">\(z_0\in U\)</span> if <span class="process-math">\(f\)</span> has a power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\)</span> with positive radius of convergence. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic on a set</dfn> <span class="process-math">\(D\subseteq U\)</span> if <span class="process-math">\(f\)</span> is analytic at all points in <span class="process-math">\(D\text{,}\)</span> and we say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic</dfn> if it is analytic on its domain.</div></article><div class="para" id="s_power_series-20">An easy consequence of <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/xref/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a> is that analytic functions are holomorphic, and in fact infinitely differentiable. Statement (1) of the corollary below makes this result official. Furthermore, statement (2) provides a formula for the <span class="process-math">\(n\)</span>-th coefficient of a power series expansion of <span class="process-math">\(f\)</span> both in terms of the <span class="process-math">\(n\)</span>-th derivative of <span class="process-math">\(f\)</span> (as well as in term of certain line integrals). That formula follows easily from taking the formal derivative of the power series <span class="process-math">\(n\)</span> times in succession and evaluating at <span class="process-math">\(z_0\text{.}\)</span>
-</div>
+<div class="para" id="d_analytic-2-1">Let <span class="process-math">\(f\colon U\rightarrow \C\)</span> be a complex function, with <span class="process-math">\(U\)</span> an open set. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic at a point</dfn>  <span class="process-math">\(z_0\in U\)</span> if <span class="process-math">\(f\)</span> has a power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\)</span> with positive radius of convergence. We say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic on a set</dfn> <span class="process-math">\(D\subseteq U\)</span> if <span class="process-math">\(f\)</span> is analytic at all points in <span class="process-math">\(D\text{,}\)</span> and we say <span class="process-math">\(f\)</span> is <dfn class="terminology">analytic</dfn> if it is analytic on its domain.</div></article><div class="para" id="s_power_series-20">A direct consequence of <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/xref/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a> is that analytic functions are holomorphic, and in fact infinitely differentiable. We make this official now.</div>
 <article class="corollary theorem-like" id="cor_analytic_implies_holomorphic"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.13</span><span class="period">.</span><span class="space"> </span><span class="title">Analytic implies holomorphic.</span>
 </h3>
 <div class="para logical" id="cor_analytic_implies_holomorphic-2-1">
-<div class="para">Let <span class="process-math">\(f\)</span> be a complex function.</div>
-<ol class="decimal" id="cor_analytic_implies_holomorphic-2-1-2">
-<li id="cor_analytic_implies_holomorphic-2-1-2-1"><div class="para logical" id="cor_analytic_implies_holomorphic-2-1-2-1-1">
-<div class="para">If <span class="process-math">\(f\)</span> is analytic at a point <span class="process-math">\(z_0\in \C\text{,}\)</span> then <span class="process-math">\(f\)</span> is holomorphic at <span class="process-math">\(z_0\text{.}\)</span> Using logical shorthand:</div>
+<div class="para">Let <span class="process-math">\(f\)</span> be a complex function. If <span class="process-math">\(f\)</span> is analytic at a point <span class="process-math">\(z_0\in \C\text{,}\)</span> then <span class="process-math">\(f\)</span> is holomorphic at <span class="process-math">\(z_0\text{.}\)</span> Using logical shorthand:</div>
 <div class="displaymath process-math" id="eq_analyic_implies_holomorphic">
 \begin{equation}
 f \text{ analytic at } z_0 \implies  f \text{ holomorphic at } z_0\tag{1.68}
 \end{equation}
 </div>
-</div></li>
-<li id="cor_analytic_implies_holomorphic-2-1-2-2"><div class="para logical" id="cor_analytic_implies_holomorphic-2-1-2-2-1">
-<div class="para">If <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\)</span> with power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\text{,}\)</span> then</div>
-<div class="displaymath process-math" id="cor_analytic_implies_holomorphic-2-1-2-2-1-4">
+</div></article><div class="para" id="s_power_series-22">The next corollary provides a formula for the <span class="process-math">\(n\)</span>-th coefficient of a power series expansion of <span class="process-math">\(f\)</span> both in terms of the <span class="process-math">\(n\)</span>-th derivative of <span class="process-math">\(f\)</span> (as well as in term of certain line integrals). As a result, we see that a power series expansion of an analytic function is uniquely determined by the function.</div>
+<article class="corollary theorem-like" id="cor_power_series_expansion"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.14</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of expansions.</span>
+</h3>
+<div class="para logical" id="cor_power_series_expansion-2-1">
+<div class="para">Let <span class="process-math">\(f\)</span> be a complex function. If <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\)</span> with power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="cor_power_series_expansion-2-1-5">
 \begin{equation}
 a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\text{,}\tag{1.69}
 \end{equation}
 </div>
 <div class="para">where <span class="process-math">\(\gamma\)</span> is the counterclockwise oriented boundary of any closed disk <span class="process-math">\(\overline{B}\subseteq U\)</span> containing <span class="process-math">\(z_0\text{.}\)</span>
 </div>
-</div></li>
-</ol>
-</div></article><div class="para logical" id="s_power_series-22">
+</div> <div class="para" id="cor_power_series_expansion-2-2">In particular the power series expansion of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0\)</span> is unique.</div></article><details id="cor_power_series_expansion-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_power_series_expansion-3-1">We prove the derivative formula for <span class="process-math">\(a_n\)</span> for all <span class="process-math">\(n\geq 0\text{.}\)</span> The integral formula follows directly from the generalized Cauchy integral formula. Our proof is by induction.</div>
+<article class="case" id="cor_power_series_expansion-3-2"><h4 class="heading">Base case: <span class="process-math">\(n=0\)</span>.</h4>
+<div class="para" id="cor_power_series_expansion-3-2-2"></div></article></article></details><div class="para logical" id="s_power_series-24">
 <div class="para">As always in mathematics, when confronted with an implication like <a href="s_power_series.html#eq_analyic_implies_holomorphic" class="xref" data-knowl="./knowl/xref/eq_analyic_implies_holomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.68">(1.68)</a>, we should always ask whether its converse is true: i.e., whether the implication is in fact an equivalence. In the next section we will see that this is indeed the case for <a href="s_power_series.html#eq_analyic_implies_holomorphic" class="xref" data-knowl="./knowl/xref/eq_analyic_implies_holomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.68">(1.68)</a>: i.e., we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_analyic_implies_holomorphic.html ./knowl/xref/eq_analyic_implies_holomorphic.html" id="s_power_series-22-5">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_analyic_implies_holomorphic.html ./knowl/xref/eq_analyic_implies_holomorphic.html" id="s_power_series-24-5">
 \begin{equation}
 f \text{ analytic at } z_0 \iff f \text{ holomorphic at } z_0\text{.}\tag{1.70}
 \end{equation}
 </div>
 </div></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_cauchy_integral_generalize.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_cauchy_integral_generalize.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_analyticity.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

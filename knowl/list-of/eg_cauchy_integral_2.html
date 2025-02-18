@@ -16,6 +16,28 @@
 </h3>
 <div class="para">Compute <span class="process-math">\(\int_0^{2\pi}\frac{1}{2-\cos t}\, dt\text{.}\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_cauchy_integral_formula.html#eg_cauchy_integral_2">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">Writing <span class="process-math">\(\cos t=(e^{it}+e^{-it})/2=(e^{it}+1/e^{it})/2\text{.}\)</span> We see that the integral in question is <em class="emphasis">almost</em> the result of integrating <span class="process-math">\(f(z)=1/(2-(z+1/z)/2)\)</span> over the path <span class="process-math">\(\gamma(t)=e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,1]\text{;}\)</span> we are only missing the <span class="process-math">\(\gamma'(t)=ie^{it}\)</span> term in the numerator. Let’s explore further, using a little algebra:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_0^{2\pi}\frac{1}{2-\cos t}\, dt \amp= \int_0^{2\pi}\frac{1}{2-(e^{it}+e^{-it})/2}\, dt\\
+\amp = \int_0^{2\pi}\frac{1}{2-(e^{it}+e^{-it})/2}\cdot \frac{ie^{it}}{ie^{it}}\, dt \\
+\amp = \int_\gamma\frac{1}{2-(z+1/z)/2}\cdot \frac{1}{iz}\, dz\\
+\amp = \int_{\gamma}\frac{2}{i(4z-z^2-1)}\, dz\\
+\amp = \int_{\gamma}\frac{2i}{z^2-4z+1}\, dz\\
+\amp = \int_{\gamma}\frac{2i}{(z-\alpha)(z-\beta)}\, dz\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\gamma(t)=e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0, 2\pi]\text{,}\)</span> <span class="process-math">\(\alpha=2-\sqrt{3}\text{,}\)</span> <span class="process-math">\(\beta=2+\sqrt{3}\text{.}\)</span> Since <span class="process-math">\(\alpha\)</span> lies within <span class="process-math">\(\gamma\text{,}\)</span> and <span class="process-math">\(\beta\)</span> lies without <span class="process-math">\(\gamma\text{,}\)</span> can apply the Cauchy integral formula to the function <span class="process-math">\(f(z)=2i/(z-\beta)\)</span> (which is holomorphic on <span class="process-math">\(\C-\{\beta\}\)</span>) to conclude that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_0^{2\pi}\frac{1}{2-\cos t}\, dt \amp= \int_{\gamma}\frac{f(z)}{(z-\alpha)}\, dz \\
+\amp = 2\pi i f(\alpha)\\
+\amp = 2\pi i\cdot \frac{2i}{\alpha-\beta}\\
+\amp = \frac{-4\pi}{-2\sqrt{3}}\\
+\amp =\frac{2\pi}{\sqrt{3}}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_cauchy_integral_formula.html#eg_cauchy_integral_2">in-context</a></span>
 </body>
 </html>
