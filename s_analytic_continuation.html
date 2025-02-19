@@ -74,7 +74,6 @@ window.MathJax = {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
@@ -106,12 +105,280 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.d7db380f34a0a67e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.e0c6d4592e23c667.css">
+<style>
+#d_function_equality-3-1-4 { counter-set: d_function_equality-3-1-4 0; }
+#d_function_equality-3-1-4 > li::marker { content: ""counter(d_function_equality-3-1-4,lower-roman)""; }
+#d_function_equality-3-1-4 > li { counter-increment: d_function_equality-3-1-4; }
+#sss_function_equality-2-4 { counter-set: sss_function_equality-2-4 0; }
+#sss_function_equality-2-4 > li::marker { content: ""counter(sss_function_equality-2-4,lower-roman)""; }
+#sss_function_equality-2-4 > li { counter-increment: sss_function_equality-2-4; }
+#eg_arithmetic-2-1-5 { counter-set: eg_arithmetic-2-1-5 0; }
+#eg_arithmetic-2-1-5 > li::marker { content: ""counter(eg_arithmetic-2-1-5,decimal)"."; }
+#eg_arithmetic-2-1-5 > li { counter-increment: eg_arithmetic-2-1-5; }
+#eg_arithmetic-3-1-1 { counter-set: eg_arithmetic-3-1-1 0; }
+#eg_arithmetic-3-1-1 > li::marker { content: ""counter(eg_arithmetic-3-1-1,decimal)"."; }
+#eg_arithmetic-3-1-1 > li { counter-increment: eg_arithmetic-3-1-1; }
+#th_ring_ops-2-1-2 { counter-set: th_ring_ops-2-1-2 0; }
+#th_ring_ops-2-1-2 > li::marker { content: ""counter(th_ring_ops-2-1-2,decimal)"."; }
+#th_ring_ops-2-1-2 > li { counter-increment: th_ring_ops-2-1-2; }
+#eg_inverses-2-1-3 { counter-set: eg_inverses-2-1-3 0; }
+#eg_inverses-2-1-3 > li::marker { content: ""counter(eg_inverses-2-1-3,decimal)"."; }
+#eg_inverses-2-1-3 > li { counter-increment: eg_inverses-2-1-3; }
+#eg_inverses-3-1-1 { counter-set: eg_inverses-3-1-1 0; }
+#eg_inverses-3-1-1 > li::marker { content: ""counter(eg_inverses-3-1-1,decimal)"."; }
+#eg_inverses-3-1-1 > li { counter-increment: eg_inverses-3-1-1; }
+#th_modulus-2-1-3 { counter-set: th_modulus-2-1-3 0; }
+#th_modulus-2-1-3 > li::marker { content: ""counter(th_modulus-2-1-3,decimal)"."; }
+#th_modulus-2-1-3 > li { counter-increment: th_modulus-2-1-3; }
+#th_conj-2-1-3 { counter-set: th_conj-2-1-3 0; }
+#th_conj-2-1-3 > li::marker { content: ""counter(th_conj-2-1-3,decimal)"."; }
+#th_conj-2-1-3 > li { counter-increment: th_conj-2-1-3; }
+#th_polar_form-2-1-2 { counter-set: th_polar_form-2-1-2 0; }
+#th_polar_form-2-1-2 > li::marker { content: ""counter(th_polar_form-2-1-2,decimal)"."; }
+#th_polar_form-2-1-2 > li { counter-increment: th_polar_form-2-1-2; }
+#eg_polar-2-1-4 { counter-set: eg_polar-2-1-4 0; }
+#eg_polar-2-1-4 > li::marker { content: ""counter(eg_polar-2-1-4,decimal)"."; }
+#eg_polar-2-1-4 > li { counter-increment: eg_polar-2-1-4; }
+#th_polar_mult-2-1-4 { counter-set: th_polar_mult-2-1-4 0; }
+#th_polar_mult-2-1-4 > li::marker { content: ""counter(th_polar_mult-2-1-4,decimal)"."; }
+#th_polar_mult-2-1-4 > li { counter-increment: th_polar_mult-2-1-4; }
+#eg_polar_form_-2-1-3 { counter-set: eg_polar_form_-2-1-3 0; }
+#eg_polar_form_-2-1-3 > li::marker { content: ""counter(eg_polar_form_-2-1-3,decimal)"."; }
+#eg_polar_form_-2-1-3 > li { counter-increment: eg_polar_form_-2-1-3; }
+#th_deMoivre-2-1-4 { counter-set: th_deMoivre-2-1-4 0; }
+#th_deMoivre-2-1-4 > li::marker { content: ""counter(th_deMoivre-2-1-4,decimal)"."; }
+#th_deMoivre-2-1-4 > li { counter-increment: th_deMoivre-2-1-4; }
+#th_poly_elem-2-1-1 { counter-set: th_poly_elem-2-1-1 0; }
+#th_poly_elem-2-1-1 > li::marker { content: ""counter(th_poly_elem-2-1-1,decimal)"."; }
+#th_poly_elem-2-1-1 > li { counter-increment: th_poly_elem-2-1-1; }
+#th_roots_unity-2-1-3 { counter-set: th_roots_unity-2-1-3 0; }
+#th_roots_unity-2-1-3 > li::marker { content: ""counter(th_roots_unity-2-1-3,decimal)"."; }
+#th_roots_unity-2-1-3 > li { counter-increment: th_roots_unity-2-1-3; }
+#eg_factor_sextic-2-1-2 { counter-set: eg_factor_sextic-2-1-2 0; }
+#eg_factor_sextic-2-1-2 > li::marker { content: ""counter(eg_factor_sextic-2-1-2,decimal)"."; }
+#eg_factor_sextic-2-1-2 > li { counter-increment: eg_factor_sextic-2-1-2; }
+#eg_factor_sextic-3-1-1 { counter-set: eg_factor_sextic-3-1-1 0; }
+#eg_factor_sextic-3-1-1 > li::marker { content: ""counter(eg_factor_sextic-3-1-1,decimal)"."; }
+#eg_factor_sextic-3-1-1 > li { counter-increment: eg_factor_sextic-3-1-1; }
+#th_fund_alg-2-1-4 { counter-set: th_fund_alg-2-1-4 0; }
+#th_fund_alg-2-1-4 > li::marker { content: ""counter(th_fund_alg-2-1-4,decimal)"."; }
+#th_fund_alg-2-1-4 > li { counter-increment: th_fund_alg-2-1-4; }
+#s_topo-2-1-10 { counter-set: s_topo-2-1-10 0; }
+#s_topo-2-1-10 > li::marker { content: "("counter(s_topo-2-1-10,lower-roman)")"; }
+#s_topo-2-1-10 > li { counter-increment: s_topo-2-1-10; }
+#eg_open-2-1-2 { counter-set: eg_open-2-1-2 0; }
+#eg_open-2-1-2 > li::marker { content: ""counter(eg_open-2-1-2,decimal)"."; }
+#eg_open-2-1-2 > li { counter-increment: eg_open-2-1-2; }
+#eg_open-3-1-1 { counter-set: eg_open-3-1-1 0; }
+#eg_open-3-1-1 > li::marker { content: ""counter(eg_open-3-1-1,decimal)"."; }
+#eg_open-3-1-1 > li { counter-increment: eg_open-3-1-1; }
+#th_open-2-1-1 { counter-set: th_open-2-1-1 0; }
+#th_open-2-1-1 > li::marker { content: ""counter(th_open-2-1-1,decimal)"."; }
+#th_open-2-1-1 > li { counter-increment: th_open-2-1-1; }
+#eg_open_closed_neither-2-1-1 { counter-set: eg_open_closed_neither-2-1-1 0; }
+#eg_open_closed_neither-2-1-1 > li::marker { content: ""counter(eg_open_closed_neither-2-1-1,decimal)"."; }
+#eg_open_closed_neither-2-1-1 > li { counter-increment: eg_open_closed_neither-2-1-1; }
+#eg_open_closed_neither-3-1-1 { counter-set: eg_open_closed_neither-3-1-1 0; }
+#eg_open_closed_neither-3-1-1 > li::marker { content: ""counter(eg_open_closed_neither-3-1-1,decimal)"."; }
+#eg_open_closed_neither-3-1-1 > li { counter-increment: eg_open_closed_neither-3-1-1; }
+#th_closed-1-1-1 { counter-set: th_closed-1-1-1 0; }
+#th_closed-1-1-1 > li::marker { content: ""counter(th_closed-1-1-1,decimal)"."; }
+#th_closed-1-1-1 > li { counter-increment: th_closed-1-1-1; }
+#eg_boundary-2-1-1 { counter-set: eg_boundary-2-1-1 0; }
+#eg_boundary-2-1-1 > li::marker { content: ""counter(eg_boundary-2-1-1,decimal)"."; }
+#eg_boundary-2-1-1 > li { counter-increment: eg_boundary-2-1-1; }
+#eg_boundary-3-1-1 { counter-set: eg_boundary-3-1-1 0; }
+#eg_boundary-3-1-1 > li::marker { content: ""counter(eg_boundary-3-1-1,decimal)"."; }
+#eg_boundary-3-1-1 > li { counter-increment: eg_boundary-3-1-1; }
+#th_boundary-2-1-3 { counter-set: th_boundary-2-1-3 0; }
+#th_boundary-2-1-3 > li::marker { content: ""counter(th_boundary-2-1-3,decimal)"."; }
+#th_boundary-2-1-3 > li { counter-increment: th_boundary-2-1-3; }
+#th_connected-2-1-2 { counter-set: th_connected-2-1-2 0; }
+#th_connected-2-1-2 > li::marker { content: ""counter(th_connected-2-1-2,decimal)"."; }
+#th_connected-2-1-2 > li { counter-increment: th_connected-2-1-2; }
+#th_lim-2-1-3 { counter-set: th_lim-2-1-3 0; }
+#th_lim-2-1-3 > li::marker { content: ""counter(th_lim-2-1-3,decimal)"."; }
+#th_lim-2-1-3 > li { counter-increment: th_lim-2-1-3; }
+#th_series-2-1-3 { counter-set: th_series-2-1-3 0; }
+#th_series-2-1-3 > li::marker { content: ""counter(th_series-2-1-3,decimal)"."; }
+#th_series-2-1-3 > li { counter-increment: th_series-2-1-3; }
+#eg_real_imag_parts-2-1-3 { counter-set: eg_real_imag_parts-2-1-3 0; }
+#eg_real_imag_parts-2-1-3 > li::marker { content: ""counter(eg_real_imag_parts-2-1-3,decimal)"."; }
+#eg_real_imag_parts-2-1-3 > li { counter-increment: eg_real_imag_parts-2-1-3; }
+#eg_real_imag_parts-3-1-1 { counter-set: eg_real_imag_parts-3-1-1 0; }
+#eg_real_imag_parts-3-1-1 > li::marker { content: ""counter(eg_real_imag_parts-3-1-1,decimal)"."; }
+#eg_real_imag_parts-3-1-1 > li { counter-increment: eg_real_imag_parts-3-1-1; }
+#th_exp-2-1-1 { counter-set: th_exp-2-1-1 0; }
+#th_exp-2-1-1 > li::marker { content: ""counter(th_exp-2-1-1,decimal)"."; }
+#th_exp-2-1-1 > li { counter-increment: th_exp-2-1-1; }
+#th_exp-3-1-1 { counter-set: th_exp-3-1-1 0; }
+#th_exp-3-1-1 > li::marker { content: ""counter(th_exp-3-1-1,decimal)"."; }
+#th_exp-3-1-1 > li { counter-increment: th_exp-3-1-1; }
+#eg_square_transform-2-1-6 { counter-set: eg_square_transform-2-1-6 0; }
+#eg_square_transform-2-1-6 > li::marker { content: ""counter(eg_square_transform-2-1-6,decimal)"."; }
+#eg_square_transform-2-1-6 > li { counter-increment: eg_square_transform-2-1-6; }
+#eg_square_transform-3-1-4 { counter-set: eg_square_transform-3-1-4 0; }
+#eg_square_transform-3-1-4 > li::marker { content: ""counter(eg_square_transform-3-1-4,decimal)"."; }
+#eg_square_transform-3-1-4 > li { counter-increment: eg_square_transform-3-1-4; }
+#eg_exp_transform-2-1-6 { counter-set: eg_exp_transform-2-1-6 0; }
+#eg_exp_transform-2-1-6 > li::marker { content: ""counter(eg_exp_transform-2-1-6,decimal)"."; }
+#eg_exp_transform-2-1-6 > li { counter-increment: eg_exp_transform-2-1-6; }
+#eg_log-2-1-4 { counter-set: eg_log-2-1-4 0; }
+#eg_log-2-1-4 > li::marker { content: ""counter(eg_log-2-1-4,decimal)"."; }
+#eg_log-2-1-4 > li { counter-increment: eg_log-2-1-4; }
+#eg_log-3-1-1 { counter-set: eg_log-3-1-1 0; }
+#eg_log-3-1-1 > li::marker { content: ""counter(eg_log-3-1-1,decimal)"."; }
+#eg_log-3-1-1 > li { counter-increment: eg_log-3-1-1; }
+#eg_powers-2-1-1 { counter-set: eg_powers-2-1-1 0; }
+#eg_powers-2-1-1 > li::marker { content: ""counter(eg_powers-2-1-1,decimal)"."; }
+#eg_powers-2-1-1 > li { counter-increment: eg_powers-2-1-1; }
+#eg_powers-3-1-1 { counter-set: eg_powers-3-1-1 0; }
+#eg_powers-3-1-1 > li::marker { content: ""counter(eg_powers-3-1-1,decimal)"."; }
+#eg_powers-3-1-1 > li { counter-increment: eg_powers-3-1-1; }
+#th_trig_props-2-1-2 { counter-set: th_trig_props-2-1-2 0; }
+#th_trig_props-2-1-2 > li::marker { content: ""counter(th_trig_props-2-1-2,decimal)"."; }
+#th_trig_props-2-1-2 > li { counter-increment: th_trig_props-2-1-2; }
+#th_trig_props-3-1-1 { counter-set: th_trig_props-3-1-1 0; }
+#th_trig_props-3-1-1 > li::marker { content: ""counter(th_trig_props-3-1-1,decimal)"."; }
+#th_trig_props-3-1-1 > li { counter-increment: th_trig_props-3-1-1; }
+#th_hyperbolic-2-1-1 { counter-set: th_hyperbolic-2-1-1 0; }
+#th_hyperbolic-2-1-1 > li::marker { content: ""counter(th_hyperbolic-2-1-1,decimal)"."; }
+#th_hyperbolic-2-1-1 > li { counter-increment: th_hyperbolic-2-1-1; }
+#th_hyperbolic-3-1-1 { counter-set: th_hyperbolic-3-1-1 0; }
+#th_hyperbolic-3-1-1 > li::marker { content: ""counter(th_hyperbolic-3-1-1,decimal)"."; }
+#th_hyperbolic-3-1-1 > li { counter-increment: th_hyperbolic-3-1-1; }
+#eg_limit_points-2-1-1 { counter-set: eg_limit_points-2-1-1 0; }
+#eg_limit_points-2-1-1 > li::marker { content: ""counter(eg_limit_points-2-1-1,decimal)"."; }
+#eg_limit_points-2-1-1 > li { counter-increment: eg_limit_points-2-1-1; }
+#th_lim_fun_seq-2-1-4 { counter-set: th_lim_fun_seq-2-1-4 0; }
+#th_lim_fun_seq-2-1-4 > li::marker { content: ""counter(th_lim_fun_seq-2-1-4,decimal)"."; }
+#th_lim_fun_seq-2-1-4 > li { counter-increment: th_lim_fun_seq-2-1-4; }
+#th_lim_func-2-1-6 { counter-set: th_lim_func-2-1-6 0; }
+#th_lim_func-2-1-6 > li::marker { content: ""counter(th_lim_func-2-1-6,decimal)"."; }
+#th_lim_func-2-1-6 > li { counter-increment: th_lim_func-2-1-6; }
+#th_cont_lim-2-1-2 { counter-set: th_cont_lim-2-1-2 0; }
+#th_cont_lim-2-1-2 > li::marker { content: ""counter(th_cont_lim-2-1-2,decimal)"."; }
+#th_cont_lim-2-1-2 > li { counter-increment: th_cont_lim-2-1-2; }
+#th_cont_prop-2-1-3 { counter-set: th_cont_prop-2-1-3 0; }
+#th_cont_prop-2-1-3 > li::marker { content: ""counter(th_cont_prop-2-1-3,decimal)"."; }
+#th_cont_prop-2-1-3 > li { counter-increment: th_cont_prop-2-1-3; }
+#s_derivative-3-2-1 { counter-set: s_derivative-3-2-1 0; }
+#s_derivative-3-2-1 > li::marker { content: ""counter(s_derivative-3-2-1,decimal)"."; }
+#s_derivative-3-2-1 > li { counter-increment: s_derivative-3-2-1; }
+#eg_elem_derivs-2-1-4 { counter-set: eg_elem_derivs-2-1-4 0; }
+#eg_elem_derivs-2-1-4 > li::marker { content: ""counter(eg_elem_derivs-2-1-4,decimal)"."; }
+#eg_elem_derivs-2-1-4 > li { counter-increment: eg_elem_derivs-2-1-4; }
+#th_diff_props-2-1-4 { counter-set: th_diff_props-2-1-4 0; }
+#th_diff_props-2-1-4 > li::marker { content: ""counter(th_diff_props-2-1-4,decimal)"."; }
+#th_diff_props-2-1-4 > li { counter-increment: th_diff_props-2-1-4; }
+#cor_C-R_open-2-1-6 { counter-set: cor_C-R_open-2-1-6 0; }
+#cor_C-R_open-2-1-6 > li::marker { content: ""counter(cor_C-R_open-2-1-6,decimal)"."; }
+#cor_C-R_open-2-1-6 > li { counter-increment: cor_C-R_open-2-1-6; }
+#th_zero_deriv-2-1-3 { counter-set: th_zero_deriv-2-1-3 0; }
+#th_zero_deriv-2-1-3 > li::marker { content: ""counter(th_zero_deriv-2-1-3,decimal)"."; }
+#th_zero_deriv-2-1-3 > li { counter-increment: th_zero_deriv-2-1-3; }
+#th_locally_constant_connected-2-1-3 { counter-set: th_locally_constant_connected-2-1-3 0; }
+#th_locally_constant_connected-2-1-3 > li::marker { content: ""counter(th_locally_constant_connected-2-1-3,decimal)"."; }
+#th_locally_constant_connected-2-1-3 > li { counter-increment: th_locally_constant_connected-2-1-3; }
+#th_C-R_polar-2-1-6 { counter-set: th_C-R_polar-2-1-6 0; }
+#th_C-R_polar-2-1-6 > li::marker { content: ""counter(th_C-R_polar-2-1-6,decimal)"."; }
+#th_C-R_polar-2-1-6 > li { counter-increment: th_C-R_polar-2-1-6; }
+#d_branch-2-2-5 { counter-set: d_branch-2-2-5 0; }
+#d_branch-2-2-5 > li::marker { content: "("counter(d_branch-2-2-5,lower-roman)")"; }
+#d_branch-2-2-5 > li { counter-increment: d_branch-2-2-5; }
+#th_branches-2-1-2-2-2-1 { counter-set: th_branches-2-1-2-2-2-1 0; }
+#th_branches-2-1-2-2-2-1 > li::marker { content: ""counter(th_branches-2-1-2-2-2-1,decimal)"."; }
+#th_branches-2-1-2-2-2-1 > li { counter-increment: th_branches-2-1-2-2-2-1; }
+#th_branches-2-1-2-3-2-3 { counter-set: th_branches-2-1-2-3-2-3 0; }
+#th_branches-2-1-2-3-2-3 > li::marker { content: ""counter(th_branches-2-1-2-3-2-3,decimal)"."; }
+#th_branches-2-1-2-3-2-3 > li { counter-increment: th_branches-2-1-2-3-2-3; }
+#eg_branch_cube-2-1-2 { counter-set: eg_branch_cube-2-1-2 0; }
+#eg_branch_cube-2-1-2 > li::marker { content: ""counter(eg_branch_cube-2-1-2,decimal)"."; }
+#eg_branch_cube-2-1-2 > li { counter-increment: eg_branch_cube-2-1-2; }
+#th_harmonic_conjugates-2-1-8 { counter-set: th_harmonic_conjugates-2-1-8 0; }
+#th_harmonic_conjugates-2-1-8 > li::marker { content: ""counter(th_harmonic_conjugates-2-1-8,decimal)"."; }
+#th_harmonic_conjugates-2-1-8 > li { counter-increment: th_harmonic_conjugates-2-1-8; }
+#eg_parametrized_circle-2-1-4 { counter-set: eg_parametrized_circle-2-1-4 0; }
+#eg_parametrized_circle-2-1-4 > li::marker { content: ""counter(eg_parametrized_circle-2-1-4,decimal)"."; }
+#eg_parametrized_circle-2-1-4 > li { counter-increment: eg_parametrized_circle-2-1-4; }
+#eg_parametrized_circle-3-1-1 { counter-set: eg_parametrized_circle-3-1-1 0; }
+#eg_parametrized_circle-3-1-1 > li::marker { content: ""counter(eg_parametrized_circle-3-1-1,decimal)"."; }
+#eg_parametrized_circle-3-1-1 > li { counter-increment: eg_parametrized_circle-3-1-1; }
+#eg_derivative-3-1-1 { counter-set: eg_derivative-3-1-1 0; }
+#eg_derivative-3-1-1 > li::marker { content: ""counter(eg_derivative-3-1-1,decimal)"."; }
+#eg_derivative-3-1-1 > li { counter-increment: eg_derivative-3-1-1; }
+#th_real_complex_diff-2-1-3 { counter-set: th_real_complex_diff-2-1-3 0; }
+#th_real_complex_diff-2-1-3 > li::marker { content: ""counter(th_real_complex_diff-2-1-3,decimal)"."; }
+#th_real_complex_diff-2-1-3 > li { counter-increment: th_real_complex_diff-2-1-3; }
+#th_FTC-2-1-2 { counter-set: th_FTC-2-1-2 0; }
+#th_FTC-2-1-2 > li::marker { content: ""counter(th_FTC-2-1-2,decimal)"."; }
+#th_FTC-2-1-2 > li { counter-increment: th_FTC-2-1-2; }
+#th_antider-2-1-4 { counter-set: th_antider-2-1-4 0; }
+#th_antider-2-1-4 > li::marker { content: ""counter(th_antider-2-1-4,decimal)"."; }
+#th_antider-2-1-4 > li { counter-increment: th_antider-2-1-4; }
+#th_cauchy_goursat_star-2-1-2 { counter-set: th_cauchy_goursat_star-2-1-2 0; }
+#th_cauchy_goursat_star-2-1-2 > li::marker { content: ""counter(th_cauchy_goursat_star-2-1-2,decimal)"."; }
+#th_cauchy_goursat_star-2-1-2 > li { counter-increment: th_cauchy_goursat_star-2-1-2; }
+#eg_deformation-2-1-3 { counter-set: eg_deformation-2-1-3 0; }
+#eg_deformation-2-1-3 > li::marker { content: ""counter(eg_deformation-2-1-3,decimal)"."; }
+#eg_deformation-2-1-3 > li { counter-increment: eg_deformation-2-1-3; }
+#eg_deformation-3-1-1 { counter-set: eg_deformation-3-1-1 0; }
+#eg_deformation-3-1-1 > li::marker { content: ""counter(eg_deformation-3-1-1,decimal)"."; }
+#eg_deformation-3-1-1 > li { counter-increment: eg_deformation-3-1-1; }
+#th_morera-2-1-3 { counter-set: th_morera-2-1-3 0; }
+#th_morera-2-1-3 > li::marker { content: ""counter(th_morera-2-1-3,decimal)"."; }
+#th_morera-2-1-3 > li { counter-increment: th_morera-2-1-3; }
+#th_fta-2-1-4 { counter-set: th_fta-2-1-4 0; }
+#th_fta-2-1-4 > li::marker { content: ""counter(th_fta-2-1-4,decimal)"."; }
+#th_fta-2-1-4 > li { counter-increment: th_fta-2-1-4; }
+#th_powerseries_conv-2-1-5 { counter-set: th_powerseries_conv-2-1-5 0; }
+#th_powerseries_conv-2-1-5 > li::marker { content: ""counter(th_powerseries_conv-2-1-5,decimal)"."; }
+#th_powerseries_conv-2-1-5 > li { counter-increment: th_powerseries_conv-2-1-5; }
+#th_powerseries_conv-3-1-6 { counter-set: th_powerseries_conv-3-1-6 0; }
+#th_powerseries_conv-3-1-6 > li::marker { content: ""counter(th_powerseries_conv-3-1-6,decimal)"."; }
+#th_powerseries_conv-3-1-6 > li { counter-increment: th_powerseries_conv-3-1-6; }
+#cor_radius_convergence-2-1-3 { counter-set: cor_radius_convergence-2-1-3 0; }
+#cor_radius_convergence-2-1-3 > li::marker { content: "("counter(cor_radius_convergence-2-1-3,lower-roman)")"; }
+#cor_radius_convergence-2-1-3 > li { counter-increment: cor_radius_convergence-2-1-3; }
+#eg_expansions_radii-2-1-3 { counter-set: eg_expansions_radii-2-1-3 0; }
+#eg_expansions_radii-2-1-3 > li::marker { content: ""counter(eg_expansions_radii-2-1-3,decimal)"."; }
+#eg_expansions_radii-2-1-3 > li { counter-increment: eg_expansions_radii-2-1-3; }
+#eg_expansions_radii-3-1-1 { counter-set: eg_expansions_radii-3-1-1 0; }
+#eg_expansions_radii-3-1-1 > li::marker { content: ""counter(eg_expansions_radii-3-1-1,decimal)"."; }
+#eg_expansions_radii-3-1-1 > li { counter-increment: eg_expansions_radii-3-1-1; }
+#th_power_series_integral_der-2-1-3 { counter-set: th_power_series_integral_der-2-1-3 0; }
+#th_power_series_integral_der-2-1-3 > li::marker { content: ""counter(th_power_series_integral_der-2-1-3,decimal)"."; }
+#th_power_series_integral_der-2-1-3 > li { counter-increment: th_power_series_integral_der-2-1-3; }
+#th_power_series_integral_der-3-1-1 { counter-set: th_power_series_integral_der-3-1-1 0; }
+#th_power_series_integral_der-3-1-1 > li::marker { content: ""counter(th_power_series_integral_der-3-1-1,decimal)"."; }
+#th_power_series_integral_der-3-1-1 > li { counter-increment: th_power_series_integral_der-3-1-1; }
+#th_holomorphic-2-1-3 { counter-set: th_holomorphic-2-1-3 0; }
+#th_holomorphic-2-1-3 > li::marker { content: ""counter(th_holomorphic-2-1-3,decimal)"."; }
+#th_holomorphic-2-1-3 > li { counter-increment: th_holomorphic-2-1-3; }
+#lemma_order-2-1-5 { counter-set: lemma_order-2-1-5 0; }
+#lemma_order-2-1-5 > li::marker { content: ""counter(lemma_order-2-1-5,decimal)"."; }
+#lemma_order-2-1-5 > li { counter-increment: lemma_order-2-1-5; }
+#eg_order_zero-2-1-4 { counter-set: eg_order_zero-2-1-4 0; }
+#eg_order_zero-2-1-4 > li::marker { content: ""counter(eg_order_zero-2-1-4,decimal)"."; }
+#eg_order_zero-2-1-4 > li { counter-increment: eg_order_zero-2-1-4; }
+#cor_order_zero-2-1-4 { counter-set: cor_order_zero-2-1-4 0; }
+#cor_order_zero-2-1-4 > li::marker { content: ""counter(cor_order_zero-2-1-4,decimal)"."; }
+#cor_order_zero-2-1-4 > li { counter-increment: cor_order_zero-2-1-4; }
+#eg_order-2-1-2 { counter-set: eg_order-2-1-2 0; }
+#eg_order-2-1-2 > li::marker { content: ""counter(eg_order-2-1-2,decimal)"."; }
+#eg_order-2-1-2 > li { counter-increment: eg_order-2-1-2; }
+#th_connected_equiv-2-1-2 { counter-set: th_connected_equiv-2-1-2 0; }
+#th_connected_equiv-2-1-2 > li::marker { content: ""counter(th_connected_equiv-2-1-2,decimal)"."; }
+#th_connected_equiv-2-1-2 > li { counter-increment: th_connected_equiv-2-1-2; }
+</style>
 </head>
 <body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
 <h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 382-0:</span> <span class="subtitle">Kursobjekt</span></a></h1>
 <p class="byline">Aaron Greicius</p>
-</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-6.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
@@ -417,7 +684,7 @@ eBookConfig.enable_chatcodes =  false;
 <section class="subsection" id="ss_order"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Order of a zero</span>
 </h3>
-<div class="para" id="ss_order-2">Our first result represents yet another example of the strong connection between polynomials and analytic functions: if <span class="process-math">\(z_0\)</span> is a zero of the analytic function <span class="process-math">\(f\text{,}\)</span> then we can <em class="emphasis">factor</em> <span class="process-math">\(f\)</span> as <span class="process-math">\(f(z)=(z-z_0)g(z)\text{,}\)</span> where <span class="process-math">\(g\)</span> is analytiv.</div>
+<div class="para" id="ss_order-2">Our first result represents yet another example of the strong connection between polynomials and analytic functions: if <span class="process-math">\(z_0\)</span> is a zero of the analytic function <span class="process-math">\(f\text{,}\)</span> then we can <em class="emphasis">factor</em> <span class="process-math">\(f\)</span> as <span class="process-math">\(f(z)=(z-z_0)g(z)\text{,}\)</span> where <span class="process-math">\(g\)</span> is analytic.</div>
 <article class="lemma theorem-like" id="lemma_order"><h4 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.19.1</span><span class="period">.</span><span class="space"> </span><span class="title">Zeros of analytic functions.</span>
 </h4>
@@ -469,30 +736,44 @@ g(z)=a_m+a_{m-1}(z-z_0)+\cdots =\sum_{n=0}^\infty a_{m+n}(z-z_0)^n
 </div></article></details><article class="definition definition-like" id="d_zero_order"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.19.2</span><span class="period">.</span><span class="space"> </span><span class="title">Order of a zero.</span>
 </h4>
-<div class="para" id="d_zero_order-2-1">Assume <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\text{,}\)</span> and that <span class="process-math">\(f(z_0)=0\text{.}\)</span> The <dfn class="terminology">order</dfn> of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_0\text{,}\)</span> denoted <span class="process-math">\(\ord_f(z_0)\text{,}\)</span> is defined as the smallest positive integer <span class="process-math">\(m\)</span> such that <span class="process-math">\(f^{(m)}(z_0)\ne 0\text{,}\)</span> if such an <span class="process-math">\(m\)</span> exists, and <span class="process-math">\(\infty\)</span> otherwise.</div></article><div class="para" id="ss_order-5">The corollary below is a direct consequence of <a href="s_analytic_continuation.html#lemma_order" class="xref" data-knowl="./knowl/xref/lemma_order.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.19.1: Zeros of analytic functions">Lemma 1.19.1</a> and strengthens our factorization observation made above. Namely, it tells us that if <span class="process-math">\(\ord_f(z_0)=m\text{,}\)</span> then factoring <span class="process-math">\((z-z_0)^m\)</span> out from <span class="process-math">\(f(z)\)</span> leaves an analytic function <span class="process-math">\(g\)</span> that is nonzero at <span class="process-math">\(z_0\text{.}\)</span>
+<div class="para" id="d_zero_order-2-1">Assume <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\text{,}\)</span> and that <span class="process-math">\(f(z_0)=0\text{.}\)</span> The <dfn class="terminology">order</dfn> of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_0\text{,}\)</span> denoted <span class="process-math">\(\ord_f(z_0)\text{,}\)</span> is defined as the smallest positive integer <span class="process-math">\(m\)</span> such that <span class="process-math">\(f^{(m)}(z_0)\ne 0\text{,}\)</span> if such an <span class="process-math">\(m\)</span> exists, and <span class="process-math">\(\infty\)</span> otherwise.</div></article><article class="example example-like" id="eg_order_zero"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.19.3</span><span class="period">.</span><span class="space"> </span><span class="title">Order of a zero.</span>
+</h4>
+<div class="para logical" id="eg_order_zero-2-1">
+<div class="para">Compute <span class="process-math">\(\ord_f(z_0)\)</span> for the given <span class="process-math">\(f\)</span> and <span class="process-math">\(z_0\text{.}\)</span>
+</div>
+<ol class="decimal" id="eg_order_zero-2-1-4">
+<li id="eg_order_zero-2-1-4-1"><div class="para" id="eg_order_zero-2-1-4-1-1">
+<span class="process-math">\(f(z)=\Log z\text{,}\)</span> <span class="process-math">\(z=1\text{.}\)</span>
+</div></li>
+<li id="eg_order_zero-2-1-4-2"><div class="para" id="eg_order_zero-2-1-4-2-1">
+<span class="process-math">\(f(z)=\frac{1}{1-z^4}-1\text{,}\)</span> <span class="process-math">\(z=0\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="eg_order_zero-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_order_zero-3-1"></div></div></details></div></article><div class="para" id="ss_order-6">The corollary below is a direct consequence of <a href="s_analytic_continuation.html#lemma_order" class="xref" data-knowl="./knowl/xref/lemma_order.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.19.1: Zeros of analytic functions">Lemma 1.19.1</a> and strengthens our factorization observation made above. Namely, it tells us that if <span class="process-math">\(\ord_f(z_0)=m\text{,}\)</span> then factoring <span class="process-math">\((z-z_0)^m\)</span> out from <span class="process-math">\(f(z)\)</span> leaves an analytic function <span class="process-math">\(g\)</span> that is nonzero at <span class="process-math">\(z_0\text{.}\)</span>
 </div>
 <article class="corollary theorem-like" id="cor_order_zero"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.19.3</span><span class="period">.</span><span class="space"> </span><span class="title">Order of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_0\)</span>.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.19.4</span><span class="period">.</span><span class="space"> </span><span class="title">Order of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_0\)</span>.</span>
 </h4>
 <div class="para logical" id="cor_order_zero-2-1">
-<div class="para">Let <span class="process-math">\(f\)</span> be analytic at <span class="process-math">\(z_0\text{,}\)</span> and let <span class="process-math">\(m\)</span> be a positive integer. The following statements are equivalent.</div>
+<div class="para">Let <span class="process-math">\(f\)</span> be analytic at <span class="process-math">\(z_0\text{,}\)</span> and assume <span class="process-math">\(f(z_0)=0\text{.}\)</span> The following statements are equivalent.</div>
 <ol class="decimal" id="cor_order_zero-2-1-4">
-<li id="cor_order_zero-2-1-4-1"><div class="para" id="cor_order_zero-2-1-4-1-1"><span class="process-math">\(\ord_f(z_0)=m\text{.}\)</span></div></li>
+<li id="cor_order_zero-2-1-4-1"><div class="para" id="cor_order_zero-2-1-4-1-1">
+<span class="process-math">\(\ord_f(z_0)=m\)</span> for <span class="process-math">\(m\)</span> a positive integer.</div></li>
 <li id="cor_order_zero-2-1-4-2"><div class="para" id="cor_order_zero-2-1-4-2-1">We can write <span class="process-math">\(f(z)=(z-z_0)^mg(z)\text{,}\)</span> where <span class="process-math">\(g\)</span> is analytic at <span class="process-math">\(z_0\)</span> and <span class="process-math">\(g(z_0)\ne 0\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="example example-like" id="eg_order"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.19.4</span><span class="period">.</span><span class="space"> </span><span class="title">Order of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_0\)</span>.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.19.5</span><span class="period">.</span><span class="space"> </span><span class="title">Order of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_0\)</span>.</span>
 </h4>
 <div class="para logical" id="eg_order-2-1">
-<div class="para">Let <span class="process-math">\(f(z)=\sin z-z\text{.}\)</span>
+<div class="para">Let <span class="process-math">\(f(z)=\sin z^3-z^3\text{.}\)</span>
 </div>
 <ol class="decimal" id="eg_order-2-1-2">
-<li id="eg_order-2-1-2-1"><div class="para" id="eg_order-2-1-2-1-1">Compute a power series expansion of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0=0\text{.}\)</span>
+<li id="eg_order-2-1-2-1"><div class="para" id="eg_order-2-1-2-1-1">Compute <span class="process-math">\(m=\ord_f(0)\text{.}\)</span>
 </div></li>
-<li id="eg_order-2-1-2-2"><div class="para" id="eg_order-2-1-2-2-1">Compute <span class="process-math">\(m=\ord_f(0)\text{.}\)</span>
-</div></li>
-<li id="eg_order-2-1-2-3"><div class="para" id="eg_order-2-1-2-3-1">Find an analytic function <span class="process-math">\(g\)</span> such that <span class="process-math">\(f(z)=z^mg(z)\text{.}\)</span>
+<li id="eg_order-2-1-2-2"><div class="para" id="eg_order-2-1-2-2-1">Find an analytic function <span class="process-math">\(g\)</span> such that <span class="process-math">\(f(z)=z^mg(z)\text{.}\)</span>
 </div></li>
 </ol>
 </div>
@@ -500,7 +781,7 @@ g(z)=a_m+a_{m-1}(z-z_0)+\cdots =\sum_{n=0}^\infty a_{m+n}(z-z_0)^n
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Analytic functions on connected open sets</span>
 </h3>
 <article class="theorem theorem-like" id="th_connected_equiv"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.5</span><span class="period">.</span><span class="space"> </span><span class="title">Connectedness equivalence.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.6</span><span class="period">.</span><span class="space"> </span><span class="title">Connectedness equivalence.</span>
 </h4>
 <div class="para logical" id="th_connected_equiv-2-1">
 <div class="para">Let <span class="process-math">\(U\)</span> be an open set. The following statements are equivalent.</div>
@@ -533,21 +814,85 @@ U\cap U_1\cap U_2 \amp = \emptyset\text{.}
 </div>
 <div class="para">We will show that if <span class="process-math">\(U\not\subseteq U_1\text{,}\)</span> then <span class="process-math">\(U\subseteq U_2\text{,}\)</span> proving that <span class="process-math">\(U\)</span> is connected. If <span class="process-math">\(U\not\subseteq U_1\text{,}\)</span> then since <span class="process-math">\(U\subseteq U_1\cup U_2\text{,}\)</span> we must have <span class="process-math">\(U\cap U_2\ne \emptyset\text{.}\)</span> The set <span class="process-math">\(V=U\cap U_2\)</span> is thus nonempty and open (since <span class="process-math">\(U\)</span> and <span class="process-math">\(U_2\)</span> are open). A straightforward argument shows that <span class="process-math">\(U-V=U\cap U_1\text{,}\)</span> which is also open. By condition (2), we conclude that <span class="process-math">\(V=U\text{,}\)</span> and thus that <span class="process-math">\(U\subseteq U_2\text{,}\)</span> as desired.</div>
 </div></article></article></details><article class="theorem theorem-like" id="th_limit_point"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.6</span><span class="period">.</span><span class="space"> </span><span class="title">Limit point.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.7</span><span class="period">.</span><span class="space"> </span><span class="title">Limit point.</span>
 </h4>
-<div class="para" id="th_limit_point-2-1">Let <span class="process-math">\(U\)</span> be open and connected, and assume <span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(U\text{.}\)</span> Let <span class="process-math">\(Z=\{z\in U\colon f(z)=0\}\)</span> be the set of zeros of <span class="process-math">\(f\)</span> on <span class="process-math">\(U\text{.}\)</span> If <span class="process-math">\(Z\)</span> has an limit point, then <span class="process-math">\(f(z)=0\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
-</div></article><details id="th_limit_point-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_limit_point-3-1">We first show that if <span class="process-math">\(z_0\)</span> is a limit point of <span class="process-math">\(Z\text{,}\)</span> then <span class="process-math">\(\ord_f(z_0)=\infty\text{:}\)</span> i.e., we have <span class="process-math">\(f^{(n)}(z_0)=0\)</span> for all <span class="process-math">\(n\geq 0\text{.}\)</span> Since <span class="process-math">\(z_0\)</span> is a limit point of <span class="process-math">\(Z\text{,}\)</span> we can find a sequence <span class="process-math">\((z_n)_{n=1}^\infty\)</span> of elements of <span class="process-math">\(Z\)</span> such that <span class="process-math">\(\abs{z-z_n}&lt; 1/n\text{.}\)</span> It follows that <span class="process-math">\(z_n\to z_0\text{.}\)</span> Since <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(U\text{,}\)</span> it follows that <span class="process-math">\(f(z_0)=f(\lim\limits_{n\to \infty}f(z_n)=0\text{.}\)</span> Thus <span class="process-math">\(z_0\)</span> is itself a zero of <span class="process-math">\(f\text{.}\)</span>  Now assume by contradiction that <span class="process-math">\(\ord_f(z_0)=m\)</span> for some positive integer <span class="process-math">\(m\text{.}\)</span> By <a href="s_analytic_continuation.html#cor_order_zero" class="xref" data-knowl="./knowl/xref/cor_order_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.19.3: Order of f at z_0">Corollary 1.19.3</a>, we would then have <span class="process-math">\(f(z)=(z-z_0)^mg(z)\)</span> where <span class="process-math">\(g(z_0)\ne 0\text{.}\)</span>
+<div class="para" id="th_limit_point-2-1">Let <span class="process-math">\(U\)</span> be open and connected, and assume <span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(U\text{.}\)</span> Let <span class="process-math">\(Z=\{z\in U\colon f(z)=0\}\)</span> be the set of zeros of <span class="process-math">\(f\)</span> on <span class="process-math">\(U\text{.}\)</span> If <span class="process-math">\(Z\)</span> has a limit point in <span class="process-math">\(U\text{,}\)</span> then <span class="process-math">\(f(z)=0\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
+</div></article><details id="th_limit_point-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><article class="case" id="th_limit_point-3-1"><h5 class="heading">A limit point of <span class="process-math">\(Z\)</span> is a zero of infinite order.</h5>
+<div class="para" id="th_limit_point-3-1-2">We first show that if <span class="process-math">\(z_0\)</span> is a limit point of <span class="process-math">\(Z\text{,}\)</span> then <span class="process-math">\(z_0\)</span> is itself a zero of <span class="process-math">\(f\text{,}\)</span> and in fact <span class="process-math">\(\ord_f(z_0)=\infty\text{:}\)</span> i.e., we have <span class="process-math">\(f^{(n)}(z_0)=0\)</span> for all <span class="process-math">\(n\geq 0\text{.}\)</span> Since <span class="process-math">\(z_0\)</span> is a limit point of <span class="process-math">\(Z\text{,}\)</span> we can find a sequence <span class="process-math">\((z_n)_{n=1}^\infty\)</span> of elements of <span class="process-math">\(Z-\{z_0\}\)</span> such that <span class="process-math">\(\abs{z-z_n}&lt; 1/n\text{.}\)</span> It follows that <span class="process-math">\(z_n\to z_0\text{.}\)</span> Since <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(U\text{,}\)</span> it follows that <span class="process-math">\(f(z_0)=\lim\limits_{n\to \infty}f(z_n)=0\text{.}\)</span> Thus <span class="process-math">\(z_0\)</span> is itself a zero of <span class="process-math">\(f\text{.}\)</span>  To show <span class="process-math">\(\ord_f(z_0)=\infty\text{,}\)</span> we use <a href="s_analytic_continuation.html#cor_order_zero" class="xref" data-knowl="./knowl/xref/cor_order_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.19.4: Order of f at z_0">Corollary 1.19.4</a> and show that for any positive integer <span class="process-math">\(m\)</span> and function <span class="process-math">\(g\)</span> analytic at <span class="process-math">\(z_0\text{,}\)</span> if <span class="process-math">\(f(z)=(z-z_0)^mg(z)\text{,}\)</span> then <span class="process-math">\(g(z_0)=0\text{.}\)</span> Indeed, for any such <span class="process-math">\(m\)</span> and <span class="process-math">\(g\)</span> we have <span class="process-math">\(g(z)=f(z)/(z-z_0)^m\)</span> for all <span class="process-math">\(z\ne z_0\text{.}\)</span> Taking our same sequence <span class="process-math">\((z_n)\)</span> of elements of <span class="process-math">\(Z-\{z_0\}\)</span> from above, we have <span class="process-math">\(g(z_n)=f(z_n)/(z_n-z_0)^n=0\text{,}\)</span> which implies (again using continuity) that <span class="process-math">\(g(z_0)=0\text{.}\)</span>
+</div></article><article class="case" id="th_limit_point-3-2"><h5 class="heading">Set <span class="process-math">\(L\)</span> of limit points of <span class="process-math">\(Z\)</span> is open.</h5>
+<div class="para" id="th_limit_point-3-2-2">Let <span class="process-math">\(L\)</span> be the set of all limit points of <span class="process-math">\(Z\)</span> lying in <span class="process-math">\(U\text{.}\)</span> From the previous argument, we know that for each <span class="process-math">\(z_0\in L\text{,}\)</span> <span class="process-math">\(f^{(n)}(z_0)=0\)</span> for all integers <span class="process-math">\(n\geq 0\text{.}\)</span> Since <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\text{,}\)</span> it has a power series expansion centered at <span class="process-math">\(z_0\)</span> that converges on some open ball <span class="process-math">\(B_R(z_0)\text{.}\)</span> Since <span class="process-math">\(f^{(n)}(z_0)=0\)</span> for all integers <span class="process-math">\(n\geq 0\text{,}\)</span> this power series is the zero function. It follows that <span class="process-math">\(f=0\)</span> for all <span class="process-math">\(z\in B_R(z_0)\text{.}\)</span> Thus <span class="process-math">\(B_R(z_0)\subseteq Z\text{,}\)</span> and it then follows that additionally each element of <span class="process-math">\(B_R(z_0)\)</span> is a limit point of <span class="process-math">\(Z\text{:}\)</span> i.e., <span class="process-math">\(B_R(z_0)\subseteq L\text{.}\)</span> We have shown for all <span class="process-math">\(z_0\in L\)</span> there is an open ball <span class="process-math">\(B_R(z_0)\subseteq L\text{.}\)</span> This proves <span class="process-math">\(L\)</span> is open.</div></article><article class="case" id="th_limit_point-3-3"><h5 class="heading">
+<span class="process-math">\(U-L\)</span> is open.</h5>
+<div class="para" id="th_limit_point-3-3-2">Given <span class="process-math">\(z_0\in U-L\text{,}\)</span> we must have <span class="process-math">\(B_R(z_0)\subseteq U-L\text{.}\)</span> If not, every open ball containing <span class="process-math">\(z_0\)</span> would contain an element of <span class="process-math">\(L\text{,}\)</span> and since <span class="process-math">\(z_0\notin L\text{,}\)</span> this would imply <span class="process-math">\(z_0\)</span> is a limit point of <span class="process-math">\(L\text{.}\)</span> But we saw above that <span class="process-math">\(L\subseteq Z\text{,}\)</span> so this would mean <span class="process-math">\(z_0\)</span> is a limit point of <span class="process-math">\(Z\text{.}\)</span> This is a contradiction, since then we would have <span class="process-math">\(z_0\in L\text{.}\)</span> We conclude that for all <span class="process-math">\(z_0\in U-L\)</span> there is an open ball <span class="process-math">\(B_R(z_0)\subseteq U-L\text{.}\)</span> Thus <span class="process-math">\(U-L\)</span> is open.</div></article><div class="para" id="th_limit_point-3-4">Since the <span class="process-math">\(L\)</span> is nonempty and open, and since <span class="process-math">\(U-L\)</span> is open, we conclude that <span class="process-math">\(L=U\text{,}\)</span> using <a href="s_analytic_continuation.html#th_connected_equiv" class="xref" data-knowl="./knowl/xref/th_connected_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.6: Connectedness equivalence">Theorem 1.19.6</a>. Since furthermore <span class="process-math">\(L\subseteq Z\text{,}\)</span> we see that <span class="process-math">\(U=Z\text{:}\)</span> i.e., <span class="process-math">\(f(z)=0\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
 </div></article></details><article class="theorem theorem-like" id="cor_limit_points"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.7</span><span class="period">.</span><span class="space"> </span><span class="title">Rigidity of analytic functions.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.8</span><span class="period">.</span><span class="space"> </span><span class="title">Rigidity of analytic functions.</span>
 </h4>
-<div class="para" id="cor_limit_points-2-1">Let <span class="process-math">\(U\)</span> be open and connected, and let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be holomorphic functions on <span class="process-math">\(U\text{.}\)</span> If the set <span class="process-math">\(Z=\{z\in U\colon f(z)=g(z)\}\)</span> has a limit point, then <span class="process-math">\(f(z)=g(z)\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
+<div class="para" id="cor_limit_points-2-1">Let <span class="process-math">\(U\)</span> be open and connected and let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be holomorphic functions on <span class="process-math">\(U\text{.}\)</span> If the set <span class="process-math">\(Z=\{z\in U\colon f(z)=g(z)\}\)</span> has a limit point in <span class="process-math">\(U\text{,}\)</span> then <span class="process-math">\(f(z)=g(z)\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
+</div></article><details id="cor_limit_points-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_limit_points-3-1">The result follows from <a href="s_analytic_continuation.html#th_limit_point" class="xref" data-knowl="./knowl/xref/th_limit_point.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.7: Limit point">Theorem 1.19.7</a> applied to the analytic function <span class="process-math">\(h(z)=f(z)-g(z)\text{.}\)</span>
+</div></article></details><article class="remark remark-like" id="ss_analytic_connected-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.19.9</span><span class="period">.</span><span class="space"> </span><span class="title">Rigidity of analytic functions.</span>
+</h4>
+<div class="para logical" id="ss_analytic_connected-5-2">
+<div class="para">It is worthwhile enumerating some examples of sets that include limit points:</div>
+<ul class="disc" id="ss_analytic_connected-5-2-1">
+<li id="ss_analytic_connected-5-2-1-1"><div class="para" id="ss_analytic_connected-5-2-1-1-1">Every element of an open ball <span class="process-math">\(B_R(z_0)\)</span> is a limit point of the open ball.</div></li>
+<li id="ss_analytic_connected-5-2-1-2"><div class="para" id="ss_analytic_connected-5-2-1-2-1">Any nontrivial interval of the real line contains (lots) of limit points.</div></li>
+<li id="ss_analytic_connected-5-2-1-3"><div class="para" id="ss_analytic_connected-5-2-1-3-1">More generally, if <span class="process-math">\(C\)</span> is a curve parametrized by the path <span class="process-math">\(\phi\)</span> and if <span class="process-math">\(z_0=\phi(t_0)\)</span> and <span class="process-math">\(z_1=\phi(t_1)\)</span> are distinct points on <span class="process-math">\(C\text{,}\)</span> with <span class="process-math">\(t_0&lt; t_1\text{,}\)</span> then <span class="process-math">\(\phi([t_0,t_1])\)</span> contains limit points. In other words the segment of a curve lying between two distinct points contains limit points.</div></li>
+<li id="ss_analytic_connected-5-2-1-4"><div class="para" id="ss_analytic_connected-5-2-1-4-1">The point <span class="process-math">\(0\)</span> is a limit point of the set <span class="process-math">\(\{0\}\cup \{1/n\colon n \text{ a positive integer}\}\text{.}\)</span> More generally, if <span class="process-math">\(z_n\to w\text{,}\)</span> then <span class="process-math">\(w\)</span> is a limit point of the set <span class="process-math">\(\{w\}\cup \{z_n\colon n \text{ a positive integer}\}\text{.}\)</span>
+</div></li>
+</ul>
+</div></article><article class="definition definition-like" id="d_analytic_continuation"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.19.10</span><span class="period">.</span><span class="space"> </span><span class="title">Analytic continuation.</span>
+</h4>
+<div class="para" id="d_analytic_continuation-2-1">Let <span class="process-math">\(f\colon D\rightarrow \C\)</span> be a complex function. An <dfn class="terminology">analytic extension</dfn> of <span class="process-math">\(f\)</span> is a pair <span class="process-math">\((U,g)\)</span> consisting of an open connected set <span class="process-math">\(U\)</span> that contains <span class="process-math">\(D\text{,}\)</span> and an analytic function <span class="process-math">\(g\colon U\rightarrow \C\)</span> satisfying <span class="process-math">\(g(z)=f(z)\)</span> for all <span class="process-math">\(z\in D\text{.}\)</span>
+</div></article><article class="corollary theorem-like" id="cor_anal_continuation"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.19.11</span><span class="period">.</span><span class="space"> </span><span class="title">Analytic continuation.</span>
+</h4>
+<div class="para" id="cor_anal_continuation-2-1">Let <span class="process-math">\(f\colon D\rightarrow \C\)</span> be a complex function, and let <span class="process-math">\(U\)</span> be an open connected set containing <span class="process-math">\(D\text{.}\)</span> If <span class="process-math">\((U,g)\)</span> and <span class="process-math">\((U,h)\)</span> are analytic continuations of <span class="process-math">\(f\text{,}\)</span> then <span class="process-math">\(g=h\text{.}\)</span>
+</div> <div class="para" id="cor_anal_continuation-2-2">In other words, an analytic continuation of <span class="process-math">\(f\)</span> to <span class="process-math">\(U\text{,}\)</span> if it exists, is unique.</div></article><article class="definition definition-like" id="d_real_analytic"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.19.12</span><span class="period">.</span><span class="space"> </span><span class="title">Real analytic.</span>
+</h4>
+<div class="para logical" id="d_real_analytic-2-1">
+<div class="para">Let <span class="process-math">\(I\)</span> be an open interval of <span class="process-math">\(\R\text{.}\)</span> An infinitely differentiable function <span class="process-math">\(f\colon I\rightarrow \R\)</span> is <dfn class="terminology">(real) analytic</dfn> if for all <span class="process-math">\(x_0\in I\)</span> there exists an open interval <span class="process-math">\(J=(x_0-\epsilon, x_0+\epsilon)\subseteq I\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(a_n=f^{(n)}(x_0)/n!\)</span>
+</div>
+</div></article><article class="theorem theorem-like" id="th_real_analytic"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.13</span><span class="period">.</span><span class="space"> </span><span class="title">Real analytic functions.</span>
+</h4>
+<div class="para logical" id="th_real_analytic-2-1">
+<div class="para">Let <span class="process-math">\(I\)</span> be an open interval of <span class="process-math">\(\R\)</span> and let <span class="process-math">\(f\colon I\rightarrow \R\)</span> be infinitely differentiable. The following statements are equivalent.</div>
+<ul class="disc" id="th_real_analytic-2-1-4">
+<li id="th_real_analytic-2-1-4-1"><div class="para" id="th_real_analytic-2-1-4-1-1">
+<span class="process-math">\(f\)</span> is real analytic.</div></li>
+<li id="th_real_analytic-2-1-4-2"><div class="para" id="th_real_analytic-2-1-4-2-1">There is an analytic continuation of <span class="process-math">\(f\)</span> to an open connected set <span class="process-math">\(U\)</span> containing <span class="process-math">\(I\text{.}\)</span>
+</div></li>
+</ul>
+</div></article><details id="th_real_analytic-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_real_analytic-3-1"></div></article></details><article class="example example-like" id="eg_real_analytic"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.19.14</span><span class="period">.</span><span class="space"> </span><span class="title">Real analytic functions.</span>
+</h4>
+<div class="para logical" id="eg_real_analytic-2-1">
+<div class="para">It can be shown that the function <span class="process-math">\(f\colon \R\rightarrow \R\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x)=\begin{case}
+e^{-1/x^2} \amp x&gt;  0\\
+0       \amp x\leq 0
+\end{case}
+\end{equation*}
+</div>
+<div class="para">is infinitely differentiable on <span class="process-math">\(\R\text{.}\)</span> It is not real analytic on any open interval <span class="process-math">\(I\)</span> containing <span class="process-math">\(0\text{,}\)</span> however. Indeed, if <span class="process-math">\(f\)</span> had an analytic continuation <span class="process-math">\((U,g)\)</span> to a connected open subset of <span class="process-math">\(\C\)</span> containing <span class="process-math">\(I\text{,}\)</span> then since <span class="process-math">\(g(z)=f(z)=0\)</span> for all <span class="process-math">\(z\in (-\infty,0]\cap I\text{,}\)</span> and since this set clearly has a limit point, we would have <span class="process-math">\(g(z)=0\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span> A contradiction, since <span class="process-math">\(g(z)=f(z)=e^{-1/z^2}\)</span> for all <span class="process-math">\(z\in (0,\infty)\cap I\text{.}\)</span>
+</div>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_analyticity.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
 </div>
 </body>
 </html>

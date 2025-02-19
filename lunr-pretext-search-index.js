@@ -2761,7 +2761,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.19",
   "title": "Analytic continuation",
-  "body": " Analytic continuation   Order of a zero  Our first result represents yet another example of the strong connection between polynomials and analytic functions: if is a zero of the analytic function , then we can factor  as , where is analytiv.   Zeros of analytic functions   Suppose is analytic on the open set and that for all .   We have for all     We can write , where is analytic on and satisfies for all .       It suffices to show that the power series converges for all , since then is analytic on and we have . Clearly converges for . Assume now that . Let and be the -th partial sums of and , respectively. We will show that and thus that converges. First observe that . Let . Given any , since , we can find an integer such that . It follows that . This proves , as claimed.     Order of a zero   Assume is analytic at , and that . The order of at , denoted , is defined as the smallest positive integer such that , if such an exists, and otherwise.    The corollary below is a direct consequence of and strengthens our factorization observation made above. Namely, it tells us that if , then factoring out from leaves an analytic function that is nonzero at .   Order of at   Let be analytic at , and let be a positive integer. The following statements are equivalent.    .    We can write , where is analytic at and .        Order of at   Let .   Compute a power series expansion of centered at .    Compute .    Find an analytic function such that .             Analytic functions on connected open sets   Connectedness equivalence   Let be an open set. The following statements are equivalent.    is connected.    If is a nonempty open subset of , and is open, then .       We prove both implications separately.   Implication: (1) (2)  Assume is connected. Given a as in (2), we have . It follows that or . Since and , we clearly cannot have . It follows that we must have . We conclude that .    Implication: (2) (1)  Assume condition (2) holds. We show directly that is connected. Suppose we have open sets satisfying . We will show that if , then , proving that is connected. If , then since , we must have . The set is thus nonempty and open (since and are open). A straightforward argument shows that , which is also open. By condition (2), we conclude that , and thus that , as desired.      Limit point   Let be open and connected, and assume is holomorphic on . Let be the set of zeros of on . If has an limit point, then for all .    We first show that if is a limit point of , then : , we have for all . Since is a limit point of , we can find a sequence of elements of such that . It follows that . Since is continuous on , it follows that . Thus is itself a zero of . Now assume by contradiction that for some positive integer . By , we would then have where .     Rigidity of analytic functions   Let be open and connected, and let and be holomorphic functions on . If the set has a limit point, then for all .     "
+  "body": " Analytic continuation   Order of a zero  Our first result represents yet another example of the strong connection between polynomials and analytic functions: if is a zero of the analytic function , then we can factor  as , where is analytic.   Zeros of analytic functions   Suppose is analytic on the open set and that for all .   We have for all     We can write , where is analytic on and satisfies for all .       It suffices to show that the power series converges for all , since then is analytic on and we have . Clearly converges for . Assume now that . Let and be the -th partial sums of and , respectively. We will show that and thus that converges. First observe that . Let . Given any , since , we can find an integer such that . It follows that . This proves , as claimed.     Order of a zero   Assume is analytic at , and that . The order of at , denoted , is defined as the smallest positive integer such that , if such an exists, and otherwise.     Order of a zero   Compute for the given and .    , .     , .           The corollary below is a direct consequence of and strengthens our factorization observation made above. Namely, it tells us that if , then factoring out from leaves an analytic function that is nonzero at .   Order of at   Let be analytic at , and assume . The following statements are equivalent.    for a positive integer.    We can write , where is analytic at and .        Order of at   Let .   Compute .    Find an analytic function such that .             Analytic functions on connected open sets   Connectedness equivalence   Let be an open set. The following statements are equivalent.    is connected.    If is a nonempty open subset of , and is open, then .       We prove both implications separately.   Implication: (1) (2)  Assume is connected. Given a as in (2), we have . It follows that or . Since and , we clearly cannot have . It follows that we must have . We conclude that .    Implication: (2) (1)  Assume condition (2) holds. We show directly that is connected. Suppose we have open sets satisfying . We will show that if , then , proving that is connected. If , then since , we must have . The set is thus nonempty and open (since and are open). A straightforward argument shows that , which is also open. By condition (2), we conclude that , and thus that , as desired.      Limit point   Let be open and connected, and assume is holomorphic on . Let be the set of zeros of on . If has a limit point in , then for all .     A limit point of is a zero of infinite order  We first show that if is a limit point of , then is itself a zero of , and in fact : , we have for all . Since is a limit point of , we can find a sequence of elements of such that . It follows that . Since is continuous on , it follows that . Thus is itself a zero of . To show , we use and show that for any positive integer and function analytic at , if , then . Indeed, for any such and we have for all . Taking our same sequence of elements of from above, we have , which implies (again using continuity) that .    Set of limit points of is open  Let be the set of all limit points of lying in . From the previous argument, we know that for each , for all integers . Since is analytic at , it has a power series expansion centered at that converges on some open ball . Since for all integers , this power series is the zero function. It follows that for all . Thus , and it then follows that additionally each element of is a limit point of : , . We have shown for all there is an open ball . This proves is open.    is open  Given , we must have . If not, every open ball containing would contain an element of , and since , this would imply is a limit point of . But we saw above that , so this would mean is a limit point of . This is a contradiction, since then we would have . We conclude that for all there is an open ball . Thus is open.   Since the is nonempty and open, and since is open, we conclude that , using . Since furthermore , we see that : , for all .     Rigidity of analytic functions   Let be open and connected and let and be holomorphic functions on . If the set has a limit point in , then for all .    The result follows from applied to the analytic function .     Rigidity of analytic functions  It is worthwhile enumerating some examples of sets that include limit points:   Every element of an open ball is a limit point of the open ball.    Any nontrivial interval of the real line contains (lots) of limit points.    More generally, if is a curve parametrized by the path and if and are distinct points on , with , then contains limit points. In other words the segment of a curve lying between two distinct points contains limit points.    The point is a limit point of the set . More generally, if , then is a limit point of the set .       Analytic continuation   Let be a complex function. An analytic extension of is a pair consisting of an open connected set that contains , and an analytic function satisfying for all .     Analytic continuation   Let be a complex function, and let be an open connected set containing . If and are analytic continuations of , then .  In other words, an analytic continuation of to , if it exists, is unique.     Real analytic   Let be an open interval of . An infinitely differentiable function is (real) analytic if for all there exists an open interval such that , where      Real analytic functions   Let be an open interval of and let be infinitely differentiable. The following statements are equivalent.    is real analytic.    There is an analytic continuation of to an open connected set containing .            Real analytic functions   It can be shown that the function defined as is infinitely differentiable on . It is not real analytic on any open interval containing , however. Indeed, if had an analytic continuation to a connected open subset of containing , then since for all , and since this set clearly has a limit point, we would have for all . A contradiction, since for all .     "
 },
 {
   "id": "lemma_order",
@@ -2782,29 +2782,38 @@ var ptx_lunr_docs = [
   "body": " Order of a zero   Assume is analytic at , and that . The order of at , denoted , is defined as the smallest positive integer such that , if such an exists, and otherwise.   "
 },
 {
+  "id": "eg_order_zero",
+  "level": "2",
+  "url": "s_analytic_continuation.html#eg_order_zero",
+  "type": "Example",
+  "number": "1.19.3",
+  "title": "Order of a zero.",
+  "body": " Order of a zero   Compute for the given and .    , .     , .          "
+},
+{
   "id": "cor_order_zero",
   "level": "2",
   "url": "s_analytic_continuation.html#cor_order_zero",
   "type": "Corollary",
-  "number": "1.19.3",
+  "number": "1.19.4",
   "title": "Order of <span class=\"process-math\">\\(f\\)<\/span> at <span class=\"process-math\">\\(z_0\\)<\/span>.",
-  "body": " Order of at   Let be analytic at , and let be a positive integer. The following statements are equivalent.    .    We can write , where is analytic at and .      "
+  "body": " Order of at   Let be analytic at , and assume . The following statements are equivalent.    for a positive integer.    We can write , where is analytic at and .      "
 },
 {
   "id": "eg_order",
   "level": "2",
   "url": "s_analytic_continuation.html#eg_order",
   "type": "Example",
-  "number": "1.19.4",
+  "number": "1.19.5",
   "title": "Order of <span class=\"process-math\">\\(f\\)<\/span> at <span class=\"process-math\">\\(z_0\\)<\/span>.",
-  "body": " Order of at   Let .   Compute a power series expansion of centered at .    Compute .    Find an analytic function such that .          "
+  "body": " Order of at   Let .   Compute .    Find an analytic function such that .          "
 },
 {
   "id": "th_connected_equiv",
   "level": "2",
   "url": "s_analytic_continuation.html#th_connected_equiv",
   "type": "Theorem",
-  "number": "1.19.5",
+  "number": "1.19.6",
   "title": "Connectedness equivalence.",
   "body": " Connectedness equivalence   Let be an open set. The following statements are equivalent.    is connected.    If is a nonempty open subset of , and is open, then .       We prove both implications separately.   Implication: (1) (2)  Assume is connected. Given a as in (2), we have . It follows that or . Since and , we clearly cannot have . It follows that we must have . We conclude that .    Implication: (2) (1)  Assume condition (2) holds. We show directly that is connected. Suppose we have open sets satisfying . We will show that if , then , proving that is connected. If , then since , we must have . The set is thus nonempty and open (since and are open). A straightforward argument shows that , which is also open. By condition (2), we conclude that , and thus that , as desired.    "
 },
@@ -2813,18 +2822,72 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_analytic_continuation.html#th_limit_point",
   "type": "Theorem",
-  "number": "1.19.6",
+  "number": "1.19.7",
   "title": "Limit point.",
-  "body": " Limit point   Let be open and connected, and assume is holomorphic on . Let be the set of zeros of on . If has an limit point, then for all .    We first show that if is a limit point of , then : , we have for all . Since is a limit point of , we can find a sequence of elements of such that . It follows that . Since is continuous on , it follows that . Thus is itself a zero of . Now assume by contradiction that for some positive integer . By , we would then have where .   "
+  "body": " Limit point   Let be open and connected, and assume is holomorphic on . Let be the set of zeros of on . If has a limit point in , then for all .     A limit point of is a zero of infinite order  We first show that if is a limit point of , then is itself a zero of , and in fact : , we have for all . Since is a limit point of , we can find a sequence of elements of such that . It follows that . Since is continuous on , it follows that . Thus is itself a zero of . To show , we use and show that for any positive integer and function analytic at , if , then . Indeed, for any such and we have for all . Taking our same sequence of elements of from above, we have , which implies (again using continuity) that .    Set of limit points of is open  Let be the set of all limit points of lying in . From the previous argument, we know that for each , for all integers . Since is analytic at , it has a power series expansion centered at that converges on some open ball . Since for all integers , this power series is the zero function. It follows that for all . Thus , and it then follows that additionally each element of is a limit point of : , . We have shown for all there is an open ball . This proves is open.    is open  Given , we must have . If not, every open ball containing would contain an element of , and since , this would imply is a limit point of . But we saw above that , so this would mean is a limit point of . This is a contradiction, since then we would have . We conclude that for all there is an open ball . Thus is open.   Since the is nonempty and open, and since is open, we conclude that , using . Since furthermore , we see that : , for all .   "
 },
 {
   "id": "cor_limit_points",
   "level": "2",
   "url": "s_analytic_continuation.html#cor_limit_points",
   "type": "Theorem",
-  "number": "1.19.7",
+  "number": "1.19.8",
   "title": "Rigidity of analytic functions.",
-  "body": " Rigidity of analytic functions   Let be open and connected, and let and be holomorphic functions on . If the set has a limit point, then for all .   "
+  "body": " Rigidity of analytic functions   Let be open and connected and let and be holomorphic functions on . If the set has a limit point in , then for all .    The result follows from applied to the analytic function .   "
+},
+{
+  "id": "ss_analytic_connected-5",
+  "level": "2",
+  "url": "s_analytic_continuation.html#ss_analytic_connected-5",
+  "type": "Remark",
+  "number": "1.19.9",
+  "title": "Rigidity of analytic functions.",
+  "body": " Rigidity of analytic functions  It is worthwhile enumerating some examples of sets that include limit points:   Every element of an open ball is a limit point of the open ball.    Any nontrivial interval of the real line contains (lots) of limit points.    More generally, if is a curve parametrized by the path and if and are distinct points on , with , then contains limit points. In other words the segment of a curve lying between two distinct points contains limit points.    The point is a limit point of the set . More generally, if , then is a limit point of the set .     "
+},
+{
+  "id": "d_analytic_continuation",
+  "level": "2",
+  "url": "s_analytic_continuation.html#d_analytic_continuation",
+  "type": "Definition",
+  "number": "1.19.10",
+  "title": "Analytic continuation.",
+  "body": " Analytic continuation   Let be a complex function. An analytic extension of is a pair consisting of an open connected set that contains , and an analytic function satisfying for all .   "
+},
+{
+  "id": "cor_anal_continuation",
+  "level": "2",
+  "url": "s_analytic_continuation.html#cor_anal_continuation",
+  "type": "Corollary",
+  "number": "1.19.11",
+  "title": "Analytic continuation.",
+  "body": " Analytic continuation   Let be a complex function, and let be an open connected set containing . If and are analytic continuations of , then .  In other words, an analytic continuation of to , if it exists, is unique.   "
+},
+{
+  "id": "d_real_analytic",
+  "level": "2",
+  "url": "s_analytic_continuation.html#d_real_analytic",
+  "type": "Definition",
+  "number": "1.19.12",
+  "title": "Real analytic.",
+  "body": " Real analytic   Let be an open interval of . An infinitely differentiable function is (real) analytic if for all there exists an open interval such that , where    "
+},
+{
+  "id": "th_real_analytic",
+  "level": "2",
+  "url": "s_analytic_continuation.html#th_real_analytic",
+  "type": "Theorem",
+  "number": "1.19.13",
+  "title": "Real analytic functions.",
+  "body": " Real analytic functions   Let be an open interval of and let be infinitely differentiable. The following statements are equivalent.    is real analytic.    There is an analytic continuation of to an open connected set containing .          "
+},
+{
+  "id": "eg_real_analytic",
+  "level": "2",
+  "url": "s_analytic_continuation.html#eg_real_analytic",
+  "type": "Example",
+  "number": "1.19.14",
+  "title": "Real analytic functions.",
+  "body": " Real analytic functions   It can be shown that the function defined as is infinitely differentiable on . It is not real analytic on any open interval containing , however. Indeed, if had an analytic continuation to a connected open subset of containing , then since for all , and since this set clearly has a limit point, we would have for all . A contradiction, since for all .   "
 },
 {
   "id": "appendix-notation",
