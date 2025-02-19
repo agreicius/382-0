@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h4 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.19.1</span><span class="period">.</span><span class="space"> </span><span class="title">Zeros of analytic functions.</span>
+</h4>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(f\)</span> is analytic on the open set <span class="process-math">\(B_R(z_0)\)</span> and that <span class="process-math">\(f^{(k)}(z_0)=0\)</span> for all <span class="process-math">\(0\leq n\leq m-1\text{.}\)</span>
+</div>
+<ol class="decimal" id="lemma_order-2-1-5">
+<li><div class="para">We have <span class="process-math">\(f(z)=\sum_{n=m}^\infty a_n(z-z_0)^n\)</span> for all <span class="process-math">\(z\in B_R(z_0)\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">We can write <span class="process-math">\(f(z)=(z-z_0)^mg(z)\text{,}\)</span> where <span class="process-math">\(g\)</span> is analytic on <span class="process-math">\(B_R(z_0)\)</span> and satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(z)=a_m+a_{m-1}(z-z_0)+\cdots =\sum_{n=0}^\infty a_{m+n}(z-z_0)^n
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in B_R(z_0)\text{.}\)</span>
+</div>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">It suffices to show that the power series</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(z)=a_m+a_{m-1}(z-z_0)+\cdots =\sum_{n=0}^\infty a_{m+n}(z-z_0)^n
+\end{equation*}
+</div>
+<div class="para">converges for all <span class="process-math">\(z\in B_R(z_0)\text{,}\)</span> since then <span class="process-math">\(g\)</span> is analytic on <span class="process-math">\(B_R(z_0)\)</span> and we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(z-z_0)^mg(z)=\sum{n=0}^\infty a_{m+n}(z-z_0)^{m+n}=\sum_{n=m}^\infty a_n(z-z_0)^n=f(z)\text{.}
+\end{equation*}
+</div>
+<div class="para">Clearly <span class="process-math">\(g(z)\)</span> converges for <span class="process-math">\(z=z_0\text{.}\)</span> Assume now that <span class="process-math">\(z\in B_R(z_0)-\{z_0\}\text{.}\)</span>  Let <span class="process-math">\(g_k\)</span> and <span class="process-math">\(f_k\)</span> be the <span class="process-math">\(k\)</span>-th partial sums of <span class="process-math">\(f(z)\)</span> and <span class="process-math">\(g(z)\text{,}\)</span> respectively. We will show that <span class="process-math">\(g_k(z)\to f(z)/(z-z_0)^m\)</span> and thus that <span class="process-math">\(g(z)=f(z)/(z-z_0)^m\)</span> converges. First observe that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\abs{g_k(z)-\frac{f(z)}{(z-z_0)^m}} \amp = \abs{\frac{g_k(z)(z-z_0)^m-f(z)}{(z-z_0)^m}}\\
+\amp = \abs{\frac{g_k(z)(z-z_0)^m-f_k(z)+(f_k(z)-f(z))}{(z-z_0)^m}} \\
+\amp = \abs{\frac{f_k(z)-f(z)}{(z-z_0)^m}} \amp (g_k(z)(z-z_0)^m=f_k(z))\text{.}
+\end{align*}
+</div>
+<div class="para">Let <span class="process-math">\(r=\abs{z-z_0}\text{.}\)</span>  Given any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> since <span class="process-math">\(f_k\to f\text{,}\)</span> we can find an integer <span class="process-math">\(N\geq 0\)</span> such that <span class="process-math">\(\abs{f_k(z)-f(z)}&lt; \epsilon r^n\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{g_k(z)-\frac{f(z)}{(z-z_0)^m}}=\abs{\frac{f_k(z)-f(z)}{(z-z_0)^m}}&lt; \frac{\epsilon r^n}{r^n}=\epsilon\text{.}
+\end{equation*}
+</div>
+<div class="para">This proves <span class="process-math">\(g(z)=\lim_{k\to \infty}g_k(z)=f(z)/(z-z_0)^m\text{,}\)</span> as claimed.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_analytic_continuation.html#lemma_order">in-context</a></span>
+</body>
+</html>

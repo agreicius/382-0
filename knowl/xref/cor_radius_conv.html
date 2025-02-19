@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="corollary theorem-like"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.10</span><span class="period">.</span><span class="space"> </span><span class="title">Radius of convergence.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\)</span> be a power series centered at <span class="process-math">\(z_0\)</span> with radius of convergence <span class="process-math">\(R\text{,}\)</span> and let <span class="process-math">\(C\in \C\)</span> be any fixed complex constant. The two power series</div>
+<div class="displaymath process-math">
+\begin{align*}
+F(z) \amp =C+a_0z+\frac{a_1}{2}z^2+\cdots=C+\sum_{n=1}^\infty \frac{a_{n-1}}{n}(z-z_0)^n\\
+g(z) \amp = a_1+2a_2(z-z_0)+3a_3(z-z_0)^3+\cdots =\sum_{n=0}^\infty (n+1)a_{n+1}(z-z_0)^n
+\end{align*}
+</div>
+<div class="para">each have radius of convergence <span class="process-math">\(R\text{.}\)</span> In other words, if the power series <span class="process-math">\(f(z)\)</span> has radius of convergence <span class="process-math">\(R\text{,}\)</span> then so does any formal antiderivative <span class="process-math">\(F(z)\)</span> of <span class="process-math">\(f(z)\)</span> and the formal derivative <span class="process-math">\(g(z)\)</span> of <span class="process-math">\(f(z)\text{.}\)</span>
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">It is enough to show that taking the formal antiderivative of any power series does not change the radius of convergence, since <span class="process-math">\(F\)</span> is a formal antiderivative of <span class="process-math">\(f\)</span> and <span class="process-math">\(f\)</span> is a formal antiderivative of <span class="process-math">\(g\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Assume the power series <span class="process-math">\(F(z)\)</span> has radius of convergence <span class="process-math">\(R'\text{.}\)</span> Pick any <span class="process-math">\(w\in B_R(z_0)\text{,}\)</span> and let <span class="process-math">\(\gamma_{z_0,w}\)</span> be the straight line path from <span class="process-math">\(z_0\)</span> to <span class="process-math">\(z\text{,}\)</span> which lies within <span class="process-math">\(B_R(z_0)\text{.}\)</span>  By (2) of <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/xref/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_power_series_integral_der.html ./knowl/xref/th_power_series_integral_der.html">
+\begin{align*}
+\int_{\gamma_{z_0,w}} f(z)\, dz\amp =\sum_{n=0}^\infty \int_{\gamma_{z_0,w}}a_n(z-z_0)^n\\
+\amp =\sum_{n=0}^\infty \frac{a_n}{(n+1)}((z-z_0)^{n+1})\Bigr\vert_{z_0}^w\\
+\amp = \sum_{n=0}^\infty \frac{a_n}{n+1}(w-z_0)^{n+1}\\
+\amp = \sum_{n=1}^\infty \frac{a_{n-1}}{n}(w-z_0)^{n}\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that <span class="process-math">\(\sum_{n=1}^\infty \frac{a_{n-1}}{n}(w-z_0)^{n}\)</span> converges, and thus so does <span class="process-math">\(F(w)=C+\sum_{n=1}^\infty \frac{a_{n-1}}{n}(w-z_0)^{n}\text{.}\)</span> We conclude that <span class="process-math">\(F(z)\)</span> converges for all <span class="process-math">\(z\in B_R(z_0)\text{,}\)</span> and hence that <span class="process-math">\(R'\geq R\text{.}\)</span> Since <span class="process-math">\(F'(z)=f(z)\text{,}\)</span> statement (3) of <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/xref/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a> implies that <span class="process-math">\(R\geq R'\text{.}\)</span> We conclude that <span class="process-math">\(R=R'\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_power_series.html#cor_radius_conv">in-context</a></span>
+</body>
+</html>

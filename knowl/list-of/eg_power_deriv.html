@@ -12,25 +12,24 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.10</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiating power series.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.11</span><span class="period">.</span><span class="space"> </span><span class="title">Differentiating power series.</span>
 </h3>
-<div class="para">Let <span class="process-math">\(f(z)=1/(1-z)^m\text{,}\)</span> where <span class="process-math">\(m\)</span> is a positive integer. Find a power series representation of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0=0\)</span> that converges on <span class="process-math">\(B_1(0)\text{.}\)</span>
-</div>
+<div class="para">Let <span class="process-math">\(f(z)=1/(1-z)^m\text{,}\)</span> where <span class="process-math">\(m\)</span> is a positive integer. Find a power series representation of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0=0\)</span> and compute its radius of convergence.</div>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
 <div class="para">The idea is to relate  <span class="process-math">\(f\)</span> with <span class="process-math">\(g(z)=1/(1-z)\text{.}\)</span> Note that <span class="process-math">\(g'(z)=1/(1-z)^2\text{,}\)</span> <span class="process-math">\(g''(z)=2/(1-z)^3\text{,}\)</span> and more generally (using an easy induction argument)</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_power_series_integral_der.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_power_series_integral_der.html ./knowl/xref/cor_radius_conv.html">
 \begin{equation*}
 g^{(m)}(z)=m!(1-z)^{-(m+1)}=\frac{m!}{(1-z)^{m+1}}
 \end{equation*}
 </div>
 <div class="para">for all <span class="process-math">\(m\geq 1\text{.}\)</span> Thus we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_power_series_integral_der.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_power_series_integral_der.html ./knowl/xref/cor_radius_conv.html">
 \begin{equation*}
 f(z)=\frac{1}{(m-1)!}g^{(m-1)}(z)\text{.}
 \end{equation*}
 </div>
 <div class="para">Now, beginning with the power series representation <span class="process-math">\(g(z)=\sum_{n=0}^\infty z^n\)</span> and using (3) of <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/xref/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a>, we see that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_power_series_integral_der.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_power_series_integral_der.html ./knowl/xref/cor_radius_conv.html">
 \begin{align*}
 g'(z) \amp =\sum_{n=0}^\infty nz^{n-1}=\sum_{n=1}^\infty nz^{n-1}=\sum_{n=0}^\infty (n+1)a_{n+1}z^{n}\\
 g''(z) \amp = \sum_{n=0}^\infty n(n-1)z^{n-2}=\sum_{n=0}^\infty (n+2)(n+1)z^{n}\\
@@ -40,14 +39,14 @@ g^{(m-1)}(z) \amp = \sum_{n=0}^\infty (n+(m-1))(n+(m-2))\cdots (n+1)z^{n}\\
 \end{align*}
 </div>
 <div class="para">We conclude that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_power_series_integral_der.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_power_series_integral_der.html ./knowl/xref/cor_radius_conv.html">
 \begin{align*}
 \frac{1}{(1-z)^{m}} \amp = \frac{1}{(m-1)!}g^{(m-1)}(z)\\
 \amp = \sum_{n=0}^\infty\frac{(n+m-1)!}{n!(m-1)!}z^{n}\\
 \amp = \sum_{n=0}^\infty{n+m-1\choose n}z^{n}\text{,}
 \end{align*}
 </div>
-<div class="para">where we use the binomial coefficient notation <span class="process-math">\({r\choose s}=\tfrac{r!}{s!(r-s)!}\text{.}\)</span> Note that since the original power series for <span class="process-math">\(g(z)\)</span> converges for all <span class="process-math">\(z\in B_1(0)\text{,}\)</span> each successive formal derivative of this power series also converges for all <span class="process-math">\(z\in B_1(0)\text{.}\)</span>
+<div class="para">where we use the binomial coefficient notation <span class="process-math">\({r\choose s}=\tfrac{r!}{s!(r-s)!}\text{.}\)</span> Note that since the original power series for <span class="process-math">\(g(z)\)</span> has radius of convergence <span class="process-math">\(R=1\text{,}\)</span> so too does each successive formal derivative of this power series. (See <a href="s_power_series.html#cor_radius_conv" class="xref" data-knowl="./knowl/xref/cor_radius_conv.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.10: Radius of convergence">Corollary 1.17.10</a>.) Furthermore, since scaling a power series by a constant clearly does not change its radius of convergence, we conclude that our power series for <span class="process-math">\(f(z)=1/(z-z_0)^m\)</span> has radius of convergence <span class="process-math">\(1\text{.}\)</span>
 </div>
 </div></div></details></div></article><span class="incontext"><a class="internal" href="s_power_series.html#eg_power_deriv">in-context</a></span>
 </body>

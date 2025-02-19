@@ -196,6 +196,7 @@ eBookConfig.enable_chatcodes =  false;
 \DeclareMathOperator{\disc}{disc}
 \DeclareMathOperator{\Frob}{Frob}
 \DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator{\curl}{curl}
 \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\diver}{div}
@@ -389,6 +390,13 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_generalize.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Generalized Cauchy integral formula</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_power_series.html" class="internal"><span class="codenumber">1.17</span> <span class="title">Complex power series</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_analyticity.html" class="internal"><span class="codenumber">1.18</span> <span class="title">Analyticity of holomorphic functions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_analytic_continuation.html" class="internal"><span class="codenumber">1.19</span> <span class="title">Analytic continuation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_analytic_continuation.html#ss_order" class="internal"><span class="title">Order of a zero</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_analytic_continuation.html#ss_analytic_connected" class="internal"><span class="title">Analytic functions on connected open sets</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter contains-active">
@@ -585,9 +593,11 @@ eBookConfig.enable_chatcodes =  false;
 <div>
 <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/list-of/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a> Power series integration and differentiation</div>
 <div>
-<a href="s_power_series.html#cor_analytic_implies_holomorphic" class="xref" data-knowl="./knowl/list-of/cor_analytic_implies_holomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.13: Analytic implies holomorphic">Corollary 1.17.13</a> Analytic implies holomorphic</div>
+<a href="s_power_series.html#cor_radius_conv" class="xref" data-knowl="./knowl/list-of/cor_radius_conv.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.10: Radius of convergence">Corollary 1.17.10</a> Radius of convergence</div>
 <div>
-<a href="s_power_series.html#cor_power_series_expansion" class="xref" data-knowl="./knowl/list-of/cor_power_series_expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.14: Uniqueness of expansions">Corollary 1.17.14</a> Uniqueness of expansions</div>
+<a href="s_power_series.html#cor_analytic_implies_holomorphic" class="xref" data-knowl="./knowl/list-of/cor_analytic_implies_holomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.14: Analytic implies holomorphic">Corollary 1.17.14</a> Analytic implies holomorphic</div>
+<div>
+<a href="s_power_series.html#cor_power_series_expansion" class="xref" data-knowl="./knowl/list-of/cor_power_series_expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.15: Uniqueness of expansions">Corollary 1.17.15</a> Uniqueness of expansions</div>
 <h4 class="heading hide-type" title="Section 1.18: Analyticity of holomorphic functions">
 <span class="codenumber">1.18</span><span class="space"> </span><span class="title">Analyticity of holomorphic functions</span>
 </h4>
@@ -596,11 +606,21 @@ eBookConfig.enable_chatcodes =  false;
 <div>
 <a href="s_analyticity.html#cor_power_series" class="xref" data-knowl="./knowl/list-of/cor_power_series.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.18.2">Corollary 1.18.2</a> </div>
 <div>
-<a href="s_analyticity.html#th_holomorphic" class="xref" data-knowl="./knowl/list-of/th_holomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.3: Holomorphic equivalences">Theorem 1.18.3</a> Holomorphic equivalences</div>
+<a href="s_analyticity.html#th_holomorphic" class="xref" data-knowl="./knowl/list-of/th_holomorphic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.5: Holomorphic equivalences">Theorem 1.18.5</a> Holomorphic equivalences</div>
+<h4 class="heading hide-type" title="Section 1.19: Analytic continuation">
+<span class="codenumber">1.19</span><span class="space"> </span><span class="title">Analytic continuation</span>
+</h4>
 <div>
-<a href="s_analyticity.html#th_limit_point" class="xref" data-knowl="./knowl/list-of/th_limit_point.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.4: Limit point">Theorem 1.18.4</a> Limit point</div>
+<a href="s_analytic_continuation.html#lemma_order" class="xref" data-knowl="./knowl/list-of/lemma_order.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 1.19.1: Zeros of analytic functions">Lemma 1.19.1</a> Zeros of analytic functions</div>
 <div>
-<a href="s_analyticity.html#cor_limit_points" class="xref" data-knowl="./knowl/list-of/cor_limit_points.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.18.5: Rigidity">Corollary 1.18.5</a> Rigidity</div></section></div>
+<a href="s_analytic_continuation.html#cor_order_zero" class="xref" data-knowl="./knowl/list-of/cor_order_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.19.3: Order of f at z_0">Corollary 1.19.3</a> Order of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_0\)</span>
+</div>
+<div>
+<a href="s_analytic_continuation.html#th_connected_equiv" class="xref" data-knowl="./knowl/list-of/th_connected_equiv.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Connectedness equivalence">Theorem 1.19.5</a> Connectedness equivalence</div>
+<div>
+<a href="s_analytic_continuation.html#th_limit_point" class="xref" data-knowl="./knowl/list-of/th_limit_point.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.6: Limit point">Theorem 1.19.6</a> Limit point</div>
+<div>
+<a href="s_analytic_continuation.html#cor_limit_points" class="xref" data-knowl="./knowl/list-of/cor_limit_points.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.7: Rigidity of analytic functions">Theorem 1.19.7</a> Rigidity of analytic functions</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="appendix-defs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="appendix-specimens.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

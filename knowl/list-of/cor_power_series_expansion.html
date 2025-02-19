@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="corollary theorem-like"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.14</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of expansions.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.15</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of expansions.</span>
 </h3>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(f\)</span> be a complex function. If <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\)</span> with power series representation <span class="process-math">\(f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\text{,}\)</span> then</div>
@@ -23,8 +23,40 @@ a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+
 </div>
 <div class="para">where <span class="process-math">\(\gamma\)</span> is the counterclockwise oriented boundary of any closed disk <span class="process-math">\(\overline{B}\subseteq U\)</span> containing <span class="process-math">\(z_0\text{.}\)</span>
 </div>
-</div> <div class="para">In particular the power series expansion of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0\)</span> is unique.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">We prove the derivative formula for <span class="process-math">\(a_n\)</span> for all <span class="process-math">\(n\geq 0\text{.}\)</span> The integral formula follows directly from the generalized Cauchy integral formula. Our proof is by induction.</div>
-<article class="case"><h4 class="heading">Base case: <span class="process-math">\(n=0\)</span>.</h4>
-<div class="para"></div></article></article></details><span class="incontext"><a class="internal" href="s_power_series.html#cor_power_series_expansion">in-context</a></span>
+</div> <div class="para">In particular the power series expansion of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0\)</span> is unique.</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">We prove the derivative formula for <span class="process-math">\(a_n\)</span> for all <span class="process-math">\(n\geq 0\text{.}\)</span> The integral formula follows directly from the generalized Cauchy integral formula.</div>
+<div class="para logical">
+<div class="para">We will prove that</div>
+<div class="displaymath process-math">
+\begin{equation}
+f^{(n)}(z)=\sum_{k=0}^\infty \frac{(n+k)!}{k!}a_{k+n}(z-z_0)^k\text{,}\tag{1.70}
+\end{equation}
+</div>
+<div class="para">and thus that <span class="process-math">\(f^{(n)}(z_0)=\frac{n!}{0!}a_n\text{,}\)</span> or equivalently</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_n=\frac{f^{(n)}(z_0)}{n!}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">The proof of formula <a href="s_power_series.html#eq_nth_deriv" class="xref" data-knowl="./knowl/xref/eq_nth_deriv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.70">(1.70)</a> is by induction. The base case (<span class="process-math">\(n=0\)</span>) is clear, since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_nth_deriv.html ./knowl/xref/eq_nth_deriv.html ./knowl/xref/th_power_series_integral_der.html">
+\begin{equation*}
+\sum_{k=0}^\infty \frac{(0+k)!}{k!}a_{k+0}(z-z_0)^k=\sum_{k=0}^\infty a_k(z-z_0)^k=f(z)\text{.}
+\end{equation*}
+</div>
+<div class="para">Assuming now by induction that <a href="s_power_series.html#eq_nth_deriv" class="xref" data-knowl="./knowl/xref/eq_nth_deriv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.70">(1.70)</a> holds for <span class="process-math">\(n\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_nth_deriv.html ./knowl/xref/eq_nth_deriv.html ./knowl/xref/th_power_series_integral_der.html">
+\begin{align*}
+f^{(n+1)}(z) \amp = \frac{d}{dz}(f^{(n)}(z))\\
+\amp = \frac{d}{dz}\left(\sum_{k=0}^\infty \frac{(n+k)!}{k!}(z-z_0)^k\right) \amp (\text{induction hypo.}) \\
+\amp = \sum_{k=0}^\infty k\cdot \frac{(n+k)!}{k!}(z-z_0)^{k-1} \amp (\knowl{./knowl/xref/th_power_series_integral_der.html}{\text{Theorem 1.17.9}})\\
+\amp = \sum_{k=0}^\infty \frac{(n+k)!}{(k-1)!}(z-z_0)^{k-1} \\
+\amp = \sum_{k=1}^\infty \frac{(n+k)!}{(k-1)!}(z-z_0)^{k-1} \\
+\amp = \sum_{k=0}^\infty \frac{(n+1+k)!}{k!}(z-z_0)^{k} \text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_power_series.html#cor_power_series_expansion">in-context</a></span>
 </body>
 </html>

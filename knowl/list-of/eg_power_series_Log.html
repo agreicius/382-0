@@ -12,39 +12,30 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.11</span><span class="period">.</span><span class="space"> </span><span class="title">Power series for <span class="process-math">\(\Log\)</span>.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.17.12</span><span class="period">.</span><span class="space"> </span><span class="title">Power series for <span class="process-math">\(\Log\)</span>.</span>
 </h3>
 <div class="para">Find a power series expansion of <span class="process-math">\(-\Log(1-z)\)</span> that converges on <span class="process-math">\(B_1(0)\text{.}\)</span>
 </div>
 <div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
-<div class="para">Let <span class="process-math">\(f(z)=1/(1-z)\text{.}\)</span> Since <span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(B_1(0)\text{,}\)</span> we know from the proof of <a href="s_cauchy_goursat.html#th_antider" class="xref" data-knowl="./knowl/xref/th_antider.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.14.2: Antiderivative theorem">Theorem 1.14.2</a> that we can define an antiderivative of <span class="process-math">\(f\)</span> on <span class="process-math">\(B_1(0)\)</span> via the formula</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_power_series_integral_der.html ./knowl/xref/th_power_series_integral_der.html">
+<div class="para">Let <span class="process-math">\(f(z)=1/(1-z)\text{.}\)</span> Since the power series expansion</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_radius_conv.html ./knowl/xref/th_power_series_integral_der.html">
 \begin{equation*}
-F(z)=\int_{\gamma_{0,z}}f(w)\, dw\text{,}
+\frac{1}{1-z}=1+z+z^2+\cdots 
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\gamma_{0,z}\)</span> is the straight line parametrization. Using (2) of <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/xref/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a>, we then have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_power_series_integral_der.html ./knowl/xref/th_power_series_integral_der.html">
-\begin{align*}
-F(z) \amp =\int_{\gamma_{0,z}}f(w)\, dw\\
-\amp = \int_{\gamma_{0,z}}\sum_{n=0}^\infty w^n\, dw\\
-\amp = \sum_{n=0}^\infty\int_{\gamma_{0,z}} w^n\, dw \amp (\knowl{./knowl/xref/th_power_series_integral_der.html}{\text{1.17.9}})\\
-\amp =\sum_{n=0}^\infty \frac{z^{n+1}}{n+1} \text{,}
-\end{align*}
-</div>
-<div class="para">and that this power series converges for all <span class="process-math">\(z\in B_1(0)\text{.}\)</span> Note that the last step in the chain of equalities above follows from the fact that <span class="process-math">\(G(w)=\frac{w^{n+1}}{n+1}\)</span> is an antiderivative of <span class="process-math">\(w^n\text{,}\)</span> and thus</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_power_series_integral_der.html ./knowl/xref/th_power_series_integral_der.html">
+<div class="para">has radius of convergence <span class="process-math">\(R=1\text{,}\)</span> so too does the formal antiderivative</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_radius_conv.html ./knowl/xref/th_power_series_integral_der.html">
 \begin{equation*}
-\int_{\gamma_{0,z}} w^n\, dw=G(z)-G(0)=\frac{z^{n+1}}{n+1}\text{.}
+F(z)=z+\frac{1}{2}z^2+\frac{1}{3}z^3+\cdots =\sum_{n=1}^\infty \frac{1}{n}z^n\text{,}
 \end{equation*}
 </div>
-<div class="para">Lastly, since <span class="process-math">\(F\)</span> and <span class="process-math">\(-\Log(1-z)\)</span> are both antiderivatives of <span class="process-math">\(f\)</span> on <span class="process-math">\(B_1(0)\)</span> (check this for yourself for <span class="process-math">\(-\Log(1-z)\)</span>), we have <span class="process-math">\(-\Log(1-z)=F(z)+C\)</span> for some <span class="process-math">\(C\text{.}\)</span> Evaluating at <span class="process-math">\(z=0\text{,}\)</span> we see that since <span class="process-math">\(-\Log(1-0)=F(0)=0\text{,}\)</span> we must have <span class="process-math">\(C=0\text{.}\)</span> We conclude that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_antider.html ./knowl/xref/th_power_series_integral_der.html ./knowl/xref/th_power_series_integral_der.html">
+<div class="para">according to <a href="s_power_series.html#cor_radius_conv" class="xref" data-knowl="./knowl/xref/cor_radius_conv.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.10: Radius of convergence">Corollary 1.17.10</a>. According to <a href="s_power_series.html#th_power_series_integral_der" class="xref" data-knowl="./knowl/xref/th_power_series_integral_der.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.17.9: Power series integration and differentiation">Theorem 1.17.9</a>, the power series <span class="process-math">\(F(z)\)</span> defines a holomorphic function on <span class="process-math">\(B_1(0)\)</span> and satisfies <span class="process-math">\(F'(z)=f(z)\text{:}\)</span> i.e., the function <span class="process-math">\(F\)</span> is an antiderivative of <span class="process-math">\(f\)</span> on <span class="process-math">\(B_1(0)\text{.}\)</span> Since <span class="process-math">\(-\Log(1-z)\)</span> is also an antiderivative of <span class="process-math">\(f\)</span> on <span class="process-math">\(B_1(0)\text{,}\)</span> as you can easily check, and since <span class="process-math">\(B_1(0)\)</span> is <em class="emphasis">connected</em>, we have <span class="process-math">\(-\Log(1-z)=F(z)+C\)</span> for some <span class="process-math">\(C\text{.}\)</span> Evaluating at <span class="process-math">\(z=0\text{,}\)</span> we see that since <span class="process-math">\(-\Log(1-0)=F(0)=0\text{,}\)</span> we must have <span class="process-math">\(C=0\text{.}\)</span> We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_radius_conv.html ./knowl/xref/th_power_series_integral_der.html">
 \begin{equation*}
--\Log(1-z)=F(z)=\sum_{n=0}^\infty \frac{1}{n+1}z^{n+1}=z+\frac{z^2}{2}+\frac{z^3}{3}+\cdots 
+-\Log(1-z)=F(z)=\sum_{n=1}^\infty \frac{1}{n}z^{n}=z+\frac{z^2}{2}+\frac{z^3}{3}+\cdots \text{,}
 \end{equation*}
 </div>
-<div class="para">for all <span class="process-math">\(z\in B_1(0)\text{.}\)</span>
+<div class="para">and that his power series representation has radius of convergence <span class="process-math">\(1\text{.}\)</span>
 </div>
 </div></div></details></div></article><span class="incontext"><a class="internal" href="s_power_series.html#eg_power_series_Log">in-context</a></span>
 </body>
