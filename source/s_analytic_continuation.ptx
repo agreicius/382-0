@@ -5,7 +5,7 @@
 <subsection xml:id="ss_order">
 <title>Order of a zero</title>
 <p>
-    Our first result represents yet another example of the strong connection between polynomials and analytic functions: if <m>z_0</m> is a zero of the analytic function <m>f</m>, then we can <em>factor</em> <m>f</m> as <m>f(z)=(z-z_0)g(z)</m>, where <m>g</m> is analytiv. 
+    Our first result represents yet another example of the strong connection between polynomials and analytic functions: if <m>z_0</m> is a zero of the analytic function <m>f</m>, then we can <em>factor</em> <m>f</m> as <m>f(z)=(z-z_0)g(z)</m>, where <m>g</m> is analytic. 
 </p>
 <lemma xml:id="lemma_order">
 <title>Zeros of analytic functions</title>
@@ -62,6 +62,32 @@ Assume <m>f</m> is analytic at <m>z_0</m>, and that <m>f(z_0)=0</m>. The <term>o
 </p>
 </statement>
 </definition>
+<example xml:id="eg_order_zero">
+<title>Order of a zero</title>
+<statement>
+<p>
+Compute <m>\ord_f(z_0)</m> for the given <m>f</m> and <m>z_0</m>. 
+<ol>
+    <li>
+        <p>
+            <m>f(z)=\Log z</m>, <m>z=1</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>f(z)=\frac{1}{1-z^4}-1</m>, <m>z=0</m>.
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
 <p>
     The corollary below is a direct consequence of <xref ref="lemma_order"/> and strengthens our factorization observation made above. Namely, it tells us that if <m>\ord_f(z_0)=m</m>, then factoring <m>(z-z_0)^m</m> out from <m>f(z)</m> leaves an analytic function <m>g</m> that is nonzero at <m>z_0</m>.  
 </p>
@@ -89,13 +115,8 @@ Assume <m>f</m> is analytic at <m>z_0</m>, and that <m>f(z_0)=0</m>. The <term>o
 <title>Order of <m>f</m> at <m>z_0</m></title>
 <statement>
 <p>
-Let <m>f(z)=\sin z-z</m>. 
+Let <m>f(z)=\sin z^3-z^3</m>. 
 <ol>
-    <li>
-        <p>
-            Compute a power series expansion of <m>f</m> centered at <m>z_0=0</m>. 
-        </p>
-    </li>
     <li>
         <p>
             Compute <m>m=\ord_f(0)</m>. 
@@ -164,13 +185,15 @@ Let <m>f(z)=\sin z-z</m>.
         We will show that if <m>U\not\subseteq U_1</m>, then <m>U\subseteq U_2</m>, proving that <m>U</m> is connected. If <m>U\not\subseteq U_1</m>, then since <m>U\subseteq U_1\cup U_2</m>, we must have <m>U\cap U_2\ne \emptyset</m>. The set <m>V=U\cap U_2</m> is thus nonempty and open (since <m>U</m> and <m>U_2</m> are open). A straightforward argument shows that <m>U-V=U\cap U_1</m>, which is also open. By condition (2), we conclude that <m>V=U</m>, and thus that <m>U\subseteq U_2</m>, as desired. 
         </p>
         </case>
+        
+        
     </proof>
 </theorem>
 <theorem xml:id="th_limit_point">
 <title>Limit point</title>
 <statement>
 <p>
-Let <m>U</m> be open and connected, and assume <m>f</m> is holomorphic on <m>U</m>. Let <m>Z=\{z\in U\colon f(z)=0\}</m> be the set of zeros of <m>f</m> on <m>U</m>. If <m>Z</m> has an limit point, then <m>f(z)=0</m> for all <m>z\in U</m>. 
+Let <m>U</m> be open and connected, and assume <m>f</m> is holomorphic on <m>U</m>. Let <m>Z=\{z\in U\colon f(z)=0\}</m> be the set of zeros of <m>f</m> on <m>U</m>. If <m>Z</m> has a limit point in <m>U</m>, then <m>f(z)=0</m> for all <m>z\in U</m>. 
 </p>
 </statement>
 <proof>
@@ -180,18 +203,141 @@ Let <m>U</m> be open and connected, and assume <m>f</m> is holomorphic on <m>U</
     We first show that if <m>z_0</m> is a limit point of <m>Z</m>, then <m>z_0</m> is itself a zero of <m>f</m>, and in fact <m>\ord_f(z_0)=\infty</m>: <ie/>, we have <m>f^{(n)}(z_0)=0</m> for all <m>n\geq 0</m>. Since <m>z_0</m> is a limit point of <m>Z</m>, we can find a sequence <m>(z_n)_{n=1}^\infty</m> of elements of <m>Z-\{z_0\}</m> such that <m>\abs{z-z_n}&lt; 1/n</m>. It follows that <m>z_n\to z_0</m>. Since <m>f</m> is continuous on <m>U</m>, it follows that <m>f(z_0)=\lim\limits_{n\to \infty}f(z_n)=0</m>. Thus <m>z_0</m> is itself a zero of <m>f</m>.  To show <m>\ord_f(z_0)=\infty</m>, we use <xref ref="cor_order_zero"/> and show that for any positive integer <m>m</m> and function <m>g</m> analytic at <m>z_0</m>, if <m>f(z)=(z-z_0)^mg(z)</m>, then <m>g(z_0)=0</m>. Indeed, for any such <m>m</m> and <m>g</m> we have <m>g(z)=f(z)/(z-z_0)^m</m> for all <m>z\ne z_0</m>. Taking our same sequence <m>(z_n)</m> of elements of <m>Z-\{z_0\}</m> from above, we have <m>g(z_n)=f(z_n)/(z_n-z_0)^n=0</m>, which implies (again using continuity) that <m>g(z_0)=0</m>.
 </p>
 </case>
-
-
+<case>
+<title>Set <m>L</m> of limit points of <m>Z</m> is open</title>
+<p>
+Let <m>L</m> be the set of all limit points of <m>Z</m> lying in <m>U</m>. From the previous argument, we know that for each <m>z_0\in L</m>, <m>f^{(n)}(z_0)=0</m> for all integers <m>n\geq 0</m>. Since <m>f</m> is analytic at <m>z_0</m>, it has a power series expansion centered at <m>z_0</m> that converges on some open ball <m>B_R(z_0)</m>. Since <m>f^{(n)}(z_0)=0</m> for all integers <m>n\geq 0</m>, this power series is the zero function. It follows that <m>f=0</m> for all <m>z\in B_R(z_0)</m>. Thus <m>B_R(z_0)\subseteq Z</m>, and it then follows that additionally each element of <m>B_R(z_0)</m> is a limit point of <m>Z</m>: <ie/>, <m>B_R(z_0)\subseteq L</m>. We have shown for all <m>z_0\in L</m> there is an open ball <m>B_R(z_0)\subseteq L</m>. This proves <m>L</m> is open. 
+</p>
+</case>
+<case>
+<title><m>U-L</m> is open</title>
+<p>
+    Given <m>z_0\in U-L</m>, we must have <m>B_R(z_0)\subseteq U-L</m>. If not, every open ball containing <m>z_0</m> would contain an element of <m>L</m>, and since <m>z_0\notin L</m>, this would imply <m>z_0</m> is a limit point of <m>L</m>. But we saw above that <m>L\subseteq Z</m>, so this would mean <m>z_0</m> is a limit point of <m>Z</m>. This is a contradiction, since then we would have <m>z_0\in L</m>. We conclude that for all <m>z_0\in U-L</m> there is an open ball <m>B_R(z_0)\subseteq U-L</m>. Thus <m>U-L</m> is open.  
+</p>
+</case>
+<p>
+    Since the <m>L</m> is nonempty and open, and since <m>U-L</m> is open, we conclude that <m>L=U</m>, using <xref ref="th_connected_equiv"/>. Since furthermore <m>L\subseteq Z</m>, we see that <m>U=Z</m>: <ie/>, <m>f(z)=0</m> for all <m>z\in U</m>. 
+</p>
 </proof>
 </theorem>
 <theorem xml:id="cor_limit_points">
     <title>Rigidity of analytic functions</title>
     <statement>
         <p>
-           Let <m>U</m> be open and connected, and let <m>f</m> and <m>g</m> be holomorphic functions on <m>U</m>. If the set <m>Z=\{z\in U\colon f(z)=g(z)\}</m> has a limit point, then <m>f(z)=g(z)</m> for all <m>z\in U</m>. 
+           Let <m>U</m> be open and connected and let <m>f</m> and <m>g</m> be holomorphic functions on <m>U</m>. If the set <m>Z=\{z\in U\colon f(z)=g(z)\}</m> has a limit point in <m>U</m>, then <m>f(z)=g(z)</m> for all <m>z\in U</m>. 
         </p>
     </statement>
+    <proof>
+        <p>
+            The result follows from <xref ref="th_limit_point"/> applied to the analytic function <m>h(z)=f(z)-g(z)</m>. 
+        </p>
+    </proof>
 </theorem>
+<remark>
+    <title>Rigidity of analytic functions</title>
+    <p>
+        It is worthwhile enumerating some examples of sets that include limit points: 
+        <ul>
+            <li>
+                <p>
+                    Every element of an open ball <m>B_R(z_0)</m> is a limit point of the open ball. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Any nontrivial interval of the real line contains (lots) of limit points. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    More generally, if <m>C</m> is a curve parametrized by the path <m>\phi</m> and if <m>z_0=\phi(t_0)</m> and <m>z_1=\phi(t_1)</m> are distinct points on <m>C</m>, with <m>t_0&lt; t_1</m>, then <m>\phi([t_0,t_1])</m> contains limit points. In other words the segment of a curve lying between two distinct points contains limit points. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    The point <m>0</m> is a limit point of the set <m>\{0\}\cup \{1/n\colon n \text{ a positive integer}\}</m>. More generally, if <m>z_n\to w</m>, then <m>w</m> is a limit point of the set <m>\{w\}\cup \{z_n\colon n \text{ a positive integer}\}</m>.   
+                </p>
+            </li>
+        </ul>
+    </p>
+</remark>
+
+<definition xml:id="d_analytic_continuation">
+<title>Analytic continuation</title>
+<statement>
+<p>
+Let <m>f\colon D\rightarrow \C</m> be a complex function. An <term>analytic extension</term> of <m>f</m> is a pair <m>(U,g)</m> consisting of an open connected set <m>U</m> that contains <m>D</m>, and an analytic function <m>g\colon U\rightarrow \C</m> satisfying <m>g(z)=f(z)</m> for all <m>z\in D</m>.  
+</p>
+</statement>
+</definition>
+<corollary xml:id="cor_anal_continuation">
+    <title>Analytic continuation</title>
+    <statement>
+        <p>
+          Let <m>f\colon D\rightarrow \C</m> be a complex function, and let <m>U</m> be an open connected set containing <m>D</m>. If <m>(U,g)</m> and <m>(U,h)</m> are analytic continuations of <m>f</m>, then <m>g=h</m>.  
+        </p>
+        <p>
+            In other words, an analytic continuation of <m>f</m> to <m>U</m>, if it exists, is unique. 
+        </p>
+    </statement>
+</corollary>
+
+<definition xml:id="d_real_analytic">
+<title>Real analytic</title>
+<statement>
+<p>
+Let <m>I</m> be an open interval of <m>\R</m>. An infinitely differentiable function <m>f\colon I\rightarrow \R</m> is <term>(real) analytic</term> if for all <m>x_0\in I</m> there exists an open interval <m>J=(x_0-\epsilon, x_0+\epsilon)\subseteq I</m> such that 
+<me>
+    f(x)=\sum_{n=0}^\infty a_n(x-x_0)^n
+</me>,
+where <m>a_n=f^{(n)}(x_0)/n!</m>
+</p>
+</statement>
+</definition>
+<theorem xml:id="th_real_analytic">
+<title>Real analytic functions</title>
+<statement>
+<p>
+Let <m>I</m> be an open interval of <m>\R</m> and let <m>f\colon I\rightarrow \R</m> be infinitely differentiable. The following statements are equivalent. 
+<ul>
+    <li>
+        <p>
+            <m>f</m> is real analytic. 
+        </p>
+    </li>
+    <li>
+        <p>
+            There is an analytic continuation of <m>f</m> to an open connected set <m>U</m> containing <m>I</m>. 
+        </p>
+    </li>
+</ul>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<example xml:id="eg_real_analytic">
+<title>Real analytic functions</title>
+<statement>
+<p>
+It can be shown that the function <m>f\colon \R\rightarrow \R</m> defined as 
+<me>
+    f(x)=\begin{case}
+    e^{-1/x^2} \amp x&gt;  0\\
+    0       \amp x\leq 0
+    \end{case}
+</me>
+is infinitely differentiable on <m>\R</m>. It is not real analytic on any open interval <m>I</m> containing <m>0</m>, however. Indeed, if <m>f</m> had an analytic continuation <m>(U,g)</m> to a connected open subset of <m>\C</m> containing <m>I</m>, then since <m>g(z)=f(z)=0</m> for all <m>z\in (-\infty,0]\cap I</m>, and since this set clearly has a limit point, we would have <m>g(z)=0</m> for all <m>z\in U</m>. A contradiction, since <m>g(z)=f(z)=e^{-1/z^2}</m> for all <m>z\in (0,\infty)\cap I</m>.  
+</p>
+</statement>
+
+</example>
+
+
 </subsection>
+
+
 
 </section>
