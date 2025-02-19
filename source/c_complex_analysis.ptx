@@ -18,4 +18,5 @@
      <xi:include href="s_cauchy_integral_gen.ptx" />
      <xi:include href="s_power_series.ptx" />
      <xi:include href="s_analyticity.ptx" />
+     <xi:include href="s_analytic_continuation.ptx" />
 </chapter>

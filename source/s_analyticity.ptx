@@ -24,15 +24,27 @@ In particular, <m>f</m> is holomorphic at <m>z_0</m> if and only if <m>f</m> is 
 </p>
 </proof>
 </theorem>
+<p>
+    As a consequence of <xref ref="th_holo_implies_analytic"/>, we can now add <m>\exp</m>, <m>\cos</m>, and <m>\sin</m> to our list of familiar functions with power series representations centered at <m>z_0=0</m>. Observe that since these three functions are holomorphic on all of <m>\C</m>, and since <m>B_R(0)\subseteq \C</m> for all <m>R&gt; 0</m>, the radius of convergence of their <m>z_0=0</m>-centered power series is <m>\infty</m>. The coefficients of the power series for <m>f(z)=e^z</m> are easily computed using the fact that 
+    <me>
+        f^{(n)}(z)=e^z
+    </me>
+    for all integers <m>n\geq 0</m>. The power series for <m>\cos</m> and <m>\sin</m> can be derived from that of <m>\exp</m> using
+    <md>
+        <mrow>\cos z \amp = \frac{1}{2}(e^{iz}+e^{-iz})</mrow>
+        <mrow>\sin z \amp = \frac{1}{2i}(e^{-iz}-e^{-iz})</mrow>
+    </md>.
+</p>
 <corollary xml:id="cor_power_series">
     <statement>
         <p>
             We have the following power series expansions centered at <m>z_0=0</m> with indicated radius of convergence <m>R</m>. 
-            <md>
+            <md cols="2">
                 <mrow>\frac{1}{1-z} \amp = \sum_{n=0}^\infty z^n \amp R\amp =1</mrow>
                 <mrow>\frac{1}{1+z} \amp = \sum_{n=0}^\infty (-1)^nz^n \amp R\amp =1</mrow>
                 <mrow>\frac{1}{(1-z)^2} \amp = \sum_{n=0}^\infty (n+1)z^{n} \amp R\amp =1 </mrow>
                 <mrow>-\Log(1-z) \amp = \sum_{n=1}^\infty \frac{1}{n}z^n \amp R \amp =1 </mrow>
+                 <mrow>\Log(1+z) \amp = \sum_{n=1}^\infty \frac{(-1)^n}{n}z^n \amp R \amp =1 </mrow>
                 <mrow>e^z \amp = \sum_{n=0}^\infty \frac{1}{n!}z^n \amp R \amp =\infty</mrow>
                 <mrow>\cos z \amp = \sum_{n=0}^\infty \frac{(-1)^n}{(2n!)}z^{2n} \amp R \amp =\infty</mrow>
                 <mrow>\sin z \amp = \sum_{n=0}^\infty \frac{(-1)^{n}}{(2n+1)!}z^{2n+1} \amp R \amp =\infty</mrow>
@@ -40,6 +52,42 @@ In particular, <m>f</m> is holomorphic at <m>z_0</m> if and only if <m>f</m> is 
         </p>
     </statement>
 </corollary>
+<remark>
+    <title>Radius of convergence, revealed</title>
+    <p>
+        When a power series is known to be the power series expansion of a familiar function, we can often use <xref ref="th_holo_implies_analytic"/> to give a lower bound on the radius of convergence of the power series. Furthermore, further investigation of the function can sometimes reveal exactly what the radius of convergence is. For example consider the power series expansion 
+        <men xml:id="eq_rm_converge">
+            \frac{1}{1+z^2}=\sum_{n=0}^\infty (-1)^{n}z^{2n}
+        </men>.
+        Since <m>f(z)=\frac{1}{1+z^2}</m> is holomorphic on <m>B_1(0)</m>, we know from <xref ref="th_holo_implies_analytic"/> that the series above converges on <m>B_1(0)</m>. Is it possible that the series converges on <m>B_S(0)</m> for some <m>S&gt; 1</m>? No, as an investigation of the behavior of <m>f</m> near <m>z=i</m> reveals. Indeed, if the series converged on <m>B_S(0)</m> for some <m>S&gt; 1</m>, then it would define a continuous function <m>g</m> on <m>B_S(0)</m> that satisfies <m>g(z)=f(z)</m> for all <m>z\in B_1(0)</m>. But then we would have 
+        <me>
+        g(i)=\lim\limits_{z\to i}g(z)=\lim\limits_{n \to\infty }f((1-1/n)i)
+        </me>,
+        a contradiction since <m>\lim\limits_{z\to i}f(z)=\infty</m>. Thus we see that it is the poor behavior of <m>f</m> at <m>i</m> (and <m>-i</m>) that is responsible for the radius of convergence being <m>1</m>. Observe that this simple obstruction at <m>i</m> remains undetected when investigating the power series representation <xref ref="eq_rm_converge"/> solely within the realm of the reals. 
+    </p>
+</remark>
+<remark>
+    <title>Radius of convergence, tempered</title>
+    <p>
+        Just to temper your excitement about the method outlined above, consider the function <m>\Log</m>, with domain <m>U=\C-R_{\pi}</m>, and its power series expansion around <m>z_0=-1+i</m>. The usual manipulations show that we have 
+        <men xml:id="eq_rem_recip_series">
+            \frac{1}{z}=\frac{1}{z_0}\frac{1}{1+(z-z_0)/z_0}=\sum_{n=0}^\infty \frac{(-1)^{n}}{z_0^{n+1}}(z-z_0)^n 
+        </men>,
+        and hence, taking antiderivatives,
+        <md>
+           <mrow> \Log(z)\amp =\Log(z_0)+\sum_{n=1}^\infty\frac{(-1)^{n-1}}{nz_0^{n}}(z-z_0)^{n} </mrow>
+           <mrow> \amp = \ln\sqrt{2}+\frac{3\pi i}{4}+\sum_{n=1}^\infty\frac{(-1)^{n-1}}{nz_0^{n}}(z-z_0)^{n}</mrow>
+        </md>.
+        What is the radius of convergence of this power series? Since <m>B_1(z_0)=B_1(-1+i)\subseteq U</m>, we know that the radius of convergence is at least <m>1</m>, and this seems imposed upon us by the ray <m>R_\pi</m> marking an end to the domain of <m>\Log</m>. And yet, the radius of convergence of this power series is <m>\abs{z_0}=\sqrt{2}</m>, as we see by observing that the series <xref ref="eq_rem_recip_series"/> derived from the geometric series has radius of convergence <m>\sqrt{2}</m>, and thus the series for <m>\Log z</m>, obtained by taking the formal antiderivative, also has radius of convergence <m>\sqrt{2}</m>. 
+    </p>
+    <p>
+        Without saying too much, what is at issue here is the notion of <em>analytic continuation</em>. We content ourselves by remarking that if, instead of taking <m>\Log</m> and its domain <m>U=\C-R_\pi</m> we took instead <m>\Log_0</m> and its domain <m>V=\C-R_0</m>, then an analysis as in the previous remark would have sufficed to show that the radius of convergence is <m>\sqrt{2}</m>. 
+    </p>
+    
+</remark>
+<p>
+We end this section by collecting a list of equivalent formulations of being holomorphic. With the exception of the last statement, all of these equivalences now follow from previous results. For example, that (1) is equivalent with (2) follows from <xref ref="th_power_series_integral_der"/> and <xref ref="th_holo_implies_analytic"/>. That the last statement is also equivalent to being holomorphic follows from the proof of <xref ref="th_holo_implies_analytic"/>, as the only fact we used to show <m>f</m> is analytic on each <m>B_R(z_0)\subseteq U</m> is the fact that <m>f</m> is continuous and satisfies the Cauchy integral formula for all <m>w\in B_R(z_0)</m>. 
+</p>
 <theorem xml:id="th_holomorphic">
 <title>Holomorphic equivalences</title>
 <statement>
@@ -79,7 +127,7 @@ Let <m>f=u+iv</m> be a complex function defined on the open connected set <m>U</
     <li>
         <title>Cauchy integral formula</title>
         <p>
-            <m>f</m> is continuous and for all closed balls <m>\overline{B}_r(z_0)\subseteq U</m>, we have <m>f(z_0)=\frac{1}{2\pi i}\int_\gamma f(z)/(z-z_0)\, dz</m>, where <m>\gamma=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m>. 
+            <m>f</m> is continuous and for all closed balls <m>\overline{B}_r(z_0)\subseteq U</m>, we have <m>f(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)}\, dz</m>, where <m>\gamma=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m>. 
         </p>
     </li>
 </ol>
@@ -91,26 +139,7 @@ Let <m>f=u+iv</m> be a complex function defined on the open connected set <m>U</
 </proof>
 </theorem>
 
-<theorem xml:id="th_limit_point">
-<title>Limit point</title>
-<statement>
-<p>
-Let <m>U</m> be open and connected, and assume <m>f</m> is holomorphic on <m>U</m>. Let <m>Z=\{z\in U\colon f(z)=0\}</m> be the set of zeros of <m>f</m> on <m>U</m>. If <m>Z</m> has an limit point, then <m>f(z)=0</m> for all <m>z\in U</m>. 
-</p>
-</statement>
-<proof>
-<p>
-</p>
-</proof>
-</theorem>
-<corollary xml:id="cor_limit_points">
-    <title>Rigidity</title>
-    <statement>
-        <p>
-           Let <m>U</m> be open and connected, and let <m>f</m> and <m>g</m> be holomorphic functions on <m>U</m>. If the set <m>Z=\{z\in U\colon f(z)=g(z)\}</m> has a limit point, then <m>f(z)=g(z)</m> for all <m>z\in U</m>. 
-        </p>
-    </statement>
-</corollary>
+
     
 
 </section>

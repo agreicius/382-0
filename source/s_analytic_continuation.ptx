@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_analytic_continuation" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Analytic continuation</title>
+<subsection xml:id="ss_order">
+<title>Order of a zero</title>
+<p>
+    Our first result represents yet another example of the strong connection between polynomials and analytic functions: if <m>z_0</m> is a zero of the analytic function <m>f</m>, then we can <em>factor</em> <m>f</m> as <m>f(z)=(z-z_0)g(z)</m>, where <m>g</m> is analytiv. 
+</p>
+<lemma xml:id="lemma_order">
+<title>Zeros of analytic functions</title>
+<statement>
+<p>
+Suppose <m>f</m> is analytic on the open set <m>B_R(z_0)</m> and that <m>f^{(k)}(z_0)=0</m> for all <m>0\leq n\leq m-1</m>. 
+<ol>
+    <li>
+        <p>
+            We have <m>f(z)=\sum_{n=m}^\infty a_n(z-z_0)^n</m> for all <m>z\in B_R(z_0)</m>
+        </p>
+    </li>
+    <li>
+        <p>
+            We can write <m>f(z)=(z-z_0)^mg(z)</m>, where <m>g</m> is analytic on <m>B_R(z_0)</m> and satisfies 
+            <me>
+                g(z)=a_m+a_{m-1}(z-z_0)+\cdots =\sum_{n=0}^\infty a_{m+n}(z-z_0)^n
+            </me>
+            for all <m>z\in B_R(z_0)</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+    It suffices to show that the power series 
+    <me>
+        g(z)=a_m+a_{m-1}(z-z_0)+\cdots =\sum_{n=0}^\infty a_{m+n}(z-z_0)^n
+    </me>
+    converges for all <m>z\in B_R(z_0)</m>, since then <m>g</m> is analytic on <m>B_R(z_0)</m> and we have  
+    <me>
+        (z-z_0)^mg(z)=\sum{n=0}^\infty a_{m+n}(z-z_0)^{m+n}=\sum_{n=m}^\infty a_n(z-z_0)^n=f(z)
+    </me>.
+    Clearly <m>g(z)</m> converges for <m>z=z_0</m>. Assume now that <m>z\in B_R(z_0)-\{z_0\}</m>.  Let <m>g_k</m> and <m>f_k</m> be the <m>k</m>-th partial sums of <m>f(z)</m> and <m>g(z)</m>, respectively. We will show that <m>g_k(z)\to f(z)/(z-z_0)^m</m> and thus that <m>g(z)=f(z)/(z-z_0)^m</m> converges. First observe that 
+    <md>
+        <mrow>\abs{g_k(z)-\frac{f(z)}{(z-z_0)^m}} \amp = \abs{\frac{g_k(z)(z-z_0)^m-f(z)}{(z-z_0)^m}}</mrow>
+        <mrow> \amp = \abs{\frac{g_k(z)(z-z_0)^m-f_k(z)+(f_k(z)-f(z))}{(z-z_0)^m}} </mrow>
+        <mrow> \amp = \abs{\frac{f_k(z)-f(z)}{(z-z_0)^m}} \amp (g_k(z)(z-z_0)^m=f_k(z))</mrow>
+    </md>.
+    Let <m>r=\abs{z-z_0}</m>.  Given any <m>\epsilon &gt; 0</m>, since <m>f_k\to f</m>, we can find an integer <m>N\geq 0</m> such that <m>\abs{f_k(z)-f(z)}&lt; \epsilon r^n</m>. It follows that 
+    <me>
+        \abs{g_k(z)-\frac{f(z)}{(z-z_0)^m}}=\abs{\frac{f_k(z)-f(z)}{(z-z_0)^m}}&lt; \frac{\epsilon r^n}{r^n}=\epsilon
+    </me>.
+    This proves <m>g(z)=\lim_{k\to \infty}g_k(z)=f(z)/(z-z_0)^m</m>, as claimed. 
+</p>
+</proof>
+</lemma>
+<definition xml:id="d_zero_order">
+<title>Order of a zero</title>
+<statement>
+<p>
+Assume <m>f</m> is analytic at <m>z_0</m>, and that <m>f(z_0)=0</m>. The <term>order</term> of <m>f</m> at <m>z_0</m>, denoted <m>\ord_f(z_0)</m>, is defined as the smallest positive integer <m>m</m> such that <m>f^{(m)}(z_0)\ne 0</m>, if such an <m>m</m> exists, and <m>\infty</m> otherwise. 
+</p>
+</statement>
+</definition>
+<p>
+    The corollary below is a direct consequence of <xref ref="lemma_order"/> and strengthens our factorization observation made above. Namely, it tells us that if <m>\ord_f(z_0)=m</m>, then factoring <m>(z-z_0)^m</m> out from <m>f(z)</m> leaves an analytic function <m>g</m> that is nonzero at <m>z_0</m>.  
+</p>
+<corollary xml:id="cor_order_zero">
+    <title>Order of <m>f</m> at <m>z_0</m></title>
+    <statement>
+        <p>
+            Let <m>f</m> be analytic at <m>z_0</m>, and assume <m>f(z_0)=0</m>. The following statements are equivalent.
+            <ol>
+                <li>
+                    <p>
+                        <m>\ord_f(z_0)=m</m> for <m>m</m> a positive integer. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        We can write <m>f(z)=(z-z_0)^mg(z)</m>, where <m>g</m> is analytic at <m>z_0</m> and <m>g(z_0)\ne 0</m>. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+</corollary>
+<example xml:id="eg_order">
+<title>Order of <m>f</m> at <m>z_0</m></title>
+<statement>
+<p>
+Let <m>f(z)=\sin z-z</m>. 
+<ol>
+    <li>
+        <p>
+            Compute a power series expansion of <m>f</m> centered at <m>z_0=0</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Compute <m>m=\ord_f(0)</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            Find an analytic function <m>g</m> such that <m>f(z)=z^mg(z)</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
+</subsection>
+<subsection xml:id="ss_analytic_connected">
+<title>Analytic functions on connected open sets</title>
+<theorem xml:id="th_connected_equiv">
+    <title>Connectedness equivalence</title>
+    <statement>
+        <p>
+            Let <m>U</m> be an open set. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>U</m> is connected.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>V</m> is a nonempty open subset of <m>U</m>, and <m>U-V</m> is open, then <m>V=U</m>. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            We prove both implications separately. 
+        </p>
+        <case>
+        <title>Implication: (1)<m>\implies</m>(2)</title>
+        <p>
+        Assume <m>U</m> is connected. Given a <m>V</m> as in (2), we have 
+        <md>
+            <mrow>V\cup (U-V) \amp = U</mrow>
+            <mrow>U\cap V\cap (U-V) \amp \subseteq V\cap (U-V)=\emptyset</mrow>     
+        </md>.
+        It follows that <m>U\subseteq V</m> or <m>U\subseteq U-V</m>. Since <m>V\ne \emptyset</m> and <m>V\subseteq U</m>, we clearly cannot have <m>U\subseteq U-V</m>. It follows that we must have <m>U\subseteq V</m>. We conclude that <m>U=V</m>. 
+        </p>
+        </case>
+        <case>
+        <title>Implication: (2)<m>\implies</m>(1)</title>
+        <p>
+        Assume condition (2) holds. We show directly that <m>U</m> is connected. Suppose we have open sets <m>U_1, U_2</m> satisfying 
+        <md>
+            <mrow>U \amp \subseteq U_1\cup U_2</mrow>
+            <mrow>U\cap U_1\cap U_2 \amp = \emptyset</mrow>
+        </md>.
+        We will show that if <m>U\not\subseteq U_1</m>, then <m>U\subseteq U_2</m>, proving that <m>U</m> is connected. If <m>U\not\subseteq U_1</m>, then since <m>U\subseteq U_1\cup U_2</m>, we must have <m>U\cap U_2\ne \emptyset</m>. The set <m>V=U\cap U_2</m> is thus nonempty and open (since <m>U</m> and <m>U_2</m> are open). A straightforward argument shows that <m>U-V=U\cap U_1</m>, which is also open. By condition (2), we conclude that <m>V=U</m>, and thus that <m>U\subseteq U_2</m>, as desired. 
+        </p>
+        </case>
+    </proof>
+</theorem>
+<theorem xml:id="th_limit_point">
+<title>Limit point</title>
+<statement>
+<p>
+Let <m>U</m> be open and connected, and assume <m>f</m> is holomorphic on <m>U</m>. Let <m>Z=\{z\in U\colon f(z)=0\}</m> be the set of zeros of <m>f</m> on <m>U</m>. If <m>Z</m> has an limit point, then <m>f(z)=0</m> for all <m>z\in U</m>. 
+</p>
+</statement>
+<proof>
+<case>
+<title>A limit point of <m>Z</m> is a zero of infinite order</title>
+<p>
+    We first show that if <m>z_0</m> is a limit point of <m>Z</m>, then <m>z_0</m> is itself a zero of <m>f</m>, and in fact <m>\ord_f(z_0)=\infty</m>: <ie/>, we have <m>f^{(n)}(z_0)=0</m> for all <m>n\geq 0</m>. Since <m>z_0</m> is a limit point of <m>Z</m>, we can find a sequence <m>(z_n)_{n=1}^\infty</m> of elements of <m>Z-\{z_0\}</m> such that <m>\abs{z-z_n}&lt; 1/n</m>. It follows that <m>z_n\to z_0</m>. Since <m>f</m> is continuous on <m>U</m>, it follows that <m>f(z_0)=\lim\limits_{n\to \infty}f(z_n)=0</m>. Thus <m>z_0</m> is itself a zero of <m>f</m>.  To show <m>\ord_f(z_0)=\infty</m>, we use <xref ref="cor_order_zero"/> and show that for any positive integer <m>m</m> and function <m>g</m> analytic at <m>z_0</m>, if <m>f(z)=(z-z_0)^mg(z)</m>, then <m>g(z_0)=0</m>. Indeed, for any such <m>m</m> and <m>g</m> we have <m>g(z)=f(z)/(z-z_0)^m</m> for all <m>z\ne z_0</m>. Taking our same sequence <m>(z_n)</m> of elements of <m>Z-\{z_0\}</m> from above, we have <m>g(z_n)=f(z_n)/(z_n-z_0)^n=0</m>, which implies (again using continuity) that <m>g(z_0)=0</m>.
+</p>
+</case>
+
+
+</proof>
+</theorem>
+<theorem xml:id="cor_limit_points">
+    <title>Rigidity of analytic functions</title>
+    <statement>
+        <p>
+           Let <m>U</m> be open and connected, and let <m>f</m> and <m>g</m> be holomorphic functions on <m>U</m>. If the set <m>Z=\{z\in U\colon f(z)=g(z)\}</m> has a limit point, then <m>f(z)=g(z)</m> for all <m>z\in U</m>. 
+        </p>
+    </statement>
+</theorem>
+</subsection>
+
+</section>
