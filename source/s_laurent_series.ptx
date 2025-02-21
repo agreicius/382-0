@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_laurent_series" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Laurent series</title>
+    <p>
+        We have begun to see the utility of power series representations for functions <m>f</m> that are holomorphic on an open ball <m>B_R(z_0)</m>. It turns out that much of this theory (and its attendant benefits) can be extended to more general functions by relaxing somewhat the differentiability condition. Namely, we will develop a series representation for functions <m>f</m> which are holomorphic not on a full open ball centered at <m>z_0</m>, but only on an annulus of the form <m>\{z\in \C\colon R_1&gt; \abs{z-z_0}&gt; R_2\}</m>. We proceed directly to <xref ref="th_laurent"/>, which will serve to motivate our study of <em>Laurent series</em>. 
+    </p>
+    <theorem xml:id="th_laurent">
+    <title>Laurent's theorem</title>
+    <statement>
+    <p>
+    Let <m>z_0\in \C</m> and <m>A=\{z\colon R_1&lt; \abs{z-z_0} &lt; R_2\}</m>, where <m>R_1, R_2\in \C^*=\C\cup \{\infty\}</m> and <m>0\leq R_1&lt; R_2</m>. If <m>f</m> is holomorphic on <m>A</m>, then there are power series 
+    <md>
+        <mrow>g(u) \amp =\sum_{n=0}^\infty a_nu^n
+        \amp h(u) \amp =\sum_{m=1}^\infty b_mu^m</mrow>
+    </md>
+    such that 
+    <md>
+      <mrow>f(z) \amp = g(z-z_0)+h(1/(z-z_0))</mrow>
+      <mrow> \amp =  \cdots +\frac{b_2}{(z-z_0)^2}+\frac{b_1}{z-z_0}+a_0+a_1(z-z_0)+\cdots  </mrow>
+    </md>
+    for all <m>z\in A</m>. Furthermore, letting <m>\gamma(t)=z_0+re^{it}</m> for any <m>r\in (R_1,R_2)</m> we have 
+    <md>
+        <mrow>a_n \amp =\frac{n!}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz</mrow>
+        <mrow>b_m \amp =\frac{m!}{2\pi i}\int_\gamma f(z)(z-z_0)^{m-1}\, dz</mrow>
+    </md>.
+    Equivalently, for all <m>z\in A</m> we have 
+    <me>
+        f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n
+    </me>,
+    where 
+    <men xml:id="eq_laurent_expansion">
+        c_n=\frac{n!}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz
+    </men>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    
+    
+    <definition xml:id="d_laurent_series">
+    <title>Laurent series</title>
+    <statement>
+    <p>
+    Given <m>z_0\in \C</m>, a <term>(complex) laurent series centered at <m>z_0</m></term> in the variable <m>z</m> is an expression of the form 
+    <men xml:id="eq_laurent_series">
+    f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n= \cdots \frac{c_{-2}}{(z-z_0)^2}+\frac{c_{-1}}{z-z_0}+c_0+c_1(z-z_0)+c_2(z-z_0)^2+\cdots
+    </men>,
+    where <m>c_n\in \C</m>.  
+    </p>
+    <p>
+        Let
+        <mdn>
+            <mrow xml:id="eq_laurent_g">g(u) \amp =\sum_{n=0}^\infty a_n u^n, a_n=c_n</mrow>
+            <mrow xml:id="eq_laurent_h">h(u) \amp =\sum_{n=1}^\infty b_n u^n, b_n=c_{-n}</mrow>
+        </mdn>
+        so that 
+        <me>
+            f(z)=g(z-z_0)+h(1/(z-z_0))
+        </me>.
+        We say the Laurent series <m>f</m> <term>converges</term> at a complex number <m>z</m> if the series <m>g(z-z_0)</m> and <m>h(1/(z-z_0))</m> both converge, and <term>diverges</term> otherwise. In the case of convergence, we call <m>g(z-z_0)+h(1/(z-z_0))</m> the <term>value</term> of the Laurent series.  
+    </p>
+    </statement>
+    </definition>
+    <example xml:id="eg_laurent_essential">
+    <title>Laurent series expansion</title>
+    <statement>
+    <p>
+    Let <m>f(z)=e^{1/x}</m>. Find a Laurent series expansion of <m>f</m> in the annulus
+    <me>
+        A=\{z\in \C\colon 0&lt; \abs{z} &lt; \infty\}=\C-\{0\}
+    </me>.
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <remark>
+    <title>Laurent series</title>
+    <p>
+    Since the notion of convergence of a Laurent series boils down to the convergence of the two power series <xref first="eq_laurent_g" last="eq_laurent_h"/>, Laurent series inherit many of the useful properties of power series. For example, from the uniform convergence properties of <m>g</m> and <m>h</m>, it follows that the Laurent series <m>f</m> can be differentiated and integrated term-wise, just as with power series. 
+    </p>
+    <p>
+        As we saw in <xref ref="th_laurent"/>, however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for <m>g</m> and <m>h</m> are <m>R</m> and <m>S</m>, respectively, then <m>g</m> converges at all <m>z</m> with <m>\abs{z-z_0}&lt; R</m> and <m>h</m> converges for all <m>z</m> with <m>\abs{1/(z-z_0)}&lt; S</m>. Letting <m>R'=1/S</m>, it follows that <m>f</m> converges for all <m>z</m> satisfying <m>R' &lt; \abs{z-z_0}&lt; R</m>, and diverges for all <m>z</m> satisfying <m>\abs{z-z_0}&lt; R'</m> or <m>\abs{z-z_0}&gt; R</m>. Accordingly, we call <m>A=\{z\in \C\colon R' &lt; \abs{z-z_0}&lt; R\}</m> the <term>annulus of convergence</term> of <m>f</m>.
+    </p>
+    <p>
+        Furthermore, 
+    </p>
+    </remark>
+    
+    
+    
+
+</section>
