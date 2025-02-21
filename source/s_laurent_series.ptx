@@ -21,8 +21,8 @@
     </md>
     for all <m>z\in A</m>. Furthermore, letting <m>\gamma(t)=z_0+re^{it}</m> for any <m>r\in (R_1,R_2)</m> we have 
     <md>
-        <mrow>a_n \amp =\frac{n!}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz</mrow>
-        <mrow>b_m \amp =\frac{m!}{2\pi i}\int_\gamma f(z)(z-z_0)^{m-1}\, dz</mrow>
+        <mrow>a_n \amp =\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz</mrow>
+        <mrow>b_m \amp =\frac{1}{2\pi i}\int_\gamma f(z)(z-z_0)^{m-1}\, dz</mrow>
     </md>.
     Equivalently, for all <m>z\in A</m> we have 
     <me>
@@ -30,7 +30,7 @@
     </me>,
     where 
     <men xml:id="eq_laurent_expansion">
-        c_n=\frac{n!}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz
+        c_n=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz
     </men>.
     </p>
     </statement>
@@ -69,7 +69,7 @@
     <title>Laurent series expansion</title>
     <statement>
     <p>
-    Let <m>f(z)=e^{1/x}</m>. Find a Laurent series expansion of <m>f</m> in the annulus
+    Let <m>f(z)=z^3e^{1/z}</m>. Find a Laurent series expansion of <m>f</m> centered at <m>z_0=0</m> in the annulus
     <me>
         A=\{z\in \C\colon 0&lt; \abs{z} &lt; \infty\}=\C-\{0\}
     </me>.
@@ -89,10 +89,66 @@
     <p>
         As we saw in <xref ref="th_laurent"/>, however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for <m>g</m> and <m>h</m> are <m>R</m> and <m>S</m>, respectively, then <m>g</m> converges at all <m>z</m> with <m>\abs{z-z_0}&lt; R</m> and <m>h</m> converges for all <m>z</m> with <m>\abs{1/(z-z_0)}&lt; S</m>. Letting <m>R'=1/S</m>, it follows that <m>f</m> converges for all <m>z</m> satisfying <m>R' &lt; \abs{z-z_0}&lt; R</m>, and diverges for all <m>z</m> satisfying <m>\abs{z-z_0}&lt; R'</m> or <m>\abs{z-z_0}&gt; R</m>. Accordingly, we call <m>A=\{z\in \C\colon R' &lt; \abs{z-z_0}&lt; R\}</m> the <term>annulus of convergence</term> of <m>f</m>.
     </p>
-    <p>
-        Furthermore, 
-    </p>
     </remark>
+    <p>
+        As a consequence of the discussion above, given a Laurent series, there is a well-defined annulus of convergence associated to it. As the next example illustrates, however, if we begin with a function <m>f</m> and seek out Laurent series expansions of <m>f</m>, these expansions depend on the annulus we choose. 
+    </p>
+    <example xml:id="eg_laurent_series">
+    <title>Different Laurent series</title>
+    <statement>
+    <p>
+    Let <m>f(z)=\frac{1}{z^2-4z+3}</m>. Compute a convergent Laurent series for <m>f</m> centered at <m>z_0=-1</m> in the given annulus <m>A</m>
+    <ol>
+        <li>
+            <p>
+                <m>A=\{z\in \C\colon 0&lt; \abs{z+1} &lt; 2\}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>A=\{z\in \C\colon 2&lt; \abs{z+1} &lt; 4\}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>A=\{z\in \C\colon 4&lt; \abs{z} &lt;\infty\}</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_laurent_series_trunc">
+    <title>Truncated Laurent series</title>
+    <statement>
+    <p>
+    Let <m>A</m> be the annulus <m>0&lt; \abs{z} &lt; 1</m>. Compute the Laurent series <m>\sum_{n=-\infty}^\infty c_n z^n</m> of <m>f(z)=e^z/(z^3+z^2)</m> in <m>A</m> up through <m>c_2</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <example xml:id="eg_laurent_series_rational">
+    <title>Laurent series of rational function</title>
+    <statement>
+    <p>
+    Let <m>A</m> be the annulus <m>0&lt; \abs{z-1} &lt; \infty</m>: <ie/>, <m>A=\C-\{1\}</m>. Compute the Laurent series of <m>f(z)=(z^3+2z^2)/(z-1)^3</m> on <m>A</m>. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
     
     
     

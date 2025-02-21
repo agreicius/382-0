@@ -324,10 +324,10 @@ Let <m>I</m> be an open interval of <m>\R</m> and let <m>f\colon I\rightarrow \R
 <p>
 It can be shown that the function <m>f\colon \R\rightarrow \R</m> defined as 
 <me>
-    f(x)=\begin{case}
+    f(x)=\begin{cases}
     e^{-1/x^2} \amp x&gt;  0\\
     0       \amp x\leq 0
-    \end{case}
+    \end{cases}
 </me>
 is infinitely differentiable on <m>\R</m>. It is not real analytic on any open interval <m>I</m> containing <m>0</m>, however. Indeed, if <m>f</m> had an analytic continuation <m>(U,g)</m> to a connected open subset of <m>\C</m> containing <m>I</m>, then since <m>g(z)=f(z)=0</m> for all <m>z\in (-\infty,0]\cap I</m>, and since this set clearly has a limit point, we would have <m>g(z)=0</m> for all <m>z\in U</m>. A contradiction, since <m>g(z)=f(z)=e^{-1/z^2}</m> for all <m>z\in (0,\infty)\cap I</m>.  
 </p>
