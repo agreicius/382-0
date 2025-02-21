@@ -2890,6 +2890,78 @@ var ptx_lunr_docs = [
   "body": " Real analytic functions   It can be shown that the function defined as is infinitely differentiable on . It is not real analytic on any open interval containing , however. Indeed, if had an analytic continuation to a connected open subset of containing , then since for all , and since this set clearly has a limit point, we would have for all . A contradiction, since for all .   "
 },
 {
+  "id": "s_laurent_series",
+  "level": "1",
+  "url": "s_laurent_series.html",
+  "type": "Section",
+  "number": "1.20",
+  "title": "Laurent series",
+  "body": " Laurent series  We have begun to see the utility of power series representations for functions that are holomorphic on an open ball . It turns out that much of this theory (and its attendant benefits) can be extended to more general functions by relaxing somewhat the differentiability condition. Namely, we will develop a series representation for functions which are holomorphic not on a full open ball centered at , but only on an annulus of the form . We proceed directly to , which will serve to motivate our study of Laurent series .   Laurent's theorem   Let and , where and . If is holomorphic on , then there are power series such that for all . Furthermore, letting for any we have . Equivalently, for all we have , where .         Laurent series   Given , a (complex) laurent series centered at in the variable is an expression of the form , where .  Let so that . We say the Laurent series  converges at a complex number if the series and both converge, and diverges otherwise. In the case of convergence, we call the value of the Laurent series.     Laurent series expansion   Let . Find a Laurent series expansion of centered at in the annulus .         Laurent series  Since the notion of convergence of a Laurent series boils down to the convergence of the two power series , Laurent series inherit many of the useful properties of power series. For example, from the uniform convergence properties of and , it follows that the Laurent series can be differentiated and integrated term-wise, just as with power series.  As we saw in , however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for and are and , respectively, then converges at all with and converges for all with . Letting , it follows that converges for all satisfying , and diverges for all satisfying or . Accordingly, we call the annulus of convergence of .   As a consequence of the discussion above, given a Laurent series, there is a well-defined annulus of convergence associated to it. As the next example illustrates, however, if we begin with a function and seek out Laurent series expansions of , these expansions depend on the annulus we choose.   Different Laurent series   Let . Compute a convergent Laurent series for centered at in the given annulus                           Truncated Laurent series   Let be the annulus . Compute the Laurent series of in up through .         Laurent series of rational function   Let be the annulus : , . Compute the Laurent series of on .        "
+},
+{
+  "id": "th_laurent",
+  "level": "2",
+  "url": "s_laurent_series.html#th_laurent",
+  "type": "Theorem",
+  "number": "1.20.1",
+  "title": "Laurent’s theorem.",
+  "body": " Laurent's theorem   Let and , where and . If is holomorphic on , then there are power series such that for all . Furthermore, letting for any we have . Equivalently, for all we have , where .       "
+},
+{
+  "id": "d_laurent_series",
+  "level": "2",
+  "url": "s_laurent_series.html#d_laurent_series",
+  "type": "Definition",
+  "number": "1.20.2",
+  "title": "Laurent series.",
+  "body": " Laurent series   Given , a (complex) laurent series centered at in the variable is an expression of the form , where .  Let so that . We say the Laurent series  converges at a complex number if the series and both converge, and diverges otherwise. In the case of convergence, we call the value of the Laurent series.   "
+},
+{
+  "id": "eg_laurent_essential",
+  "level": "2",
+  "url": "s_laurent_series.html#eg_laurent_essential",
+  "type": "Example",
+  "number": "1.20.3",
+  "title": "Laurent series expansion.",
+  "body": " Laurent series expansion   Let . Find a Laurent series expansion of centered at in the annulus .       "
+},
+{
+  "id": "s_laurent_series-6",
+  "level": "2",
+  "url": "s_laurent_series.html#s_laurent_series-6",
+  "type": "Remark",
+  "number": "1.20.4",
+  "title": "Laurent series.",
+  "body": " Laurent series  Since the notion of convergence of a Laurent series boils down to the convergence of the two power series , Laurent series inherit many of the useful properties of power series. For example, from the uniform convergence properties of and , it follows that the Laurent series can be differentiated and integrated term-wise, just as with power series.  As we saw in , however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for and are and , respectively, then converges at all with and converges for all with . Letting , it follows that converges for all satisfying , and diverges for all satisfying or . Accordingly, we call the annulus of convergence of .  "
+},
+{
+  "id": "eg_laurent_series",
+  "level": "2",
+  "url": "s_laurent_series.html#eg_laurent_series",
+  "type": "Example",
+  "number": "1.20.5",
+  "title": "Different Laurent series.",
+  "body": " Different Laurent series   Let . Compute a convergent Laurent series for centered at in the given annulus                         "
+},
+{
+  "id": "eg_laurent_series_trunc",
+  "level": "2",
+  "url": "s_laurent_series.html#eg_laurent_series_trunc",
+  "type": "Example",
+  "number": "1.20.6",
+  "title": "Truncated Laurent series.",
+  "body": " Truncated Laurent series   Let be the annulus . Compute the Laurent series of in up through .       "
+},
+{
+  "id": "eg_laurent_series_rational",
+  "level": "2",
+  "url": "s_laurent_series.html#eg_laurent_series_rational",
+  "type": "Example",
+  "number": "1.20.7",
+  "title": "Laurent series of rational function.",
+  "body": " Laurent series of rational function   Let be the annulus : , . Compute the Laurent series of on .       "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",

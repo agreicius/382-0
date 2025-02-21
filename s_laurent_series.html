@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>Laurent series</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -393,7 +393,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="frontmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="frontmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="c_foundations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_analytic_continuation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -561,9 +561,9 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="c_complex_analysis.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Analysis</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_arithmetic.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Complex arithmetic</span></a></div>
 <ul class="structural toc-item-list">
@@ -667,7 +667,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_analytic_continuation.html#ss_analytic_connected" class="internal"><span class="title">Analytic functions on connected open sets</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_laurent_series.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Laurent series</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_laurent_series.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Laurent series</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -682,17 +682,116 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="colophon" id="front-colophon"><h2 class="heading hide-type">
-<span class="type">Colophon</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Colophon</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_laurent_series"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.20</span><span class="space"> </span><span class="title">Laurent series</span>
 </h2>
-<div class="credit">
-<b class="title">Website</b> <a class="external" href="https://pretextbook.org" target="_blank">My Website</a><details class="ptx-footnote" aria-live="polite" id="frontmatter-1-3-2"><summary class="ptx-footnote__number" title="Footnote 0.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="frontmatter-1-3-2"><code class="code-inline tex2jax_ignore">pretextbook.org</code></div></details>
+<div class="para" id="s_laurent_series-2">We have begun to see the utility of power series representations for functions <span class="process-math">\(f\)</span> that are holomorphic on an open ball <span class="process-math">\(B_R(z_0)\text{.}\)</span> It turns out that much of this theory (and its attendant benefits) can be extended to more general functions by relaxing somewhat the differentiability condition. Namely, we will develop a series representation for functions <span class="process-math">\(f\)</span> which are holomorphic not on a full open ball centered at <span class="process-math">\(z_0\text{,}\)</span> but only on an annulus of the form <span class="process-math">\(\{z\in \C\colon R_1&gt; \abs{z-z_0}&gt; R_2\}\text{.}\)</span> We proceed directly to <a href="s_laurent_series.html#th_laurent" class="xref" data-knowl="./knowl/xref/th_laurent.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.1: Laurent’s theorem">Theorem 1.20.1</a>, which will serve to motivate our study of <em class="emphasis">Laurent series</em>.</div>
+<article class="theorem theorem-like" id="th_laurent"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.1</span><span class="period">.</span><span class="space"> </span><span class="title">Laurent’s theorem.</span>
+</h3>
+<div class="para logical" id="th_laurent-2-1">
+<div class="para">Let <span class="process-math">\(z_0\in \C\)</span> and <span class="process-math">\(A=\{z\colon R_1&lt; \abs{z-z_0} &lt; R_2\}\text{,}\)</span> where <span class="process-math">\(R_1, R_2\in \C^*=\C\cup \{\infty\}\)</span> and <span class="process-math">\(0\leq R_1&lt; R_2\text{.}\)</span> If <span class="process-math">\(f\)</span> is holomorphic on <span class="process-math">\(A\text{,}\)</span> then there are power series</div>
+<div class="displaymath process-math" id="th_laurent-2-1-7">
+\begin{align*}
+g(u) \amp =\sum_{n=0}^\infty a_nu^n
+\amp h(u) \amp =\sum_{m=1}^\infty b_mu^m
+\end{align*}
 </div>
-<div class="para copyright">©2020–2028 Aaron Greicius</div>
-<div class="para license">This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <a class="external" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CreativeCommons.org</a><details class="ptx-footnote" aria-live="polite" id="frontmatter-1-4-3-2"><summary class="ptx-footnote__number" title="Footnote 0.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="frontmatter-1-4-3-2"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by-sa/4.0</code></div></details>
-</div></section></div>
+<div class="para">such that</div>
+<div class="displaymath process-math" id="th_laurent-2-1-8">
+\begin{align*}
+f(z) \amp = g(z-z_0)+h(1/(z-z_0))\\
+\amp =  \cdots +\frac{b_2}{(z-z_0)^2}+\frac{b_1}{z-z_0}+a_0+a_1(z-z_0)+\cdots  
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in A\text{.}\)</span> Furthermore, letting <span class="process-math">\(\gamma(t)=z_0+re^{it}\)</span> for any <span class="process-math">\(r\in (R_1,R_2)\)</span> we have</div>
+<div class="displaymath process-math" id="th_laurent-2-1-12">
+\begin{align*}
+a_n \amp =\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz\\
+b_m \amp =\frac{1}{2\pi i}\int_\gamma f(z)(z-z_0)^{m-1}\, dz\text{.}
+\end{align*}
+</div>
+<div class="para">Equivalently, for all <span class="process-math">\(z\in A\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n\text{,}
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" id="eq_laurent_expansion">
+\begin{equation}
+c_n=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz\text{.}\tag{1.76}
+\end{equation}
+</div>
+</div></article><details id="th_laurent-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_laurent-3-1"></div></article></details><article class="definition definition-like" id="d_laurent_series"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.20.2</span><span class="period">.</span><span class="space"> </span><span class="title">Laurent series.</span>
+</h3>
+<div class="para logical" id="d_laurent_series-2-1">
+<div class="para">Given <span class="process-math">\(z_0\in \C\text{,}\)</span> a <dfn class="terminology">(complex) laurent series centered at <span class="process-math">\(z_0\)</span></dfn> in the variable <span class="process-math">\(z\)</span> is an expression of the form</div>
+<div class="displaymath process-math" id="eq_laurent_series">
+\begin{equation}
+f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n= \cdots \frac{c_{-2}}{(z-z_0)^2}+\frac{c_{-1}}{z-z_0}+c_0+c_1(z-z_0)+c_2(z-z_0)^2+\cdots\text{,}\tag{1.77}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(c_n\in \C\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="d_laurent_series-2-2">
+<div class="para">Let</div>
+<div class="displaymath process-math" id="d_laurent_series-2-2-1">
+\begin{align}
+g(u) \amp =\sum_{n=0}^\infty a_n u^n, a_n=c_n\tag{1.78}\\
+h(u) \amp =\sum_{n=1}^\infty b_n u^n, b_n=c_{-n}\tag{1.79}
+\end{align}
+</div>
+<div class="para">so that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=g(z-z_0)+h(1/(z-z_0))\text{.}
+\end{equation*}
+</div>
+<div class="para">We say the Laurent series <span class="process-math">\(f\)</span> <dfn class="terminology">converges</dfn> at a complex number <span class="process-math">\(z\)</span> if the series <span class="process-math">\(g(z-z_0)\)</span> and <span class="process-math">\(h(1/(z-z_0))\)</span> both converge, and <dfn class="terminology">diverges</dfn> otherwise. In the case of convergence, we call <span class="process-math">\(g(z-z_0)+h(1/(z-z_0))\)</span> the <dfn class="terminology">value</dfn> of the Laurent series.</div>
+</div></article><article class="example example-like" id="eg_laurent_essential"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.3</span><span class="period">.</span><span class="space"> </span><span class="title">Laurent series expansion.</span>
+</h3>
+<div class="para logical" id="eg_laurent_essential-2-1">
+<div class="para">Let <span class="process-math">\(f(z)=z^3e^{1/z}\text{.}\)</span> Find a Laurent series expansion of <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0=0\)</span> in the annulus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\{z\in \C\colon 0&lt; \abs{z} &lt; \infty\}=\C-\{0\}\text{.}
+\end{equation*}
+</div>
+</div>
+<div class="solutions"><details id="eg_laurent_essential-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_laurent_essential-3-1"></div></div></details></div></article><article class="remark remark-like" id="s_laurent_series-6"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.20.4</span><span class="period">.</span><span class="space"> </span><span class="title">Laurent series.</span>
+</h3>
+<div class="para" id="s_laurent_series-6-2">Since the notion of convergence of a Laurent series boils down to the convergence of the two power series <a href="s_laurent_series.html#d_laurent_series-2-2-1" class="xref" data-knowl="./knowl/xref/eq_laurent_g.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.78">(1.78)–(1.79)</a>, Laurent series inherit many of the useful properties of power series. For example, from the uniform convergence properties of <span class="process-math">\(g\)</span> and <span class="process-math">\(h\text{,}\)</span> it follows that the Laurent series <span class="process-math">\(f\)</span> can be differentiated and integrated term-wise, just as with power series.</div>
+<div class="para" id="s_laurent_series-6-3">As we saw in <a href="s_laurent_series.html#th_laurent" class="xref" data-knowl="./knowl/xref/th_laurent.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.1: Laurent’s theorem">Theorem 1.20.1</a>, however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are <span class="process-math">\(R\)</span> and <span class="process-math">\(S\text{,}\)</span> respectively, then <span class="process-math">\(g\)</span> converges at all <span class="process-math">\(z\)</span> with <span class="process-math">\(\abs{z-z_0}&lt; R\)</span> and <span class="process-math">\(h\)</span> converges for all <span class="process-math">\(z\)</span> with <span class="process-math">\(\abs{1/(z-z_0)}&lt; S\text{.}\)</span> Letting <span class="process-math">\(R'=1/S\text{,}\)</span> it follows that <span class="process-math">\(f\)</span> converges for all <span class="process-math">\(z\)</span> satisfying <span class="process-math">\(R' &lt; \abs{z-z_0}&lt; R\text{,}\)</span> and diverges for all <span class="process-math">\(z\)</span> satisfying <span class="process-math">\(\abs{z-z_0}&lt; R'\)</span> or <span class="process-math">\(\abs{z-z_0}&gt; R\text{.}\)</span> Accordingly, we call <span class="process-math">\(A=\{z\in \C\colon R' &lt; \abs{z-z_0}&lt; R\}\)</span> the <dfn class="terminology">annulus of convergence</dfn> of <span class="process-math">\(f\text{.}\)</span>
+</div></article><div class="para" id="s_laurent_series-7">As a consequence of the discussion above, given a Laurent series, there is a well-defined annulus of convergence associated to it. As the next example illustrates, however, if we begin with a function <span class="process-math">\(f\)</span> and seek out Laurent series expansions of <span class="process-math">\(f\text{,}\)</span> these expansions depend on the annulus we choose.</div>
+<article class="example example-like" id="eg_laurent_series"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.5</span><span class="period">.</span><span class="space"> </span><span class="title">Different Laurent series.</span>
+</h3>
+<div class="para logical" id="eg_laurent_series-2-1">
+<div class="para">Let <span class="process-math">\(f(z)=\frac{1}{z^2-4z+3}\text{.}\)</span> Compute a convergent Laurent series for <span class="process-math">\(f\)</span> centered at <span class="process-math">\(z_0=-1\)</span> in the given annulus <span class="process-math">\(A\)</span>
+</div>
+<ol class="decimal" id="eg_laurent_series-2-1-5">
+<li id="eg_laurent_series-2-1-5-1"><div class="para" id="eg_laurent_series-2-1-5-1-1"><span class="process-math">\(\displaystyle A=\{z\in \C\colon 0&lt; \abs{z+1} &lt; 2\}\)</span></div></li>
+<li id="eg_laurent_series-2-1-5-2"><div class="para" id="eg_laurent_series-2-1-5-2-1"><span class="process-math">\(\displaystyle A=\{z\in \C\colon 2&lt; \abs{z+1} &lt; 4\}\)</span></div></li>
+<li id="eg_laurent_series-2-1-5-3"><div class="para" id="eg_laurent_series-2-1-5-3-1"><span class="process-math">\(\displaystyle A=\{z\in \C\colon 4&lt; \abs{z} &lt;\infty\}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions"><details id="eg_laurent_series-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_laurent_series-3-1"></div></div></details></div></article><article class="example example-like" id="eg_laurent_series_trunc"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.6</span><span class="period">.</span><span class="space"> </span><span class="title">Truncated Laurent series.</span>
+</h3>
+<div class="para" id="eg_laurent_series_trunc-2-1">Let <span class="process-math">\(A\)</span> be the annulus <span class="process-math">\(0&lt; \abs{z} &lt; 1\text{.}\)</span> Compute the Laurent series <span class="process-math">\(\sum_{n=-\infty}^\infty c_n z^n\)</span> of <span class="process-math">\(f(z)=e^z/(z^3+z^2)\)</span> in <span class="process-math">\(A\)</span> up through <span class="process-math">\(c_2\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_laurent_series_trunc-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_laurent_series_trunc-3-1"></div></div></details></div></article><article class="example example-like" id="eg_laurent_series_rational"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.7</span><span class="period">.</span><span class="space"> </span><span class="title">Laurent series of rational function.</span>
+</h3>
+<div class="para" id="eg_laurent_series_rational-2-1">Let <span class="process-math">\(A\)</span> be the annulus <span class="process-math">\(0&lt; \abs{z-1} &lt; \infty\text{:}\)</span> i.e., <span class="process-math">\(A=\C-\{1\}\text{.}\)</span> Compute the Laurent series of <span class="process-math">\(f(z)=(z^3+2z^2)/(z-1)^3\)</span> on <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_laurent_series_rational-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_laurent_series_rational-3-1"></div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="frontmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="c_foundations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_analytic_continuation.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
