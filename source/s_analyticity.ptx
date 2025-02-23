@@ -9,10 +9,14 @@
 <title>Holomorphic implies analytic</title>
 <statement>
 <p>
-Let <m>f</m> be holomorphic on the open set <m>U</m>. Given any <m>z_0\in U</m> and <m>R&gt; 0</m> satisfying <m>B_R(z_0)\subseteq U</m>, we have <m>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m> for all <m>z\in B_{R}(z_0)</m>, where 
+Let <m>f</m> be holomorphic on the open set <m>U</m>. Given any <m>z_0\in U</m> and <m>R&gt; 0</m> satisfying <m>B_R(z_0)\subseteq U</m>, we have a convergent power series representation 
+<me>f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</me> for all <m>z\in B_{R}(z_0)</m>. Furthermore, given any <m>r</m> satisfying <m>0&lt; r&lt; R</m>, we have 
 <men xml:id="eq_power_series_coeff_formula">
      a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}
-</men>.
+</men>,
+where <m>\gamma(t)=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m>. 
+</p>
+<p>
 In particular, <m>f</m> is holomorphic at <m>z_0</m> if and only if <m>f</m> is analytic at <m>z_0</m>. Using logical shorthand: 
 <men xml:id="eq_holo_iff_anal">
     f \text{ holomorphic at } z_0 \iff  f \text{ analytic at } z_0
@@ -24,6 +28,30 @@ In particular, <m>f</m> is holomorphic at <m>z_0</m> if and only if <m>f</m> is 
 </p>
 </proof>
 </theorem>
+<figure xml:id="fig_holo_implies_analytic">
+    <caption>Visual idea behind proof of <xref ref="th_holo_implies_analytic"/></caption>
+    <image width="50%">
+        <shortdescription>Visual idea behind proof of theorem</shortdescription>
+        <sageplot>
+P=point((1,1),color="blue", size=60, ticks=[[],[]])
+Q=point((1.85,1.85),color="blue", size=60)
+C=circle((1,1),2,color="green")
+D=circle((1.85,1.85), .7, color="green")
+E=circle((1,1),2.5, color="red")
+t1=text("$w$",(1.75,1.65),color="black", fontsize=14)
+t2=text("$z_0$",(.75,1.15),color="black", fontsize=14)
+t3=text("$R$",(1.15,-.5),color="black", fontsize=14)
+t4=text("$r$",(1.2+1/sqrt(2),1.2-1/sqrt(2)),color="black", fontsize=14)
+t5=text("$s$",(1.65+.35/sqrt(2),2+.35/sqrt(2)),color="black", fontsize=14)
+t6=text("$\\gamma$",(1+2.2/sqrt(2),1-2.2/sqrt(2)),color="black", fontsize=16)
+t7=text("$\\alpha$",(1.85+.85/sqrt(2),1.85-.85/sqrt(2)),color="black", fontsize=16)
+l1=line(((1,1),(1,-1.5)),linestyle="dashed", color="black")
+l2=line(((1.85,1.85),(1.85+.7/sqrt(2),1.85+.7/sqrt(2))),linestyle="dashed", color="black")
+l3=line(((1,1),(1+2/sqrt(2),1-2/sqrt(2))),linestyle="dashed", color="black")
+P+C+Q+D+t1+t2+l1+l2+E+l3+t3+t4+t5+t6+t7
+        </sageplot>
+    </image>
+</figure>
 <p>
     As a consequence of <xref ref="th_holo_implies_analytic"/>, we can now add <m>\exp</m>, <m>\cos</m>, and <m>\sin</m> to our list of familiar functions with power series representations centered at <m>z_0=0</m>. Observe that since these three functions are holomorphic on all of <m>\C</m>, and since <m>B_R(0)\subseteq \C</m> for all <m>R&gt; 0</m>, the radius of convergence of their <m>z_0=0</m>-centered power series is <m>\infty</m>. The coefficients of the power series for <m>f(z)=e^z</m> are easily computed using the fact that 
     <me>

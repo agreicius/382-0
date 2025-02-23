@@ -36,10 +36,72 @@
     </statement>
     <proof>
     <p>
+        The proof is very simple to the proof of <xref ref="th_holo_implies_analytic"/>: the main fact we use is the Cauchy integral formula applied to elements within <m>A</m>. In more detail, given <m>w\in A</m>, pick a closed ball <m>\overline{B}_s(z_0)\subseteq A</m>, and let <m>\phi=w+se^{it}</m>, <m>t\in [0,2\pi]</m>. Next pick <m>R</m> and <m>S</m> satisfying <m>R_1&lt; R &lt; S &lt; R_2</m> such that <m>\overline{B}_s(z_0)</m> lies in the annular region <m>R&lt; \abs{z-z_0}&lt; S</m>, and let <m>\gamma_R(t)=z_0+Re^{it}</m> and <m>\gamma_S(t)=z_0+Se^{it}</m>, <m>t\in [0,2\pi]</m>. (See <xref ref="fig_laurent"/> .) By the Cauchy integral formula, we have 
+        <me>
+            f(w)=\frac{1}{2\pi i}\int_\phi \frac{f(z)}{z-w}\, dz
+        </me>.
+        By the principle of path deformation we have 
+        <me>
+          f(w)=\frac{1}{2\pi i}\int_\phi \frac{f(z)}{z-w}\, dz=\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{z-w}\, dz-\frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{z-w}\, dz  
+        </me>.
+        Since <m>\abs{(w-z_0)/(z-w_0)}&lt; 1</m> for all <m>z\in \gamma_S</m>, we have 
+        <md>
+            <mrow>\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{z-w}\, dw \amp = \frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{z-z_0}\cdot \frac{1}{1-(w-z_0)/(z-z_0)}\, dw </mrow>
+            <mrow> \amp = \frac{1}{2\pi i}\int_{\gamma_S}(\frac{f(z)}{z-z_0}\sum_{n=0}^\infty((w-z_0)/(z-z_0))^n)\, dz</mrow>
+            <mrow> \amp =\frac{1}{2\pi i} \sum_{n=0}^\infty\int_{\gamma_S}(\frac{f(z)}{(z-z_0)^{n+1}}\, dz)(w-z_0)^n</mrow>
+            <mrow> \amp = \sum_{n=0}^\infty a_n(w-z_0)^n , \  a_n=\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{(z-z_0)^n}\, dz</mrow>
+        </md>.
+        Similarly, since <m>\abs{(z-z_0)/(w-z_0)}&lt; 1</m> for all <m>z\in \gamma_R</m>, we have 
+        <md>
+            <mrow>\frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{z-w}\, dw \amp = \frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{w-z_0}\cdot \frac{-1}{1-(z-z_0)/(w-z_0)}\, dw </mrow>
+            <mrow> \amp = -\frac{1}{2\pi i}\int_{\gamma_R}(\sum_{n=0}^\infty\frac{f(z)(z-z_0)^{n}}{(w-z_0)^{n+1}})\, dz</mrow>
+            <mrow> \amp = -\frac{1}{2\pi i}\sum_{n=0}^\infty\int_{\gamma_R}(\frac{f(z)}{(z-z_0)^{n}}\, dz)(w-z_0)^{n+1}</mrow>
+            <mrow> \amp = -\sum_{n=1}^\infty b_n(w-z_0)^{-n}, \  b_n=\frac{1}{2\pi i}\int_{\gamma_R}f(z)(z-z_0)^{n-1}\, dz</mrow>
+        </md>.
+        (Note that in both these computations we are justified in bringing the integral into the infinite sum thanks to the uniform convergence of this sum to the given function.)
+    </p>
+    <p>
+        Putting it all together, we have 
+        <md>
+            <mrow> f(w)\amp =\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{z-w}\, dz-\frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{z-w}\, dz</mrow>
+            <mrow> \amp = \sum_{n=0}^\infty a_n(w-z_0)^n+\sum_{n=1}^\infty \frac{b_n}{(w-z_0)^n}</mrow>
+        </md>
+        for all <m>w\in A</m>, where (using the principle of deformation once again)
+        <md>
+            <mrow> a_n \amp=\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{(z-z_0){n+1}}\, dz=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{(z-z_0){n+1}}\, dz </mrow>
+            <mrow> b_n \amp=\frac{1}{2\pi i}\int_{\gamma_R}f(z)(z-z_0)^{n-1}\, dz=\frac{1}{2\pi i}\int_{\gamma}f(z)(z-z_0)^{n-1}\, dz </mrow>
+        </md>.
+        Recall that <m>\gamma(t)=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m> for some <m>r\in (R_1,R_2)</m>. 
     </p>
     </proof>
     </theorem>
-    
+    <figure xml:id="fig_laurent">
+        <caption>Visual idea behind proof of <xref ref="th_laurent"/></caption>
+        <image width="50%">
+            <shortdescription>Visual idea behind proof of theorem</shortdescription>
+        <sageplot>
+P=point((1,1),color="blue", size=60, ticks=[[],[]])
+Q=point((2,2),color="blue", size=60)
+C=circle((1,1),2.25,color="green")
+D=circle((2,2), .5, color="green")
+E=circle((1,1),.75, color="red")
+F=circle((1,1),2.5, color="red")
+G=circle((1,1),.85,color="green")
+t1=text("$w$",(1.85,1.75),color="black", fontsize=14)
+t2=text("$z_0$",(1.25,1.15),color="black", fontsize=14)
+t3=text("$R_2$",(.75,2.5),color="black", fontsize=14)
+t6=text("$R_1$",(.75,1.35),color="black", fontsize=14)
+t4=text("$S$",(1.2+1.5/sqrt(2),1.2-1.5/sqrt(2)),color="black", fontsize=14)
+t5=text("$s$",(1.85+.25/sqrt(2),2.15+.25/sqrt(2)),color="black", fontsize=14)
+t7=text("$R$",(1.15-.4/sqrt(2),.85-.4/sqrt(2)),color="black", fontsize=14)
+l1=line(((1,1),(1,3.5)),linestyle="dashed", color="black")
+l2=line(((2,2),(2+.5/sqrt(2),2+.5/sqrt(2))),linestyle="dashed", color="black")
+l3=line(((1,1),(1+2.25/sqrt(2),1-2.25/sqrt(2))),linestyle="dashed", color="black")
+l4=line(((1,1),(1-.85/sqrt(2),1-.85/sqrt(2))),linestyle="dashed", color="black")
+P+C+Q+D+t1+t2+l1+l2+E+l3+t3+t4+t5+F+t6+G+l4+t6+t7
+        </sageplot>
+        </image>
+    </figure>
     
     <definition xml:id="d_laurent_series">
     <title>Laurent series</title>
