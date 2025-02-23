@@ -2707,7 +2707,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.18",
   "title": "Analyticity of holomorphic functions",
-  "body": " Analyticity of holomorphic functions  We now prove the converse of .   Holomorphic implies analytic   Let be holomorphic on the open set . Given any and satisfying , we have for all , where . In particular, is holomorphic at if and only if is analytic at . Using logical shorthand: .        As a consequence of , we can now add , , and to our list of familiar functions with power series representations centered at . Observe that since these three functions are holomorphic on all of , and since for all , the radius of convergence of their -centered power series is . The coefficients of the power series for are easily computed using the fact that for all integers . The power series for and can be derived from that of using .    We have the following power series expansions centered at with indicated radius of convergence . .     Radius of convergence, revealed  When a power series is known to be the power series expansion of a familiar function, we can often use to give a lower bound on the radius of convergence of the power series. Furthermore, further investigation of the function can sometimes reveal exactly what the radius of convergence is. For example consider the power series expansion . Since is holomorphic on , we know from that the series above converges on . Is it possible that the series converges on for some ? No, as an investigation of the behavior of near reveals. Indeed, if the series converged on for some , then it would define a continuous function on that satisfies for all . But then we would have , a contradiction since . Thus we see that it is the poor behavior of at (and ) that is responsible for the radius of convergence being . Observe that this simple obstruction at remains undetected when investigating the power series representation solely within the realm of the reals.    Radius of convergence, tempered  Just to temper your excitement about the method outlined above, consider the function , with domain , and its power series expansion around . The usual manipulations show that we have , and hence, taking antiderivatives, . What is the radius of convergence of this power series? Since , we know that the radius of convergence is at least , and this seems imposed upon us by the ray marking an end to the domain of . And yet, the radius of convergence of this power series is , as we see by observing that the series derived from the geometric series has radius of convergence , and thus the series for , obtained by taking the formal antiderivative, also has radius of convergence .  Without saying too much, what is at issue here is the notion of analytic continuation . We content ourselves by remarking that if, instead of taking and its domain we took instead and its domain , then an analysis as in the previous remark would have sufficed to show that the radius of convergence is .   We end this section by collecting a list of equivalent formulations of being holomorphic. With the exception of the last statement, all of these equivalences now follow from previous results. For example, that (1) is equivalent with (2) follows from and . That the last statement is also equivalent to being holomorphic follows from the proof of , as the only fact we used to show is analytic on each is the fact that is continuous and satisfies the Cauchy integral formula for all .   Holomorphic equivalences   Let be a complex function defined on the open connected set . The following statements are equivalent.   Holomorphic   is holomorphic on .    Analytic   is analytic on . In fact, for all , admits a power series expansion centered at that converges on .    Cauchy-Riemann   and have continuous first-order partial derivatives and satisfy the Cauchy-Riemann equations.    Morera's theorem   is continuous and satisfies for any triangle .    Local antiderivative  For all there is an open ball and function such that is an antiderivative of on .    Cauchy integral formula   is continuous and for all closed balls , we have , where , .           "
+  "body": " Analyticity of holomorphic functions  We now prove the converse of .   Holomorphic implies analytic   Let be holomorphic on the open set . Given any and satisfying , we have a convergent power series representation for all . Furthermore, given any satisfying , we have , where , .  In particular, is holomorphic at if and only if is analytic at . Using logical shorthand: .         Visual idea behind proof of   Visual idea behind proof of theorem     As a consequence of , we can now add , , and to our list of familiar functions with power series representations centered at . Observe that since these three functions are holomorphic on all of , and since for all , the radius of convergence of their -centered power series is . The coefficients of the power series for are easily computed using the fact that for all integers . The power series for and can be derived from that of using .    We have the following power series expansions centered at with indicated radius of convergence . .     Radius of convergence, revealed  When a power series is known to be the power series expansion of a familiar function, we can often use to give a lower bound on the radius of convergence of the power series. Furthermore, further investigation of the function can sometimes reveal exactly what the radius of convergence is. For example consider the power series expansion . Since is holomorphic on , we know from that the series above converges on . Is it possible that the series converges on for some ? No, as an investigation of the behavior of near reveals. Indeed, if the series converged on for some , then it would define a continuous function on that satisfies for all . But then we would have , a contradiction since . Thus we see that it is the poor behavior of at (and ) that is responsible for the radius of convergence being . Observe that this simple obstruction at remains undetected when investigating the power series representation solely within the realm of the reals.    Radius of convergence, tempered  Just to temper your excitement about the method outlined above, consider the function , with domain , and its power series expansion around . The usual manipulations show that we have , and hence, taking antiderivatives, . What is the radius of convergence of this power series? Since , we know that the radius of convergence is at least , and this seems imposed upon us by the ray marking an end to the domain of . And yet, the radius of convergence of this power series is , as we see by observing that the series derived from the geometric series has radius of convergence , and thus the series for , obtained by taking the formal antiderivative, also has radius of convergence .  Without saying too much, what is at issue here is the notion of analytic continuation . We content ourselves by remarking that if, instead of taking and its domain we took instead and its domain , then an analysis as in the previous remark would have sufficed to show that the radius of convergence is .   We end this section by collecting a list of equivalent formulations of being holomorphic. With the exception of the last statement, all of these equivalences now follow from previous results. For example, that (1) is equivalent with (2) follows from and . That the last statement is also equivalent to being holomorphic follows from the proof of , as the only fact we used to show is analytic on each is the fact that is continuous and satisfies the Cauchy integral formula for all .   Holomorphic equivalences   Let be a complex function defined on the open connected set . The following statements are equivalent.   Holomorphic   is holomorphic on .    Analytic   is analytic on . In fact, for all , admits a power series expansion centered at that converges on .    Cauchy-Riemann   and have continuous first-order partial derivatives and satisfy the Cauchy-Riemann equations.    Morera's theorem   is continuous and satisfies for any triangle .    Local antiderivative  For all there is an open ball and function such that is an antiderivative of on .    Cauchy integral formula   is continuous and for all closed balls , we have , where , .           "
 },
 {
   "id": "th_holo_implies_analytic",
@@ -2716,25 +2716,25 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.18.1",
   "title": "Holomorphic implies analytic.",
-  "body": " Holomorphic implies analytic   Let be holomorphic on the open set . Given any and satisfying , we have for all , where . In particular, is holomorphic at if and only if is analytic at . Using logical shorthand: .       "
+  "body": " Holomorphic implies analytic   Let be holomorphic on the open set . Given any and satisfying , we have a convergent power series representation for all . Furthermore, given any satisfying , we have , where , .  In particular, is holomorphic at if and only if is analytic at . Using logical shorthand: .       "
+},
+{
+  "id": "fig_holo_implies_analytic",
+  "level": "2",
+  "url": "s_analyticity.html#fig_holo_implies_analytic",
+  "type": "Figure",
+  "number": "1.18.2",
+  "title": "",
+  "body": " Visual idea behind proof of   Visual idea behind proof of theorem    "
 },
 {
   "id": "cor_power_series",
   "level": "2",
   "url": "s_analyticity.html#cor_power_series",
   "type": "Corollary",
-  "number": "1.18.2",
+  "number": "1.18.3",
   "title": "",
   "body": "  We have the following power series expansions centered at with indicated radius of convergence . .   "
-},
-{
-  "id": "s_analyticity-6",
-  "level": "2",
-  "url": "s_analyticity.html#s_analyticity-6",
-  "type": "Remark",
-  "number": "1.18.3",
-  "title": "Radius of convergence, revealed.",
-  "body": " Radius of convergence, revealed  When a power series is known to be the power series expansion of a familiar function, we can often use to give a lower bound on the radius of convergence of the power series. Furthermore, further investigation of the function can sometimes reveal exactly what the radius of convergence is. For example consider the power series expansion . Since is holomorphic on , we know from that the series above converges on . Is it possible that the series converges on for some ? No, as an investigation of the behavior of near reveals. Indeed, if the series converged on for some , then it would define a continuous function on that satisfies for all . But then we would have , a contradiction since . Thus we see that it is the poor behavior of at (and ) that is responsible for the radius of convergence being . Observe that this simple obstruction at remains undetected when investigating the power series representation solely within the realm of the reals.  "
 },
 {
   "id": "s_analyticity-7",
@@ -2742,6 +2742,15 @@ var ptx_lunr_docs = [
   "url": "s_analyticity.html#s_analyticity-7",
   "type": "Remark",
   "number": "1.18.4",
+  "title": "Radius of convergence, revealed.",
+  "body": " Radius of convergence, revealed  When a power series is known to be the power series expansion of a familiar function, we can often use to give a lower bound on the radius of convergence of the power series. Furthermore, further investigation of the function can sometimes reveal exactly what the radius of convergence is. For example consider the power series expansion . Since is holomorphic on , we know from that the series above converges on . Is it possible that the series converges on for some ? No, as an investigation of the behavior of near reveals. Indeed, if the series converged on for some , then it would define a continuous function on that satisfies for all . But then we would have , a contradiction since . Thus we see that it is the poor behavior of at (and ) that is responsible for the radius of convergence being . Observe that this simple obstruction at remains undetected when investigating the power series representation solely within the realm of the reals.  "
+},
+{
+  "id": "s_analyticity-8",
+  "level": "2",
+  "url": "s_analyticity.html#s_analyticity-8",
+  "type": "Remark",
+  "number": "1.18.5",
   "title": "Radius of convergence, tempered.",
   "body": " Radius of convergence, tempered  Just to temper your excitement about the method outlined above, consider the function , with domain , and its power series expansion around . The usual manipulations show that we have , and hence, taking antiderivatives, . What is the radius of convergence of this power series? Since , we know that the radius of convergence is at least , and this seems imposed upon us by the ray marking an end to the domain of . And yet, the radius of convergence of this power series is , as we see by observing that the series derived from the geometric series has radius of convergence , and thus the series for , obtained by taking the formal antiderivative, also has radius of convergence .  Without saying too much, what is at issue here is the notion of analytic continuation . We content ourselves by remarking that if, instead of taking and its domain we took instead and its domain , then an analysis as in the previous remark would have sufficed to show that the radius of convergence is .  "
 },
@@ -2750,7 +2759,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_analyticity.html#th_holomorphic",
   "type": "Theorem",
-  "number": "1.18.5",
+  "number": "1.18.6",
   "title": "Holomorphic equivalences.",
   "body": " Holomorphic equivalences   Let be a complex function defined on the open connected set . The following statements are equivalent.   Holomorphic   is holomorphic on .    Analytic   is analytic on . In fact, for all , admits a power series expansion centered at that converges on .    Cauchy-Riemann   and have continuous first-order partial derivatives and satisfy the Cauchy-Riemann equations.    Morera's theorem   is continuous and satisfies for any triangle .    Local antiderivative  For all there is an open ball and function such that is an antiderivative of on .    Cauchy integral formula   is continuous and for all closed balls , we have , where , .          "
 },
@@ -2896,7 +2905,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.20",
   "title": "Laurent series",
-  "body": " Laurent series  We have begun to see the utility of power series representations for functions that are holomorphic on an open ball . It turns out that much of this theory (and its attendant benefits) can be extended to more general functions by relaxing somewhat the differentiability condition. Namely, we will develop a series representation for functions which are holomorphic not on a full open ball centered at , but only on an annulus of the form . We proceed directly to , which will serve to motivate our study of Laurent series .   Laurent's theorem   Let and , where and . If is holomorphic on , then there are power series such that for all . Furthermore, letting for any we have . Equivalently, for all we have , where .         Laurent series   Given , a (complex) laurent series centered at in the variable is an expression of the form , where .  Let so that . We say the Laurent series  converges at a complex number if the series and both converge, and diverges otherwise. In the case of convergence, we call the value of the Laurent series.     Laurent series expansion   Let . Find a Laurent series expansion of centered at in the annulus .         Laurent series  Since the notion of convergence of a Laurent series boils down to the convergence of the two power series , Laurent series inherit many of the useful properties of power series. For example, from the uniform convergence properties of and , it follows that the Laurent series can be differentiated and integrated term-wise, just as with power series.  As we saw in , however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for and are and , respectively, then converges at all with and converges for all with . Letting , it follows that converges for all satisfying , and diverges for all satisfying or . Accordingly, we call the annulus of convergence of .   As a consequence of the discussion above, given a Laurent series, there is a well-defined annulus of convergence associated to it. As the next example illustrates, however, if we begin with a function and seek out Laurent series expansions of , these expansions depend on the annulus we choose.   Different Laurent series   Let . Compute a convergent Laurent series for centered at in the given annulus                           Truncated Laurent series   Let be the annulus . Compute the Laurent series of in up through .         Laurent series of rational function   Let be the annulus : , . Compute the Laurent series of on .        "
+  "body": " Laurent series  We have begun to see the utility of power series representations for functions that are holomorphic on an open ball . It turns out that much of this theory (and its attendant benefits) can be extended to more general functions by relaxing somewhat the differentiability condition. Namely, we will develop a series representation for functions which are holomorphic not on a full open ball centered at , but only on an annulus of the form . We proceed directly to , which will serve to motivate our study of Laurent series .   Laurent's theorem   Let and , where and . If is holomorphic on , then there are power series such that for all . Furthermore, letting for any we have . Equivalently, for all we have , where .    The proof is very simple to the proof of : the main fact we use is the Cauchy integral formula applied to elements within . In more detail, given , pick a closed ball , and let , . Next pick and satisfying such that lies in the annular region , and let and , . (See .) By the Cauchy integral formula, we have . By the principle of path deformation we have . Since for all , we have . Similarly, since for all , we have . (Note that in both these computations we are justified in bringing the integral into the infinite sum thanks to the uniform convergence of this sum to the given function.)  Putting it all together, we have for all , where (using the principle of deformation once again) . Recall that , for some .     Visual idea behind proof of   Visual idea behind proof of theorem      Laurent series   Given , a (complex) laurent series centered at in the variable is an expression of the form , where .  Let so that . We say the Laurent series  converges at a complex number if the series and both converge, and diverges otherwise. In the case of convergence, we call the value of the Laurent series.     Laurent series expansion   Let . Find a Laurent series expansion of centered at in the annulus .         Laurent series  Since the notion of convergence of a Laurent series boils down to the convergence of the two power series , Laurent series inherit many of the useful properties of power series. For example, from the uniform convergence properties of and , it follows that the Laurent series can be differentiated and integrated term-wise, just as with power series.  As we saw in , however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for and are and , respectively, then converges at all with and converges for all with . Letting , it follows that converges for all satisfying , and diverges for all satisfying or . Accordingly, we call the annulus of convergence of .   As a consequence of the discussion above, given a Laurent series, there is a well-defined annulus of convergence associated to it. As the next example illustrates, however, if we begin with a function and seek out Laurent series expansions of , these expansions depend on the annulus we choose.   Different Laurent series   Let . Compute a convergent Laurent series for centered at in the given annulus                           Truncated Laurent series   Let be the annulus . Compute the Laurent series of in up through .         Laurent series of rational function   Let be the annulus : , . Compute the Laurent series of on .        "
 },
 {
   "id": "th_laurent",
@@ -2905,14 +2914,23 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.20.1",
   "title": "Laurent’s theorem.",
-  "body": " Laurent's theorem   Let and , where and . If is holomorphic on , then there are power series such that for all . Furthermore, letting for any we have . Equivalently, for all we have , where .       "
+  "body": " Laurent's theorem   Let and , where and . If is holomorphic on , then there are power series such that for all . Furthermore, letting for any we have . Equivalently, for all we have , where .    The proof is very simple to the proof of : the main fact we use is the Cauchy integral formula applied to elements within . In more detail, given , pick a closed ball , and let , . Next pick and satisfying such that lies in the annular region , and let and , . (See .) By the Cauchy integral formula, we have . By the principle of path deformation we have . Since for all , we have . Similarly, since for all , we have . (Note that in both these computations we are justified in bringing the integral into the infinite sum thanks to the uniform convergence of this sum to the given function.)  Putting it all together, we have for all , where (using the principle of deformation once again) . Recall that , for some .   "
+},
+{
+  "id": "fig_laurent",
+  "level": "2",
+  "url": "s_laurent_series.html#fig_laurent",
+  "type": "Figure",
+  "number": "1.20.2",
+  "title": "",
+  "body": " Visual idea behind proof of   Visual idea behind proof of theorem    "
 },
 {
   "id": "d_laurent_series",
   "level": "2",
   "url": "s_laurent_series.html#d_laurent_series",
   "type": "Definition",
-  "number": "1.20.2",
+  "number": "1.20.3",
   "title": "Laurent series.",
   "body": " Laurent series   Given , a (complex) laurent series centered at in the variable is an expression of the form , where .  Let so that . We say the Laurent series  converges at a complex number if the series and both converge, and diverges otherwise. In the case of convergence, we call the value of the Laurent series.   "
 },
@@ -2921,16 +2939,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_laurent_series.html#eg_laurent_essential",
   "type": "Example",
-  "number": "1.20.3",
+  "number": "1.20.4",
   "title": "Laurent series expansion.",
   "body": " Laurent series expansion   Let . Find a Laurent series expansion of centered at in the annulus .       "
 },
 {
-  "id": "s_laurent_series-6",
+  "id": "s_laurent_series-7",
   "level": "2",
-  "url": "s_laurent_series.html#s_laurent_series-6",
+  "url": "s_laurent_series.html#s_laurent_series-7",
   "type": "Remark",
-  "number": "1.20.4",
+  "number": "1.20.5",
   "title": "Laurent series.",
   "body": " Laurent series  Since the notion of convergence of a Laurent series boils down to the convergence of the two power series , Laurent series inherit many of the useful properties of power series. For example, from the uniform convergence properties of and , it follows that the Laurent series can be differentiated and integrated term-wise, just as with power series.  As we saw in , however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for and are and , respectively, then converges at all with and converges for all with . Letting , it follows that converges for all satisfying , and diverges for all satisfying or . Accordingly, we call the annulus of convergence of .  "
 },
@@ -2939,7 +2957,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_laurent_series.html#eg_laurent_series",
   "type": "Example",
-  "number": "1.20.5",
+  "number": "1.20.6",
   "title": "Different Laurent series.",
   "body": " Different Laurent series   Let . Compute a convergent Laurent series for centered at in the given annulus                         "
 },
@@ -2948,7 +2966,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_laurent_series.html#eg_laurent_series_trunc",
   "type": "Example",
-  "number": "1.20.6",
+  "number": "1.20.7",
   "title": "Truncated Laurent series.",
   "body": " Truncated Laurent series   Let be the annulus . Compute the Laurent series of in up through .       "
 },
@@ -2957,7 +2975,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_laurent_series.html#eg_laurent_series_rational",
   "type": "Example",
-  "number": "1.20.7",
+  "number": "1.20.8",
   "title": "Laurent series of rational function.",
   "body": " Laurent series of rational function   Let be the annulus : , . Compute the Laurent series of on .       "
 },

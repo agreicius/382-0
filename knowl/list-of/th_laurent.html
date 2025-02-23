@@ -48,6 +48,56 @@ f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n\text{,}
 c_n=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}\, dz\text{.}\tag{1.76}
 \end{equation}
 </div>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_laurent_series.html#th_laurent">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">The proof is very simple to the proof of <a href="s_analyticity.html#th_holo_implies_analytic" class="xref" data-knowl="./knowl/xref/th_holo_implies_analytic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.1: Holomorphic implies analytic">Theorem 1.18.1</a>: the main fact we use is the Cauchy integral formula applied to elements within <span class="process-math">\(A\text{.}\)</span> In more detail, given <span class="process-math">\(w\in A\text{,}\)</span> pick a closed ball <span class="process-math">\(\overline{B}_s(z_0)\subseteq A\text{,}\)</span> and let <span class="process-math">\(\phi=w+se^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> Next pick <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> satisfying <span class="process-math">\(R_1&lt; R &lt; S &lt; R_2\)</span> such that <span class="process-math">\(\overline{B}_s(z_0)\)</span> lies in the annular region <span class="process-math">\(R&lt; \abs{z-z_0}&lt; S\text{,}\)</span> and let <span class="process-math">\(\gamma_R(t)=z_0+Re^{it}\)</span> and <span class="process-math">\(\gamma_S(t)=z_0+Se^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> (See <a href="s_laurent_series.html#fig_laurent" class="xref" data-knowl="./knowl/xref/fig_laurent.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.20.2">Figure 1.20.2</a> .) By the Cauchy integral formula, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_holo_implies_analytic.html ./knowl/xref/fig_laurent.html">
+\begin{equation*}
+f(w)=\frac{1}{2\pi i}\int_\phi \frac{f(z)}{z-w}\, dz\text{.}
+\end{equation*}
+</div>
+<div class="para">By the principle of path deformation we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_holo_implies_analytic.html ./knowl/xref/fig_laurent.html">
+\begin{equation*}
+f(w)=\frac{1}{2\pi i}\int_\phi \frac{f(z)}{z-w}\, dz=\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{z-w}\, dz-\frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{z-w}\, dz  \text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\abs{(w-z_0)/(z-w_0)}&lt; 1\)</span> for all <span class="process-math">\(z\in \gamma_S\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_holo_implies_analytic.html ./knowl/xref/fig_laurent.html">
+\begin{align*}
+\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{z-w}\, dw \amp = \frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{z-z_0}\cdot \frac{1}{1-(w-z_0)/(z-z_0)}\, dw \\
+\amp = \frac{1}{2\pi i}\int_{\gamma_S}(\frac{f(z)}{z-z_0}\sum_{n=0}^\infty((w-z_0)/(z-z_0))^n)\, dz\\
+\amp =\frac{1}{2\pi i} \sum_{n=0}^\infty\int_{\gamma_S}(\frac{f(z)}{(z-z_0)^{n+1}}\, dz)(w-z_0)^n\\
+\amp = \sum_{n=0}^\infty a_n(w-z_0)^n , \  a_n=\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{(z-z_0)^n}\, dz\text{.}
+\end{align*}
+</div>
+<div class="para">Similarly, since <span class="process-math">\(\abs{(z-z_0)/(w-z_0)}&lt; 1\)</span> for all <span class="process-math">\(z\in \gamma_R\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_holo_implies_analytic.html ./knowl/xref/fig_laurent.html">
+\begin{align*}
+\frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{z-w}\, dw \amp = \frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{w-z_0}\cdot \frac{-1}{1-(z-z_0)/(w-z_0)}\, dw \\
+\amp = -\frac{1}{2\pi i}\int_{\gamma_R}(\sum_{n=0}^\infty\frac{f(z)(z-z_0)^{n}}{(w-z_0)^{n+1}})\, dz\\
+\amp = -\frac{1}{2\pi i}\sum_{n=0}^\infty\int_{\gamma_R}(\frac{f(z)}{(z-z_0)^{n}}\, dz)(w-z_0)^{n+1}\\
+\amp = -\sum_{n=1}^\infty b_n(w-z_0)^{-n}, \  b_n=\frac{1}{2\pi i}\int_{\gamma_R}f(z)(z-z_0)^{n-1}\, dz\text{.}
+\end{align*}
+</div>
+<div class="para">(Note that in both these computations we are justified in bringing the integral into the infinite sum thanks to the uniform convergence of this sum to the given function.)</div>
+</div>
+<div class="para logical">
+<div class="para">Putting it all together, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(w)\amp =\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{z-w}\, dz-\frac{1}{2\pi i}\int_{\gamma_R}\frac{f(z)}{z-w}\, dz\\
+\amp = \sum_{n=0}^\infty a_n(w-z_0)^n+\sum_{n=1}^\infty \frac{b_n}{(w-z_0)^n}
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(w\in A\text{,}\)</span> where (using the principle of deformation once again)</div>
+<div class="displaymath process-math">
+\begin{align*}
+a_n \amp=\frac{1}{2\pi i}\int_{\gamma_S}\frac{f(z)}{(z-z_0){n+1}}\, dz=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{(z-z_0){n+1}}\, dz \\
+b_n \amp=\frac{1}{2\pi i}\int_{\gamma_R}f(z)(z-z_0)^{n-1}\, dz=\frac{1}{2\pi i}\int_{\gamma}f(z)(z-z_0)^{n-1}\, dz \text{.}
+\end{align*}
+</div>
+<div class="para">Recall that <span class="process-math">\(\gamma(t)=z_0+re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\)</span> for some <span class="process-math">\(r\in (R_1,R_2)\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_laurent_series.html#th_laurent">in-context</a></span>
 </body>
 </html>
