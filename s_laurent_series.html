@@ -373,6 +373,9 @@ eBookConfig.enable_chatcodes =  false;
 #eg_laurent_series-2-1-5 { counter-set: eg_laurent_series-2-1-5 0; }
 #eg_laurent_series-2-1-5 > li::marker { content: ""counter(eg_laurent_series-2-1-5,decimal)"."; }
 #eg_laurent_series-2-1-5 > li { counter-increment: eg_laurent_series-2-1-5; }
+#eg_laurent_series-3-1-4 { counter-set: eg_laurent_series-3-1-4 0; }
+#eg_laurent_series-3-1-4 > li::marker { content: ""counter(eg_laurent_series-3-1-4,decimal)"."; }
+#eg_laurent_series-3-1-4 > li { counter-increment: eg_laurent_series-3-1-4; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -852,10 +855,80 @@ z^3e^{1/z} \amp  =\sum_{n=0}^\infty \frac{1}{n!z^{n+3}}\\
 <ol class="decimal" id="eg_laurent_series-2-1-5">
 <li id="eg_laurent_series-2-1-5-1"><div class="para" id="eg_laurent_series-2-1-5-1-1"><span class="process-math">\(\displaystyle A=\{z\in \C\colon 0&lt; \abs{z+1} &lt; 2\}\)</span></div></li>
 <li id="eg_laurent_series-2-1-5-2"><div class="para" id="eg_laurent_series-2-1-5-2-1"><span class="process-math">\(\displaystyle A=\{z\in \C\colon 2&lt; \abs{z+1} &lt; 4\}\)</span></div></li>
-<li id="eg_laurent_series-2-1-5-3"><div class="para" id="eg_laurent_series-2-1-5-3-1"><span class="process-math">\(\displaystyle A=\{z\in \C\colon 4&lt; \abs{z} &lt;\infty\}\)</span></div></li>
+<li id="eg_laurent_series-2-1-5-3"><div class="para" id="eg_laurent_series-2-1-5-3-1"><span class="process-math">\(\displaystyle A=\{z\in \C\colon 4&lt; \abs{z+1} &lt;\infty\}\)</span></div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_laurent_series-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_laurent_series-3-1"></div></div></details></div></article><article class="example example-like" id="eg_laurent_series_trunc"><h3 class="heading">
+<div class="solutions"><details id="eg_laurent_series-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_laurent_series-3-1">
+<div class="para">We first use partial fractions to write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=\frac{1}{(z-1)(z-3)}=-\frac{1}{2}\left(\frac{1}{z-1}-\frac{1}{z-3}\right)\text{.}
+\end{equation*}
+</div>
+<div class="para">Each computation below then boils down to deriving a Laurent series expansion of <span class="process-math">\(1/(z-1)\)</span> and <span class="process-math">\(1/(z-3)\)</span> in the given region.</div>
+<ol class="decimal" id="eg_laurent_series-3-1-4">
+<li id="eg_laurent_series-3-1-4-1"><div class="para logical" id="eg_laurent_series-3-1-4-1-1">
+<div class="para">If <span class="process-math">\(0&lt; \abs{z+1} &lt; \abs{2}\)</span> then <span class="process-math">\(\abs{(z+1)/2}&lt; 1\)</span> and <span class="process-math">\(\abs{(z+1)/4}&lt; 1\text{.}\)</span> We maneuver into a place where we can use the geometric series for both fractions:</div>
+<div class="displaymath process-math" id="eg_laurent_series-3-1-4-1-1-4">
+\begin{align*}
+\frac{1}{z-1} \amp = \frac{1}{(z+1)-2}\\
+\amp = -\frac{1}{2}\frac{1}{1-(z+1)/2}\\
+\amp = -\frac{1}{2}\sum_{n=0}^\infty \frac{1}{2^n}(z+1)^n\\
+\frac{1}{z-3} \amp = \frac{1}{(z+1)-4}\\
+\amp = -\frac{1}{4}\frac{1}{1-(z+1)/4}\\
+\amp = -\frac{1}{4}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n
+\end{align*}
+</div>
+<div class="para">We conclude that</div>
+<div class="displaymath process-math" id="eg_laurent_series-3-1-4-1-1-5">
+\begin{align*}
+f(z) \amp = -\frac{1}{2}\left(\frac{1}{z-1}-\frac{1}{z-3}\right) \\
+\amp = \frac{1}{4}\sum_{n=0}^\infty \frac{1}{2^n}(z+1)^n-\frac{1}{8}\sum_{n=0}\frac{1}{4^n}(z+1)^n\\
+\amp = \frac{1}{2}\sum_{n=0}^\infty \frac{2^{n+1}-1}{4^{n+1}}(z+1)^n  \text{.}
+\end{align*}
+</div>
+<div class="para">It should come as no surprise that our Laurent series expansion in this case is a power series, as <span class="process-math">\(f\)</span> is in fact analytic on the entire ball <span class="process-math">\(\abs{z+1}&lt; 2\text{.}\)</span>
+</div>
+</div></li>
+<li id="eg_laurent_series-3-1-4-2"><div class="para logical" id="eg_laurent_series-3-1-4-2-1">
+<div class="para">For <span class="process-math">\(z\)</span> satisfying <span class="process-math">\(2&lt; \abs{z+1} &lt; 4\text{,}\)</span> we may continue to use our power series expansion for the second fraction, but not the first, since now <span class="process-math">\(\abs{(z+1)/2}&gt; 1\text{.}\)</span> But of course, this is equivalent to <span class="process-math">\(\abs{2/(z+1)}&lt; 1\text{.}\)</span> So we maneuver accordingly:</div>
+<div class="displaymath process-math" id="eg_laurent_series-3-1-4-2-1-5">
+\begin{align*}
+\frac{1}{z-1} \amp = \frac{1}{(z+1)-2}\\
+\amp = \frac{1}{z+1}\frac{1}{1-2/(z+1)}\\
+\amp = \sum_{n=0}^\infty \frac{2^n}{(z+1)^{n+1}}\\
+\frac{1}{z-3} \amp = -\frac{1}{4}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n
+\end{align*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="eg_laurent_series-3-1-4-2-1-6">
+\begin{align*}
+f(z)\amp =-\frac{1}{2}\left(\frac{1}{z-1}-\frac{1}{z-3}\right) \\
+\amp = -\frac{1}{2}\sum_{n=0}^\infty \frac{2^n}{(z+1)^{n+1}} -\frac{1}{8}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n  \\
+\amp = -\sum_{n=0}^\infty \frac{2^{n-1}}{(z+1)^{n+1}} -\frac{1}{8}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n  \\
+\amp = -\sum_{n=1}^\infty \frac{2^{n-2}}{(z+1)^{n}} -\frac{1}{8}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n  \text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="eg_laurent_series-3-1-4-3"><div class="para logical" id="eg_laurent_series-3-1-4-3-1">
+<div class="para">Finally, for <span class="process-math">\(\abs{z+1}&gt; 4\text{,}\)</span> we have <span class="process-math">\(\abs{2/(z+1)}&lt; 1\)</span> and <span class="process-math">\(\abs{4/(z+1)}&lt; 1\text{,}\)</span> yielding (similarly as above)</div>
+<div class="displaymath process-math" id="eg_laurent_series-3-1-4-3-1-4">
+\begin{align*}
+\frac{1}{z-1} \amp = \sum_{n=0}^\infty \frac{2^n}{(z+1)^{n+1}}\\
+\frac{1}{z-3} \amp = \sum_{n=0}^\infty\frac{4^n}{(z+1)^{n+1}}
+\end{align*}
+</div>
+<div class="para">and thus</div>
+<div class="displaymath process-math" id="eg_laurent_series-3-1-4-3-1-5">
+\begin{align*}
+f(z) \amp = \frac{1}{2}\sum_{n=0}^\infty\frac{4^n}{(z+1)^{n+1}} - \frac{1}{2}\sum_{n=0}^\infty \frac{2^n}{(z+1)^{n+1}}\\
+\amp = \frac{1}{2}\sum_{n=0}^\infty \frac{4^n-2^n}{(z+1)^{n+1}}\\
+\amp = \sum_{n=1}^\infty \frac{2^{n-2}(2^{n-1}-1)}{(z+1)^n}\text{.}
+\end{align*}
+</div>
+</div></li>
+</ol>
+</div></div></details></div></article><article class="example example-like" id="eg_laurent_series_trunc"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.7</span><span class="period">.</span><span class="space"> </span><span class="title">Truncated Laurent series.</span>
 </h3>
 <div class="para" id="eg_laurent_series_trunc-2-1">Let <span class="process-math">\(A\)</span> be the annulus <span class="process-math">\(0&lt; \abs{z} &lt; 1\text{.}\)</span> Compute the Laurent series <span class="process-math">\(\sum_{n=-\infty}^\infty c_n z^n\)</span> of <span class="process-math">\(f(z)=e^z/(z^3+z^2)\)</span> in <span class="process-math">\(A\)</span> up through <span class="process-math">\(c_2\text{.}\)</span>
