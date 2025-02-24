@@ -3,13 +3,13 @@
 <section xml:id="s_laurent_series" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Laurent series</title>
     <p>
-        We have begun to see the utility of power series representations for functions <m>f</m> that are holomorphic on an open ball <m>B_R(z_0)</m>. It turns out that much of this theory (and its attendant benefits) can be extended to more general functions by relaxing somewhat the differentiability condition. Namely, we will develop a series representation for functions <m>f</m> which are holomorphic not on a full open ball centered at <m>z_0</m>, but only on an annulus of the form <m>\{z\in \C\colon R_1&gt; \abs{z-z_0}&gt; R_2\}</m>. We proceed directly to <xref ref="th_laurent"/>, which will serve to motivate our study of <em>Laurent series</em>. 
+        We have begun to see the utility of power series representations for functions <m>f</m> that are holomorphic on an open ball <m>B_R(z_0)</m>. It turns out that much of this theory (and its attendant benefits) can be extended to more general functions by relaxing somewhat the differentiability condition. Namely, we will develop a series representation for functions <m>f</m> which are holomorphic not on a full open ball centered at <m>z_0</m>, but only on an annulus of the form <m>\{z\in \C\colon R_1&lt; \abs{z-z_0}&lt; R_2\}</m>. We proceed directly to <xref ref="th_laurent"/>, which will serve to motivate our study of <em>Laurent series</em>. 
     </p>
     <theorem xml:id="th_laurent">
     <title>Laurent's theorem</title>
     <statement>
     <p>
-    Let <m>z_0\in \C</m> and <m>A=\{z\colon R_1&lt; \abs{z-z_0} &lt; R_2\}</m>, where <m>R_1, R_2\in \C^*=\C\cup \{\infty\}</m> and <m>0\leq R_1&lt; R_2</m>. If <m>f</m> is holomorphic on <m>A</m>, then there are power series 
+    Let <m>z_0\in \C</m> and <m>A=\{z\colon R_1&lt; \abs{z-z_0} &lt; R_2\}</m>, where <m>R_1, R_2\in \C\cup \{\infty\}</m> and <m>0\leq R_1&lt; R_2</m>. If <m>f</m> is holomorphic on <m>A</m>, then there are power series 
     <md>
         <mrow>g(u) \amp =\sum_{n=0}^\infty a_nu^n
         \amp h(u) \amp =\sum_{m=1}^\infty b_mu^m</mrow>
@@ -36,7 +36,7 @@
     </statement>
     <proof>
     <p>
-        The proof is very simple to the proof of <xref ref="th_holo_implies_analytic"/>: the main fact we use is the Cauchy integral formula applied to elements within <m>A</m>. In more detail, given <m>w\in A</m>, pick a closed ball <m>\overline{B}_s(z_0)\subseteq A</m>, and let <m>\phi=w+se^{it}</m>, <m>t\in [0,2\pi]</m>. Next pick <m>R</m> and <m>S</m> satisfying <m>R_1&lt; R &lt; S &lt; R_2</m> such that <m>\overline{B}_s(z_0)</m> lies in the annular region <m>R&lt; \abs{z-z_0}&lt; S</m>, and let <m>\gamma_R(t)=z_0+Re^{it}</m> and <m>\gamma_S(t)=z_0+Se^{it}</m>, <m>t\in [0,2\pi]</m>. (See <xref ref="fig_laurent"/> .) By the Cauchy integral formula, we have 
+        The proof is very simple to the proof of <xref ref="th_holo_implies_analytic"/>: the main fact we use is the Cauchy integral formula applied to elements within <m>A</m>. In more detail, given <m>w\in A</m>, pick a closed ball <m>\overline{B}_s(z_0)\subseteq A</m>, and let <m>\phi=w+se^{it}</m>, <m>t\in [0,2\pi]</m>. Next pick <m>R</m> and <m>S</m> satisfying <m>R_1&lt; R &lt; S &lt; R_2</m> such that <m>\overline{B}_s(z_0)</m> lies in the annular region <m>R&lt; \abs{z-z_0}&lt; S</m>, and let <m>\gamma_R(t)=z_0+Re^{it}</m> and <m>\gamma_S(t)=z_0+Se^{it}</m>, <m>t\in [0,2\pi]</m>. (See <xref ref="fig_laurent"/>.) By the Cauchy integral formula, we have 
         <me>
             f(w)=\frac{1}{2\pi i}\int_\phi \frac{f(z)}{z-w}\, dz
         </me>.
@@ -139,7 +139,21 @@ P+C+Q+D+t1+t2+l1+l2+E+l3+t3+t4+t5+F+t6+G+l4+t6+t7
     </statement>
     <solution>
     <p>
-    
+    Since the power series representation 
+    <me>
+        e^{z}=\sum_{n=0}^\infty \frac{z^n}{n!}
+    </me>
+    is valid for all <m>z</m>, we have 
+    <me>
+        e^{1/z}=\sum_{n=0}^\infty \frac{1}{n! z^n}
+    </me>
+    and 
+    <md>
+        <mrow>z^3e^{1/z} \amp  =\sum_{n=0}^\infty \frac{1}{n!z^{n+3}}</mrow>  
+        <mrow> \amp =z^3+z^2+\frac{1}{2}z+\frac{1}{6}+\frac{1}{24z}+\cdots  </mrow>
+        <mrow> \amp = \sum_{n=-1}^\infty \frac{1}{(-n+3)!}z^{n}+ \frac{1}{2}+z^2+z^3</mrow>
+    </md>
+    for all <m>z\in \C-\{0\}</m>. 
     </p>
     </solution>
     </example>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_isol_sing" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Isolated singularities</title>
+
+<definition xml:id="d_iso_sing">
+<title>Isolated singularity</title>
+<statement>
+<p>
+Let <m>f</m> be a complex function. An element <m>z_0\in \C</m> is an <term>isolated singularity</term> of <m>f</m> if <m>f</m> is analytic on an open punctured disc 
+<me>
+    B_R(z_0)-\{z_0\}=\{z\in \C\colon 0 &lt; \abs{z-z_0}&lt; R\}
+</me>
+for some positive <m>R\in \C\cup \{\infty\}</m>. 
+</p>
+</statement>
+</definition>
+<definition xml:id="d_residue">
+<title>Residue</title>
+<statement>
+<p>
+Let <m>z_0</m> be an isolated singularity of the complex function <m>f</m>. The <term>residue</term> of <m>f</m> at <m>z_0</m>, denoted <m>\res_f(z_0)</m>, is defined as <m>\res_f(z_0)=c_{-1}</m>, where 
+<me>
+    f(z)=\sum_{n=-\infty}^\infty c_{n}(z-z_0)^n
+</me>,
+is a Laurent series representation of <m>f</m> on any open punctured ball <m>U=B_R(z_0)-\{z_0\}</m> on which <m>f</m> is analytic.
+</p>
+</statement>
+</definition>
+<remark>
+<title>Residue</title>
+<p>
+Why is <m>\res_f(z_0)</m> well-defined for an isolated singularity <m>z_0</m> of <m>f</m>? If <m>f</m> is analytic on <m>U=B_R(z_0)-\{z_0\}</m> and <m>V=B_S(z_0)-\{z_0\}</m>, with <m>R&lt; S</m>, then by <xref ref="th_laurent"/> the Laurent series corresponding to the two open annular regions are identical, and in fact we have 
+<me>
+    c_{n}=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{(z-z_0)^{n+1}}\, dz
+</me>,
+for all <m>n</m>, where <m>\gamma=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m> for any <m>r\in (0,R)</m>. 
+</p>
+</remark>
+<theorem xml:id="th_residue">
+<title>Cauchy residue theorem</title>
+<statement>
+<p>
+Assume <m>U</m> is open and that <m>f</m> is on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where <m>z_k</m> is an isolated singularity of <m>f</m> for all <m>1\leq k\leq n</m>. If <m>B\subseteq U</m> is any closed ball containing <m>\{z_1,z_2,\dots, z_n\}</m> in its interior, then 
+<men xml:id="eq_residue">
+    \int_\gamma f\, dz=2\pi i\sum_{k=1}^n\res_f(z_k)
+</men>,
+where <m>\gamma</m> is simple counterclockwise oriented parametrization of <m>\partial B</m>. 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<example xml:id="eg_res_one_sing">
+<title>Cauchy residue theorem</title>
+<statement>
+<p>
+Compute <m>\int_\gamma z^3e^{1/z}</m>, where <m>\gamma=Re^{it}</m>, <m>t\in [0,2\pi]</m> for any <m>R&gt; 0</m>.
+</p>
+</statement>
+<solution>
+<p>
+Since <m>f(z)=z^3e^{1/z}</m> is analytic on <m>\C-\{0\}</m>, we see that <m>0</m> is an isolated singularity of <m>f</m> and 
+<me>
+    \int_\gamma f\, dz=2\pi i\res_f(0)=2\pi i(1/24)=\frac{\pi i}{12}
+</me>,
+where we make use of the Laurent expansion 
+<me>
+    f(z)= \cdots +\frac{1}{120z^2}+\frac{1}{24z}+\frac{1}{6}+\frac{1}{2}z+z^2+z^3
+</me>
+computed in <xref ref="eg_laurent_essential"/>. 
+</p>
+</solution>
+</example>
+<example xml:id="eg_residue">
+<title>Cauchy residue theorem: two singularities</title>
+<statement>
+<p>
+Compute <m>\int_\gamma \tfrac{e^z}{z^3+z^2}\, dz</m>, where <m>\gamma=Re^{it}</m>, <m>t\in [0,2\pi]</m>, for any <m>R&gt; 1</m>.
+</p>
+</statement>
+<solution>
+<p>
+Since <m>f(z)=\tfrac{e^z}{z^3+z^2}</m> is analytic on <m>\C-\{0,-1\}</m>
+</p>
+</solution>
+</example>
+
+
+    
+
+</section>

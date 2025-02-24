@@ -64,6 +64,7 @@
     \DeclareMathOperator{\Arccos}{Arccos}
     \DeclareMathOperator{\Arctan}{Arctan}
     \DeclareMathOperator{\Res}{Res}
+    \DeclareMathOperator{\res}{res}
     \DeclareMathOperator{\Fix}{Fix}
     \DeclareMathOperator{\Aff}{Aff}
     \DeclareMathOperator{\Frac}{Frac}
