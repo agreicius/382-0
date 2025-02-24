@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="s_isol_sing" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Isolated singularities</title>
+<section xml:id="s_cauchy_residue" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Cauchy residue theorem</title>
 
 <definition xml:id="d_iso_sing">
 <title>Isolated singularity</title>
@@ -41,7 +41,7 @@ for all <m>n</m>, where <m>\gamma=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m> for any 
 <title>Cauchy residue theorem</title>
 <statement>
 <p>
-Assume <m>U</m> is open and that <m>f</m> is on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where <m>z_k</m> is an isolated singularity of <m>f</m> for all <m>1\leq k\leq n</m>. If <m>B\subseteq U</m> is any closed ball containing <m>\{z_1,z_2,\dots, z_n\}</m> in its interior, then 
+Assume <m>U</m> is open and that <m>f</m> is analytic on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where for all <m>1\leq \k\leq n</m>, <m>z_k</m> is an isolated singularity of <m>f</m>. If <m>B\subseteq U</m> is any closed ball containing <m>\{z_1,z_2,\dots, z_n\}</m> in its interior, then 
 <men xml:id="eq_residue">
     \int_\gamma f\, dz=2\pi i\sum_{k=1}^n\res_f(z_k)
 </men>,
@@ -84,6 +84,46 @@ Compute <m>\int_\gamma \tfrac{e^z}{z^3+z^2}\, dz</m>, where <m>\gamma=Re^{it}</m
 <solution>
 <p>
 Since <m>f(z)=\tfrac{e^z}{z^3+z^2}</m> is analytic on <m>\C-\{0,-1\}</m>
+</p>
+</solution>
+</example>
+<theorem xml:id="th_simple_pole_residue">
+<title>Residue at simple pole</title>
+<statement>
+<p>
+Let <m>f=p/g</m>, where <m>p</m> and <m>g</m> are analytic on <m>B_R(z_0)</m>. If <m>z_0</m> is a zero of <m>g</m> of order 1 (<ie/>, <m>\ord_g(z_0)=1</m>), then <m>z_0</m> is an isolated singularity of <m>f</m> and 
+<men xml:id="eq_simple_pole_res">
+    \res_f(z_0)=\frac{p(z_0)}{q'(z_0)}
+</men>.
+</p>
+</statement>
+<proof>
+<p>
+    Since <m>f</m> is analytic on <m>B_R(z_0)-\{z_0\}</m>, <m>z_0</m> is an isolated singularity of <m>f</m>. Since <m>\ord_q(z_0)=1</m>, we have <m>q(z)=(z-z_0)g(z)</m> where <m>g</m> is analytic on <m>B_R(z_0)</m> and <m>g(z_0)\ne 0</m>. It follows that <m>p/g</m> is analytic on <m>B_R(z_0)</m> and we have 
+    <md>
+    <mrow>f(z) \amp = \frac{1}{z-z_0}\cdot \frac{p(z)}{g(z)} </mrow>
+    <mrow> \amp = \frac{1}{z-z_0}\sum_{n=0}^\infty a_n(z-z_0)^n </mrow>
+    <mrow> \amp =  \frac{1}{z-z_0}(p(0)/g(0)+a_1(z-z_0)+a_2(z-z_0)^2+\cdots)</mrow>
+    <mrow> \amp = \frac{p(0)/g(0)}{z}+a_1+a_2(z-z_0)+\cdots </mrow>
+    </md>.
+    Thus 
+    <me>
+        \ref_f(z_0)=\frac{p(0)}{g(0)}=\frac{p(0)}{q'(0)}
+    </me>,
+    since <m>q'(z)=g(z)+(z-z_0)g'(z)</m>.
+</p>
+</proof>
+</theorem>
+<example xml:id="eg_simple_pole_res">
+<title>Residue at simple pole</title>
+<statement>
+<p>
+Let <m>f(z)=\tfrac{\tan z}{z}</m>. Find all isolated singularities of <m>f</m> and compute their corresponding residues. 
+</p>
+</statement>
+<solution>
+<p>
+
 </p>
 </solution>
 </example>

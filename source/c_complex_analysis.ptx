@@ -20,5 +20,5 @@
      <xi:include href="s_analyticity.ptx" />
      <xi:include href="s_analytic_continuation.ptx" />
      <xi:include href="s_laurent_series.ptx" />
-     <xi:include href="s_isol_sing.ptx" />
+     <xi:include href="s_cauchy_residue.ptx" />
 </chapter>
