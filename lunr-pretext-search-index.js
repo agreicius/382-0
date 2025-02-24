@@ -2905,7 +2905,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.20",
   "title": "Laurent series",
-  "body": " Laurent series  We have begun to see the utility of power series representations for functions that are holomorphic on an open ball . It turns out that much of this theory (and its attendant benefits) can be extended to more general functions by relaxing somewhat the differentiability condition. Namely, we will develop a series representation for functions which are holomorphic not on a full open ball centered at , but only on an annulus of the form . We proceed directly to , which will serve to motivate our study of Laurent series .   Laurent's theorem   Let and , where and . If is holomorphic on , then there are power series such that for all . Furthermore, letting for any we have . Equivalently, for all we have , where .    The proof is very simple to the proof of : the main fact we use is the Cauchy integral formula applied to elements within . In more detail, given , pick a closed ball , and let , . Next pick and satisfying such that lies in the annular region , and let and , . (See .) By the Cauchy integral formula, we have . By the principle of path deformation we have . Since for all , we have . Similarly, since for all , we have . (Note that in both these computations we are justified in bringing the integral into the infinite sum thanks to the uniform convergence of this sum to the given function.)  Putting it all together, we have for all , where (using the principle of deformation once again) . Recall that , for some .     Visual idea behind proof of   Visual idea behind proof of theorem      Laurent series   Given , a (complex) laurent series centered at in the variable is an expression of the form , where .  Let so that . We say the Laurent series  converges at a complex number if the series and both converge, and diverges otherwise. In the case of convergence, we call the value of the Laurent series.     Laurent series expansion   Let . Find a Laurent series expansion of centered at in the annulus .         Laurent series  Since the notion of convergence of a Laurent series boils down to the convergence of the two power series , Laurent series inherit many of the useful properties of power series. For example, from the uniform convergence properties of and , it follows that the Laurent series can be differentiated and integrated term-wise, just as with power series.  As we saw in , however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for and are and , respectively, then converges at all with and converges for all with . Letting , it follows that converges for all satisfying , and diverges for all satisfying or . Accordingly, we call the annulus of convergence of .   As a consequence of the discussion above, given a Laurent series, there is a well-defined annulus of convergence associated to it. As the next example illustrates, however, if we begin with a function and seek out Laurent series expansions of , these expansions depend on the annulus we choose.   Different Laurent series   Let . Compute a convergent Laurent series for centered at in the given annulus                           Truncated Laurent series   Let be the annulus . Compute the Laurent series of in up through .         Laurent series of rational function   Let be the annulus : , . Compute the Laurent series of on .        "
+  "body": " Laurent series  We have begun to see the utility of power series representations for functions that are holomorphic on an open ball . It turns out that much of this theory (and its attendant benefits) can be extended to more general functions by relaxing somewhat the differentiability condition. Namely, we will develop a series representation for functions which are holomorphic not on a full open ball centered at , but only on an annulus of the form . We proceed directly to , which will serve to motivate our study of Laurent series .   Laurent's theorem   Let and , where and . If is holomorphic on , then there are power series such that for all . Furthermore, letting for any we have . Equivalently, for all we have , where .    The proof is very simple to the proof of : the main fact we use is the Cauchy integral formula applied to elements within . In more detail, given , pick a closed ball , and let , . Next pick and satisfying such that lies in the annular region , and let and , . (See .) By the Cauchy integral formula, we have . By the principle of path deformation we have . Since for all , we have . Similarly, since for all , we have . (Note that in both these computations we are justified in bringing the integral into the infinite sum thanks to the uniform convergence of this sum to the given function.)  Putting it all together, we have for all , where (using the principle of deformation once again) . Recall that , for some .     Visual idea behind proof of   Visual idea behind proof of theorem      Laurent series   Given , a (complex) laurent series centered at in the variable is an expression of the form , where .  Let so that . We say the Laurent series  converges at a complex number if the series and both converge, and diverges otherwise. In the case of convergence, we call the value of the Laurent series.     Laurent series expansion   Let . Find a Laurent series expansion of centered at in the annulus .    Since the power series representation is valid for all , we have and for all .     Laurent series  Since the notion of convergence of a Laurent series boils down to the convergence of the two power series , Laurent series inherit many of the useful properties of power series. For example, from the uniform convergence properties of and , it follows that the Laurent series can be differentiated and integrated term-wise, just as with power series.  As we saw in , however, the natural region of convergence of a Laurent series is an open annulus, as opposed to an open ball. Indeed, if the radii of convergence for and are and , respectively, then converges at all with and converges for all with . Letting , it follows that converges for all satisfying , and diverges for all satisfying or . Accordingly, we call the annulus of convergence of .   As a consequence of the discussion above, given a Laurent series, there is a well-defined annulus of convergence associated to it. As the next example illustrates, however, if we begin with a function and seek out Laurent series expansions of , these expansions depend on the annulus we choose.   Different Laurent series   Let . Compute a convergent Laurent series for centered at in the given annulus                           Truncated Laurent series   Let be the annulus . Compute the Laurent series of in up through .         Laurent series of rational function   Let be the annulus : , . Compute the Laurent series of on .        "
 },
 {
   "id": "th_laurent",
@@ -2941,7 +2941,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.20.4",
   "title": "Laurent series expansion.",
-  "body": " Laurent series expansion   Let . Find a Laurent series expansion of centered at in the annulus .       "
+  "body": " Laurent series expansion   Let . Find a Laurent series expansion of centered at in the annulus .    Since the power series representation is valid for all , we have and for all .   "
 },
 {
   "id": "s_laurent_series-7",
@@ -2978,6 +2978,87 @@ var ptx_lunr_docs = [
   "number": "1.20.8",
   "title": "Laurent series of rational function.",
   "body": " Laurent series of rational function   Let be the annulus : , . Compute the Laurent series of on .       "
+},
+{
+  "id": "s_cauchy_residue",
+  "level": "1",
+  "url": "s_cauchy_residue.html",
+  "type": "Section",
+  "number": "1.21",
+  "title": "Cauchy residue theorem",
+  "body": " Cauchy residue theorem   Isolated singularity   Let be a complex function. An element is an isolated singularity of if is analytic on an open punctured disc for some positive .     Residue   Let be an isolated singularity of the complex function . The residue of at , denoted , is defined as , where , is a Laurent series representation of on any open punctured ball on which is analytic.     Residue  Why is well-defined for an isolated singularity of ? If is analytic on and , with , then by the Laurent series corresponding to the two open annular regions are identical, and in fact we have , for all , where , for any .    Cauchy residue theorem   Assume is open and that is analytic on , where for all , is an isolated singularity of . If is any closed ball containing in its interior, then , where is simple counterclockwise oriented parametrization of .         Cauchy residue theorem   Compute , where , for any .    Since is analytic on , we see that is an isolated singularity of and , where we make use of the Laurent expansion computed in .     Cauchy residue theorem: two singularities   Compute , where , , for any .    Since is analytic on      Residue at simple pole   Let , where and are analytic on . If is a zero of of order 1 ( , ), then is an isolated singularity of and .    Since is analytic on , is an isolated singularity of . Since , we have where is analytic on and . It follows that is analytic on and we have . Thus , since .     Residue at simple pole   Let . Find all isolated singularities of and compute their corresponding residues.        "
+},
+{
+  "id": "d_iso_sing",
+  "level": "2",
+  "url": "s_cauchy_residue.html#d_iso_sing",
+  "type": "Definition",
+  "number": "1.21.1",
+  "title": "Isolated singularity.",
+  "body": " Isolated singularity   Let be a complex function. An element is an isolated singularity of if is analytic on an open punctured disc for some positive .   "
+},
+{
+  "id": "d_residue",
+  "level": "2",
+  "url": "s_cauchy_residue.html#d_residue",
+  "type": "Definition",
+  "number": "1.21.2",
+  "title": "Residue.",
+  "body": " Residue   Let be an isolated singularity of the complex function . The residue of at , denoted , is defined as , where , is a Laurent series representation of on any open punctured ball on which is analytic.   "
+},
+{
+  "id": "s_cauchy_residue-4",
+  "level": "2",
+  "url": "s_cauchy_residue.html#s_cauchy_residue-4",
+  "type": "Remark",
+  "number": "1.21.3",
+  "title": "Residue.",
+  "body": " Residue  Why is well-defined for an isolated singularity of ? If is analytic on and , with , then by the Laurent series corresponding to the two open annular regions are identical, and in fact we have , for all , where , for any .  "
+},
+{
+  "id": "th_residue",
+  "level": "2",
+  "url": "s_cauchy_residue.html#th_residue",
+  "type": "Theorem",
+  "number": "1.21.4",
+  "title": "Cauchy residue theorem.",
+  "body": " Cauchy residue theorem   Assume is open and that is analytic on , where for all , is an isolated singularity of . If is any closed ball containing in its interior, then , where is simple counterclockwise oriented parametrization of .       "
+},
+{
+  "id": "eg_res_one_sing",
+  "level": "2",
+  "url": "s_cauchy_residue.html#eg_res_one_sing",
+  "type": "Example",
+  "number": "1.21.5",
+  "title": "Cauchy residue theorem.",
+  "body": " Cauchy residue theorem   Compute , where , for any .    Since is analytic on , we see that is an isolated singularity of and , where we make use of the Laurent expansion computed in .   "
+},
+{
+  "id": "eg_residue",
+  "level": "2",
+  "url": "s_cauchy_residue.html#eg_residue",
+  "type": "Example",
+  "number": "1.21.6",
+  "title": "Cauchy residue theorem: two singularities.",
+  "body": " Cauchy residue theorem: two singularities   Compute , where , , for any .    Since is analytic on    "
+},
+{
+  "id": "th_simple_pole_residue",
+  "level": "2",
+  "url": "s_cauchy_residue.html#th_simple_pole_residue",
+  "type": "Theorem",
+  "number": "1.21.7",
+  "title": "Residue at simple pole.",
+  "body": " Residue at simple pole   Let , where and are analytic on . If is a zero of of order 1 ( , ), then is an isolated singularity of and .    Since is analytic on , is an isolated singularity of . Since , we have where is analytic on and . It follows that is analytic on and we have . Thus , since .   "
+},
+{
+  "id": "eg_simple_pole_res",
+  "level": "2",
+  "url": "s_cauchy_residue.html#eg_simple_pole_res",
+  "type": "Example",
+  "number": "1.21.8",
+  "title": "Residue at simple pole.",
+  "body": " Residue at simple pole   Let . Find all isolated singularities of and compute their corresponding residues.       "
 },
 {
   "id": "appendix-notation",
