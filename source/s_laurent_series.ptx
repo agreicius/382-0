@@ -187,7 +187,7 @@ P+C+Q+D+t1+t2+l1+l2+E+l3+t3+t4+t5+F+t6+G+l4+t6+t7
         </li>
         <li>
             <p>
-                <m>A=\{z\in \C\colon 4&lt; \abs{z} &lt;\infty\}</m>
+                <m>A=\{z\in \C\colon 4&lt; \abs{z+1} &lt;\infty\}</m>
             </p>
         </li>
     </ol>
@@ -195,7 +195,66 @@ P+C+Q+D+t1+t2+l1+l2+E+l3+t3+t4+t5+F+t6+G+l4+t6+t7
     </statement>
     <solution>
     <p>
-    
+    We first use partial fractions to write 
+    <me>
+        f(z)=\frac{1}{(z-1)(z-3)}=-\frac{1}{2}\left(\frac{1}{z-1}-\frac{1}{z-3}\right)
+    </me>. 
+    Each computation below then boils down to deriving a Laurent series expansion of <m>1/(z-1)</m> and <m>1/(z-3)</m> in the given region. 
+    <ol>
+        <li>
+            <p>
+                If <m>0&lt; \abs{z+1} &lt; \abs{2}</m> then <m>\abs{(z+1)/2}&lt; 1</m> and <m>\abs{(z+1)/4}&lt; 1</m>. We maneuver into a place where we can use the geometric series for both fractions:
+                <md>
+                    <mrow>\frac{1}{z-1} \amp = \frac{1}{(z+1)-2}</mrow>
+                    <mrow> \amp = -\frac{1}{2}\frac{1}{1-(z+1)/2}</mrow>
+                    <mrow> \amp = -\frac{1}{2}\sum_{n=0}^\infty \frac{1}{2^n}(z+1)^n</mrow>
+                    <mrow>\frac{1}{z-3} \amp = \frac{1}{(z+1)-4}</mrow>
+                    <mrow> \amp = -\frac{1}{4}\frac{1}{1-(z+1)/4}</mrow>
+                    <mrow> \amp = -\frac{1}{4}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n</mrow>
+                </md>
+                We conclude that 
+                <md>
+                    <mrow>f(z) \amp = -\frac{1}{2}\left(\frac{1}{z-1}-\frac{1}{z-3}\right) </mrow>
+                    <mrow> \amp = \frac{1}{4}\sum_{n=0}^\infty \frac{1}{2^n}(z+1)^n-\frac{1}{8}\sum_{n=0}\frac{1}{4^n}(z+1)^n</mrow>
+                    <mrow> \amp = \frac{1}{2}\sum_{n=0}^\infty \frac{2^{n+1}-1}{4^{n+1}}(z+1)^n  </mrow>
+                </md>.
+                It should come as no surprise that our Laurent series expansion in this case is a power series, as <m>f</m> is in fact analytic on the entire ball <m>\abs{z+1}&lt; 2</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+               For <m>z</m> satisfying <m>2&lt; \abs{z+1} &lt; 4</m>, we may continue to use our power series expansion for the second fraction, but not the first, since now <m>\abs{(z+1)/2}&gt; 1</m>. But of course, this is equivalent to <m>\abs{2/(z+1)}&lt; 1</m>. So we maneuver accordingly:
+               <md>
+                    <mrow>\frac{1}{z-1} \amp = \frac{1}{(z+1)-2}</mrow>
+                    <mrow> \amp = \frac{1}{z+1}\frac{1}{1-2/(z+1)}</mrow>
+                    <mrow> \amp = \sum_{n=0}^\infty \frac{2^n}{(z+1)^{n+1}}</mrow>
+                    <mrow>\frac{1}{z-3} \amp = -\frac{1}{4}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n</mrow>
+                </md>
+               Thus 
+               <md>
+                <mrow> f(z)\amp =-\frac{1}{2}\left(\frac{1}{z-1}-\frac{1}{z-3}\right) </mrow>
+                <mrow> \amp = -\frac{1}{2}\sum_{n=0}^\infty \frac{2^n}{(z+1)^{n+1}} -\frac{1}{8}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n  </mrow>
+               <mrow> \amp = -\sum_{n=0}^\infty \frac{2^{n-1}}{(z+1)^{n+1}} -\frac{1}{8}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n  </mrow>
+               <mrow> \amp = -\sum_{n=1}^\infty \frac{2^{n-2}}{(z+1)^{n}} -\frac{1}{8}\sum_{n=0}^\infty \frac{1}{4^n}(z+1)^n  </mrow>
+               </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Finally, for <m>\abs{z+1}&gt; 4</m>, we have <m>\abs{2/(z+1)}&lt; 1</m> and <m>\abs{4/(z+1)}&lt; 1</m>, yielding (similarly as above)
+                <md>
+                    <mrow>\frac{1}{z-1} \amp = \sum_{n=0}^\infty \frac{2^n}{(z+1)^{n+1}}</mrow>
+                    <mrow>\frac{1}{z-3} \amp = \sum_{n=0}^\infty\frac{4^n}{(z+1)^{n+1}}</mrow>
+                </md>
+                and thus 
+                <md>
+                    <mrow>f(z) \amp = \frac{1}{2}\sum_{n=0}^\infty\frac{4^n}{(z+1)^{n+1}} - \frac{1}{2}\sum_{n=0}^\infty \frac{2^n}{(z+1)^{n+1}}</mrow>
+                    <mrow> \amp = \frac{1}{2}\sum_{n=0}^\infty \frac{4^n-2^n}{(z+1)^{n+1}}</mrow>
+                    <mrow> \amp = \sum_{n=1}^\infty \frac{2^{n-2}(2^{n-1}-1)}{(z+1)^n}</mrow>
+                </md>.
+            </p>
+        </li>
+    </ol>
     </p>
     </solution>
     </example>
