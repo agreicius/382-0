@@ -154,7 +154,23 @@ Let <m>f(z)=\sin z^3-z^3</m>.
 </statement>
 <solution>
 <p>
-
+<ol>
+    <li>
+        <p>
+            We have 
+            <md>
+                <mrow>\sin z^3-z^3 \amp =(z^3-\frac{1}{3!}z^9+\frac{1}{5!}z^{15}+\cdots)-z^3</mrow>
+                <mrow> \amp = -\frac{1}{6}z^9+\frac{1}{120}z^{15}+\cdots</mrow>
+                <mrow> \amp = \sum_{n=1}^\infty (-1)^{n+1}\frac{1}{(2n+1)!}z^{2n+1}</mrow>
+            </md>.
+        </p>
+    </li>
+    <li>
+        <p>
+            We see from the power series expansion that <m>\ord_f(0)=9</m>. 
+        </p>
+    </li>
+</ol>
 </p>
 </solution>
 </example>
