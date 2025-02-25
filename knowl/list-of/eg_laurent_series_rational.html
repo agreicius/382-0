@@ -12,10 +12,24 @@
 </head>
 <body class="ignore-math">
 <article class="example example-like"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.8</span><span class="period">.</span><span class="space"> </span><span class="title">Laurent series of rational function.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.10</span><span class="period">.</span><span class="space"> </span><span class="title">Laurent series of rational function.</span>
 </h3>
 <div class="para">Let <span class="process-math">\(A\)</span> be the annulus <span class="process-math">\(0&lt; \abs{z-1} &lt; \infty\text{:}\)</span> i.e., <span class="process-math">\(A=\C-\{1\}\text{.}\)</span> Compute the Laurent series of <span class="process-math">\(f(z)=(z^3+2z^2)/(z-1)^3\)</span> on <span class="process-math">\(A\text{.}\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_laurent_series.html#eg_laurent_series_rational">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(g(z)=z^3+2z^2\text{.}\)</span> We first expand <span class="process-math">\(g\)</span> about <span class="process-math">\(z_0=1\)</span> as</div>
+<div class="displaymath process-math">
+\begin{align*}
+g(z)\amp =g(1)+g'(1)(z-1)+\frac{g''(0)}{2!}(z-1)^2+\frac{g'''(0)}{3!}(z-1)^3\\
+\amp =3+7(z-1)+5(z-1)^2+(z-1)^3\amp \text{.}
+\end{align*}
+</div>
+<div class="para">Now compute</div>
+<div class="displaymath process-math">
+\begin{align*}
+f(z) \amp = \frac{g(z)}{(z-1)^3}=\frac{3}{(z-1)^3}+\frac{7}{(z-1)^2}+\frac{5}{z-1}+1\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_laurent_series.html#eg_laurent_series_rational">in-context</a></span>
 </body>
 </html>
