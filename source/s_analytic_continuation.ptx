@@ -83,7 +83,29 @@ Compute <m>\ord_f(z_0)</m> for the given <m>f</m> and <m>z_0</m>.
 </statement>
 <solution>
 <p>
+<ol>
+    <li>
+        <p>
+            Let <m>f(z)=\Log z</m>. Using formula <xref ref="eq_power_series_coeff_formula"/> we see that 
+            <md>
+                <mrow>\Log z \amp = f(1)+f'(1)(z-1)+\frac{f''(1)}{2}(z-1)^2+\cdots  </mrow>
+                <mrow> \amp = 0+1(z-1)-\frac{1}{2}(z-1)^2+\cdots </mrow>
+            </md>.
+            Since <m>f(1)=0</m> and <m>f'(1)\ne 0</m>, we see that <m>\ord_f(1)=1</m>.
 
+        </p>
+    </li>
+    <li>
+        <p>
+           The function <m>f(z)=1/(1-z^4)-1</m> has power series representation
+           <me>
+            f(z)=(1+z^4+z^8+\cdots)-1=z^4+z^8+\cdots
+           </me>.
+            It follows from <xref ref="eq_power_series_coeff_formula"/> that <m>f^{(k)}(0)=0</m> for <m>0\leq k\leq 3</m> and <m>f^{(4)}(0)=1</m>. We conclude that <m>\ord_f(0)=4</m>. 
+            
+        </p>
+    </li>
+</ol>
 </p>
 </solution>
 </example>
