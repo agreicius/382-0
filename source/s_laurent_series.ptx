@@ -258,6 +258,24 @@ P+C+Q+D+t1+t2+l1+l2+E+l3+t3+t4+t5+F+t6+G+l4+t6+t7
     </p>
     </solution>
     </example>
+    <remark>
+        <title>Multiplying power series</title>
+       <p>
+        The next example requires multiplying together two power series. In general, given two power series 
+        <md>
+            <mrow>f(z) \amp = \sum_{n=0}^\infty a_n(z-z_0)^n \amp g(z)\amp =\sum_{n=0}^\infty b_n(z-z_0)^n</mrow>
+        </md>
+        that converge for all <m>z\in B_R(z_0)</m>, their product has power series expansion
+        <me>
+            f(z)g(z)=\sum_{n=0}^\infty c_n(z-z_0)^n
+        </me>,
+        where 
+        <me>
+            c_n=a_0b_n+a_1b_{n-1}+\cdots a_nb_0=\sum_{k=0}^na_kb_{n-k}
+        </me>.
+       </p> 
+        
+    </remark>
     <example xml:id="eg_laurent_series_trunc">
     <title>Truncated Laurent series</title>
     <statement>
@@ -267,10 +285,30 @@ P+C+Q+D+t1+t2+l1+l2+E+l3+t3+t4+t5+F+t6+G+l4+t6+t7
     </statement>
     <solution>
     <p>
-    
+    We have 
+    <md>
+        <mrow>f(z) \amp =\frac{e^z}{z^2(z+1)}</mrow>
+        <mrow> \amp = \frac{1}{z^2}\cdot (1+z+\frac{z^2}{2}+\frac{z^3}{6}+\cdots)(1-z+z^2-z^3+\cdots)</mrow>
+        <mrow> \amp = \frac{1}{z^2}\sum_{n=0}^\infty c_n z^n, \ c_n=\sum_{k=0}^n(-1)^{n-k}/n!</mrow>
+        <mrow> \amp = \frac{1}{z^2}(1+0z+\frac{1}{2}z^2-\frac{1}{3}z^3+\frac{3}{8}z^4+\cdots)</mrow>
+        <mrow> \amp = \frac{1}{z^2}+\frac{1}{2}-\frac{1}{3}z+\frac{3}{8}z^2+\cdots</mrow>
+    </md>
     </p>
     </solution>
     </example>
+    <remark>
+        <title>Expanding a polynomial about a different center</title>
+        <p>
+            Since a polynomial <m>f(z)=a_nz^n+a_{n-1}z^{n-1}+\cdots +a_1z+a_0</m> is entire, we can expand it as a power series about any center <m>z_0</m>. We see using formula <xref ref="eq_power_series_coeff_formula"/> that 
+            <md>
+                <mrow>f(z) \amp = \sum_{k=0}^\infty c_k(z-z_0)^k </mrow>
+                <mrow> \amp = \sum_{k=0}^\infty \frac{f^{(k)}(z_0)}{k!}(z-z_0)^k</mrow>
+                <mrow> \amp = f(z_0)+f'(z_0)(z-z_0)+\frac{f''(z_0)}{2}(z-z_0)^2+\cdots +\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n</mrow>
+            </md>,
+            since <m>f^{(k)}</m> is the zero function for all <m>k\geq n+1</m>. 
+        </p>
+        
+    </remark>
     <example xml:id="eg_laurent_series_rational">
     <title>Laurent series of rational function</title>
     <statement>
@@ -280,7 +318,15 @@ P+C+Q+D+t1+t2+l1+l2+E+l3+t3+t4+t5+F+t6+G+l4+t6+t7
     </statement>
     <solution>
     <p>
-    
+    Let <m>g(z)=z^3+2z^2</m>. We first expand <m>g</m> about <m>z_0=1</m> as 
+    <md>
+        <mrow> g(z)\amp =g(1)+g'(1)(z-1)+\frac{g''(0)}{2!}(z-1)^2+\frac{g'''(0)}{3!}(z-1)^3</mrow>
+        <mrow> \amp =3+7(z-1)+5(z-1)^2+(z-1)^3\amp </mrow>
+    </md>.
+    Now compute 
+    <md>
+        <mrow>f(z) \amp = \frac{g(z)}{(z-1)^3}=\frac{3}{(z-1)^3}+\frac{7}{(z-1)^2}+\frac{5}{z-1}+1</mrow>
+    </md>.
     </p>
     </solution>
     </example>
