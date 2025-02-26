@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.22.4</span><span class="period">.</span><span class="space"> </span><span class="title">Isolated singularity.</span>
+</h3>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(f\)</span> is analytic on the open punctured ball <span class="process-math">\(B_R(z_0)-\{z_0\}\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_isol_sing-2-1-3">
+<li>
+<span class="heading"><span class="title">Riemann’s removable singularity theorem.</span></span><div class="para">
+<span class="process-math">\(z_0\)</span> is a removable singularity if and only if <span class="process-math">\(f\)</span> is bounded on the punctured open ball <span class="process-math">\(B_r(z_0)-\{z_0\}\)</span> for some <span class="process-math">\(r&lt; R\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Factoring zeros/poles.</span></span><div class="para">
+<span class="process-math">\(\ord_f z_0=m\)</span> for <span class="process-math">\(m\in \Z\)</span> if and only if <span class="process-math">\(f(z)=(z-z_0)^mg(z)\text{,}\)</span> where <span class="process-math">\(g\)</span> is analytic on <span class="process-math">\(B_R(z_0)\)</span> and <span class="process-math">\(g(z_0)\ne 0\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Casorati-Weierstrass Theorem.</span></span><div class="para">If <span class="process-math">\(z_0\)</span> is an isolated singularity, then <span class="process-math">\(f(B_r(z_0)-\{z_0\})\)</span> is dense in <span class="process-math">\(\C\)</span> for all <span class="process-math">\(0&lt; r&lt; R\text{:}\)</span> i.e., given any such <span class="process-math">\(r&gt; 0\text{,}\)</span> any <span class="process-math">\(w\in \C\text{,}\)</span> and any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> there is a <span class="process-math">\(z\in B_r(z_0)-\{z_0\}\)</span> such that <span class="process-math">\(f(z_0)\in B_\epsilon(w)\text{.}\)</span>
+</div>
+</li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_isol_sing-3-1-1">
+<li>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(z_0\)</span> is a removable singularity, then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=a_0+a_1z+\cdots 
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in B_R(z_0)-\{z_0\}\)</span> for some <span class="process-math">\(R&gt; 0\text{.}\)</span> This power series defines a function <span class="process-math">\(g\)</span> that is analytic on the entire ball <span class="process-math">\(B_R(z_0)\text{;}\)</span> since <span class="process-math">\(g\)</span> is continuous, it is bounded on <span class="process-math">\(\overline{B}_r(z_0)\)</span> for any  <span class="process-math">\(r&lt; R\text{,}\)</span> and hence also on <span class="process-math">\(B_r(z_0)\text{.}\)</span>  Since <span class="process-math">\(f(z)=g(z)\)</span> for all <span class="process-math">\(z\ne z_0\text{,}\)</span> we see that <span class="process-math">\(f\)</span> is bounded on <span class="process-math">\(B_r(z_0)-\{z_0\}\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(f\)</span> is bounded on <span class="process-math">\(B_r(z_0)-\{z_0\}\text{,}\)</span> then there is an <span class="process-math">\(M\geq 0\)</span> such that <span class="process-math">\(\abs{f(z)}\leq M\)</span> for all <span class="process-math">\(z\in B_r(z_0)-\{z_0\}\text{.}\)</span> Letting <span class="process-math">\(f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n\)</span> be the Laurent series expansion of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_0\)</span> for this punctured ball, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_n=\frac{1}{2\pi i}\int_{\gamma_s} \frac{f(z)}{(z-z_0)^{n+1}}\, dz
+\end{equation*}
+</div>
+<div class="para">for any <span class="process-math">\(\gamma(t)=se^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\)</span> for any <span class="process-math">\(0&lt; s&lt; r\text{.}\)</span> But then for all such <span class="process-math">\(s\)</span> and all <span class="process-math">\(n=-m\)</span> with <span class="process-math">\(m&gt; 0\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\abs{c_{n}} \amp = \abs{\frac{1}{2\pi i}\int_{\gamma_s}f(z)(z-z_0)^{m-1}\, dz} \\
+\amp \leq \frac{1}{2\pi}M s^{m-1}\cdot 2\pi s \amp (ML-\text{ineq.})\\
+\amp = Ms^m \text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(m\geq 1\text{,}\)</span> we see that <span class="process-math">\(Ms^m\to 0\)</span> as <span class="process-math">\(s\to 0\text{.}\)</span> It follows that <span class="process-math">\(c_{-m}=0\)</span> for all <span class="process-math">\(m\geq 1\text{.}\)</span> Thus <span class="process-math">\(z_0\)</span> is a removable singularity.</div>
+</div>
+</li>
+<li>
+<div class="para">The proof of this fact is very similar to that of <a href="s_analytic_continuation.html#cor_order_zero" class="xref" data-knowl="./knowl/xref/cor_order_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.19.4: Order of f at z_0">Corollary 1.19.4</a>. As such we will omit some details.</div>
+<div class="para logical">
+<div class="para">Suppose <span class="process-math">\(f(z)=(z-z_0)^mg(z)\)</span> where <span class="process-math">\(g\)</span> is analytic on <span class="process-math">\(B_R(z_0)\)</span> and <span class="process-math">\(g(z_0)\ne 0\text{.}\)</span> Let <span class="process-math">\(f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n\)</span> be the Laurent series expansion of <span class="process-math">\(f\)</span> in <span class="process-math">\(B_R(z_0)-\{z_0\}\text{.}\)</span> Let <span class="process-math">\(\gamma(t)=z_0+re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{,}\)</span> for some <span class="process-math">\(0&lt; r&lt; R\)</span> For all <span class="process-math">\(k&lt; m\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+c_k \amp = \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{(z-z_0)^{k+1}}\, dz\\
+\amp = \frac{1}{2\pi i}\int_\gamma\frac{(z-z_0)^mg(z)}{(z-z_0)^{k+1}}\, dz\\
+\amp = \frac{1}{2\pi i}\int_\gamma(z-z_0)^{m-k-1}g(z)\, dz\\
+\amp = 0\text{,}
+\end{align*}
+</div>
+<div class="para">since  <span class="process-math">\(m-k -1 \geq 0\text{,}\)</span> <span class="process-math">\(g\)</span> is analytic, and thus <span class="process-math">\((z-z_0)^{m-k-1}g(z)\)</span> is analytic. Similarly, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_m=\frac{1}{2\pi i}\int_\gamma\frac{g(z)}{z-z_0}\, dz=g(z_0)\ne 0\text{,}
+\end{equation*}
+</div>
+<div class="para">using the Cauchy integral formula on the analytic function <span class="process-math">\(g\text{.}\)</span> This proves that <span class="process-math">\(\ord_f z_0=m\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Now assume <span class="process-math">\(\ord_f z_0=m\text{,}\)</span> so that we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_order_zero.html">
+\begin{align*}
+f(z) \amp =a_m(z-z_0)^m+a_{m+1}(z-z_0)^{m+1}+\cdots\\
+\amp =(z-z_0)^m(a_m+a_{m+1}(z-z_0)+\cdots )\text{,}
+\end{align*}
+</div>
+<div class="para">where we can show that the series <span class="process-math">\((a_m+a_{m+1}(z-z_0)+\cdots )\)</span> converges on <span class="process-math">\(B_R(z_0)\)</span> just as in the proof of <a href="s_analytic_continuation.html#cor_order_zero" class="xref" data-knowl="./knowl/xref/cor_order_zero.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.19.4: Order of f at z_0">Corollary 1.19.4</a>, and thus that the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_order_zero.html">
+\begin{equation*}
+g(z)=(a_m+a_{m+1}(z-z_0)+\cdots )
+\end{equation*}
+</div>
+<div class="para">is analytic on <span class="process-math">\(B_R(z_0)\)</span> and satisfies <span class="process-math">\(g(0)=a_m\ne 0\text{.}\)</span>
+</div>
+</div>
+</li>
+<li><div class="para logical">
+<div class="para">We prove the contrapositive. If <span class="process-math">\(f(B_r(z_0)-\{z_0\})\)</span> is not dense for some <span class="process-math">\(0&lt; r\lt R\text{,}\)</span> then we can find a <span class="process-math">\(w\in \C\)</span> and <span class="process-math">\(\epsilon &gt; 0\)</span> such that <span class="process-math">\(\abs{f(z)-w)}&gt; \epsilon\)</span> for all <span class="process-math">\(z\in B_r(z_0)-\{z_0\}\text{.}\)</span> It follows that the function <span class="process-math">\(g(z)=1/(f(z)-w)\)</span> is analytic on <span class="process-math">\(U=B_r(z_0)-\{z_0\}\)</span> and satisfies <span class="process-math">\(\abs{g(z)}&lt; \frac{1}{\epsilon}\)</span> for all <span class="process-math">\(z\)</span> in this region. It follows from the Riemann removable singularity theorem (part (a)) that <span class="process-math">\(z_0\)</span> is a removable singularity of <span class="process-math">\(g(z)\text{,}\)</span> and hence that we may write <span class="process-math">\(g(z)=a_0+a_1(z-z_0)+\cdots\)</span> for all <span class="process-math">\(z\in B_r(z_0)-\{z_0\}\text{.}\)</span> Furthermore, since <span class="process-math">\(a_0=g(z_0)\ne 0\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)-w=1/g(z)=b_0+b_1(z-z_0)+b_2(z-z_0)^2+\cdots\text{,}
+\end{equation*}
+</div>
+<div class="para">and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(z)=(w+b_0)+b_1(z-z_0)+b_2(z-z_0)^2+\cdots 
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in B_r(z_0)-\{z_0\}\text{.}\)</span> But then <span class="process-math">\(z_0\)</span> is clearly not an essential singularity of <span class="process-math">\(f\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_poles.html#th_isol_sing">in-context</a></span>
+</body>
+</html>

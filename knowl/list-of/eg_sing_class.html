@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.22.3</span><span class="period">.</span><span class="space"> </span><span class="title">Singularity classification.</span>
+</h3>
+<div class="para logical">
+<div class="para">Compute <span class="process-math">\(\ord_f z_0\)</span> for the given <span class="process-math">\(f\)</span> and isolated singularity<span class="process-math">\(z_0\)</span> and classify the singularity <span class="process-math">\(z_0\text{.}\)</span>
+</div>
+<ol class="decimal" id="eg_sing_class-2-1-5">
+<li><div class="para">
+<span class="process-math">\(f(z)=\frac{\sin z}{z}\text{,}\)</span> <span class="process-math">\(z_0=0\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(f(z)=z^3e^{-1/z}\text{,}\)</span> <span class="process-math">\(z_0=0\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(f(z)=\frac{1}{z^5+z^3}\text{,}\)</span> <span class="process-math">\(z_0=0\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal" id="eg_sing_class-3-1-1">
+<li>
+<div class="para logical">
+<div class="para">For <span class="process-math">\(z\ne 0\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{\sin z}{z} \amp =\frac{1}{z}(z-z^3/3!+z^5/5!-\cdots)\\
+\amp = 1-\frac{1}{6}z^2+\frac{1}{120}z^4-\cdots \text{.}
+\end{align*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(\ord_f 0=1\text{,}\)</span> and hence that <span class="process-math">\(0\)</span> is a removable singularity.</div>
+</div>
+<div class="para logical">
+<div class="para">The function <span class="process-math">\(g(z)=1-\frac{1}{6}z^2+\frac{1}{120}-\cdots\)</span> is analytic on <span class="process-math">\(\C\)</span> and satisfies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(z)=\begin{cases}
+\frac{\sin z}{z} \amp \text{if } z\ne 0\\
+1 \amp \text{otherwise}
+\end{cases}\text{.}
+\end{equation*}
+</div>
+<div class="para">In other words, <span class="process-math">\(g\)</span> is an analytic continuation of <span class="process-math">\(f\)</span> (analytic on <span class="process-math">\(\C-\{0\}\)</span>) to <span class="process-math">\(\C\text{.}\)</span> This illustrates why we call these type of singularities removable: we can extend <span class="process-math">\(f\)</span> to a function that is also analytic at the singularity in question, thereby “removing” it.</div>
+</div>
+</li>
+<li><div class="para logical">
+<div class="para">As we have computed previously,</div>
+<div class="displaymath process-math">
+\begin{align*}
+z^3e^{1/z}\amp =\sum_{n=0}^\infty \frac{1}{n!} z^{-n+3} \\
+\amp = \sum_{n=-1}^{-\infty}\frac{1}{(n+3)! z^{n}}+\frac{1}{6}+\frac{1}{2}z+z^3 \\
+\amp = \sum_{n=-\infty}^3 c_nz^n\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(c_n=\frac{1}{-n+3}!\text{.}\)</span> Since <span class="process-math">\(c_n\ne 0\)</span> for all <span class="process-math">\(n\leq 3\text{,}\)</span> we see that <span class="process-math">\(\ord_f 0=-\infty\text{,}\)</span> and hence that <span class="process-math">\(0\)</span> is an essential singularity of <span class="process-math">\(f\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We compute</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{1}{z^5+z^3} \amp = \frac{1}{z^3}\cdot \frac{1}{z^2+1}\\
+\amp = \frac{1}{z^3}(1-z^2+z^4-z^6+\cdots)\\
+\amp =\frac{1}{z^3}-\frac{1}{z}+z-z^3+\cdots\text{.}
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(\ord_f 0=-3\)</span> showing that <span class="process-math">\(0\)</span> is a pole of order <span class="process-math">\(3\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_poles.html#eg_sing_class">in-context</a></span>
+</body>
+</html>

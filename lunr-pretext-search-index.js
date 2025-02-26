@@ -3079,6 +3079,87 @@ var ptx_lunr_docs = [
   "body": " Residue at simple pole   Let . Find all isolated singularities of and compute their corresponding residues.       "
 },
 {
+  "id": "s_poles",
+  "level": "1",
+  "url": "s_poles.html",
+  "type": "Section",
+  "number": "1.22",
+  "title": "Poles and residue computation",
+  "body": " Poles and residue computation   Order of isolated singularity   Let be an isolated singularity of and let be the -centered Laurent series expansion in a punctured open ball around . We define the order of at (or the order of with respect to ), denoted as follows:   if there is an integer such that and for all integers , then ;    if for all integers there exists such that , then ;    if for all integers , then .        Singularity classification   Let be an isolated singularity of .   If , then is called a removable singularity of .    If , where is a positive integer, then is called a zero of of order .    If , where is a positive integer, then is called a pole of of order .    If , then is called an infinite singularity of .        Singularity classification   Compute for the given and isolated singularity and classify the singularity .    ,      ,      ,           For , we have . We conclude that , and hence that is a removable singularity.  The function is analytic on and satisfies . In other words, is an analytic continuation of (analytic on ) to . This illustrates why we call these type of singularities removable: we can extend to a function that is also analytic at the singularity in question, thereby removing it.    As we have computed previously, , where . Since for all , we see that , and hence that is an essential singularity of .    We compute . Thus showing that is a pole of order .        Isolated singularity   Assume is analytic on the open punctured ball .   Riemann's removable singularity theorem   is a removable singularity if and only if is bounded on the punctured open ball for some .    Factoring zeros\/poles   for if and only if , where is analytic on and .    Casorati-Weierstrass Theorem  If is an isolated singularity, then is dense in for all : , given any such , any , and any , there is a such that .          If is a removable singularity, then we have for all for some . This power series defines a function that is analytic on the entire ball ; since is continuous, it is bounded on for any , and hence also on . Since for all , we see that is bounded on .  If is bounded on , then there is an such that for all . Letting be the Laurent series expansion of at for this punctured ball, we have for any , for any . But then for all such and all with , we have . Since , we see that as . It follows that for all . Thus is a removable singularity.    The proof of this fact is very similar to that of . As such we will omit some details.  Suppose where is analytic on and . Let be the Laurent series expansion of in . Let , , for some For all , we have , since , is analytic, and thus is analytic. Similarly, we have , using the Cauchy integral formula on the analytic function . This proves that .  Now assume , so that we have , where we can show that the series converges on just as in the proof of , and thus that the function is analytic on and satisfies .    We prove the contrapositive. If is not dense for some , then we can find a and such that for all . It follows that the function is analytic on and satisfies for all in this region. It follows from the Riemann removable singularity theorem (part (a)) that is a removable singularity of , and hence that we may write for all . Furthermore, since , we have , and thus for all . But then is clearly not an essential singularity of .        Picard's theorem  Remarkably, the Casorati-Weierstrass theorem can be strengthened as follows: if is an essential singularity of , then for any open punctured ball on which is analytic, attains all values of with one possible exception, infinitely often. This is the content of Picard's (big) theorem . The necessity of including one possible exception is illustrated by the function , which attains all values of except .     Assume is an isolated singularity of and , and that and are both integers.    .     .     .       The proof is left as an exercise.      Assume is a pole of of order , and write where is analytic at and . We have .    Given the factorization as given above, let be a power series representation of at that converges for all for some . It follows that has a Laurent series representation , and thus that . The alternative description of is obtained by observing that , and thus that for all . Since is continuous (in fact, infinitely differentiable), we conclude that , whence the second equality in follows.     Residue computation   Let . Find all isolated singularities of and compute their residues.        "
+},
+{
+  "id": "d_ord",
+  "level": "2",
+  "url": "s_poles.html#d_ord",
+  "type": "Definition",
+  "number": "1.22.1",
+  "title": "Order of isolated singularity.",
+  "body": " Order of isolated singularity   Let be an isolated singularity of and let be the -centered Laurent series expansion in a punctured open ball around . We define the order of at (or the order of with respect to ), denoted as follows:   if there is an integer such that and for all integers , then ;    if for all integers there exists such that , then ;    if for all integers , then .      "
+},
+{
+  "id": "d_pole_classification",
+  "level": "2",
+  "url": "s_poles.html#d_pole_classification",
+  "type": "Definition",
+  "number": "1.22.2",
+  "title": "Singularity classification.",
+  "body": " Singularity classification   Let be an isolated singularity of .   If , then is called a removable singularity of .    If , where is a positive integer, then is called a zero of of order .    If , where is a positive integer, then is called a pole of of order .    If , then is called an infinite singularity of .      "
+},
+{
+  "id": "eg_sing_class",
+  "level": "2",
+  "url": "s_poles.html#eg_sing_class",
+  "type": "Example",
+  "number": "1.22.3",
+  "title": "Singularity classification.",
+  "body": " Singularity classification   Compute for the given and isolated singularity and classify the singularity .    ,      ,      ,           For , we have . We conclude that , and hence that is a removable singularity.  The function is analytic on and satisfies . In other words, is an analytic continuation of (analytic on ) to . This illustrates why we call these type of singularities removable: we can extend to a function that is also analytic at the singularity in question, thereby removing it.    As we have computed previously, , where . Since for all , we see that , and hence that is an essential singularity of .    We compute . Thus showing that is a pole of order .      "
+},
+{
+  "id": "th_isol_sing",
+  "level": "2",
+  "url": "s_poles.html#th_isol_sing",
+  "type": "Theorem",
+  "number": "1.22.4",
+  "title": "Isolated singularity.",
+  "body": " Isolated singularity   Assume is analytic on the open punctured ball .   Riemann's removable singularity theorem   is a removable singularity if and only if is bounded on the punctured open ball for some .    Factoring zeros\/poles   for if and only if , where is analytic on and .    Casorati-Weierstrass Theorem  If is an isolated singularity, then is dense in for all : , given any such , any , and any , there is a such that .          If is a removable singularity, then we have for all for some . This power series defines a function that is analytic on the entire ball ; since is continuous, it is bounded on for any , and hence also on . Since for all , we see that is bounded on .  If is bounded on , then there is an such that for all . Letting be the Laurent series expansion of at for this punctured ball, we have for any , for any . But then for all such and all with , we have . Since , we see that as . It follows that for all . Thus is a removable singularity.    The proof of this fact is very similar to that of . As such we will omit some details.  Suppose where is analytic on and . Let be the Laurent series expansion of in . Let , , for some For all , we have , since , is analytic, and thus is analytic. Similarly, we have , using the Cauchy integral formula on the analytic function . This proves that .  Now assume , so that we have , where we can show that the series converges on just as in the proof of , and thus that the function is analytic on and satisfies .    We prove the contrapositive. If is not dense for some , then we can find a and such that for all . It follows that the function is analytic on and satisfies for all in this region. It follows from the Riemann removable singularity theorem (part (a)) that is a removable singularity of , and hence that we may write for all . Furthermore, since , we have , and thus for all . But then is clearly not an essential singularity of .      "
+},
+{
+  "id": "s_poles-6",
+  "level": "2",
+  "url": "s_poles.html#s_poles-6",
+  "type": "Remark",
+  "number": "1.22.5",
+  "title": "Picard’s theorem.",
+  "body": " Picard's theorem  Remarkably, the Casorati-Weierstrass theorem can be strengthened as follows: if is an essential singularity of , then for any open punctured ball on which is analytic, attains all values of with one possible exception, infinitely often. This is the content of Picard's (big) theorem . The necessity of including one possible exception is illustrated by the function , which attains all values of except .  "
+},
+{
+  "id": "cor_isol_sing",
+  "level": "2",
+  "url": "s_poles.html#cor_isol_sing",
+  "type": "Corollary",
+  "number": "1.22.6",
+  "title": "",
+  "body": "  Assume is an isolated singularity of and , and that and are both integers.    .     .     .       The proof is left as an exercise.   "
+},
+{
+  "id": "cor_res_at_pole",
+  "level": "2",
+  "url": "s_poles.html#cor_res_at_pole",
+  "type": "Corollary",
+  "number": "1.22.7",
+  "title": "",
+  "body": "  Assume is a pole of of order , and write where is analytic at and . We have .    Given the factorization as given above, let be a power series representation of at that converges for all for some . It follows that has a Laurent series representation , and thus that . The alternative description of is obtained by observing that , and thus that for all . Since is continuous (in fact, infinitely differentiable), we conclude that , whence the second equality in follows.   "
+},
+{
+  "id": "eg_res",
+  "level": "2",
+  "url": "s_poles.html#eg_res",
+  "type": "Example",
+  "number": "1.22.8",
+  "title": "Residue computation.",
+  "body": " Residue computation   Let . Find all isolated singularities of and compute their residues.       "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
