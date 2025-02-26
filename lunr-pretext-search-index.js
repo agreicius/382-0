@@ -3160,6 +3160,24 @@ var ptx_lunr_docs = [
   "body": " Residue computation   Let . Find all isolated singularities of and compute their residues.       "
 },
 {
+  "id": "s_improper_int",
+  "level": "1",
+  "url": "s_improper_int.html",
+  "type": "Section",
+  "number": "1.23",
+  "title": "Improper integrals",
+  "body": " Improper integrals   Jordan's lemma   We have for all . As a consequence, we have for any .    "
+},
+{
+  "id": "lem_jordan",
+  "level": "2",
+  "url": "s_improper_int.html#lem_jordan",
+  "type": "Lemma",
+  "number": "1.23.1",
+  "title": "Jordan’s lemma.",
+  "body": " Jordan's lemma   We have for all . As a consequence, we have for any .   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
