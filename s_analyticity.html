@@ -443,7 +443,71 @@ a_n=\frac{1}{n!}f^{(n)}(z_0)=\frac{1}{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+
 f \text{ holomorphic at } z_0 \iff  f \text{ analytic at } z_0\text{.}\tag{1.73}
 \end{equation}
 </div>
-</div></article><details id="th_holo_implies_analytic-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_holo_implies_analytic-3-1"></div></article></details><figure class="figure figure-like" id="fig_holo_implies_analytic"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/fig_holo_implies_analytic-2.svg" role="img" class="contained" alt="Visual idea behind proof of theorem"></div>
+</div></article><details id="th_holo_implies_analytic-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_holo_implies_analytic-3-1">
+<div class="para">Given <span class="process-math">\(w\in B_R(z_0)\)</span> we can find an <span class="process-math">\(R'&gt; 0\)</span> such that <span class="process-math">\(w\in  \overline{B}_{R'}(z_0)\subseteq B_R(z_0)\text{.}\)</span> (See <a href="s_analyticity.html#fig_holo_implies_analytic" class="xref" data-knowl="./knowl/xref/fig_holo_implies_analytic.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.18.2">Figure 1.18.2</a>.) Since <span class="process-math">\(f\)</span> is analytic on <span class="process-math">\(B_R(z_0)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_holo_implies_analytic.html">
+\begin{equation*}
+f(w)=\frac{1}{2\pi i}\int_{\gamma_{R'}}\frac{f(z)}{z-w}\, dz\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\gamma_{R'}=w+R'e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> Since <span class="process-math">\(R'=\abs{z-z_0}&lt; \abs{w-z_0}\)</span> for all <span class="process-math">\(z\in \gamma_{R'}\text{,}\)</span> we have <span class="process-math">\(\abs{(w-z_0)/(z-z_0)}&lt; 1\text{,}\)</span> and hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_holo_implies_analytic.html" id="th_holo_implies_analytic-3-1-13">
+\begin{align*}
+\frac{1}{z-w} \amp =\frac{1}{z-z_0-(w-z_0}\\
+\amp =\frac{1}{z-z_0}\cdot \frac{1}{1-(w-z_0)/(z-z_0)}\\
+\amp = \frac{1}{z-z_0}\sum_{n=0}^\infty ((w-z_0)/(z-z_0))^n\\
+\amp = \sum_{n=0}^\infty \frac{1}{(z-z_0)^{n+1}}(w-z_0)^n 
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in \gamma_{R'}\text{.}\)</span> We then have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_holo_implies_analytic.html" id="th_holo_implies_analytic-3-1-15">
+\begin{align*}
+f(w)\amp =\frac{1}{2\pi i}\int_{\gamma_{R'}}\frac{f(z)}{z-w}\, dz \\
+\amp = \frac{1}{2\pi i}\int_{\gamma_{R'}} \left(\sum_{n=0}^\infty \frac{f(z)}{(z-z_0)^{n+1}}(w-z_0)^n\right) \, dz \\
+\amp =\frac{1}{2\pi i}\sum_{n=0}^\infty \int_{\gamma_{R'}}\frac{1}{(z-z_0)^{n+1}}(w-z_0)^n\, dz \\
+\amp = \frac{1}{2\pi i}\sum_{n=0}^\infty \left(\int_{\gamma_{R'}}\frac{1}{(z-z_0)^{n+1}}\, dz\right)(w-z_0)^n\\
+\amp = \sum_{n=0}^\infty a_n(w-z_0)^n\text{,}
+\end{align*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_holo_implies_analytic.html">
+\begin{equation*}
+a_n=\frac{1}{2\pi i}\int_{\gamma_{R'}}\frac{1}{(z-z_0)^{n+1}}\, dz\text{.}
+\end{equation*}
+</div>
+<div class="para">Of course, there is one subtle detail to consider here: namely, why are we justified in swapping the order of the integral and infinite sum? The answer, as usual, hinges on a uniformly convergent sequence. In this case, letting</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_holo_implies_analytic.html">
+\begin{equation*}
+f_k(z)=\frac{f(z)}{(z-z_0)}g_k(z), g_k(z)=\sum_{n=0}^k\left((w-z_0)/(z-z_0)\right)^n\text{.}
+\end{equation*}
+</div>
+<div class="para">We claim that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_holo_implies_analytic.html">
+\begin{equation*}
+f_k\to \frac{f(z)}{w-z_0}=\frac{f(z)}{z-z_0}\cdot \frac{1}{1-(w-z_0)/(z-z_0)}
+\end{equation*}
+</div>
+<div class="para">uniformly on <span class="process-math">\(\gamma_{R'}\text{.}\)</span> Indeed, since <span class="process-math">\(g(z)=\frac{f(z)}{(z-z_0)}\)</span> is continuous on <span class="process-math">\(\gamma_{R'}\text{,}\)</span> we have (using the extreme value theorem) <span class="process-math">\(\abs{g(z)}\leq M\)</span> for some <span class="process-math">\(M\geq 0\text{.}\)</span> Furthermore, since power series satisfy a uniform convergence property, we know that <span class="process-math">\(g_k\to \frac{1}{1-(w-z_0)/(z-z_0)}\)</span> uniformly. Given any <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> we can thus pick an integer <span class="process-math">\(N\geq 0\)</span> such that <span class="process-math">\(\abs{g_k-\tfrac{1}{1-(w-z_0)/(z-z_0)}}&lt; \tfrac{\epsilon}{M}\)</span> for all <span class="process-math">\(k&gt; N\)</span> and <span class="process-math">\(z\in \gamma_{R'}\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_holo_implies_analytic.html" id="th_holo_implies_analytic-3-1-30">
+\begin{align*}
+\abs{f_k(z)- \frac{f(z)}{w-z_0}} \amp = \abs{f_k(z)- \frac{f(z)}{z-z_0}\cdot \frac{1}{1-(w-z_0)/(z-z_0)}}\\
+\amp =\abs{\frac{f(z)}{z-z_0}}\abs{g_k(z)-\frac{1}{1-(w-z_0)/(z-z_0)}}\\
+\amp &lt; M\cdot \epsilon/M\\
+\amp = \epsilon
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(k&gt; N\)</span> and <span class="process-math">\(z\in \gamma_{R'}\text{.}\)</span> This proves our uniform convergence claim, and thus justifies our bringing the integral into the infinite sum.</div>
+</div>
+<div class="para logical" id="th_holo_implies_analytic-3-2">
+<div class="para">Lastly, we observe that the derivative formula for the power series coefficients <span class="process-math">\(a_n\)</span> follows from <a href="s_power_series.html#cor_power_series_expansion" class="xref" data-knowl="./knowl/xref/cor_power_series_expansion.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.17.15: Uniqueness of expansions">Corollary 1.17.15</a>. As for the stated integral formula for  <span class="process-math">\(a_n\text{,}\)</span> by the deformation of paths prinicple, we have for any <span class="process-math">\(r\in (0,R)\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_power_series_expansion.html">
+\begin{equation*}
+a_n=\frac{1}{2\pi i}\int_{\gamma_{R'}}\frac{f(z)}{z-z_0}\, dz=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{z-z_0}\, dz\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\gamma(t)=z_0+re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> This completes the proof.</div>
+</div></article></details><figure class="figure figure-like" id="fig_holo_implies_analytic"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/fig_holo_implies_analytic-2.svg" role="img" class="contained" alt="Visual idea behind proof of theorem"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.18.2<span class="period">.</span></span><span class="space"> </span>Visual idea behind proof of <a href="s_analyticity.html#th_holo_implies_analytic" class="xref" data-knowl="./knowl/xref/th_holo_implies_analytic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.1: Holomorphic implies analytic">Theorem 1.18.1</a></figcaption></figure><div class="para logical" id="s_analyticity-5">
 <div class="para">As a consequence of <a href="s_analyticity.html#th_holo_implies_analytic" class="xref" data-knowl="./knowl/xref/th_holo_implies_analytic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.1: Holomorphic implies analytic">Theorem 1.18.1</a>, we can now add <span class="process-math">\(\exp\text{,}\)</span> <span class="process-math">\(\cos\text{,}\)</span> and <span class="process-math">\(\sin\)</span> to our list of familiar functions with power series representations centered at <span class="process-math">\(z_0=0\text{.}\)</span> Observe that since these three functions are holomorphic on all of <span class="process-math">\(\C\text{,}\)</span> and since <span class="process-math">\(B_R(0)\subseteq \C\)</span> for all <span class="process-math">\(R&gt; 0\text{,}\)</span> the radius of convergence of their <span class="process-math">\(z_0=0\)</span>-centered power series is <span class="process-math">\(\infty\text{.}\)</span> The coefficients of the power series for <span class="process-math">\(f(z)=e^z\)</span> are easily computed using the fact that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_holo_implies_analytic.html">
@@ -552,7 +616,7 @@ g(i)=\lim\limits_{z\to i}g(z)=\lim\limits_{n \to\infty }f((1-1/n)i)\text{,}
 </div>
 </li>
 </ol>
-</div></article><details id="th_holomorphic-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_holomorphic-3-1"></div></article></details></section></div>
+</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_power_series.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_analytic_continuation.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
