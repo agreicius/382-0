@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_poles" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Poles and residue computation</title>
+
+    <definition xml:id="d_ord">
+    <title>Order of isolated singularity</title>
+    <statement>
+    <p>
+    Let <m>z_0</m> be an isolated singularity of <m>f</m> and let <m>f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n</m> be the <m>z_0</m>-centered Laurent series expansion in a punctured open ball around <m>z_0</m>. We define the <term>order</term> of <m>f</m> at <m>z_0</m> (or the <term>order</term> of <m>z_0</m> with respect to <m>f</m>), denoted <m>\ord_f z_0</m> as follows: 
+    <ul>
+        <li>
+            <p>
+                if there is an integer <m>m</m> such that <m>c_m\ne 0</m> and <m>c_k=0</m> for all integers <m>k&lt; m</m>, then <m>\ord_f z_0=m</m>;
+            </p>
+        </li>
+        <li>
+            <p>
+                if for all integers <m>m</m> there exists <m>k&lt; m</m> such that <m>c_m\ne 0</m>, then <m>\ord_f z_0=-\infty</m>; 
+            </p>
+        </li>
+        <li>
+            <p>
+                if <m>c_k=0</m> for all integers <m>k</m>, then <m>\ord_f z_0=\infty</m>. 
+            </p>
+        </li>
+    </ul>
+    </p>
+    </statement>
+    </definition>
+    <definition xml:id="d_pole_classification">
+    <title>Singularity classification</title>
+    <statement>
+    <p>
+    Let <m>z_0</m> be an isolated singularity of <m>f</m>. 
+    <ul>
+        <li>
+            <p>
+                If <m>\ord_f z_0\geq 0</m>, then <m>z_0</m> is called a <term>removable singularity</term> of <m>f</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>\ord_f z_0=m</m>, where <m>m&gt; 0</m> is a positive integer, then <m>z_0</m> is called a <term>zero of <m>f</m> of order <m>m</m></term>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>\ord_f z_0=-m</m>, where <m>m&gt; 0</m> is a positive integer, then <m>z_0</m> is called a <term>pole of <m>f</m> of order <m>m</m></term>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                If <m>\ord_f z_0=-\infty</m>, then <m>z_0</m> is called an <term>infinite singularity</term> of <m>f</m>. 
+            </p>
+        </li>
+    </ul>
+    </p>
+    </statement>
+    </definition>
+    <example xml:id="eg_sing_class">
+    <title>Singularity classification</title>
+    <statement>
+    <p>
+    Compute <m>\ord_f z_0</m> for the given <m>f</m> and isolated singularity<m>z_0</m> and classify the singularity <m>z_0</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>f(z)=\frac{\sin z}{z}</m>, <m>z_0=0</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>f(z)=z^3e^{-1/z}</m>, <m>z_0=0</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>f(z)=\frac{1}{z^5+z^3}</m>, <m>z_0=0</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                For <m>z\ne 0</m>, we have 
+                <md>
+                    <mrow>\frac{\sin z}{z} \amp =\frac{1}{z}(z-z^3/3!+z^5/5!-\cdots)</mrow>
+                    <mrow> \amp = 1-\frac{1}{6}z^2+\frac{1}{120}z^4-\cdots </mrow>
+                </md>.
+                We conclude that <m>\ord_f 0=1</m>, and hence that <m>0</m> is a removable singularity. 
+            </p>
+            <p>
+                The function <m>g(z)=1-\frac{1}{6}z^2+\frac{1}{120}-\cdots</m> is analytic on <m>\C</m> and satisfies 
+                <me>
+                    g(z)=\begin{cases}
+                    \frac{\sin z}{z} \amp \text{if } z\ne 0\\
+                    1 \amp \text{otherwise}
+                    \end{cases}
+                </me>.
+                In other words, <m>g</m> is an analytic continuation of <m>f</m> (analytic on <m>\C-\{0\}</m>) to <m>\C</m>. This illustrates why we call these type of singularities removable: we can extend <m>f</m> to a function that is also analytic at the singularity in question, thereby <q>removing</q> it. 
+            </p>
+        </li>
+        <li>
+            <p>
+                As we have computed previously, 
+                <md>
+                    <mrow>z^3e^{1/z}\amp =\sum_{n=0}^\infty \frac{1}{n!} z^{-n+3} </mrow>
+                    <mrow> \amp = \sum_{n=-1}^{-\infty}\frac{1}{(n+3)! z^{n}}+\frac{1}{6}+\frac{1}{2}z+z^3 </mrow>
+                    <mrow> \amp = \sum_{n=-\infty}^3 c_nz^n</mrow>
+                </md>,
+                where <m>c_n=\frac{1}{-n+3}!</m>. Since <m>c_n\ne 0</m> for all <m>n\leq 3</m>, we see that <m>\ord_f 0=-\infty</m>, and hence that <m>0</m> is an essential singularity of <m>f</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+               We compute 
+               <md>
+                <mrow>\frac{1}{z^5+z^3} \amp = \frac{1}{z^3}\cdot \frac{1}{z^2+1}</mrow>
+                <mrow> \amp = \frac{1}{z^3}(1-z^2+z^4-z^6+\cdots)</mrow>
+                <mrow> \amp =\frac{1}{z^3}-\frac{1}{z}+z-z^3+\cdots</mrow>
+               </md>.
+               Thus <m>\ord_f 0=-3</m> showing that <m>0</m> is a pole of order <m>3</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </solution>
+    </example>
+    <theorem xml:id="th_isol_sing">
+    <title>Isolated singularity</title>
+    <statement>
+    <p>
+    Assume <m>f</m> is analytic on the open punctured ball <m>B_R(z_0)-\{z_0\}</m>.
+    <ol>
+        <li>
+            <title>Riemann's removable singularity theorem</title>
+            <p>
+                <m>z_0</m> is a removable singularity if and only if <m>f</m> is bounded on the punctured open ball <m>B_r(z_0)-\{z_0\}</m> for some <m>r&lt; R</m>. 
+            </p>
+        </li>
+        <li>
+            <title>Factoring zeros/poles</title>
+            <p>
+             <m>\ord_f z_0=m</m> for <m>m\in \Z</m> if and only if <m>f(z)=(z-z_0)^mg(z)</m>, where <m>g</m> is analytic on <m>B_R(z_0)</m> and <m>g(z_0)\ne 0</m>.
+            </p>
+        </li>
+        <li>
+            <title>Casorati-Weierstrass Theorem</title>
+            <p>
+                If <m>z_0</m> is an isolated singularity, then <m>f(B_r(z_0)-\{z_0\})</m> is dense in <m>\C</m> for all <m>0&lt; r&lt; R</m>: <ie/>, given any such <m>r&gt; 0</m>, any <m>w\in \C</m>, and any <m>\epsilon &gt; 0</m>, there is a <m>z\in B_r(z_0)-\{z_0\}</m> such that <m>f(z_0)\in B_\epsilon(w)</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    If <m>z_0</m> is a removable singularity, then we have 
+                    <me>
+                        f(z)=a_0+a_1z+\cdots 
+                    </me>
+                    for all <m>z\in B_R(z_0)-\{z_0\}</m> for some <m>R&gt; 0</m>. This power series defines a function <m>g</m> that is analytic on the entire ball <m>B_R(z_0)</m>; since <m>g</m> is continuous, it is bounded on <m>\overline{B}_r(z_0)</m> for any  <m>r&lt; R</m>, and hence also on <m>B_r(z_0)</m>.  Since <m>f(z)=g(z)</m> for all <m>z\ne z_0</m>, we see that <m>f</m> is bounded on <m>B_r(z_0)-\{z_0\}</m>.
+                </p>
+                <p>
+                    If <m>f</m> is bounded on <m>B_r(z_0)-\{z_0\}</m>, then there is an <m>M\geq 0</m> such that <m>\abs{f(z)}\leq M</m> for all <m>z\in B_r(z_0)-\{z_0\}</m>. Letting <m>f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n</m> be the Laurent series expansion of <m>f</m> at <m>z_0</m> for this punctured ball, we have 
+                    <me>
+                        c_n=\frac{1}{2\pi i}\int_{\gamma_s} \frac{f(z)}{(z-z_0)^{n+1}}\, dz
+                    </me>
+                    for any <m>\gamma(t)=se^{it}</m>, <m>t\in [0,2\pi]</m> for any <m>0&lt; s&lt; r</m>. But then for all such <m>s</m> and all <m>n=-m</m> with <m>m&gt; 0</m>, we have 
+                    <md>
+                        <mrow>\abs{c_{n}} \amp = \abs{\frac{1}{2\pi i}\int_{\gamma_s}f(z)(z-z_0)^{m-1}\, dz} </mrow>
+                        <mrow> \amp \leq \frac{1}{2\pi}M s^{m-1}\cdot 2\pi s \amp (ML-\text{ineq.})</mrow>
+                        <mrow> \amp = Ms^m </mrow>
+                    </md>.
+                    Since <m>m\geq 1</m>, we see that <m>Ms^m\to 0</m> as <m>s\to 0</m>. It follows that <m>c_{-m}=0</m> for all <m>m\geq 1</m>. Thus <m>z_0</m> is a removable singularity.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The proof of this fact is very similar to that of <xref ref="cor_order_zero"/>. As such we will omit some details. 
+                </p>
+                <p>
+                    Suppose <m>f(z)=(z-z_0)^mg(z)</m> where <m>g</m> is analytic on <m>B_R(z_0)</m> and <m>g(z_0)\ne 0</m>. Let <m>f(z)=\sum_{n=-\infty}^\infty c_n(z-z_0)^n</m> be the Laurent series expansion of <m>f</m> in <m>B_R(z_0)-\{z_0\}</m>. Let <m>\gamma(t)=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m>, for some <m>0&lt; r&lt; R</m> For all <m>k&lt; m</m>, we have 
+                    <md>
+                        <mrow>c_k \amp = \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{(z-z_0)^{k+1}}\, dz</mrow>
+                        <mrow> \amp = \frac{1}{2\pi i}\int_\gamma\frac{(z-z_0)^mg(z)}{(z-z_0)^{k+1}}\, dz</mrow>
+                        <mrow> \amp = \frac{1}{2\pi i}\int_\gamma(z-z_0)^{m-k-1}g(z)\, dz</mrow>
+                        <mrow> \amp = 0</mrow>
+                    </md>, 
+                    since  <m>m-k -1 \geq 0</m>, <m>g</m> is analytic, and thus <m>(z-z_0)^{m-k-1}g(z)</m> is analytic. Similarly, we have 
+                    <me>
+                        c_m=\frac{1}{2\pi i}\int_\gamma\frac{g(z)}{z-z_0}\, dz=g(z_0)\ne 0
+                    </me>,
+                    using the Cauchy integral formula on the analytic function <m>g</m>. This proves that <m>\ord_f z_0=m</m>.
+                </p>
+                <p>
+                    Now assume <m>\ord_f z_0=m</m>, so that we have 
+                    <md>
+                        <mrow>f(z) \amp =a_m(z-z_0)^m+a_{m+1}(z-z_0)^{m+1}+\cdots</mrow>
+                        <mrow> \amp =(z-z_0)^m(a_m+a_{m+1}(z-z_0)+\cdots )</mrow>
+                    </md>,
+                    where we can show that the series <m>(a_m+a_{m+1}(z-z_0)+\cdots )</m> converges on <m>B_R(z_0)</m> just as in the proof of <xref ref="cor_order_zero"/>, and thus that the function
+                    <me>
+                        g(z)=(a_m+a_{m+1}(z-z_0)+\cdots )
+                    </me>
+                    is analytic on <m>B_R(z_0)</m> and satisfies <m>g(0)=a_m\ne 0</m>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    We prove the contrapositive. If <m>f(B_r(z_0)-\{z_0\})</m> is not dense for some <m>0&lt; r\lt R</m>, then we can find a <m>w\in \C</m> and <m>\epsilon &gt; 0</m> such that <m>\abs{f(z)-w)}&gt; \epsilon</m> for all <m>z\in B_r(z_0)-\{z_0\}</m>. It follows that the function <m>g(z)=1/(f(z)-w)</m> is analytic on <m>U=B_r(z_0)-\{z_0\}</m> and satisfies <m>\abs{g(z)}&lt; \frac{1}{\epsilon}</m> for all <m>z</m> in this region. It follows from the Riemann removable singularity theorem (part (a)) that <m>z_0</m> is a removable singularity of <m>g(z)</m>, and hence that we may write <m>g(z)=a_0+a_1(z-z_0)+\cdots</m> for all <m>z\in B_r(z_0)-\{z_0\}</m>. Furthermore, since <m>a_0=g(z_0)\ne 0</m>, we have 
+                    <me>
+                    f(z)-w=1/g(z)=b_0+b_1(z-z_0)+b_2(z-z_0)^2+\cdots
+                    </me>, 
+                    and thus 
+                    <me>
+                        f(z)=(w+b_0)+b_1(z-z_0)+b_2(z-z_0)^2+\cdots 
+                    </me>
+                    for all <m>z\in B_r(z_0)-\{z_0\}</m>. But then <m>z_0</m> is clearly not an essential singularity of <m>f</m>.
+                </p>
+            </li>
+        </ol>
+    </p>
+    </proof>
+    </theorem>
+    <remark>
+        <title>Picard's theorem</title>
+        <p>
+            Remarkably, the Casorati-Weierstrass theorem can be strengthened as follows: if <m>z_0</m> is an essential singularity of <m>f</m>, then for any open punctured ball <m>B_r(z_0)-\{z_0\}</m> on which <m>f</m> is analytic, <m>f</m> attains all values of <m>\C</m> with one possible exception, infinitely often. This is the content of <em>Picard's (big) theorem</em>. The necessity of including one possible exception is illustrated by the function <m>f(z)=e^{1/z}</m>, which attains all values of <m>\C</m> except <m>0</m>. 
+        </p>
+    </remark>
+    <corollary xml:id="cor_isol_sing">
+        <statement>
+            <p>
+                Assume <m>z_0</m> is an isolated singularity of <m>f</m> and <m>g</m>, and that <m>\ord_f z_0=m</m> and <m>\ord_g z_0=n</m> are both integers. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>\ord_{fg}z_0=\ord_f z_0+\ord_g z_0=m+n</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\ord_{f+g} z_0\geq \min\{\ord_f z_0+\ord_g z_0\}</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\ord_{1/f} z_0=-\ord_f z_0=-m</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                The proof is left as an exercise. 
+            </p>
+        </proof>
+    </corollary>
+    <corollary xml:id="cor_res_at_pole">
+        <statement>
+            <p>
+                Assume <m>z_0</m> is a pole of <m>f</m> of order <m>m</m>, and write 
+                <m>f(z)=\frac{g(z)}{(z-z_0)^m}</m> where <m>g</m> is analytic at <m>z_0</m> and <m>g(z_0)\ne 0</m>. We have 
+                <men xml:id="eq_res_at_pole">
+                    \res_f z_0=\frac{g^{m-1}(z_0)}{(m-1)!}=\lim\limits_{z\to z_0}\frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{n-1}}\left(f(z)(z-z_0)^m\right)
+                </men>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Given the factorization <m>f(z)=\frac{g(z)}{(z-z_0)^m}</m> as given above, let 
+                <m>g(z)=\sum_{n=0}^\infty a_n(z-z_0)^n</m> be a power series representation of <m>g</m> at <m>z_0</m> that converges for all <m>z\in B_R(z_0)</m> for some <m>R</m>. It follows that <m>f(z)=g(z)/(z-z_0)^n</m> has a Laurent series representation 
+                <me>
+                    f(z)=\sum_{n=-m}^\infty a_{m+n}(z-z_0)^{n}
+                </me>,
+                and thus that 
+                <me>\res_f z_0=a_{m-1}=\frac{g^{(n-1)}(z_0)}{(n-1)!}</me>. 
+                The alternative description of <m>\res_f z_0</m> is obtained by observing that 
+                <me>
+                    f(z)(z-z_0)^m=g(z)
+                </me>,
+                and thus that 
+                <me>
+                    g^(n-1)(z)=\frac{d^{n-1}}{dz^{n-1}}\left(f(z)(z-z_0)^m\right)
+                </me>
+                for all <m>z\in B_R(z_0)-\{z_0\}</m>. Since <m>g^{(n-1)}</m> is continuous (in fact, infinitely differentiable), we conclude that 
+                <me>
+                    g^{(n-1)}(z_0)=\lim\limits_{z\to z_0}\frac{d^{n-1}}{dz^{n-1}}\left(f(z)(z-z_0)^m\right)
+                </me>,
+                whence the second equality in <xref ref="eq_res_at_pole"/> follows. 
+                
+
+                
+            </p>
+        </proof>
+    </corollary>
+    <example xml:id="eg_res">
+    <title>Residue computation</title>
+    <statement>
+    <p>
+    Let <m>f(z)=\frac{\cot z}{z}</m>. Find all isolated singularities of <m>f</m> and compute their residues. 
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
+</section>

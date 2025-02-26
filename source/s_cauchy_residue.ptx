@@ -91,7 +91,7 @@ Since <m>f(z)=\tfrac{e^z}{z^3+z^2}</m> is analytic on <m>\C-\{0,-1\}</m>
 <title>Residue at simple pole</title>
 <statement>
 <p>
-Let <m>f=p/g</m>, where <m>p</m> and <m>g</m> are analytic on <m>B_R(z_0)</m>. If <m>z_0</m> is a zero of <m>g</m> of order 1 (<ie/>, <m>\ord_g(z_0)=1</m>), then <m>z_0</m> is an isolated singularity of <m>f</m> and 
+Let <m>f=p/q</m>, where <m>p</m> and <m>q</m> are analytic on <m>B_R(z_0)</m>. If <m>z_0</m> is a zero of <m>q</m> of order 1 (<ie/>, <m>\ord_q(z_0)=1</m>), then <m>z_0</m> is an isolated singularity of <m>f</m> and 
 <men xml:id="eq_simple_pole_res">
     \res_f(z_0)=\frac{p(z_0)}{q'(z_0)}
 </men>.

@@ -21,4 +21,5 @@
      <xi:include href="s_analytic_continuation.ptx" />
      <xi:include href="s_laurent_series.ptx" />
      <xi:include href="s_cauchy_residue.ptx" />
+     <xi:include href="s_poles.ptx" />
 </chapter>
