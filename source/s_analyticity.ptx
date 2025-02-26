@@ -25,6 +25,49 @@ In particular, <m>f</m> is holomorphic at <m>z_0</m> if and only if <m>f</m> is 
 </statement>
 <proof>
 <p>
+    Given <m>w\in B_R(z_0)</m> we can find an <m>R'&gt; 0</m> such that <m>w\in  \overline{B}_{R'}(z_0)\subseteq B_R(z_0)</m>. (See <xref ref="fig_holo_implies_analytic"/>.) Since <m>f</m> is analytic on <m>B_R(z_0)</m>, we have 
+    <me>
+        f(w)=\frac{1}{2\pi i}\int_{\gamma_{R'}}\frac{f(z)}{z-w}\, dz
+    </me>,
+    where <m>\gamma_{R'}=w+R'e^{it}</m>, <m>t\in [0,2\pi]</m>. Since <m>R'=\abs{z-z_0}&lt; \abs{w-z_0}</m> for all <m>z\in \gamma_{R'}</m>, we have <m>\abs{(w-z_0)/(z-z_0)}&lt; 1</m>, and hence 
+    <md>
+        <mrow>\frac{1}{z-w} \amp =\frac{1}{z-z_0-(w-z_0}</mrow>
+        <mrow> \amp =\frac{1}{z-z_0}\cdot \frac{1}{1-(w-z_0)/(z-z_0)}</mrow>
+        <mrow> \amp = \frac{1}{z-z_0}\sum_{n=0}^\infty ((w-z_0)/(z-z_0))^n</mrow>
+        <mrow> \amp = \sum_{n=0}^\infty \frac{1}{(z-z_0)^{n+1}}(w-z_0)^n </mrow>
+    </md>
+    for all <m>z\in \gamma_{R'}</m>. We then have 
+    <md>
+        <mrow> f(w)\amp =\frac{1}{2\pi i}\int_{\gamma_{R'}}\frac{f(z)}{z-w}\, dz </mrow>
+        <mrow> \amp = \frac{1}{2\pi i}\int_{\gamma_{R'}} \left(\sum_{n=0}^\infty \frac{f(z)}{(z-z_0)^{n+1}}(w-z_0)^n\right) \, dz </mrow>
+        <mrow> \amp =\frac{1}{2\pi i}\sum_{n=0}^\infty \int_{\gamma_{R'}}\frac{1}{(z-z_0)^{n+1}}(w-z_0)^n\, dz </mrow>
+        <mrow> \amp = \frac{1}{2\pi i}\sum_{n=0}^\infty \left(\int_{\gamma_{R'}}\frac{1}{(z-z_0)^{n+1}}\, dz\right)(w-z_0)^n</mrow>
+        <mrow> \amp = \sum_{n=0}^\infty a_n(w-z_0)^n</mrow>
+    </md>,
+    where 
+    <me>
+        a_n=\frac{1}{2\pi i}\int_{\gamma_{R'}}\frac{1}{(z-z_0)^{n+1}}\, dz
+    </me>.
+    Of course, there is one subtle detail to consider here: namely, why are we justified in swapping the order of the integral and infinite sum? The answer, as usual, hinges on a uniformly convergent sequence. In this case, letting 
+    <me>
+        f_k(z)=\frac{f(z)}{(z-z_0)}g_k(z), g_k(z)=\sum_{n=0}^k\left((w-z_0)/(z-z_0)\right)^n
+    </me>.
+    We claim that 
+    <me>f_k\to \frac{f(z)}{w-z_0}=\frac{f(z)}{z-z_0}\cdot \frac{1}{1-(w-z_0)/(z-z_0)}</me> uniformly on <m>\gamma_{R'}</m>. Indeed, since <m>g(z)=\frac{f(z)}{(z-z_0)}</m> is continuous on <m>\gamma_{R'}</m>, we have (using the extreme value theorem) <m>\abs{g(z)}\leq M</m> for some <m>M\geq 0</m>. Furthermore, since power series satisfy a uniform convergence property, we know that <m>g_k\to \frac{1}{1-(w-z_0)/(z-z_0)}</m> uniformly. Given any <m>\epsilon &gt; 0</m>, we can thus pick an integer <m>N\geq 0</m> such that <m>\abs{g_k-\tfrac{1}{1-(w-z_0)/(z-z_0)}}&lt; \tfrac{\epsilon}{M}</m> for all <m>k&gt; N</m> and <m>z\in \gamma_{R'}</m>. It follows that 
+    <md>
+        <mrow>\abs{f_k(z)- \frac{f(z)}{w-z_0}} \amp = \abs{f_k(z)- \frac{f(z)}{z-z_0}\cdot \frac{1}{1-(w-z_0)/(z-z_0)}}</mrow>
+        <mrow> \amp =\abs{\frac{f(z)}{z-z_0}}\abs{g_k(z)-\frac{1}{1-(w-z_0)/(z-z_0)}}</mrow>
+        <mrow> \amp &lt; M\cdot \epsilon/M</mrow>
+        <mrow> \amp = \epsilon</mrow>
+    </md>
+    for all <m>k&gt; N</m> and <m>z\in \gamma_{R'}</m>. This proves our uniform convergence claim, and thus justifies our bringing the integral into the infinite sum. 
+</p>
+<p>
+    Lastly, we observe that the derivative formula for the power series coefficients <m>a_n</m> follows from <xref ref="cor_power_series_expansion"/>. As for the stated integral formula for  <m>a_n</m>, by the deformation of paths prinicple, we have for any <m>r\in (0,R)</m>
+    <me>
+        a_n=\frac{1}{2\pi i}\int_{\gamma_{R'}}\frac{f(z)}{z-z_0}\, dz=\frac{1}{2\pi i}\int_{\gamma}\frac{f(z)}{z-z_0}\, dz
+    </me>,
+    where <m>\gamma(t)=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m>. This completes the proof. 
 </p>
 </proof>
 </theorem>
@@ -36,19 +79,19 @@ In particular, <m>f</m> is holomorphic at <m>z_0</m> if and only if <m>f</m> is 
 P=point((1,1),color="blue", size=60, ticks=[[],[]])
 Q=point((1.85,1.85),color="blue", size=60)
 C=circle((1,1),2,color="green")
-D=circle((1.85,1.85), .7, color="green")
+<!-- D=circle((1.85,1.85), .7, color="green") -->
 E=circle((1,1),2.5, color="red")
 t1=text("$w$",(1.75,1.65),color="black", fontsize=14)
 t2=text("$z_0$",(.75,1.15),color="black", fontsize=14)
 t3=text("$R$",(1.15,-.5),color="black", fontsize=14)
-t4=text("$r$",(1.2+1/sqrt(2),1.2-1/sqrt(2)),color="black", fontsize=14)
-t5=text("$s$",(1.65+.35/sqrt(2),2+.35/sqrt(2)),color="black", fontsize=14)
-t6=text("$\\gamma$",(1+2.2/sqrt(2),1-2.2/sqrt(2)),color="black", fontsize=16)
-t7=text("$\\alpha$",(1.85+.85/sqrt(2),1.85-.85/sqrt(2)),color="black", fontsize=16)
+t4=text("$R'$",(1.2+1/sqrt(2),1.2-1/sqrt(2)),color="black", fontsize=14)
+<!-- t5=text("$s$",(1.65+.35/sqrt(2),2+.35/sqrt(2)),color="black", fontsize=14) -->
+<!-- t6=text("$\\gamma$",(1+2.2/sqrt(2),1-2.2/sqrt(2)),color="black", fontsize=16) -->
+<!-- t7=text("$\\alpha$",(1.85+.85/sqrt(2),1.85-.85/sqrt(2)),color="black", fontsize=16) -->
 l1=line(((1,1),(1,-1.5)),linestyle="dashed", color="black")
-l2=line(((1.85,1.85),(1.85+.7/sqrt(2),1.85+.7/sqrt(2))),linestyle="dashed", color="black")
+<!-- l2=line(((1.85,1.85),(1.85+.7/sqrt(2),1.85+.7/sqrt(2))),linestyle="dashed", color="black") -->
 l3=line(((1,1),(1+2/sqrt(2),1-2/sqrt(2))),linestyle="dashed", color="black")
-P+C+Q+D+t1+t2+l1+l2+E+l3+t3+t4+t5+t6+t7
+P+C+Q+t1+t2+l1+E+l3+t3+t4
         </sageplot>
     </image>
 </figure>
@@ -161,10 +204,7 @@ Let <m>f=u+iv</m> be a complex function defined on the open connected set <m>U</
 </ol>
 </p>
 </statement>
-<proof>
-<p>
-</p>
-</proof>
+
 </theorem>
 
 
