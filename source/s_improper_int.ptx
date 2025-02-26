@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_improper_int" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Improper integrals</title>
+
+    <lemma xml:id="lem_jordan">
+        <title>Jordan's lemma</title>
+        
+        <statement>
+            <p>
+                We have 
+                <me>\sin \theta\geq \frac{2}{\pi}\theta</me> for all <m>\theta\in [0,\pi/2]</m>. As a consequence, we have 
+            <me>
+                \int_0^{\pi}e^{-c\sin\theta}\, d\theta\leq \int_{0}^\pi e^{-c\theta}\, d\theta=\frac{1}{c}(1-e^{-c\pi})
+            </me>
+            for any <m>c&gt; 0</m>.
+            </p>
+        </statement>
+    </lemma>
+
+</section>
