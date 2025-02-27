@@ -3,7 +3,7 @@
 <section xml:id="s_improper_int" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Improper integrals</title>
 
-    <lemma xml:id="lem_jordan">
+    <theorem xml:id="lem_jordan">
         <title>Jordan's inequality</title>
         
         <statement>
@@ -28,7 +28,7 @@
                 </md>.
             </p>
         </proof>
-    </lemma>
+    </theorem>
     <figure xml:id="fig_jordan_ineq">
         <caption>Core idea of Jordan's inequality</caption>
         <image width="60%">
