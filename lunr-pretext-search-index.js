@@ -3172,7 +3172,7 @@ var ptx_lunr_docs = [
   "id": "lem_jordan",
   "level": "2",
   "url": "s_improper_int.html#lem_jordan",
-  "type": "Lemma",
+  "type": "Theorem",
   "number": "1.23.1",
   "title": "Jordan’s inequality.",
   "body": " Jordan's inequality   We have for all . As a consequence, we have for any .    The inequality is easily shown using calculus methods. (See for a fairly convincing visual argument.) We then have .   "
