@@ -238,6 +238,7 @@
         </p>
     </remark>
     <corollary xml:id="cor_isol_sing">
+    <title>Order arithmetic</title>
         <statement>
             <p>
                 Assume <m>z_0</m> is an isolated singularity of <m>f</m> and <m>g</m>, and that <m>\ord_f z_0=m</m> and <m>\ord_g z_0=n</m> are both integers. 
