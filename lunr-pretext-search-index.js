@@ -3166,7 +3166,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.23",
   "title": "Improper integrals",
-  "body": " Improper integrals   Jordan's lemma   We have for all . As a consequence, we have for any .    "
+  "body": " Improper integrals   Jordan's inequality   We have for all . As a consequence, we have for any .    The inequality is easily shown using calculus methods. (See for a fairly convincing visual argument.) We then have .     Core idea of Jordan's inequality   Core idea of Jordan's inequality     "
 },
 {
   "id": "lem_jordan",
@@ -3174,8 +3174,17 @@ var ptx_lunr_docs = [
   "url": "s_improper_int.html#lem_jordan",
   "type": "Lemma",
   "number": "1.23.1",
-  "title": "Jordan’s lemma.",
-  "body": " Jordan's lemma   We have for all . As a consequence, we have for any .   "
+  "title": "Jordan’s inequality.",
+  "body": " Jordan's inequality   We have for all . As a consequence, we have for any .    The inequality is easily shown using calculus methods. (See for a fairly convincing visual argument.) We then have .   "
+},
+{
+  "id": "fig_jordan_ineq",
+  "level": "2",
+  "url": "s_improper_int.html#fig_jordan_ineq",
+  "type": "Figure",
+  "number": "1.23.2",
+  "title": "",
+  "body": " Core idea of Jordan's inequality   Core idea of Jordan's inequality    "
 },
 {
   "id": "appendix-notation",
