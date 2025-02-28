@@ -63,8 +63,218 @@ Assume <m>f</m> as a simple pole at the isolated singularity <m>z_0</m>. Fix a r
 </p>
 </proof>
 </theorem>
+</subsection>
+<subsection xml:id="ss_trig_integrals">
+<title>Trig integrals on <m>[0,2\pi]</m></title>
+<p>
+    The following theorem reduces the integral of any function <m>F(\cos t, \sin t)</m> over <m>[0,2\pi]</m> to a complex line integral of a certain complex function <m>G(z)</m> over the unit circle (positively oriented). Of course, whether we can carry out that resulting line integral by hand depends on the complexity of <m>F=F(x,y)</m>.  That computation is typically carried out using the Cauchy residue theorem.  
+</p>
+<theorem xml:id="th_trig_integrals">
+<title>Trig integrals on <m>[0,2\pi]</m></title>
+<statement>
+<p>
+Let <m>F\colon U\rightarrow \C</m> be continuous on an open set containing the unit circle. We have 
+<men xml:id="eq_trig_integral">
+    \int_0^{2\pi}F(\cos t, \sin t)\, dt=\int_{\gamma}\frac{F(\tfrac{1}{2}(z+1/z),\tfrac{1}{2i}(z-1/z))}{iz}\, dz
+</men>,
+where <m>\gamma(t)=e^{it}</m>, <m>t\in [0,2\pi]</m>. 
+</p>
+</statement>
+<proof>
+<p>
+    The proof is a simple matter of applying the definition of the line integral to right side of <xref ref="eq_trig_integral"/> and the fact that 
+    <md>
+        <mrow>\frac{1}{2}(e^{it}+1/e^{it}) \amp = \cos t</mrow>
+        <mrow> \frac{1}{2i}(e^{it}-1/e^{it}) \amp = \sin t </mrow>
+    </md>.
+</p>
+</proof>
+</theorem>
+<example xml:id="eg_trig_int">
+<title>Trig integral over <m>[0,2\pi]</m></title>
+<statement>
+<p>
+Compute <m>\displaystyle\int_{0}^{2\pi}\frac{1}{\cos t+\sin t+2}\, dt</m>.
+</p>
+</statement>
+<solution>
+<p>
+We have 
+<md>
+Let <m>I</m> be the definite integral we wish to compute, let <m>F(x,y)=1/(x+y+2)</m>, and let  
+    <mrow>f(z)=\frac{F(\tfrac{1}{2}(z+1/z),\tfrac{1}{2i}(z-1/z))}{iz}\amp = \frac{1}{iz}\cdot \frac{1}{\frac{1}{2}(z+1/z)+\frac{1}{2i}{z-1/z}+2} </mrow>
+    <mrow> \amp = \frac{2}{iz}\cdot \frac{1}{(z+1/z)+\frac{1}{i}{z-1/z}+4} </mrow>
+    <mrow> \amp = \frac{2}{iz^2+i+z^2-1+4iz}</mrow>
+    <mrow> \amp = \frac{2}{(i+1)z^2+4iz+(-1+i)}</mrow>
+</md>
+Using the quadratic formula, the roots of denominator are 
+<md>
+    <mrow>\alpha \amp = \frac{-4i+2\sqrt{2}i}{2(1+i)} \amp \beta \amp = \frac{-4i-2\sqrt{2}i}{2(1+i)} </mrow>
+    <mrow> \amp =\frac{(-2+\sqrt{2})i}{1+i} \amp \amp =\frac{(-2-\sqrt{2})i}{1+i} </mrow>
+</md>
+Looking at the moduli of <m>\alpha</m> and <m>\beta</m>, we see that <m>\alpha\in B_1(0)</m> and <m>\beta\notin \overline{B}_1(0)</m>. (In more detail, <m>\abs{\alpha}=(2-\sqrt(2))/\sqrt{2} &lt; 1</m>.) <xref ref="th_trig_integrals"/> and the Cauchy residue formula then implies 
+<md>
+    <mrow>I =\int_\gamma f\, dz\amp =2\pi i \res_f \alpha</mrow>
+    <mrow> \amp =2\pi i \cdot \frac{2}{(1+i)(\alpha-\beta)} \amp (f(z)=\tfrac{2}{(1+i)(z-\alpha)(z-\beta)})</mrow>
+    <mrow> \amp = 2\pi i\cdot \frac{2}{2\sqrt{2}i}</mrow>
+    <mrow> \amp = \frac{2\pi}{\sqrt{2}}</mrow>
+    <mrow> \amp = \sqrt{2}\pi</mrow>
+</md>.
+</p>
+</solution>
+</example>
+<sage>
+    <input>
+        integrate(1/(cos(x)+sin(x)+2),x,0,2*pi)
+    </input>
+    <output>
+        8
+    </output>
+</sage>
+</subsection>
+<subsection xml:id="ss_trig_real_line">
+<title>Integral of rational function over real line</title>
+<p>
+  Given a rational function of the form <m>f(z)=p(z)/q(z)</m> where <m>p</m> and <m>q</m> are polynomials and <m>\deg q\geq \deg p+2</m>, it is easy to see that 
+  <me>
+  \lim\limits_{R\to \infty}\int_{\gamma_R}f(z)\, dz = 0
+  </me>,
+  where <m>\gamma_R(t)=Re^{it}</m>, <m>t\in [0,\pi]</m> is the upper semicircle of radius <m>R</m> centered at the origin. Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals. 
+</p>
+<example xml:id="eg_rat_real_line">
+<title>Rational function on real line</title>
+<statement>
+<p>
+Compute <m>\displaystyle \int_{-\infty}^\infty \frac{1}{(x^2+4)^2(x^2+1)}\, dx</m>
+</p>
+</statement>
+<solution>
+<p>
 
-    </subsection>
-    
+</p>
+</solution>
+</example>
+<sage>
+    <input>
+        integrate(1/((x^2+4)^2*(x^2+1)),x,-oo,oo)
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<sage>
+    <input>
+f=1/((x^2+4)^2*(x^2+1))
+r1=f.residue(x==2*i)
+r2=f.residue(x==i)
+show((r1, r2))
+show(2*pi*i*(r1+r2))
+    </input>
+    <output>
+        
+    </output>
+</sage>
+</subsection>
+<subsection xml:id="eg_trig_real_line">
+<title>Trig integral over real line</title>
+<example xml:id="eg_trig_int_real_line">
+<title>Trig integral over real line</title>
+<statement>
+<p>
+Compute <m>\displaystyle\int_{-\infty}^{\infty}\frac{x\sin x}{x^2+1}\, dx</m>
+</p>
+</statement>
+<solution>
+<p>
 
+</p>
+</solution>
+</example>
+<sage>
+    <input>
+        integrate(x*sin(x)/(x^2+1),x,-oo,oo)
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<sage>
+    <input>
+f=x*e^(i*x)/(x^2+1)
+r1=f.residue(x==i)
+show(r1)
+show(2*pi*i*(r1))
+    </input>
+    <output>
+        
+    </output>
+</sage>
+
+</subsection>
+<subsection xml:id="ss_indented_path">
+<title>Indented paths</title>
+<p>
+    To handle an integral of the form <m>\int_0^\infty f(x)\, dx</m> that is improper at <m>0</m>, we make use of an indented path like the one in <xref ref="fig_ind_path"/> and take the limit as <m>R\to \infty</m> and <m>\epsilon\to 0</m>. For this approach to be successful, we need to be able to say something meaningful about the limit of the integral around the bump as <m>\delta\to 0</m>.  If the complex function we end up integrating over this path has an isolated singularity at <m>z_0=0</m>, then we might be able to make use of <xref ref="th_fractional_residue"/>. 
+</p>
+<figure xml:id="fig_ind_path">
+    <caption>Indented path</caption>
+    <image>
+        <shortdescription>Indented path</shortdescription>
+    </image>
+</figure>
+<example xml:id="eg_log_positive_reals">
+<title>Logarithmic improper integral</title>
+<statement>
+<p>
+Compute <m>\displaystyle\int_0^\infty \frac{\ln x}{x^4+1}\, dx</m>.
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<sage>
+    <input>
+        f=log(x)/(x^4+1)
+        r1=f.residue(x==e^(pi*i/4))
+        r2=f.residue(x==e^(3*pi*i/4))
+        
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<example xml:id="eg_sinc_func">
+<title>Sinc function</title>
+<statement>
+<p>
+The function <m>f(x)=\frac{\sin x}{x}</m> is a called the (unnormalized) <em>sinc</em> function. Compute <m>\displaystyle\int_{0}^\infty f(x) \, dx</m>
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+</subsection>
+<subsection xml:id="ss_keyhole_paths">
+<title>Keyhole paths</title>
+<example xml:id="eg_keyhole">
+<title>Integral of power function</title>
+<statement>
+<p>
+Compute <m>\displaystyle\int_{0}^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx</m>.
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+
+</subsection>
 </section>
