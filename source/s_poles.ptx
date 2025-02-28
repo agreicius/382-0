@@ -332,7 +332,7 @@
         <mrow>\frac{\cos z}{z\sin z} \amp =\frac{\cos z}{z^2(1-z^2/6+z^4/120-\cdots}</mrow>
         <mrow> \amp = \frac{\cos z}{z^2g(z)}</mrow>
     </md>
-    where <m>g(z)=1-z^2/6+z^4/120-\cdots</m>. Since <m>h(z)\cos z/g(z)</m> is analytic about <m>0</m> we have 
+    where <m>g(z)=1-z^2/6+z^4/120-\cdots</m>. Since <m>h(z)=\cos z/g(z)</m> is analytic about <m>0</m> we have 
     <me>
         h(z)=\cos z/g(z)=a_0+a_1z+\cdots 
     </me>,
