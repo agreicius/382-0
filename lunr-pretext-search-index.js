@@ -3166,7 +3166,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.23",
   "title": "Definite integrals",
-  "body": " Definite integrals   We assemble here a variety of complex integration techniques that can be used to compute definite integrals over real line intervals, both proper and improper.    Miscellaneous tools   Jordan's inequality   We have for all . As a consequence, we have for any .    The inequality is easily shown using calculus methods. (See for a fairly convincing visual argument.) We then have .     Core idea of Jordan's inequality   Core idea of Jordan's inequality      Fractional residue   Assume as a simple pole at the isolated singularity . Fix a real interval , and for each let be defined as . We have .          Trig integrals on  The following theorem reduces the integral of any function over to a complex line integral of a certain complex function over the unit circle (positively oriented). Of course, whether we can carry out that resulting line integral by hand depends on the complexity of . That computation is typically carried out using the Cauchy residue theorem.   Trig integrals on   Let be continuous on an open set containing the unit circle. We have , where , .    The proof is a simple matter of applying the definition of the line integral to right side of and the fact that .     Trig integral over   Compute .    We have Using the quadratic formula, the roots of denominator are Looking at the moduli of and , we see that and . (In more detail, .) and the Cauchy residue formula then implies .       Integral of rational function over real line  Given a rational function of the form where and are polynomials and , it is easy to see that , where , is the upper semicircle of radius centered at the origin. Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals.   Rational function on real line   Compute             Trig integral over real line   Trig integral over real line   Compute             Indented paths  To handle an integral of the form that is improper at , we make use of an indented path like the one in and take the limit as and . For this approach to be successful, we need to be able to say something meaningful about the limit of the integral around the bump as . If the complex function we end up integrating over this path has an isolated singularity at , then we might be able to make use of .   Indented path   Indented path     Logarithmic improper integral   Compute .           Sinc function   The function is a called the (unnormalized) sinc function. Compute           Keyhole paths   Integral of power function   Compute .         "
+  "body": " Definite integrals   We assemble here a variety of complex integration techniques that can be used to compute definite integrals over real line intervals, both proper and improper.    Miscellaneous tools   Jordan's inequality   We have for all . As a consequence, we have for any .    The inequality is easily shown using calculus methods. (See for a fairly convincing visual argument.) We then have .     Core idea of Jordan's inequality   Core idea of Jordan's inequality      Fractional residue   Assume as a simple pole at the isolated singularity . Fix a real interval , and for each let be defined as . We have .          Trig integrals on  The following theorem reduces the integral of any function over to a complex line integral of a certain complex function over the unit circle (positively oriented). Of course, whether we can carry out that resulting line integral by hand depends on the complexity of . That computation is typically carried out using the Cauchy residue theorem.   Trig integrals on   Let be continuous on an open set containing the unit circle. We have , where , .    The proof is a simple matter of applying the definition of the line integral to right side of and the fact that .     Trig integral over   Compute .    We have Using the quadratic formula, the roots of denominator are Looking at the moduli of and , we see that and . (In more detail, .) and the Cauchy residue formula then implies .       Integral of rational function over real line  Given a rational function of the form where and are polynomials and , it is easy to see that , where , is the upper semicircle of radius centered at the origin. (See .) Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals.   Semicircular path for integrals over the real line   Semicircular path for integrals over the real line      Rational function on real line   Compute             Trig integral over real line   Trig integral over real line   Compute             Indented paths  To handle an integral of the form that is improper at , we make use of an indented path like the one in and take the limit as and . For this approach to be successful, we need to be able to say something meaningful about the limit of the integral around the bump as . If the complex function we end up integrating over this path has an isolated singularity at , then we might be able to make use of .   Indented path   Indented path      Logarithmic improper integral   Compute .           Sinc function   The function is a called the (unnormalized) sinc function. Compute           Keyhole (or Pac-Man) paths  To compute the integral in we need to choose a branch of that agrees with on the positive real line: or what amounts to the same thing, a branch of that agrees with the principle branch on the positive real line. We could theoretically proceed as in , choosing the branch , and integrating along the indented path , but it turns out that the two integrals along the real line legs of this path do not combine nicely to give us the desired result. Instead, we choose a keyhole (or Pac-Man shaped path) like that in , where the parametrizations and are restricted to inputs lying in , and where the line segments and are the line segments along the rays and lying on and between these two circles. The idea is to use the Cauchy residue formula to compute the integral of the given function over a given , and then investigate what happens as we let , , and .   Keyhole (or Pac-Man) path   Keyhole (or Pac-Man) path      Integral of power function   Compute .         "
 },
 {
   "id": "lem_jordan",
@@ -3214,11 +3214,20 @@ var ptx_lunr_docs = [
   "body": " Trig integral over   Compute .    We have Using the quadratic formula, the roots of denominator are Looking at the moduli of and , we see that and . (In more detail, .) and the Cauchy residue formula then implies .   "
 },
 {
+  "id": "fig_semicircle",
+  "level": "2",
+  "url": "s_improper_int.html#fig_semicircle",
+  "type": "Figure",
+  "number": "1.23.6",
+  "title": "",
+  "body": " Semicircular path for integrals over the real line   Semicircular path for integrals over the real line    "
+},
+{
   "id": "eg_rat_real_line",
   "level": "2",
   "url": "s_improper_int.html#eg_rat_real_line",
   "type": "Example",
-  "number": "1.23.6",
+  "number": "1.23.7",
   "title": "Rational function on real line.",
   "body": " Rational function on real line   Compute        "
 },
@@ -3227,7 +3236,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_improper_int.html#eg_trig_int_real_line",
   "type": "Example",
-  "number": "1.23.7",
+  "number": "1.23.8",
   "title": "Trig integral over real line.",
   "body": " Trig integral over real line   Compute        "
 },
@@ -3236,16 +3245,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_improper_int.html#fig_ind_path",
   "type": "Figure",
-  "number": "1.23.8",
+  "number": "1.23.9",
   "title": "",
-  "body": " Indented path   Indented path   "
+  "body": " Indented path   Indented path    "
 },
 {
   "id": "eg_log_positive_reals",
   "level": "2",
   "url": "s_improper_int.html#eg_log_positive_reals",
   "type": "Example",
-  "number": "1.23.9",
+  "number": "1.23.10",
   "title": "Logarithmic improper integral.",
   "body": " Logarithmic improper integral   Compute .       "
 },
@@ -3254,16 +3263,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_improper_int.html#eg_sinc_func",
   "type": "Example",
-  "number": "1.23.10",
+  "number": "1.23.11",
   "title": "Sinc function.",
   "body": " Sinc function   The function is a called the (unnormalized) sinc function. Compute        "
+},
+{
+  "id": "fig_keyhole",
+  "level": "2",
+  "url": "s_improper_int.html#fig_keyhole",
+  "type": "Figure",
+  "number": "1.23.12",
+  "title": "",
+  "body": " Keyhole (or Pac-Man) path   Keyhole (or Pac-Man) path    "
 },
 {
   "id": "eg_keyhole",
   "level": "2",
   "url": "s_improper_int.html#eg_keyhole",
   "type": "Example",
-  "number": "1.23.11",
+  "number": "1.23.13",
   "title": "Integral of power function.",
   "body": " Integral of power function   Compute .       "
 },

@@ -732,7 +732,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_trig_real_line" class="internal"><span class="title">Integral of rational function over real line</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#eg_trig_real_line" class="internal"><span class="title">Trig integral over real line</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_indented_path" class="internal"><span class="title">Indented paths</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_keyhole_paths" class="internal"><span class="title">Keyhole paths</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_keyhole_paths" class="internal"><span class="title">Keyhole (or Pac-Man) paths</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -857,21 +857,22 @@ I =\int_\gamma f\, dz\amp =2\pi i \res_f \alpha\\
 </h3>
 <div class="para logical" id="ss_trig_real_line-2">
 <div class="para">Given a rational function of the form <span class="process-math">\(f(z)=p(z)/q(z)\)</span> where <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> are polynomials and <span class="process-math">\(\deg q\geq \deg p+2\text{,}\)</span> it is easy to see that</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_semicircle.html">
 \begin{equation*}
 \lim\limits_{R\to \infty}\int_{\gamma_R}f(z)\, dz = 0\text{,}
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(\gamma_R(t)=Re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,\pi]\)</span> is the upper semicircle of radius <span class="process-math">\(R\)</span> centered at the origin. Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals.</div>
+<div class="para">where <span class="process-math">\(\gamma_R(t)=Re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,\pi]\)</span> is the upper semicircle of radius <span class="process-math">\(R\)</span> centered at the origin. (See <a href="s_improper_int.html#fig_semicircle" class="xref" data-knowl="./knowl/xref/fig_semicircle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.6">Figure 1.23.6</a>.) Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals.</div>
 </div>
-<article class="example example-like" id="eg_rat_real_line"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.6</span><span class="period">.</span><span class="space"> </span><span class="title">Rational function on real line.</span>
+<figure class="figure figure-like" id="fig_semicircle"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/fig_semicircle-2.svg" role="img" class="contained" alt="Semicircular path for integrals over the real line"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.23.6<span class="period">.</span></span><span class="space"> </span>Semicircular path for integrals over the real line</figcaption></figure><article class="example example-like" id="eg_rat_real_line"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.7</span><span class="period">.</span><span class="space"> </span><span class="title">Rational function on real line.</span>
 </h4>
 <div class="para" id="eg_rat_real_line-2-1">Compute <span class="process-math">\(\displaystyle \int_{-\infty}^\infty \frac{1}{(x^2+4)^2(x^2+1)}\, dx\)</span>
 </div>
-<div class="solutions"><details id="eg_rat_real_line-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_rat_real_line-3-1"></div></div></details></div></article><div id="ss_trig_real_line-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">integrate(1/((x^2+4)^2*(x^2+1)),x,-oo,oo)
+<div class="solutions"><details id="eg_rat_real_line-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_rat_real_line-3-1"></div></div></details></div></article><div id="ss_trig_real_line-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">integrate(1/((x^2+4)^2*(x^2+1)),x,-oo,oo)
 </script></div>
-<div id="ss_trig_real_line-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f=1/((x^2+4)^2*(x^2+1))
+<div id="ss_trig_real_line-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f=1/((x^2+4)^2*(x^2+1))
 r1=f.residue(x==2*i)
 r2=f.residue(x==i)
 show((r1, r2))
@@ -880,7 +881,7 @@ show(2*pi*i*(r1+r2))
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Trig integral over real line</span>
 </h3>
 <article class="example example-like" id="eg_trig_int_real_line"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.7</span><span class="period">.</span><span class="space"> </span><span class="title">Trig integral over real line.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.8</span><span class="period">.</span><span class="space"> </span><span class="title">Trig integral over real line.</span>
 </h4>
 <div class="para" id="eg_trig_int_real_line-2-1">Compute <span class="process-math">\(\displaystyle\int_{-\infty}^{\infty}\frac{x\sin x}{x^2+1}\, dx\)</span>
 </div>
@@ -893,12 +894,10 @@ show(2*pi*i*(r1))
 </script></div></section><section class="subsection" id="ss_indented_path"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Indented paths</span>
 </h3>
-<div class="para" id="ss_indented_path-2">To handle an integral of the form <span class="process-math">\(\int_0^\infty f(x)\, dx\)</span> that is improper at <span class="process-math">\(0\text{,}\)</span> we make use of an indented path like the one in <a href="s_improper_int.html#fig_ind_path" class="xref" data-knowl="./knowl/xref/fig_ind_path.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.8">Figure 1.23.8</a> and take the limit as <span class="process-math">\(R\to \infty\)</span> and <span class="process-math">\(\epsilon\to 0\text{.}\)</span> For this approach to be successful, we need to be able to say something meaningful about the limit of the integral around the bump as <span class="process-math">\(\delta\to 0\text{.}\)</span>  If the complex function we end up integrating over this path has an isolated singularity at <span class="process-math">\(z_0=0\text{,}\)</span> then we might be able to make use of <a href="s_improper_int.html#th_fractional_residue" class="xref" data-knowl="./knowl/xref/th_fractional_residue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.3: Fractional residue">Theorem 1.23.3</a>.</div>
-<figure class="figure figure-like" id="fig_ind_path"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
-        Indented path
-    </div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.23.8<span class="period">.</span></span><span class="space"> </span>Indented path</figcaption></figure><article class="example example-like" id="eg_log_positive_reals"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.9</span><span class="period">.</span><span class="space"> </span><span class="title">Logarithmic improper integral.</span>
+<div class="para" id="ss_indented_path-2">To handle an integral of the form <span class="process-math">\(\int_0^\infty f(x)\, dx\)</span> that is improper at <span class="process-math">\(0\text{,}\)</span> we make use of an indented path like the one in <a href="s_improper_int.html#fig_ind_path" class="xref" data-knowl="./knowl/xref/fig_ind_path.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.9">Figure 1.23.9</a> and take the limit as <span class="process-math">\(R\to \infty\)</span> and <span class="process-math">\(\epsilon\to 0\text{.}\)</span> For this approach to be successful, we need to be able to say something meaningful about the limit of the integral around the bump as <span class="process-math">\(\delta\to 0\text{.}\)</span>  If the complex function we end up integrating over this path has an isolated singularity at <span class="process-math">\(z_0=0\text{,}\)</span> then we might be able to make use of <a href="s_improper_int.html#th_fractional_residue" class="xref" data-knowl="./knowl/xref/th_fractional_residue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.3: Fractional residue">Theorem 1.23.3</a>.</div>
+<figure class="figure figure-like" id="fig_ind_path"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/fig_ind_path-2.svg" role="img" class="contained" alt="Indented path"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.23.9<span class="period">.</span></span><span class="space"> </span>Indented path</figcaption></figure><article class="example example-like" id="eg_log_positive_reals"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.10</span><span class="period">.</span><span class="space"> </span><span class="title">Logarithmic improper integral.</span>
 </h4>
 <div class="para" id="eg_log_positive_reals-2-1">Compute <span class="process-math">\(\displaystyle\int_0^\infty \frac{\ln x}{x^4+1}\, dx\text{.}\)</span>
 </div>
@@ -911,15 +910,18 @@ show(r1)
 show(r2)
 </script></div>
 <article class="example example-like" id="eg_sinc_func"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.10</span><span class="period">.</span><span class="space"> </span><span class="title">Sinc function.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.11</span><span class="period">.</span><span class="space"> </span><span class="title">Sinc function.</span>
 </h4>
 <div class="para" id="eg_sinc_func-2-1">The function <span class="process-math">\(f(x)=\frac{\sin x}{x}\)</span> is a called the (unnormalized) <em class="emphasis">sinc</em> function. Compute <span class="process-math">\(\displaystyle\int_{0}^\infty f(x) \, dx\)</span>
 </div>
 <div class="solutions"><details id="eg_sinc_func-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_sinc_func-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_keyhole_paths"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Keyhole paths</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Keyhole (or Pac-Man) paths</span>
 </h3>
-<article class="example example-like" id="eg_keyhole"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.11</span><span class="period">.</span><span class="space"> </span><span class="title">Integral of power function.</span>
+<div class="para" id="ss_keyhole_paths-2">To compute the integral in <a href="s_improper_int.html#eg_keyhole" class="xref" data-knowl="./knowl/xref/eg_keyhole.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.23.13: Integral of power function">Example 1.23.13</a> we need to choose a branch of <span class="process-math">\(z^{1/3}\)</span> that agrees with <span class="process-math">\(x^{1/3}\)</span> on the positive real line: or what amounts to the same thing, a branch of <span class="process-math">\(\log z\)</span> that agrees with the principle branch on the positive real line. We could theoretically proceed as in <a href="s_improper_int.html#eg_log_positive_reals" class="xref" data-knowl="./knowl/xref/eg_log_positive_reals.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.23.10: Logarithmic improper integral">Example 1.23.10</a>, choosing the branch <span class="process-math">\(\Log_{-\pi/2}\text{,}\)</span> and integrating along the indented path <a href="s_improper_int.html#fig_ind_path" class="xref" data-knowl="./knowl/xref/fig_ind_path.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.9">Figure 1.23.9</a>, but it turns out that the two integrals along the real line legs of this path do not combine nicely to give us the desired result. Instead, we choose a <em class="emphasis">keyhole</em> (or <em class="emphasis">Pac-Man</em> shaped path) <span class="process-math">\(\gamma_{R,\delta,\alpha}\)</span> like that in <a href="s_improper_int.html#fig_keyhole" class="xref" data-knowl="./knowl/xref/fig_keyhole.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.12">Figure 1.23.12</a>, where the parametrizations <span class="process-math">\(\gamma_R\)</span> and <span class="process-math">\(\gamma_\alpha \)</span> are restricted to inputs <span class="process-math">\(t\)</span> lying in <span class="process-math">\([\alpha, 2\pi-\alpha]\text{,}\)</span> and where the line segments <span class="process-math">\(\gamma_\alpha\)</span> and <span class="process-math">\(\gamma_{-\alpha}\)</span> are the line segments along the rays <span class="process-math">\(R_\alpha\)</span> and <span class="process-math">\(R_{-\alpha}\)</span> lying on and between these two circles. The idea is to use the Cauchy residue formula to compute the integral of the given function over a given <span class="process-math">\(\gamma_{R,\delta, \alpha}\text{,}\)</span> and then investigate what happens as we let <span class="process-math">\(R\to \infty\text{,}\)</span> <span class="process-math">\(\delta\to 0\text{,}\)</span> and <span class="process-math">\(\alpha\to 0\text{.}\)</span>
+</div>
+<figure class="figure figure-like" id="fig_keyhole"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/fig_keyhole-2.svg" role="img" class="contained" alt="Keyhole (or Pac-Man) path"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.23.12<span class="period">.</span></span><span class="space"> </span>Keyhole (or Pac-Man) path</figcaption></figure><article class="example example-like" id="eg_keyhole"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.13</span><span class="period">.</span><span class="space"> </span><span class="title">Integral of power function.</span>
 </h4>
 <div class="para" id="eg_keyhole-2-1">Compute <span class="process-math">\(\displaystyle\int_{0}^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx\text{.}\)</span>
 </div>
