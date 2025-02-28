@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="s_improper_int" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Improper integrals</title>
-
+    <title>Definite integrals</title>
+    <introduction>
+        <p>
+        We assemble here a variety of complex integration techniques that can be used to compute definite integrals over real line intervals, both proper and improper. 
+    </p>
+    </introduction>
+    <subsection xml:id="ss_tools">
+    <title>Miscellaneous tools</title>
     <theorem xml:id="lem_jordan">
         <title>Jordan's inequality</title>
         
@@ -42,5 +48,23 @@ C+L+t1+t2
             </sageplot>
         </image>
     </figure>
+<theorem xml:id="th_fractional_residue">
+<title>Fractional residue</title>
+<statement>
+<p>
+Assume <m>f</m> as a simple pole at the isolated singularity <m>z_0</m>. Fix a real interval <m>[\alpha,\beta]</m>, and for each <m>\delta&gt; 0</m> let <m>\gamma_{\delta}\colon [\alpha,\beta]\rightarrow \C</m> be  defined as <m>\gamma_\delta(t)=z_0+\delta e^{it}</m>. We have 
+<men xml:id="eq_frac_res">
+    \lim\limits_{\delta\to 0} \int_{\gamma_\delta}f\, dz=(\beta-\alpha)i\res_f z_0
+</men>.
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+    </subsection>
+    
 
 </section>

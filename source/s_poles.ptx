@@ -314,6 +314,45 @@
     </statement>
     <solution>
     <p>
+    Writing <m>f(z)=\cos z/(z\sin z)</m>, we see that <m>f</m> is analytic everywhere except at the points <m>z=\pi n</m>, <m>n\in \Z</m>. It is easy to see that <m>\sin z</m> has a simple pole at each <m>z_0=n\pi</m> for all <m>n</m>, and that <m>1/z</m> has a simple pole at <m>z_0=0</m>. Since furthermore <m>\cos z</m> is nonzero at these points, it follows from our order arithmetic corollary that 
+    <me>
+        \ord_f (n\pi)=\begin{cases}
+        -1 \amp \text{if } n\ne 0\\
+        -2 \amp \text{if } n=0
+        \end{cases}
+    </me>.
+    For <m>z_0=n\pi</m> with <m>n\ne 0</m>, we conclude, using <xref ref="th_simple_pole_residue"/> that 
+    <md>
+        <mrow>\res_f z_0 \amp = \frac{\cos z_0}{\frac{d}{dz}(z\sin z)\vert_{z=z_0}}</mrow>
+        <mrow> \amp = \frac{\cos(n\pi)}{\sin(n\pi)+(n\pi)\cos(n\pi)}</mrow>
+        <mrow> \amp = \frac{1}{n\pi}</mrow>
+    </md>.
+    For <m>z_0=0</m>, we have 
+    <md>
+        <mrow>\frac{\cos z}{z\sin z} \amp =\frac{\cos z}{z^2(1-z^2/6+z^4/120-\cdots}</mrow>
+        <mrow> \amp = \frac{\cos z}{z^2g(z)}</mrow>
+    </md>
+    where <m>g(z)=1-z^2/6+z^4/120-\cdots</m>. Since <m>h(z)\cos z/g(z)</m> is analytic about <m>0</m> we have 
+    <me>
+        h(z)=\cos z/g(z)=a_0+a_1z+\cdots 
+    </me>,
+    and thus 
+    <me>
+        f(z)=\frac{1}{z^2}h(z)=\frac{a_0}{z^2}+\frac{a_1}{z}+\cdots
+    </me>.
+    Thus <m>\res_f 0=a_1</m>. Lastly,     
+    since <m>a_n=\frac{h^{(n)}(0)}{n!}</m>, we see that 
+    <me>
+    a_1=h'(0)=\frac{\sin(0)g(0)-\cos(0)g'(0)}{g(0)^2}=\frac{0-0}{1}=0
+    </me>.
+    We conclude that 
+    <me>
+        \res_f 0=a_1=0
+    </me>.
+    
+    
+    
+    
     
     </p>
     </solution>
