@@ -139,8 +139,23 @@ Looking at the moduli of <m>\alpha</m> and <m>\beta</m>, we see that <m>\alpha\i
   <me>
   \lim\limits_{R\to \infty}\int_{\gamma_R}f(z)\, dz = 0
   </me>,
-  where <m>\gamma_R(t)=Re^{it}</m>, <m>t\in [0,\pi]</m> is the upper semicircle of radius <m>R</m> centered at the origin. Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals. 
+  where <m>\gamma_R(t)=Re^{it}</m>, <m>t\in [0,\pi]</m> is the upper semicircle of radius <m>R</m> centered at the origin. (See <xref ref="fig_semicircle"/>.) Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals. 
 </p>
+<figure xml:id="fig_semicircle">
+    <caption>Semicircular path for integrals over the real line</caption>
+    <image width="60%">
+        <shortdescription>Semicircular path for integrals over the real line</shortdescription>
+        <sageplot>
+var('t')
+C=parametric_plot((cos(t),sin(t)),(t,0,pi), ticks=[[-1,1],[]], tick_formatter=[["$-R$","$R$"],[]])
+L=line(((-1,0),(1,0)), color="blue", thickness=1.25)
+Carrows=sum(arrow((cos(pi*t/6),sin(pi*t/6)),(cos(pi*t/6+.01),sin(pi*t/6+.01)), color="blue", arrowsize=3) for t in range(1,7))
+Larrows=sum(arrow((-1+k/3,0),(-1+k/3+.01,0),color="blue",arrowsize=3) for k in range(1,7))
+t1=text("$\\gamma_R$",(.5,.95),color="black",fontsize=16)
+C+L+Carrows+Larrows+t1
+        </sageplot>
+    </image>
+</figure>
 <example xml:id="eg_rat_real_line">
 <title>Rational function on real line</title>
 <statement>
@@ -218,8 +233,20 @@ show(2*pi*i*(r1))
 </p>
 <figure xml:id="fig_ind_path">
     <caption>Indented path</caption>
-    <image>
+    <image width="60%">
         <shortdescription>Indented path</shortdescription>
+        <sageplot>
+var('t')
+C1=parametric_plot((cos(t),sin(t)),(t,0,pi), ticks=[[-1,-.3,.3,1],[]], tick_formatter=[["$-R$","$-\\delta$","$\\delta$","$R$"],[]])
+C2=parametric_plot(.3*vector((cos(t),sin(t))),(t,0,pi), ticks=[[-.3,.3],[]], tick_formatter=[["$-\\delta$","$\\delta$"],[]])
+L=line(((-1,0),(1,0)), color="blue", thickness=1.25)
+C1arrows=sum(arrow((cos(pi*t/6),sin(pi*t/6)),(cos(pi*t/6+.01),sin(pi*t/6+.01)), color="blue", arrowsize=3) for t in range(1,6))
+C2arrows=sum(arrow((.3*cos(pi*t/6),.3*sin(pi*t/6)),(.3*cos(pi*t/6-.01),.3*sin(pi*t/6-.01)), color="blue", arrowsize=3) for t in range(1,6))
+Larrows=arrow((-.65,0),(-.65+.01,0),color="blue",arrowsize=3)+arrow((.65,0),(.65+.01,0),color="blue",arrowsize=3)
+t1=text("$\\gamma_R$",(.5,.95),color="black",fontsize=16)
+t2=text("$\\gamma_\\delta$",(-.15,.35),color="black",fontsize=16)
+C2+C1+L+C1arrows+C2arrows+Larrows+t1+t2
+        </sageplot>
     </image>
 </figure>
 <example xml:id="eg_log_positive_reals">
@@ -270,7 +297,35 @@ The function <m>f(x)=\frac{\sin x}{x}</m> is a called the (unnormalized) <em>sin
 </example>
 </subsection>
 <subsection xml:id="ss_keyhole_paths">
-<title>Keyhole paths</title>
+<title>Keyhole (or Pac-Man) paths</title>
+<p>
+    To compute the integral in <xref ref="eg_keyhole"/> we need to choose a branch of <m>z^{1/3}</m> that agrees with <m>x^{1/3}</m> on the positive real line: or what amounts to the same thing, a branch of <m>\log z</m> that agrees with the principle branch on the positive real line. We could theoretically proceed as in <xref ref="eg_log_positive_reals"/>, choosing the branch <m>\Log_{-\pi/2}</m>, and integrating along the indented path <xref ref="fig_ind_path"/>, but it turns out that the two integrals along the real line legs of this path do not combine nicely to give us the desired result. Instead, we choose a <em>keyhole</em> (or <em>Pac-Man</em> shaped path) <m>\gamma_{R,\delta,\alpha}</m> like that in <xref ref="fig_keyhole"/>, where the parametrizations <m>\gamma_R</m> and <m>\gamma_\alpha </m> are restricted to inputs <m>t</m> lying in <m>[\alpha, 2\pi-\alpha]</m>, and where the line segments <m>\gamma_\alpha</m> and <m>\gamma_{-\alpha}</m> are the line segments along the rays <m>R_\alpha</m> and <m>R_{-\alpha}</m> lying on and between these two circles. The idea is to use the Cauchy residue formula to compute the integral of the given function over a given <m>\gamma_{R,\delta, \alpha}</m>, and then investigate what happens as we let <m>R\to \infty</m>, <m>\delta\to 0</m>, and <m>\alpha\to 0</m>.  
+</p>
+<figure xml:id="fig_keyhole">
+    <caption>Keyhole (or Pac-Man) path</caption>
+    <image width="60%">
+        <shortdescription>Keyhole (or Pac-Man) path</shortdescription>
+       <sageplot>
+var('t')
+C1=parametric_plot((cos(t),sin(t)),(t,pi/8,15*pi/8), ticks=[[-1,-.3,.3,1],[]], tick_formatter=[["$-R$","$-\\delta$","$\\delta$","$R$"],[]])
+C2=parametric_plot(.3*vector((cos(t),sin(t))),(t,pi/8,15*pi/8), ticks=[[-.3,.3],[]], tick_formatter=[["$-\\delta$","$\\delta$"],[]])
+L1=line(((.3*cos(pi/8),.3*sin(pi/8)),(cos(pi/8),sin(pi/8))), color="blue", thickness=1.25)
+L2=line(((.3*cos(-pi/8),.3*sin(-pi/8)),(cos(-pi/8),sin(-pi/8))), color="blue", thickness=1.25)
+C1arrows=sum(arrow((cos(pi*t/4),sin(pi*t/4)),(cos(pi*t/4+.01),sin(pi*t/4+.01)), color="blue", arrowsize=3) for t in range(1,8))
+C2arrows=sum(arrow((.3*cos(pi*t/2),.3*sin(pi*t/2)),(.3*cos(pi*t/2+.01),.3*sin(pi*t/2+.01)), color="blue", arrowsize=3) for t in range(1,4))
+Larrows=arrow((.65*cos(pi/8),.65*sin(pi/8)),(.66*cos(pi/8),.66*sin(pi/8)),color="blue", arrowsize=3)+arrow((.65*cos(-pi/8),.65*sin(-pi/8)),(.66*cos(-pi/8),.66*sin(-pi/8)),color="blue", arrowsize=3)
+t1=text("$\\gamma_R$",(.5,.95),color="black",fontsize=16)
+t2=text("$\\gamma_\\delta$",(-.15,.35),color="black",fontsize=16)
+t3=text("$\\gamma_\\alpha$",(.65*cos(pi/8)-.1,.65*sin(pi/8)+.1),color="black",fontsize=16)
+t4=text("$\\gamma_{-\\alpha}$",(.65*cos(-pi/8)-.02,.65*sin(-pi/8)-.06),color="black",fontsize=16)
+C2+C1+L1+L2+C1arrows+C2arrows+t1+t2+t3+t4+Larrows
+       </sageplot>
+
+
+
+        
+    </image>
+</figure>
 <example xml:id="eg_keyhole">
 <title>Integral of power function</title>
 <statement>
