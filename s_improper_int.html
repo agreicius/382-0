@@ -902,9 +902,13 @@ show(2*pi*i*(r1))
 </h4>
 <div class="para" id="eg_log_positive_reals-2-1">Compute <span class="process-math">\(\displaystyle\int_0^\infty \frac{\ln x}{x^4+1}\, dx\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_log_positive_reals-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_log_positive_reals-3-1"></div></div></details></div></article><div id="ss_indented_path-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f=log(x)/(x^4+1)
+<div class="solutions"><details id="eg_log_positive_reals-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_log_positive_reals-3-1"></div></div></details></div></article><div id="ss_indented_path-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">integrate(log(x)/(x^4+1),x,0,oo)
+</script></div>
+<div id="ss_indented_path-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f=log(x)/(x^4+1)
 r1=f.residue(x==e^(pi*i/4))
 r2=f.residue(x==e^(3*pi*i/4))
+show(r1)
+show(r2)
 </script></div>
 <article class="example example-like" id="eg_sinc_func"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.10</span><span class="period">.</span><span class="space"> </span><span class="title">Sinc function.</span>
