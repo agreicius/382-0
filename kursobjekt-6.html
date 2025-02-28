@@ -14,7 +14,7 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Math 382-0">
 <meta property="book:author" content="Aaron Greicius">
-<script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -41,7 +41,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -394,9 +411,9 @@ eBookConfig.enable_chatcodes =  false;
 #th_isol_sing-3-1-1 { counter-set: th_isol_sing-3-1-1 0; }
 #th_isol_sing-3-1-1 > li::marker { content: ""counter(th_isol_sing-3-1-1,decimal)"."; }
 #th_isol_sing-3-1-1 > li { counter-increment: th_isol_sing-3-1-1; }
-#cor_isol_sing-1-1-6 { counter-set: cor_isol_sing-1-1-6 0; }
-#cor_isol_sing-1-1-6 > li::marker { content: ""counter(cor_isol_sing-1-1-6,decimal)"."; }
-#cor_isol_sing-1-1-6 > li { counter-increment: cor_isol_sing-1-1-6; }
+#cor_isol_sing-2-1-6 { counter-set: cor_isol_sing-2-1-6 0; }
+#cor_isol_sing-2-1-6 > li::marker { content: ""counter(cor_isol_sing-2-1-6,decimal)"."; }
+#cor_isol_sing-2-1-6 > li { counter-increment: cor_isol_sing-2-1-6; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -695,7 +712,17 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_laurent_series.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Laurent series</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_residue.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Cauchy residue theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_poles.html" class="internal"><span class="codenumber">1.22</span> <span class="title">Poles and residue computation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_improper_int.html" class="internal"><span class="codenumber">1.23</span> <span class="title">Improper integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_improper_int.html" class="internal"><span class="codenumber">1.23</span> <span class="title">Definite integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_tools" class="internal"><span class="title">Miscellaneous tools</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_trig_integrals" class="internal"><span class="title">Trig integrals on <span class="process-math">\([0,2\pi]\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_trig_real_line" class="internal"><span class="title">Integral of rational function over real line</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#eg_trig_real_line" class="internal"><span class="title">Trig integral over real line</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_indented_path" class="internal"><span class="title">Indented paths</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_keyhole_paths" class="internal"><span class="title">Keyhole paths</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter contains-active">

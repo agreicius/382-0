@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.5</span><span class="period">.</span><span class="space"> </span><span class="title">Trig integral over <span class="process-math">\([0,2\pi]\)</span>.</span>
+</h4>
+<div class="para">Compute <span class="process-math">\(\displaystyle\int_{0}^{2\pi}\frac{1}{\cos t+\sin t+2}\, dt\text{.}\)</span>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html">
+\begin{align*}
+f(z)=\frac{F(\tfrac{1}{2}(z+1/z),\tfrac{1}{2i}(z-1/z))}{iz}\amp = \frac{1}{iz}\cdot \frac{1}{\frac{1}{2}(z+1/z)+\frac{1}{2i}{z-1/z}+2} \\
+\amp = \frac{2}{iz}\cdot \frac{1}{(z+1/z)+\frac{1}{i}{z-1/z}+4} \\
+\amp = \frac{2}{iz^2+i+z^2-1+4iz}\\
+\amp = \frac{2}{(i+1)z^2+4iz+(-1+i)}
+\end{align*}
+</div>
+<div class="para">Using the quadratic formula, the roots of denominator are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html">
+\begin{align*}
+\alpha \amp = \frac{-4i+2\sqrt{2}i}{2(1+i)} \amp \beta \amp = \frac{-4i-2\sqrt{2}i}{2(1+i)} \\
+\amp =\frac{(-2+\sqrt{2})i}{1+i} \amp \amp =\frac{(-2-\sqrt{2})i}{1+i} 
+\end{align*}
+</div>
+<div class="para">Looking at the moduli of <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\text{,}\)</span> we see that <span class="process-math">\(\alpha\in B_1(0)\)</span> and <span class="process-math">\(\beta\notin \overline{B}_1(0)\text{.}\)</span> (In more detail, <span class="process-math">\(\abs{\alpha}=(2-\sqrt(2))/\sqrt{2} &lt; 1\text{.}\)</span>) <a href="s_improper_int.html#th_trig_integrals" class="xref" data-knowl="./knowl/xref/th_trig_integrals.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.4: Trig integrals on [0,2\pi]">Theorem 1.23.4</a> and the Cauchy residue formula then implies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html">
+\begin{align*}
+I =\int_\gamma f\, dz\amp =2\pi i \res_f \alpha\\
+\amp =2\pi i \cdot \frac{2}{(1+i)(\alpha-\beta)} \amp (f(z)=\tfrac{2}{(1+i)(z-\alpha)(z-\beta)})\\
+\amp = 2\pi i\cdot \frac{2}{2\sqrt{2}i}\\
+\amp = \frac{2\pi}{\sqrt{2}}\\
+\amp = \sqrt{2}\pi\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_improper_int.html#eg_trig_int">in-context</a></span>
+</body>
+</html>

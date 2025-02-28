@@ -11,24 +11,35 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="lemma theorem-like"><h3 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.23.1</span><span class="period">.</span><span class="space"> </span><span class="title">Jordan’s lemma.</span>
-</h3>
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.1</span><span class="period">.</span><span class="space"> </span><span class="title">Jordan’s inequality.</span>
+</h4>
 <div class="para logical">
 <div class="para">We have</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\sin \theta\geq \frac{2}{\pi}\theta
-\end{equation*}
+\begin{equation}
+\sin \theta\geq \frac{2}{\pi}\theta\tag{1.83}
+\end{equation}
 </div>
 <div class="para">for all <span class="process-math">\(\theta\in [0,\pi/2]\text{.}\)</span> As a consequence, we have</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\int_0^{\pi}e^{-c\sin\theta}\, d\theta\leq \int_{0}^\pi e^{-c\theta}\, d\theta=\frac{1}{c}(1-e^{-c\pi})
-\end{equation*}
+\begin{equation}
+\int_0^{\pi}e^{-c\sin\theta}\, d\theta\leq \frac{\pi}{c}\tag{1.84}
+\end{equation}
 </div>
 <div class="para">for any <span class="process-math">\(c&gt; 0\text{.}\)</span>
 </div>
-</div></article><span class="incontext"><a class="internal" href="s_improper_int.html#lem_jordan">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">The inequality <a href="s_improper_int.html#eq_sin_ineq" class="xref" data-knowl="./knowl/xref/eq_sin_ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.83">(1.83)</a> is easily shown using calculus methods. (See <a href="s_improper_int.html#fig_jordan_ineq" class="xref" data-knowl="./knowl/xref/fig_jordan_ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.2">Figure 1.23.2</a> for a fairly convincing visual argument.) We then have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_sin_ineq.html ./knowl/xref/fig_jordan_ineq.html">
+\begin{align*}
+\int_0^{\pi}e^{-c\sin\theta}\, d\theta \amp =2\int_0^{\pi/2}e^{-c\sin\theta}\, d\theta \amp (\sin(\pi/2-t)=\sin(\pi/2+t))\\
+\amp \leq 2\int_0^{\pi}e^{-2c\theta/\pi}\, d\theta \amp (\sin\theta\geq 2\theta/\pi)\\
+\amp = -\frac{\pi}{c}(e^{-2c\theta/\pi})\Bigr\vert_0^{\pi/2}\\
+\amp = \frac{\pi}{c}(1-e^{-c))\\
+\amp \leq \frac{\pi}{c}\text{.}
+\end{align*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_improper_int.html#lem_jordan">in-context</a></span>
 </body>
 </html>

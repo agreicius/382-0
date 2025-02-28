@@ -14,7 +14,7 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Math 382-0">
 <meta property="book:author" content="Aaron Greicius">
-<script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -41,7 +41,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -69,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -394,9 +423,9 @@ eBookConfig.enable_chatcodes =  false;
 #th_isol_sing-3-1-1 { counter-set: th_isol_sing-3-1-1 0; }
 #th_isol_sing-3-1-1 > li::marker { content: ""counter(th_isol_sing-3-1-1,decimal)"."; }
 #th_isol_sing-3-1-1 > li { counter-increment: th_isol_sing-3-1-1; }
-#cor_isol_sing-1-1-6 { counter-set: cor_isol_sing-1-1-6 0; }
-#cor_isol_sing-1-1-6 > li::marker { content: ""counter(cor_isol_sing-1-1-6,decimal)"."; }
-#cor_isol_sing-1-1-6 > li { counter-increment: cor_isol_sing-1-1-6; }
+#cor_isol_sing-2-1-6 { counter-set: cor_isol_sing-2-1-6 0; }
+#cor_isol_sing-2-1-6 > li::marker { content: ""counter(cor_isol_sing-2-1-6,decimal)"."; }
+#cor_isol_sing-2-1-6 > li { counter-increment: cor_isol_sing-2-1-6; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -695,7 +724,17 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_laurent_series.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Laurent series</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_residue.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Cauchy residue theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_poles.html" class="internal"><span class="codenumber">1.22</span> <span class="title">Poles and residue computation</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_improper_int.html" class="internal"><span class="codenumber">1.23</span> <span class="title">Improper integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_improper_int.html" class="internal"><span class="codenumber">1.23</span> <span class="title">Definite integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_tools" class="internal"><span class="title">Miscellaneous tools</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_trig_integrals" class="internal"><span class="title">Trig integrals on <span class="process-math">\([0,2\pi]\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_trig_real_line" class="internal"><span class="title">Integral of rational function over real line</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#eg_trig_real_line" class="internal"><span class="title">Trig integral over real line</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_indented_path" class="internal"><span class="title">Indented paths</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_keyhole_paths" class="internal"><span class="title">Keyhole paths</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">

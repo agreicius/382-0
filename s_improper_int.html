@@ -8,13 +8,13 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Improper integrals</title>
+<title>Definite integrals</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
 <meta property="book:title" content="Math 382-0">
 <meta property="book:author" content="Aaron Greicius">
-<script>
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -41,7 +41,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -69,7 +86,19 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -394,9 +423,9 @@ eBookConfig.enable_chatcodes =  false;
 #th_isol_sing-3-1-1 { counter-set: th_isol_sing-3-1-1 0; }
 #th_isol_sing-3-1-1 > li::marker { content: ""counter(th_isol_sing-3-1-1,decimal)"."; }
 #th_isol_sing-3-1-1 > li { counter-increment: th_isol_sing-3-1-1; }
-#cor_isol_sing-1-1-6 { counter-set: cor_isol_sing-1-1-6 0; }
-#cor_isol_sing-1-1-6 > li::marker { content: ""counter(cor_isol_sing-1-1-6,decimal)"."; }
-#cor_isol_sing-1-1-6 > li { counter-increment: cor_isol_sing-1-1-6; }
+#cor_isol_sing-2-1-6 { counter-set: cor_isol_sing-2-1-6 0; }
+#cor_isol_sing-2-1-6 > li::marker { content: ""counter(cor_isol_sing-2-1-6,decimal)"."; }
+#cor_isol_sing-2-1-6 > li { counter-increment: cor_isol_sing-2-1-6; }
 </style>
 </head>
 <body class="pretext book ignore-math">
@@ -695,7 +724,17 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_laurent_series.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Laurent series</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_residue.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Cauchy residue theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_poles.html" class="internal"><span class="codenumber">1.22</span> <span class="title">Poles and residue computation</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_improper_int.html" class="internal"><span class="codenumber">1.23</span> <span class="title">Improper integrals</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="s_improper_int.html" class="internal"><span class="codenumber">1.23</span> <span class="title">Definite integrals</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_tools" class="internal"><span class="title">Miscellaneous tools</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_trig_integrals" class="internal"><span class="title">Trig integrals on <span class="process-math">\([0,2\pi]\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_trig_real_line" class="internal"><span class="title">Integral of rational function over real line</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#eg_trig_real_line" class="internal"><span class="title">Trig integral over real line</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_indented_path" class="internal"><span class="title">Indented paths</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_keyhole_paths" class="internal"><span class="title">Keyhole paths</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -711,27 +750,176 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_improper_int"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.23</span><span class="space"> </span><span class="title">Improper integrals</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.23</span><span class="space"> </span><span class="title">Definite integrals</span>
 </h2>
-<article class="lemma theorem-like" id="lem_jordan"><h3 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.23.1</span><span class="period">.</span><span class="space"> </span><span class="title">Jordan’s lemma.</span>
+<section class="introduction" id="s_improper_int-2"><div class="para" id="s_improper_int-2-1">We assemble here a variety of complex integration techniques that can be used to compute definite integrals over real line intervals, both proper and improper.</div></section><section class="subsection" id="ss_tools"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Miscellaneous tools</span>
 </h3>
+<article class="theorem theorem-like" id="lem_jordan"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.1</span><span class="period">.</span><span class="space"> </span><span class="title">Jordan’s inequality.</span>
+</h4>
 <div class="para logical" id="lem_jordan-2-1">
 <div class="para">We have</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\sin \theta\geq \frac{2}{\pi}\theta
-\end{equation*}
+<div class="displaymath process-math" id="eq_sin_ineq">
+\begin{equation}
+\sin \theta\geq \frac{2}{\pi}\theta\tag{1.83}
+\end{equation}
 </div>
 <div class="para">for all <span class="process-math">\(\theta\in [0,\pi/2]\text{.}\)</span> As a consequence, we have</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\int_0^{\pi}e^{-c\sin\theta}\, d\theta\leq \int_{0}^\pi e^{-c\theta}\, d\theta=\frac{1}{c}(1-e^{-c\pi})
-\end{equation*}
+<div class="displaymath process-math" id="eq_jordan_ineq">
+\begin{equation}
+\int_0^{\pi}e^{-c\sin\theta}\, d\theta\leq \frac{\pi}{c}\tag{1.84}
+\end{equation}
 </div>
 <div class="para">for any <span class="process-math">\(c&gt; 0\text{.}\)</span>
 </div>
-</div></article></section></div>
+</div></article><details id="lem_jordan-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="lem_jordan-3-1">
+<div class="para">The inequality <a href="s_improper_int.html#eq_sin_ineq" class="xref" data-knowl="./knowl/xref/eq_sin_ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.83">(1.83)</a> is easily shown using calculus methods. (See <a href="s_improper_int.html#fig_jordan_ineq" class="xref" data-knowl="./knowl/xref/fig_jordan_ineq.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.2">Figure 1.23.2</a> for a fairly convincing visual argument.) We then have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_sin_ineq.html ./knowl/xref/fig_jordan_ineq.html" id="lem_jordan-3-1-3">
+\begin{align*}
+\int_0^{\pi}e^{-c\sin\theta}\, d\theta \amp =2\int_0^{\pi/2}e^{-c\sin\theta}\, d\theta \amp (\sin(\pi/2-t)=\sin(\pi/2+t))\\
+\amp \leq 2\int_0^{\pi}e^{-2c\theta/\pi}\, d\theta \amp (\sin\theta\geq 2\theta/\pi)\\
+\amp = -\frac{\pi}{c}(e^{-2c\theta/\pi})\Bigr\vert_0^{\pi/2}\\
+\amp = \frac{\pi}{c}(1-e^{-c))\\
+\amp \leq \frac{\pi}{c}\text{.}
+\end{align*}
+</div>
+</div></article></details><figure class="figure figure-like" id="fig_jordan_ineq"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/fig_jordan_ineq-2.svg" role="img" class="contained" alt="Core idea of Jordan’s inequality"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.23.2<span class="period">.</span></span><span class="space"> </span>Core idea of Jordan’s inequality</figcaption></figure><article class="theorem theorem-like" id="th_fractional_residue"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.3</span><span class="period">.</span><span class="space"> </span><span class="title">Fractional residue.</span>
+</h4>
+<div class="para logical" id="th_fractional_residue-2-1">
+<div class="para">Assume <span class="process-math">\(f\)</span> as a simple pole at the isolated singularity <span class="process-math">\(z_0\text{.}\)</span> Fix a real interval <span class="process-math">\([\alpha,\beta]\text{,}\)</span> and for each <span class="process-math">\(\delta&gt; 0\)</span> let <span class="process-math">\(\gamma_{\delta}\colon [\alpha,\beta]\rightarrow \C\)</span> be  defined as <span class="process-math">\(\gamma_\delta(t)=z_0+\delta e^{it}\text{.}\)</span> We have</div>
+<div class="displaymath process-math" id="eq_frac_res">
+\begin{equation}
+\lim\limits_{\delta\to 0} \int_{\gamma_\delta}f\, dz=(\beta-\alpha)i\res_f z_0\text{.}\tag{1.85}
+\end{equation}
+</div>
+</div></article><details id="th_fractional_residue-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_fractional_residue-3-1"></div></article></details></section><section class="subsection" id="ss_trig_integrals"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Trig integrals on <span class="process-math">\([0,2\pi]\)</span></span>
+</h3>
+<div class="para" id="ss_trig_integrals-2">The following theorem reduces the integral of any function <span class="process-math">\(F(\cos t, \sin t)\)</span> over <span class="process-math">\([0,2\pi]\)</span> to a complex line integral of a certain complex function <span class="process-math">\(G(z)\)</span> over the unit circle (positively oriented). Of course, whether we can carry out that resulting line integral by hand depends on the complexity of <span class="process-math">\(F=F(x,y)\text{.}\)</span>  That computation is typically carried out using the Cauchy residue theorem.</div>
+<article class="theorem theorem-like" id="th_trig_integrals"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.23.4</span><span class="period">.</span><span class="space"> </span><span class="title">Trig integrals on <span class="process-math">\([0,2\pi]\)</span>.</span>
+</h4>
+<div class="para logical" id="th_trig_integrals-2-1">
+<div class="para">Let <span class="process-math">\(F\colon U\rightarrow \C\)</span> be continuous on an open set containing the unit circle. We have</div>
+<div class="displaymath process-math" id="eq_trig_integral">
+\begin{equation}
+\int_0^{2\pi}F(\cos t, \sin t)\, dt=\int_{\gamma}\frac{F(\tfrac{1}{2}(z+1/z),\tfrac{1}{2i}(z-1/z))}{iz}\, dz\text{,}\tag{1.86}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\gamma(t)=e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span>
+</div>
+</div></article><details id="th_trig_integrals-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_trig_integrals-3-1">
+<div class="para">The proof is a simple matter of applying the definition of the line integral to right side of <a href="s_improper_int.html#eq_trig_integral" class="xref" data-knowl="./knowl/xref/eq_trig_integral.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.86">(1.86)</a> and the fact that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_trig_integral.html" id="th_trig_integrals-3-1-2">
+\begin{align*}
+\frac{1}{2}(e^{it}+1/e^{it}) \amp = \cos t\\
+\frac{1}{2i}(e^{it}-1/e^{it}) \amp = \sin t \text{.}
+\end{align*}
+</div>
+</div></article></details><article class="example example-like" id="eg_trig_int"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.5</span><span class="period">.</span><span class="space"> </span><span class="title">Trig integral over <span class="process-math">\([0,2\pi]\)</span>.</span>
+</h4>
+<div class="para" id="eg_trig_int-2-1">Compute <span class="process-math">\(\displaystyle\int_{0}^{2\pi}\frac{1}{\cos t+\sin t+2}\, dt\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_trig_int-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_trig_int-3-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html" id="eg_trig_int-3-1-1">
+\begin{align*}
+f(z)=\frac{F(\tfrac{1}{2}(z+1/z),\tfrac{1}{2i}(z-1/z))}{iz}\amp = \frac{1}{iz}\cdot \frac{1}{\frac{1}{2}(z+1/z)+\frac{1}{2i}{z-1/z}+2} \\
+\amp = \frac{2}{iz}\cdot \frac{1}{(z+1/z)+\frac{1}{i}{z-1/z}+4} \\
+\amp = \frac{2}{iz^2+i+z^2-1+4iz}\\
+\amp = \frac{2}{(i+1)z^2+4iz+(-1+i)}
+\end{align*}
+</div>
+<div class="para">Using the quadratic formula, the roots of denominator are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html" id="eg_trig_int-3-1-2">
+\begin{align*}
+\alpha \amp = \frac{-4i+2\sqrt{2}i}{2(1+i)} \amp \beta \amp = \frac{-4i-2\sqrt{2}i}{2(1+i)} \\
+\amp =\frac{(-2+\sqrt{2})i}{1+i} \amp \amp =\frac{(-2-\sqrt{2})i}{1+i} 
+\end{align*}
+</div>
+<div class="para">Looking at the moduli of <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\text{,}\)</span> we see that <span class="process-math">\(\alpha\in B_1(0)\)</span> and <span class="process-math">\(\beta\notin \overline{B}_1(0)\text{.}\)</span> (In more detail, <span class="process-math">\(\abs{\alpha}=(2-\sqrt(2))/\sqrt{2} &lt; 1\text{.}\)</span>) <a href="s_improper_int.html#th_trig_integrals" class="xref" data-knowl="./knowl/xref/th_trig_integrals.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.4: Trig integrals on [0,2\pi]">Theorem 1.23.4</a> and the Cauchy residue formula then implies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html" id="eg_trig_int-3-1-9">
+\begin{align*}
+I =\int_\gamma f\, dz\amp =2\pi i \res_f \alpha\\
+\amp =2\pi i \cdot \frac{2}{(1+i)(\alpha-\beta)} \amp (f(z)=\tfrac{2}{(1+i)(z-\alpha)(z-\beta)})\\
+\amp = 2\pi i\cdot \frac{2}{2\sqrt{2}i}\\
+\amp = \frac{2\pi}{\sqrt{2}}\\
+\amp = \sqrt{2}\pi\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><div id="ss_trig_integrals-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">integrate(1/(cos(x)+sin(x)+2),x,0,2*pi)
+</script></div></section><section class="subsection" id="ss_trig_real_line"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Integral of rational function over real line</span>
+</h3>
+<div class="para logical" id="ss_trig_real_line-2">
+<div class="para">Given a rational function of the form <span class="process-math">\(f(z)=p(z)/q(z)\)</span> where <span class="process-math">\(p\)</span> and <span class="process-math">\(q\)</span> are polynomials and <span class="process-math">\(\deg q\geq \deg p+2\text{,}\)</span> it is easy to see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{R\to \infty}\int_{\gamma_R}f(z)\, dz = 0\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\gamma_R(t)=Re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,\pi]\)</span> is the upper semicircle of radius <span class="process-math">\(R\)</span> centered at the origin. Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals.</div>
+</div>
+<article class="example example-like" id="eg_rat_real_line"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.6</span><span class="period">.</span><span class="space"> </span><span class="title">Rational function on real line.</span>
+</h4>
+<div class="para" id="eg_rat_real_line-2-1">Compute <span class="process-math">\(\displaystyle \int_{-\infty}^\infty \frac{1}{(x^2+4)^2(x^2+1)}\, dx\)</span>
+</div>
+<div class="solutions"><details id="eg_rat_real_line-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_rat_real_line-3-1"></div></div></details></div></article><div id="ss_trig_real_line-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">integrate(1/((x^2+4)^2*(x^2+1)),x,-oo,oo)
+</script></div>
+<div id="ss_trig_real_line-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f=1/((x^2+4)^2*(x^2+1))
+r1=f.residue(x==2*i)
+r2=f.residue(x==i)
+show((r1, r2))
+show(2*pi*i*(r1+r2))
+</script></div></section><section class="subsection" id="eg_trig_real_line"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Trig integral over real line</span>
+</h3>
+<article class="example example-like" id="eg_trig_int_real_line"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.7</span><span class="period">.</span><span class="space"> </span><span class="title">Trig integral over real line.</span>
+</h4>
+<div class="para" id="eg_trig_int_real_line-2-1">Compute <span class="process-math">\(\displaystyle\int_{-\infty}^{\infty}\frac{x\sin x}{x^2+1}\, dx\)</span>
+</div>
+<div class="solutions"><details id="eg_trig_int_real_line-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_trig_int_real_line-3-1"></div></div></details></div></article><div id="eg_trig_real_line-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">integrate(x*sin(x)/(x^2+1),x,-oo,oo)
+</script></div>
+<div id="eg_trig_real_line-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f=x*e^(i*x)/(x^2+1)
+r1=f.residue(x==i)
+show(r1)
+show(2*pi*i*(r1))
+</script></div></section><section class="subsection" id="ss_indented_path"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Indented paths</span>
+</h3>
+<div class="para" id="ss_indented_path-2">To handle an integral of the form <span class="process-math">\(\int_0^\infty f(x)\, dx\)</span> that is improper at <span class="process-math">\(0\text{,}\)</span> we make use of an indented path like the one in <a href="s_improper_int.html#fig_ind_path" class="xref" data-knowl="./knowl/xref/fig_ind_path.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.8">Figure 1.23.8</a> and take the limit as <span class="process-math">\(R\to \infty\)</span> and <span class="process-math">\(\epsilon\to 0\text{.}\)</span> For this approach to be successful, we need to be able to say something meaningful about the limit of the integral around the bump as <span class="process-math">\(\delta\to 0\text{.}\)</span>  If the complex function we end up integrating over this path has an isolated singularity at <span class="process-math">\(z_0=0\text{,}\)</span> then we might be able to make use of <a href="s_improper_int.html#th_fractional_residue" class="xref" data-knowl="./knowl/xref/th_fractional_residue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.3: Fractional residue">Theorem 1.23.3</a>.</div>
+<figure class="figure figure-like" id="fig_ind_path"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+        Indented path
+    </div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.23.8<span class="period">.</span></span><span class="space"> </span>Indented path</figcaption></figure><article class="example example-like" id="eg_log_positive_reals"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.9</span><span class="period">.</span><span class="space"> </span><span class="title">Logarithmic improper integral.</span>
+</h4>
+<div class="para" id="eg_log_positive_reals-2-1">Compute <span class="process-math">\(\displaystyle\int_0^\infty \frac{\ln x}{x^4+1}\, dx\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_log_positive_reals-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_log_positive_reals-3-1"></div></div></details></div></article><div id="ss_indented_path-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">f=log(x)/(x^4+1)
+r1=f.residue(x==e^(pi*i/4))
+r2=f.residue(x==e^(3*pi*i/4))
+</script></div>
+<article class="example example-like" id="eg_sinc_func"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.10</span><span class="period">.</span><span class="space"> </span><span class="title">Sinc function.</span>
+</h4>
+<div class="para" id="eg_sinc_func-2-1">The function <span class="process-math">\(f(x)=\frac{\sin x}{x}\)</span> is a called the (unnormalized) <em class="emphasis">sinc</em> function. Compute <span class="process-math">\(\displaystyle\int_{0}^\infty f(x) \, dx\)</span>
+</div>
+<div class="solutions"><details id="eg_sinc_func-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_sinc_func-3-1"></div></div></details></div></article></section><section class="subsection" id="ss_keyhole_paths"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Keyhole paths</span>
+</h3>
+<article class="example example-like" id="eg_keyhole"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.23.11</span><span class="period">.</span><span class="space"> </span><span class="title">Integral of power function.</span>
+</h4>
+<div class="para" id="eg_keyhole-2-1">Compute <span class="process-math">\(\displaystyle\int_{0}^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_keyhole-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_keyhole-3-1"></div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_poles.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

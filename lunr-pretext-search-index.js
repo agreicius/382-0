@@ -3085,7 +3085,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.22",
   "title": "Poles and residue computation",
-  "body": " Poles and residue computation   Order of isolated singularity   Let be an isolated singularity of and let be the -centered Laurent series expansion in a punctured open ball around . We define the order of at (or the order of with respect to ), denoted as follows:   if there is an integer such that and for all integers , then ;    if for all integers there exists such that , then ;    if for all integers , then .        Singularity classification   Let be an isolated singularity of .   If , then is called a removable singularity of .    If , where is a positive integer, then is called a zero of of order .    If , where is a positive integer, then is called a pole of of order .    If , then is called an infinite singularity of .        Singularity classification   Compute for the given and isolated singularity and classify the singularity .    ,      ,      ,           For , we have . We conclude that , and hence that is a removable singularity.  The function is analytic on and satisfies . In other words, is an analytic continuation of (analytic on ) to . This illustrates why we call these type of singularities removable: we can extend to a function that is also analytic at the singularity in question, thereby removing it.    As we have computed previously, , where . Since for all , we see that , and hence that is an essential singularity of .    We compute . Thus showing that is a pole of order .        Isolated singularity   Assume is analytic on the open punctured ball .   Riemann's removable singularity theorem   is a removable singularity if and only if is bounded on the punctured open ball for some .    Factoring zeros\/poles   for if and only if , where is analytic on and .    Casorati-Weierstrass Theorem  If is an isolated singularity, then is dense in for all : , given any such , any , and any , there is a such that .          If is a removable singularity, then we have for all for some . This power series defines a function that is analytic on the entire ball ; since is continuous, it is bounded on for any , and hence also on . Since for all , we see that is bounded on .  If is bounded on , then there is an such that for all . Letting be the Laurent series expansion of at for this punctured ball, we have for any , for any . But then for all such and all with , we have . Since , we see that as . It follows that for all . Thus is a removable singularity.    The proof of this fact is very similar to that of . As such we will omit some details.  Suppose where is analytic on and . Let be the Laurent series expansion of in . Let , , for some For all , we have , since , is analytic, and thus is analytic. Similarly, we have , using the Cauchy integral formula on the analytic function . This proves that .  Now assume , so that we have , where we can show that the series converges on just as in the proof of , and thus that the function is analytic on and satisfies .    We prove the contrapositive. If is not dense for some , then we can find a and such that for all . It follows that the function is analytic on and satisfies for all in this region. It follows from the Riemann removable singularity theorem (part (a)) that is a removable singularity of , and hence that we may write for all . Furthermore, since , we have , and thus for all . But then is clearly not an essential singularity of .        Picard's theorem  Remarkably, the Casorati-Weierstrass theorem can be strengthened as follows: if is an essential singularity of , then for any open punctured ball on which is analytic, attains all values of with one possible exception, infinitely often. This is the content of Picard's (big) theorem . The necessity of including one possible exception is illustrated by the function , which attains all values of except .     Assume is an isolated singularity of and , and that and are both integers.    .     .     .       The proof is left as an exercise.      Assume is a pole of of order , and write where is analytic at and . We have .    Given the factorization as given above, let be a power series representation of at that converges for all for some . It follows that has a Laurent series representation , and thus that . The alternative description of is obtained by observing that , and thus that for all . Since is continuous (in fact, infinitely differentiable), we conclude that , whence the second equality in follows.     Residue computation   Let . Find all isolated singularities of and compute their residues.        "
+  "body": " Poles and residue computation   Order of isolated singularity   Let be an isolated singularity of and let be the -centered Laurent series expansion in a punctured open ball around . We define the order of at (or the order of with respect to ), denoted as follows:   if there is an integer such that and for all integers , then ;    if for all integers there exists such that , then ;    if for all integers , then .        Singularity classification   Let be an isolated singularity of .   If , then is called a removable singularity of .    If , where is a positive integer, then is called a zero of of order .    If , where is a positive integer, then is called a pole of of order .    If , then is called an infinite singularity of .        Singularity classification   Compute for the given and isolated singularity and classify the singularity .    ,      ,      ,           For , we have . We conclude that , and hence that is a removable singularity.  The function is analytic on and satisfies . In other words, is an analytic continuation of (analytic on ) to . This illustrates why we call these type of singularities removable: we can extend to a function that is also analytic at the singularity in question, thereby removing it.    As we have computed previously, , where . Since for all , we see that , and hence that is an essential singularity of .    We compute . Thus showing that is a pole of order .        Isolated singularity   Assume is analytic on the open punctured ball .   Riemann's removable singularity theorem   is a removable singularity if and only if is bounded on the punctured open ball for some .    Factoring zeros\/poles   for if and only if , where is analytic on and .    Casorati-Weierstrass Theorem  If is an isolated singularity, then is dense in for all : , given any such , any , and any , there is a such that .          If is a removable singularity, then we have for all for some . This power series defines a function that is analytic on the entire ball ; since is continuous, it is bounded on for any , and hence also on . Since for all , we see that is bounded on .  If is bounded on , then there is an such that for all . Letting be the Laurent series expansion of at for this punctured ball, we have for any , for any . But then for all such and all with , we have . Since , we see that as . It follows that for all . Thus is a removable singularity.    The proof of this fact is very similar to that of . As such we will omit some details.  Suppose where is analytic on and . Let be the Laurent series expansion of in . Let , , for some For all , we have , since , is analytic, and thus is analytic. Similarly, we have , using the Cauchy integral formula on the analytic function . This proves that .  Now assume , so that we have , where we can show that the series converges on just as in the proof of , and thus that the function is analytic on and satisfies .    We prove the contrapositive. If is not dense for some , then we can find a and such that for all . It follows that the function is analytic on and satisfies for all in this region. It follows from the Riemann removable singularity theorem (part (a)) that is a removable singularity of , and hence that we may write for all . Furthermore, since , we have , and thus for all . But then is clearly not an essential singularity of .        Picard's theorem  Remarkably, the Casorati-Weierstrass theorem can be strengthened as follows: if is an essential singularity of , then for any open punctured ball on which is analytic, attains all values of with one possible exception, infinitely often. This is the content of Picard's (big) theorem . The necessity of including one possible exception is illustrated by the function , which attains all values of except .    Order arithmetic   Assume is an isolated singularity of and , and that and are both integers.    .     .     .       The proof is left as an exercise.      Assume is a pole of of order , and write where is analytic at and . We have .    Given the factorization as given above, let be a power series representation of at that converges for all for some . It follows that has a Laurent series representation , and thus that . The alternative description of is obtained by observing that , and thus that for all . Since is continuous (in fact, infinitely differentiable), we conclude that , whence the second equality in follows.     Residue computation   Let . Find all isolated singularities of and compute their residues.    Writing , we see that is analytic everywhere except at the points , . It is easy to see that has a simple pole at each for all , and that has a simple pole at . Since furthermore is nonzero at these points, it follows from our order arithmetic corollary that . For with , we conclude, using that . For , we have where . Since is analytic about we have , and thus . Thus . Lastly, since , we see that . We conclude that .    "
 },
 {
   "id": "d_ord",
@@ -3138,8 +3138,8 @@ var ptx_lunr_docs = [
   "url": "s_poles.html#cor_isol_sing",
   "type": "Corollary",
   "number": "1.22.6",
-  "title": "",
-  "body": "  Assume is an isolated singularity of and , and that and are both integers.    .     .     .       The proof is left as an exercise.   "
+  "title": "Order arithmetic.",
+  "body": " Order arithmetic   Assume is an isolated singularity of and , and that and are both integers.    .     .     .       The proof is left as an exercise.   "
 },
 {
   "id": "cor_res_at_pole",
@@ -3157,7 +3157,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.22.8",
   "title": "Residue computation.",
-  "body": " Residue computation   Let . Find all isolated singularities of and compute their residues.       "
+  "body": " Residue computation   Let . Find all isolated singularities of and compute their residues.    Writing , we see that is analytic everywhere except at the points , . It is easy to see that has a simple pole at each for all , and that has a simple pole at . Since furthermore is nonzero at these points, it follows from our order arithmetic corollary that . For with , we conclude, using that . For , we have where . Since is analytic about we have , and thus . Thus . Lastly, since , we see that . We conclude that .   "
 },
 {
   "id": "s_improper_int",
@@ -3165,17 +3165,107 @@ var ptx_lunr_docs = [
   "url": "s_improper_int.html",
   "type": "Section",
   "number": "1.23",
-  "title": "Improper integrals",
-  "body": " Improper integrals   Jordan's lemma   We have for all . As a consequence, we have for any .    "
+  "title": "Definite integrals",
+  "body": " Definite integrals   We assemble here a variety of complex integration techniques that can be used to compute definite integrals over real line intervals, both proper and improper.    Miscellaneous tools   Jordan's inequality   We have for all . As a consequence, we have for any .    The inequality is easily shown using calculus methods. (See for a fairly convincing visual argument.) We then have .     Core idea of Jordan's inequality   Core idea of Jordan's inequality      Fractional residue   Assume as a simple pole at the isolated singularity . Fix a real interval , and for each let be defined as . We have .          Trig integrals on  The following theorem reduces the integral of any function over to a complex line integral of a certain complex function over the unit circle (positively oriented). Of course, whether we can carry out that resulting line integral by hand depends on the complexity of . That computation is typically carried out using the Cauchy residue theorem.   Trig integrals on   Let be continuous on an open set containing the unit circle. We have , where , .    The proof is a simple matter of applying the definition of the line integral to right side of and the fact that .     Trig integral over   Compute .    We have Using the quadratic formula, the roots of denominator are Looking at the moduli of and , we see that and . (In more detail, .) and the Cauchy residue formula then implies .       Integral of rational function over real line  Given a rational function of the form where and are polynomials and , it is easy to see that , where , is the upper semicircle of radius centered at the origin. Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals.   Rational function on real line   Compute             Trig integral over real line   Trig integral over real line   Compute             Indented paths  To handle an integral of the form that is improper at , we make use of an indented path like the one in and take the limit as and . For this approach to be successful, we need to be able to say something meaningful about the limit of the integral around the bump as . If the complex function we end up integrating over this path has an isolated singularity at , then we might be able to make use of .   Indented path   Indented path     Logarithmic improper integral   Compute .          Sinc function   The function is a called the (unnormalized) sinc function. Compute           Keyhole paths   Integral of power function   Compute .         "
 },
 {
   "id": "lem_jordan",
   "level": "2",
   "url": "s_improper_int.html#lem_jordan",
-  "type": "Lemma",
+  "type": "Theorem",
   "number": "1.23.1",
-  "title": "Jordan’s lemma.",
-  "body": " Jordan's lemma   We have for all . As a consequence, we have for any .   "
+  "title": "Jordan’s inequality.",
+  "body": " Jordan's inequality   We have for all . As a consequence, we have for any .    The inequality is easily shown using calculus methods. (See for a fairly convincing visual argument.) We then have .   "
+},
+{
+  "id": "fig_jordan_ineq",
+  "level": "2",
+  "url": "s_improper_int.html#fig_jordan_ineq",
+  "type": "Figure",
+  "number": "1.23.2",
+  "title": "",
+  "body": " Core idea of Jordan's inequality   Core idea of Jordan's inequality    "
+},
+{
+  "id": "th_fractional_residue",
+  "level": "2",
+  "url": "s_improper_int.html#th_fractional_residue",
+  "type": "Theorem",
+  "number": "1.23.3",
+  "title": "Fractional residue.",
+  "body": " Fractional residue   Assume as a simple pole at the isolated singularity . Fix a real interval , and for each let be defined as . We have .       "
+},
+{
+  "id": "th_trig_integrals",
+  "level": "2",
+  "url": "s_improper_int.html#th_trig_integrals",
+  "type": "Theorem",
+  "number": "1.23.4",
+  "title": "Trig integrals on <span class=\"process-math\">\\([0,2\\pi]\\)<\/span>.",
+  "body": " Trig integrals on   Let be continuous on an open set containing the unit circle. We have , where , .    The proof is a simple matter of applying the definition of the line integral to right side of and the fact that .   "
+},
+{
+  "id": "eg_trig_int",
+  "level": "2",
+  "url": "s_improper_int.html#eg_trig_int",
+  "type": "Example",
+  "number": "1.23.5",
+  "title": "Trig integral over <span class=\"process-math\">\\([0,2\\pi]\\)<\/span>.",
+  "body": " Trig integral over   Compute .    We have Using the quadratic formula, the roots of denominator are Looking at the moduli of and , we see that and . (In more detail, .) and the Cauchy residue formula then implies .   "
+},
+{
+  "id": "eg_rat_real_line",
+  "level": "2",
+  "url": "s_improper_int.html#eg_rat_real_line",
+  "type": "Example",
+  "number": "1.23.6",
+  "title": "Rational function on real line.",
+  "body": " Rational function on real line   Compute        "
+},
+{
+  "id": "eg_trig_int_real_line",
+  "level": "2",
+  "url": "s_improper_int.html#eg_trig_int_real_line",
+  "type": "Example",
+  "number": "1.23.7",
+  "title": "Trig integral over real line.",
+  "body": " Trig integral over real line   Compute        "
+},
+{
+  "id": "fig_ind_path",
+  "level": "2",
+  "url": "s_improper_int.html#fig_ind_path",
+  "type": "Figure",
+  "number": "1.23.8",
+  "title": "",
+  "body": " Indented path   Indented path   "
+},
+{
+  "id": "eg_log_positive_reals",
+  "level": "2",
+  "url": "s_improper_int.html#eg_log_positive_reals",
+  "type": "Example",
+  "number": "1.23.9",
+  "title": "Logarithmic improper integral.",
+  "body": " Logarithmic improper integral   Compute .       "
+},
+{
+  "id": "eg_sinc_func",
+  "level": "2",
+  "url": "s_improper_int.html#eg_sinc_func",
+  "type": "Example",
+  "number": "1.23.10",
+  "title": "Sinc function.",
+  "body": " Sinc function   The function is a called the (unnormalized) sinc function. Compute        "
+},
+{
+  "id": "eg_keyhole",
+  "level": "2",
+  "url": "s_improper_int.html#eg_keyhole",
+  "type": "Example",
+  "number": "1.23.11",
+  "title": "Integral of power function.",
+  "body": " Integral of power function   Compute .       "
 },
 {
   "id": "appendix-notation",
