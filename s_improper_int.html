@@ -825,8 +825,8 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="eg_trig_int-2-1">Compute <span class="process-math">\(\displaystyle\int_{0}^{2\pi}\frac{1}{\cos t+\sin t+2}\, dt\text{.}\)</span>
 </div>
 <div class="solutions"><details id="eg_trig_int-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_trig_int-3-1">
-<div class="para">We have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html" id="eg_trig_int-3-1-1">
+<div class="para">We have Let <span class="process-math">\(I\)</span> be the definite integral we wish to compute, let <span class="process-math">\(F(x,y)=1/(x+y+2)\text{,}\)</span> and let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html" id="eg_trig_int-3-1-3">
 \begin{align*}
 f(z)=\frac{F(\tfrac{1}{2}(z+1/z),\tfrac{1}{2i}(z-1/z))}{iz}\amp = \frac{1}{iz}\cdot \frac{1}{\frac{1}{2}(z+1/z)+\frac{1}{2i}{z-1/z}+2} \\
 \amp = \frac{2}{iz}\cdot \frac{1}{(z+1/z)+\frac{1}{i}{z-1/z}+4} \\
@@ -835,14 +835,14 @@ f(z)=\frac{F(\tfrac{1}{2}(z+1/z),\tfrac{1}{2i}(z-1/z))}{iz}\amp = \frac{1}{iz}\c
 \end{align*}
 </div>
 <div class="para">Using the quadratic formula, the roots of denominator are</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html" id="eg_trig_int-3-1-2">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html" id="eg_trig_int-3-1-4">
 \begin{align*}
 \alpha \amp = \frac{-4i+2\sqrt{2}i}{2(1+i)} \amp \beta \amp = \frac{-4i-2\sqrt{2}i}{2(1+i)} \\
 \amp =\frac{(-2+\sqrt{2})i}{1+i} \amp \amp =\frac{(-2-\sqrt{2})i}{1+i} 
 \end{align*}
 </div>
 <div class="para">Looking at the moduli of <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\beta\text{,}\)</span> we see that <span class="process-math">\(\alpha\in B_1(0)\)</span> and <span class="process-math">\(\beta\notin \overline{B}_1(0)\text{.}\)</span> (In more detail, <span class="process-math">\(\abs{\alpha}=(2-\sqrt(2))/\sqrt{2} &lt; 1\text{.}\)</span>) <a href="s_improper_int.html#th_trig_integrals" class="xref" data-knowl="./knowl/xref/th_trig_integrals.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.4: Trig integrals on [0,2\pi]">Theorem 1.23.4</a> and the Cauchy residue formula then implies</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html" id="eg_trig_int-3-1-9">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_trig_integrals.html" id="eg_trig_int-3-1-11">
 \begin{align*}
 I =\int_\gamma f\, dz\amp =2\pi i \res_f \alpha\\
 \amp =2\pi i \cdot \frac{2}{(1+i)(\alpha-\beta)} \amp (f(z)=\tfrac{2}{(1+i)(z-\alpha)(z-\beta)})\\
