@@ -406,7 +406,32 @@ The function <m>f(x)=\frac{\sin x}{x}</m> is a called the (unnormalized) <em>sin
 </statement>
 <solution>
 <p>
-Let <m>f(z)=\frac{e^{iz}}{z}</m>.
+The function <m>f(z)=\frac{e^{iz}}{z}</m> is analytic everywhere except at <m>z=0</m>, where it has a simple pole. An easy computation shows <m>\res_f 0=1</m>. 
+</p>
+<p>
+    For all <m>R&gt; 1</m> and <m>0&lt; \delta &lt; 1</m>, let <m>\gamma</m> be the indented path as in <xref ref="fig_ind_path"/>. Since <m>f</m> is analytic on the interior of <m>\gamma</m> we have
+    <me>
+        \int_{\gamma}f\, dz=0
+    </me>
+    by Cauchy-Goursat. 
+    On the other hand, we have 
+    <md>
+        <mrow>\int_\gamma f\, dz \amp = \int_{-R}^\delta f(x)\, dx+\int_\delta^Rf(x)\, dx +\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\m dz</mrow>
+        <mrow> \amp = \int_{\delta}^Rf(x)-f(-x)\, dx+\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\, dz </mrow>
+        <mrow> \amp = 2i\int_{\delta}^R \frac{\sin x}{x}\, dx+\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\, dz </mrow>
+    </md>.
+    Thus, using a little algebra, we see that 
+    <men xml:id="eq_sinc_reals">
+       \int_{\delta}^R \frac{\sin x}{x}\, dx= -\frac{1}{2i}\int_{\gamma_\delta}f\, dz-\frac{1}{2i}\int_{\gamma_R}f\, dz
+    </men>.
+    Using <xref ref="th_fractional_residue"/>, we have 
+    <me>
+        \lim\limits_{\delta\to 0} \int_{\gamma_\delta}f\, dz=-\pi i\res_f 0=-\pi i
+    </me>.
+    (Recall <m>\gamma_\delta\colon [0,\pi]\rightarrow \C</m>, so the <m>\beta-\alpha=\pi</m> in this case.) The usual Jordan's inequality argument shows that <m>\lim\limits_{R\to \infty}f\, dz=0</m>. Thus taking limits of both sides of <xref ref="eq_sinc_reals"/>, we see that 
+    <me>
+       \int_{0}^\infty \frac{\sin x}{x}\, dx =-\frac{1}{2i}(-\pi i)=\frac{\pi}{2}
+    </me>.
 </p>
 </solution>
 </example>
