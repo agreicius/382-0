@@ -410,6 +410,24 @@ Let <m>f(z)=\frac{e^{iz}}{z}</m>.
 </p>
 </solution>
 </example>
+<sage>
+    <input>
+        integrate(sin(x)/x,x,0,oo)
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<sage>
+    <input>
+        f=sin(x)/x
+        r=f.residue(x==0)
+        show(r)
+    </input>
+    <output>
+        
+    </output>
+</sage>
 </subsection>
 <subsection xml:id="ss_keyhole_paths">
 <title>Keyhole (or Pac-Man) paths</title>
