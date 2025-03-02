@@ -406,7 +406,7 @@ The function <m>f(x)=\frac{\sin x}{x}</m> is a called the (unnormalized) <em>sin
 </statement>
 <solution>
 <p>
-
+Let <m>f(z)=\frac{e^{iz}}{z}</m>.
 </p>
 </solution>
 </example>
