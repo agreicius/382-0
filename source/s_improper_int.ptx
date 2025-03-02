@@ -165,6 +165,40 @@ Compute <m>\displaystyle \int_{-\infty}^\infty \frac{1}{(x^2+4)^2(x^2+1)}\, dx</
 </statement>
 <solution>
 <p>
+Let <m>f(z)=1/((z^2+4)^2(z^2+1))</m>. The denominator factors as <m>(z-2i)^2(z+2i)^2(z-i)(z+i)</m>. It follows that <m>\pm 2i</m> are poles of order 2 of <m>f</m>, and <m>\pm i</m> are simple poles. We compute, using <xref ref="th_simple_pole_residue"/> and <xref ref="cor_res_at_pole"/>, 
+<md>
+    <mrow>\res_f i \amp = \frac{1}{(i^2+4)^2(i+i)}</mrow>
+    <mrow> \amp = \frac{1}{18i}</mrow>
+    <mrow>\res_f 2i \amp = g'(2i), \ g(z)=1/((z+2i)(z^2+1))</mrow>
+    <mrow> \amp = -\frac{11}{288i}</mrow>
+</md>.
+For each <m>R&gt; 0</m>,  let <m>\gamma</m> be the semicircular path in <xref ref="fig_semicircle"/>. For <m>R&gt; 2</m>, we have 
+<me>
+    \int_\gamma f\, dz=2\pi i(\res_f i+\res_f 2i)=2\pi(1/18-11/288)=\frac{5\pi}{144}
+</me>.
+It follows that for all <m>R&gt; 2</m>, we have 
+<men xml:id="eq_rat_real_line">
+\int_{-R}^Rf(z)\, dz=\frac{5\pi}{144}-\int_{\gamma_R}f(z)\, dz.
+</men>
+On <m>\gamma_R</m> we have, using an ML-inequality, 
+<md>
+    <mrow>\abs{\int_{\gamma_R}f\, dz} \amp \leq \max\{\abs{f(z)}\colon z\in \gamma_R\}\cdot \pi R </mrow>
+    <mrow> \amp \leq \frac{1}{(R^2-4)(R^2-1)}\cdot \pi R</mrow>
+    <mrow> \amp =\frac{\pi R}{(R^2-4)(R^2-1)}</mrow>
+</md>,
+where we have used the fact that for <m>z=Re^{it}</m>, we have 
+<md>
+<mrow>\abs{(z^2+4)(z^2+1)}=\abs{z^2+4}\abs{z^2+1} \amp\geq \abs{\abs{z^2}-4}{\abs{\abs{z}^2-1}} </mrow>
+<mrow> \amp\geq (R^2-4)(R^2-1) </mrow>
+</md>,
+for <m>R&gt; 2</m>. Since <m>\pi R/((R^2-4)(R^2-1))\to 0</m> as <m>R\to \infty</m>, we see that 
+<me>
+    \lim\limits_{R\to \infty}\int_\gamma_R f\, dz=0
+</me>.
+Taking limits of both sides of <xref ref="eq_rat_real_line"/>, we conclude that 
+<me>
+    \int_{-R}^Rf(z)\, dz=\frac{5\pi}{144}
+</me>.
 
 </p>
 </solution>
@@ -192,6 +226,9 @@ show(2*pi*i*(r1+r2))
 </subsection>
 <subsection xml:id="eg_trig_real_line">
 <title>Trig integral over real line</title>
+<p>
+    A semicircular path like <xref ref="fig_semicircle"/> is often useful also for integrating functions <m>f\colon \R\rightarrow \R</m> on the real line that involve trigonometric functions, and which have no singularities in <m>\R</m>. However, when choosing the complex function <m>g</m> we integrate over this path, we must take care that the integral over <m>\gamma_R</m> tends toward zero as <m>R\to \infty</m>. This is often accomplished by using <m>e^{iz}</m> instead of <m>\cos z</m> or <m>\sin z</m>, whose moduli are trickier to bound. 
+</p>
 <example xml:id="eg_trig_int_real_line">
 <title>Trig integral over real line</title>
 <statement>
@@ -201,7 +238,35 @@ Compute <m>\displaystyle\int_{-\infty}^{\infty}\frac{x\sin x}{x^2+1}\, dx</m>
 </statement>
 <solution>
 <p>
-
+Let <m>\displaystyle f(z)=\frac{z e^{iz}}{z^2+1}</m>. It is easy to see that <m>f</m> has simple poles at <m>\pm i</m> and we compute 
+<me>
+    \res_f i=\frac{ie^{i^2}}{2i}=\frac{e^{-1}}{2}
+</me>
+with the help of <xref ref="th_simple_pole_residue"/>. 
+</p>
+<p>
+    For all <m>R</m> let <m>\gamma</m> be the usual semicircular path as in <xref ref="fig_semicircle"/>. 
+    We have 
+    <md>
+        <mrow>\int_{\gamma_R} f(z)\, dz \amp =\int_{-R}^0f(x)\, dx+\int_0^R f(x)\, dx+\int_{\gamma_R} f\, dz </mrow>
+        <mrow> \amp = -\int_0^{R}f(-x)\, dx+\int_0^Rf(x)\, dx+\int_{\gamma_R}f\, dz</mrow>
+        <mrow> \amp = \int_0^R f(x)-f(-x)\, dx+\int_{\gamma_R}f\, dz</mrow>
+        <mrow> \amp = 2i\int_0^R\frac{x\sin x}{x^2+1}\, dx+\int_{\gamma_R}f\, dz </mrow>
+    </md>.
+    The Cauchy residue theorem tells us that <m>\int_\gamma f\, dz=2\pi i\res_f i=\pi e^{-1}</m>, and thus we have (after a little algebra)
+    <men xml:id="eq_trig_int_reals">
+    \int_0^{R}\frac{x\sin x}{x^2+1}\, dx=\frac{\pi}{e}-\frac{1}{2}\int_{\gamma_R} f\, dz
+    </men>
+    for all <m>R</m>. The ML-inequality is not delicate enough to show that <m>\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0</m>, and so we endeavor instead to use Jordan's inequality:
+    <md>
+        <mrow>\abs{\int_{\gamma_R}}f\, dz \amp \leq \int_0^\pi \frac{\abs{Re^{it}}\abs{e^{iRe^{it}}}}{\abs{(R^2e^{2it}+1}}\cdot \abs{iRe^{it}}\, dt</mrow>
+        <mrow> \amp \leq \int_0^\pi \frac{R^2e^{-R\sin t}}{R^2-1}\, dt</mrow>
+        <mrow> \amp \leq \frac{\pi R}{R^2-1}\amp (\text{Jordan's ineq.})</mrow>
+    </md>.
+    Since <m>\displaystyle \frac{\pi R}{R^2-1} \to 0</m> as <m>R\to \infty</m>, it follows that <m>\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0</m>, using the squeeze theorem. Finally, taking limits of both sides of <xref ref="eq_trig_int_reals"/>, we conclude that 
+    <me>
+        \int_0^\infty \frac{x\sin x}{x^2+1}\, dx=\frac{\pi}{e}
+    </me>.
 </p>
 </solution>
 </example>
@@ -258,7 +323,57 @@ Compute <m>\displaystyle\int_0^\infty \frac{\ln x}{x^4+1}\, dx</m>.
 </statement>
 <solution>
 <p>
-
+With the idea of using a path as in <xref ref="fig_ind_path"/>, we work with the branch <m>\Log_{\alpha}</m>, with <m>\alpha=-\pi/2</m>. This is defined on <m>\C-R_{-\pi/2}</m> and agrees with <m>\ln x</m> on the positive reals.  Let <m>f(z)=\frac{\Log_{\alpha}(z)}{z^4+1}</m>. It is easy to see that <m>f</m> is analytic on <m>U=\C-R_{\alpha}</m> except at the roots <m>z_k=e^{i\pi/4}e^{i\pi k/2}</m>, <m>0\leq k\leq 3</m>, of <m>z^4+1</m>. With the help of <xref ref="th_simple_pole_residue"/>, we compute 
+<md>
+    <mrow>\res_f z_0 \amp = \frac{\Log_\alpha(e^{i\pi/4})}{4e^{i3\pi/4}}</mrow>
+    <mrow> \amp = \frac{i\pi}{16}\cdot e^{-i3\pi/4} </mrow>
+    <mrow>\res_f z_1 \amp = \frac{\Log_\alpha(e^{i3\pi/4})}{4e^{i9\pi/4}}</mrow>
+    <mrow> \amp = \frac{i3\pi}{16}\cdot e^{-9i\pi/4} </mrow>
+    <mrow> \amp = \frac{i 3\pi}{16}\cdot e^{-i\pi/4}</mrow>
+</md>.
+For all <m>R &gt; 1</m> and <m>0 &lt; \delta &lt; 1</m>, let <m>\gamma</m> be the path as in <xref ref="fig_ind_path"/>. On the one hand, since such a path only encloses the poles <m>z_0</m> and <m>z_1</m>, we have by the Cauchy residue theorem 
+<md>
+  <mrow> \int_{\gamma}f\, dz \amp = 2\pi i(\res_f z_0+\res_f z_1) \amp </mrow>  
+  <mrow> \amp = -\frac{\pi^2}{8}(e^{-i3\pi/4}+3e^{-i\pi/4})</mrow>
+  <mrow> \amp = -\frac{\pi^2}{8}(\sqrt{2}-2\sqrt{2}i)</mrow>
+  <mrow> \amp = \frac{\pi^2}{8}(-\sqrt{2}+2\sqrt{2}i)</mrow>
+</md>.
+On the other hand, breaking the path <m>\gamma</m> down into separate legs, we have 
+<md>
+    <mrow>\int_{\gamma}f\, dz \amp = \int_{-R}^{-\delta}\frac{\ln\abs{x}+\pi i}{x^4+1}\, dx+\int_{\delta}^R \frac{\ln x}{x^4+1}\, dx+\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\, dz</mrow>
+    <mrow> \amp =2\int_{\delta}^R\frac{\ln x}{x^4+1}+i\int_{\delta}^R\frac{\pi}{x^4+1}\, dx +\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\, dz</mrow>
+</md>,
+where here <m>\gamma_\delta(t)=\delta e^{i(\pi-t)}=i\delta e^{-it}</m>, <m>t\in [0,\pi]</m>, and <m>\gamma_R(t)=Re^{it}</m>, <m>t\in [0,\pi]</m>. We will show that <m>\lim\limits_{\delta\to 0^+}\int_{\gamma_\delta}f\, dz=0</m>, and <m>\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0</m>, and hence, taking limits of the equality above, 
+<me>
+   \frac{\pi^2}{8}(-\sqrt{2}+2\sqrt{2}i)= 2\int_{\delta}^R\frac{\ln x}{x^4+1}+i\int_{\delta}^R\frac{\pi}{x^4+1}\, dx
+</me>.
+Equating real and imaginary parts, we then conclude that 
+<md>
+    <mrow>\int_0^\infty\frac{\ln x}{x^4+1}\, dx \amp = \frac{\sqrt{2}\pi}{16} \amp </mrow>
+    <mrow>\int_0^\infty \frac{1}{x^4+1}\, dx \amp = \frac{\sqrt{2}\pi}{4} \amp (\text{bonus}) </mrow>
+</md>.
+To see that <m>\lim\limits_{\delta\to 0^+}\int_{\gamma_\delta}f\, dz=0</m>, and <m>\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0</m>, it suffices to use ML-inequalities on both these paths. In general, for any circular path <m>\phi(t)=se^{it}</m>, <m>t\in [0,\pi]</m> we have 
+<me>
+    \abs{\Log_\alpha( se^{it})}=\abs{\ln \abs{s}+it}\leq \ln \abs{s}+\pi
+</me>.
+Thus, we have 
+<md>
+    <mrow>\abs{\int_{\gamma_R}f\, dz} \amp\leq \frac{\ln R+\pi}{R^4-1}\cdot \pi R </mrow>
+    <mrow> \amp = \pi \cdot \frac{\ln R+\pi}{R^3-1/R}</mrow>
+    <mrow>\abs{\int_{\gamma_\delta}f\, dz} \amp\leq \frac{\ln \delta+\pi}{1-\delta^4}\cdot \pi \delta </mrow>
+    <mrow> \amp = \pi \frac{\delta \ln \delta+\delta\pi}{1-\delta^4}</mrow>
+</md>.
+Some straightforward, if not altogether pleasant l'H&#xf4;pital's rule arguments now show that 
+<md>
+    <mrow>\lim\limits_{R\to \infty} \pi \cdot \frac{\ln R+\pi}{R^3-\tfrac{1}{R}} \amp=0 </mrow>
+    <mrow>\lim\limits_{\delta\to 0^+} \pi \frac{\delta \ln \delta+\delta\pi}{1-\delta^4}\amp =0 </mrow>
+</md>
+and hence that 
+<md>
+    <mrow>\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz \amp= 0 </mrow>
+    <mrow>\lim\limits_{\delta\to 0^+} \int_{\gamma_\delta}f\, dz \amp = 0 </mrow>
+</md>,
+as desired. 
 </p>
 </solution>
 </example>
