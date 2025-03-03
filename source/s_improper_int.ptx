@@ -193,7 +193,7 @@ where we have used the fact that for <m>z=Re^{it}</m>, we have
 </md>,
 for <m>R&gt; 2</m>. Since <m>\pi R/((R^2-4)(R^2-1))\to 0</m> as <m>R\to \infty</m>, we see that 
 <me>
-    \lim\limits_{R\to \infty}\int_\gamma_R f\, dz=0
+    \lim\limits_{R\to \infty}\int_{\gamma_R} f\, dz=0
 </me>.
 Taking limits of both sides of <xref ref="eq_rat_real_line"/>, we conclude that 
 <me>
@@ -259,7 +259,7 @@ with the help of <xref ref="th_simple_pole_residue"/>.
     </men>
     for all <m>R</m>. The ML-inequality is not delicate enough to show that <m>\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0</m>, and so we endeavor instead to use Jordan's inequality:
     <md>
-        <mrow>\abs{\int_{\gamma_R}}f\, dz \amp \leq \int_0^\pi \frac{\abs{Re^{it}}\abs{e^{iRe^{it}}}}{\abs{R^2e^{2it}+1}}\cdot \abs{iRe^{it}}\, dt</mrow>
+        <mrow>\abs{\int_{\gamma_R}f\, dz} \amp \leq \int_0^\pi \frac{\abs{Re^{it}}\abs{e^{iRe^{it}}}}{\abs{R^2e^{2it}+1}}\cdot \abs{iRe^{it}}\, dt</mrow>
         <mrow> \amp \leq \int_0^\pi \frac{R^2e^{-R\sin t}}{R^2-1}\, dt</mrow>
         <mrow> \amp \leq \frac{\pi R}{R^2-1}\amp (\text{Jordan's ineq.})</mrow>
     </md>.
