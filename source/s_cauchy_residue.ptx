@@ -41,7 +41,7 @@ for all <m>n</m>, where <m>\gamma=z_0+re^{it}</m>, <m>t\in [0,2\pi]</m> for any 
 <title>Cauchy residue theorem</title>
 <statement>
 <p>
-Assume <m>U</m> is open and that <m>f</m> is analytic on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where for all <m>1\leq \k\leq n</m>, <m>z_k</m> is an isolated singularity of <m>f</m>. If <m>B\subseteq U</m> is any closed ball containing <m>\{z_1,z_2,\dots, z_n\}</m> in its interior, then 
+Assume <m>U</m> is open and that <m>f</m> is analytic on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where for all <m>1\leq k\leq n</m>, <m>z_k</m> is an isolated singularity of <m>f</m>. If <m>B\subseteq U</m> is any closed ball containing <m>\{z_1,z_2,\dots, z_n\}</m> in its interior, then 
 <men xml:id="eq_residue">
     \int_\gamma f\, dz=2\pi i\sum_{k=1}^n\res_f(z_k)
 </men>,

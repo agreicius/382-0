@@ -60,6 +60,8 @@
     \DeclareMathOperator{\sign}{sign}
     \DeclareMathOperator{\Arg}{Arg}
     \DeclareMathOperator{\Log}{Log}
+    \DeclareMathOperator{\Ext}{Ext}
+    \DeclareMathOperator{\Int}{Int}
     \DeclareMathOperator{\Arcsin}{Arcsin}
     \DeclareMathOperator{\Arccos}{Arccos}
     \DeclareMathOperator{\Arctan}{Arctan}

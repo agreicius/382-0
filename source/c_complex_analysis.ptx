@@ -23,4 +23,5 @@
      <xi:include href="s_cauchy_residue.ptx" />
      <xi:include href="s_poles.ptx" />
      <xi:include href="s_improper_int.ptx" />
+     <xi:include href="s_winding.ptx" />
 </chapter>

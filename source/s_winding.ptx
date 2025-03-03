@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_winding" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Winding number</title>
+    <p>
+        Reminder: unless stated otherwise, paths are assumed to be piecewise smooth. 
+    </p>
+    <definition xml:id="d_winding_number">
+    <title>Winding number</title>
+    <statement>
+    <p>
+    Let <m>\gamma\colon [a,b]\rightarrow \C</m> be a closed path, and let <m>z_0</m> be a complex number not lying on <m>\gamma</m>. The <term>winding number</term> (or <term>index</term>) of <m>\gamma</m> around (or with respect to) <m>z_0</m>, denoted <m>\chi_\gamma z_0</m> is defined as 
+    <men xml:id="eq_winding_num">
+        \chi_\gamma(z_0)=\frac{1}{2\pi i}\int_{\gamma}\frac{1}{z-z_0}\, dz
+    </men>.
+    </p>
+    </statement>
+    </definition>
+    <example xml:id="eg_wind_circles">
+    <title>Winding numbers of circles</title>
+    <statement>
+    <p>
+    Fix an integer <m>k\in \Z</m>, <m>z_0\in \C</m>, and <m>R&gt; 0</m>, and let <m>\gamma(t)=z_0+Re^{kit}</m>, <m>t\in [0,2\pi]</m>. Prove: 
+    <me>
+        \chi_\gamma (w_0)=\begin{cases}
+        k \amp \text{if } w_0\in B_R(z_0) \\
+        0 \amp \text{if } w_0\in \C-\overline{B}_R(z_0)
+        \end{cases}
+    </me>.
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    
+    <theorem xml:id="th_winding_number">
+    <title>Winding number properties</title>
+    <statement>
+    <p>
+    Let <m>\gamma\colon [a,b]\rightarrow \C</m> be a closed path and let <m>U=\C-\in \gamma</m>. 
+    <ol>
+        <li>
+            <p>
+                <m>\chi_\gamma(w)</m> is an integer for all <m>w\in U</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                The function 
+                <md>
+                    <mrow>\chi_\gamma\colon U \amp \rightarrow \C</mrow>
+                    <mrow>w \amp \longmapsto \chi_\gamma(w)</mrow>
+                </md>
+                is continuous. As a result, <m>\chi_\gamma</m> is constant on all open connected subsets of <m>U</m>. 
+            </p>
+        </li>
+    </ol> 
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <definition xml:id="d_interior_exterior">
+    <title>Interior and exterior of path</title>
+    <statement>
+    <p>
+    Let <m>\gamma\colon [a,b]\rightarrow \C</m> be a closed path and let <m>U=\C-\im \gamma</m>. The <term>interior</term> and <term>exterior</term> of <m>\gamma</m>, denoted <m>\Int \gamma</m> and <m>\Ext \gamma</m>, respectively, are defined as follows:
+    <md>
+        <mrow>\Int \gamma \amp =\{w\in U\colon \chi_\gamma(w)\ne 0\}</mrow>
+        <mrow>\Ext \gamma \amp =\{w\in U\colon \chi_\gamma(w)=0\}</mrow>
+    </md>.
+    </p>
+    </statement>
+    </definition>
+    <warning>
+        <p>
+            The term <em>interior</em> is a potential source of confusion, as we defined earlier the notion of the interior of a subset of <m>\C</m> (<xref ref="d_interior_pt"/>). Observe that our new notion of interior applies not to a <em>set</em>, but rather a <em>path</em>, which is a function. 
+        </p>
+    </warning>
+    <corollary xml:id="cor_int_ext">
+        <title>Interior is bounded</title>
+        <statement>
+            <p>
+                Let <m>\gamma\colon [a,b]\rightarrow \C</m> be a closed path. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>\Int \gamma</m> is a bounded set. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\Ext \gamma</m> is an unbounded set. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </corollary>
+    <theorem xml:id="th_caucy_resiude_winding">
+    <title>Winding number residue theorem</title>
+    <statement>
+    <p>
+    Let <m>\gamma</m> be a closed path, let <m>U=\C-\im \gamma</m>, and let <m>f</m> be analytic on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where for all <m>1\leq k\leq n</m> is an isolated singularity of <m>f</m>. We have 
+    <men xml:id="eq_cauchy_residue_winding">
+        \int_\gamma f\, dz=2\pi i\sum_{k=1}^n\chi_\gamma(z_k)\res_f(z_k)
+    </men>.
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <definition xml:id="d_meromorphic">
+    <title>Meromorphic</title>
+    <statement>
+    <p>
+    Let <m>U</m> be an open subset of <m>\C</m>. A complex function is <term>meromorphic</term> on <m>U</m> if for all <m>z_0\in U</m>, <m>f</m> is either analytic at <m>z_0</m>, or <m>z_0</m> is a pole of finite order of <m>f</m>. 
+    </p>
+    </statement>
+    </definition>
+    
+    <theorem xml:id="th_arg_princ">
+    <title>Argument principle</title>
+    <statement>
+    <p>
+    Let <m>U</m> be an elementary domain, and assume <m>f</m> is meromorphic on <m>U</m>. Let <m>\gamma</m> be a closed path in <m>U</m> that does not contain any zeros or poles of <m>f</m>. 
+    <ol>
+        <li>
+            <title>Argument principle</title>
+            <p>
+                We have 
+                <men xml:id="eq_arg_princ">
+                    \int_\gamma \frac{f'}{f}\, dz=\chi_{f\circ \gamma}(0)
+                </men>.
+                In other words, the logarithmic derivate integral on the left side of <xref ref="eq_arg_princ"/> is equal to the winding number of the path <m>f\circ\gamma</m> around <m>0</m>.
+            </p>
+        </li>
+        <li>
+            <title>Zeros and poles theorem</title>
+            <p>
+               Let <m>Z</m> be the set of zeros of <m>f</m> in <m>U</m>, and let <m>P</m> be the set of poles of <m>f</m> in <m>U</m>. We have 
+               <men xml:id="eq_zeros_poles_winding">
+                \int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\chi_\gamma(z)\ord_f z+\sum_{z\in P}\chi_\gamma(z)\ord_f z
+               </men>.
+            In particular, if <m>\chi_\gamma(z)=1</m> for all <m>z\in Z\cup P</m>, we have 
+            <men xml:id="eq_zero_poles">
+                \int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.
+            </men>
+            In this special case, we say summarize <xref ref="eq_zero_poles"/> as 
+            <me>
+              \int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)
+            </me>,
+            where our count <q>includes multiplicities</q>: <ie/>, we take into account the order of each zero and pole of <m>f</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <remark>
+       <p>
+         If <m>f</m> is meromorphic on an elementary domain <m>U</m>, and if <m>\gamma</m> is a path in <m>U</m> that avoids all zeros and poles of <m>f</m>, then it is not difficult to show that <m>\int \gamma\subseteq U</m>. One can further show (this requires more analysis) that <m>f</m> has a finite number of zeros in poles in the interior of <m>\alpha</m>. This means that the sums in <xref ref="eq_zeros_poles_winding"/> and <xref ref="eq_zeros_poles_winding"/> are in fact finite. 
+       </p>
+    </remark>
+</section>
