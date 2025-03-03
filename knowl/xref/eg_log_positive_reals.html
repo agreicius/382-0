@@ -16,6 +16,76 @@
 </h4>
 <div class="para">Compute <span class="process-math">\(\displaystyle\int_0^\infty \frac{\ln x}{x^4+1}\, dx\text{.}\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_improper_int.html#eg_log_positive_reals">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">With the idea of using a path as in <a href="s_improper_int.html#fig_ind_path" class="xref" data-knowl="./knowl/xref/fig_ind_path.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.9">Figure 1.23.9</a>, we work with the branch <span class="process-math">\(\Log_{\alpha}\text{,}\)</span> with <span class="process-math">\(\alpha=-\pi/2\text{.}\)</span> This is defined on <span class="process-math">\(\C-R_{-\pi/2}\)</span> and agrees with <span class="process-math">\(\ln x\)</span> on the positive reals.  Let <span class="process-math">\(f(z)=\frac{\Log_{\alpha}(z)}{z^4+1}\text{.}\)</span> It is easy to see that <span class="process-math">\(f\)</span> is analytic on <span class="process-math">\(U=\C-R_{\alpha}\)</span> except at the roots <span class="process-math">\(z_k=e^{i\pi/4}e^{i\pi k/2}\text{,}\)</span> <span class="process-math">\(0\leq k\leq 3\text{,}\)</span> of <span class="process-math">\(z^4+1\text{.}\)</span> With the help of <a href="s_cauchy_residue.html#th_simple_pole_residue" class="xref" data-knowl="./knowl/xref/th_simple_pole_residue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.7: Residue at simple pole">Theorem 1.21.7</a>, we compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_simple_pole_residue.html ./knowl/xref/fig_ind_path.html">
+\begin{align*}
+\res_f z_0 \amp = \frac{\Log_\alpha(e^{i\pi/4})}{4e^{i3\pi/4}}\\
+\amp = \frac{i\pi}{16}\cdot e^{-i3\pi/4} \\
+\res_f z_1 \amp = \frac{\Log_\alpha(e^{i3\pi/4})}{4e^{i9\pi/4}}\\
+\amp = \frac{i3\pi}{16}\cdot e^{-9i\pi/4} \\
+\amp = \frac{i 3\pi}{16}\cdot e^{-i\pi/4}\text{.}
+\end{align*}
+</div>
+<div class="para">For all <span class="process-math">\(R &gt; 1\)</span> and <span class="process-math">\(0 &lt; \delta &lt; 1\text{,}\)</span> let <span class="process-math">\(\gamma\)</span> be the path as in <a href="s_improper_int.html#fig_ind_path" class="xref" data-knowl="./knowl/xref/fig_ind_path.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.9">Figure 1.23.9</a>. On the one hand, since such a path only encloses the poles <span class="process-math">\(z_0\)</span> and <span class="process-math">\(z_1\text{,}\)</span> we have by the Cauchy residue theorem</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_simple_pole_residue.html ./knowl/xref/fig_ind_path.html">
+\begin{align*}
+\int_{\gamma}f\, dz \amp = 2\pi i(\res_f z_0+\res_f z_1) \amp \\
+\amp = -\frac{\pi^2}{8}(e^{-i3\pi/4}+3e^{-i\pi/4})\\
+\amp = -\frac{\pi^2}{8}(\sqrt{2}-2\sqrt{2}i)\\
+\amp = \frac{\pi^2}{8}(-\sqrt{2}+2\sqrt{2}i)\text{.}
+\end{align*}
+</div>
+<div class="para">On the other hand, breaking the path <span class="process-math">\(\gamma\)</span> down into separate legs, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_simple_pole_residue.html ./knowl/xref/fig_ind_path.html">
+\begin{align*}
+\int_{\gamma}f\, dz \amp = \int_{-R}^{-\delta}\frac{\ln\abs{x}+\pi i}{x^4+1}\, dx+\int_{\delta}^R \frac{\ln x}{x^4+1}\, dx+\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\, dz\\
+\amp =2\int_{\delta}^R\frac{\ln x}{x^4+1}+i\int_{\delta}^R\frac{\pi}{x^4+1}\, dx +\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\, dz\text{,}
+\end{align*}
+</div>
+<div class="para">where here <span class="process-math">\(\gamma_\delta(t)=\delta e^{i(\pi-t)}=i\delta e^{-it}\text{,}\)</span> <span class="process-math">\(t\in [0,\pi]\text{,}\)</span> and <span class="process-math">\(\gamma_R(t)=Re^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,\pi]\text{.}\)</span> We will show that <span class="process-math">\(\lim\limits_{\delta\to 0^+}\int_{\gamma_\delta}f\, dz=0\text{,}\)</span> and <span class="process-math">\(\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0\text{,}\)</span> and hence, taking limits of the equality above,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_simple_pole_residue.html ./knowl/xref/fig_ind_path.html">
+\begin{equation*}
+\frac{\pi^2}{8}(-\sqrt{2}+2\sqrt{2}i)= 2\int_{\delta}^R\frac{\ln x}{x^4+1}+i\int_{\delta}^R\frac{\pi}{x^4+1}\, dx\text{.}
+\end{equation*}
+</div>
+<div class="para">Equating real and imaginary parts, we then conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_simple_pole_residue.html ./knowl/xref/fig_ind_path.html">
+\begin{align*}
+\int_0^\infty\frac{\ln x}{x^4+1}\, dx \amp = \frac{\sqrt{2}\pi}{16} \amp \\
+\int_0^\infty \frac{1}{x^4+1}\, dx \amp = \frac{\sqrt{2}\pi}{4} \amp (\text{bonus}) \text{.}
+\end{align*}
+</div>
+<div class="para">To see that <span class="process-math">\(\lim\limits_{\delta\to 0^+}\int_{\gamma_\delta}f\, dz=0\text{,}\)</span> and <span class="process-math">\(\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0\text{,}\)</span> it suffices to use ML-inequalities on both these paths. In general, for any circular path <span class="process-math">\(\phi(t)=se^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,\pi]\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_simple_pole_residue.html ./knowl/xref/fig_ind_path.html">
+\begin{equation*}
+\abs{\Log_\alpha( se^{it})}=\abs{\ln \abs{s}+it}\leq \ln \abs{s}+\pi\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_simple_pole_residue.html ./knowl/xref/fig_ind_path.html">
+\begin{align*}
+\abs{\int_{\gamma_R}f\, dz} \amp\leq \frac{\ln R+\pi}{R^4-1}\cdot \pi R \\
+\amp = \pi \cdot \frac{\ln R+\pi}{R^3-1/R}\\
+\abs{\int_{\gamma_\delta}f\, dz} \amp\leq \frac{\ln \delta+\pi}{1-\delta^4}\cdot \pi \delta \\
+\amp = \pi \frac{\delta \ln \delta+\delta\pi}{1-\delta^4}\text{.}
+\end{align*}
+</div>
+<div class="para">Some straightforward, if not altogether pleasant l’Hôpital’s rule arguments now show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_simple_pole_residue.html ./knowl/xref/fig_ind_path.html">
+\begin{align*}
+\lim\limits_{R\to \infty} \pi \cdot \frac{\ln R+\pi}{R^3-\tfrac{1}{R}} \amp=0 \\
+\lim\limits_{\delta\to 0^+} \pi \frac{\delta \ln \delta+\delta\pi}{1-\delta^4}\amp =0 
+\end{align*}
+</div>
+<div class="para">and hence that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_simple_pole_residue.html ./knowl/xref/fig_ind_path.html">
+\begin{align*}
+\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz \amp= 0 \\
+\lim\limits_{\delta\to 0^+} \int_{\gamma_\delta}f\, dz \amp = 0 \text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_improper_int.html#eg_log_positive_reals">in-context</a></span>
 </body>
 </html>

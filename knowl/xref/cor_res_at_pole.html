@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="corollary theorem-like"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.22.7</span><span class="period">.</span>
+</h3>
+<div class="para logical">
+<div class="para">Assume <span class="process-math">\(z_0\)</span> is a pole of <span class="process-math">\(f\)</span> of order <span class="process-math">\(m\text{,}\)</span> and write <span class="process-math">\(f(z)=\frac{g(z)}{(z-z_0)^m}\)</span> where <span class="process-math">\(g\)</span> is analytic at <span class="process-math">\(z_0\)</span> and <span class="process-math">\(g(z_0)\ne 0\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation}
+\res_f z_0=\frac{g^{m-1}(z_0)}{(m-1)!}=\lim\limits_{z\to z_0}\frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{n-1}}\left(f(z)(z-z_0)^m\right)\text{.}\tag{1.82}
+\end{equation}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">Given the factorization <span class="process-math">\(f(z)=\frac{g(z)}{(z-z_0)^m}\)</span> as given above, let <span class="process-math">\(g(z)=\sum_{n=0}^\infty a_n(z-z_0)^n\)</span> be a power series representation of <span class="process-math">\(g\)</span> at <span class="process-math">\(z_0\)</span> that converges for all <span class="process-math">\(z\in B_R(z_0)\)</span> for some <span class="process-math">\(R\text{.}\)</span> It follows that <span class="process-math">\(f(z)=g(z)/(z-z_0)^n\)</span> has a Laurent series representation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_res_at_pole.html">
+\begin{equation*}
+f(z)=\sum_{n=-m}^\infty a_{m+n}(z-z_0)^{n}\text{,}
+\end{equation*}
+</div>
+<div class="para">and thus that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_res_at_pole.html">
+\begin{equation*}
+\res_f z_0=a_{m-1}=\frac{g^{(n-1)}(z_0)}{(n-1)!}\text{.}
+\end{equation*}
+</div>
+<div class="para">The alternative description of <span class="process-math">\(\res_f z_0\)</span> is obtained by observing that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_res_at_pole.html">
+\begin{equation*}
+f(z)(z-z_0)^m=g(z)\text{,}
+\end{equation*}
+</div>
+<div class="para">and thus that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_res_at_pole.html">
+\begin{equation*}
+g^(n-1)(z)=\frac{d^{n-1}}{dz^{n-1}}\left(f(z)(z-z_0)^m\right)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in B_R(z_0)-\{z_0\}\text{.}\)</span> Since <span class="process-math">\(g^{(n-1)}\)</span> is continuous (in fact, infinitely differentiable), we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_res_at_pole.html">
+\begin{equation*}
+g^{(n-1)}(z_0)=\lim\limits_{z\to z_0}\frac{d^{n-1}}{dz^{n-1}}\left(f(z)(z-z_0)^m\right)\text{,}
+\end{equation*}
+</div>
+<div class="para">whence the second equality in <a href="s_poles.html#eq_res_at_pole" class="xref" data-knowl="./knowl/xref/eq_res_at_pole.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.82">(1.82)</a> follows.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_poles.html#cor_res_at_pole">in-context</a></span>
+</body>
+</html>

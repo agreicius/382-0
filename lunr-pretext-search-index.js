@@ -3166,7 +3166,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.23",
   "title": "Definite integrals",
-  "body": " Definite integrals   We assemble here a variety of complex integration techniques that can be used to compute definite integrals over real line intervals, both proper and improper.    Miscellaneous tools   Jordan's inequality   We have for all . As a consequence, we have for any .    The inequality is easily shown using calculus methods. (See for a fairly convincing visual argument.) We then have .     Core idea of Jordan's inequality   Core idea of Jordan's inequality      Fractional residue   Assume as a simple pole at the isolated singularity . Fix a real interval , and for each let be defined as . We have .          Trig integrals on  The following theorem reduces the integral of any function over to a complex line integral of a certain complex function over the unit circle (positively oriented). Of course, whether we can carry out that resulting line integral by hand depends on the complexity of . That computation is typically carried out using the Cauchy residue theorem.   Trig integrals on   Let be continuous on an open set containing the unit circle. We have , where , .    The proof is a simple matter of applying the definition of the line integral to right side of and the fact that .     Trig integral over   Compute .    We have Let be the definite integral we wish to compute, let , and let Using the quadratic formula, the roots of denominator are Looking at the moduli of and , we see that and . (In more detail, .) and the Cauchy residue formula then implies .       Integral of rational function over real line  Given a rational function of the form where and are polynomials and , it is easy to see that , where , is the upper semicircle of radius centered at the origin. (See .) Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals.   Semicircular path for integrals over the real line   Semicircular path for integrals over the real line      Rational function on real line   Compute             Trig integral over real line   Trig integral over real line   Compute             Indented paths  To handle an integral of the form that is improper at , we make use of an indented path like the one in and take the limit as and . For this approach to be successful, we need to be able to say something meaningful about the limit of the integral around the bump as . If the complex function we end up integrating over this path has an isolated singularity at , then we might be able to make use of .   Indented path   Indented path      Logarithmic improper integral   Compute .           Sinc function   The function is a called the (unnormalized) sinc function. Compute           Keyhole (or Pac-Man) paths  To compute the integral in we need to choose a branch of that agrees with on the positive real line: or what amounts to the same thing, a branch of that agrees with the principle branch on the positive real line. We could theoretically proceed as in , choosing the branch , and integrating along the indented path , but it turns out that the two integrals along the real line legs of this path do not combine nicely to give us the desired result. Instead, we choose a keyhole (or Pac-Man shaped path) like that in , where the parametrizations and are restricted to inputs lying in , and where the line segments and are the line segments along the rays and lying on and between these two circles. The idea is to use the Cauchy residue formula to compute the integral of the given function over a given , and then investigate what happens as we let , , and .   Keyhole (or Pac-Man) path   Keyhole (or Pac-Man) path      Integral of power function   Compute .         "
+  "body": " Definite integrals   We assemble here a variety of complex integration techniques that can be used to compute definite integrals over real line intervals, both proper and improper.    Miscellaneous tools   Jordan's inequality   We have for all . As a consequence, we have for any .    The inequality is easily shown using calculus methods. (See for a fairly convincing visual argument.) We then have .     Core idea of Jordan's inequality   Core idea of Jordan's inequality      Fractional residue   Assume as a simple pole at the isolated singularity . Fix a real interval , and for each let be defined as . We have .          Trig integrals on  The following theorem reduces the integral of any function over to a complex line integral of a certain complex function over the unit circle (positively oriented). Of course, whether we can carry out that resulting line integral by hand depends on the complexity of . That computation is typically carried out using the Cauchy residue theorem.   Trig integrals on   Let be continuous on an open set containing the unit circle. We have , where , .    The proof is a simple matter of applying the definition of the line integral to right side of and the fact that .     Trig integral over   Compute .    We have Let be the definite integral we wish to compute, let , and let Using the quadratic formula, the roots of denominator are Looking at the moduli of and , we see that and . (In more detail, .) and the Cauchy residue formula then implies .       Integral of rational function over real line  Given a rational function of the form where and are polynomials and , it is easy to see that , where , is the upper semicircle of radius centered at the origin. (See .) Since residues of rational functions are often easy to compute, the Cauchy residue theorem gives us a promising approach to these integrals.   Semicircular path for integrals over the real line   Semicircular path for integrals over the real line      Rational function on real line   Compute     Let . The denominator factors as . It follows that are poles of order 2 of , and are simple poles. We compute, using and , . For each , let be the semicircular path in . For , we have . It follows that for all , we have On we have, using an ML-inequality, , where we have used the fact that for , we have , for . Since as , we see that . Taking limits of both sides of , we conclude that .        Trig integral over real line  A semicircular path like is often useful also for integrating functions on the real line that involve trigonometric functions, and which have no singularities in . However, when choosing the complex function we integrate over this path, we must take care that the integral over tends toward zero as . This is often accomplished by using instead of or , whose moduli are trickier to bound.   Trig integral over real line   Compute     Let . It is easy to see that has simple poles at and we compute with the help of .  For all let be the usual semicircular path as in . We have . The Cauchy residue theorem tells us that , and thus we have (after a little algebra) for all . The ML-inequality is not delicate enough to show that , and so we endeavor instead to use Jordan's inequality: . Since as , it follows that , using the squeeze theorem. Finally, taking limits of both sides of , we conclude that .        Indented paths  To handle an integral of the form that is improper at , we make use of an indented path like the one in and take the limit as and . For this approach to be successful, we need to be able to say something meaningful about the limit of the integral around the bump as . If the complex function we end up integrating over this path has an isolated singularity at , then we might be able to make use of .   Indented path   Indented path      Logarithmic improper integral   Compute .    With the idea of using a path as in , we work with the branch , with . This is defined on and agrees with on the positive reals. Let . It is easy to see that is analytic on except at the roots , , of . With the help of , we compute . For all and , let be the path as in . On the one hand, since such a path only encloses the poles and , we have by the Cauchy residue theorem . On the other hand, breaking the path down into separate legs, we have , where here , , and , . We will show that , and , and hence, taking limits of the equality above, . Equating real and imaginary parts, we then conclude that . To see that , and , it suffices to use ML-inequalities on both these paths. In general, for any circular path , we have . Thus, we have . Some straightforward, if not altogether pleasant l'Hôpital's rule arguments now show that and hence that , as desired.       Sinc function   The function is a called the (unnormalized) sinc function. Compute     The function is analytic everywhere except at , where it has a simple pole. An easy computation shows .  For all and , let be the indented path as in . Since is analytic on the interior of we have by Cauchy-Goursat. On the other hand, we have . Thus, using a little algebra, we see that . Using , we have . (Recall , so the in this case.) The usual Jordan's inequality argument shows that . Thus taking limits of both sides of , we see that .        Keyhole (or Pac-Man) paths  To compute the integral in we need to choose a branch of that agrees with on the positive real line: or what amounts to the same thing, a branch of that agrees with the principle branch on the positive real line. We could theoretically proceed as in , choosing the branch , and integrating along the indented path , but it turns out that the two integrals along the real line legs of this path do not combine nicely to give us the desired result. Instead, we choose a keyhole (or Pac-Man shaped path) like that in , where the parametrizations and are restricted to inputs lying in , and where the line segments and are the line segments along the rays and lying on and between these two circles. The idea is to use the Cauchy residue formula to compute the integral of the given function over a given , and then investigate what happens as we let , , and .   Keyhole (or Pac-Man) path   Keyhole (or Pac-Man) path      Integral of power function   Compute .         "
 },
 {
   "id": "lem_jordan",
@@ -3229,7 +3229,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.23.7",
   "title": "Rational function on real line.",
-  "body": " Rational function on real line   Compute        "
+  "body": " Rational function on real line   Compute     Let . The denominator factors as . It follows that are poles of order 2 of , and are simple poles. We compute, using and , . For each , let be the semicircular path in . For , we have . It follows that for all , we have On we have, using an ML-inequality, , where we have used the fact that for , we have , for . Since as , we see that . Taking limits of both sides of , we conclude that .   "
 },
 {
   "id": "eg_trig_int_real_line",
@@ -3238,7 +3238,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.23.8",
   "title": "Trig integral over real line.",
-  "body": " Trig integral over real line   Compute        "
+  "body": " Trig integral over real line   Compute     Let . It is easy to see that has simple poles at and we compute with the help of .  For all let be the usual semicircular path as in . We have . The Cauchy residue theorem tells us that , and thus we have (after a little algebra) for all . The ML-inequality is not delicate enough to show that , and so we endeavor instead to use Jordan's inequality: . Since as , it follows that , using the squeeze theorem. Finally, taking limits of both sides of , we conclude that .   "
 },
 {
   "id": "fig_ind_path",
@@ -3256,7 +3256,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.23.10",
   "title": "Logarithmic improper integral.",
-  "body": " Logarithmic improper integral   Compute .       "
+  "body": " Logarithmic improper integral   Compute .    With the idea of using a path as in , we work with the branch , with . This is defined on and agrees with on the positive reals. Let . It is easy to see that is analytic on except at the roots , , of . With the help of , we compute . For all and , let be the path as in . On the one hand, since such a path only encloses the poles and , we have by the Cauchy residue theorem . On the other hand, breaking the path down into separate legs, we have , where here , , and , . We will show that , and , and hence, taking limits of the equality above, . Equating real and imaginary parts, we then conclude that . To see that , and , it suffices to use ML-inequalities on both these paths. In general, for any circular path , we have . Thus, we have . Some straightforward, if not altogether pleasant l'Hôpital's rule arguments now show that and hence that , as desired.   "
 },
 {
   "id": "eg_sinc_func",
@@ -3265,7 +3265,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.23.11",
   "title": "Sinc function.",
-  "body": " Sinc function   The function is a called the (unnormalized) sinc function. Compute        "
+  "body": " Sinc function   The function is a called the (unnormalized) sinc function. Compute     The function is analytic everywhere except at , where it has a simple pole. An easy computation shows .  For all and , let be the indented path as in . Since is analytic on the interior of we have by Cauchy-Goursat. On the other hand, we have . Thus, using a little algebra, we see that . Using , we have . (Recall , so the in this case.) The usual Jordan's inequality argument shows that . Thus taking limits of both sides of , we see that .   "
 },
 {
   "id": "fig_keyhole",
@@ -3284,6 +3284,105 @@ var ptx_lunr_docs = [
   "number": "1.23.13",
   "title": "Integral of power function.",
   "body": " Integral of power function   Compute .       "
+},
+{
+  "id": "s_winding",
+  "level": "1",
+  "url": "s_winding.html",
+  "type": "Section",
+  "number": "1.24",
+  "title": "Winding number",
+  "body": " Winding number  Reminder: unless stated otherwise, paths are assumed to be piecewise smooth.   Winding number   Let be a closed path, and let be a complex number not lying on . The winding number (or index ) of around (or with respect to) , denoted is defined as .     Winding numbers of circles   Fix an integer , , and , and let , . Prove: .         Winding number properties   Let be a closed path and let .    is an integer for all .    The function is continuous. As a result, is constant on all open connected subsets of .            Interior and exterior of path   Let be a closed path and let . The interior and exterior of , denoted and , respectively, are defined as follows: .     The term interior is a potential source of confusion, as we defined earlier the notion of the interior of a subset of ( ). Observe that our new notion of interior applies not to a set , but rather a path , which is a function.    Interior is bounded   Let be a closed path.    is a bounded set.     is an unbounded set.        Winding number residue theorem   Let be a closed path, let , and let be analytic on , where for all is an isolated singularity of . We have .         Meromorphic   Let be an open subset of . A complex function is meromorphic on if for all , is either analytic at , or is a pole of finite order of .     Argument principle   Let be an elementary domain, and assume is meromorphic on . Let be a closed path in that does not contain any zeros or poles of .   Argument principle  We have . In other words, the logarithmic derivate integral on the left side of is equal to the winding number of the path around .    Zeros and poles theorem  Let be the set of zeros of in , and let be the set of poles of in . We have . In particular, if for all , we have In this special case, we say summarize as , where our count includes multiplicities : , we take into account the order of each zero and pole of .            If is meromorphic on an elementary domain , and if is a path in that avoids all zeros and poles of , then it is not difficult to show that . One can further show (this requires more analysis) that has a finite number of zeros in poles in the interior of . This means that the sums in and are in fact finite.   "
+},
+{
+  "id": "d_winding_number",
+  "level": "2",
+  "url": "s_winding.html#d_winding_number",
+  "type": "Definition",
+  "number": "1.24.1",
+  "title": "Winding number.",
+  "body": " Winding number   Let be a closed path, and let be a complex number not lying on . The winding number (or index ) of around (or with respect to) , denoted is defined as .   "
+},
+{
+  "id": "eg_wind_circles",
+  "level": "2",
+  "url": "s_winding.html#eg_wind_circles",
+  "type": "Example",
+  "number": "1.24.2",
+  "title": "Winding numbers of circles.",
+  "body": " Winding numbers of circles   Fix an integer , , and , and let , . Prove: .       "
+},
+{
+  "id": "th_winding_number",
+  "level": "2",
+  "url": "s_winding.html#th_winding_number",
+  "type": "Theorem",
+  "number": "1.24.3",
+  "title": "Winding number properties.",
+  "body": " Winding number properties   Let be a closed path and let .    is an integer for all .    The function is continuous. As a result, is constant on all open connected subsets of .          "
+},
+{
+  "id": "d_interior_exterior",
+  "level": "2",
+  "url": "s_winding.html#d_interior_exterior",
+  "type": "Definition",
+  "number": "1.24.4",
+  "title": "Interior and exterior of path.",
+  "body": " Interior and exterior of path   Let be a closed path and let . The interior and exterior of , denoted and , respectively, are defined as follows: .   "
+},
+{
+  "id": "s_winding-7",
+  "level": "2",
+  "url": "s_winding.html#s_winding-7",
+  "type": "Warning",
+  "number": "1.24.5",
+  "title": "",
+  "body": " The term interior is a potential source of confusion, as we defined earlier the notion of the interior of a subset of ( ). Observe that our new notion of interior applies not to a set , but rather a path , which is a function.  "
+},
+{
+  "id": "cor_int_ext",
+  "level": "2",
+  "url": "s_winding.html#cor_int_ext",
+  "type": "Corollary",
+  "number": "1.24.6",
+  "title": "Interior is bounded.",
+  "body": " Interior is bounded   Let be a closed path.    is a bounded set.     is an unbounded set.      "
+},
+{
+  "id": "th_caucy_resiude_winding",
+  "level": "2",
+  "url": "s_winding.html#th_caucy_resiude_winding",
+  "type": "Theorem",
+  "number": "1.24.7",
+  "title": "Winding number residue theorem.",
+  "body": " Winding number residue theorem   Let be a closed path, let , and let be analytic on , where for all is an isolated singularity of . We have .       "
+},
+{
+  "id": "d_meromorphic",
+  "level": "2",
+  "url": "s_winding.html#d_meromorphic",
+  "type": "Definition",
+  "number": "1.24.8",
+  "title": "Meromorphic.",
+  "body": " Meromorphic   Let be an open subset of . A complex function is meromorphic on if for all , is either analytic at , or is a pole of finite order of .   "
+},
+{
+  "id": "th_arg_princ",
+  "level": "2",
+  "url": "s_winding.html#th_arg_princ",
+  "type": "Theorem",
+  "number": "1.24.9",
+  "title": "Argument principle.",
+  "body": " Argument principle   Let be an elementary domain, and assume is meromorphic on . Let be a closed path in that does not contain any zeros or poles of .   Argument principle  We have . In other words, the logarithmic derivate integral on the left side of is equal to the winding number of the path around .    Zeros and poles theorem  Let be the set of zeros of in , and let be the set of poles of in . We have . In particular, if for all , we have In this special case, we say summarize as , where our count includes multiplicities : , we take into account the order of each zero and pole of .          "
+},
+{
+  "id": "s_winding-12",
+  "level": "2",
+  "url": "s_winding.html#s_winding-12",
+  "type": "Remark",
+  "number": "1.24.10",
+  "title": "",
+  "body": " If is meromorphic on an elementary domain , and if is a path in that avoids all zeros and poles of , then it is not difficult to show that . One can further show (this requires more analysis) that has a finite number of zeros in poles in the interior of . This means that the sums in and are in fact finite.  "
 },
 {
   "id": "appendix-notation",

@@ -16,6 +16,47 @@
 </h4>
 <div class="para">Compute <span class="process-math">\(\displaystyle\int_{-\infty}^{\infty}\frac{x\sin x}{x^2+1}\, dx\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_improper_int.html#eg_trig_int_real_line">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\displaystyle f(z)=\frac{z e^{iz}}{z^2+1}\text{.}\)</span> It is easy to see that <span class="process-math">\(f\)</span> has simple poles at <span class="process-math">\(\pm i\)</span> and we compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_simple_pole_residue.html">
+\begin{equation*}
+\res_f i=\frac{ie^{i^2}}{2i}=\frac{e^{-1}}{2}
+\end{equation*}
+</div>
+<div class="para">with the help of <a href="s_cauchy_residue.html#th_simple_pole_residue" class="xref" data-knowl="./knowl/xref/th_simple_pole_residue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.7: Residue at simple pole">Theorem 1.21.7</a>.</div>
+</div>
+<div class="para logical">
+<div class="para">For all <span class="process-math">\(R\)</span> let <span class="process-math">\(\gamma\)</span> be the usual semicircular path as in <a href="s_improper_int.html#fig_semicircle" class="xref" data-knowl="./knowl/xref/fig_semicircle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.6">Figure 1.23.6</a>. We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_semicircle.html ./knowl/xref/eq_trig_int_reals.html">
+\begin{align*}
+\int_{\gamma_R} f(z)\, dz \amp =\int_{-R}^0f(x)\, dx+\int_0^R f(x)\, dx+\int_{\gamma_R} f\, dz \\
+\amp = -\int_0^{R}f(-x)\, dx+\int_0^Rf(x)\, dx+\int_{\gamma_R}f\, dz\\
+\amp = \int_0^R f(x)-f(-x)\, dx+\int_{\gamma_R}f\, dz\\
+\amp = 2i\int_0^R\frac{x\sin x}{x^2+1}\, dx+\int_{\gamma_R}f\, dz \text{.}
+\end{align*}
+</div>
+<div class="para">The Cauchy residue theorem tells us that <span class="process-math">\(\int_\gamma f\, dz=2\pi i\res_f i=\pi e^{-1}\text{,}\)</span> and thus we have (after a little algebra)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_semicircle.html ./knowl/xref/eq_trig_int_reals.html">
+\begin{equation}
+\int_0^{R}\frac{x\sin x}{x^2+1}\, dx=\frac{\pi}{e}-\frac{1}{2}\int_{\gamma_R} f\, dz\tag{1.88}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(R\text{.}\)</span> The ML-inequality is not delicate enough to show that <span class="process-math">\(\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0\text{,}\)</span> and so we endeavor instead to use Jordan’s inequality:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_semicircle.html ./knowl/xref/eq_trig_int_reals.html">
+\begin{align*}
+\abs{\int_{\gamma_R}}f\, dz \amp \leq \int_0^\pi \frac{\abs{Re^{it}}\abs{e^{iRe^{it}}}}{\abs{R^2e^{2it}+1}}\cdot \abs{iRe^{it}}\, dt\\
+\amp \leq \int_0^\pi \frac{R^2e^{-R\sin t}}{R^2-1}\, dt\\
+\amp \leq \frac{\pi R}{R^2-1}\amp (\text{Jordan's ineq.})\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(\displaystyle \frac{\pi R}{R^2-1} \to 0\)</span> as <span class="process-math">\(R\to \infty\text{,}\)</span> it follows that <span class="process-math">\(\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0\text{,}\)</span> using the squeeze theorem. Finally, taking limits of both sides of <a href="s_improper_int.html#eq_trig_int_reals" class="xref" data-knowl="./knowl/xref/eq_trig_int_reals.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.88">(1.88)</a>, we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_semicircle.html ./knowl/xref/eq_trig_int_reals.html">
+\begin{equation*}
+\int_0^\infty \frac{x\sin x}{x^2+1}\, dx=\frac{\pi}{e}\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="s_improper_int.html#eg_trig_int_real_line">in-context</a></span>
 </body>
 </html>

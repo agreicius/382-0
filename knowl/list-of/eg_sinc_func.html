@@ -16,6 +16,43 @@
 </h4>
 <div class="para">The function <span class="process-math">\(f(x)=\frac{\sin x}{x}\)</span> is a called the (unnormalized) <em class="emphasis">sinc</em> function. Compute <span class="process-math">\(\displaystyle\int_{0}^\infty f(x) \, dx\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_improper_int.html#eg_sinc_func">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">The function <span class="process-math">\(f(z)=\frac{e^{iz}}{z}\)</span> is analytic everywhere except at <span class="process-math">\(z=0\text{,}\)</span> where it has a simple pole. An easy computation shows <span class="process-math">\(\res_f 0=1\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">For all <span class="process-math">\(R&gt; 1\)</span> and <span class="process-math">\(0&lt; \delta &lt; 1\text{,}\)</span> let <span class="process-math">\(\gamma\)</span> be the indented path as in <a href="s_improper_int.html#fig_ind_path" class="xref" data-knowl="./knowl/xref/fig_ind_path.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.9">Figure 1.23.9</a>. Since <span class="process-math">\(f\)</span> is analytic on the interior of <span class="process-math">\(\gamma\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_fractional_residue.html ./knowl/xref/eq_sinc_reals.html">
+\begin{equation*}
+\int_{\gamma}f\, dz=0
+\end{equation*}
+</div>
+<div class="para">by Cauchy-Goursat. On the other hand, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_fractional_residue.html ./knowl/xref/eq_sinc_reals.html">
+\begin{align*}
+\int_\gamma f\, dz \amp = \int_{-R}^\delta f(x)\, dx+\int_\delta^Rf(x)\, dx +\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\m dz\\
+\amp = \int_{\delta}^Rf(x)-f(-x)\, dx+\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\, dz \\
+\amp = 2i\int_{\delta}^R \frac{\sin x}{x}\, dx+\int_{\gamma_\delta}f\, dz+\int_{\gamma_R}f\, dz \text{.}
+\end{align*}
+</div>
+<div class="para">Thus, using a little algebra, we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_fractional_residue.html ./knowl/xref/eq_sinc_reals.html">
+\begin{equation}
+\int_{\delta}^R \frac{\sin x}{x}\, dx= -\frac{1}{2i}\int_{\gamma_\delta}f\, dz-\frac{1}{2i}\int_{\gamma_R}f\, dz\text{.}\tag{1.89}
+\end{equation}
+</div>
+<div class="para">Using <a href="s_improper_int.html#th_fractional_residue" class="xref" data-knowl="./knowl/xref/th_fractional_residue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.23.3: Fractional residue">Theorem 1.23.3</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_fractional_residue.html ./knowl/xref/eq_sinc_reals.html">
+\begin{equation*}
+\lim\limits_{\delta\to 0} \int_{\gamma_\delta}f\, dz=-\pi i\res_f 0=-\pi i\text{.}
+\end{equation*}
+</div>
+<div class="para">(Recall <span class="process-math">\(\gamma_\delta\colon [0,\pi]\rightarrow \C\text{,}\)</span> so the <span class="process-math">\(\beta-\alpha=\pi\)</span> in this case.) The usual Jordan’s inequality argument shows that <span class="process-math">\(\lim\limits_{R\to \infty}f\, dz=0\text{.}\)</span> Thus taking limits of both sides of <a href="s_improper_int.html#eq_sinc_reals" class="xref" data-knowl="./knowl/xref/eq_sinc_reals.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.89">(1.89)</a>, we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_ind_path.html ./knowl/xref/th_fractional_residue.html ./knowl/xref/eq_sinc_reals.html">
+\begin{equation*}
+\int_{0}^\infty \frac{\sin x}{x}\, dx =-\frac{1}{2i}(-\pi i)=\frac{\pi}{2}\text{.}
+\end{equation*}
+</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="s_improper_int.html#eg_sinc_func">in-context</a></span>
 </body>
 </html>

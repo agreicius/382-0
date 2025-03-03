@@ -16,6 +16,55 @@
 </h4>
 <div class="para">Compute <span class="process-math">\(\displaystyle \int_{-\infty}^\infty \frac{1}{(x^2+4)^2(x^2+1)}\, dx\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_improper_int.html#eg_rat_real_line">in-context</a></span>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">Let <span class="process-math">\(f(z)=1/((z^2+4)^2(z^2+1))\text{.}\)</span> The denominator factors as <span class="process-math">\((z-2i)^2(z+2i)^2(z-i)(z+i)\text{.}\)</span> It follows that <span class="process-math">\(\pm 2i\)</span> are poles of order 2 of <span class="process-math">\(f\text{,}\)</span> and <span class="process-math">\(\pm i\)</span> are simple poles. We compute, using <a href="s_cauchy_residue.html#th_simple_pole_residue" class="xref" data-knowl="./knowl/xref/th_simple_pole_residue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.7: Residue at simple pole">Theorem 1.21.7</a> and <a href="s_poles.html#cor_res_at_pole" class="xref" data-knowl="./knowl/xref/cor_res_at_pole.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.22.7">Corollary 1.22.7</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_simple_pole_residue.html ./knowl/xref/cor_res_at_pole.html ./knowl/xref/fig_semicircle.html ./knowl/xref/eq_rat_real_line.html">
+\begin{align*}
+\res_f i \amp = \frac{1}{(i^2+4)^2(i+i)}\\
+\amp = \frac{1}{18i}\\
+\res_f 2i \amp = g'(2i), \ g(z)=1/((z+2i)(z^2+1))\\
+\amp = -\frac{11}{288i}\text{.}
+\end{align*}
+</div>
+<div class="para">For each <span class="process-math">\(R&gt; 0\text{,}\)</span>  let <span class="process-math">\(\gamma\)</span> be the semicircular path in <a href="s_improper_int.html#fig_semicircle" class="xref" data-knowl="./knowl/xref/fig_semicircle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.23.6">Figure 1.23.6</a>. For <span class="process-math">\(R&gt; 2\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_simple_pole_residue.html ./knowl/xref/cor_res_at_pole.html ./knowl/xref/fig_semicircle.html ./knowl/xref/eq_rat_real_line.html">
+\begin{equation*}
+\int_\gamma f\, dz=2\pi i(\res_f i+\res_f 2i)=2\pi(1/18-11/288)=\frac{5\pi}{144}\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that for all <span class="process-math">\(R&gt; 2\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_simple_pole_residue.html ./knowl/xref/cor_res_at_pole.html ./knowl/xref/fig_semicircle.html ./knowl/xref/eq_rat_real_line.html">
+\begin{equation}
+\int_{-R}^Rf(z)\, dz=\frac{5\pi}{144}-\int_{\gamma_R}f(z)\, dz.\tag{1.87}
+\end{equation}
+</div>
+<div class="para">On <span class="process-math">\(\gamma_R\)</span> we have, using an ML-inequality,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_simple_pole_residue.html ./knowl/xref/cor_res_at_pole.html ./knowl/xref/fig_semicircle.html ./knowl/xref/eq_rat_real_line.html">
+\begin{align*}
+\abs{\int_{\gamma_R}f\, dz} \amp \leq \max\{\abs{f(z)}\colon z\in \gamma_R\}\cdot \pi R \\
+\amp \leq \frac{1}{(R^2-4)(R^2-1)}\cdot \pi R\\
+\amp =\frac{\pi R}{(R^2-4)(R^2-1)}\text{,}
+\end{align*}
+</div>
+<div class="para">where we have used the fact that for <span class="process-math">\(z=Re^{it}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_simple_pole_residue.html ./knowl/xref/cor_res_at_pole.html ./knowl/xref/fig_semicircle.html ./knowl/xref/eq_rat_real_line.html">
+\begin{align*}
+\abs{(z^2+4)(z^2+1)}=\abs{z^2+4}\abs{z^2+1} \amp\geq \abs{\abs{z^2}-4}{\abs{\abs{z}^2-1}} \\
+\amp\geq (R^2-4)(R^2-1) \text{,}
+\end{align*}
+</div>
+<div class="para">for <span class="process-math">\(R&gt; 2\text{.}\)</span> Since <span class="process-math">\(\pi R/((R^2-4)(R^2-1))\to 0\)</span> as <span class="process-math">\(R\to \infty\text{,}\)</span> we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_simple_pole_residue.html ./knowl/xref/cor_res_at_pole.html ./knowl/xref/fig_semicircle.html ./knowl/xref/eq_rat_real_line.html">
+\begin{equation*}
+\lim\limits_{R\to \infty}\int_\gamma_R f\, dz=0\text{.}
+\end{equation*}
+</div>
+<div class="para">Taking limits of both sides of <a href="s_improper_int.html#eq_rat_real_line" class="xref" data-knowl="./knowl/xref/eq_rat_real_line.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.87">(1.87)</a>, we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_simple_pole_residue.html ./knowl/xref/cor_res_at_pole.html ./knowl/xref/fig_semicircle.html ./knowl/xref/eq_rat_real_line.html">
+\begin{equation*}
+\int_{-R}^Rf(z)\, dz=\frac{5\pi}{144}\text{.}
+\end{equation*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_improper_int.html#eg_rat_real_line">in-context</a></span>
 </body>
 </html>
