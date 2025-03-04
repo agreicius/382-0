@@ -250,7 +250,7 @@
                     </li>
                     <li>
                         <p>
-                            <m>\ord_{f+g} z_0\geq \min\{\ord_f z_0+\ord_g z_0\}</m>.
+                            <m>\ord_{f+g} z_0\geq \min\{\ord_f z_0,\ord_g z_0\}</m>.
                         </p>
                     </li>
                     <li>
