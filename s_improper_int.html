@@ -619,7 +619,7 @@ I =\int_\gamma f\, dz\amp =2\pi i \res_f \alpha\\
 <div class="para">for <span class="process-math">\(R&gt; 2\text{.}\)</span> Since <span class="process-math">\(\pi R/((R^2-4)(R^2-1))\to 0\)</span> as <span class="process-math">\(R\to \infty\text{,}\)</span> we see that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_simple_pole_residue.html ./knowl/xref/cor_res_at_pole.html ./knowl/xref/fig_semicircle.html ./knowl/xref/eq_rat_real_line.html">
 \begin{equation*}
-\lim\limits_{R\to \infty}\int_\gamma_R f\, dz=0\text{.}
+\lim\limits_{R\to \infty}\int_{\gamma_R} f\, dz=0\text{.}
 \end{equation*}
 </div>
 <div class="para">Taking limits of both sides of <a href="s_improper_int.html#eq_rat_real_line" class="xref" data-knowl="./knowl/xref/eq_rat_real_line.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.87">(1.87)</a>, we conclude that</div>
@@ -673,7 +673,7 @@ show(2*pi*i*(r1+r2))
 <div class="para">for all <span class="process-math">\(R\text{.}\)</span> The ML-inequality is not delicate enough to show that <span class="process-math">\(\lim\limits_{R\to \infty}\int_{\gamma_R}f\, dz=0\text{,}\)</span> and so we endeavor instead to use Jordan’s inequality:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_semicircle.html ./knowl/xref/eq_trig_int_reals.html" id="eg_trig_int_real_line-3-2-9">
 \begin{align*}
-\abs{\int_{\gamma_R}}f\, dz \amp \leq \int_0^\pi \frac{\abs{Re^{it}}\abs{e^{iRe^{it}}}}{\abs{R^2e^{2it}+1}}\cdot \abs{iRe^{it}}\, dt\\
+\abs{\int_{\gamma_R}f\, dz} \amp \leq \int_0^\pi \frac{\abs{Re^{it}}\abs{e^{iRe^{it}}}}{\abs{R^2e^{2it}+1}}\cdot \abs{iRe^{it}}\, dt\\
 \amp \leq \int_0^\pi \frac{R^2e^{-R\sin t}}{R^2-1}\, dt\\
 \amp \leq \frac{\pi R}{R^2-1}\amp (\text{Jordan's ineq.})\text{.}
 \end{align*}
@@ -837,7 +837,17 @@ show(r)
 </h4>
 <div class="para" id="eg_keyhole-2-1">Compute <span class="process-math">\(\displaystyle\int_{0}^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_keyhole-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_keyhole-3-1"></div></div></details></div></article></section></section></div>
+<div class="solutions"><details id="eg_keyhole-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_keyhole-3-1">
+<div class="para">Let <span class="process-math">\(f(z)=\frac{e^{\frac{1}{3}\Log_0 z}}{z^2+4z+8}\text{,}\)</span> where as usual <span class="process-math">\(\Log_0 z=\ln\abs{z}+i\Arg_0 z\text{,}\)</span> and <span class="process-math">\(\Arg_0\)</span> is the branch of <span class="process-math">\(\arg\)</span> defined on <span class="process-math">\(\C-R_0\)</span> taking values in <span class="process-math">\((0,2\pi)\text{.}\)</span> The function <span class="process-math">\(f\)</span> is analytic everywhere on <span class="process-math">\(\C-R_0\)</span> except for the roots <span class="process-math">\(z_1=-2+2i=2^{3/2}e^{3\pi i/4}\)</span> and <span class="process-math">\(\overline{z_1}=2^{3/2}e^{5\pi i/4}\)</span> of the denominator, which are simple poles of <span class="process-math">\(f\text{.}\)</span> We compute</div>
+<div class="displaymath process-math" id="eg_keyhole-3-1-12">
+\begin{align*}
+\res_f(z_1) \amp = \frac{e^{\frac{1}{3}\Log_0 z_1}}{2z_1+4}\\
+\amp = \frac{2^{1/2}e^{\pi i/4}}{4i}\\
+\res_f(\overline{z_1}) \amp = \frac{e^{\frac{1}{3}\Log_0 \overline{z}_1}}{2\overline{z}_1+4}\\
+\amp = -\frac{2^{1/2}e^{5\pi i/12}}{4i}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_poles.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_winding.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
