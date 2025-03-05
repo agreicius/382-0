@@ -12,10 +12,10 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.9</span><span class="period">.</span><span class="space"> </span><span class="title">Argument principle.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.10</span><span class="period">.</span><span class="space"> </span><span class="title">Argument principle.</span>
 </h3>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(U\)</span> be an elementary domain, and assume <span class="process-math">\(f\)</span> is meromorphic on <span class="process-math">\(U\text{.}\)</span> Let <span class="process-math">\(\gamma\)</span> be a closed path in <span class="process-math">\(U\)</span> that does not contain any zeros or poles of <span class="process-math">\(f\text{.}\)</span>
+<div class="para">Let <span class="process-math">\(U\)</span> be an elementary region, and assume <span class="process-math">\(f\)</span> is meromorphic on <span class="process-math">\(U\text{.}\)</span> Let <span class="process-math">\(\gamma\)</span> be a closed path in <span class="process-math">\(U\)</span> that does not contain any zeros or poles of <span class="process-math">\(f\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_arg_princ-2-1-7">
 <li>
@@ -23,7 +23,7 @@
 <div class="para">We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_arg_princ.html">
 \begin{equation}
-\int_\gamma \frac{f'}{f}\, dz=\chi_{f\circ \gamma}(0)\text{.}\tag{1.92}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\chi_{f\circ \gamma}(0)\text{.}\tag{1.92}
 \end{equation}
 </div>
 <div class="para">In other words, the logarithmic derivate integral on the left side of <a href="s_winding.html#eq_arg_princ" class="xref" data-knowl="./knowl/xref/eq_arg_princ.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.92">(1.92)</a> is equal to the winding number of the path <span class="process-math">\(f\circ\gamma\)</span> around <span class="process-math">\(0\text{.}\)</span>
@@ -35,19 +35,19 @@
 <div class="para">Let <span class="process-math">\(Z\)</span> be the set of zeros of <span class="process-math">\(f\)</span> in <span class="process-math">\(U\text{,}\)</span> and let <span class="process-math">\(P\)</span> be the set of poles of <span class="process-math">\(f\)</span> in <span class="process-math">\(U\text{.}\)</span> We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html">
 \begin{equation}
-\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\chi_\gamma(z)\ord_f z+\sum_{z\in P}\chi_\gamma(z)\ord_f z\text{.}\tag{1.93}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\chi_\gamma(z)\ord_f z+\sum_{z\in P}\chi_\gamma(z)\ord_f z\text{.}\tag{1.93}
 \end{equation}
 </div>
 <div class="para">In particular, if <span class="process-math">\(\chi_\gamma(z)=1\)</span> for all <span class="process-math">\(z\in Z\cup P\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html">
 \begin{equation}
-\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.\tag{1.94}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.\tag{1.94}
 \end{equation}
 </div>
 <div class="para">In this special case, we say summarize <a href="s_winding.html#eq_zero_poles" class="xref" data-knowl="./knowl/xref/eq_zero_poles.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.94">(1.94)</a> as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html">
 \begin{equation*}
-\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)\text{,}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)\text{,}
 \end{equation*}
 </div>
 <div class="para">where our count “includes multiplicities”: i.e., we take into account the order of each zero and pole of <span class="process-math">\(f\text{.}\)</span>
@@ -55,6 +55,30 @@
 </div>
 </li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_winding.html#th_arg_princ">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal" id="th_arg_princ-3-1-1">
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(\gamma\colon [a,b]\rightarrow \C\)</span> be our closed path. We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\chi_{f\circ \gamma}(0) \amp = \int{1}{2\pi i}\int_{f\circ \gamma}\frac{1}{z}\, dz \\
+\amp =\frac{1}{2\pi i} \int_a^b\frac{1}{f(\gamma(t))}\cdot \frac{d}{dt}f(\gamma(t))\, dt\\
+\amp = \frac{1}{2\pi i}\int_a^b\frac{f'(\gamma(t))}{f(\gamma(t))}\cdot \gamma'(t)\, dt \\
+\amp = \frac{1}{2\pi i}\int_{\gamma}\frac{f}{f'}\, dz\text{.}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">First observe that since <span class="process-math">\(U\)</span> is elementary, we have <span class="process-math">\(\Int \alpha\subseteq U\text{.}\)</span> Since <span class="process-math">\(f\)</span> is meromorphic, it follows that <span class="process-math">\(f\)</span> has only finitely many zeros and poles in <span class="process-math">\(\Int \alpha\text{.}\)</span> (See <a href="s_winding.html#rem_mero" class="xref" data-knowl="./knowl/xref/rem_mero.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.24.11">Remark 1.24.11</a>.) Thus we can apply the Cauchy residue theorem to conclude</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem_mero.html">
+\begin{align*}
+\frac{1}{2\pi i}\int_\gamma \frac{f}{f'}\, dz \amp = \sum_{z\in \Int U}\chi_{\gamma}(z)\res_{f/f'}(z) \\
+\amp = \sum_{z\in Z}\chi_{\gamma}(z)\res_{f/f'}(z)+\sum_{z\in P}\chi_{\gamma}(z)\res_{f/f'}(z)\\
+\amp = \sum_{z\in Z}\chi_{\gamma}(z)\ord_{f}(z)+\sum_{z\in P}\chi_{\gamma}(z)\ord_{f}(z)\text{,}
+\end{align*}
+</div>
+<div class="para">where we have used <span class="process-math">\(\res_{f/f'}(z_0)=\ord_f(z_0)\)</span> for all poles and zeros of <span class="process-math">\(f\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_winding.html#th_arg_princ">in-context</a></span>
 </body>
 </html>

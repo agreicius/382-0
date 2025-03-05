@@ -140,7 +140,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_improper_int.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_improper_int.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_rouches.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\Z}{{\mathbb Z}}
@@ -432,6 +432,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_winding.html" class="internal"><span class="codenumber">1.24</span> <span class="title">Winding number</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_rouches.html" class="internal"><span class="codenumber">1.25</span> <span class="title">Rouché’s theorem</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -525,21 +526,57 @@ w \amp \longmapsto \chi_\gamma(w)
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.7</span><span class="period">.</span><span class="space"> </span><span class="title">Winding number residue theorem.</span>
 </h3>
 <div class="para logical" id="th_caucy_resiude_winding-2-1">
-<div class="para">Let <span class="process-math">\(\gamma\)</span> be a closed path, let <span class="process-math">\(U=\C-\im \gamma\text{,}\)</span> and let <span class="process-math">\(f\)</span> be analytic on <span class="process-math">\(U-\{z_1,z_2,\dots, z_n\}\text{,}\)</span> where for all <span class="process-math">\(1\leq k\leq n\)</span> is an isolated singularity of <span class="process-math">\(f\text{.}\)</span> We have</div>
+<div class="para">Let <span class="process-math">\(U\)</span> be an elementary region, let <span class="process-math">\(\gamma\)</span> be a closed path contained in <span class="process-math">\(U\text{,}\)</span> and let <span class="process-math">\(f\)</span> be analytic on <span class="process-math">\(U-\{z_1,z_2,\dots, z_n\}\text{,}\)</span> where for all <span class="process-math">\(1\leq k\leq n\text{,}\)</span> <span class="process-math">\(z_k\)</span> is an isolated singularity of <span class="process-math">\(f\)</span> and <span class="process-math">\(z_j\ne z_k\)</span> for <span class="process-math">\(j\ne k\text{.}\)</span> We have</div>
 <div class="displaymath process-math" id="eq_cauchy_residue_winding">
 \begin{equation}
 \int_\gamma f\, dz=2\pi i\sum_{k=1}^n\chi_\gamma(z_k)\res_f(z_k)\text{.}\tag{1.91}
 \end{equation}
 </div>
-</div></article><details id="th_caucy_resiude_winding-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_caucy_resiude_winding-3-1"></div></article></details><article class="definition definition-like" id="d_meromorphic"><h3 class="heading">
+</div></article><details id="th_caucy_resiude_winding-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_caucy_resiude_winding-3-1">We will show that <span class="process-math">\(f\)</span> has an expansion of the form</div></article></details><article class="definition definition-like" id="d_meromorphic"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.24.8</span><span class="period">.</span><span class="space"> </span><span class="title">Meromorphic.</span>
 </h3>
 <div class="para" id="d_meromorphic-2-1">Let <span class="process-math">\(U\)</span> be an open subset of <span class="process-math">\(\C\text{.}\)</span> A complex function is <dfn class="terminology">meromorphic</dfn> on <span class="process-math">\(U\)</span> if for all <span class="process-math">\(z_0\in U\text{,}\)</span> <span class="process-math">\(f\)</span> is either analytic at <span class="process-math">\(z_0\text{,}\)</span> or <span class="process-math">\(z_0\)</span> is a pole of finite order of <span class="process-math">\(f\text{.}\)</span>
-</div></article><article class="theorem theorem-like" id="th_arg_princ"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.9</span><span class="period">.</span><span class="space"> </span><span class="title">Argument principle.</span>
+</div></article><article class="lemma theorem-like" id="lem_arg_princ"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.24.9</span><span class="period">.</span><span class="space"> </span><span class="title">Argument principle.</span>
+</h3>
+<div class="para logical" id="lem_arg_princ-2-1">
+<div class="para">Assume <span class="process-math">\(z_0\)</span> is an isolated singularity of <span class="process-math">\(f\)</span> of nonzero order <span class="process-math">\(m\in \Z\text{.}\)</span>
+</div>
+<ol class="decimal" id="lem_arg_princ-2-1-4">
+<li id="lem_arg_princ-2-1-4-1"><div class="para" id="lem_arg_princ-2-1-4-1-1"><span class="process-math">\(\ord_{f'/f}(z_0)=-1\text{.}\)</span></div></li>
+<li id="lem_arg_princ-2-1-4-2"><div class="para" id="lem_arg_princ-2-1-4-2-1"><span class="process-math">\(\res_{f'/f}(z_0)=m\text{.}\)</span></div></li>
+</ol>
+</div></article><details id="lem_arg_princ-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="lem_arg_princ-3-1">
+<div class="para">Write <span class="process-math">\(f(z)=(z-z_0)^mg(z)\)</span> where <span class="process-math">\(m=\ord_f z_0\text{,}\)</span> <span class="process-math">\(g\)</span> is analytic at <span class="process-math">\(z_0\)</span> and <span class="process-math">\(g(z_0)\ne 0\text{.}\)</span> We then have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f'(z)=m(z-z_0)^{m-1}g(z)+(z-z_0)^mg'(z)
+\end{equation*}
+</div>
+<div class="para">and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{f'(z)}{f(z)}=\frac{m}{z-z_0}+\frac{g'(z)}{g(z)}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(g(z_0)\ne 0\text{,}\)</span> the reciprocal <span class="process-math">\(1/g\)</span> is also analytic at <span class="process-math">\(z_0\text{,}\)</span> and thus so is <span class="process-math">\(g'/g\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{f'(z)}{f(z)}=\frac{m}{z-z_0}+a_0+a_1(z-z_0)+\cdots  \text{,}
+\end{equation*}
+</div>
+<div class="para">whence</div>
+<div class="displaymath process-math" id="lem_arg_princ-3-1-13">
+\begin{align*}
+\ord_{f/f'}z_0 \amp = -1\\
+\res_{f/f'} z_0 \amp = m\text{.}
+\end{align*}
+</div>
+</div></article></details><article class="theorem theorem-like" id="th_arg_princ"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.10</span><span class="period">.</span><span class="space"> </span><span class="title">Argument principle.</span>
 </h3>
 <div class="para logical" id="th_arg_princ-2-1">
-<div class="para">Let <span class="process-math">\(U\)</span> be an elementary domain, and assume <span class="process-math">\(f\)</span> is meromorphic on <span class="process-math">\(U\text{.}\)</span> Let <span class="process-math">\(\gamma\)</span> be a closed path in <span class="process-math">\(U\)</span> that does not contain any zeros or poles of <span class="process-math">\(f\text{.}\)</span>
+<div class="para">Let <span class="process-math">\(U\)</span> be an elementary region, and assume <span class="process-math">\(f\)</span> is meromorphic on <span class="process-math">\(U\text{.}\)</span> Let <span class="process-math">\(\gamma\)</span> be a closed path in <span class="process-math">\(U\)</span> that does not contain any zeros or poles of <span class="process-math">\(f\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_arg_princ-2-1-7">
 <li id="th_arg_princ-2-1-7-1">
@@ -547,7 +584,7 @@ w \amp \longmapsto \chi_\gamma(w)
 <div class="para">We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_arg_princ.html" id="eq_arg_princ">
 \begin{equation}
-\int_\gamma \frac{f'}{f}\, dz=\chi_{f\circ \gamma}(0)\text{.}\tag{1.92}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\chi_{f\circ \gamma}(0)\text{.}\tag{1.92}
 \end{equation}
 </div>
 <div class="para">In other words, the logarithmic derivate integral on the left side of <a href="s_winding.html#eq_arg_princ" class="xref" data-knowl="./knowl/xref/eq_arg_princ.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.92">(1.92)</a> is equal to the winding number of the path <span class="process-math">\(f\circ\gamma\)</span> around <span class="process-math">\(0\text{.}\)</span>
@@ -559,19 +596,19 @@ w \amp \longmapsto \chi_\gamma(w)
 <div class="para">Let <span class="process-math">\(Z\)</span> be the set of zeros of <span class="process-math">\(f\)</span> in <span class="process-math">\(U\text{,}\)</span> and let <span class="process-math">\(P\)</span> be the set of poles of <span class="process-math">\(f\)</span> in <span class="process-math">\(U\text{.}\)</span> We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html" id="eq_zeros_poles_winding">
 \begin{equation}
-\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\chi_\gamma(z)\ord_f z+\sum_{z\in P}\chi_\gamma(z)\ord_f z\text{.}\tag{1.93}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\chi_\gamma(z)\ord_f z+\sum_{z\in P}\chi_\gamma(z)\ord_f z\text{.}\tag{1.93}
 \end{equation}
 </div>
 <div class="para">In particular, if <span class="process-math">\(\chi_\gamma(z)=1\)</span> for all <span class="process-math">\(z\in Z\cup P\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html" id="eq_zero_poles">
 \begin{equation}
-\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.\tag{1.94}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.\tag{1.94}
 \end{equation}
 </div>
 <div class="para">In this special case, we say summarize <a href="s_winding.html#eq_zero_poles" class="xref" data-knowl="./knowl/xref/eq_zero_poles.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.94">(1.94)</a> as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html">
 \begin{equation*}
-\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)\text{,}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)\text{,}
 \end{equation*}
 </div>
 <div class="para">where our count “includes multiplicities”: i.e., we take into account the order of each zero and pole of <span class="process-math">\(f\text{.}\)</span>
@@ -579,12 +616,36 @@ w \amp \longmapsto \chi_\gamma(w)
 </div>
 </li>
 </ol>
-</div></article><details id="th_arg_princ-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_arg_princ-3-1"></div></article></details><article class="remark remark-like" id="s_winding-12"><h3 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.24.10</span><span class="period">.</span>
+</div></article><details id="th_arg_princ-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_arg_princ-3-1"><ol class="decimal" id="th_arg_princ-3-1-1">
+<li id="th_arg_princ-3-1-1-1"><div class="para logical" id="th_arg_princ-3-1-1-1-1">
+<div class="para">Let <span class="process-math">\(\gamma\colon [a,b]\rightarrow \C\)</span> be our closed path. We have</div>
+<div class="displaymath process-math" id="th_arg_princ-3-1-1-1-1-2">
+\begin{align*}
+\chi_{f\circ \gamma}(0) \amp = \int{1}{2\pi i}\int_{f\circ \gamma}\frac{1}{z}\, dz \\
+\amp =\frac{1}{2\pi i} \int_a^b\frac{1}{f(\gamma(t))}\cdot \frac{d}{dt}f(\gamma(t))\, dt\\
+\amp = \frac{1}{2\pi i}\int_a^b\frac{f'(\gamma(t))}{f(\gamma(t))}\cdot \gamma'(t)\, dt \\
+\amp = \frac{1}{2\pi i}\int_{\gamma}\frac{f}{f'}\, dz\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="th_arg_princ-3-1-1-2"><div class="para logical" id="th_arg_princ-3-1-1-2-1">
+<div class="para">First observe that since <span class="process-math">\(U\)</span> is elementary, we have <span class="process-math">\(\Int \alpha\subseteq U\text{.}\)</span> Since <span class="process-math">\(f\)</span> is meromorphic, it follows that <span class="process-math">\(f\)</span> has only finitely many zeros and poles in <span class="process-math">\(\Int \alpha\text{.}\)</span> (See <a href="s_winding.html#rem_mero" class="xref" data-knowl="./knowl/xref/rem_mero.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.24.11">Remark 1.24.11</a>.) Thus we can apply the Cauchy residue theorem to conclude</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rem_mero.html" id="th_arg_princ-3-1-1-2-1-7">
+\begin{align*}
+\frac{1}{2\pi i}\int_\gamma \frac{f}{f'}\, dz \amp = \sum_{z\in \Int U}\chi_{\gamma}(z)\res_{f/f'}(z) \\
+\amp = \sum_{z\in Z}\chi_{\gamma}(z)\res_{f/f'}(z)+\sum_{z\in P}\chi_{\gamma}(z)\res_{f/f'}(z)\\
+\amp = \sum_{z\in Z}\chi_{\gamma}(z)\ord_{f}(z)+\sum_{z\in P}\chi_{\gamma}(z)\ord_{f}(z)\text{,}
+\end{align*}
+</div>
+<div class="para">where we have used <span class="process-math">\(\res_{f/f'}(z_0)=\ord_f(z_0)\)</span> for all poles and zeros of <span class="process-math">\(f\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></article></details><article class="remark remark-like" id="rem_mero"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.24.11</span><span class="period">.</span>
 </h3>
-<div class="para" id="s_winding-12-1">If <span class="process-math">\(f\)</span> is meromorphic on an elementary domain <span class="process-math">\(U\text{,}\)</span> and if <span class="process-math">\(\gamma\)</span> is a path in <span class="process-math">\(U\)</span> that avoids all zeros and poles of <span class="process-math">\(f\text{,}\)</span> then it is not difficult to show that <span class="process-math">\(\int \gamma\subseteq U\text{.}\)</span> One can further show (this requires more analysis) that <span class="process-math">\(f\)</span> has a finite number of zeros in poles in the interior of <span class="process-math">\(\alpha\text{.}\)</span> This means that the sums in <a href="s_winding.html#eq_zeros_poles_winding" class="xref" data-knowl="./knowl/xref/eq_zeros_poles_winding.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.93">(1.93)</a> and <a href="s_winding.html#eq_zeros_poles_winding" class="xref" data-knowl="./knowl/xref/eq_zeros_poles_winding.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.93">(1.93)</a> are in fact finite.</div></article></section></div>
+<div class="para" id="rem_mero-1">If <span class="process-math">\(f\)</span> is meromorphic on an elementary region <span class="process-math">\(U\text{,}\)</span> and if <span class="process-math">\(\gamma\)</span> is a path in <span class="process-math">\(U\)</span> that avoids all zeros and poles of <span class="process-math">\(f\text{,}\)</span> then it is not difficult to show that <span class="process-math">\(\int \gamma\subseteq U\text{.}\)</span> One can further show (this requires more analysis) that <span class="process-math">\(f\)</span> has a finite number of zeros in poles in the interior of <span class="process-math">\(\alpha\text{.}\)</span> This means that the sums in <a href="s_winding.html#eq_zeros_poles_winding" class="xref" data-knowl="./knowl/xref/eq_zeros_poles_winding.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.93">(1.93)</a> and <a href="s_winding.html#eq_zeros_poles_winding" class="xref" data-knowl="./knowl/xref/eq_zeros_poles_winding.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.93">(1.93)</a> are in fact finite.</div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_improper_int.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_improper_int.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_rouches.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

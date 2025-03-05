@@ -3292,7 +3292,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.24",
   "title": "Winding number",
-  "body": " Winding number  Reminder: unless stated otherwise, paths are assumed to be piecewise smooth.   Winding number   Let be a closed path, and let be a complex number not lying on . The winding number (or index ) of around (or with respect to) , denoted is defined as .     Winding numbers of circles   Fix an integer , , and , and let , . Prove: .         Winding number properties   Let be a closed path and let .    is an integer for all .    The function is continuous. As a result, is constant on all open connected subsets of .            Interior and exterior of path   Let be a closed path and let . The interior and exterior of , denoted and , respectively, are defined as follows: .     The term interior is a potential source of confusion, as we defined earlier the notion of the interior of a subset of ( ). Observe that our new notion of interior applies not to a set , but rather a path , which is a function.    Interior is bounded   Let be a closed path.    is a bounded set.     is an unbounded set.        Winding number residue theorem   Let be a closed path, let , and let be analytic on , where for all is an isolated singularity of . We have .         Meromorphic   Let be an open subset of . A complex function is meromorphic on if for all , is either analytic at , or is a pole of finite order of .     Argument principle   Let be an elementary domain, and assume is meromorphic on . Let be a closed path in that does not contain any zeros or poles of .   Argument principle  We have . In other words, the logarithmic derivate integral on the left side of is equal to the winding number of the path around .    Zeros and poles theorem  Let be the set of zeros of in , and let be the set of poles of in . We have . In particular, if for all , we have In this special case, we say summarize as , where our count includes multiplicities : , we take into account the order of each zero and pole of .            If is meromorphic on an elementary domain , and if is a path in that avoids all zeros and poles of , then it is not difficult to show that . One can further show (this requires more analysis) that has a finite number of zeros in poles in the interior of . This means that the sums in and are in fact finite.   "
+  "body": " Winding number  Reminder: unless stated otherwise, paths are assumed to be piecewise smooth.   Winding number   Let be a closed path, and let be a complex number not lying on . The winding number (or index ) of around (or with respect to) , denoted is defined as .     Winding numbers of circles   Fix an integer , , and , and let , . Prove: .         Winding number properties   Let be a closed path and let .    is an integer for all .    The function is continuous. As a result, is constant on all open connected subsets of .            Interior and exterior of path   Let be a closed path and let . The interior and exterior of , denoted and , respectively, are defined as follows: .     The term interior is a potential source of confusion, as we defined earlier the notion of the interior of a subset of ( ). Observe that our new notion of interior applies not to a set , but rather a path , which is a function.    Interior is bounded   Let be a closed path.    is a bounded set.     is an unbounded set.        Winding number residue theorem   Let be an elementary region, let be a closed path contained in , and let be analytic on , where for all , is an isolated singularity of and for . We have .    We will show that has an expansion of the form     Meromorphic   Let be an open subset of . A complex function is meromorphic on if for all , is either analytic at , or is a pole of finite order of .     Argument principle   Assume is an isolated singularity of of nonzero order .    .     .       Write where , is analytic at and . We then have and thus . Since , the reciprocal is also analytic at , and thus so is . It follows that , whence .     Argument principle   Let be an elementary region, and assume is meromorphic on . Let be a closed path in that does not contain any zeros or poles of .   Argument principle  We have . In other words, the logarithmic derivate integral on the left side of is equal to the winding number of the path around .    Zeros and poles theorem  Let be the set of zeros of in , and let be the set of poles of in . We have . In particular, if for all , we have In this special case, we say summarize as , where our count includes multiplicities : , we take into account the order of each zero and pole of .          Let be our closed path. We have .    First observe that since is elementary, we have . Since is meromorphic, it follows that has only finitely many zeros and poles in . (See .) Thus we can apply the Cauchy residue theorem to conclude , where we have used for all poles and zeros of .        If is meromorphic on an elementary region , and if is a path in that avoids all zeros and poles of , then it is not difficult to show that . One can further show (this requires more analysis) that has a finite number of zeros in poles in the interior of . This means that the sums in and are in fact finite.   "
 },
 {
   "id": "d_winding_number",
@@ -3355,7 +3355,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "1.24.7",
   "title": "Winding number residue theorem.",
-  "body": " Winding number residue theorem   Let be a closed path, let , and let be analytic on , where for all is an isolated singularity of . We have .       "
+  "body": " Winding number residue theorem   Let be an elementary region, let be a closed path contained in , and let be analytic on , where for all , is an isolated singularity of and for . We have .    We will show that has an expansion of the form   "
 },
 {
   "id": "d_meromorphic",
@@ -3367,22 +3367,85 @@ var ptx_lunr_docs = [
   "body": " Meromorphic   Let be an open subset of . A complex function is meromorphic on if for all , is either analytic at , or is a pole of finite order of .   "
 },
 {
+  "id": "lem_arg_princ",
+  "level": "2",
+  "url": "s_winding.html#lem_arg_princ",
+  "type": "Lemma",
+  "number": "1.24.9",
+  "title": "Argument principle.",
+  "body": " Argument principle   Assume is an isolated singularity of of nonzero order .    .     .       Write where , is analytic at and . We then have and thus . Since , the reciprocal is also analytic at , and thus so is . It follows that , whence .   "
+},
+{
   "id": "th_arg_princ",
   "level": "2",
   "url": "s_winding.html#th_arg_princ",
   "type": "Theorem",
-  "number": "1.24.9",
+  "number": "1.24.10",
   "title": "Argument principle.",
-  "body": " Argument principle   Let be an elementary domain, and assume is meromorphic on . Let be a closed path in that does not contain any zeros or poles of .   Argument principle  We have . In other words, the logarithmic derivate integral on the left side of is equal to the winding number of the path around .    Zeros and poles theorem  Let be the set of zeros of in , and let be the set of poles of in . We have . In particular, if for all , we have In this special case, we say summarize as , where our count includes multiplicities : , we take into account the order of each zero and pole of .          "
+  "body": " Argument principle   Let be an elementary region, and assume is meromorphic on . Let be a closed path in that does not contain any zeros or poles of .   Argument principle  We have . In other words, the logarithmic derivate integral on the left side of is equal to the winding number of the path around .    Zeros and poles theorem  Let be the set of zeros of in , and let be the set of poles of in . We have . In particular, if for all , we have In this special case, we say summarize as , where our count includes multiplicities : , we take into account the order of each zero and pole of .          Let be our closed path. We have .    First observe that since is elementary, we have . Since is meromorphic, it follows that has only finitely many zeros and poles in . (See .) Thus we can apply the Cauchy residue theorem to conclude , where we have used for all poles and zeros of .      "
 },
 {
-  "id": "s_winding-12",
+  "id": "rem_mero",
   "level": "2",
-  "url": "s_winding.html#s_winding-12",
+  "url": "s_winding.html#rem_mero",
   "type": "Remark",
-  "number": "1.24.10",
+  "number": "1.24.11",
   "title": "",
-  "body": " If is meromorphic on an elementary domain , and if is a path in that avoids all zeros and poles of , then it is not difficult to show that . One can further show (this requires more analysis) that has a finite number of zeros in poles in the interior of . This means that the sums in and are in fact finite.  "
+  "body": " If is meromorphic on an elementary region , and if is a path in that avoids all zeros and poles of , then it is not difficult to show that . One can further show (this requires more analysis) that has a finite number of zeros in poles in the interior of . This means that the sums in and are in fact finite.  "
+},
+{
+  "id": "s_rouches",
+  "level": "1",
+  "url": "s_rouches.html",
+  "type": "Section",
+  "number": "1.25",
+  "title": "Rouché’s theorem",
+  "body": " Rouché's theorem   Rouché's theorem   Let and be analytic functions on the elementary region , and let be a closed path in elementary region, let be a closed path such that for all . If for all , then and have the same number of zeros in .         Roots of polynomials   Let . Prove the following statements.    has exactly one root in .     has exactly four roots in the open annulus .     has exactly 2 roots in the open annulus .            Inverse function theorem   Assume is analytic at and that . There is an open ball satisfying the following properties.    is injective on and is open.    The inverse map is analytic and satisfies for all .            Open function   Let be an open subset of . A complex function is open if for all open subsets , is open.     Open mapping theorem   If is analytic, then is open.        "
+},
+{
+  "id": "th_rouches",
+  "level": "2",
+  "url": "s_rouches.html#th_rouches",
+  "type": "Theorem",
+  "number": "1.25.1",
+  "title": "Rouché’s theorem.",
+  "body": " Rouché's theorem   Let and be analytic functions on the elementary region , and let be a closed path in elementary region, let be a closed path such that for all . If for all , then and have the same number of zeros in .       "
+},
+{
+  "id": "eg_rouches_thm",
+  "level": "2",
+  "url": "s_rouches.html#eg_rouches_thm",
+  "type": "Example",
+  "number": "1.25.2",
+  "title": "Roots of polynomials.",
+  "body": " Roots of polynomials   Let . Prove the following statements.    has exactly one root in .     has exactly four roots in the open annulus .     has exactly 2 roots in the open annulus .          "
+},
+{
+  "id": "th_inv_fun",
+  "level": "2",
+  "url": "s_rouches.html#th_inv_fun",
+  "type": "Theorem",
+  "number": "1.25.3",
+  "title": "Inverse function theorem.",
+  "body": " Inverse function theorem   Assume is analytic at and that . There is an open ball satisfying the following properties.    is injective on and is open.    The inverse map is analytic and satisfies for all .          "
+},
+{
+  "id": "d_open_map",
+  "level": "2",
+  "url": "s_rouches.html#d_open_map",
+  "type": "Definition",
+  "number": "1.25.4",
+  "title": "Open function.",
+  "body": " Open function   Let be an open subset of . A complex function is open if for all open subsets , is open.   "
+},
+{
+  "id": "th_open_mapping",
+  "level": "2",
+  "url": "s_rouches.html#th_open_mapping",
+  "type": "Theorem",
+  "number": "1.25.5",
+  "title": "Open mapping theorem.",
+  "body": " Open mapping theorem   If is analytic, then is open.       "
 },
 {
   "id": "appendix-notation",
