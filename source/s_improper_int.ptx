@@ -472,8 +472,8 @@ L2=line(((.3*cos(-pi/8),.3*sin(-pi/8)),(cos(-pi/8),sin(-pi/8))), color="blue", t
 C1arrows=sum(arrow((cos(pi*t/4),sin(pi*t/4)),(cos(pi*t/4+.01),sin(pi*t/4+.01)), color="blue", arrowsize=3) for t in range(1,8))
 C2arrows=sum(arrow((.3*cos(pi*t/2),.3*sin(pi*t/2)),(.3*cos(pi*t/2-.01),.3*sin(pi*t/2-.01)), color="blue", arrowsize=3) for t in range(1,4))
 Larrows=arrow((.65*cos(pi/8),.65*sin(pi/8)),(.66*cos(pi/8),.66*sin(pi/8)),color="blue", arrowsize=3)+arrow((.65*cos(-pi/8),.65*sin(-pi/8)),(.64*cos(-pi/8),.64*sin(-pi/8)),color="blue", arrowsize=3)
-t1=text("$\\gamma_R$",(.5,.95),color="black",fontsize=16)
-t2=text("$\\gamma_\\delta$",(-.15,.35),color="black",fontsize=16)
+t1=text("$\\gamma_{R,\\alpha}$",(.5,.95),color="black",fontsize=16)
+t2=text("$\\gamma_{\\delta,\\alpha}$",(-.15,.35),color="black",fontsize=16)
 t3=text("$\\gamma_\\alpha$",(.65*cos(pi/8)-.1,.65*sin(pi/8)+.1),color="black",fontsize=16)
 t4=text("$\\gamma_{-\\alpha}$",(.65*cos(-pi/8)-.02,.65*sin(-pi/8)-.06),color="black",fontsize=16)
 C2+C1+L1+L2+C1arrows+C2arrows+t1+t2+t3+t4+Larrows
@@ -492,10 +492,62 @@ Compute <m>\displaystyle\int_{0}^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx</m>.
 Let <m>f(z)=\frac{e^{\frac{1}{3}\Log_0 z}}{z^2+4z+8}</m>, where as usual <m>\Log_0 z=\ln\abs{z}+i\Arg_0 z</m>, and <m>\Arg_0</m> is the branch of <m>\arg</m> defined on <m>\C-R_0</m> taking values in <m>(0,2\pi)</m>. The function <m>f</m> is analytic everywhere on <m>\C-R_0</m> except for the roots <m>z_1=-2+2i=2^{3/2}e^{3\pi i/4}</m> and <m>\overline{z_1}=2^{3/2}e^{5\pi i/4}</m> of the denominator, which are simple poles of <m>f</m>. We compute 
 <md>
     <mrow>\res_f(z_1) \amp = \frac{e^{\frac{1}{3}\Log_0 z_1}}{2z_1+4}</mrow>
-    <mrow> \amp = \frac{2^{1/2}e^{\pi i/4}}{4i}</mrow>
+    <mrow> \amp = \frac{\sqrt{2}e^{\pi i/4}}{4i}</mrow>
     <mrow>\res_f(\overline{z_1}) \amp = \frac{e^{\frac{1}{3}\Log_0 \overline{z}_1}}{2\overline{z}_1+4}</mrow>
-    <mrow> \amp = -\frac{2^{1/2}e^{5\pi i/12}}{4i}</mrow>
+    <mrow> \amp = -\frac{\sqrt{2}e^{5\pi i/12}}{4i}</mrow>
 </md>.
+For all <m>\alpha&gt; 0</m>, and <m>R</m> and <m>\delta</m> satisfying <m>0&lt; \delta &lt; 2\sqrt{2}&lt; R</m>, let <m>\gamma</m> be the path as in <xref ref="fig_keyhole"/>. By the Cauchy residue theorem we have 
+<md>
+    <mrow>\int_\gamma f\, dz\amp =2\pi i(\res_f(z_1)+\res_f(\overline{z}_1)) \amp </mrow>
+    <mrow> \amp = \frac{\sqrt{2}}{2}\pi(e^{\pi i/4}-e^{5\pi i /12})</mrow>
+    <mrow> \amp = \frac{\sqrt{2}}{2}\pi e^{\pi i/3}(e^{-\pi i/12}-e^{\pi i/ 12})</mrow>
+    <mrow> \amp = -i\sqrt{2}\pi e^{\pi i/3}\sin(\pi/12)</mrow>
+</md>.
+Yes, we resorted to some algebraic trickery there (factoring out the <m>e^{\pi i/3}</m>) in order to combine terms nicely. This was not strictly speaking necessary, but saves us some simplifying work at the end. 
+</p>
+<p>
+We now compute the integrals along the various subpaths that make up <m>\gamma</m>.  Using straight line parametrizations for the integrals along <m>\gamma_\alpha</m> and <m>\gamma_{-alpha}</m> we see that 
+<md>
+<mrow> \int_\gamma f\, dz\amp =\int_\delta^R \frac{x^{1/3}e^{i\alpha/3}}{x^2e^{2i\alpha}+4xe^{i\alpha}+8}\, dx-\int_\delta^R \frac{x^{1/3}e^{(2i(\pi-\alpha))/3}}{x^2e^{-2i\alpha}+4xe^{-i\alpha}+8}\, dx\amp </mrow>
+    <mrow> \amp +\int_{\gamma_{R,\alpha}}f\, dz+\int_{\gamma_{\delta,\alpha}}f\, dz</mrow>
+</md>,
+where in our computation of <m>f(\gamma_{-\alpha}(x))</m>, we use the fact that 
+<me>\Log_0(xe^{-i\alpha})=\ln x+i\Arg_0(e^{-i\alpha})=\ln x+i(2\pi -\alpha)</me>.
+Taking the limit as <m>\alpha\to 0</m> we get 
+<md>
+    <mrow> \int_\gamma f\, dz\amp =(1-e^{2\pi i/3}\int_\delta^R \frac{x^{1/3}e^{i\alpha/3}}{x^2e^{2i\alpha}+4xe^{i\alpha}+8}\, dx++\int_{\gamma_R}f\, dz+\int_{\gamma_\delta}f\, dz </mrow>
+</md>.
+Once again, the fact that the limit can be brought into the first two integrals relies on the convergence of the integrands to <m>x^{1/3}/(x^2+4x+8)</m> being uniform for all <m>x\in [\delta, R]</m>. The fact that 
+<md>
+    <mrow>\lim\limits_{\alpha\to 0}\int_{\gamma_{R,\alpha}}f\, dz \amp = \int_{\gamma_R}f\, dz</mrow>
+    <mrow>\lim\limits_{\alpha\to 0}\int_{\gamma_{\delta,\alpha}}f\, dz \amp = \int_{\gamma_{\delta}}f\, dz</mrow>
+</md> 
+can be shown using more elementary means. 
+</p>
+<p>
+Next, the usual ML-inequality arguments suffice to show that <m>\int_{\gamma_R}f\, dz\to 0</m> as <m>R\to \infty</m> and <m>\int_{\gamma_\delta}f\, dz\to 0</m> as <m>\delta\to 0</m>. Thus taking limits as <m>R\to \infty</m> and <m>\delta\to 0</m>, in our last equality, we have 
+<md>
+    <mrow>\int_{\gamma} \amp =(1-e^{2\pi i/3}\int_0^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx</mrow>
+</md>.
+We conclude that 
+<md>
+    <mrow> \int_0^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx\amp = \frac{1}{1-e^{2\pi i/3}}\int_{\gamma}f\, dz </mrow>
+    <mrow> \amp = \frac{-i\sqrt{2}\pi e^{\pi i/3}\sin(\pi/12)}{1-e^{2\pi i/3}}</mrow>
+    <mrow> \amp =i\frac{\sqrt(2)\pi\sin(\pi/12)}{e^{\pi i/3}-e^{-\pi i/3}} </mrow>
+    <mrow> \amp = \frac{\sqrt{2}\pi\sin(\pi/12)}{2\sin(\pi/3)} </mrow>
+</md>.
+That is a fine answer. If, however, you insist on not having it expressed in terms of sine, we can use a trig identity on <m>\sin(\pi/12)=\sin(\pi/3-\pi/4)</m>
+<me>
+    \sin(\pi/12)=\sin(\pi/3)\cos(-\pi/4)+\cos(\pi/3)\sin(-\pi/4)=\frac{1}{4}(\sqrt{6}-\sqrt{2})
+</me>,
+and then conclude 
+<me>
+ \int_0^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx=\frac{\pi(3-\sqrt{3})}{6}   
+</me>.
+
+
+
+
 </p>
 </solution>
 </example>
