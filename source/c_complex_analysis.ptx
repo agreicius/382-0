@@ -24,4 +24,5 @@
      <xi:include href="s_poles.ptx" />
      <xi:include href="s_improper_int.ptx" />
      <xi:include href="s_winding.ptx" />
+     <xi:include href="s_rouches.ptx" />
 </chapter>

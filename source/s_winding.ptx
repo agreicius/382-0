@@ -106,7 +106,7 @@
     <title>Winding number residue theorem</title>
     <statement>
     <p>
-    Let <m>\gamma</m> be a closed path, let <m>U=\C-\im \gamma</m>, and let <m>f</m> be analytic on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where for all <m>1\leq k\leq n</m> is an isolated singularity of <m>f</m>. We have 
+    Let <m>U</m> be an elementary region, let <m>\gamma</m> be a closed path contained in <m>U</m>, and let <m>f</m> be analytic on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where for all <m>1\leq k\leq n</m>, <m>z_k</m> is an isolated singularity of <m>f</m> and <m>z_j\ne z_k</m> for <m>j\ne k</m>. We have 
     <men xml:id="eq_cauchy_residue_winding">
         \int_\gamma f\, dz=2\pi i\sum_{k=1}^n\chi_\gamma(z_k)\res_f(z_k)
     </men>.
@@ -114,6 +114,7 @@
     </statement>
     <proof>
     <p>
+    We will show that <m>f</m> has an expansion of the form 
     </p>
     </proof>
     </theorem>
@@ -125,19 +126,59 @@
     </p>
     </statement>
     </definition>
-    
+<lemma xml:id="lem_arg_princ">
+<title>Argument principle</title>
+    <statement>
+        <p>
+            Assume <m>z_0</m> is an isolated singularity of <m>f</m> of nonzero order <m>m\in \Z</m>.
+            <ol>
+                <li>
+                    <p>
+                        <m>\ord_{f'/f}(z_0)=-1</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>\res_{f'/f}(z_0)=m</m>.
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            Write <m>f(z)=(z-z_0)^mg(z)</m> where <m>m=\ord_f z_0</m>, <m>g</m> is analytic at <m>z_0</m> and <m>g(z_0)\ne 0</m>. We then have
+            <me>
+                f'(z)=m(z-z_0)^{m-1}g(z)+(z-z_0)^mg'(z)
+            </me>
+            and thus 
+            <me>
+                \frac{f'(z)}{f(z)}=\frac{m}{z-z_0}+\frac{g'(z)}{g(z)}
+            </me>.
+            Since <m>g(z_0)\ne 0</m>, the reciprocal <m>1/g</m> is also analytic at <m>z_0</m>, and thus so is <m>g'/g</m>. It follows that 
+            <me>
+                \frac{f'(z)}{f(z)}=\frac{m}{z-z_0}+a_0+a_1(z-z_0)+\cdots  
+            </me>,
+            whence 
+            <md>
+                <mrow>\ord_{f/f'}z_0 \amp = -1</mrow>
+                <mrow>\res_{f/f'} z_0 \amp = m</mrow>
+            </md>.
+        </p>
+    </proof>
+</lemma>
     <theorem xml:id="th_arg_princ">
     <title>Argument principle</title>
     <statement>
     <p>
-    Let <m>U</m> be an elementary domain, and assume <m>f</m> is meromorphic on <m>U</m>. Let <m>\gamma</m> be a closed path in <m>U</m> that does not contain any zeros or poles of <m>f</m>. 
+    Let <m>U</m> be an elementary region, and assume <m>f</m> is meromorphic on <m>U</m>. Let <m>\gamma</m> be a closed path in <m>U</m> that does not contain any zeros or poles of <m>f</m>. 
     <ol>
         <li>
             <title>Argument principle</title>
             <p>
                 We have 
                 <men xml:id="eq_arg_princ">
-                    \int_\gamma \frac{f'}{f}\, dz=\chi_{f\circ \gamma}(0)
+                    \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\chi_{f\circ \gamma}(0)
                 </men>.
                 In other words, the logarithmic derivate integral on the left side of <xref ref="eq_arg_princ"/> is equal to the winding number of the path <m>f\circ\gamma</m> around <m>0</m>.
             </p>
@@ -147,15 +188,15 @@
             <p>
                Let <m>Z</m> be the set of zeros of <m>f</m> in <m>U</m>, and let <m>P</m> be the set of poles of <m>f</m> in <m>U</m>. We have 
                <men xml:id="eq_zeros_poles_winding">
-                \int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\chi_\gamma(z)\ord_f z+\sum_{z\in P}\chi_\gamma(z)\ord_f z
+                \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\chi_\gamma(z)\ord_f z+\sum_{z\in P}\chi_\gamma(z)\ord_f z
                </men>.
             In particular, if <m>\chi_\gamma(z)=1</m> for all <m>z\in Z\cup P</m>, we have 
             <men xml:id="eq_zero_poles">
-                \int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.
+                \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.
             </men>
             In this special case, we say summarize <xref ref="eq_zero_poles"/> as 
             <me>
-              \int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)
+              \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)
             </me>,
             where our count <q>includes multiplicities</q>: <ie/>, we take into account the order of each zero and pole of <m>f</m>. 
             </p>
@@ -165,12 +206,36 @@
     </statement>
     <proof>
     <p>
+        <ol>
+            <li>
+                <p>
+                    Let <m>\gamma\colon [a,b]\rightarrow \C</m> be our closed path. We have 
+                    <md>
+                        <mrow>\chi_{f\circ \gamma}(0) \amp = \int{1}{2\pi i}\int_{f\circ \gamma}\frac{1}{z}\, dz </mrow>
+                        <mrow> \amp =\frac{1}{2\pi i} \int_a^b\frac{1}{f(\gamma(t))}\cdot \frac{d}{dt}f(\gamma(t))\, dt</mrow>
+                        <mrow> \amp = \frac{1}{2\pi i}\int_a^b\frac{f'(\gamma(t))}{f(\gamma(t))}\cdot \gamma'(t)\, dt </mrow>
+                        <mrow> \amp = \frac{1}{2\pi i}\int_{\gamma}\frac{f}{f'}\, dz</mrow>
+                    </md>.
+                </p>
+            </li>
+            <li>
+                <p>
+                    First observe that since <m>U</m> is elementary, we have <m>\Int \alpha\subseteq U</m>. Since <m>f</m> is meromorphic, it follows that <m>f</m> has only finitely many zeros and poles in <m>\Int \alpha</m>. (See <xref ref="rem_mero"/>.) Thus we can apply the Cauchy residue theorem to conclude 
+                    <md>
+                        <mrow>\frac{1}{2\pi i}\int_\gamma \frac{f}{f'}\, dz \amp = \sum_{z\in \Int U}\chi_{\gamma}(z)\res_{f/f'}(z) </mrow>
+                        <mrow> \amp = \sum_{z\in Z}\chi_{\gamma}(z)\res_{f/f'}(z)+\sum_{z\in P}\chi_{\gamma}(z)\res_{f/f'}(z)</mrow>
+                        <mrow> \amp = \sum_{z\in Z}\chi_{\gamma}(z)\ord_{f}(z)+\sum_{z\in P}\chi_{\gamma}(z)\ord_{f}(z)</mrow>
+                    </md>,
+                    where we have used <m>\res_{f/f'}(z_0)=\ord_f(z_0)</m> for all poles and zeros of <m>f</m>. 
+                </p>
+            </li>
+        </ol>
     </p>
     </proof>
     </theorem>
-    <remark>
+    <remark xml:id="rem_mero">
        <p>
-         If <m>f</m> is meromorphic on an elementary domain <m>U</m>, and if <m>\gamma</m> is a path in <m>U</m> that avoids all zeros and poles of <m>f</m>, then it is not difficult to show that <m>\int \gamma\subseteq U</m>. One can further show (this requires more analysis) that <m>f</m> has a finite number of zeros in poles in the interior of <m>\alpha</m>. This means that the sums in <xref ref="eq_zeros_poles_winding"/> and <xref ref="eq_zeros_poles_winding"/> are in fact finite. 
+         If <m>f</m> is meromorphic on an elementary region <m>U</m>, and if <m>\gamma</m> is a path in <m>U</m> that avoids all zeros and poles of <m>f</m>, then it is not difficult to show that <m>\int \gamma\subseteq U</m>. One can further show (this requires more analysis) that <m>f</m> has a finite number of zeros in poles in the interior of <m>\alpha</m>. This means that the sums in <xref ref="eq_zeros_poles_winding"/> and <xref ref="eq_zeros_poles_winding"/> are in fact finite. 
        </p>
     </remark>
 </section>

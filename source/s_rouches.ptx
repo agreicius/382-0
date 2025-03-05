@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_rouches" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Rouché's theorem</title>
+
+
+
+
+<theorem xml:id="th_rouches">
+<title>Rouché's theorem</title>
+<statement>
+<p>
+Let <m>f</m> and <m>g</m> be analytic functions on the elementary region  <m>U</m>, and let <m>\gamma</m> be a closed path in <m>U</m>  elementary region, let <m>\alpha</m> be a closed path such that <m>\chi_\gamma(z)=1</m> for all <m>z\in \Int \alpha</m>. If <m>\abs{g(z)}&lt; \abs{f(z)}</m> for all <m>z\in \im \gamma</m>, then <m>f</m> and <m>g</m> have the same number of zeros in <m>\Int \gamma</m>. 
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<example xml:id="eg_rouches_thm">
+<title>Roots of polynomials</title>
+<statement>
+<p>
+Let <m>p(x)=x^7+6x^5+3x^2-14x+1</m>. Prove the following statements. 
+<ul>
+    <li>
+        <p>
+            <m>p</m> has exactly one root in <m>B_1(0)</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>p</m> has exactly four roots in the open annulus <m>1&lt; \abs{z} &lt; \abs{2}</m>.
+        </p>
+    </li>
+    <li>
+        <p>
+            <m>p</m> has exactly 2 roots in the open annulus <m>2&lt; \abs{z} &lt; 3</m>. 
+        </p>
+    </li>
+
+</ul>
+</p>
+</statement>
+<solution>
+<p>
+
+</p>
+</solution>
+</example>
+<theorem xml:id="th_inv_fun">
+<title>Inverse function theorem</title>
+<statement>
+<p>
+Assume <m>f</m> is analytic at <m>z_0</m> and that <m>f'(z_0)\ne 0</m>. There is an open ball <m>B=B_r(z_0)</m> satisfying the following properties. 
+<ol>
+    <li>
+        <p>
+            <m>f</m> is injective on <m>B</m> and <m>U=f(B)</m> is open. 
+        </p>
+    </li>
+    <li>
+        <p>
+            The inverse map <m>f^{-1}\colon U\rightarrow B</m> is analytic and satisfies
+            <md>
+                <mrow>f^{-1}(w) \amp =\frac{1}{2\pi i}\int_{\gamma}\frac{zf(z)}{f(z)-w}\, dz\, \gamma(t)=z_0+re^{it}, t\in [0,2\pi]</mrow>
+                <mrow>(f^{-1})'(w) \amp = \frac{1}{f'(f^{-1}(w))} </mrow>
+            </md>
+            for all <m>w\in U</m>. 
+        </p>
+    </li>
+</ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+<definition xml:id="d_open_map">
+<title>Open function</title>
+<statement>
+<p>
+Let <m>U</m> be an open subset of <m>\C</m>. A complex function <m>f\colon U\rightarrow \C</m> is <term>open</term> if for all open subsets <m>V\subseteq U</m>, <m>f(V)</m> is open. 
+</p>
+</statement>
+</definition>
+<theorem xml:id="th_open_mapping">
+<title>Open mapping theorem</title>
+<statement>
+<p>
+If <m>f</m> is analytic, then <m>f</m> is open.  
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+
+
+    
+
+</section>
