@@ -13,7 +13,7 @@ The <term>complex numbers</term> is the set of all formal expressions of the for
 <me>
     \C=\{a+ib\colon a,b\in \R\}
 </me>.
-Given a complex number <m>z=a+ib</m>, we call <m>a</m> its <term>real component</term>, denoted <m>\Re z</m>, and we call <m>b</m> its <term>imaginary part</term>, denoted <m>\Im z</m>: <ie/>, we have 
+Given a complex number <m>z=a+ib</m>, we call <m>a</m> its <term>real part</term>, denoted <m>\Re z</m>, and we call <m>b</m> its <term>imaginary part</term>, denoted <m>\Im z</m>: <ie/>, we have 
 <md>
     <mrow>\Re z \amp = a \amp \Im z\amp = b</mrow>
 </md>.

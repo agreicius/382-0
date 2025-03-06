@@ -20,18 +20,32 @@
     <title>Winding numbers of circles</title>
     <statement>
     <p>
-    Fix an integer <m>k\in \Z</m>, <m>z_0\in \C</m>, and <m>R&gt; 0</m>, and let <m>\gamma(t)=z_0+Re^{kit}</m>, <m>t\in [0,2\pi]</m>. Prove: 
+    Fix a positive integer <m>k\in \Z</m>. Given any <m>z_0\in \C</m> and <m>R&gt; 0</m>, let <m>\gamma(t)=Re^{kit}</m>, <m>t\in [0,2\pi]</m>. Prove: 
     <me>
         \chi_\gamma (w_0)=\begin{cases}
-        k \amp \text{if } w_0\in B_R(z_0) \\
-        0 \amp \text{if } w_0\in \C-\overline{B}_R(z_0)
+        k \amp \text{if } w_0\in B_R(0) \\
+        0 \amp \text{if } w_0\in \C-\overline{B}_R(0)
         \end{cases}
     </me>.
+    In other words, in this special case, <m>\chi_\gamma(z_0)</m> computes the number of times the path <m>\gamma</m> <q>wraps around</q> the point <m>z_0</m>. 
     </p>
     </statement>
     <solution>
     <p>
-    
+    After a re-parameterization, we can write 
+    <me>
+        \gamma=\underset{k \text{ times}}{\underbrace{\phi*\phi*\cdots *\phi}}
+    </me>,
+    where <m>\phi(t)=e^{it}</m>, <m>t\in [0,2pi]</m>: in other words, our <m>k</m>-fold trip around the circle is a concatenation of <m>k</m> simple trips around the circle. 
+    But then we have 
+    <md>
+        <mrow>\chi_{\gamma}(z_0) \amp =\frac{1}{2\pi i}\int_\gamma \frac{1}{z-z_0}\, dz </mrow>
+        <mrow> \amp = \frac{k}{2\pi i}\int_{\phi} \frac{1}{z-z_0}</mrow>
+        <mrow> \amp = \begin{cases}
+        k \amp \text{if } z_0\in B_R(0) \\
+        0 \amp \text{if } z_0\notin \overline{B}_R(0)
+        \end{cases}</mrow>
+    </md>.
     </p>
     </solution>
     </example>
@@ -83,11 +97,16 @@
         </p>
     </warning>
     <corollary xml:id="cor_int_ext">
-        <title>Interior is bounded</title>
+        <title>Properties of <m>\Int \gamma</m> and <m>\Ext \gamma</m> </title>
         <statement>
             <p>
                 Let <m>\gamma\colon [a,b]\rightarrow \C</m> be a closed path. 
                 <ol>
+                    <li>
+                        <p>
+                            If <m>U</m> is an elementary region and <m>\im \gamma\subseteq U</m>,  then <m>\Int \gamma\subseteq U</m>. 
+                        </p>
+                    </li>
                     <li>
                         <p>
                             <m>\Int \gamma</m> is a bounded set. 
@@ -98,15 +117,28 @@
                             <m>\Ext \gamma</m> is an unbounded set. 
                         </p>
                     </li>
+                    
                 </ol>
             </p>
         </statement>
+        <proof>
+            <p>
+            We first prove statement (1). Assume <m>\im \gamma\subseteq U</m>, with <m>U</m> elementary. For any <m>z_0\notin U</m>, the function <m>\frac{1}{z-z_0}</m> is analytic on <m>U</m>. By the definition of an elementary region, it follows that 
+                <me>
+                \chi_\gamma(z_0)=\frac{1}{2\pi i}\int_{\gamma}\frac{1}{z-z_0}\, dz=0
+            </me>.
+            Thus if <m>z_0\notin U</m>, then <m>z_0\in \Ext \gamma</m>. It follows that <m>\Int \gamma\subseteq U</m>.
+        </p>
+        <p>
+            Statements (2) and (3) follow from (1) and the observation that <m>\abs{\gamma(t)}\leq M</m> for all <m>t\in [a,b]</m> (by the extreme value theorem), and hence <m>\im \gamma \subseteq B_{M+1}(0)</m>. Since <m>B_{M+1}(0)</m> is elementary, we have <m>\Int \gamma\subseteq B_{M+1}(z_0)</m> and <m>\Ext \gamma \supseteq \C-B_{M+1}(z_0)</m>. It follows that <m>\Int \gamma</m> is bounded and <m>\Ext \gamma</m> is unbounded. 
+        </p>
+        </proof>
     </corollary>
     <theorem xml:id="th_caucy_resiude_winding">
     <title>Winding number residue theorem</title>
     <statement>
     <p>
-    Let <m>U</m> be an elementary region, let <m>\gamma</m> be a closed path contained in <m>U</m>, and let <m>f</m> be analytic on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where for all <m>1\leq k\leq n</m>, <m>z_k</m> is an isolated singularity of <m>f</m> and <m>z_j\ne z_k</m> for <m>j\ne k</m>. We have 
+    Let <m>U</m> be an elementary region, and let <m>f</m> be analytic on <m>U-\{z_1,z_2,\dots, z_n\}</m>, where for all <m>1\leq k\leq n</m>, <m>z_k</m> is an isolated singularity of <m>f</m> and <m>z_j\ne z_k</m> for <m>j\ne k</m>. Given any closed path <m>\gamma</m> lying in <m>U-\{z_1,z_2,\dots, z_n\}</m>,  we have 
     <men xml:id="eq_cauchy_residue_winding">
         \int_\gamma f\, dz=2\pi i\sum_{k=1}^n\chi_\gamma(z_k)\res_f(z_k)
     </men>.
@@ -114,18 +146,37 @@
     </statement>
     <proof>
     <p>
-    We will show that <m>f</m> has an expansion of the form 
+    For each <m>1\leq k\leq</m> we have a Laurent expansion 
+    <mdn>
+        <mrow xml:id="eq_laurent_zk">f(z) \amp = \sum_{n=1}^\infty a_{n}^k(z-z_0)^{-n}+\sum_{n=0}^\infty b_n^k(z-z_0)^n, \ 0&lt; \abs{z-z_0} &lt; R_k</mrow>
+    </mdn>.
+    We double-index the coefficients here as they depend also on <m>z_k</m>. 
+    For each <m>k</m>, let  
+    <me>
+        g_k(z)=\sum_{n=1}^\infty a_{n}^k(z-z_k)^{-n}
+    </me>,
+    the so-called <em>principal part</em> of the Laurent expansion of <m>f</m> at <m>z_k</m>. It follows from the definition of convergence of Laurent series, that since the series expansion <xref ref="eq_laurent_zk"/> converges for all <m>0&lt; \abs{z-z_k} &lt; R_k</m>, the principal part <m>g_k(z)</m> converges for all <m>z\ne z_k</m>. It follows <m>g_k(z)</m> extends to an analytic function on <m>U-\{z_k\}</m>, and further that the function 
+    <me>
+        h(z)=f(z)-\sum_{k=1}^n h_k(z)
+    </me>
+    is analytic on <m>U</m> except at each <m>z_k</m>, where it has removable singularities. The function <m>h</m> can thus be extended to an analytic function on <m>U</m>. Since <m>U</m> is elementary and <m>\gamma</m> is closed, we have 
+    <md>
+        <mrow> 0 \amp = \int_\gamma h\, dz</mrow>
+        <mrow> \amp =\int_\gamma f\, dz-\sum_{k=1}^n \int_\gamma h_k\, dz </mrow>
+    </md>.
+    Lastly, since <m>\int_\gamma \frac{c}{(z-z_k)^n}=0</m> for all <m>c\in \C</m>, for all integers <m>n\geq 2</m>, and for all <m>1\leq k\leq n</m> (use an antiderivative!), we have
+    <md>
+        <mrow> \int_\gamma f\, dz \amp = \sum_{k=1}^n \int_\gamma h_k\, dz   </mrow>
+        <mrow> \amp = \sum_{k=1}^n \int_\gamma \frac{a_{1}^k}{(z-z_k)}\, dz </mrow>
+        <mrow> \amp = 2\pi i\sum_{k=1}^n a_{1}^k\chi_\gamma(z_k)</mrow>
+        <mrow> \amp = 2\pi i\sum_{k=1}^n\chi_\gamma(z_k)\res_f(z_k)</mrow>
+    </md>,
+    as desired. 
+    
     </p>
     </proof>
     </theorem>
-    <definition xml:id="d_meromorphic">
-    <title>Meromorphic</title>
-    <statement>
-    <p>
-    Let <m>U</m> be an open subset of <m>\C</m>. A complex function is <term>meromorphic</term> on <m>U</m> if for all <m>z_0\in U</m>, <m>f</m> is either analytic at <m>z_0</m>, or <m>z_0</m> is a pole of finite order of <m>f</m>. 
-    </p>
-    </statement>
-    </definition>
+    
 <lemma xml:id="lem_arg_princ">
 <title>Argument principle</title>
     <statement>
@@ -167,6 +218,15 @@
         </p>
     </proof>
 </lemma>
+<definition xml:id="d_meromorphic">
+    <title>Meromorphic</title>
+    <statement>
+    <p>
+    Let <m>U</m> be an open subset of <m>\C</m>. A complex function is <term>meromorphic</term> on <m>U</m> if for all <m>z_0\in U</m>, <m>f</m> is either analytic at <m>z_0</m>, or <m>z_0</m> is a pole of finite order of <m>f</m>. 
+    </p>
+    </statement>
+    </definition>
+
     <theorem xml:id="th_arg_princ">
     <title>Argument principle</title>
     <statement>
@@ -194,7 +254,7 @@
             <men xml:id="eq_zero_poles">
                 \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.
             </men>
-            In this special case, we say summarize <xref ref="eq_zero_poles"/> as 
+            In this special case, we summarize <xref ref="eq_zero_poles"/> as 
             <me>
               \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)
             </me>,

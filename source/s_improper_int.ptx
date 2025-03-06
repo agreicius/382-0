@@ -515,7 +515,7 @@ where in our computation of <m>f(\gamma_{-\alpha}(x))</m>, we use the fact that
 <me>\Log_0(xe^{-i\alpha})=\ln x+i\Arg_0(e^{-i\alpha})=\ln x+i(2\pi -\alpha)</me>.
 Taking the limit as <m>\alpha\to 0</m> we get 
 <md>
-    <mrow> \int_\gamma f\, dz\amp =(1-e^{2\pi i/3}\int_\delta^R \frac{x^{1/3}e^{i\alpha/3}}{x^2e^{2i\alpha}+4xe^{i\alpha}+8}\, dx++\int_{\gamma_R}f\, dz+\int_{\gamma_\delta}f\, dz </mrow>
+    <mrow> \int_\gamma f\, dz\amp =(1-e^{2\pi i/3})\int_\delta^R \frac{x^{1/3}e^{i\alpha/3}}{x^2e^{2i\alpha}+4xe^{i\alpha}+8}\, dx++\int_{\gamma_R}f\, dz+\int_{\gamma_\delta}f\, dz </mrow>
 </md>.
 Once again, the fact that the limit can be brought into the first two integrals relies on the convergence of the integrands to <m>x^{1/3}/(x^2+4x+8)</m> being uniform for all <m>x\in [\delta, R]</m>. The fact that 
 <md>
@@ -527,7 +527,7 @@ can be shown using more elementary means.
 <p>
 Next, the usual ML-inequality arguments suffice to show that <m>\int_{\gamma_R}f\, dz\to 0</m> as <m>R\to \infty</m> and <m>\int_{\gamma_\delta}f\, dz\to 0</m> as <m>\delta\to 0</m>. Thus taking limits as <m>R\to \infty</m> and <m>\delta\to 0</m>, in our last equality, we have 
 <md>
-    <mrow>\int_{\gamma} \amp =(1-e^{2\pi i/3}\int_0^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx</mrow>
+    <mrow>\int_{\gamma}f\, dz \amp =(1-e^{2\pi i/3})\int_0^\infty \frac{x^{1/3}}{x^2+4x+8}\, dx</mrow>
 </md>.
 We conclude that 
 <md>
