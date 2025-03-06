@@ -15,12 +15,48 @@
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.7</span><span class="period">.</span><span class="space"> </span><span class="title">Winding number residue theorem.</span>
 </h3>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(U\)</span> be an elementary region, let <span class="process-math">\(\gamma\)</span> be a closed path contained in <span class="process-math">\(U\text{,}\)</span> and let <span class="process-math">\(f\)</span> be analytic on <span class="process-math">\(U-\{z_1,z_2,\dots, z_n\}\text{,}\)</span> where for all <span class="process-math">\(1\leq k\leq n\text{,}\)</span> <span class="process-math">\(z_k\)</span> is an isolated singularity of <span class="process-math">\(f\)</span> and <span class="process-math">\(z_j\ne z_k\)</span> for <span class="process-math">\(j\ne k\text{.}\)</span> We have</div>
+<div class="para">Let <span class="process-math">\(U\)</span> be an elementary region, and let <span class="process-math">\(f\)</span> be analytic on <span class="process-math">\(U-\{z_1,z_2,\dots, z_n\}\text{,}\)</span> where for all <span class="process-math">\(1\leq k\leq n\text{,}\)</span> <span class="process-math">\(z_k\)</span> is an isolated singularity of <span class="process-math">\(f\)</span> and <span class="process-math">\(z_j\ne z_k\)</span> for <span class="process-math">\(j\ne k\text{.}\)</span> Given any closed path <span class="process-math">\(\gamma\)</span> lying in <span class="process-math">\(U-\{z_1,z_2,\dots, z_n\}\text{,}\)</span>  we have</div>
 <div class="displaymath process-math">
 \begin{equation}
 \int_\gamma f\, dz=2\pi i\sum_{k=1}^n\chi_\gamma(z_k)\res_f(z_k)\text{.}\tag{1.91}
 \end{equation}
 </div>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">We will show that <span class="process-math">\(f\)</span> has an expansion of the form</div></article></details><span class="incontext"><a class="internal" href="s_winding.html#th_caucy_resiude_winding">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">For each <span class="process-math">\(1\leq k\leq\)</span> we have a Laurent expansion</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html">
+\begin{align}
+f(z) \amp = \sum_{n=1}^\infty a_{n}^k(z-z_0)^{-n}+\sum_{n=0}^\infty b_n^k(z-z_0)^n, \ 0&lt; \abs{z-z_0} &lt; R_k\text{.}\tag{1.92}
+\end{align}
+</div>
+<div class="para">We double-index the coefficients here as they depend also on <span class="process-math">\(z_k\text{.}\)</span> For each <span class="process-math">\(k\text{,}\)</span> let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html">
+\begin{equation*}
+g_k(z)=\sum_{n=1}^\infty a_{n}^k(z-z_k)^{-n}\text{,}
+\end{equation*}
+</div>
+<div class="para">the so-called <em class="emphasis">principal part</em> of the Laurent expansion of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_k\text{.}\)</span> It follows from the definition of convergence of Laurent series, that since the series expansion <a href="s_winding.html#th_caucy_resiude_winding-3-1-2" class="xref" data-knowl="./knowl/xref/eq_laurent_zk.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.92">(1.92)</a> converges for all <span class="process-math">\(0&lt; \abs{z-z_k} &lt; R_k\text{,}\)</span> the principal part <span class="process-math">\(g_k(z)\)</span> converges for all <span class="process-math">\(z\ne z_k\text{.}\)</span> It follows <span class="process-math">\(g_k(z)\)</span> extends to an analytic function on <span class="process-math">\(U-\{z_k\}\text{,}\)</span> and further that the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html">
+\begin{equation*}
+h(z)=f(z)-\sum_{k=1}^n h_k(z)
+\end{equation*}
+</div>
+<div class="para">is analytic on <span class="process-math">\(U\)</span> except at each <span class="process-math">\(z_k\text{,}\)</span> where it has removable singularities. The function <span class="process-math">\(h\)</span> can thus be extended to an analytic function on <span class="process-math">\(U\text{.}\)</span> Since <span class="process-math">\(U\)</span> is elementary and <span class="process-math">\(\gamma\)</span> is closed, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html">
+\begin{align*}
+0 \amp = \int_\gamma h\, dz\\
+\amp =\int_\gamma f\, dz-\sum_{k=1}^n \int_\gamma h_k\, dz \text{.}
+\end{align*}
+</div>
+<div class="para">Lastly, since <span class="process-math">\(\int_\gamma \frac{c}{(z-z_k)^n}=0\)</span> for all <span class="process-math">\(c\in \C\text{,}\)</span> for all integers <span class="process-math">\(n\geq 2\text{,}\)</span> and for all <span class="process-math">\(1\leq k\leq n\)</span> (use an antiderivative!), we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html">
+\begin{align*}
+\int_\gamma f\, dz \amp = \sum_{k=1}^n \int_\gamma h_k\, dz   \\
+\amp = \sum_{k=1}^n \int_\gamma \frac{a_{1}^k}{(z-z_k)}\, dz \\
+\amp = 2\pi i\sum_{k=1}^n a_{1}^k\chi_\gamma(z_k)\\
+\amp = 2\pi i\sum_{k=1}^n\chi_\gamma(z_k)\res_f(z_k)\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_winding.html#th_caucy_resiude_winding">in-context</a></span>
 </body>
 </html>

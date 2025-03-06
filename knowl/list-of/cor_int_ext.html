@@ -12,16 +12,28 @@
 </head>
 <body class="ignore-math">
 <article class="corollary theorem-like"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.24.6</span><span class="period">.</span><span class="space"> </span><span class="title">Interior is bounded.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.24.6</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of <span class="process-math">\(\Int \gamma\)</span> and <span class="process-math">\(\Ext \gamma\)</span>.</span>
 </h3>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(\gamma\colon [a,b]\rightarrow \C\)</span> be a closed path.</div>
 <ol class="decimal" id="cor_int_ext-2-1-2">
+<li><div class="para">If <span class="process-math">\(U\)</span> is an elementary region and <span class="process-math">\(\im \gamma\subseteq U\text{,}\)</span>  then <span class="process-math">\(\Int \gamma\subseteq U\text{.}\)</span>
+</div></li>
 <li><div class="para">
 <span class="process-math">\(\Int \gamma\)</span> is a bounded set.</div></li>
 <li><div class="para">
 <span class="process-math">\(\Ext \gamma\)</span> is an unbounded set.</div></li>
 </ol>
-</div></article><span class="incontext"><a class="internal" href="s_winding.html#cor_int_ext">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">We first prove statement (1). Assume <span class="process-math">\(\im \gamma\subseteq U\text{,}\)</span> with <span class="process-math">\(U\)</span> elementary. For any <span class="process-math">\(z_0\notin U\text{,}\)</span> the function <span class="process-math">\(\frac{1}{z-z_0}\)</span> is analytic on <span class="process-math">\(U\text{.}\)</span> By the definition of an elementary region, it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi_\gamma(z_0)=\frac{1}{2\pi i}\int_{\gamma}\frac{1}{z-z_0}\, dz=0\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus if <span class="process-math">\(z_0\notin U\text{,}\)</span> then <span class="process-math">\(z_0\in \Ext \gamma\text{.}\)</span> It follows that <span class="process-math">\(\Int \gamma\subseteq U\text{.}\)</span>
+</div>
+</div>
+<div class="para">Statements (2) and (3) follow from (1) and the observation that <span class="process-math">\(\abs{\gamma(t)}\leq M\)</span> for all <span class="process-math">\(t\in [a,b]\)</span> (by the extreme value theorem), and hence <span class="process-math">\(\im \gamma \subseteq B_{M+1}(0)\text{.}\)</span> Since <span class="process-math">\(B_{M+1}(0)\)</span> is elementary, we have <span class="process-math">\(\Int \gamma\subseteq B_{M+1}(z_0)\)</span> and <span class="process-math">\(\Ext \gamma \supseteq \C-B_{M+1}(z_0)\text{.}\)</span> It follows that <span class="process-math">\(\Int \gamma\)</span> is bounded and <span class="process-math">\(\Ext \gamma\)</span> is unbounded.</div></article></details><span class="incontext"><a class="internal" href="s_winding.html#cor_int_ext">in-context</a></span>
 </body>
 </html>

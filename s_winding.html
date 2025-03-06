@@ -465,17 +465,37 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.24.2</span><span class="period">.</span><span class="space"> </span><span class="title">Winding numbers of circles.</span>
 </h3>
 <div class="para logical" id="eg_wind_circles-2-1">
-<div class="para">Fix an integer <span class="process-math">\(k\in \Z\text{,}\)</span> <span class="process-math">\(z_0\in \C\text{,}\)</span> and <span class="process-math">\(R&gt; 0\text{,}\)</span> and let <span class="process-math">\(\gamma(t)=z_0+Re^{kit}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> Prove:</div>
+<div class="para">Fix a positive integer <span class="process-math">\(k\in \Z\text{.}\)</span> Given any <span class="process-math">\(z_0\in \C\)</span> and <span class="process-math">\(R&gt; 0\text{,}\)</span> let <span class="process-math">\(\gamma(t)=Re^{kit}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> Prove:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \chi_\gamma (w_0)=\begin{cases}
-k \amp \text{if } w_0\in B_R(z_0) \\
-0 \amp \text{if } w_0\in \C-\overline{B}_R(z_0)
+k \amp \text{if } w_0\in B_R(0) \\
+0 \amp \text{if } w_0\in \C-\overline{B}_R(0)
 \end{cases}\text{.}
 \end{equation*}
 </div>
+<div class="para">In other words, in this special case, <span class="process-math">\(\chi_\gamma(z_0)\)</span> computes the number of times the path <span class="process-math">\(\gamma\)</span> “wraps around” the point <span class="process-math">\(z_0\text{.}\)</span>
 </div>
-<div class="solutions"><details id="eg_wind_circles-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_wind_circles-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_winding_number"><h3 class="heading">
+</div>
+<div class="solutions"><details id="eg_wind_circles-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_wind_circles-3-1">
+<div class="para">After a re-parameterization, we can write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma=\underset{k \text{ times}}{\underbrace{\phi*\phi*\cdots *\phi}}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\phi(t)=e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2pi]\text{:}\)</span> in other words, our <span class="process-math">\(k\)</span>-fold trip around the circle is a concatenation of <span class="process-math">\(k\)</span> simple trips around the circle. But then we have</div>
+<div class="displaymath process-math" id="eg_wind_circles-3-1-6">
+\begin{align*}
+\chi_{\gamma}(z_0) \amp =\frac{1}{2\pi i}\int_\gamma \frac{1}{z-z_0}\, dz \\
+\amp = \frac{k}{2\pi i}\int_{\phi} \frac{1}{z-z_0}\\
+\amp = \begin{cases}
+k \amp \text{if } z_0\in B_R(0) \\
+0 \amp \text{if } z_0\notin \overline{B}_R(0)
+\end{cases}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><article class="theorem theorem-like" id="th_winding_number"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.3</span><span class="period">.</span><span class="space"> </span><span class="title">Winding number properties.</span>
 </h3>
 <div class="para logical" id="th_winding_number-2-1">
@@ -512,32 +532,76 @@ w \amp \longmapsto \chi_\gamma(w)
 <span class="type">Warning</span><span class="space"> </span><span class="codenumber">1.24.5</span><span class="period">.</span>
 </h3>
 <div class="para" id="s_winding-7-1">The term <em class="emphasis">interior</em> is a potential source of confusion, as we defined earlier the notion of the interior of a subset of <span class="process-math">\(\C\)</span> (<a href="s_derivative.html#d_interior_pt" class="xref" data-knowl="./knowl/xref/d_interior_pt.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.9.1: Interior point">Definition 1.9.1</a>). Observe that our new notion of interior applies not to a <em class="emphasis">set</em>, but rather a <em class="emphasis">path</em>, which is a function.</div></article><article class="corollary theorem-like" id="cor_int_ext"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.24.6</span><span class="period">.</span><span class="space"> </span><span class="title">Interior is bounded.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.24.6</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of <span class="process-math">\(\Int \gamma\)</span> and <span class="process-math">\(\Ext \gamma\)</span>.</span>
 </h3>
 <div class="para logical" id="cor_int_ext-2-1">
 <div class="para">Let <span class="process-math">\(\gamma\colon [a,b]\rightarrow \C\)</span> be a closed path.</div>
 <ol class="decimal" id="cor_int_ext-2-1-2">
-<li id="cor_int_ext-2-1-2-1"><div class="para" id="cor_int_ext-2-1-2-1-1">
-<span class="process-math">\(\Int \gamma\)</span> is a bounded set.</div></li>
+<li id="cor_int_ext-2-1-2-1"><div class="para" id="cor_int_ext-2-1-2-1-1">If <span class="process-math">\(U\)</span> is an elementary region and <span class="process-math">\(\im \gamma\subseteq U\text{,}\)</span>  then <span class="process-math">\(\Int \gamma\subseteq U\text{.}\)</span>
+</div></li>
 <li id="cor_int_ext-2-1-2-2"><div class="para" id="cor_int_ext-2-1-2-2-1">
+<span class="process-math">\(\Int \gamma\)</span> is a bounded set.</div></li>
+<li id="cor_int_ext-2-1-2-3"><div class="para" id="cor_int_ext-2-1-2-3-1">
 <span class="process-math">\(\Ext \gamma\)</span> is an unbounded set.</div></li>
 </ol>
-</div></article><article class="theorem theorem-like" id="th_caucy_resiude_winding"><h3 class="heading">
+</div></article><details id="cor_int_ext-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_int_ext-3-1">
+<div class="para">We first prove statement (1). Assume <span class="process-math">\(\im \gamma\subseteq U\text{,}\)</span> with <span class="process-math">\(U\)</span> elementary. For any <span class="process-math">\(z_0\notin U\text{,}\)</span> the function <span class="process-math">\(\frac{1}{z-z_0}\)</span> is analytic on <span class="process-math">\(U\text{.}\)</span> By the definition of an elementary region, it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi_\gamma(z_0)=\frac{1}{2\pi i}\int_{\gamma}\frac{1}{z-z_0}\, dz=0\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus if <span class="process-math">\(z_0\notin U\text{,}\)</span> then <span class="process-math">\(z_0\in \Ext \gamma\text{.}\)</span> It follows that <span class="process-math">\(\Int \gamma\subseteq U\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="cor_int_ext-3-2">Statements (2) and (3) follow from (1) and the observation that <span class="process-math">\(\abs{\gamma(t)}\leq M\)</span> for all <span class="process-math">\(t\in [a,b]\)</span> (by the extreme value theorem), and hence <span class="process-math">\(\im \gamma \subseteq B_{M+1}(0)\text{.}\)</span> Since <span class="process-math">\(B_{M+1}(0)\)</span> is elementary, we have <span class="process-math">\(\Int \gamma\subseteq B_{M+1}(z_0)\)</span> and <span class="process-math">\(\Ext \gamma \supseteq \C-B_{M+1}(z_0)\text{.}\)</span> It follows that <span class="process-math">\(\Int \gamma\)</span> is bounded and <span class="process-math">\(\Ext \gamma\)</span> is unbounded.</div></article></details><article class="theorem theorem-like" id="th_caucy_resiude_winding"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.7</span><span class="period">.</span><span class="space"> </span><span class="title">Winding number residue theorem.</span>
 </h3>
 <div class="para logical" id="th_caucy_resiude_winding-2-1">
-<div class="para">Let <span class="process-math">\(U\)</span> be an elementary region, let <span class="process-math">\(\gamma\)</span> be a closed path contained in <span class="process-math">\(U\text{,}\)</span> and let <span class="process-math">\(f\)</span> be analytic on <span class="process-math">\(U-\{z_1,z_2,\dots, z_n\}\text{,}\)</span> where for all <span class="process-math">\(1\leq k\leq n\text{,}\)</span> <span class="process-math">\(z_k\)</span> is an isolated singularity of <span class="process-math">\(f\)</span> and <span class="process-math">\(z_j\ne z_k\)</span> for <span class="process-math">\(j\ne k\text{.}\)</span> We have</div>
+<div class="para">Let <span class="process-math">\(U\)</span> be an elementary region, and let <span class="process-math">\(f\)</span> be analytic on <span class="process-math">\(U-\{z_1,z_2,\dots, z_n\}\text{,}\)</span> where for all <span class="process-math">\(1\leq k\leq n\text{,}\)</span> <span class="process-math">\(z_k\)</span> is an isolated singularity of <span class="process-math">\(f\)</span> and <span class="process-math">\(z_j\ne z_k\)</span> for <span class="process-math">\(j\ne k\text{.}\)</span> Given any closed path <span class="process-math">\(\gamma\)</span> lying in <span class="process-math">\(U-\{z_1,z_2,\dots, z_n\}\text{,}\)</span>  we have</div>
 <div class="displaymath process-math" id="eq_cauchy_residue_winding">
 \begin{equation}
 \int_\gamma f\, dz=2\pi i\sum_{k=1}^n\chi_\gamma(z_k)\res_f(z_k)\text{.}\tag{1.91}
 \end{equation}
 </div>
-</div></article><details id="th_caucy_resiude_winding-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_caucy_resiude_winding-3-1">We will show that <span class="process-math">\(f\)</span> has an expansion of the form</div></article></details><article class="definition definition-like" id="d_meromorphic"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.24.8</span><span class="period">.</span><span class="space"> </span><span class="title">Meromorphic.</span>
-</h3>
-<div class="para" id="d_meromorphic-2-1">Let <span class="process-math">\(U\)</span> be an open subset of <span class="process-math">\(\C\text{.}\)</span> A complex function is <dfn class="terminology">meromorphic</dfn> on <span class="process-math">\(U\)</span> if for all <span class="process-math">\(z_0\in U\text{,}\)</span> <span class="process-math">\(f\)</span> is either analytic at <span class="process-math">\(z_0\text{,}\)</span> or <span class="process-math">\(z_0\)</span> is a pole of finite order of <span class="process-math">\(f\text{.}\)</span>
-</div></article><article class="lemma theorem-like" id="lem_arg_princ"><h3 class="heading">
-<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.24.9</span><span class="period">.</span><span class="space"> </span><span class="title">Argument principle.</span>
+</div></article><details id="th_caucy_resiude_winding-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_caucy_resiude_winding-3-1">
+<div class="para">For each <span class="process-math">\(1\leq k\leq\)</span> we have a Laurent expansion</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html" id="th_caucy_resiude_winding-3-1-2">
+\begin{align}
+f(z) \amp = \sum_{n=1}^\infty a_{n}^k(z-z_0)^{-n}+\sum_{n=0}^\infty b_n^k(z-z_0)^n, \ 0&lt; \abs{z-z_0} &lt; R_k\text{.}\tag{1.92}
+\end{align}
+</div>
+<div class="para">We double-index the coefficients here as they depend also on <span class="process-math">\(z_k\text{.}\)</span> For each <span class="process-math">\(k\text{,}\)</span> let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html">
+\begin{equation*}
+g_k(z)=\sum_{n=1}^\infty a_{n}^k(z-z_k)^{-n}\text{,}
+\end{equation*}
+</div>
+<div class="para">the so-called <em class="emphasis">principal part</em> of the Laurent expansion of <span class="process-math">\(f\)</span> at <span class="process-math">\(z_k\text{.}\)</span> It follows from the definition of convergence of Laurent series, that since the series expansion <a href="s_winding.html#th_caucy_resiude_winding-3-1-2" class="xref" data-knowl="./knowl/xref/eq_laurent_zk.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.92">(1.92)</a> converges for all <span class="process-math">\(0&lt; \abs{z-z_k} &lt; R_k\text{,}\)</span> the principal part <span class="process-math">\(g_k(z)\)</span> converges for all <span class="process-math">\(z\ne z_k\text{.}\)</span> It follows <span class="process-math">\(g_k(z)\)</span> extends to an analytic function on <span class="process-math">\(U-\{z_k\}\text{,}\)</span> and further that the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html">
+\begin{equation*}
+h(z)=f(z)-\sum_{k=1}^n h_k(z)
+\end{equation*}
+</div>
+<div class="para">is analytic on <span class="process-math">\(U\)</span> except at each <span class="process-math">\(z_k\text{,}\)</span> where it has removable singularities. The function <span class="process-math">\(h\)</span> can thus be extended to an analytic function on <span class="process-math">\(U\text{.}\)</span> Since <span class="process-math">\(U\)</span> is elementary and <span class="process-math">\(\gamma\)</span> is closed, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html" id="th_caucy_resiude_winding-3-1-22">
+\begin{align*}
+0 \amp = \int_\gamma h\, dz\\
+\amp =\int_\gamma f\, dz-\sum_{k=1}^n \int_\gamma h_k\, dz \text{.}
+\end{align*}
+</div>
+<div class="para">Lastly, since <span class="process-math">\(\int_\gamma \frac{c}{(z-z_k)^n}=0\)</span> for all <span class="process-math">\(c\in \C\text{,}\)</span> for all integers <span class="process-math">\(n\geq 2\text{,}\)</span> and for all <span class="process-math">\(1\leq k\leq n\)</span> (use an antiderivative!), we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_laurent_zk.html" id="th_caucy_resiude_winding-3-1-27">
+\begin{align*}
+\int_\gamma f\, dz \amp = \sum_{k=1}^n \int_\gamma h_k\, dz   \\
+\amp = \sum_{k=1}^n \int_\gamma \frac{a_{1}^k}{(z-z_k)}\, dz \\
+\amp = 2\pi i\sum_{k=1}^n a_{1}^k\chi_\gamma(z_k)\\
+\amp = 2\pi i\sum_{k=1}^n\chi_\gamma(z_k)\res_f(z_k)\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><article class="lemma theorem-like" id="lem_arg_princ"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.24.8</span><span class="period">.</span><span class="space"> </span><span class="title">Argument principle.</span>
 </h3>
 <div class="para logical" id="lem_arg_princ-2-1">
 <div class="para">Assume <span class="process-math">\(z_0\)</span> is an isolated singularity of <span class="process-math">\(f\)</span> of nonzero order <span class="process-math">\(m\in \Z\text{.}\)</span>
@@ -572,7 +636,11 @@ f'(z)=m(z-z_0)^{m-1}g(z)+(z-z_0)^mg'(z)
 \res_{f/f'} z_0 \amp = m\text{.}
 \end{align*}
 </div>
-</div></article></details><article class="theorem theorem-like" id="th_arg_princ"><h3 class="heading">
+</div></article></details><article class="definition definition-like" id="d_meromorphic"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.24.9</span><span class="period">.</span><span class="space"> </span><span class="title">Meromorphic.</span>
+</h3>
+<div class="para" id="d_meromorphic-2-1">Let <span class="process-math">\(U\)</span> be an open subset of <span class="process-math">\(\C\text{.}\)</span> A complex function is <dfn class="terminology">meromorphic</dfn> on <span class="process-math">\(U\)</span> if for all <span class="process-math">\(z_0\in U\text{,}\)</span> <span class="process-math">\(f\)</span> is either analytic at <span class="process-math">\(z_0\text{,}\)</span> or <span class="process-math">\(z_0\)</span> is a pole of finite order of <span class="process-math">\(f\text{.}\)</span>
+</div></article><article class="theorem theorem-like" id="th_arg_princ"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.24.10</span><span class="period">.</span><span class="space"> </span><span class="title">Argument principle.</span>
 </h3>
 <div class="para logical" id="th_arg_princ-2-1">
@@ -584,10 +652,10 @@ f'(z)=m(z-z_0)^{m-1}g(z)+(z-z_0)^mg'(z)
 <div class="para">We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_arg_princ.html" id="eq_arg_princ">
 \begin{equation}
-\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\chi_{f\circ \gamma}(0)\text{.}\tag{1.92}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\chi_{f\circ \gamma}(0)\text{.}\tag{1.93}
 \end{equation}
 </div>
-<div class="para">In other words, the logarithmic derivate integral on the left side of <a href="s_winding.html#eq_arg_princ" class="xref" data-knowl="./knowl/xref/eq_arg_princ.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.92">(1.92)</a> is equal to the winding number of the path <span class="process-math">\(f\circ\gamma\)</span> around <span class="process-math">\(0\text{.}\)</span>
+<div class="para">In other words, the logarithmic derivate integral on the left side of <a href="s_winding.html#eq_arg_princ" class="xref" data-knowl="./knowl/xref/eq_arg_princ.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.93">(1.93)</a> is equal to the winding number of the path <span class="process-math">\(f\circ\gamma\)</span> around <span class="process-math">\(0\text{.}\)</span>
 </div>
 </div>
 </li>
@@ -596,16 +664,16 @@ f'(z)=m(z-z_0)^{m-1}g(z)+(z-z_0)^mg'(z)
 <div class="para">Let <span class="process-math">\(Z\)</span> be the set of zeros of <span class="process-math">\(f\)</span> in <span class="process-math">\(U\text{,}\)</span> and let <span class="process-math">\(P\)</span> be the set of poles of <span class="process-math">\(f\)</span> in <span class="process-math">\(U\text{.}\)</span> We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html" id="eq_zeros_poles_winding">
 \begin{equation}
-\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\chi_\gamma(z)\ord_f z+\sum_{z\in P}\chi_\gamma(z)\ord_f z\text{.}\tag{1.93}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\chi_\gamma(z)\ord_f z+\sum_{z\in P}\chi_\gamma(z)\ord_f z\text{.}\tag{1.94}
 \end{equation}
 </div>
 <div class="para">In particular, if <span class="process-math">\(\chi_\gamma(z)=1\)</span> for all <span class="process-math">\(z\in Z\cup P\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html" id="eq_zero_poles">
 \begin{equation}
-\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.\tag{1.94}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\sum_{z\in Z}\ord_f z+\sum_{z\in P}\ord_f z.\tag{1.95}
 \end{equation}
 </div>
-<div class="para">In this special case, we say summarize <a href="s_winding.html#eq_zero_poles" class="xref" data-knowl="./knowl/xref/eq_zero_poles.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.94">(1.94)</a> as</div>
+<div class="para">In this special case, we summarize <a href="s_winding.html#eq_zero_poles" class="xref" data-knowl="./knowl/xref/eq_zero_poles.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.95">(1.95)</a> as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html">
 \begin{equation*}
 \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)\text{,}
@@ -643,7 +711,7 @@ f'(z)=m(z-z_0)^{m-1}g(z)+(z-z_0)^mg'(z)
 </ol></div></article></details><article class="remark remark-like" id="rem_mero"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.24.11</span><span class="period">.</span>
 </h3>
-<div class="para" id="rem_mero-1">If <span class="process-math">\(f\)</span> is meromorphic on an elementary region <span class="process-math">\(U\text{,}\)</span> and if <span class="process-math">\(\gamma\)</span> is a path in <span class="process-math">\(U\)</span> that avoids all zeros and poles of <span class="process-math">\(f\text{,}\)</span> then it is not difficult to show that <span class="process-math">\(\int \gamma\subseteq U\text{.}\)</span> One can further show (this requires more analysis) that <span class="process-math">\(f\)</span> has a finite number of zeros in poles in the interior of <span class="process-math">\(\alpha\text{.}\)</span> This means that the sums in <a href="s_winding.html#eq_zeros_poles_winding" class="xref" data-knowl="./knowl/xref/eq_zeros_poles_winding.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.93">(1.93)</a> and <a href="s_winding.html#eq_zeros_poles_winding" class="xref" data-knowl="./knowl/xref/eq_zeros_poles_winding.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.93">(1.93)</a> are in fact finite.</div></article></section></div>
+<div class="para" id="rem_mero-1">If <span class="process-math">\(f\)</span> is meromorphic on an elementary region <span class="process-math">\(U\text{,}\)</span> and if <span class="process-math">\(\gamma\)</span> is a path in <span class="process-math">\(U\)</span> that avoids all zeros and poles of <span class="process-math">\(f\text{,}\)</span> then it is not difficult to show that <span class="process-math">\(\int \gamma\subseteq U\text{.}\)</span> One can further show (this requires more analysis) that <span class="process-math">\(f\)</span> has a finite number of zeros in poles in the interior of <span class="process-math">\(\alpha\text{.}\)</span> This means that the sums in <a href="s_winding.html#eq_zeros_poles_winding" class="xref" data-knowl="./knowl/xref/eq_zeros_poles_winding.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.94">(1.94)</a> and <a href="s_winding.html#eq_zeros_poles_winding" class="xref" data-knowl="./knowl/xref/eq_zeros_poles_winding.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.94">(1.94)</a> are in fact finite.</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_improper_int.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_rouches.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

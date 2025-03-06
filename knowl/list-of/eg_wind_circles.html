@@ -15,16 +15,36 @@
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.24.2</span><span class="period">.</span><span class="space"> </span><span class="title">Winding numbers of circles.</span>
 </h3>
 <div class="para logical">
-<div class="para">Fix an integer <span class="process-math">\(k\in \Z\text{,}\)</span> <span class="process-math">\(z_0\in \C\text{,}\)</span> and <span class="process-math">\(R&gt; 0\text{,}\)</span> and let <span class="process-math">\(\gamma(t)=z_0+Re^{kit}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> Prove:</div>
+<div class="para">Fix a positive integer <span class="process-math">\(k\in \Z\text{.}\)</span> Given any <span class="process-math">\(z_0\in \C\)</span> and <span class="process-math">\(R&gt; 0\text{,}\)</span> let <span class="process-math">\(\gamma(t)=Re^{kit}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> Prove:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \chi_\gamma (w_0)=\begin{cases}
-k \amp \text{if } w_0\in B_R(z_0) \\
-0 \amp \text{if } w_0\in \C-\overline{B}_R(z_0)
+k \amp \text{if } w_0\in B_R(0) \\
+0 \amp \text{if } w_0\in \C-\overline{B}_R(0)
 \end{cases}\text{.}
 \end{equation*}
 </div>
+<div class="para">In other words, in this special case, <span class="process-math">\(\chi_\gamma(z_0)\)</span> computes the number of times the path <span class="process-math">\(\gamma\)</span> “wraps around” the point <span class="process-math">\(z_0\text{.}\)</span>
 </div>
-<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para"></div></div></details></div></article><span class="incontext"><a class="internal" href="s_winding.html#eg_wind_circles">in-context</a></span>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical">
+<div class="para">After a re-parameterization, we can write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma=\underset{k \text{ times}}{\underbrace{\phi*\phi*\cdots *\phi}}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\phi(t)=e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2pi]\text{:}\)</span> in other words, our <span class="process-math">\(k\)</span>-fold trip around the circle is a concatenation of <span class="process-math">\(k\)</span> simple trips around the circle. But then we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\chi_{\gamma}(z_0) \amp =\frac{1}{2\pi i}\int_\gamma \frac{1}{z-z_0}\, dz \\
+\amp = \frac{k}{2\pi i}\int_{\phi} \frac{1}{z-z_0}\\
+\amp = \begin{cases}
+k \amp \text{if } z_0\in B_R(0) \\
+0 \amp \text{if } z_0\notin \overline{B}_R(0)
+\end{cases}\text{.}
+\end{align*}
+</div>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_winding.html#eg_wind_circles">in-context</a></span>
 </body>
 </html>
