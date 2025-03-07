@@ -182,6 +182,46 @@ This follows from (3) of <xref ref="th_locally_m_to_one"/> and <xref ref="lem_op
 </p>
 </proof>
 </theorem>
+<corollary xml:id="cor_max_min_modulus">
+    <title>Maximum/minimum modulus theorem</title>    
+    <statement>
+        <p>
+            Assume <m>U</m> is open and connected, and that <m>f</m> is analytic and nonconstant on <m>U</m>. 
+            <ol>
+                <li>
+                    <title>Maximum modulus principle</title>
+                    <p>
+                       <m>\abs{f}</m> does not have a local maximum value on <m>U</m>.  
+                    </p>
+                </li>
+                <li>
+                    <title>Minimum modulus principle</title>
+                    <p>
+                        <m>\abs{f}</m> does not have a positive local minimum value on <m>U</m>.
+                    </p>
+                </li>
+                <li>
+                    <title>Complex extreme value theorem</title>
+                    <p>
+                        Let <m>K</m> be a closed and bounded subset of <m>U</m>. The maximum value of <m>\abs{f}</m> is attained only on the boundary <m>\partial K</m> of <m>K</m>. The minimum value of <m>\abs{f}</m> on <m>K</m> is either <m>0</m>, or is attained on the boundary <m>\partial K</m>. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+</corollary>
+<corollary xml:id="cor_schwarzs_lemma">
+    <title>Schwarz's lemma</title>
+    <statement>
+        <p>
+            If <m>f</m> is analytic on <m>B_1(0)</m> and satisfies <m>f(0)=0</m> and <m>\abs{f(z)}\leq 1</m> for all <m>z\in B_1(0)</m>, then <m>\abs{f(z)}\leq \abs{z}</m> for all <m>z\in B_1(0)</m>, and <m>\abs{f'(0)}\leq 1</m>. 
+        </p>
+        <p>
+            Furthermore, if <m>\abs{f(z)}=\abs{z}</m> for some <m>z\in B_1(0)</m>, or if <m>\abs{f'(z_0)}=1</m>, then <m>f(z)=e^{i\alpha}z</m> for some <m>z\in </m>: <ie/>, <m>f</m> is the rotation by <m>\alpha</m> transformation in this case. 
+            </p>
+    </statement>
+</corollary>
+
 <theorem xml:id="th_inv_fun">
 <title>Inverse function theorem</title>
 <statement>
@@ -190,17 +230,24 @@ Assume <m>f</m> is analytic at <m>z_0</m> and that <m>f'(z_0)\ne 0</m>. There is
 <ol>
     <li>
         <p>
-            <m>f</m> is injective on <m>B</m> and <m>U=f(B)</m> is open. 
+           Let <m>V=f(B_r(z_0))</m>. The function <m>f\colon B_r(z_0)\rightarrow V</m> is bijective. 
         </p>
     </li>
     <li>
         <p>
-            The inverse map <m>f^{-1}\colon U\rightarrow B</m> is analytic and satisfies
+            The inverse map <m>f^{-1}\colon V\rightarrow B_r(z_0)</m> is analytic and satisfies
             <md>
-                <mrow>f^{-1}(w) \amp =\frac{1}{2\pi i}\int_{\gamma}\frac{zf(z)}{f(z)-w}\, dz\, \gamma(t)=z_0+re^{it}, t\in [0,2\pi]</mrow>
                 <mrow>(f^{-1})'(w) \amp = \frac{1}{f'(f^{-1}(w))} </mrow>
             </md>
             for all <m>w\in U</m>. 
+        </p>
+    </li>
+    <li>
+        <p>
+            For all <m>w\in V</m> we have 
+            <men>
+             f^{-1}(w)  =\frac{1}{2\pi i}\int_{\gamma}\frac{zf'(z)}{f(z)-w}\, dz, \ \gamma(t)=z_0+re^{it}, t\in [0,2\pi]
+            </men>.
         </p>
     </li>
 </ol>
