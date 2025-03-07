@@ -11,10 +11,56 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="theorem theorem-like"><h3 class="heading">
+<article class="theorem theorem-like"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.25.1</span><span class="period">.</span><span class="space"> </span><span class="title">Rouché’s theorem.</span>
-</h3>
-<div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be analytic functions on the elementary region  <span class="process-math">\(U\text{,}\)</span> and let <span class="process-math">\(\gamma\)</span> be a closed path in <span class="process-math">\(U\)</span>  elementary region, let <span class="process-math">\(\alpha\)</span> be a closed path such that <span class="process-math">\(\chi_\gamma(z)=1\)</span> for all <span class="process-math">\(z\in \Int \alpha\text{.}\)</span> If <span class="process-math">\(\abs{g(z)}&lt; \abs{f(z)}\)</span> for all <span class="process-math">\(z\in \im \gamma\text{,}\)</span> then <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> have the same number of zeros in <span class="process-math">\(\Int \gamma\text{.}\)</span>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para"></div></article></details><span class="incontext"><a class="internal" href="s_rouches.html#th_rouches">in-context</a></span>
+</h4>
+<div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be analytic functions on the elementary region  <span class="process-math">\(U\text{,}\)</span> and let <span class="process-math">\(\gamma\)</span> be a closed path in <span class="process-math">\(U\)</span>  elementary region, let <span class="process-math">\(\alpha\)</span> be a closed path such that <span class="process-math">\(\chi_\gamma(z)=1\)</span> for all <span class="process-math">\(z\in \Int \alpha\text{.}\)</span> If <span class="process-math">\(\abs{g(z)}&lt; \abs{f(z)}\)</span> for all <span class="process-math">\(z\in \im \gamma\text{,}\)</span> then <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> have the same number of zeros in <span class="process-math">\(\Int \gamma\)</span> (counting multiplicity).</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof A.</span></h4></summary><article class="hiddenproof knowl__content"><div class="para">Observe first that the condition <span class="process-math">\(\abs{f(z)}&gt; \abs{g(z)}\)</span> for all <span class="process-math">\(z\in \im \gamma\)</span> implies that <span class="process-math">\(f(z)\ne 0\)</span> and <span class="process-math">\(f(z)+g(z)\ne 0\)</span> for all <span class="process-math">\(z\in \im \gamma\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(Z_f=\{z\in \Int \gamma\colon f(z)=0\}\)</span> and <span class="process-math">\(Z_{f+g}=\{z\in \Int \gamma\colon (f+g)(z)=0\}\text{.}\)</span> We wish to show that</div>
+<div class="displaymath process-math">
+\begin{equation}
+\sum_{z\in Z_f}\ord_f(z)=\sum_{z\in Z_{f+g}}\ord_{f+g}(z)\text{.}\tag{1.96}
+\end{equation}
+</div>
+<div class="para">This is the precise way of stating that the number of zeros of <span class="process-math">\(f\)</span> in <span class="process-math">\(\Int \gamma\)</span> is equal to the number of zeros of <span class="process-math">\(f+g\)</span> in <span class="process-math">\(\Int \gamma\)</span> (counting multipilicty).</div>
+</div>
+<div class="para logical">
+<div class="para">Since <span class="process-math">\(f\)</span> is nonzero on <span class="process-math">\(\im \gamma\)</span> we have <span class="process-math">\(f+g=f(1+g/f)\)</span> on <span class="process-math">\(\im \gamma\text{.}\)</span> Letting <span class="process-math">\(h=1+g/f\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sum_{z\in Z_{f+g}}\ord_{f+g}(z)\amp =\chi_{(f+g)\circ \gamma}(0)  \\
+\amp = \chi_{(fh)\circ \gamma}(0)\\
+\amp =\chi_{(f\circ \gamma) \cdot (h\circ \gamma)}(0) \\
+\amp = \chi_{f\circ\gamma}(0)+\chi_{h\circ \gamma}(0)\\
+\amp = \sum_{z\in Z_{f}}\ord_{f}(z)+\chi_{h\circ \gamma}(0)\text{.}
+\end{align*}
+</div>
+<div class="para">The penultimate equality is an instance of the more general property <span class="process-math">\(\chi_{\psi\cdot\phi}(0)=\chi_{\psi}(0)+\chi_{\phi}(0)\text{,}\)</span> which is essentially a consequence of the product rule for derivatives. (We leave this elementary proof to the reader.)</div>
+</div>
+<div class="para logical">
+<div class="para">Lastly, observe that since <span class="process-math">\(\abs{g(z)}&lt; \abs{f(z)}\)</span> for all <span class="process-math">\(z\in \im \gamma\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_int_ext.html">
+\begin{equation*}
+\im h\circ \gamma\subseteq B_1(1)\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(B_1(1)\)</span> is an elementary region, it follows from <a href="s_winding.html#cor_int_ext" class="xref" data-knowl="./knowl/xref/cor_int_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.24.6: Properties of \Int \gamma and \Ext \gamma">Corollary 1.24.6</a> that <span class="process-math">\(\Int h\circ \gamma\subseteq B_1(1)\text{,}\)</span> and hence that <span class="process-math">\(\chi_{h\circ\gamma}(0)=0\text{.}\)</span> We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_int_ext.html">
+\begin{gather*}
+\sum_{z\in Z_{f+g}}\ord_{f+g}(z)=\sum_{z\in Z_f}\ord_f(z)\text{,}
+\end{gather*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof B (sketch).</span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical">
+<div class="para">As an alternative, somewhat slicker proof, consider the function <span class="process-math">\(h\colon [0,1]\rightarrow \Z\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{align*}
+h(t) \amp = \chi_{(f+tg)\circ \gamma}(0)\\
+\amp = \frac{1}{2\pi i}\int_\gamma \frac{f'+tg'}{f+tg}\, dz\text{.}
+\end{align*}
+</div>
+<div class="para">First show that <span class="process-math">\(h\)</span> is continuous, then conclude that <span class="process-math">\(h\)</span> is constant, since <span class="process-math">\([0,1]\)</span> is connected and <span class="process-math">\(\Z\)</span> is discrete. It follows that <span class="process-math">\(\chi_{f\circ\gamma}=h(0)=h(1)=\chi_{(f+g)\circ \gamma}\text{,}\)</span> as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_rouches.html#th_rouches">in-context</a></span>
 </body>
 </html>

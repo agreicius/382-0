@@ -432,7 +432,13 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_winding.html" class="internal"><span class="codenumber">1.24</span> <span class="title">Winding number</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_rouches.html" class="internal"><span class="codenumber">1.25</span> <span class="title">Rouché’s theorem</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_rouches.html" class="internal"><span class="codenumber">1.25</span> <span class="title">Rouché’s theorem and open mapping theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rouches.html#ss_Rouche" class="internal"><span class="title">Rouché’s theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rouches.html#ss_open_mapping" class="internal"><span class="title">Open mapping theorem</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -676,7 +682,7 @@ f'(z)=m(z-z_0)^{m-1}g(z)+(z-z_0)^mg'(z)
 <div class="para">In this special case, we summarize <a href="s_winding.html#eq_zero_poles" class="xref" data-knowl="./knowl/xref/eq_zero_poles.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.95">(1.95)</a> as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_zero_poles.html">
 \begin{equation*}
-\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)\text{,}
+\frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f \text{ in } \Int \gamma)-\#(\text{poles of } f \text{ in } \Int \gamma)\text{,}
 \end{equation*}
 </div>
 <div class="para">where our count “includes multiplicities”: i.e., we take into account the order of each zero and pole of <span class="process-math">\(f\text{.}\)</span>
