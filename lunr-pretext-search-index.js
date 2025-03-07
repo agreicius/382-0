@@ -3400,7 +3400,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.25",
   "title": "Rouché’s theorem and open mapping theorem",
-  "body": " Rouché's theorem and open mapping theorem   We treat here two far-reaching consequences of our winding number theory: Rouché's theorem and the open mapping theorem (and consequences).    Rouché's theorem   Rouché's theorem   Let and be analytic functions on the elementary region , and let be a closed path in elementary region, let be a closed path such that for all . If for all , then and have the same number of zeros in (counting multiplicity).    Proof A  Observe first that the condition for all implies that and for all .  Let and . We wish to show that . This is the precise way of stating that the number of zeros of in is equal to the number of zeros of in (counting multipilicty).  Since is nonzero on we have on . Letting , we have . The penultimate equality is an instance of the more general property , which is essentially a consequence of the product rule for derivatives. (We leave this elementary proof to the reader.)  Lastly, observe that since for all , we have . Since is an elementary region, it follows from that , and hence that . We conclude that , as desired.    Proof B (sketch)  As an alternative, somewhat slicker proof, consider the function defined as . First show that is continuous, then conclude that is constant, since is connected and is discrete. It follows that , as desired.     Roots of polynomials   Let . Prove the following statements.    has exactly one root in .     has exactly four roots in the open annulus .     has exactly 2 roots in the open annulus .             Open mapping theorem   Open mapping   Let be a complex function with open domain . We say is open if for all open sets , is open: , maps open sets to open sets.      Let be a complex function with open domain . The following statements are equivalent.    is open.    For all open subsets and all there is an open ball such that is open.       We prove both implications separately.  Assume is open, let be an open subset of , and let . Since is open, we have for some . Since is open, is open.  Now assume (2) holds, and let be an open subset of . Given any , we have for some . By condition (2), there is an open ball such that is open. Since , we have shown that for all there is an open set such that . It follows that is open.     Locally -to-one   Let be a nonconstant analytic function with open domain . Fix any open subset and . Let , let , and let be the order of as a zero of the function . There is an open ball satisfying the following properties.   For all , .    For all , the function has distinct zeros in , each of order one. In particular, is an -to- function when restricted to punctured open ball .     is open.            Open mapping theorem   If is nonconstant and analytic on an open connected domain , then is open.    This follows from (3) of and .     Maximum\/minimum modulus theorem   Assume is open and connected, and that is analytic and nonconstant on .   Maximum modulus principle   does not have a local maximum value on .    Minimum modulus principle   does not have a positive local minimum value on .    Complex extreme value theorem  Let be a closed and bounded subset of . The maximum value of is attained only on the boundary of . The minimum value of on is either , or is attained on the boundary .        Schwarz's lemma   If is analytic on and satisfies and for all , then for all , and .  Furthermore, if for some , or if , then for some : , is the rotation by transformation in this case.     Inverse function theorem   Assume is analytic at and that . There is an open ball satisfying the following properties.   Let . The function is bijective.    The inverse map is analytic and satisfies for all .    For all we have .            "
+  "body": " Rouché's theorem and open mapping theorem   We treat here two far-reaching consequences of our winding number theory: Rouché's theorem and the open mapping theorem (and consequences).    Rouché's theorem   Rouché's theorem   Let and be analytic functions on the elementary region , and let be a closed path in elementary region, let be a closed path such that for all . If for all , then and have the same number of zeros in (counting multiplicity).    Proof A  Observe first that the condition for all implies that and for all .  Let and . We wish to show that . This is the precise way of stating that the number of zeros of in is equal to the number of zeros of in (counting multipilicty).  Since is nonzero on we have on . Letting , we have . The penultimate equality is an instance of the more general property , which is essentially a consequence of the product rule for derivatives. (We leave this elementary proof to the reader.)  Lastly, observe that since for all , we have . Since is an elementary region, it follows from that , and hence that . We conclude that , as desired.    Proof B (sketch)  As an alternative, somewhat slicker proof, consider the function defined as . First show that is continuous, then conclude that is constant, since is connected and is discrete. It follows that , as desired.     Roots of polynomials   Let . Prove the following statements.    has exactly one root in .     has exactly four roots in the open annulus .     has exactly 2 roots in the open annulus .             Open mapping theorem   Open mapping   Let be a complex function with open domain . We say is open if for all open sets , is open: , maps open sets to open sets.     Locally -to-one   Let be a nonconstant analytic function with open connected domain . Given any open set and , let , and let be the order of as a zero of the function . There are open balls and such that for all there are exactly elements of that map to , and each of these is a zero of order one of the function .    We pick such         for all ,     for all .        Why can we do this? We will show that there is such an for each condition (a)-(c) separately; taking the minimum of these gives us an that satisfies all conditions at once. It is clear from the openness of that we can find an satisfying (a). If there were no such for which (b) is satisfied, then for each , we could find a such that . Since and is connected and is a limit point of the set of , would imply that for all , contradicting the fact the is nonconstant. Similarly, if there were no such for which (c) is satisfied we could find a sequence of points satisfying , and this would imply for all , contradicting again that is nonconstant.  Having chosen an satisfying (a)-(c), we let , . Since for all , we have . It follows by the extreme value theorem that we can find an such that . Since , the winding number defines a continuous, integer-valued function on . Since is connected, this winding number is constant for all . Since , we see that for all . On the other hand, we have , and by the , the last integral is equal to the number of zeros (counting multiplicity) of the function in . Since for all , it follows easily that for each and satisfying , this is a simple root of the function : , . It follows that for each there are exactly distinct elements satisfying . In particular, note that for each there is some element such that . Thus , as claimed.     Open mapping theorem   If is nonconstant and analytic on an open connected domain , then is open.    Given any open and any , according to there is are open balls and such that . Thus for all we can find an open ball . We conclude that is open.     Maximum\/minimum modulus theorem   Assume is open and connected, and that is analytic and nonconstant on .   Maximum modulus principle   does not have a local maximum value on .    Minimum modulus principle   does not have a positive local minimum value on .    Complex extreme value theorem  Let be a closed and bounded subset of . The maximum value of is attained only on the boundary of . The minimum value of on is either , or is attained on the boundary .        Schwarz's lemma   If is analytic on and satisfies and for all , then for all , and .  Furthermore, if for some , or if , then for some : , is the rotation by transformation in this case.     Inverse function theorem   Assume is analytic at and that . There is an open ball satisfying the following properties.   Let . The function is bijective.    The inverse map is analytic and satisfies for all .    For all we have .            "
 },
 {
   "id": "th_rouches",
@@ -3430,38 +3430,29 @@ var ptx_lunr_docs = [
   "body": " Open mapping   Let be a complex function with open domain . We say is open if for all open sets , is open: , maps open sets to open sets.   "
 },
 {
-  "id": "lem_open_mapping",
-  "level": "2",
-  "url": "s_rouches.html#lem_open_mapping",
-  "type": "Lemma",
-  "number": "1.25.4",
-  "title": "",
-  "body": "  Let be a complex function with open domain . The following statements are equivalent.    is open.    For all open subsets and all there is an open ball such that is open.       We prove both implications separately.  Assume is open, let be an open subset of , and let . Since is open, we have for some . Since is open, is open.  Now assume (2) holds, and let be an open subset of . Given any , we have for some . By condition (2), there is an open ball such that is open. Since , we have shown that for all there is an open set such that . It follows that is open.   "
-},
-{
   "id": "th_locally_m_to_one",
   "level": "2",
   "url": "s_rouches.html#th_locally_m_to_one",
   "type": "Theorem",
-  "number": "1.25.5",
+  "number": "1.25.4",
   "title": "Locally <span class=\"process-math\">\\(m\\)<\/span>-to-one.",
-  "body": " Locally -to-one   Let be a nonconstant analytic function with open domain . Fix any open subset and . Let , let , and let be the order of as a zero of the function . There is an open ball satisfying the following properties.   For all , .    For all , the function has distinct zeros in , each of order one. In particular, is an -to- function when restricted to punctured open ball .     is open.          "
+  "body": " Locally -to-one   Let be a nonconstant analytic function with open connected domain . Given any open set and , let , and let be the order of as a zero of the function . There are open balls and such that for all there are exactly elements of that map to , and each of these is a zero of order one of the function .    We pick such         for all ,     for all .        Why can we do this? We will show that there is such an for each condition (a)-(c) separately; taking the minimum of these gives us an that satisfies all conditions at once. It is clear from the openness of that we can find an satisfying (a). If there were no such for which (b) is satisfied, then for each , we could find a such that . Since and is connected and is a limit point of the set of , would imply that for all , contradicting the fact the is nonconstant. Similarly, if there were no such for which (c) is satisfied we could find a sequence of points satisfying , and this would imply for all , contradicting again that is nonconstant.  Having chosen an satisfying (a)-(c), we let , . Since for all , we have . It follows by the extreme value theorem that we can find an such that . Since , the winding number defines a continuous, integer-valued function on . Since is connected, this winding number is constant for all . Since , we see that for all . On the other hand, we have , and by the , the last integral is equal to the number of zeros (counting multiplicity) of the function in . Since for all , it follows easily that for each and satisfying , this is a simple root of the function : , . It follows that for each there are exactly distinct elements satisfying . In particular, note that for each there is some element such that . Thus , as claimed.   "
 },
 {
   "id": "th_open_mapping",
   "level": "2",
   "url": "s_rouches.html#th_open_mapping",
   "type": "Theorem",
-  "number": "1.25.6",
+  "number": "1.25.5",
   "title": "Open mapping theorem.",
-  "body": " Open mapping theorem   If is nonconstant and analytic on an open connected domain , then is open.    This follows from (3) of and .   "
+  "body": " Open mapping theorem   If is nonconstant and analytic on an open connected domain , then is open.    Given any open and any , according to there is are open balls and such that . Thus for all we can find an open ball . We conclude that is open.   "
 },
 {
   "id": "cor_max_min_modulus",
   "level": "2",
   "url": "s_rouches.html#cor_max_min_modulus",
   "type": "Corollary",
-  "number": "1.25.7",
+  "number": "1.25.6",
   "title": "Maximum\/minimum modulus theorem.",
   "body": " Maximum\/minimum modulus theorem   Assume is open and connected, and that is analytic and nonconstant on .   Maximum modulus principle   does not have a local maximum value on .    Minimum modulus principle   does not have a positive local minimum value on .    Complex extreme value theorem  Let be a closed and bounded subset of . The maximum value of is attained only on the boundary of . The minimum value of on is either , or is attained on the boundary .      "
 },
@@ -3470,7 +3461,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rouches.html#cor_schwarzs_lemma",
   "type": "Corollary",
-  "number": "1.25.8",
+  "number": "1.25.7",
   "title": "Schwarz’s lemma.",
   "body": " Schwarz's lemma   If is analytic on and satisfies and for all , then for all , and .  Furthermore, if for some , or if , then for some : , is the rotation by transformation in this case.   "
 },
@@ -3479,7 +3470,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_rouches.html#th_inv_fun",
   "type": "Theorem",
-  "number": "1.25.9",
+  "number": "1.25.8",
   "title": "Inverse function theorem.",
   "body": " Inverse function theorem   Assume is analytic at and that . There is an open ball satisfying the following properties.   Let . The function is bijective.    The inverse map is analytic and satisfies for all .    For all we have .          "
 },
