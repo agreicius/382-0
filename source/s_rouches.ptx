@@ -109,62 +109,53 @@ Let <m>f</m> be a complex function with open domain <m>D</m>. We say <m>f</m> is
 </p>
 </statement>
 </definition>
-<lemma xml:id="lem_open_mapping">
-    <statement>
-        <p>
-            Let <m>f</m> be a complex function with open domain <m>D</m>. The following statements are equivalent. 
-            <ol>
-                <li>
-                    <p>
-                        <m>f</m> is open.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        For all open subsets <m>U\subseteq D</m> and all <m>z_0\in U</m> there is an open ball <m>B_r(z_0)\subseteq U</m> such that <m>f(B_r(z_0))</m> is open. 
-                    </p>
-                </li>
-            </ol>
-        </p>
-    </statement>
-    <proof>
-        <p>
-            We prove both implications separately. 
-        </p>
-        <p>
-            Assume <m>f</m> is open, let <m>U</m> be an open subset of <m>D</m>, and let <m>z_0\in U</m>. Since <m>U</m> is open, we have <m>B_r(z_0)\subseteq U</m> for some <m>r&gt; 0</m>. Since <m>f</m> is open, <m>f(B_r(z_0))</m> is open.  
-        </p>
-        <p>
-            Now assume (2) holds, and let <m>U</m> be an open subset of <m>D</m>. Given any <m>w_0\in f(U)</m>, we have <m>w_0=f(z_0)</m> for some <m>z_0\in V</m>. By condition (2), there is an open ball <m>B_r(z_0)\subseteq U</m> such that <m>V=f(B_r(z_0))</m> is open. Since <m>w_0\in f(B_r(z_0))\subseteq f(U)</m>, we have shown that for all <m>w_0\in f(U)</m> there is an open set <m>V</m> such that <m>w_0\in V\subseteq f(U)</m>. It follows that <m>f(U)</m> is open. 
-        </p>
-    </proof>
-</lemma>
+
 <theorem xml:id="th_locally_m_to_one">
 <title>Locally <m>m</m>-to-one</title>
 <statement>
 <p>
-Let <m>f</m> be a nonconstant analytic function with open domain <m>D</m>. Fix any open subset <m>U\subseteq D</m> and <m>z_0\in U</m>. Let <m>w_0=f(z_0)</m>, let <m>h(z)=f(z)-w_0</m>, and let <m>m</m> be the order of <m>z_0</m> as a zero of the function <m>f(z)-w_0</m>. There is an open ball <m>B_r(z_0)\subseteq U</m> satisfying the following properties. 
- <ol>
-                <li>
-                    <p>
-                        For all <m>z\in B_r(z_0)-\{z_0\}</m>, <m>f(z)\ne w_0</m>. 
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        For all <m>w\ne w_0\in f(B_r(z_0))</m>, the function <m>h(z)=f(z)-w</m> has <m>m</m> distinct zeros in <m>B_r(z_0)</m>, each of order one. In particular, <m>f</m> is an <m>m</m>-to-<m>1</m> function when restricted to punctured open ball <m>B_r(z_0)-\{z_0\}</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <m>f(B_r(z_0))</m> is open. 
-                    </p>
-                </li>
-            </ol>
+Let <m>f</m> be a nonconstant analytic function with open connected domain <m>D</m>. Given any open set <m>U\subseteq D</m> and <m>z_0\in U</m>, let <m>w_0=f(z_0)</m>, and let <m>m</m> be the order of <m>z_0</m> as a zero of the function <m>f(z)-w_0</m>. There are open balls <m>B_r(z_0)\subseteq U</m> and <m>B_s(w_0)\subseteq f(U)</m> such that for all <m>w\ne w_0\in B_s(w_0)</m> there are exactly <m>m</m> elements of <m>B_r(z_0)</m> that map to <m>w</m>, and each of these is a zero of order one of the function <m>f(z)-w</m>. 
 </p>
 </statement>
 <proof>
 <p>
+    We pick <m>r&gt;0</m> such
+    <ol marker="(a)">
+        <li>
+            <p>
+                <m>\overline{B}_r(z_0)\subseteq U</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>f(z)\ne w_0</m> for all <m>z\ne z_0</m>,
+            </p>
+        </li>
+        <li>
+            <p>
+               <m>f'(z)\ne 0</m> for all <m>z\ne z_0</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>B</m>
+            </p>
+        </li>
+    </ol>
+     Why can we do this? We will show that there is such an <m>r</m> for each condition (a)-(c) separately; taking the minimum of these gives us an <m>r</m> that satisfies all conditions at once. It is clear from the openness of <m>U</m> that we can find an <m>r</m> satisfying (a). If there were no such <m>r</m> for which (b) is satisfied, then for each <m>r_n=1/n</m>, we could find a <m>z_n\in B_{1/n}(z_0)</m> such that <m>f(z_n)=f(z_0)=w_0</m>. Since and <m>D</m> is connected and <m>z_0</m> is a limit point of the set of <m>z_n</m>, <xref ref="cor_limit_points"/> would imply that <m>f(z)=f(z_0)=w_0</m> for all <m>z\in D</m>, contradicting the fact the <m>f</m> is nonconstant. Similarly, if there were no such <m>r</m> for which (c) is satisfied we could find a sequence of points <m>z_n\to z_0</m> satisfying <m>f'(z_n)=0</m>, and this would imply <m>f'(z)=0</m> for all <m>z\in D</m>, contradicting again that <m>f</m> is nonconstant.  
+</p>
+<p>
+    Having chosen an <m>r&gt; 0</m> satisfying (a)-(c), we let <m>\gamma(t)=z_0+e^{it}</m>, <m>t\in [0,2\pi]</m>. Since <m>f(z)\ne w_0</m> for all <m>z\in B_r(z_0)</m>, we have <m>w_0\notin f\circ \gamma</m>. It follows by the extreme value theorem that we can find an <m>s&gt; 0</m> such that <m>B_s(w_0)\cap \im f\circ \gamma=\emptyset</m>. Since <m>w\notin \im f\circ \gamma</m>, the winding number <m>\chi_{f\circ\gamma}(w)</m> defines a continuous, integer-valued function on <m>B_s(w_0)</m>. Since <m>B_s(w_0)</m> is connected, this winding number <m>\chi_{f\circ\gamma}(w)</m> is constant for all  <m>w\in B_s(w_0)</m>. Since <m>\chi_{f\circ\gamma}(w_0)=\ord_{f-w_0}(z_0)=m</m>, we see that <m>\chi_{f\circ \gamma}(w)=m</m> for all <m>w\in B_s(w_0)</m>. On the other hand, we have 
+    <md>
+        <mrow>m=\chi_{f\circ\gamma}(w)\amp =\frac{1}{2\pi i}\int_{f\circ \gamma}\frac{1}{z-w}\, dz</mrow>
+        <mrow> \amp = \int_{0}^{2\pi}\frac{f'(\gamma(t))\gamma'(t)}{f(\gamma(t))-w}\, dt</mrow>
+        <mrow> \amp =\frac{1}{2\pi i}\int_\gamma \frac{(f(z)-w)'}{f(z)-w}\, dz</mrow>
+    </md>,
+    and by the <xref ref="th_arg_princ"/>, the last integral is equal to the number of zeros (counting multiplicity) of the function <m>f(z)-w</m> in <m>\Int \gamma=B_r(z_0)</m>. Since <m>f'(z)\ne 0</m> for all <m>z\ne z_0</m>, it follows easily that for each <m>w\ne w_0\in B_s(w_0)</m> and <m>z\in B_r(z_0)</m> satisfying <m>f(z)=w</m>, this <m>z</m> is a <em>simple</em> root of the function <m>f-w</m>: <ie/>, <m>\ord_{f-w}(z)=1</m>. It follows that for each <m>w\ne w_0\in B_s(w)</m> there are exactly <m>m</m> distinct elements <m>z\in B_r(z_0)</m> satisfying <m>f(z)=w</m>. In particular, note that for each <m>w\in B_s(z_0)</m> there is <em>some</em> element <m>z\in B_r(z_0)</m> such that <m>f(z)=w</m>. Thus 
+    <me>
+        B_s(w_0)\subseteq f(B_r(z_0))
+    </me>,
+    as claimed. 
 </p>
 </proof>
 </theorem>
@@ -178,7 +169,12 @@ If <m>f</m> is nonconstant and analytic on an open connected domain <m>D</m>, th
 </statement>
 <proof>
 <p>
-This follows from (3) of <xref ref="th_locally_m_to_one"/> and <xref ref="lem_open_mapping"/>. 
+Given any open <m>U\subseteq D</m> and any <m>w_0=f(z_0)\in f(U)</m>, according to <xref ref="th_locally_m_to_one"/> there is are open balls <m>B_r(z_0)\subseteq U</m> and <m>B_s(w_0)</m> such that 
+<me>
+    B_s(f(z_0))\subseteq f(B_r(z_0))\subseteq f(U)
+</me>.
+Thus for all <m>w_0\in f(U)</m> we can find an open ball <m>B_s(w_0)\subseteq f(U)</m>. We conclude that <m>f(U)</m> is open. 
+
 </p>
 </proof>
 </theorem>
