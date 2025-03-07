@@ -256,7 +256,7 @@
             </men>
             In this special case, we summarize <xref ref="eq_zero_poles"/> as 
             <me>
-              \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f)-\#(\text{poles of } f)
+              \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\, dz=\#(\text{zeros of } f \text{ in } \Int \gamma)-\#(\text{poles of } f \text{ in } \Int \gamma)
             </me>,
             where our count <q>includes multiplicities</q>: <ie/>, we take into account the order of each zero and pole of <m>f</m>. 
             </p>

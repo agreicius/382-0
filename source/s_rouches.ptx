@@ -1,21 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="s_rouches" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Rouché's theorem</title>
-
-
-
-
+    <title>Rouché's theorem and open mapping theorem</title>
+<introduction>
+    <p>
+        We treat here two far-reaching consequences of our winding number theory: Rouché's theorem and the open mapping theorem (and consequences).
+    </p>
+</introduction>
+<subsection xml:id="ss_Rouche">
+<title>Rouché's theorem</title>
 <theorem xml:id="th_rouches">
 <title>Rouché's theorem</title>
 <statement>
 <p>
-Let <m>f</m> and <m>g</m> be analytic functions on the elementary region  <m>U</m>, and let <m>\gamma</m> be a closed path in <m>U</m>  elementary region, let <m>\alpha</m> be a closed path such that <m>\chi_\gamma(z)=1</m> for all <m>z\in \Int \alpha</m>. If <m>\abs{g(z)}&lt; \abs{f(z)}</m> for all <m>z\in \im \gamma</m>, then <m>f</m> and <m>g</m> have the same number of zeros in <m>\Int \gamma</m>. 
+Let <m>f</m> and <m>g</m> be analytic functions on the elementary region  <m>U</m>, and let <m>\gamma</m> be a closed path in <m>U</m>  elementary region, let <m>\alpha</m> be a closed path such that <m>\chi_\gamma(z)=1</m> for all <m>z\in \Int \alpha</m>. If <m>\abs{g(z)}&lt; \abs{f(z)}</m> for all <m>z\in \im \gamma</m>, then <m>f</m> and <m>g</m> have the same number of zeros in <m>\Int \gamma</m> (counting multiplicity). 
 </p>
 </statement>
 <proof>
+    <title>Proof A</title>
 <p>
+    Observe first that the condition <m>\abs{f(z)}&gt; \abs{g(z)}</m> for all <m>z\in \im \gamma</m> implies that <m>f(z)\ne 0</m> and <m>f(z)+g(z)\ne 0</m> for all <m>z\in \im \gamma</m>. 
 </p>
+<p>
+    Let <m>Z_f=\{z\in \Int \gamma\colon f(z)=0\}</m> and <m>Z_{f+g}=\{z\in \Int \gamma\colon (f+g)(z)=0\}</m>. We wish to show that 
+    <men xml:id="eq_zeros_f_fplusg">
+        \sum_{z\in Z_f}\ord_f(z)=\sum_{z\in Z_{f+g}}\ord_{f+g}(z)
+    </men>.
+    This is the precise way of stating that the number of zeros of <m>f</m> in <m>\Int \gamma</m> is equal to the number of zeros of <m>f+g</m> in <m>\Int \gamma</m> (counting multipilicty). 
+    </p>
+    <p>    
+    Since <m>f</m> is nonzero on <m>\im \gamma</m> we have <m>f+g=f(1+g/f)</m> on <m>\im \gamma</m>. Letting <m>h=1+g/f</m>, we have 
+    <md>
+        <mrow>\sum_{z\in Z_{f+g}}\ord_{f+g}(z)\amp =\chi_{(f+g)\circ \gamma}(0)  </mrow>
+        <mrow> \amp = \chi_{(fh)\circ \gamma}(0)</mrow>
+        <mrow> \amp =\chi_{(f\circ \gamma) \cdot (h\circ \gamma)}(0) </mrow>
+        <mrow> \amp = \chi_{f\circ\gamma}(0)+\chi_{h\circ \gamma}(0)</mrow>
+        <mrow> \amp = \sum_{z\in Z_{f}}\ord_{f}(z)+\chi_{h\circ \gamma}(0)</mrow>
+    </md>.
+    The penultimate equality is an instance of the more general property <m>\chi_{\psi\cdot\phi}(0)=\chi_{\psi}(0)+\chi_{\phi}(0)</m>, which is essentially a consequence of the product rule for derivatives. (We leave this elementary proof to the reader.) 
+</p>
+<p>
+    Lastly, observe that since <m>\abs{g(z)}&lt; \abs{f(z)}</m> for all <m>z\in \im \gamma</m>, we have 
+    <me>
+        \im h\circ \gamma\subseteq B_1(1)
+    </me>.
+    Since <m>B_1(1)</m> is an elementary region, it follows from <xref ref="cor_int_ext"/> that <m>\Int h\circ \gamma\subseteq B_1(1)</m>, and hence that <m>\chi_{h\circ\gamma}(0)=0</m>. We conclude that 
+    <md>
+        <mrow>\sum_{z\in Z_{f+g}}\ord_{f+g}(z)=\sum_{z\in Z_f}\ord_f(z)</mrow>
+    </md>,
+    as desired.
+    
+</p>
+</proof>
+<proof>
+    <title>Proof B (sketch)</title>
+    <p>
+        As an alternative, somewhat slicker proof, consider the function <m>h\colon [0,1]\rightarrow \Z</m> defined as 
+        <md>
+            <mrow>h(t) \amp = \chi_{(f+tg)\circ \gamma}(0)</mrow>
+            <mrow> \amp = \frac{1}{2\pi i}\int_\gamma \frac{f'+tg'}{f+tg}\, dz</mrow>
+        </md>.
+        First show that <m>h</m> is continuous, then conclude that <m>h</m> is constant, since <m>[0,1]</m> is connected and <m>\Z</m> is discrete. It follows that <m>\chi_{f\circ\gamma}=h(0)=h(1)=\chi_{(f+g)\circ \gamma}</m>, as desired. 
+    </p>
 </proof>
 </theorem>
 <example xml:id="eg_rouches_thm">
@@ -49,6 +95,93 @@ Let <m>p(x)=x^7+6x^5+3x^2-14x+1</m>. Prove the following statements.
 </p>
 </solution>
 </example>
+
+</subsection>
+<subsection xml:id="ss_open_mapping">
+<title>Open mapping theorem</title>
+
+
+<definition xml:id="d_open_map">
+<title>Open mapping</title>
+<statement>
+<p>
+Let <m>f</m> be a complex function with open domain <m>D</m>. We say <m>f</m> is <term>open</term> if for all open sets <m>U\subseteq D</m>, <m>f(U)</m> is open: <ie/>, <m>f</m> maps open sets to open sets. 
+</p>
+</statement>
+</definition>
+<lemma xml:id="lem_open_mapping">
+    <statement>
+        <p>
+            Let <m>f</m> be a complex function with open domain <m>D</m>. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>f</m> is open.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        For all open subsets <m>U\subseteq D</m> and all <m>z_0\in U</m> there is an open ball <m>B_r(z_0)\subseteq U</m> such that <m>f(B_r(z_0))</m> is open. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            We prove both implications separately. 
+        </p>
+        <p>
+            Assume <m>f</m> is open, let <m>U</m> be an open subset of <m>D</m>, and let <m>z_0\in U</m>. Since <m>U</m> is open, we have <m>B_r(z_0)\subseteq U</m> for some <m>r&gt; 0</m>. Since <m>f</m> is open, <m>f(B_r(z_0))</m> is open.  
+        </p>
+        <p>
+            Now assume (2) holds, and let <m>U</m> be an open subset of <m>D</m>. Given any <m>w_0\in f(U)</m>, we have <m>w_0=f(z_0)</m> for some <m>z_0\in V</m>. By condition (2), there is an open ball <m>B_r(z_0)\subseteq U</m> such that <m>V=f(B_r(z_0))</m> is open. Since <m>w_0\in f(B_r(z_0))\subseteq f(U)</m>, we have shown that for all <m>w_0\in f(U)</m> there is an open set <m>V</m> such that <m>w_0\in V\subseteq f(U)</m>. It follows that <m>f(U)</m> is open. 
+        </p>
+    </proof>
+</lemma>
+<theorem xml:id="th_locally_m_to_one">
+<title>Locally <m>m</m>-to-one</title>
+<statement>
+<p>
+Let <m>f</m> be a nonconstant analytic function with open domain <m>D</m>. Fix any open subset <m>U\subseteq D</m> and <m>z_0\in U</m>. Let <m>w_0=f(z_0)</m>, let <m>h(z)=f(z)-w_0</m>, and let <m>m</m> be the order of <m>z_0</m> as a zero of the function <m>f(z)-w_0</m>. There is an open ball <m>B_r(z_0)\subseteq U</m> satisfying the following properties. 
+ <ol>
+                <li>
+                    <p>
+                        For all <m>z\in B_r(z_0)-\{z_0\}</m>, <m>f(z)\ne w_0</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        For all <m>w\ne w_0\in f(B_r(z_0))</m>, the function <m>h(z)=f(z)-w</m> has <m>m</m> distinct zeros in <m>B_r(z_0)</m>, each of order one. In particular, <m>f</m> is an <m>m</m>-to-<m>1</m> function when restricted to punctured open ball <m>B_r(z_0)-\{z_0\}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>f(B_r(z_0))</m> is open. 
+                    </p>
+                </li>
+            </ol>
+</p>
+</statement>
+<proof>
+<p>
+</p>
+</proof>
+</theorem>
+
+<theorem xml:id="th_open_mapping">
+<title>Open mapping theorem</title>
+<statement>
+<p>
+If <m>f</m> is nonconstant and analytic on an open connected domain <m>D</m>, then <m>f</m> is open. 
+</p>
+</statement>
+<proof>
+<p>
+This follows from (3) of <xref ref="th_locally_m_to_one"/> and <xref ref="lem_open_mapping"/>. 
+</p>
+</proof>
+</theorem>
 <theorem xml:id="th_inv_fun">
 <title>Inverse function theorem</title>
 <statement>
@@ -78,29 +211,8 @@ Assume <m>f</m> is analytic at <m>z_0</m> and that <m>f'(z_0)\ne 0</m>. There is
 </p>
 </proof>
 </theorem>
-<definition xml:id="d_open_map">
-<title>Open function</title>
-<statement>
-<p>
-Let <m>U</m> be an open subset of <m>\C</m>. A complex function <m>f\colon U\rightarrow \C</m> is <term>open</term> if for all open subsets <m>V\subseteq U</m>, <m>f(V)</m> is open. 
-</p>
-</statement>
-</definition>
-<theorem xml:id="th_open_mapping">
-<title>Open mapping theorem</title>
-<statement>
-<p>
-If <m>f</m> is analytic, then <m>f</m> is open.  
-</p>
-</statement>
-<proof>
-<p>
-</p>
-</proof>
-</theorem>
 
 
-
-    
+    </subsection>
 
 </section>
