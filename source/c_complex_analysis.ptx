@@ -25,4 +25,6 @@
      <xi:include href="s_improper_int.ptx" />
      <xi:include href="s_winding.ptx" />
      <xi:include href="s_rouches.ptx" />
+     <xi:include href="s_open_map.ptx" />
+     <xi:include href="s_conformal.ptx" />
 </chapter>

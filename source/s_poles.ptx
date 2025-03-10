@@ -92,7 +92,7 @@
                     <mrow>\frac{\sin z}{z} \amp =\frac{1}{z}(z-z^3/3!+z^5/5!-\cdots)</mrow>
                     <mrow> \amp = 1-\frac{1}{6}z^2+\frac{1}{120}z^4-\cdots </mrow>
                 </md>.
-                We conclude that <m>\ord_f 0=1</m>, and hence that <m>0</m> is a removable singularity. 
+                We conclude that <m>\ord_f 0=0</m>, and hence that <m>0</m> is a removable singularity. 
             </p>
             <p>
                 The function <m>g(z)=1-\frac{1}{6}z^2+\frac{1}{120}-\cdots</m> is analytic on <m>\C</m> and satisfies 
@@ -273,7 +273,7 @@
                 Assume <m>z_0</m> is a pole of <m>f</m> of order <m>m</m>, and write 
                 <m>f(z)=\frac{g(z)}{(z-z_0)^m}</m> where <m>g</m> is analytic at <m>z_0</m> and <m>g(z_0)\ne 0</m>. We have 
                 <men xml:id="eq_res_at_pole">
-                    \res_f z_0=\frac{g^{m-1}(z_0)}{(m-1)!}=\lim\limits_{z\to z_0}\frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{n-1}}\left(f(z)(z-z_0)^m\right)
+                    \res_f z_0=\frac{g^{m-1}(z_0)}{(m-1)!}=\lim\limits_{z\to z_0}\frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{m-1}}\left(f(z)(z-z_0)^m\right)
                 </men>.
             </p>
         </statement>

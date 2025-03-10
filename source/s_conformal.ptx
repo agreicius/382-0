@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_conformal" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Conformal maps</title>
+
+    <definition xml:id="d_jacobian">
+    <title>Jacobian matrix of differentiable function</title>
+    <statement>
+    <p>
+    Let <m>U</m> be an open subset of <m>\R^2</m>, let <m>f\colon U\rightarrow \R^2</m> be a differentiable function. Writing <m>f(x,y)=(u(x,y), v(x,y))</m>, for all <m>P=(x_0,y_0)\in U</m>, we define the <term>Jacobian matrix</term> <m>J_f(P)</m> of <m>f</m> at <m>P</m> to be the matrix 
+    <me>
+        J_f(P)=\begin{bmatrix}
+        u_x(x_0,y_0)\amp u_y(x_0,y_0) \\
+        v_x(x_0,y_0)\amp v_y(x_0,y_0)
+        \end{bmatrix}
+    </me>.
+    </p>
+    </statement>
+    </definition>
+    <definition xml:id="d_conformal">
+    <title>Conformal map</title>
+    <statement>
+    <p>
+        A <m>2\times 2</m> matrix <m>A</m> with real coefficients is <term>conformal</term> if its associated linear transformation <m>T_A\colon \R^2\rightarrow \R^2</m> preserves the oriented angle between any two nonzero vectors. 
+    </p>
+    <p>
+    Let <m>D</m> be an open subset of <m>\R^2</m>. A real differentiable function <m>f\colon D\rightarrow \R^2</m> is <term>conformal</term> at a point <m>P=(x_0,y_0)\in D</m> if the Jacobian matrix <m>J_f(P)</m> is conformal. Given an open set <m>U\subseteq D</m>, we say <m>f</m> is conformal on <m>U</m> if it is conformal at all points in <m>U</m>, and we say <m>f</m> is conformal if it is conformal on its entire domain.   
+    </p>
+    </statement>
+    </definition>
+    <remark>
+        <title>Oriented angle</title>
+        <p>
+            Mark well the <em>oriented angle</em> detail in this definition. The linear transformation <m>T\colon \R^2\rightarrow \R^2</m> defined as <m>T(x,y)=(x,-y)</m> preserves angles, but not oriented angles: the oriented angle from <m>\boldv=(1,0)</m> to <m>\boldw=(0,1)</m> is <m>\pi/2</m>, but the oriented angle from <m>T(\boldv)=(1,0)</m> and <m>T(0,1)=(0,-1)</m> is <m>-\pi/2</m>. 
+        </p>
+    </remark>
+    <remark xml:base="rm_conformal_geom">
+        <title>Geometric interpretation</title>
+        <p>
+            The chain rule allows us to give a more geometric interpretation of conformality. Assume <m>f</m> is conformal at the point <m>P=(x_0,y_0)</m>, and suppose <m>\phi</m> and <m>\psi</m> are two smooth paths defined on an interval <m>[-a,a]</m> satisfying 
+            <md>
+                <mrow>\phi(0) \amp = \psi(0)=(x_0,y_0)</mrow>
+                <mrow>\phi'(0) \amp \ne \boldzero, \psi'(0)\ne \boldzero</mrow>
+            </md>.
+            Composing <m>\phi</m> and <m>\psi</m> yields smooth paths <m>f\circ \phi</m> and <m>f\circ \psi</m> intersecting at 
+            <me>
+                f(P)=f\circ\phi(0)=f\circ\psi(0)
+            </me>.
+            Using the multivariable chain rule, the tangent vectors of the two curves at <m>f(P)</m> are given as 
+            <md>
+                <mrow>(f\circ\phi)'(0) \amp = J_f(P)\phi'(0) </mrow>
+                <mrow>(f\circ \psi)'(0) \amp = J_f(P)\psi'(0) </mrow>
+            </md>.
+            Since <m>J_f(P)</m> is a conformal matrix, we conclude that the oriented angle between the tangent vectors of the paths <m>\phi</m> and <m>\psi</m> at <m>P</m> is equal to the oriented angle between the tangent vectors of the images of these paths under <m>f</m> at <m>f(P)</m>. 
+        </p>
+       
+    </remark>
+    <remark>
+    <title>Conformal matrices</title>
+    <p>
+    Let <m>A</m> be a <m>2\times 2</m> matrix with real coefficients. The following statements can be shown to be equivalent using some elementary linear algebra. 
+    <ol>
+        <li>
+            <p>
+                <m>A</m> is conformal.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>A=cQ</m>, for some positive <m>c\in \R</m> and orthogonal matrix <m>Q</m> of determinant 1. (Recall that <m>Q</m> is orthogonal if <m>Q^TQ=I</m>.) 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>A=\begin{bmatrix}
+                a\amp -b \\
+                b\amp a
+                \end{bmatrix}</m> for some <m>a,b\in \R</m>, <m>(a,b)\ne (0,0)</m>. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </remark>
+    <theorem xml:id="th_conformal">
+    <title>Conformal maps</title>
+    <statement>
+    <p>
+    Let <m>D</m> be an open subset of <m>\R^2</m>, and let <m>f\colon D\rightarrow \R^2</m> be a real differentiable map. Making our usual identification of <m>\C</m> with <m>\R^2</m>, we treat <m>f</m> as a complex function. 
+    <ol>
+        <li>
+            <p>
+                For all <m>z_0\in D</m>, <m>f</m> is conformal at <m>z_0</m> if and only if <m>f</m> is analytic at <m>z_0</m> and <m>f'(z_0)\ne 0</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Given an open subset <m>U\subseteq D</m>, <m>f</m> is conformal on <m>U</m> if and only if <m>f</m> is analytic on <m>U</m> and <m>f'(z)\ne 0</m> for all <m>z\in U</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>f</m> is conformal and injective on <m>D</m> if and only if <m>f</m> is biholomorphic. 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <proof>
+    <p>
+    </p>
+    </proof>
+    </theorem>
+    <example xml:id="eg_conformal_poly">
+    <title>Conformal map: squaring function</title>
+    <statement>
+    <p>
+    Let <m>f(z)=z^2</m>,
+    <ol>
+        <li>
+            <p>
+                Show that <m>f</m> is conformal on <m>\C-\{0\}</m>
+            </p>
+        </li>
+        <li>
+            <p>
+                Illustrate geometrically that <m>f</m> is not conformal at <m>z_0=0</m>. What does the this transformation do to the angles between tangent vectors there? 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    
+    </p>
+    </solution>
+    </example>
+    <definition xml:id="d_mobius_trans">
+    <title>Möbius transformation</title>
+    <statement>
+    <p>
+    Let <m>a,b,c,d\in \C</m> be complex constants for which the matrix <m>A=\begin{bmatrix}
+    a\amp b\\ c\amp d
+    \end{bmatrix}</m> satisfies <m>\det A=ad-bc\ne 0</m>. The <term>Möbius transformation</term> (or <term>fractional linear transformation</term>)  associated to <m>A</m> is the function 
+    <me>
+        f_A\colon \C-\{z\colon cz+d=0\}\rightarrow \C
+    </me>
+defined as     
+    <men xml:id="eq_mobius">
+    f_A(z)=\frac{az+b}{cz+d}
+    </men>.
+    </p>
+    </statement>
+    </definition>
+    <p>
+        It is clear that a Möbius transformation <m>f_A</m> as in <xref ref="eq_mobius"/> has <em>at most</em> one isolated singularity at <m>z_0=-d/c</m> (assuming <m>c\ne 0</m>), where <m>f_A</m> has a simple pole, and in this case <m>\lim\limits_{z\to z_0}f_A(z)=\infty</m>. Furthermore, a straightforward computation reveals that
+        <me>
+        \lim\limits_{z\to \infty}f(z)=\begin{cases}
+        \frac{a}{c}\amp \text{if } c\ne 0 \\
+        \infty \amp \text{if } c=0
+        \end{cases}
+        </me>.
+        Let <m>C^*=\C\cup \{\infty\}</m>, the Riemann sphere.  The observations allow us to extend <m>f_A</m> to a function <m>f_A\colon \C^*\rightarrow \C^*</m> by defining
+        <me>
+            f_A(z_0)=\lim\limits_{z\to z_0}f_A(z)
+        </me>.
+        Note that for all <m>z_0\in \C-\{z\colon cz+d=0\}</m> this formula agrees with <m>\frac{az_0+b}{cz_0+d}</m> since the original function <m>f_A</m> is continuous there.
+    </p>
+    <p>
+        As the theorem below illustrates, this more expanded setting gives rise to a tidy conceptual understanding of Möbius transformations. Before we get there, we need to generalize the notion of a circle to reflect the geometry of the Riemann sphere. 
+    </p>
+    <definition xml:id="d_generalized_circle">
+    <title>Generalized circle</title>
+    <statement>
+    <p>
+    We call any line or circle in <m>\C</m> a <term>generalized circle</term>. Furthermore we say that a line <m>\ell</m> is a <term>generalized circle containing <m>\infty</m></term>. 
+    </p>
+    </statement>
+    </definition>
+    <remark>
+    <title>Generalized circle</title>
+    <p>
+    Let <m>S^2=\{(x,y,z)\in \R^3\colon x^2+y^2+z^2=1\}</m>, and let <m>\phi\colon S^2\rightarrow \C*=\C\cup \{\infty\}</m> be the stereographic projection. (See <xref ref="d_stereo_proj"/>.) By a circle in <m>S^2</m> we mean any latitude line with respect to a chosen pole <m>P=(a,b,c)\in S^2</m>. (Such a latitude line can be described as the intersection of <m>S^2</m> with a plane of the form <m>ax+by+cz=d</m> for some <m>d\in \R</m>.) It can be shown that the image under <m>\phi</m> of any circle in <m>C\subseteq S^2</m> is either a circle or line, and that <m>\phi(C)</m> is a line if and only if <m>C</m> contains <m>N=(0,0,1)</m>.  
+    </p>
+    <p>
+        In other words, generalized circles in <m>\C</m> correspond precisely to circles in <m>S^2</m> under the stereographic projection; and in particular, lines in <m>\C</m> correspond to circles containing <m>N=(0,0,1)</m> (which corresponds to <m>\infty</m> under <m>\phi</m>). This explains where this terminology comes from. 
+    </p>
+    </remark>
+    
+    
+    
+    <theorem xml:id="th_mobius_trans">
+    <title>Möbius transformations</title>
+    <statement>
+    <p>
+    Let <m>A=\begin{bmatrix}
+    a\amp b\\ c\amp d
+    \end{bmatrix}</m> and <m>B=\begin{bmatrix}
+    e\amp f\\ g\amp h
+    \end{bmatrix}</m> be invertible complex matrices: <ie/>, <m>\det A\ne 0</m> and <m>\det B\ne 0</m>. 
+    <ol>
+        <li>
+           <p>
+            <m>f_A(z)=\frac{az+b}{cz+d}</m> is a conformal map on <m>\C-\{z\colon cz+d=0\}</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                We have <m>f_A\circ f_B=f_{AB}</m>, where <m>AB</m> is the matrix product. In other words, letting 
+                <me>
+                    C=AB=\begin{bmatrix}
+                    ae+bg \amp af+bh \\ ce+dg \amp cf+dh
+                    \end{bmatrix}
+                </me>,
+                we have 
+                <me>
+                    f_A(f_B(z))=f_C(z)=\frac{(ae+bg)z+(af+bh)}{(ce+dg)z+(cd+dh)}
+                </me>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>f_A</m> is biholomorphic on <m>\C-\{z\in \C\colon cz+d=0\}</m> and its inverse is <m>f_{A^{-1}}</m>, where 
+                <me>A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}
+                d\amp -b\\ -c\amp a
+                \end{bmatrix}</me>.
+            </p>
+        </li>
+        <li>
+            <p>
+                Every Möbius transformation can be expressed as a composition of a <em>dilation</em> (<m>z\mapsto az</m>, <m>a\ne 0\in \C</m>), a <em>translation</em> (<m>z\mapsto z+b</m>, <m>b\in \C</m>), and an <em>inversion</em> (<m>z\mapsto 1/z</m>). 
+            </p>
+        </li>
+        <li>
+            <p>
+                A Möbius transformation maps generalized circles of <m>\C</m> to generalized circles of <m>\C</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Given any distinct points <m>z_1,z_2,z_3\in \C^*</m> and distinct points <m>w_1,w_2,w_2\in \C^*</m>, there is a unique Möbius transformation <m>f</m> satisfying 
+                <me>
+                    f(z_j)=w_j, j\in \{1,2,3\}
+                </me>.
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+   
+    </theorem>
+    <p>
+        According to <m>(6)</m> of <xref ref="th_mobius_trans"/>, once we know the value of a Möbius transformation <m>f</m> at three distinct inputs <m>z_1,z_2,z_3</m>, we can determine <m>f(z)</m> for any <m>z\in \C^*</m>. This can often be done in a pleasing geometric manner using the following properties also enjoyed by <m>f</m>. 
+        <ol>
+            <li>
+                <p>
+                    <m>f</m> maps generalized circles to generalized circles. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>f</m> is continuous. As such given any connected region <m>R</m>, <m>f(R)</m> is connected. Furthermore because <m>f</m> has a continuous inverse, it follows that <m>f</m> maps the boundary of <m>R</m> to the boundary of <m>f(R)</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    <m>f</m> is conformal. Thus if two paths intersect at a point <m>z_0</m> with oriented angle <m>\theta</m>, then their images under <m>f</m> intersection at <m>f(z_0)</m> with the same angle.  
+                </p>
+            </li>
+        </ol> 
+        The next example illustrates how to get as much as possible out of these properties. 
+    </p>
+    <example xml:id="eg_mobius">
+    <title>Möbius transformation</title>
+    <statement>
+    <p>
+    Let <m>g\colon \C^*\rightarrow \C^*</m> be the unique Möbius transformation satisfying 
+    <md>
+        <mrow>g(0) \amp = -1 \amp g(i)\amp =0 \amp g(\infty)\amp = 1</mrow>
+    </md>.
+    <ol>
+        <li>
+            <p>
+                Find a complex matrix <m>A</m> such that <m>g=f_A</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Explicitly express <m>g</m> as a composition of dilations, translations, and inversions. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Find a complex matrix <m>B</m> such that <m>g^{-1}=f_B</m>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                For each region (or curve) below, determine its image under <m>f</m>. 
+                <ol cols="2">
+                    <li>
+                        <p>
+                            The imaginary axis.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The right half-plane <m>\{z\in \C\colon \Re z &gt; 0\}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The real axis. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The upper half-plane <m>\{z\in\C\colon \Im z&gt; 0\}</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The line <m>\Im z=i</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                Writing <m>f(z)=(az+b)/(cz+d)</m>, since <m>f(0)=-1</m> and <m>f(\infty)=1</m>,  we see that <m>b=-d</m> and <m>a=c</m>, Thus <m>f(z)=(az+b)/(az-b)</m>.  Next since <m>a(-b)-ab=-2ab\ne 0</m>, we must have <m>a\ne 0</m> and <m>b\ne 0</m>. Lastly, since  <m>f(i)=0</m>, we have <m>ai=-b</m>, or <m>a=ib</m>. Thus we can choose 
+                <men xml:id="eq_mobius_matrix">
+                    A=\begin{bmatrix}
+                    ib\amp b\\ 
+                    ib\amp -b
+                    \end{bmatrix}
+                </men>
+                for any <m>b\ne 0\in \C</m>. In particular, we can set <m>b=-i</m>, in which case 
+                <me>
+                    A=\begin{bmatrix}
+                    1\amp -i\\
+                    1\amp i
+                    \end{bmatrix}
+                </me>.
+                Note that although there are infinitely many different matrices <m>A</m> satisfying <m>g=f_A</m> (one for each nonzero <m>b</m>), they all give rise to the same function <m>g</m>. Indeed, given any <m>A</m> as in <xref ref="eq_mobius_matrix"/> we have 
+                <me>
+                    g(z)=\frac{ibz+b}{ibz-b}=\frac{b}{b}\frac{iz+1}{iz-1}=\frac{iz+1}{iz-1}
+                </me>.
+                My particular choice of <m>b=-i</m> yields a particularly simple matrix that makes life easier in the next two parts. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Using your favorite algorithm for writing an invertible matrix as a product of elementary matrices, we have 
+                <me>
+                \begin{bmatrix}
+                1\amp i\\ 1\amp -i
+                \end{bmatrix}
+                =\begin{bmatrix}
+                1\amp 0\\ 1\amp 1
+                \end{bmatrix}
+                \begin{bmatrix}
+                1\amp 0\\ 0\amp -2i
+                \end{bmatrix}
+                \begin{bmatrix}
+                1\amp i \\
+                0\amp 1
+                \end{bmatrix}
+                </me>. 
+                Writing this equality as <m>A=BCD</m>, we have 
+                <me>
+                    g=f_A=f_B\circ f_C\circ f_D
+                </me>,
+                where 
+                <md>
+                    <mrow>f_B(z) \amp =\frac{z}{z+1}=\frac{1}{1+1/z}</mrow>
+                    <mrow>f_C(z) \amp = \frac{z}{-2i}=\frac{i}{2}z</mrow>
+                    <mrow>f_D(z) \amp =z+i </mrow>
+                </md>.
+                We see that <m>f_C</m> is a dilation and <m>f_D</m> is a translation. Furthermore we can write <m>f_B=p\circ q\circ p</m>, where <m>p(z)=1/z</m> (inversion), and <m>q(w)=w+1</m> (translation). Thus 
+                <me>
+                    g=p\circ q\circ p\circ f_C\circ f_D
+                </me>
+                is our desired breakdown of <m>g</m> into dilations, translations, and inversions.
+            </p>
+        </li>
+        <li>
+            <p>
+                We have <m>g^{-1}=f_B</m>, where <m>B</m> is any scalar multiple of 
+                <me>
+                    A^{-1}=\frac{i}{2}\begin{bmatrix}
+                    -i\amp -i\\ 
+                    -1\amp 1
+                    \end{bmatrix}
+                </me>.
+                We take 
+                <me>
+                    B=2A=\begin{bmatrix}
+                    1\amp 1\\ 
+                    -i\amp i
+                    \end{bmatrix}
+                </me>
+                Thus 
+                <me>
+                    g^{-1}(z)=\frac{z+1}{-iz+i}=i\cdot\frac{z+1}{z-1}
+                </me>.
+                                
+                 
+            </p>
+        </li>
+    </ol>
+    </p>
+    </solution>
+    </example>
+    
+
+</section>
