@@ -432,13 +432,9 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_winding.html" class="internal"><span class="codenumber">1.24</span> <span class="title">Winding number</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_rouches.html" class="internal"><span class="codenumber">1.25</span> <span class="title">Rouché’s theorem and open mapping theorem</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rouches.html#ss_Rouche" class="internal"><span class="title">Rouché’s theorem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rouches.html#ss_open_mapping" class="internal"><span class="title">Open mapping theorem</span></a></div></li>
-</ul>
-</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_rouches.html" class="internal"><span class="codenumber">1.25</span> <span class="title">Rouché’s theorem and open mapping theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_open.html" class="internal"><span class="codenumber">1.26</span> <span class="title">Open mapping theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_conformal.html" class="internal"><span class="codenumber">1.27</span> <span class="title">Conformal maps</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -511,7 +507,7 @@ eBookConfig.enable_chatcodes =  false;
 \amp = 1-\frac{1}{6}z^2+\frac{1}{120}z^4-\cdots \text{.}
 \end{align*}
 </div>
-<div class="para">We conclude that <span class="process-math">\(\ord_f 0=1\text{,}\)</span> and hence that <span class="process-math">\(0\)</span> is a removable singularity.</div>
+<div class="para">We conclude that <span class="process-math">\(\ord_f 0=0\text{,}\)</span> and hence that <span class="process-math">\(0\)</span> is a removable singularity.</div>
 </div>
 <div class="para logical" id="eg_sing_class-3-1-1-1-2">
 <div class="para">The function <span class="process-math">\(g(z)=1-\frac{1}{6}z^2+\frac{1}{120}-\cdots\)</span> is analytic on <span class="process-math">\(\C\)</span> and satisfies</div>
@@ -678,7 +674,7 @@ f(z)=(w+b_0)+b_1(z-z_0)+b_2(z-z_0)^2+\cdots
 <div class="para">Assume <span class="process-math">\(z_0\)</span> is a pole of <span class="process-math">\(f\)</span> of order <span class="process-math">\(m\text{,}\)</span> and write <span class="process-math">\(f(z)=\frac{g(z)}{(z-z_0)^m}\)</span> where <span class="process-math">\(g\)</span> is analytic at <span class="process-math">\(z_0\)</span> and <span class="process-math">\(g(z_0)\ne 0\text{.}\)</span> We have</div>
 <div class="displaymath process-math" id="eq_res_at_pole">
 \begin{equation}
-\res_f z_0=\frac{g^{m-1}(z_0)}{(m-1)!}=\lim\limits_{z\to z_0}\frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{n-1}}\left(f(z)(z-z_0)^m\right)\text{.}\tag{1.82}
+\res_f z_0=\frac{g^{m-1}(z_0)}{(m-1)!}=\lim\limits_{z\to z_0}\frac{1}{(m-1)!}\frac{d^{m-1}}{dz^{m-1}}\left(f(z)(z-z_0)^m\right)\text{.}\tag{1.82}
 \end{equation}
 </div>
 </div></article><details id="cor_res_at_pole-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_res_at_pole-2-1">

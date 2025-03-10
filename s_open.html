@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Open mapping theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 382-0">
+<meta property="book:author" content="Aaron Greicius">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.5.10';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.c2d04816128ebb44.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.e0c6d4592e23c667.css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 382-0:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-6.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_rouches.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_complex_analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_conformal.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldE}{{\mathbf E}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lns}{lns}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\ab}{ab}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+}{
+\end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_tuples.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Tuples and Cartesian products</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_complex_analysis.html" class="internal"><span class="codenumber">1</span> <span class="title">Complex Analysis</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_arithmetic.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Complex arithmetic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_arithmetic.html#ss_complex-numbers" class="internal"><span class="title">Complex numbers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_arithmetic.html#ss_complex-plane" class="internal"><span class="title">Complex plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_arithmetic.html#ss_arithmetic" class="internal"><span class="title">Arithmetic operations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_polar.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Geometry of complex numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_geom_add" class="internal"><span class="title">Geometry of complex addition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_conjugation_modulus" class="internal"><span class="title">Modulus</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_conj" class="internal"><span class="title">Complex conjugation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polar.html#ss_polar" class="internal"><span class="title">Polar form</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_deMoivre.html" class="internal"><span class="codenumber">1.3</span> <span class="title">De Moivre’s formula</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_deMoivre" class="internal"><span class="title">De Moivre’s formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_nth_roots" class="internal"><span class="title"><span class="process-math">\(n\)</span>-th roots</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_deMoivre.html#ss_polynomials" class="internal"><span class="title">Polynomials</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_topo.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Topology of <span class="process-math">\(\C\)</span></span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_open_closed" class="internal"><span class="title">Open and closed sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_connected" class="internal"><span class="title">Connected sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_topo.html#ss_point_infty" class="internal"><span class="title">Point at infinity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sequences.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Sequences and series</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_sequences" class="internal"><span class="title">Sequences</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sequences.html#ss_series" class="internal"><span class="title">Series</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_complex_functions.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Complex functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_functions.html#ss_functions" class="internal"><span class="title">Complex functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_functions.html#ss_functions_visual" class="internal"><span class="title">Visualizing complex functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_log_trig.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Logarithmic and trigonometric functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_log" class="internal"><span class="title">Logarithmic functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_power" class="internal"><span class="title">Complex exponentiation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_log_trig.html#ss_trig" class="internal"><span class="title">Trigonometric functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_lim_cont.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Limits of functions and continuity</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_lim_cont.html#ss_lims_func" class="internal"><span class="title">Limits of functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_lim_cont.html#ss_cont" class="internal"><span class="title">Continuity</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_derivative.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Complex differentiation</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_C-R.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Cauchy-Riemann equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_C-R.html#ss_C-r" class="internal"><span class="title">Cauchy-Riemann equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_C-R.html#ss_C-R_polar" class="internal"><span class="title">Polar Cauchy-Riemann equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_branch_harmonic.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Branches and harmonic functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_branch_harmonic.html#ss_branch" class="internal"><span class="title">Branches</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_branch_harmonic.html#ss_harmonic" class="internal"><span class="title">Harmonic functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_complex_paths.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Complex paths</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_paths.html#ss_complex_paths" class="internal"><span class="title">Complex paths</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_paths.html#ss_vector-valued_integration" class="internal"><span class="title">Complex-valued function integration</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_line_integral.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Complex line integrals</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_cauchy_goursat.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Cauchy-Goursat theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_cauchy_goursat.html#ss_primitives" class="internal"><span class="title">Existence of antiderivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_cauchy_goursat.html#ss_cauchy_goursat" class="internal"><span class="title">Cauchy-Goursat theorems</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_formula.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Cauchy integral formula</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_integral_generalize.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Generalized Cauchy integral formula</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_power_series.html" class="internal"><span class="codenumber">1.17</span> <span class="title">Complex power series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_analyticity.html" class="internal"><span class="codenumber">1.18</span> <span class="title">Analyticity of holomorphic functions</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_analytic_continuation.html" class="internal"><span class="codenumber">1.19</span> <span class="title">Analytic continuation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_analytic_continuation.html#ss_order" class="internal"><span class="title">Order of a zero</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_analytic_continuation.html#ss_analytic_connected" class="internal"><span class="title">Analytic functions on connected open sets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_laurent_series.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Laurent series</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cauchy_residue.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Cauchy residue theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_poles.html" class="internal"><span class="codenumber">1.22</span> <span class="title">Poles and residue computation</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_improper_int.html" class="internal"><span class="codenumber">1.23</span> <span class="title">Definite integrals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_tools" class="internal"><span class="title">Miscellaneous tools</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_trig_integrals" class="internal"><span class="title">Trig integrals on <span class="process-math">\([0,2\pi]\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_trig_real_line" class="internal"><span class="title">Integral of rational function over real line</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#eg_trig_real_line" class="internal"><span class="title">Trig integral over real line</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_indented_path" class="internal"><span class="title">Indented paths</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_improper_int.html#ss_keyhole_paths" class="internal"><span class="title">Keyhole (or Pac-Man) paths</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_winding.html" class="internal"><span class="codenumber">1.24</span> <span class="title">Winding number</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_rouches.html" class="internal"><span class="codenumber">1.25</span> <span class="title">Rouché’s theorem and open mapping theorem</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_open.html" class="internal"><span class="codenumber">1.26</span> <span class="title">Open mapping theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_conformal.html" class="internal"><span class="codenumber">1.27</span> <span class="title">Conformal maps</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-specimens.html" class="internal"><span class="codenumber">D</span> <span class="title">Topological specimens</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-6.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_open"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.26</span><span class="space"> </span><span class="title">Open mapping theorem</span>
+</h2>
+<article class="definition definition-like" id="d_open_map"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.26.1</span><span class="period">.</span><span class="space"> </span><span class="title">Open mapping.</span>
+</h3>
+<div class="para" id="d_open_map-2-1">Let <span class="process-math">\(f\)</span> be a complex function with open domain <span class="process-math">\(D\text{.}\)</span> We say <span class="process-math">\(f\)</span> is <dfn class="terminology">open</dfn> if for all open sets <span class="process-math">\(U\subseteq D\text{,}\)</span> <span class="process-math">\(f(U)\)</span> is open: i.e., <span class="process-math">\(f\)</span> maps open sets to open sets.</div></article><article class="theorem theorem-like" id="th_locally_m_to_one"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.2</span><span class="period">.</span><span class="space"> </span><span class="title">Locally <span class="process-math">\(m\)</span>-to-one.</span>
+</h3>
+<div class="para" id="th_locally_m_to_one-2-1">Let <span class="process-math">\(f\)</span> be a nonconstant analytic function with open connected domain <span class="process-math">\(D\text{.}\)</span> Given any open set <span class="process-math">\(U\subseteq D\)</span> and <span class="process-math">\(z_0\in U\text{,}\)</span> let <span class="process-math">\(w_0=f(z_0)\text{,}\)</span> and let <span class="process-math">\(m\)</span> be the order of <span class="process-math">\(z_0\)</span> as a zero of the function <span class="process-math">\(f(z)-w_0\text{.}\)</span> There are open balls <span class="process-math">\(B_r(z_0)\subseteq U\)</span> and <span class="process-math">\(B_s(w_0)\subseteq f(U)\)</span> such that <span class="process-math">\(f(z)\ne f(z_0)\)</span> for all <span class="process-math">\(z\ne z_0\in B_r(z_0)\text{,}\)</span> and for all <span class="process-math">\(w\ne w_0\in B_s(w_0)\)</span> there are exactly <span class="process-math">\(m\)</span> elements of <span class="process-math">\(B_r(z_0)\)</span> that map to <span class="process-math">\(w\text{,}\)</span> and each of these is a zero of order one of the function <span class="process-math">\(f(z)-w\text{.}\)</span>
+</div></article><details id="th_locally_m_to_one-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_locally_m_to_one-3-1">
+<div class="para">We pick <span class="process-math">\(r&gt;0\)</span> such</div>
+<ol class="lower-alpha ol-marker-3" id="th_locally_m_to_one-3-1-2">
+<li id="th_locally_m_to_one-3-1-2-1"><div class="para" id="th_locally_m_to_one-3-1-2-1-1"><span class="process-math">\(\displaystyle \overline{B}_r(z_0)\subseteq U\)</span></div></li>
+<li id="th_locally_m_to_one-3-1-2-2"><div class="para" id="th_locally_m_to_one-3-1-2-2-1">
+<span class="process-math">\(f(z)\ne f(z_0)\)</span> for all <span class="process-math">\(z\ne z_0\text{,}\)</span>
+</div></li>
+<li id="th_locally_m_to_one-3-1-2-3"><div class="para" id="th_locally_m_to_one-3-1-2-3-1">
+<span class="process-math">\(f'(z)\ne 0\)</span> for all <span class="process-math">\(z\ne z_0\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">Why can we do this? We will show that there is such an <span class="process-math">\(r\)</span> for each condition (a)-(c) separately; taking the minimum of these gives us an <span class="process-math">\(r\)</span> that satisfies all conditions at once. It is clear from the openness of <span class="process-math">\(U\)</span> that we can find an <span class="process-math">\(r\)</span> satisfying (a). If there were no such <span class="process-math">\(r\)</span> for which (b) is satisfied, then for each <span class="process-math">\(r_n=1/n\text{,}\)</span> we could find a <span class="process-math">\(z_n\in B_{1/n}(z_0)\)</span> such that <span class="process-math">\(f(z_n)=f(z_0)=w_0\text{.}\)</span> Since and <span class="process-math">\(D\)</span> is connected and <span class="process-math">\(z_0\)</span> is a limit point of the set of <span class="process-math">\(z_n\text{,}\)</span> <a href="s_analytic_continuation.html#cor_limit_points" class="xref" data-knowl="./knowl/xref/cor_limit_points.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.8: Rigidity of analytic functions">Theorem 1.19.8</a> would imply that <span class="process-math">\(f(z)=f(z_0)=w_0\)</span> for all <span class="process-math">\(z\in D\text{,}\)</span> contradicting the fact the <span class="process-math">\(f\)</span> is nonconstant. Similarly, if there were no such <span class="process-math">\(r\)</span> for which (c) is satisfied we could find a sequence of points <span class="process-math">\(z_n\to z_0\)</span> satisfying <span class="process-math">\(f'(z_n)=0\text{,}\)</span> and this would imply <span class="process-math">\(f'(z)=0\)</span> for all <span class="process-math">\(z\in D\text{,}\)</span> contradicting again that <span class="process-math">\(f\)</span> is nonconstant.</div>
+</div>
+<div class="para logical" id="th_locally_m_to_one-3-2">
+<div class="para">Having chosen an <span class="process-math">\(r&gt; 0\)</span> satisfying (a)-(c), we let <span class="process-math">\(\gamma(t)=z_0+e^{it}\text{,}\)</span> <span class="process-math">\(t\in [0,2\pi]\text{.}\)</span> Since <span class="process-math">\(f(z)\ne w_0\)</span> for all <span class="process-math">\(z\in B_r(z_0)\text{,}\)</span> we have <span class="process-math">\(w_0\notin f\circ \gamma\text{.}\)</span> It follows by the extreme value theorem that we can find an <span class="process-math">\(s&gt; 0\)</span> such that <span class="process-math">\(B_s(w_0)\cap \im f\circ \gamma=\emptyset\text{.}\)</span> Since <span class="process-math">\(w\notin \im f\circ \gamma\text{,}\)</span> the winding number <span class="process-math">\(\chi_{f\circ\gamma}(w)\)</span> defines a continuous, integer-valued function on <span class="process-math">\(B_s(w_0)\text{.}\)</span> Since <span class="process-math">\(B_s(w_0)\)</span> is connected, this winding number <span class="process-math">\(\chi_{f\circ\gamma}(w)\)</span> is constant for all  <span class="process-math">\(w\in B_s(w_0)\text{.}\)</span> Since <span class="process-math">\(\chi_{f\circ\gamma}(w_0)=\ord_{f-w_0}(z_0)=m\text{,}\)</span> we see that <span class="process-math">\(\chi_{f\circ \gamma}(w)=m\)</span> for all <span class="process-math">\(w\in B_s(w_0)\text{.}\)</span> On the other hand, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_arg_princ.html" id="th_locally_m_to_one-3-2-18">
+\begin{align*}
+m=\chi_{f\circ\gamma}(w)\amp =\frac{1}{2\pi i}\int_{f\circ \gamma}\frac{1}{z-w}\, dz\\
+\amp = \int_{0}^{2\pi}\frac{f'(\gamma(t))\gamma'(t)}{f(\gamma(t))-w}\, dt\\
+\amp =\frac{1}{2\pi i}\int_\gamma \frac{(f(z)-w)'}{f(z)-w}\, dz\text{,}
+\end{align*}
+</div>
+<div class="para">and by the <a href="s_winding.html#th_arg_princ" class="xref" data-knowl="./knowl/xref/th_arg_princ.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.24.10: Argument principle">Theorem 1.24.10</a>, the last integral is equal to the number of zeros (counting multiplicity) of the function <span class="process-math">\(f(z)-w\)</span> in <span class="process-math">\(\Int \gamma=B_r(z_0)\text{.}\)</span> Since <span class="process-math">\(f'(z)\ne 0\)</span> for all <span class="process-math">\(z\ne z_0\text{,}\)</span> it follows easily that for each <span class="process-math">\(w\ne w_0\in B_s(w_0)\)</span> and <span class="process-math">\(z\in B_r(z_0)\)</span> satisfying <span class="process-math">\(f(z)=w\text{,}\)</span> this <span class="process-math">\(z\)</span> is a <em class="emphasis">simple</em> root of the function <span class="process-math">\(f-w\text{:}\)</span> i.e., <span class="process-math">\(\ord_{f-w}(z)=1\text{.}\)</span> It follows that for each <span class="process-math">\(w\ne w_0\in B_s(w)\)</span> there are exactly <span class="process-math">\(m\)</span> distinct elements <span class="process-math">\(z\in B_r(z_0)\)</span> satisfying <span class="process-math">\(f(z)=w\text{.}\)</span> In particular, note that for each <span class="process-math">\(w\in B_s(z_0)\)</span> there is <em class="emphasis">some</em> element <span class="process-math">\(z\in B_r(z_0)\)</span> such that <span class="process-math">\(f(z)=w\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_arg_princ.html">
+\begin{equation*}
+B_s(w_0)\subseteq f(B_r(z_0))\text{,}
+\end{equation*}
+</div>
+<div class="para">as claimed.</div>
+</div></article></details><article class="theorem theorem-like" id="th_open_mapping"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.3</span><span class="period">.</span><span class="space"> </span><span class="title">Open mapping theorem.</span>
+</h3>
+<div class="para" id="th_open_mapping-2-1">If <span class="process-math">\(f\)</span> is nonconstant and analytic on an open connected domain <span class="process-math">\(D\text{,}\)</span> then <span class="process-math">\(f\)</span> is open.</div></article><details id="th_open_mapping-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_open_mapping-3-1">
+<div class="para">Given any open <span class="process-math">\(U\subseteq D\)</span> and any <span class="process-math">\(w_0=f(z_0)\in f(U)\text{,}\)</span> according to <a href="s_open.html#th_locally_m_to_one" class="xref" data-knowl="./knowl/xref/th_locally_m_to_one.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.2: Locally m-to-one">Theorem 1.26.2</a> there are open balls <span class="process-math">\(B_r(z_0)\subseteq U\)</span> and <span class="process-math">\(B_s(w_0)\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_locally_m_to_one.html">
+\begin{equation*}
+B_s(f(z_0))\subseteq f(B_r(z_0))\subseteq f(U)\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus for all <span class="process-math">\(w_0\in f(U)\)</span> we can find an open ball <span class="process-math">\(B_s(w_0)\subseteq f(U)\text{.}\)</span> We conclude that <span class="process-math">\(f(U)\)</span> is open.</div>
+</div></article></details><div class="para" id="s_open-5">The next result, the famous <em class="emphasis">inverse function theorem</em> is largely the result of applying <a href="s_open.html#th_locally_m_to_one" class="xref" data-knowl="./knowl/xref/th_locally_m_to_one.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.2: Locally m-to-one">Theorem 1.26.2</a> and <a href="s_open.html#th_open_mapping" class="xref" data-knowl="./knowl/xref/th_open_mapping.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.3: Open mapping theorem">Theorem 1.26.3</a> to the case where <span class="process-math">\(f'(z_0)\ne 0\)</span> (i.e., <span class="process-math">\(m=1\)</span>).</div>
+<article class="theorem theorem-like" id="th_inv_fun"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.4</span><span class="period">.</span><span class="space"> </span><span class="title">Inverse function theorem.</span>
+</h3>
+<div class="para logical" id="th_inv_fun-2-1">
+<div class="para">Assume <span class="process-math">\(f\)</span> is analytic at <span class="process-math">\(z_0\)</span> and that <span class="process-math">\(f'(z_0)\ne 0\text{.}\)</span> There is an open set <span class="process-math">\(V\)</span> containing <span class="process-math">\(z_0\)</span> satisfying the following properties.</div>
+<ol class="decimal" id="th_inv_fun-2-1-6">
+<li id="th_inv_fun-2-1-6-1"><div class="para" id="th_inv_fun-2-1-6-1-1">The restriction <span class="process-math">\(f\colon V\rightarrow f(V)\)</span> is bijective and <span class="process-math">\(f'\)</span> is nonzero on <span class="process-math">\(V\text{.}\)</span>
+</div></li>
+<li id="th_inv_fun-2-1-6-2"><div class="para logical" id="th_inv_fun-2-1-6-2-1">
+<div class="para">The inverse map <span class="process-math">\(f^{-1}\colon f(V)\rightarrow V\)</span> is analytic and satisfies</div>
+<div class="displaymath process-math" id="th_inv_fun-2-1-6-2-1-2">
+\begin{align}
+(f^{-1})'(w) \amp = \frac{1}{f'(f^{-1}(w))} \tag{1.97}
+\end{align}
+</div>
+<div class="para">for all <span class="process-math">\(w\in U\text{.}\)</span>
+</div>
+</div></li>
+</ol>
+</div></article><details id="th_inv_fun-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_inv_fun-3-1"><ol class="decimal" id="th_inv_fun-3-1-1">
+<li id="th_inv_fun-3-1-1-1"><div class="para logical" id="th_inv_fun-3-1-1-1-1">
+<div class="para">Since <span class="process-math">\(f'(z_0)\ne 0\text{,}\)</span> <span class="process-math">\(z_0\)</span> is a simple zero of the function <span class="process-math">\(h(z)=f(z)-f(z_0)\text{.}\)</span> We are thus in the <span class="process-math">\(m=1\)</span> situation of <a href="s_open.html#th_locally_m_to_one" class="xref" data-knowl="./knowl/xref/th_locally_m_to_one.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.2: Locally m-to-one">Theorem 1.26.2</a>. Let <span class="process-math">\(B_r(z_0)\)</span> and <span class="process-math">\(B_s(f(z_0))\)</span> be open balls satisfying the conditions of that theorem. The set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_locally_m_to_one.html">
+\begin{equation*}
+V=f^{-1}(B_s(f(z_0)))\cap B_r(z_0)
+\end{equation*}
+</div>
+<div class="para">is an open set containing <span class="process-math">\(z_0\)</span> on which <span class="process-math">\(f\)</span> is injective (1-to-1) and <span class="process-math">\(f'\)</span> is nonzero. The restricted function <span class="process-math">\(f\colon V\rightarrow f(V)\)</span> is thus bijective.</div>
+</div></li>
+<li id="th_inv_fun-3-1-1-2">
+<div class="para logical" id="th_inv_fun-3-1-1-2-1">
+<div class="para">We first show that <span class="process-math">\(f^{-1}\colon f(V)\rightarrow V\)</span> is continuous. This will follow from the fact <span class="process-math">\(f\)</span> is an open map. For notational clarity, we let <span class="process-math">\(g=f^{-1}\text{.}\)</span> Using the defining property of the inverse function, <span class="process-math">\(g\)</span> satisfies</div>
+<div class="displaymath process-math" id="th_inv_fun-3-1-1-2-1-5">
+\begin{align*}
+g(f(z)) \amp = z, \text{ for all } z\in V \amp f(g(w))\amp =w \text{ for all } w\in f(V)\text{.}
+\end{align*}
+</div>
+<div class="para">To show <span class="process-math">\(g\)</span> is continuous we will prove the following equivalent property (shown in one of your homework assignments): if <span class="process-math">\(W\subseteq V\)</span> is open, then <span class="process-math">\(g^{-1}(W)\subseteq f(V)\)</span> is open. But this is easy: given any open <span class="process-math">\(W\subseteq V\)</span> it is easy to see that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g^{-1}(W)=(f^{-1})^{-1}(W)=f(W)\text{,}
+\end{equation*}
+</div>
+<div class="para">which is open since <span class="process-math">\(f\)</span> is an open map. This proves <span class="process-math">\(g=f^{-1}\colon f(V)\rightarrow V\)</span> is continuous.</div>
+</div>
+<div class="para logical" id="th_inv_fun-3-1-1-2-2">
+<div class="para">It remains only to prove that <span class="process-math">\(f^{-1}\)</span> is differentiable at all <span class="process-math">\(w\in f(V)\text{:}\)</span> it turns out this is not so difficult to prove once we know <span class="process-math">\(f^{-1}\)</span> is continuous. Although it is straightforward to prove the formula <a href="s_open.html#th_inv_fun-2-1-6-2-1-2" class="xref" data-knowl="./knowl/xref/eq_deriv_inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.97">(1.97)</a> using the limit definition of the derivative, we will instead use Caratheory’s equivalent notion of differentiability (mentioned in homework) as an illustration of this technique’s pleasing algebraic nature. Given <span class="process-math">\(w\in f(V)\text{,}\)</span> we have <span class="process-math">\(w=f(z)\)</span> for some <span class="process-math">\(z\in V\text{.}\)</span> Since <span class="process-math">\(f\)</span> is differentiable at <span class="process-math">\(z\)</span> there is a function <span class="process-math">\(\phi\)</span> satisfying the following conditions:</div>
+<ol class="lower-alpha lower-alpha-level-1" id="th_inv_fun-3-1-1-2-2-11">
+<li id="th_inv_fun-3-1-1-2-2-11-1"><div class="para" id="th_inv_fun-3-1-1-2-2-11-1-1">
+<span class="process-math">\(f(z')=\phi(z')(z'-z)+f(z)\)</span> for all <span class="process-math">\(z'\in V\text{,}\)</span>
+</div></li>
+<li id="th_inv_fun-3-1-1-2-2-11-2"><div class="para" id="th_inv_fun-3-1-1-2-2-11-2-1">
+<span class="process-math">\(\phi\)</span> is continuous at <span class="process-math">\(z\)</span> and satisfies <span class="process-math">\(\phi(z)=f'(z)\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">Note that since <span class="process-math">\(f'\)</span> is nonzero on <span class="process-math">\(V\text{,}\)</span> we have <span class="process-math">\(\phi(z)\ne 0\text{.}\)</span> Since <span class="process-math">\(\phi\)</span> is continuous at <span class="process-math">\(z\text{,}\)</span> we can find an open ball <span class="process-math">\(B\)</span> around <span class="process-math">\(z\)</span> such that <span class="process-math">\(\phi(z')\ne 0\)</span> for all <span class="process-math">\(z'\in B\text{.}\)</span>  After a little algebra we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_deriv_inv.html">
+\begin{equation*}
+z'=\frac{1}{\phi(z')}(f(z')-f(z))+z
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z'\in B\text{,}\)</span> or equivalently,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_deriv_inv.html">
+\begin{equation*}
+f^{-1}(w')=\frac{1}{\phi(f^{-1}(w'))}(w'-w)+f^{-1}(w)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(w'\)</span> in the open set <span class="process-math">\(f(B)\text{.}\)</span> Since <span class="process-math">\(f^{-1}\)</span> is continuous, the function <span class="process-math">\(\psi=\frac{1}{\phi\circ f^{-1}}\)</span> is continuous at <span class="process-math">\(w\)</span> and satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_deriv_inv.html">
+\begin{equation*}
+f^{-1}(w')=\psi(w')(w'-w)+f^{-1}(w)
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(w'\in f(B)\text{.}\)</span> Caratheodory’s theorem now implies that <span class="process-math">\(f^{-1}\)</span> is differentiable at <span class="process-math">\(w\)</span> and we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_deriv_inv.html">
+\begin{equation*}
+(f^{-1})'(w)=\psi(w)=\frac{1}{\phi(f^{-1}(w))}=\frac{1}{f'(f^{-1}(w))}\text{,}
+\end{equation*}
+</div>
+<div class="para">as claimed.</div>
+</div>
+</li>
+</ol></div></article></details><article class="definition definition-like" id="d_biholomorphic"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.26.5</span><span class="period">.</span><span class="space"> </span><span class="title">Biholomorphic function.</span>
+</h3>
+<div class="para" id="d_biholomorphic-2-1">Let <span class="process-math">\(U\)</span> be an open subset of <span class="process-math">\(\C\text{.}\)</span> A complex function <span class="process-math">\(f\)</span> is <dfn class="terminology">biholomorphic</dfn> on <span class="process-math">\(U\)</span> if <span class="process-math">\(f\)</span> is analytic and injective on <span class="process-math">\(U\text{,}\)</span> and its inverse function <span class="process-math">\(f^{-1}\colon f(U)\rightarrow U\)</span> is holomorphic.</div></article><article class="corollary theorem-like" id="cor_biholomorphic"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.26.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="cor_biholomorphic-1-1">
+<div class="para">Let <span class="process-math">\(f\)</span> be a complex function and let <span class="process-math">\(U\)</span> be an open subset of <span class="process-math">\(\C\text{.}\)</span> The following statements are equivalent.</div>
+<ol class="decimal" id="cor_biholomorphic-1-1-4">
+<li id="cor_biholomorphic-1-1-4-1"><div class="para" id="cor_biholomorphic-1-1-4-1-1">
+<span class="process-math">\(f\)</span> is biholomorphic on <span class="process-math">\(U\text{.}\)</span>
+</div></li>
+<li id="cor_biholomorphic-1-1-4-2"><div class="para" id="cor_biholomorphic-1-1-4-2-1">
+<span class="process-math">\(f\)</span> is injective on <span class="process-math">\(U\)</span> and <span class="process-math">\(f'(z)\ne 0\)</span> for all <span class="process-math">\(z\in U\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="remark remark-like" id="s_open-9"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.26.7</span><span class="period">.</span><span class="space"> </span><span class="title">Integral formula.</span>
+</h3>
+<div class="para logical" id="s_open-9-2">
+<div class="para">With the notation of <a href="s_open.html#th_inv_fun" class="xref" data-knowl="./knowl/xref/th_inv_fun.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.4: Inverse function theorem">Theorem 1.26.4</a>, given any closed ball <span class="process-math">\(\overline{B}\subseteq V\)</span> and <span class="process-math">\(w_0\in f(B)\text{,}\)</span> we have the integral formula</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_inv_fun.html" id="s_open-9-2-4">
+\begin{equation}
+f^{-1}(w_0)  =\frac{1}{2\pi i}\int_{\gamma}\frac{zf'(z)}{f(z)-w_0}\, dz\text{,}\tag{1.98}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(\gamma\)</span> is a simple counterclockwise parametrization of <span class="process-math">\(\partial B\text{.}\)</span> We do not include this as an official result (with proof) as we will not make use of it in the course and not wish to overburden the reader with formulae.</div>
+</div></article><article class="theorem theorem-like" id="th_max_min_modulus"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.26.8</span><span class="period">.</span><span class="space"> </span><span class="title">Maximum/minimum modulus theorem.</span>
+</h3>
+<div class="para logical" id="th_max_min_modulus-2-1">
+<div class="para">Assume <span class="process-math">\(U\)</span> is open and connected, and that <span class="process-math">\(f\)</span> is analytic and nonconstant on <span class="process-math">\(U\text{.}\)</span>
+</div>
+<ol class="decimal" id="th_max_min_modulus-2-1-4">
+<li id="th_max_min_modulus-2-1-4-1">
+<span class="heading"><span class="title">Maximum modulus principle.</span></span><div class="para" id="th_max_min_modulus-2-1-4-1-2">
+<span class="process-math">\(\abs{f}\)</span> does not have a local maximum value on <span class="process-math">\(U\text{.}\)</span>
+</div>
+</li>
+<li id="th_max_min_modulus-2-1-4-2">
+<span class="heading"><span class="title">Minimum modulus principle.</span></span><div class="para" id="th_max_min_modulus-2-1-4-2-2">
+<span class="process-math">\(\abs{f}\)</span> does not have a positive local minimum value on <span class="process-math">\(U\text{.}\)</span>
+</div>
+</li>
+<li id="th_max_min_modulus-2-1-4-3">
+<span class="heading"><span class="title">Complex extreme value theorem.</span></span><div class="para" id="th_max_min_modulus-2-1-4-3-2">Let <span class="process-math">\(K\)</span> be a closed and bounded subset of <span class="process-math">\(U\text{.}\)</span> The maximum value of <span class="process-math">\(\abs{f}\)</span> is attained only on the boundary <span class="process-math">\(\partial K\)</span> of <span class="process-math">\(K\text{.}\)</span> The minimum value of <span class="process-math">\(\abs{f}\)</span> on <span class="process-math">\(K\)</span> is either <span class="process-math">\(0\text{,}\)</span> or is attained on the boundary <span class="process-math">\(\partial K\text{.}\)</span>
+</div>
+</li>
+</ol>
+</div></article><details id="th_max_min_modulus-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_max_min_modulus-3-1">
+<div class="para">Since <span class="process-math">\(f\)</span> is analytic and nonconstant, it is an open map. Each proof below will make use of this fact.</div>
+<ol class="decimal" id="th_max_min_modulus-3-1-2">
+<li id="th_max_min_modulus-3-1-2-1"><div class="para" id="th_max_min_modulus-3-1-2-1-1">Given any <span class="process-math">\(z_0\in U\)</span> and open ball <span class="process-math">\(B_r(z_0)\subseteq U\text{,}\)</span> since <span class="process-math">\(f(B_r(z_0))\)</span> is open, there is an open ball <span class="process-math">\(B_s(f(z_0))\subseteq f(B_r(z_0))\text{.}\)</span> Clearly <span class="process-math">\(B_s(f(z_0))\)</span> will contain an element <span class="process-math">\(w\)</span> with <span class="process-math">\(\abs{w}&gt; \abs{f(z_0)}\text{.}\)</span> Since <span class="process-math">\(B_s(f(z_0))\subseteq f(B_r(z_0))\text{,}\)</span> we have <span class="process-math">\(w=f(z)\)</span> for some <span class="process-math">\(z\in B_r(z_0)\text{.}\)</span> Thus for all open balls <span class="process-math">\(B_r(z_0)\)</span> we can find a <span class="process-math">\(z\in B_r(z_0)\)</span> such that <span class="process-math">\(\abs{f(z)}&gt; f(z_0)\text{.}\)</span> This proves <span class="process-math">\(\abs{f(z_0)}\)</span> is not a local maximum value on <span class="process-math">\(U\text{,}\)</span> as desired.</div></li>
+<li id="th_max_min_modulus-3-1-2-2"><div class="para" id="th_max_min_modulus-3-1-2-2-1">Assume by contradiction that <span class="process-math">\(\abs{f(z_0)}=c &gt; 0\)</span> is a local minimum value of <span class="process-math">\(f\)</span> on <span class="process-math">\(U\text{.}\)</span> We could then find an open ball <span class="process-math">\(B_r(z_0)\)</span> such that <span class="process-math">\(\abs{f(z)}\geq c&gt; 0\)</span> for all <span class="process-math">\(z\in B_r(z_0)\text{.}\)</span> But then the function <span class="process-math">\(g=1/f\)</span> is a nonconstant analytic function on <span class="process-math">\(B_r(z_0)\)</span> and <span class="process-math">\(\abs{g(z_0)}\geq \abs{g(z)}\)</span> for all <span class="process-math">\(z\in B_r(z_0)\text{.}\)</span> In other words, <span class="process-math">\(\abs{g(z_0)}\)</span> is a maximum value on the open ball <span class="process-math">\(B_r(z_0)\text{.}\)</span> This contradicts the result in (1).</div></li>
+<li id="th_max_min_modulus-3-1-2-3">
+<div class="para logical" id="th_max_min_modulus-3-1-2-3-1">
+<div class="para">By the multivariable extreme value theorem, <span class="process-math">\(\abs{f}\)</span> attains both a maximum and minimum  value on <span class="process-math">\(K\text{:}\)</span> that is, there are points <span class="process-math">\(z_1, z_2\in K\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{f(z_1)}\leq \abs{f(z)}\leq \abs{f(z_2)}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\in K\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="th_max_min_modulus-3-1-2-3-2">We can write <span class="process-math">\(K=K^\circ\cup \partial K\text{,}\)</span> where <span class="process-math">\(K^\circ\text{,}\)</span> the interior of <span class="process-math">\(K\text{,}\)</span> is an open set. By (1), we cannot have <span class="process-math">\(z_2\in K^\circ\text{,}\)</span> since then <span class="process-math">\(\abs{f}\)</span> would attain a maximum value on this open set. Thus <span class="process-math">\(z_2\in \partial K\text{,}\)</span> showing that the maximum value of <span class="process-math">\(\abs{f}\)</span> is attained only on the boundary.</div>
+<div class="para" id="th_max_min_modulus-3-1-2-3-3">If the minimum value <span class="process-math">\(\abs{f(z_1)}\)</span> is nonzero, then (2) implies that <span class="process-math">\(z_1\notin K^\circ\text{.}\)</span> Thus <span class="process-math">\(z_1\in \partial K\text{,}\)</span> and we see in this case that the minimum value of <span class="process-math">\(\abs{f}\)</span> is attained only on <span class="process-math">\(\partial K\text{.}\)</span>
+</div>
+</li>
+</ol>
+</div></article></details><article class="corollary theorem-like" id="cor_schwarzs_lemma"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.26.9</span><span class="period">.</span><span class="space"> </span><span class="title">Schwarz’s lemma.</span>
+</h3>
+<div class="para" id="cor_schwarzs_lemma-2-1">If <span class="process-math">\(f\)</span> is analytic on <span class="process-math">\(B_1(0)\)</span> and satisfies <span class="process-math">\(f(0)=0\)</span> and <span class="process-math">\(\abs{f(z)}\leq 1\)</span> for all <span class="process-math">\(z\in B_1(0)\text{,}\)</span> then <span class="process-math">\(\abs{f(z)}\leq \abs{z}\)</span> for all <span class="process-math">\(z\in B_1(0)\text{,}\)</span> and <span class="process-math">\(\abs{f'(0)}\leq 1\text{.}\)</span>
+</div> <div class="para" id="cor_schwarzs_lemma-2-2">Furthermore, if <span class="process-math">\(\abs{f(z)}=\abs{z}\)</span> for some <span class="process-math">\(z\in B_1(0)\text{,}\)</span> or if <span class="process-math">\(\abs{f'(z_0)}=1\text{,}\)</span> then <span class="process-math">\(f(z)=e^{i\alpha}z\)</span> for some <span class="process-math">\(z\in \text{:}\)</span> i.e., <span class="process-math">\(f\)</span> is the rotation by <span class="process-math">\(\alpha\)</span> transformation in this case.</div></article><details id="cor_schwarzs_lemma-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_schwarzs_lemma-3-1">
+<div class="para">Since <span class="process-math">\(f(0)=0\text{,}\)</span> we may write <span class="process-math">\(f(z)=zg(z)\)</span> where <span class="process-math">\(g(z)\)</span> is analytic on <span class="process-math">\(B_1(0)\text{.}\)</span> Since <span class="process-math">\(\abs{f(z)}\leq 1\)</span> for all <span class="process-math">\(z\in B_1(0)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{g(z)}\leq \frac{1}{\abs{z}}
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(z\ne 0\text{.}\)</span> Given any <span class="process-math">\(r\in (0,1)\text{,}\)</span> since <span class="process-math">\(g\)</span> is analytic, on <span class="process-math">\(K=\overline{B}_r(0)\)</span> the function <span class="process-math">\(\abs{g}\)</span> attains its maximum value on the boundary <span class="process-math">\(\partial K\text{.}\)</span> Since <span class="process-math">\(\abs{g(z)}\leq \frac{1}{r}\)</span> on <span class="process-math">\(\partial K\text{,}\)</span> we conclude that <span class="process-math">\(\abs{g(z)}\leq \frac{1}{r}\)</span> for all <span class="process-math">\(z\in \overline{B}_r(0)\text{.}\)</span> Since this is true for all <span class="process-math">\(r\in (0,1)\text{,}\)</span> we conclude that <span class="process-math">\(\abs{g(z)}\leq 1\)</span> for all <span class="process-math">\(z\in B_1(0)\text{.}\)</span> Since <span class="process-math">\(f(z)=zg(z)\text{,}\)</span> it follows that <span class="process-math">\(\abs{f(z)}\leq \abs{z}\)</span> for all <span class="process-math">\(z\in B_1(0)\text{.}\)</span> Lastly, since <span class="process-math">\(f'(z)=g(0)\text{,}\)</span> we see that <span class="process-math">\(\abs{f'(z)}\leq 1\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="cor_schwarzs_lemma-3-2">Lastly, if there is an element <span class="process-math">\(z\in B_1(0)\)</span> satisfying <span class="process-math">\(\abs{f(z)}=\abs{z}\text{,}\)</span> or if <span class="process-math">\(\abs{f'(0)}=\abs{g(0)}\text{,}\)</span> then <span class="process-math">\(\abs{g}\)</span> attains an absolute maximum value of 1 on <span class="process-math">\(B_1(0)\text{.}\)</span> By <a href="s_open.html#th_max_min_modulus" class="xref" data-knowl="./knowl/xref/th_max_min_modulus.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.26.8: Maximum/minimum modulus theorem">Theorem 1.26.8</a> we must have <span class="process-math">\(g\)</span> a constant function of modulus 1. It follows that <span class="process-math">\(g(z)=e^{i\alpha}\)</span> for some <span class="process-math">\(\alpha\in \R\text{,}\)</span> and thus <span class="process-math">\(f(z)=e^{i\alpha}z\text{,}\)</span> as claimed.</div></article></details></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_rouches.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_conformal.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

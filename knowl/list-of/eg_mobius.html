@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.27.12</span><span class="period">.</span><span class="space"> </span><span class="title">Möbius transformation.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(g\colon \C^*\rightarrow \C^*\)</span> be the unique Möbius transformation satisfying</div>
+<div class="displaymath process-math">
+\begin{align*}
+g(0) \amp = -1 \amp g(i)\amp =0 \amp g(\infty)\amp = 1\text{.}
+\end{align*}
+</div>
+<ol class="decimal" id="eg_mobius-2-1-3">
+<li><div class="para">Find a complex matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(g=f_A\text{.}\)</span>
+</div></li>
+<li><div class="para">Explicitly express <span class="process-math">\(g\)</span> as a composition of dilations, translations, and inversions.</div></li>
+<li><div class="para">Find a complex matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(g^{-1}=f_B\text{.}\)</span>
+</div></li>
+<li><div class="para logical">
+<div class="para">For each region (or curve) below, determine its image under <span class="process-math">\(f\text{.}\)</span>
+</div>
+<ol class="lower-alpha lower-alpha-level-1 cols2" id="eg_mobius-2-1-3-4-1-2">
+<li><div class="para">The imaginary axis.</div></li>
+<li><div class="para">The right half-plane <span class="process-math">\(\{z\in \C\colon \Re z &gt; 0\}\)</span>
+</div></li>
+<li><div class="para">The real axis.</div></li>
+<li><div class="para">The upper half-plane <span class="process-math">\(\{z\in\C\colon \Im z&gt; 0\}\)</span>
+</div></li>
+<li><div class="para">The line <span class="process-math">\(\Im z=i\text{.}\)</span>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal" id="eg_mobius-3-1-1">
+<li><div class="para logical">
+<div class="para">Writing <span class="process-math">\(f(z)=(az+b)/(cz+d)\text{,}\)</span> since <span class="process-math">\(f(0)=-1\)</span> and <span class="process-math">\(f(\infty)=1\text{,}\)</span>  we see that <span class="process-math">\(b=-d\)</span> and <span class="process-math">\(a=c\text{,}\)</span> Thus <span class="process-math">\(f(z)=(az+b)/(az-b)\text{.}\)</span>  Next since <span class="process-math">\(a(-b)-ab=-2ab\ne 0\text{,}\)</span> we must have <span class="process-math">\(a\ne 0\)</span> and <span class="process-math">\(b\ne 0\text{.}\)</span> Lastly, since  <span class="process-math">\(f(i)=0\text{,}\)</span> we have <span class="process-math">\(ai=-b\text{,}\)</span> or <span class="process-math">\(a=ib\text{.}\)</span> Thus we can choose</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_mobius_matrix.html">
+\begin{equation}
+A=\begin{bmatrix}
+ib\amp b\\ 
+ib\amp -b
+\end{bmatrix}\tag{1.100}
+\end{equation}
+</div>
+<div class="para">for any <span class="process-math">\(b\ne 0\in \C\text{.}\)</span> In particular, we can set <span class="process-math">\(b=-i\text{,}\)</span> in which case</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_mobius_matrix.html">
+\begin{equation*}
+A=\begin{bmatrix}
+1\amp -i\\
+1\amp i
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Note that although there are infinitely many different matrices <span class="process-math">\(A\)</span> satisfying <span class="process-math">\(g=f_A\)</span> (one for each nonzero <span class="process-math">\(b\)</span>), they all give rise to the same function <span class="process-math">\(g\text{.}\)</span> Indeed, given any <span class="process-math">\(A\)</span> as in <a href="s_conformal.html#eq_mobius_matrix" class="xref" data-knowl="./knowl/xref/eq_mobius_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.100">(1.100)</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_mobius_matrix.html">
+\begin{equation*}
+g(z)=\frac{ibz+b}{ibz-b}=\frac{b}{b}\frac{iz+1}{iz-1}=\frac{iz+1}{iz-1}\text{.}
+\end{equation*}
+</div>
+<div class="para">My particular choice of <span class="process-math">\(b=-i\)</span> yields a particularly simple matrix that makes life easier in the next two parts.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Using your favorite algorithm for writing an invertible matrix as a product of elementary matrices, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{bmatrix}
+1\amp i\\ 1\amp -i
+\end{bmatrix}
+=\begin{bmatrix}
+1\amp 0\\ 1\amp 1
+\end{bmatrix}
+\begin{bmatrix}
+1\amp 0\\ 0\amp -2i
+\end{bmatrix}
+\begin{bmatrix}
+1\amp i \\
+0\amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Writing this equality as <span class="process-math">\(A=BCD\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g=f_A=f_B\circ f_C\circ f_D\text{,}
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{align*}
+f_B(z) \amp =\frac{z}{z+1}=\frac{1}{1+1/z}\\
+f_C(z) \amp = \frac{z}{-2i}=\frac{i}{2}z\\
+f_D(z) \amp =z+i \text{.}
+\end{align*}
+</div>
+<div class="para">We see that <span class="process-math">\(f_C\)</span> is a dilation and <span class="process-math">\(f_D\)</span> is a translation. Furthermore we can write <span class="process-math">\(f_B=p\circ q\circ p\text{,}\)</span> where <span class="process-math">\(p(z)=1/z\)</span> (inversion), and <span class="process-math">\(q(w)=w+1\)</span> (translation). Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g=p\circ q\circ p\circ f_C\circ f_D
+\end{equation*}
+</div>
+<div class="para">is our desired breakdown of <span class="process-math">\(g\)</span> into dilations, translations, and inversions.</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">We have <span class="process-math">\(g^{-1}=f_B\text{,}\)</span> where <span class="process-math">\(B\)</span> is any scalar multiple of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A^{-1}=\frac{i}{2}\begin{bmatrix}
+-i\amp -i\\ 
+-1\amp 1
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">We take</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B=2A=\begin{bmatrix}
+1\amp 1\\ 
+-i\amp i
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g^{-1}(z)=\frac{z+1}{-iz+i}=i\cdot\frac{z+1}{z-1}\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_conformal.html#eg_mobius">in-context</a></span>
+</body>
+</html>

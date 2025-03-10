@@ -3400,7 +3400,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.25",
   "title": "Rouché’s theorem and open mapping theorem",
-  "body": " Rouché's theorem and open mapping theorem   We treat here two far-reaching consequences of our winding number theory: Rouché's theorem and the open mapping theorem (and consequences).    Rouché's theorem   Rouché's theorem   Let and be analytic functions on the elementary region , and let be a closed path in elementary region, let be a closed path such that for all . If for all , then and have the same number of zeros in (counting multiplicity).    Proof A  Observe first that the condition for all implies that and for all .  Let and . We wish to show that . This is the precise way of stating that the number of zeros of in is equal to the number of zeros of in (counting multipilicty).  Since is nonzero on we have on . Letting , we have . The penultimate equality is an instance of the more general property , which is essentially a consequence of the product rule for derivatives. (We leave this elementary proof to the reader.)  Lastly, observe that since for all , we have . Since is an elementary region, it follows from that , and hence that . We conclude that , as desired.    Proof B (sketch)  As an alternative, somewhat slicker proof, consider the function defined as . First show that is continuous, then conclude that is constant, since is connected and is discrete. It follows that , as desired.     Roots of polynomials   Let . Prove the following statements.    has exactly one root in .     has exactly four roots in the open annulus .     has exactly 2 roots in the open annulus .             Open mapping theorem   Open mapping   Let be a complex function with open domain . We say is open if for all open sets , is open: , maps open sets to open sets.     Locally -to-one   Let be a nonconstant analytic function with open connected domain . Given any open set and , let , and let be the order of as a zero of the function . There are open balls and such that for all , and for all there are exactly elements of that map to , and each of these is a zero of order one of the function .    We pick such         for all ,     for all .   Why can we do this? We will show that there is such an for each condition (a)-(c) separately; taking the minimum of these gives us an that satisfies all conditions at once. It is clear from the openness of that we can find an satisfying (a). If there were no such for which (b) is satisfied, then for each , we could find a such that . Since and is connected and is a limit point of the set of , would imply that for all , contradicting the fact the is nonconstant. Similarly, if there were no such for which (c) is satisfied we could find a sequence of points satisfying , and this would imply for all , contradicting again that is nonconstant.  Having chosen an satisfying (a)-(c), we let , . Since for all , we have . It follows by the extreme value theorem that we can find an such that . Since , the winding number defines a continuous, integer-valued function on . Since is connected, this winding number is constant for all . Since , we see that for all . On the other hand, we have , and by the , the last integral is equal to the number of zeros (counting multiplicity) of the function in . Since for all , it follows easily that for each and satisfying , this is a simple root of the function : , . It follows that for each there are exactly distinct elements satisfying . In particular, note that for each there is some element such that . Thus , as claimed.     Open mapping theorem   If is nonconstant and analytic on an open connected domain , then is open.    Given any open and any , according to there is are open balls and such that . Thus for all we can find an open ball . We conclude that is open.    The next result, the famous inverse function theorem is largely the result of applying and to the case where ( , ).   Inverse function theorem   Assume is analytic at and that . There is an open set containing satisfying the following properties.   The restriction is bijective and is nonzero on .    The inverse map is analytic and satisfies for all .          Since , is a simple zero of the function . We are thus in the situation of . Let and be open balls satisfying the conditions of that theorem. The set is an open set containing on which is injective (1-to-1) and is nonzero. The restricted function is thus bijective.    We first show that is continuous. This will follow from the fact is an open map. For notational clarity, we let . Using the defining property of the inverse function, satisfies . To show is continuous we will prove the following equivalent property (shown in one of your homework assignments): if is open, then is open. But this is easy: given any open it is easy to see that , which is open since is an open map. This proves is continuous.  It remains only to prove that is differentiable at all : it turns out this is not so difficult to prove once we know is continuous. Although it is straightforward to prove the formula using the limit definition of the derivative, we will instead use Caratheory's equivalent notion of differentiability (mentioned in homework) as an illustration of this technique's pleasing algebraic nature. Given , we have for some . Since is differentiable at there is a function satisfying the following conditions:    for all ,     is continuous at and satisfies .   Note that since is nonzero on , we have . Since is continuous at , we can find an open ball around such that for all . After a little algebra we see that for all , or equivalently, for all in the open set . Since is continuous, the function is continuous at and satisfies for all . Caratheodory's theorem now implies that is differentiable at and we have , as claimed.        Integral formula  With the notation of , given any closed ball and , we have the integral formula , where is a simple counterclockwise parametrization of . We do not include this as an official result (with proof) as we will not make use of it in the course and not wish to overburden the reader with formulae.    Maximum\/minimum modulus theorem   Assume is open and connected, and that is analytic and nonconstant on .   Maximum modulus principle   does not have a local maximum value on .    Minimum modulus principle   does not have a positive local minimum value on .    Complex extreme value theorem  Let be a closed and bounded subset of . The maximum value of is attained only on the boundary of . The minimum value of on is either , or is attained on the boundary .       Since is analytic and nonconstant, it is an open map. Each proof below will make use of this fact.   Given any and open ball , since is open, there is an open ball . Clearly will contain an element with . Since , we have for some . Thus for all open balls we can find a such that . This proves is not a local maximum value on , as desired.    Assume by contradiction that is a local minimum value of on . We could then find an open ball such that for all . But then the function is a nonconstant analytic function on and for all . In other words, is a maximum value on the open ball . This contradicts the result in (1).    By the multivariable extreme value theorem, attains both a maximum and minimum value on : that is, there are points such that for all .  We can write , where , the interior of , is an open set. By (1), we cannot have , since then would attain a maximum value on this open set. Thus , showing that the maximum value of is attained only on the boundary.  If the minimum value is nonzero, then (2) implies that . Thus , and we see in this case that the minimum value of is attained only on .        Schwarz's lemma   If is analytic on and satisfies and for all , then for all , and .  Furthermore, if for some , or if , then for some : , is the rotation by transformation in this case.    Since , we may write where is analytic on . Since for all , we have for all . Given any , since is analytic, on the function attains its maximum value on the boundary . Since on , we conclude that for all . Since this is true for all , we conclude that for all . Since , it follows that for all . Lastly, since , we see that .  Lastly, if there is an element satisfying , or if , then attains an absolute maximum value of 1 on . By we must have a constant function of modulus 1. It follows that for some , and thus , as claimed.     "
+  "body": " Rouché's theorem and open mapping theorem  In this section we prove an important consequence of the argument principle: Rouché's theorem.   Rouché's theorem   Let and be analytic functions on the elementary region , and let be a closed path in elementary region, let be a closed path such that for all . If for all , then and have the same number of zeros in (counting multiplicity).    Proof A  Observe first that the condition for all implies that and for all .  Let and . We wish to show that . This is the precise way of stating that the number of zeros of in is equal to the number of zeros of in (counting multipilicty).  Since is nonzero on we have on . Letting , we have . The penultimate equality is an instance of the more general property , which is essentially a consequence of the product rule for derivatives. (We leave this elementary proof to the reader.)  Lastly, observe that since for all , we have . Since is an elementary region, it follows from that , and hence that . We conclude that , as desired.    Proof B (sketch)  As an alternative, somewhat slicker proof, consider the function defined as . First show that is continuous, then conclude that is constant, since is connected and is discrete. It follows that , as desired.     Roots of polynomials   Let . Prove the following statements.    has exactly one root in .     has exactly four roots in the open annulus .     has exactly 2 roots in the open annulus .           "
 },
 {
   "id": "th_rouches",
@@ -3421,67 +3421,211 @@ var ptx_lunr_docs = [
   "body": " Roots of polynomials   Let . Prove the following statements.    has exactly one root in .     has exactly four roots in the open annulus .     has exactly 2 roots in the open annulus .          "
 },
 {
+  "id": "s_open",
+  "level": "1",
+  "url": "s_open.html",
+  "type": "Section",
+  "number": "1.26",
+  "title": "Open mapping theorem",
+  "body": " Open mapping theorem   Open mapping   Let be a complex function with open domain . We say is open if for all open sets , is open: , maps open sets to open sets.     Locally -to-one   Let be a nonconstant analytic function with open connected domain . Given any open set and , let , and let be the order of as a zero of the function . There are open balls and such that for all , and for all there are exactly elements of that map to , and each of these is a zero of order one of the function .    We pick such         for all ,     for all .   Why can we do this? We will show that there is such an for each condition (a)-(c) separately; taking the minimum of these gives us an that satisfies all conditions at once. It is clear from the openness of that we can find an satisfying (a). If there were no such for which (b) is satisfied, then for each , we could find a such that . Since and is connected and is a limit point of the set of , would imply that for all , contradicting the fact the is nonconstant. Similarly, if there were no such for which (c) is satisfied we could find a sequence of points satisfying , and this would imply for all , contradicting again that is nonconstant.  Having chosen an satisfying (a)-(c), we let , . Since for all , we have . It follows by the extreme value theorem that we can find an such that . Since , the winding number defines a continuous, integer-valued function on . Since is connected, this winding number is constant for all . Since , we see that for all . On the other hand, we have , and by the , the last integral is equal to the number of zeros (counting multiplicity) of the function in . Since for all , it follows easily that for each and satisfying , this is a simple root of the function : , . It follows that for each there are exactly distinct elements satisfying . In particular, note that for each there is some element such that . Thus , as claimed.     Open mapping theorem   If is nonconstant and analytic on an open connected domain , then is open.    Given any open and any , according to there are open balls and such that . Thus for all we can find an open ball . We conclude that is open.    The next result, the famous inverse function theorem is largely the result of applying and to the case where ( , ).   Inverse function theorem   Assume is analytic at and that . There is an open set containing satisfying the following properties.   The restriction is bijective and is nonzero on .    The inverse map is analytic and satisfies for all .          Since , is a simple zero of the function . We are thus in the situation of . Let and be open balls satisfying the conditions of that theorem. The set is an open set containing on which is injective (1-to-1) and is nonzero. The restricted function is thus bijective.    We first show that is continuous. This will follow from the fact is an open map. For notational clarity, we let . Using the defining property of the inverse function, satisfies . To show is continuous we will prove the following equivalent property (shown in one of your homework assignments): if is open, then is open. But this is easy: given any open it is easy to see that , which is open since is an open map. This proves is continuous.  It remains only to prove that is differentiable at all : it turns out this is not so difficult to prove once we know is continuous. Although it is straightforward to prove the formula using the limit definition of the derivative, we will instead use Caratheory's equivalent notion of differentiability (mentioned in homework) as an illustration of this technique's pleasing algebraic nature. Given , we have for some . Since is differentiable at there is a function satisfying the following conditions:    for all ,     is continuous at and satisfies .   Note that since is nonzero on , we have . Since is continuous at , we can find an open ball around such that for all . After a little algebra we see that for all , or equivalently, for all in the open set . Since is continuous, the function is continuous at and satisfies for all . Caratheodory's theorem now implies that is differentiable at and we have , as claimed.        Biholomorphic function   Let be an open subset of . A complex function is biholomorphic on if is analytic and injective on , and its inverse function is holomorphic.      Let be a complex function and let be an open subset of . The following statements are equivalent.    is biholomorphic on .     is injective on and for all .        Integral formula  With the notation of , given any closed ball and , we have the integral formula , where is a simple counterclockwise parametrization of . We do not include this as an official result (with proof) as we will not make use of it in the course and not wish to overburden the reader with formulae.    Maximum\/minimum modulus theorem   Assume is open and connected, and that is analytic and nonconstant on .   Maximum modulus principle   does not have a local maximum value on .    Minimum modulus principle   does not have a positive local minimum value on .    Complex extreme value theorem  Let be a closed and bounded subset of . The maximum value of is attained only on the boundary of . The minimum value of on is either , or is attained on the boundary .       Since is analytic and nonconstant, it is an open map. Each proof below will make use of this fact.   Given any and open ball , since is open, there is an open ball . Clearly will contain an element with . Since , we have for some . Thus for all open balls we can find a such that . This proves is not a local maximum value on , as desired.    Assume by contradiction that is a local minimum value of on . We could then find an open ball such that for all . But then the function is a nonconstant analytic function on and for all . In other words, is a maximum value on the open ball . This contradicts the result in (1).    By the multivariable extreme value theorem, attains both a maximum and minimum value on : that is, there are points such that for all .  We can write , where , the interior of , is an open set. By (1), we cannot have , since then would attain a maximum value on this open set. Thus , showing that the maximum value of is attained only on the boundary.  If the minimum value is nonzero, then (2) implies that . Thus , and we see in this case that the minimum value of is attained only on .        Schwarz's lemma   If is analytic on and satisfies and for all , then for all , and .  Furthermore, if for some , or if , then for some : , is the rotation by transformation in this case.    Since , we may write where is analytic on . Since for all , we have for all . Given any , since is analytic, on the function attains its maximum value on the boundary . Since on , we conclude that for all . Since this is true for all , we conclude that for all . Since , it follows that for all . Lastly, since , we see that .  Lastly, if there is an element satisfying , or if , then attains an absolute maximum value of 1 on . By we must have a constant function of modulus 1. It follows that for some , and thus , as claimed.    "
+},
+{
   "id": "d_open_map",
   "level": "2",
-  "url": "s_rouches.html#d_open_map",
+  "url": "s_open.html#d_open_map",
   "type": "Definition",
-  "number": "1.25.3",
+  "number": "1.26.1",
   "title": "Open mapping.",
   "body": " Open mapping   Let be a complex function with open domain . We say is open if for all open sets , is open: , maps open sets to open sets.   "
 },
 {
   "id": "th_locally_m_to_one",
   "level": "2",
-  "url": "s_rouches.html#th_locally_m_to_one",
+  "url": "s_open.html#th_locally_m_to_one",
   "type": "Theorem",
-  "number": "1.25.4",
+  "number": "1.26.2",
   "title": "Locally <span class=\"process-math\">\\(m\\)<\/span>-to-one.",
   "body": " Locally -to-one   Let be a nonconstant analytic function with open connected domain . Given any open set and , let , and let be the order of as a zero of the function . There are open balls and such that for all , and for all there are exactly elements of that map to , and each of these is a zero of order one of the function .    We pick such         for all ,     for all .   Why can we do this? We will show that there is such an for each condition (a)-(c) separately; taking the minimum of these gives us an that satisfies all conditions at once. It is clear from the openness of that we can find an satisfying (a). If there were no such for which (b) is satisfied, then for each , we could find a such that . Since and is connected and is a limit point of the set of , would imply that for all , contradicting the fact the is nonconstant. Similarly, if there were no such for which (c) is satisfied we could find a sequence of points satisfying , and this would imply for all , contradicting again that is nonconstant.  Having chosen an satisfying (a)-(c), we let , . Since for all , we have . It follows by the extreme value theorem that we can find an such that . Since , the winding number defines a continuous, integer-valued function on . Since is connected, this winding number is constant for all . Since , we see that for all . On the other hand, we have , and by the , the last integral is equal to the number of zeros (counting multiplicity) of the function in . Since for all , it follows easily that for each and satisfying , this is a simple root of the function : , . It follows that for each there are exactly distinct elements satisfying . In particular, note that for each there is some element such that . Thus , as claimed.   "
 },
 {
   "id": "th_open_mapping",
   "level": "2",
-  "url": "s_rouches.html#th_open_mapping",
+  "url": "s_open.html#th_open_mapping",
   "type": "Theorem",
-  "number": "1.25.5",
+  "number": "1.26.3",
   "title": "Open mapping theorem.",
-  "body": " Open mapping theorem   If is nonconstant and analytic on an open connected domain , then is open.    Given any open and any , according to there is are open balls and such that . Thus for all we can find an open ball . We conclude that is open.   "
+  "body": " Open mapping theorem   If is nonconstant and analytic on an open connected domain , then is open.    Given any open and any , according to there are open balls and such that . Thus for all we can find an open ball . We conclude that is open.   "
 },
 {
   "id": "th_inv_fun",
   "level": "2",
-  "url": "s_rouches.html#th_inv_fun",
+  "url": "s_open.html#th_inv_fun",
   "type": "Theorem",
-  "number": "1.25.6",
+  "number": "1.26.4",
   "title": "Inverse function theorem.",
   "body": " Inverse function theorem   Assume is analytic at and that . There is an open set containing satisfying the following properties.   The restriction is bijective and is nonzero on .    The inverse map is analytic and satisfies for all .          Since , is a simple zero of the function . We are thus in the situation of . Let and be open balls satisfying the conditions of that theorem. The set is an open set containing on which is injective (1-to-1) and is nonzero. The restricted function is thus bijective.    We first show that is continuous. This will follow from the fact is an open map. For notational clarity, we let . Using the defining property of the inverse function, satisfies . To show is continuous we will prove the following equivalent property (shown in one of your homework assignments): if is open, then is open. But this is easy: given any open it is easy to see that , which is open since is an open map. This proves is continuous.  It remains only to prove that is differentiable at all : it turns out this is not so difficult to prove once we know is continuous. Although it is straightforward to prove the formula using the limit definition of the derivative, we will instead use Caratheory's equivalent notion of differentiability (mentioned in homework) as an illustration of this technique's pleasing algebraic nature. Given , we have for some . Since is differentiable at there is a function satisfying the following conditions:    for all ,     is continuous at and satisfies .   Note that since is nonzero on , we have . Since is continuous at , we can find an open ball around such that for all . After a little algebra we see that for all , or equivalently, for all in the open set . Since is continuous, the function is continuous at and satisfies for all . Caratheodory's theorem now implies that is differentiable at and we have , as claimed.      "
 },
 {
-  "id": "ss_open_mapping-7",
+  "id": "d_biholomorphic",
   "level": "2",
-  "url": "s_rouches.html#ss_open_mapping-7",
+  "url": "s_open.html#d_biholomorphic",
+  "type": "Definition",
+  "number": "1.26.5",
+  "title": "Biholomorphic function.",
+  "body": " Biholomorphic function   Let be an open subset of . A complex function is biholomorphic on if is analytic and injective on , and its inverse function is holomorphic.   "
+},
+{
+  "id": "cor_biholomorphic",
+  "level": "2",
+  "url": "s_open.html#cor_biholomorphic",
+  "type": "Corollary",
+  "number": "1.26.6",
+  "title": "",
+  "body": "  Let be a complex function and let be an open subset of . The following statements are equivalent.    is biholomorphic on .     is injective on and for all .      "
+},
+{
+  "id": "s_open-9",
+  "level": "2",
+  "url": "s_open.html#s_open-9",
   "type": "Remark",
-  "number": "1.25.7",
+  "number": "1.26.7",
   "title": "Integral formula.",
   "body": " Integral formula  With the notation of , given any closed ball and , we have the integral formula , where is a simple counterclockwise parametrization of . We do not include this as an official result (with proof) as we will not make use of it in the course and not wish to overburden the reader with formulae.  "
 },
 {
   "id": "th_max_min_modulus",
   "level": "2",
-  "url": "s_rouches.html#th_max_min_modulus",
+  "url": "s_open.html#th_max_min_modulus",
   "type": "Theorem",
-  "number": "1.25.8",
+  "number": "1.26.8",
   "title": "Maximum\/minimum modulus theorem.",
   "body": " Maximum\/minimum modulus theorem   Assume is open and connected, and that is analytic and nonconstant on .   Maximum modulus principle   does not have a local maximum value on .    Minimum modulus principle   does not have a positive local minimum value on .    Complex extreme value theorem  Let be a closed and bounded subset of . The maximum value of is attained only on the boundary of . The minimum value of on is either , or is attained on the boundary .       Since is analytic and nonconstant, it is an open map. Each proof below will make use of this fact.   Given any and open ball , since is open, there is an open ball . Clearly will contain an element with . Since , we have for some . Thus for all open balls we can find a such that . This proves is not a local maximum value on , as desired.    Assume by contradiction that is a local minimum value of on . We could then find an open ball such that for all . But then the function is a nonconstant analytic function on and for all . In other words, is a maximum value on the open ball . This contradicts the result in (1).    By the multivariable extreme value theorem, attains both a maximum and minimum value on : that is, there are points such that for all .  We can write , where , the interior of , is an open set. By (1), we cannot have , since then would attain a maximum value on this open set. Thus , showing that the maximum value of is attained only on the boundary.  If the minimum value is nonzero, then (2) implies that . Thus , and we see in this case that the minimum value of is attained only on .      "
 },
 {
   "id": "cor_schwarzs_lemma",
   "level": "2",
-  "url": "s_rouches.html#cor_schwarzs_lemma",
+  "url": "s_open.html#cor_schwarzs_lemma",
   "type": "Corollary",
-  "number": "1.25.9",
+  "number": "1.26.9",
   "title": "Schwarz’s lemma.",
   "body": " Schwarz's lemma   If is analytic on and satisfies and for all , then for all , and .  Furthermore, if for some , or if , then for some : , is the rotation by transformation in this case.    Since , we may write where is analytic on . Since for all , we have for all . Given any , since is analytic, on the function attains its maximum value on the boundary . Since on , we conclude that for all . Since this is true for all , we conclude that for all . Since , it follows that for all . Lastly, since , we see that .  Lastly, if there is an element satisfying , or if , then attains an absolute maximum value of 1 on . By we must have a constant function of modulus 1. It follows that for some , and thus , as claimed.   "
+},
+{
+  "id": "s_conformal",
+  "level": "1",
+  "url": "s_conformal.html",
+  "type": "Section",
+  "number": "1.27",
+  "title": "Conformal maps",
+  "body": " Conformal maps   Jacobian matrix of differentiable function   Let be an open subset of , let be a differentiable function. Writing , for all , we define the Jacobian matrix  of at to be the matrix .     Conformal map   A matrix with real coefficients is conformal if its associated linear transformation preserves the oriented angle between any two nonzero vectors.  Let be an open subset of . A real differentiable function is conformal at a point if the Jacobian matrix is conformal. Given an open set , we say is conformal on if it is conformal at all points in , and we say is conformal if it is conformal on its entire domain.     Oriented angle  Mark well the oriented angle detail in this definition. The linear transformation defined as preserves angles, but not oriented angles: the oriented angle from to is , but the oriented angle from and is .    Geometric interpretation  The chain rule allows us to give a more geometric interpretation of conformality. Assume is conformal at the point , and suppose and are two smooth paths defined on an interval satisfying . Composing and yields smooth paths and intersecting at . Using the multivariable chain rule, the tangent vectors of the two curves at are given as . Since is a conformal matrix, we conclude that the oriented angle between the tangent vectors of the paths and at is equal to the oriented angle between the tangent vectors of the images of these paths under at .    Conformal matrices  Let be a matrix with real coefficients. The following statements can be shown to be equivalent using some elementary linear algebra.    is conformal.     , for some positive and orthogonal matrix of determinant 1. (Recall that is orthogonal if .)     for some , .       Conformal maps   Let be an open subset of , and let be a real differentiable map. Making our usual identification of with , we treat as a complex function.   For all , is conformal at if and only if is analytic at and .    Given an open subset , is conformal on if and only if is analytic on and for all .     is conformal and injective on if and only if is biholomorphic.            Conformal map: squaring function   Let ,   Show that is conformal on     Illustrate geometrically that is not conformal at . What does the this transformation do to the angles between tangent vectors there?            Möbius transformation   Let be complex constants for which the matrix satisfies . The Möbius transformation (or fractional linear transformation ) associated to is the function defined as .    It is clear that a Möbius transformation as in has at most one isolated singularity at (assuming ), where has a simple pole, and in this case . Furthermore, a straightforward computation reveals that . Let , the Riemann sphere. The observations allow us to extend to a function by defining . Note that for all this formula agrees with since the original function is continuous there.  As the theorem below illustrates, this more expanded setting gives rise to a tidy conceptual understanding of Möbius transformations. Before we get there, we need to generalize the notion of a circle to reflect the geometry of the Riemann sphere.   Generalized circle   We call any line or circle in a generalized circle . Furthermore we say that a line is a generalized circle containing .     Generalized circle  Let , and let be the stereographic projection. (See .) By a circle in we mean any latitude line with respect to a chosen pole . (Such a latitude line can be described as the intersection of with a plane of the form for some .) It can be shown that the image under of any circle in is either a circle or line, and that is a line if and only if contains .  In other words, generalized circles in correspond precisely to circles in under the stereographic projection; and in particular, lines in correspond to circles containing (which corresponds to under ). This explains where this terminology comes from.    Möbius transformations   Let and be invertible complex matrices: , and .    is a conformal map on .    We have , where is the matrix product. In other words, letting , we have .     is biholomorphic on and its inverse is , where .    Every Möbius transformation can be expressed as a composition of a dilation ( , ), a translation ( , ), and an inversion ( ).    A Möbius transformation maps generalized circles of to generalized circles of .    Given any distinct points and distinct points , there is a unique Möbius transformation satisfying .       According to of , once we know the value of a Möbius transformation at three distinct inputs , we can determine for any . This can often be done in a pleasing geometric manner using the following properties also enjoyed by .    maps generalized circles to generalized circles.     is continuous. As such given any connected region , is connected. Furthermore because has a continuous inverse, it follows that maps the boundary of to the boundary of .     is conformal. Thus if two paths intersect at a point with oriented angle , then their images under intersection at with the same angle.   The next example illustrates how to get as much as possible out of these properties.   Möbius transformation   Let be the unique Möbius transformation satisfying .   Find a complex matrix such that .    Explicitly express as a composition of dilations, translations, and inversions.    Find a complex matrix such that .    For each region (or curve) below, determine its image under .   The imaginary axis.    The right half-plane     The real axis.    The upper half-plane     The line .             Writing , since and , we see that and , Thus . Next since , we must have and . Lastly, since , we have , or . Thus we can choose for any . In particular, we can set , in which case . Note that although there are infinitely many different matrices satisfying (one for each nonzero ), they all give rise to the same function . Indeed, given any as in we have . My particular choice of yields a particularly simple matrix that makes life easier in the next two parts.    Using your favorite algorithm for writing an invertible matrix as a product of elementary matrices, we have . Writing this equality as , we have , where . We see that is a dilation and is a translation. Furthermore we can write , where (inversion), and (translation). Thus is our desired breakdown of into dilations, translations, and inversions.    We have , where is any scalar multiple of . We take Thus .       "
+},
+{
+  "id": "d_jacobian",
+  "level": "2",
+  "url": "s_conformal.html#d_jacobian",
+  "type": "Definition",
+  "number": "1.27.1",
+  "title": "Jacobian matrix of differentiable function.",
+  "body": " Jacobian matrix of differentiable function   Let be an open subset of , let be a differentiable function. Writing , for all , we define the Jacobian matrix  of at to be the matrix .   "
+},
+{
+  "id": "d_conformal",
+  "level": "2",
+  "url": "s_conformal.html#d_conformal",
+  "type": "Definition",
+  "number": "1.27.2",
+  "title": "Conformal map.",
+  "body": " Conformal map   A matrix with real coefficients is conformal if its associated linear transformation preserves the oriented angle between any two nonzero vectors.  Let be an open subset of . A real differentiable function is conformal at a point if the Jacobian matrix is conformal. Given an open set , we say is conformal on if it is conformal at all points in , and we say is conformal if it is conformal on its entire domain.   "
+},
+{
+  "id": "s_conformal-4",
+  "level": "2",
+  "url": "s_conformal.html#s_conformal-4",
+  "type": "Remark",
+  "number": "1.27.3",
+  "title": "Oriented angle.",
+  "body": " Oriented angle  Mark well the oriented angle detail in this definition. The linear transformation defined as preserves angles, but not oriented angles: the oriented angle from to is , but the oriented angle from and is .  "
+},
+{
+  "id": "s_conformal-5",
+  "level": "2",
+  "url": "s_conformal.html#s_conformal-5",
+  "type": "Remark",
+  "number": "1.27.4",
+  "title": "Geometric interpretation.",
+  "body": " Geometric interpretation  The chain rule allows us to give a more geometric interpretation of conformality. Assume is conformal at the point , and suppose and are two smooth paths defined on an interval satisfying . Composing and yields smooth paths and intersecting at . Using the multivariable chain rule, the tangent vectors of the two curves at are given as . Since is a conformal matrix, we conclude that the oriented angle between the tangent vectors of the paths and at is equal to the oriented angle between the tangent vectors of the images of these paths under at .  "
+},
+{
+  "id": "s_conformal-6",
+  "level": "2",
+  "url": "s_conformal.html#s_conformal-6",
+  "type": "Remark",
+  "number": "1.27.5",
+  "title": "Conformal matrices.",
+  "body": " Conformal matrices  Let be a matrix with real coefficients. The following statements can be shown to be equivalent using some elementary linear algebra.    is conformal.     , for some positive and orthogonal matrix of determinant 1. (Recall that is orthogonal if .)     for some , .     "
+},
+{
+  "id": "th_conformal",
+  "level": "2",
+  "url": "s_conformal.html#th_conformal",
+  "type": "Theorem",
+  "number": "1.27.6",
+  "title": "Conformal maps.",
+  "body": " Conformal maps   Let be an open subset of , and let be a real differentiable map. Making our usual identification of with , we treat as a complex function.   For all , is conformal at if and only if is analytic at and .    Given an open subset , is conformal on if and only if is analytic on and for all .     is conformal and injective on if and only if is biholomorphic.          "
+},
+{
+  "id": "eg_conformal_poly",
+  "level": "2",
+  "url": "s_conformal.html#eg_conformal_poly",
+  "type": "Example",
+  "number": "1.27.7",
+  "title": "Conformal map: squaring function.",
+  "body": " Conformal map: squaring function   Let ,   Show that is conformal on     Illustrate geometrically that is not conformal at . What does the this transformation do to the angles between tangent vectors there?          "
+},
+{
+  "id": "d_mobius_trans",
+  "level": "2",
+  "url": "s_conformal.html#d_mobius_trans",
+  "type": "Definition",
+  "number": "1.27.8",
+  "title": "Möbius transformation.",
+  "body": " Möbius transformation   Let be complex constants for which the matrix satisfies . The Möbius transformation (or fractional linear transformation ) associated to is the function defined as .   "
+},
+{
+  "id": "d_generalized_circle",
+  "level": "2",
+  "url": "s_conformal.html#d_generalized_circle",
+  "type": "Definition",
+  "number": "1.27.9",
+  "title": "Generalized circle.",
+  "body": " Generalized circle   We call any line or circle in a generalized circle . Furthermore we say that a line is a generalized circle containing .   "
+},
+{
+  "id": "s_conformal-13",
+  "level": "2",
+  "url": "s_conformal.html#s_conformal-13",
+  "type": "Remark",
+  "number": "1.27.10",
+  "title": "Generalized circle.",
+  "body": " Generalized circle  Let , and let be the stereographic projection. (See .) By a circle in we mean any latitude line with respect to a chosen pole . (Such a latitude line can be described as the intersection of with a plane of the form for some .) It can be shown that the image under of any circle in is either a circle or line, and that is a line if and only if contains .  In other words, generalized circles in correspond precisely to circles in under the stereographic projection; and in particular, lines in correspond to circles containing (which corresponds to under ). This explains where this terminology comes from.  "
+},
+{
+  "id": "th_mobius_trans",
+  "level": "2",
+  "url": "s_conformal.html#th_mobius_trans",
+  "type": "Theorem",
+  "number": "1.27.11",
+  "title": "Möbius transformations.",
+  "body": " Möbius transformations   Let and be invertible complex matrices: , and .    is a conformal map on .    We have , where is the matrix product. In other words, letting , we have .     is biholomorphic on and its inverse is , where .    Every Möbius transformation can be expressed as a composition of a dilation ( , ), a translation ( , ), and an inversion ( ).    A Möbius transformation maps generalized circles of to generalized circles of .    Given any distinct points and distinct points , there is a unique Möbius transformation satisfying .      "
+},
+{
+  "id": "eg_mobius",
+  "level": "2",
+  "url": "s_conformal.html#eg_mobius",
+  "type": "Example",
+  "number": "1.27.12",
+  "title": "Möbius transformation.",
+  "body": " Möbius transformation   Let be the unique Möbius transformation satisfying .   Find a complex matrix such that .    Explicitly express as a composition of dilations, translations, and inversions.    Find a complex matrix such that .    For each region (or curve) below, determine its image under .   The imaginary axis.    The right half-plane     The real axis.    The upper half-plane     The line .             Writing , since and , we see that and , Thus . Next since , we must have and . Lastly, since , we have , or . Thus we can choose for any . In particular, we can set , in which case . Note that although there are infinitely many different matrices satisfying (one for each nonzero ), they all give rise to the same function . Indeed, given any as in we have . My particular choice of yields a particularly simple matrix that makes life easier in the next two parts.    Using your favorite algorithm for writing an invertible matrix as a product of elementary matrices, we have . Writing this equality as , we have , where . We see that is a dilation and is a translation. Furthermore we can write , where (inversion), and (translation). Thus is our desired breakdown of into dilations, translations, and inversions.    We have , where is any scalar multiple of . We take Thus .      "
 },
 {
   "id": "appendix-notation",
