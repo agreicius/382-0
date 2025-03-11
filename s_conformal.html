@@ -678,7 +678,7 @@ g(0) \amp = -1 \amp g(i)\amp =0 \amp g(\infty)\amp = 1\text{.}
 <li id="eg_mobius-2-1-3-4-1-2-3"><div class="para" id="eg_mobius-2-1-3-4-1-2-3-1">The real axis.</div></li>
 <li id="eg_mobius-2-1-3-4-1-2-4"><div class="para" id="eg_mobius-2-1-3-4-1-2-4-1">The upper half-plane <span class="process-math">\(\{z\in\C\colon \Im z&gt; 0\}\)</span>
 </div></li>
-<li id="eg_mobius-2-1-3-4-1-2-5"><div class="para" id="eg_mobius-2-1-3-4-1-2-5-1">The line <span class="process-math">\(\Im z=i\text{.}\)</span>
+<li id="eg_mobius-2-1-3-4-1-2-5"><div class="para" id="eg_mobius-2-1-3-4-1-2-5-1">The line <span class="process-math">\(\Im z=1\text{.}\)</span>
 </div></li>
 </ol>
 </div></li>
@@ -707,7 +707,7 @@ A=\begin{bmatrix}
 <div class="para">Note that although there are infinitely many different matrices <span class="process-math">\(A\)</span> satisfying <span class="process-math">\(g=f_A\)</span> (one for each nonzero <span class="process-math">\(b\)</span>), they all give rise to the same function <span class="process-math">\(g\text{.}\)</span> Indeed, given any <span class="process-math">\(A\)</span> as in <a href="s_conformal.html#eq_mobius_matrix" class="xref" data-knowl="./knowl/xref/eq_mobius_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.100">(1.100)</a> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_mobius_matrix.html">
 \begin{equation*}
-g(z)=\frac{ibz+b}{ibz-b}=\frac{b}{b}\frac{iz+1}{iz-1}=\frac{iz+1}{iz-1}\text{.}
+g(z)=\frac{ibz+b}{ibz-b}=\frac{ib}{ib}\frac{z-i}{z+1}=\frac{z-i}{z+i}\text{.}
 \end{equation*}
 </div>
 <div class="para">My particular choice of <span class="process-math">\(b=-i\)</span> yields a particularly simple matrix that makes life easier in the next two parts.</div>
@@ -779,6 +779,30 @@ g^{-1}(z)=\frac{z+1}{-iz+i}=i\cdot\frac{z+1}{z-1}\text{.}
 \end{equation*}
 </div>
 </div></li>
+<li id="eg_mobius-3-1-1-4">
+<div class="para" id="eg_mobius-3-1-1-4-1">It is possible to answer this question without ever making using of our explicit formula for <span class="process-math">\(g\text{,}\)</span> using instead only the the fact that <span class="process-math">\(g\)</span> is biholomorphic, conformal, maps generalized circles to generalized circles, and maps <span class="process-math">\(0,1,\infty\)</span> to <span class="process-math">\(-1,0,1\text{,}\)</span> respectively. For the sake of brevity, however, we will “cheat” here and there, and evaluate <span class="process-math">\(g\)</span> at some other points. For example, it helps us to observe that <span class="process-math">\(g\)</span> has a pole at <span class="process-math">\(z_0=-i\)</span> (and thus <span class="process-math">\(g(-i)=\infty\)</span>).</div>
+<div class="para" id="eg_mobius-3-1-1-4-2">Let <span class="process-math">\(\ell\)</span> be the imaginary axis. We know <span class="process-math">\(g(\ell\cup\{\infty\})\)</span> is a generalized circle containing <span class="process-math">\(g(0)=-1\text{,}\)</span> <span class="process-math">\(g(i)=0\)</span> and <span class="process-math">\(g(\infty)=1\text{.}\)</span> There is no circle containing these three points, so <span class="process-math">\(g(\ell\cup \{\infty\})\)</span> must be the real axis. Since <span class="process-math">\(g(\infty)=1\text{,}\)</span> we conclude that <span class="process-math">\(g(\ell)=\R-\{1\}\text{.}\)</span>
+</div>
+<div class="para logical" id="eg_mobius-3-1-1-4-3">
+<div class="para">Let’s nail down some names for various open half-planes:</div>
+<div class="displaymath process-math" id="eg_mobius-3-1-1-4-3-1">
+\begin{align*}
+N\amp = \{z\in \C\colon \Im z&gt; 0\} \\
+S \amp =\{z\in \C \colon \Im z&lt; 0\}\\
+E \amp =\{z\in \C\colon \Re z&lt; 0\}\\
+W\amp = \{z\in \C\colon \Re z&gt; 0\} \text{.}
+\end{align*}
+</div>
+<div class="para">As you can tell, I am thinking in terms of north, south, east, and west. Note that each of these regions is open and connected. Since <span class="process-math">\(g(\ell)=\R-\{0\}\)</span> and <span class="process-math">\(g\)</span> is bijective, we have <span class="process-math">\(g(E)\subseteq N\cup S\text{.}\)</span> Since <span class="process-math">\(g(E)\)</span> is connected and and since <span class="process-math">\(N\cap S=\emptyset\text{,}\)</span> we must have <span class="process-math">\(g(E)\subseteq N\)</span> or <span class="process-math">\(g(E)\subseteq S\text{.}\)</span> Since <span class="process-math">\(g(1)=(1-i)/(1+i)=-i\in S\text{,}\)</span> we see that <span class="process-math">\(g(E)\subseteq S\text{.}\)</span> Applying the inverse <span class="process-math">\(g^{-1}\)</span> to this inclusion, we see further that <span class="process-math">\(E\subseteq g^{-1}(S)\text{.}\)</span> Since <span class="process-math">\(g^{-1}(S)\subseteq W\)</span> or <span class="process-math">\(g^{-1}(S)\subseteq E\)</span> (using similar reasoning as above), the inclusion <span class="process-math">\(E\subseteq g^{-1}(S)\)</span> implies <span class="process-math">\(g^{-1}(S)\subseteq E\text{.}\)</span> We conclude that <span class="process-math">\(S\subseteq g(E)\)</span> and thus that <span class="process-math">\(g(E)=S\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="eg_mobius-3-1-1-4-4">Since <span class="process-math">\(g(0)=-1\text{,}\)</span> <span class="process-math">\(g(1)=-i\text{,}\)</span> and <span class="process-math">\(g(\infty)=1\text{,}\)</span> we see that <span class="process-math">\(g(\R\cup \{\infty\})\)</span> is a generalized circe containing <span class="process-math">\(-1,-i, 1\text{.}\)</span> The unit circle, <span class="process-math">\(S^1=\{z\in \C\colon \abs{z}=1\}\)</span> is the only such generalized circle. Thus <span class="process-math">\(g(\R\cup \{\infty\})=S^1\)</span> and <span class="process-math">\(g(\R)=S^1-\{1\}\text{.}\)</span>
+</div>
+<div class="para" id="eg_mobius-3-1-1-4-5">Continue to denote the upper half-plane as <span class="process-math">\(N\text{.}\)</span>  Since <span class="process-math">\(g(\R)=S^1-\{1\}\)</span> and <span class="process-math">\(g(N)\)</span> is connected, we must have <span class="process-math">\(g(N)\)</span> lying entirely within the unit circle or entirely without it. Since <span class="process-math">\(g(i)=0\text{,}\)</span> we conclude that <span class="process-math">\(g(N)\subseteq B_1(0)\text{.}\)</span> Now making use of <span class="process-math">\(g^{-1}\)</span> we can argue further (similarly as above) that <span class="process-math">\(g^{-1}(B_1(0))\subseteq N \text{,}\)</span> and hence <span class="process-math">\(B_1(0)\subseteq g(N)\text{.}\)</span> We conclude that <span class="process-math">\(g(N)=B_1(0)\text{.}\)</span>
+</div>
+<div class="para" id="eg_mobius-3-1-1-4-6">Since the line <span class="process-math">\(\ell'\)</span> defined as <span class="process-math">\(\Im z=1\)</span> lies in the upper half-plane, we see that <span class="process-math">\(g(\ell' \cup \{\infty\})\)</span> must be a generalized circle <span class="process-math">\(C\)</span> lying within <span class="process-math">\(g(N)=B_1(0)\cup \{1\}\)</span> and containing <span class="process-math">\(g(i)=0\)</span> and <span class="process-math">\(g(\infty)=1\text{.}\)</span> Since <span class="process-math">\(C\)</span> is bounded, it must be an honest to goodness circle.  We could get one more point on <span class="process-math">\(C\)</span> by computing <span class="process-math">\(g(1+i)\text{,}\)</span> but instead we argue using conformality. The paths <span class="process-math">\(\gamma(t)=(t+1)i\)</span> and <span class="process-math">\(\psi(t)=t+i\)</span> intersect at <span class="process-math">\(i\)</span> where their tangents form an oriented angle of <span class="process-math">\(\pi/2\)</span> (from <span class="process-math">\(\phi\)</span> to <span class="process-math">\(\gamma\)</span>). Since <span class="process-math">\(g\)</span> is conformal, the paths <span class="process-math">\(g\circ \gamma\)</span> and <span class="process-math">\(g\circ \psi\)</span> intersect at <span class="process-math">\(g(i)=0\)</span> at an oriented angle of <span class="process-math">\(\pi/2\text{.}\)</span> Since <span class="process-math">\(g\circ \gamma\)</span> points tangentially along the real line (from above), and <span class="process-math">\(g\circ\psi\)</span> points tangentially along the circle <span class="process-math">\(C\)</span> at the point <span class="process-math">\(0\text{,}\)</span> we see that the tangent line to <span class="process-math">\(C\)</span> at <span class="process-math">\(0\)</span> is vertical! A geometric argument then shows we must have <span class="process-math">\(C=\{z\in \C\colon \abs{z-1/2}=1/2\}\text{.}\)</span>
+</div>
+</li>
 </ol></div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_open.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
