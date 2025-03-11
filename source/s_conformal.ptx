@@ -320,7 +320,7 @@ defined as
                     </li>
                     <li>
                         <p>
-                            The line <m>\Im z=i</m>. 
+                            The line <m>\Im z=1</m>. 
                         </p>
                     </li>
                 </ol>
@@ -350,7 +350,7 @@ defined as
                 </me>.
                 Note that although there are infinitely many different matrices <m>A</m> satisfying <m>g=f_A</m> (one for each nonzero <m>b</m>), they all give rise to the same function <m>g</m>. Indeed, given any <m>A</m> as in <xref ref="eq_mobius_matrix"/> we have 
                 <me>
-                    g(z)=\frac{ibz+b}{ibz-b}=\frac{b}{b}\frac{iz+1}{iz-1}=\frac{iz+1}{iz-1}
+                    g(z)=\frac{ibz+b}{ibz-b}=\frac{ib}{ib}\frac{z-i}{z+1}=\frac{z-i}{z+i}
                 </me>.
                 My particular choice of <m>b=-i</m> yields a particularly simple matrix that makes life easier in the next two parts. 
             </p>
@@ -410,8 +410,33 @@ defined as
                 <me>
                     g^{-1}(z)=\frac{z+1}{-iz+i}=i\cdot\frac{z+1}{z-1}
                 </me>.
-                                
-                 
+            </p>
+        </li>
+        <li>
+            <p>
+                It is possible to answer this question without ever making using of our explicit formula for <m>g</m>, using instead only the the fact that <m>g</m> is biholomorphic, conformal, maps generalized circles to generalized circles, and maps <m>0,1,\infty</m> to <m>-1,0,1</m>, respectively. For the sake of brevity, however, we will <q>cheat</q> here and there, and evaluate <m>g</m> at some other points. For example, it helps us to observe that <m>g</m> has a pole at <m>z_0=-i</m> (and thus <m>g(-i)=\infty</m>).  
+            </p>
+            <p>
+                Let <m>\ell</m> be the imaginary axis. We know <m>g(\ell\cup\{\infty\})</m> is a generalized circle containing <m>g(0)=-1</m>, <m>g(i)=0</m> and <m>g(\infty)=1</m>. There is no circle containing these three points, so <m>g(\ell\cup \{\infty\})</m> must be the real axis. Since <m>g(\infty)=1</m>, we conclude that <m>g(\ell)=\R-\{1\}</m>.
+            </p>
+            <p>
+                Let's nail down some names for various open half-planes: 
+                <md>
+                    <mrow>N\amp = \{z\in \C\colon \Im z&gt; 0\} </mrow>
+                    <mrow>S \amp =\{z\in \C \colon \Im z&lt; 0\}</mrow>
+                    <mrow>E \amp =\{z\in \C\colon \Re z&lt; 0\}</mrow>
+                    <mrow>W\amp = \{z\in \C\colon \Re z&gt; 0\} </mrow>
+                </md>.
+                As you can tell, I am thinking in terms of north, south, east, and west. Note that each of these regions is open and connected. Since <m>g(\ell)=\R-\{0\}</m> and <m>g</m> is bijective, we have <m>g(E)\subseteq N\cup S</m>. Since <m>g(E)</m> is connected and and since <m>N\cap S=\emptyset</m>, we must have <m>g(E)\subseteq N</m> or <m>g(E)\subseteq S</m>. Since <m>g(1)=(1-i)/(1+i)=-i\in S</m>, we see that <m>g(E)\subseteq S</m>. Applying the inverse <m>g^{-1}</m> to this inclusion, we see further that <m>E\subseteq g^{-1}(S)</m>. Since <m>g^{-1}(S)\subseteq W</m> or <m>g^{-1}(S)\subseteq E</m> (using similar reasoning as above), the inclusion <m>E\subseteq g^{-1}(S)</m> implies <m>g^{-1}(S)\subseteq E</m>. We conclude that <m>S\subseteq g(E)</m> and thus that <m>g(E)=S</m>. 
+            </p>
+            <p>
+                Since <m>g(0)=-1</m>, <m>g(1)=-i</m>, and <m>g(\infty)=1</m>, we see that <m>g(\R\cup \{\infty\})</m> is a generalized circe containing <m>-1,-i, 1</m>. The unit circle, <m>S^1=\{z\in \C\colon \abs{z}=1\}</m> is the only such generalized circle. Thus <m>g(\R\cup \{\infty\})=S^1</m> and <m>g(\R)=S^1-\{1\}</m>. 
+            </p>
+            <p>
+                Continue to denote the upper half-plane as <m>N</m>.  Since <m>g(\R)=S^1-\{1\}</m> and <m>g(N)</m> is connected, we must have <m>g(N)</m> lying entirely within the unit circle or entirely without it. Since <m>g(i)=0</m>, we conclude that <m>g(N)\subseteq B_1(0)</m>. Now making use of <m>g^{-1}</m> we can argue further (similarly as above) that <m>g^{-1}(B_1(0))\subseteq N </m>, and hence <m>B_1(0)\subseteq g(N)</m>. We conclude that <m>g(N)=B_1(0)</m>. 
+            </p>
+            <p>
+                Since the line <m>\ell'</m> defined as <m>\Im z=1</m> lies in the upper half-plane, we see that <m>g(\ell' \cup \{\infty\})</m> must be a generalized circle <m>C</m> lying within <m>g(N)=B_1(0)\cup \{1\}</m> and containing <m>g(i)=0</m> and <m>g(\infty)=1</m>. Since <m>C</m> is bounded, it must be an honest to goodness circle.  We could get one more point on <m>C</m> by computing <m>g(1+i)</m>, but instead we argue using conformality. The paths <m>\gamma(t)=(t+1)i</m> and <m>\psi(t)=t+i</m> intersect at <m>i</m> where their tangents form an oriented angle of <m>\pi/2</m> (from <m>\phi</m> to <m>\gamma</m>). Since <m>g</m> is conformal, the paths <m>g\circ \gamma</m> and <m>g\circ \psi</m> intersect at <m>g(i)=0</m> at an oriented angle of <m>\pi/2</m>. Since <m>g\circ \gamma</m> points tangentially along the real line (from above), and <m>g\circ\psi</m> points tangentially along the circle <m>C</m> at the point <m>0</m>, we see that the tangent line to <m>C</m> at <m>0</m> is vertical! A geometric argument then shows we must have <m>C=\{z\in \C\colon \abs{z-1/2}=1/2\}</m>.    
             </p>
         </li>
     </ol>
