@@ -123,7 +123,7 @@
         </li>
         <li>
             <p>
-                Illustrate geometrically that <m>f</m> is not conformal at <m>z_0=0</m>. What does the this transformation do to the angles between tangent vectors there? 
+                Illustrate with an explicit geometric example that <m>f</m> does not preserve the angle between curves intersecting at <m>z_0=0</m>.
             </p>
         </li>
     </ol>
@@ -131,7 +131,18 @@
     </statement>
     <solution>
     <p>
-    
+    <ol>
+        <li>
+            <p>
+                Clearly <m>f</m> is analytic everywhere, and  <m>f'(z)=2z</m> is nonzero at all <m>z\ne 0</m>. Thus <m>f</m> is conformal on <m>\C-\{0\}</m> by <xref ref="th_conformal"/>. 
+            </p>
+        </li>
+        <li>
+            <p>
+                Consider the rays <m>R_0</m> and <m>R_{\pi/4}</m>, which intersect at <m>z_0=0</m> at an angle of <m>\pi/4</m>. However, their images under <m>f</m> are <m>f(R_0)=R_0</m> and <m>f(R_{\pi/4})=R_{\pi/2}</m>, which intersect at an angle of <m>\pi/2</m>.  
+            </p>
+        </li>
+    </ol>
     </p>
     </solution>
     </example>
@@ -296,7 +307,7 @@ defined as
         </li>
         <li>
             <p>
-                For each region (or curve) below, determine its image under <m>f</m>. 
+                For each region (or curve) below, determine its image under <m>g</m>. 
                 <ol cols="2">
                     <li>
                         <p>
@@ -334,7 +345,7 @@ defined as
     <ol>
         <li>
             <p>
-                Writing <m>f(z)=(az+b)/(cz+d)</m>, since <m>f(0)=-1</m> and <m>f(\infty)=1</m>,  we see that <m>b=-d</m> and <m>a=c</m>, Thus <m>f(z)=(az+b)/(az-b)</m>.  Next since <m>a(-b)-ab=-2ab\ne 0</m>, we must have <m>a\ne 0</m> and <m>b\ne 0</m>. Lastly, since  <m>f(i)=0</m>, we have <m>ai=-b</m>, or <m>a=ib</m>. Thus we can choose 
+                Writing <m>g(z)=(az+b)/(cz+d)</m>, since <m>g(0)=-1</m> and <m>g(\infty)=1</m>,  we see that <m>b=-d</m> and <m>a=c</m>, Thus <m>g(z)=(az+b)/(az-b)</m>.  Next since <m>a(-b)-ab=-2ab\ne 0</m>, we must have <m>a\ne 0</m> and <m>b\ne 0</m>. Lastly, since  <m>g(i)=0</m>, we have <m>ai=-b</m>, or <m>a=ib</m>. Thus we can choose 
                 <men xml:id="eq_mobius_matrix">
                     A=\begin{bmatrix}
                     ib\amp b\\ 
