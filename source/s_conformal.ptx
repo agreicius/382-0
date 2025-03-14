@@ -107,6 +107,7 @@
     </statement>
     <proof>
     <p>
+        The key to all the proofs is the fact that a real differentiable function <m>f\colon U\rightarrow \R^2</m>, <m>f=(u,v)</m>, is complex differentiable if and only if <m>u</m> and <m>v</m> satisfy the Cauchy-Riemann equations at all <m>P=(x,y)</m>. 
     </p>
     </proof>
     </theorem>
