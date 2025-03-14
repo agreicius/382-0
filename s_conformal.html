@@ -114,14 +114,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.10';
+eBookConfig.runestone_version = '7.5.11';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.c2d04816128ebb44.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.ee5a0b116b7d0991.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.e0c6d4592e23c667.css">
 </head>
 <body class="pretext book ignore-math">
@@ -537,10 +537,15 @@ b\amp a
 <ol class="decimal" id="eg_conformal_poly-2-1-2">
 <li id="eg_conformal_poly-2-1-2-1"><div class="para" id="eg_conformal_poly-2-1-2-1-1">Show that <span class="process-math">\(f\)</span> is conformal on <span class="process-math">\(\C-\{0\}\)</span>
 </div></li>
-<li id="eg_conformal_poly-2-1-2-2"><div class="para" id="eg_conformal_poly-2-1-2-2-1">Illustrate geometrically that <span class="process-math">\(f\)</span> is not conformal at <span class="process-math">\(z_0=0\text{.}\)</span> What does the this transformation do to the angles between tangent vectors there?</div></li>
+<li id="eg_conformal_poly-2-1-2-2"><div class="para" id="eg_conformal_poly-2-1-2-2-1">Illustrate with an explicit geometric example that <span class="process-math">\(f\)</span> does not preserve the angle between curves intersecting at <span class="process-math">\(z_0=0\text{.}\)</span>
+</div></li>
 </ol>
 </div>
-<div class="solutions"><details id="eg_conformal_poly-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_conformal_poly-3-1"></div></div></details></div></article><article class="definition definition-like" id="d_mobius_trans"><h3 class="heading">
+<div class="solutions"><details id="eg_conformal_poly-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_conformal_poly-3-1"><ol class="decimal" id="eg_conformal_poly-3-1-1">
+<li id="eg_conformal_poly-3-1-1-1"><div class="para" id="eg_conformal_poly-3-1-1-1-1">Clearly <span class="process-math">\(f\)</span> is analytic everywhere, and  <span class="process-math">\(f'(z)=2z\)</span> is nonzero at all <span class="process-math">\(z\ne 0\text{.}\)</span> Thus <span class="process-math">\(f\)</span> is conformal on <span class="process-math">\(\C-\{0\}\)</span> by <a href="s_conformal.html#th_conformal" class="xref" data-knowl="./knowl/xref/th_conformal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.27.6: Conformal maps">Theorem 1.27.6</a>.</div></li>
+<li id="eg_conformal_poly-3-1-1-2"><div class="para" id="eg_conformal_poly-3-1-1-2-1">Consider the rays <span class="process-math">\(R_0\)</span> and <span class="process-math">\(R_{\pi/4}\text{,}\)</span> which intersect at <span class="process-math">\(z_0=0\)</span> at an angle of <span class="process-math">\(\pi/4\text{.}\)</span> However, their images under <span class="process-math">\(f\)</span> are <span class="process-math">\(f(R_0)=R_0\)</span> and <span class="process-math">\(f(R_{\pi/4})=R_{\pi/2}\text{,}\)</span> which intersect at an angle of <span class="process-math">\(\pi/2\text{.}\)</span>
+</div></li>
+</ol></div></div></details></div></article><article class="definition definition-like" id="d_mobius_trans"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.27.8</span><span class="period">.</span><span class="space"> </span><span class="title">Möbius transformation.</span>
 </h3>
 <div class="para logical" id="d_mobius_trans-2-1">
@@ -669,7 +674,7 @@ g(0) \amp = -1 \amp g(i)\amp =0 \amp g(\infty)\amp = 1\text{.}
 <li id="eg_mobius-2-1-3-3"><div class="para" id="eg_mobius-2-1-3-3-1">Find a complex matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(g^{-1}=f_B\text{.}\)</span>
 </div></li>
 <li id="eg_mobius-2-1-3-4"><div class="para logical" id="eg_mobius-2-1-3-4-1">
-<div class="para">For each region (or curve) below, determine its image under <span class="process-math">\(f\text{.}\)</span>
+<div class="para">For each region (or curve) below, determine its image under <span class="process-math">\(g\text{.}\)</span>
 </div>
 <ol class="lower-alpha lower-alpha-level-1 cols2" id="eg_mobius-2-1-3-4-1-2">
 <li id="eg_mobius-2-1-3-4-1-2-1"><div class="para" id="eg_mobius-2-1-3-4-1-2-1-1">The imaginary axis.</div></li>
@@ -686,7 +691,7 @@ g(0) \amp = -1 \amp g(i)\amp =0 \amp g(\infty)\amp = 1\text{.}
 </div>
 <div class="solutions"><details id="eg_mobius-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_mobius-3-1"><ol class="decimal" id="eg_mobius-3-1-1">
 <li id="eg_mobius-3-1-1-1"><div class="para logical" id="eg_mobius-3-1-1-1-1">
-<div class="para">Writing <span class="process-math">\(f(z)=(az+b)/(cz+d)\text{,}\)</span> since <span class="process-math">\(f(0)=-1\)</span> and <span class="process-math">\(f(\infty)=1\text{,}\)</span>  we see that <span class="process-math">\(b=-d\)</span> and <span class="process-math">\(a=c\text{,}\)</span> Thus <span class="process-math">\(f(z)=(az+b)/(az-b)\text{.}\)</span>  Next since <span class="process-math">\(a(-b)-ab=-2ab\ne 0\text{,}\)</span> we must have <span class="process-math">\(a\ne 0\)</span> and <span class="process-math">\(b\ne 0\text{.}\)</span> Lastly, since  <span class="process-math">\(f(i)=0\text{,}\)</span> we have <span class="process-math">\(ai=-b\text{,}\)</span> or <span class="process-math">\(a=ib\text{.}\)</span> Thus we can choose</div>
+<div class="para">Writing <span class="process-math">\(g(z)=(az+b)/(cz+d)\text{,}\)</span> since <span class="process-math">\(g(0)=-1\)</span> and <span class="process-math">\(g(\infty)=1\text{,}\)</span>  we see that <span class="process-math">\(b=-d\)</span> and <span class="process-math">\(a=c\text{,}\)</span> Thus <span class="process-math">\(g(z)=(az+b)/(az-b)\text{.}\)</span>  Next since <span class="process-math">\(a(-b)-ab=-2ab\ne 0\text{,}\)</span> we must have <span class="process-math">\(a\ne 0\)</span> and <span class="process-math">\(b\ne 0\text{.}\)</span> Lastly, since  <span class="process-math">\(g(i)=0\text{,}\)</span> we have <span class="process-math">\(ai=-b\text{,}\)</span> or <span class="process-math">\(a=ib\text{.}\)</span> Thus we can choose</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_mobius_matrix.html" id="eq_mobius_matrix">
 \begin{equation}
 A=\begin{bmatrix}
