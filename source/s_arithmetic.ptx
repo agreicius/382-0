@@ -92,7 +92,7 @@ Furthermore we will use the following abbreviations for various real and purely 
     <me>
         a+ib\mapsto (a,b)
     </me>
-    defines a ibjection between <m>\C</m> and <m>\R</m>, allowing us to identify complex numbers as pairs of real numbers. This identification in turn gives rise to a visual representation of complex numbers as points in the Cartesian plane <m>\R^2</m>, called the <term>complex plane</term> in this context. To make clear that we are using <m>\R^2</m> to visualize <m>\C</m>, we label the horizontal and vertical axes as <m>\Re</m> and <m>\Im</m>. 
+    defines a bijection between <m>\C</m> and <m>\R</m>, allowing us to identify complex numbers as pairs of real numbers. This identification in turn gives rise to a visual representation of complex numbers as points in the Cartesian plane <m>\R^2</m>, called the <term>complex plane</term> in this context. To make clear that we are using <m>\R^2</m> to visualize <m>\C</m>, we label the horizontal and vertical axes as <m>\Re</m> and <m>\Im</m>. 
 </p>
 <figure xml:id="fig_complex_plane">
     <caption>Complex plane</caption>
